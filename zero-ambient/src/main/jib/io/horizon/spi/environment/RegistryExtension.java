@@ -11,9 +11,7 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.up.unity.Ux;
 
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 扩展容器注册器
@@ -44,7 +42,8 @@ public class RegistryExtension implements HRegistry<Vertx> {
                 final Set<HArk> arkSet = new LinkedHashSet<>();
                 app.keySet().forEach(appId -> {
                     final XApp appItem = app.get(appId);
-                    final List<XSource> sourceList = sources.get(appId);
+                    final List<XSource> sourceList = Optional.ofNullable(sources.get(appId))
+                        .orElse(new ArrayList<>());
                     arkSet.add(RegistryKit.combine(appItem, sourceList));
                 });
                 return Ux.future(arkSet);

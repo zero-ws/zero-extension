@@ -1,8 +1,7 @@
 package io.vertx.mod.ui.init;
 
-import io.horizon.uca.boot.KPivot;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.mod.ke.refine.Ke;
@@ -36,10 +35,10 @@ public class UiPin implements HRegistry.Mod<Vertx> {
     }
 
     @Override
-    public Boolean registry(final Vertx vertx, final HArk ark) {
+    public Boolean configure(final Vertx vertx, final HAmbient ambient) {
         Ke.banner("「Διασύνδεση χρήστη」- ( Ui )");
         LOG.Init.info(UiPin.class, "UiConfiguration...");
-        UiConfiguration.registry(KPivot.running());
+        UiConfiguration.registry(ambient);
         return Boolean.TRUE;
     }
 }

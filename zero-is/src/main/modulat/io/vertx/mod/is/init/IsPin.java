@@ -1,8 +1,7 @@
 package io.vertx.mod.is.init;
 
-import io.horizon.uca.boot.KPivot;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Vertx;
 import io.vertx.mod.is.atom.IsConfig;
 import io.vertx.mod.ke.refine.Ke;
@@ -20,10 +19,10 @@ public class IsPin implements HRegistry.Mod<Vertx> {
 
     /* 模块注册器 */
     @Override
-    public Boolean registry(final Vertx container, final HArk ark) {
+    public Boolean configure(final Vertx container, final HAmbient ambient) {
         Ke.banner("「Ολοκλήρωση」- Integration ( Is )");
         LOG.Init.info(IsPin.class, "IsConfiguration...");
-        IsConfiguration.registry(KPivot.running());
+        IsConfiguration.registry(ambient);
         return true;
     }
 }

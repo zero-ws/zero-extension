@@ -1,8 +1,7 @@
 package io.vertx.mod.rbac.init;
 
-import io.horizon.uca.boot.KPivot;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Vertx;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.rbac.atom.ScConfig;
@@ -21,10 +20,10 @@ public class ScPin implements HRegistry.Mod<Vertx> {
 
     /* 新版模块注册器 */
     @Override
-    public Boolean registry(final Vertx vertx, final HArk ark) {
+    public Boolean configure(final Vertx vertx, final HAmbient ambient) {
         Ke.banner("「Ακριβώς」- Rbac ( Sc )");
         LOG.Init.info(ScPin.class, "ScConfiguration...");
-        ScConfiguration.registry(KPivot.running());
+        ScConfiguration.registry(ambient);
         return Boolean.TRUE;
     }
 }

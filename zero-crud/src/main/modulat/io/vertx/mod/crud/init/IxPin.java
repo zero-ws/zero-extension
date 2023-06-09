@@ -2,9 +2,8 @@ package io.vertx.mod.crud.init;
 
 import io.aeon.experiment.mixture.HOne;
 import io.aeon.experiment.specification.KModule;
-import io.horizon.uca.boot.KPivot;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Vertx;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.ke.refine.Ke;
@@ -61,12 +60,12 @@ public class IxPin implements HRegistry.Mod<Vertx> {
 
     /* 新版模块注册器 */
     @Override
-    public Boolean registry(final Vertx vertx, final HArk ark) {
+    public Boolean configure(final Vertx vertx, final HAmbient ambient) {
         Ke.banner("「Εκδήλωση」- Crud ( Ix )");
 
         LOG.Init.info(IxPin.class, "IxConfiguration...");
         /* Configuration Init */
-        IxConfiguration.registry(KPivot.running());
+        IxConfiguration.registry(ambient);
 
         LOG.Init.info(IxPin.class, "IxDao...");
         /* Dao Init */

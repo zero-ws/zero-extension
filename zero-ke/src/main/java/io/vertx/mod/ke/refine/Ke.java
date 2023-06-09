@@ -82,10 +82,6 @@ public class Ke extends _Um {
         return data -> KeTool.map(data, KName.KEY, fieldConfig, fileFn);
     }
 
-    public static <T, R> Future<R> mapApp(final Function<JsonObject, Future<T>> executor, final Function<Set<T>, Future<R>> combiner) {
-        return KeTool.mapApp(executor, combiner);
-    }
-
 
     /*
      * Banner Message

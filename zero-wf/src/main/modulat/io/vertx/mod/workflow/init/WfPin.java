@@ -2,8 +2,8 @@ package io.vertx.mod.workflow.init;
 
 import cn.vertxup.workflow.domain.tables.pojos.WFlow;
 import io.horizon.uca.boot.KPivot;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
@@ -67,7 +67,7 @@ public class WfPin implements HRegistry.Mod<Vertx> {
      * 的调用，因此此处的注册器需要异步执行，而且需要等待 Camunda 引擎初始化完成之后才能执行。
      */
     @Override
-    public Future<Boolean> registryAsync(final Vertx container, final HArk ark) {
+    public Future<Boolean> configureAsync(final Vertx container, final HAmbient ambient) {
         // 1. 检查是否启用
         if (!ZeroStore.is(YmlCore.workflow.__KEY)) {
             return Future.succeededFuture(Boolean.TRUE);

@@ -1,9 +1,7 @@
 package io.vertx.mod.jet.init;
 
-import io.horizon.uca.boot.KPivot;
-import io.horizon.uca.log.Annal;
+import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.mod.jet.atom.JtConfig;
@@ -19,7 +17,6 @@ import static io.vertx.mod.jet.refine.Jt.LOG;
  * The json config must be set in `vertx-jet.yml` or other tp extension
  */
 public class JtPin implements HRegistry.Mod<Vertx> {
-    private static final Annal LOGGER = Annal.get(JtPin.class);
     private static final JtConfig CONFIG = null;
 
     public static JtConfig getConfig() {
@@ -31,11 +28,11 @@ public class JtPin implements HRegistry.Mod<Vertx> {
     }
 
     @Override
-    public Future<Boolean> registryAsync(final Vertx container, final HArk ark) {
+    public Future<Boolean> configureAsync(final Vertx container, final HAmbient ambient) {
         Ke.banner("「Πίδακας δρομολογητή」- ( Api )");
         LOG.Init.info(this.getClass(), "JtConfiguration...");
-        JtConfiguration.registry(KPivot.running());
+        JtConfiguration.registry(ambient);
         LOG.Init.info(this.getClass(), "HAmbient Environment Start...");
-        return JtConfiguration.init(container, KPivot.running());
+        return JtConfiguration.init(container, ambient);
     }
 }
