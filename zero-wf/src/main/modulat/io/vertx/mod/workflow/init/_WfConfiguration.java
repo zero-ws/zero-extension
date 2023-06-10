@@ -26,10 +26,7 @@ import org.camunda.bpm.engine.impl.history.handler.HistoryEventHandler;
 import org.camunda.bpm.engine.impl.persistence.StrongUuidGenerator;
 import org.jooq.Configuration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -112,7 +109,9 @@ final class WfConfiguration {
     }
 
     static Set<String> camundaBuiltIn() {
-        return CONFIG.camundaBuiltIn();
+        return Optional.ofNullable(CONFIG)
+            .map(MetaWorkflow::camundaBuiltIn)
+            .orElseGet(HashSet::new);
     }
 
     static HistoryEventHandler camundaLogger() {
