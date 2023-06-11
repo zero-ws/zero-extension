@@ -14,7 +14,7 @@ import io.vertx.mod.jet.uca.aim.*;
 import io.vertx.up.boot.handler.CommonEndurer;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.extension.AbstractAres;
-import io.vertx.up.runtime.ZeroUri;
+import io.vertx.up.supply.Electy;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
@@ -106,7 +106,7 @@ public class JetPollux extends AbstractAres {
     private void resolveUri(final HttpMethod method, final String uri) {
         if (Objects.nonNull(uri) && 0 < uri.indexOf(":")) {
             if (0 < uri.indexOf(":")) {
-                ZeroUri.resolve(method, uri);
+                Electy.uriResolve(uri, method);
             }
         }
     }

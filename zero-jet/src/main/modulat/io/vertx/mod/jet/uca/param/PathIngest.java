@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.up.commune.Envelop;
-import io.vertx.up.runtime.ZeroUri;
+import io.vertx.up.supply.Electy;
 
 import java.util.Map;
 
@@ -36,7 +36,7 @@ class PathIngest implements JtIngest {
          *
          * Additional `key` parameter will be passed `pathParams()` but it's invalid.
          */
-        if (ZeroUri.isMatch(method, requestUri)) {
+        if (Electy.uriMatch(requestUri, method)) {
             final Map<String, String> params = context.pathParams();
             params.forEach(data::put);
         }

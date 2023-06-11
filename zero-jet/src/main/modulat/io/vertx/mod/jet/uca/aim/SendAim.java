@@ -12,7 +12,7 @@ import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.up.backbone.hunt.Answer;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.extension.dot.PluginExtension;
-import io.vertx.up.runtime.ZeroOption;
+import io.vertx.up.supply.Electy;
 
 import java.util.Objects;
 
@@ -52,7 +52,7 @@ public class SendAim implements JtAim {
                     final Vertx vertx = context.vertx();
                     final EventBus event = vertx.eventBus();
 
-                    event.<Envelop>request(address, normalized, ZeroOption.getDeliveryOption(), handler -> {
+                    event.<Envelop>request(address, normalized, Electy.optionDelivery(), handler -> {
                         if (handler.succeeded()) {
                             /*
                              * 「Success」

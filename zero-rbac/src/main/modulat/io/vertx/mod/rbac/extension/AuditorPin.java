@@ -12,7 +12,7 @@ import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.extension.PlugAuditor;
-import io.vertx.up.runtime.ZeroAnno;
+import io.vertx.up.supply.Electy;
 import io.vertx.up.unity.Ux;
 
 import java.time.Instant;
@@ -111,7 +111,7 @@ public class AuditorPin implements PlugAuditor {
             .filter(path::startsWith)
             .count();
         final JsonArray exclude = this.config.getJsonArray("exclude");
-        final String recovery = ZeroAnno.recoveryUri(request.path(), request.method());
+        final String recovery = Electy.uriRecovery(request.path(), request.method());
         if (Objects.isNull(exclude) || exclude.isEmpty()) {
             /*
              * Exclude counter = 0, only include valid

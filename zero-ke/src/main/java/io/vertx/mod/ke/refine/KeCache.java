@@ -9,7 +9,7 @@ import io.vertx.core.http.HttpServerRequest;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
-import io.vertx.up.runtime.ZeroAnno;
+import io.vertx.up.supply.Electy;
 import io.vertx.up.unity.Ux;
 
 import static io.vertx.mod.ke.refine.Ke.LOG;
@@ -48,7 +48,7 @@ class KeCache {
     static String uri(final RoutingContext context) {
         final HttpServerRequest request = context.request();
         final HttpMethod method = request.method();
-        final String requestUri = ZeroAnno.recoveryUri(request.path(), method);
+        final String requestUri = Electy.uriRecovery(request.path(), method);
         return uri(requestUri, request.path());
     }
 
