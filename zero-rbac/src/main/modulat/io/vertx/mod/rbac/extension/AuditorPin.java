@@ -1,6 +1,7 @@
 package io.vertx.mod.rbac.extension;
 
 import io.horizon.uca.log.Annal;
+import io.vertx.boot.supply.Electy;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
@@ -12,7 +13,6 @@ import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.extension.PlugAuditor;
-import io.vertx.up.supply.Electy;
 import io.vertx.up.unity.Ux;
 
 import java.time.Instant;

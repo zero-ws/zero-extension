@@ -1,5 +1,6 @@
 package io.vertx.mod.jet;
 
+import io.vertx.boot.supply.Electy;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;
@@ -14,7 +15,6 @@ import io.vertx.mod.jet.uca.aim.*;
 import io.vertx.up.boot.handler.CommonEndurer;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.extension.AbstractAres;
-import io.vertx.up.supply.Electy;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;

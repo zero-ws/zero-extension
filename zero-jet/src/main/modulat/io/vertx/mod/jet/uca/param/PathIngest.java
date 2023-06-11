@@ -1,13 +1,13 @@
 package io.vertx.mod.jet.uca.param;
 
 import io.horizon.spi.jet.JtIngest;
+import io.vertx.boot.supply.Electy;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.up.commune.Envelop;
-import io.vertx.up.supply.Electy;
 
 import java.util.Map;
 

@@ -1,5 +1,6 @@
 package io.vertx.mod.jet.uca.aim;
 
+import io.vertx.boot.supply.Electy;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
@@ -12,7 +13,6 @@ import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.up.backbone.hunt.Answer;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.extension.dot.PluginExtension;
-import io.vertx.up.supply.Electy;
 
 import java.util.Objects;
 
