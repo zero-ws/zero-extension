@@ -1,10 +1,10 @@
 package io.vertx.mod.ambient.uca.dict;
 
+import io.horizon.atom.datamation.KDictSource;
 import io.horizon.eon.em.EmDict;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.atom.exchange.DSource;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -35,19 +35,19 @@ public interface Dpm {
      * Async source
      *
      * @param params {@link MultiMap} parameters that are formatted with vertx
-     * @param source {@link DSource} definition of dict here.
+     * @param source {@link KDictSource} definition of dict here.
      *
      * @return {@link Future}
      */
-    Future<ConcurrentMap<String, JsonArray>> fetchAsync(DSource source, MultiMap params);
+    Future<ConcurrentMap<String, JsonArray>> fetchAsync(KDictSource source, MultiMap params);
 
     /**
      * Sync source
      *
      * @param params {@link MultiMap} parameters that are formatted with vertx
-     * @param source {@link DSource} definition of dict here.
+     * @param source {@link KDictSource} definition of dict here.
      *
      * @return {@link ConcurrentMap}
      */
-    ConcurrentMap<String, JsonArray> fetch(DSource source, MultiMap params);
+    ConcurrentMap<String, JsonArray> fetch(KDictSource source, MultiMap params);
 }

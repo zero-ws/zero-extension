@@ -4,6 +4,7 @@ import io.horizon.eon.em.typed.ChangeFlag;
 import io.horizon.spi.robin.Switcher;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.HRecord;
 import io.modello.specification.action.HDao;
 import io.modello.specification.atom.HAtom;
@@ -15,7 +16,6 @@ import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.element.DataMatrix;
 import io.vertx.up.atom.element.JBag;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
 import io.vertx.up.commune.record.Apt;
 import io.vertx.up.plugin.excel.atom.ExTable;
 import io.vertx.up.util.Ut;
@@ -109,7 +109,7 @@ public class Ao {
      *   toModel(String, String)
      *
      * - Switcher
-     *   toSwitcher(Identity, JsonObject)
+     *   toSwitcher(KIdentity, JsonObject)
      */
     public static Schema toSchema(final String appName, final JsonObject schemaJson) {
         return AoImpl.toSchema(appName, schemaJson);
@@ -119,7 +119,7 @@ public class Ao {
         return AoImpl.toSchema(appName, file);
     }
 
-    public static Switcher toSwitcher(final Identity identity, final JsonObject options) {
+    public static Switcher toSwitcher(final KIdentity identity, final JsonObject options) {
         return AoImpl.toSwitcher(identity, options);
     }
 

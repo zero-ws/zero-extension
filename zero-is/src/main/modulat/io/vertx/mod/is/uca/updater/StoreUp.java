@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 
 /**
- * 1. Integration ID changing
+ * 1. KIntegration ID changing
  * 2. StorePath changing
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>

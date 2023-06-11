@@ -3,10 +3,14 @@ package io.vertx.mod.jet.refine;
 import cn.vertxup.jet.domain.tables.pojos.IApi;
 import cn.vertxup.jet.domain.tables.pojos.IJob;
 import cn.vertxup.jet.domain.tables.pojos.IService;
+import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.eon.VString;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
 import io.macrocosm.specification.program.HArk;
+import io.modello.atom.app.KIntegration;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -14,11 +18,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.atom.JtConfig;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.atom.JtWorker;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DSetting;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
-import io.vertx.up.commune.config.Integration;
 import io.vertx.up.eon.em.EmTraffic;
 import jakarta.ws.rs.core.MediaType;
 
@@ -59,25 +59,25 @@ public class Jt {
     /*
      * IService -> Dict
      */
-    public static DSetting toDict(final IService service) {
+    public static KDictConfig toDict(final IService service) {
         return JtBusiness.toDict(service);
     }
 
     /*
      * IService -> DualMapping
      */
-    public static BTree toMapping(final IService service) {
+    public static KMap toMapping(final IService service) {
         return JtBusiness.toMapping(service);
     }
 
     /*
      * IService -> Identify
      */
-    public static Identity toIdentity(final IService service) {
+    public static KIdentity toIdentity(final IService service) {
         return JtBusiness.toIdentify(service);
     }
 
-    public static Future<ConcurrentMap<String, JsonArray>> toDictionary(final String key, final String cacheKey, final String identifier, final DSetting dict) {
+    public static Future<ConcurrentMap<String, JsonArray>> toDictionary(final String key, final String cacheKey, final String identifier, final KDictConfig dict) {
         return JtBusiness.toDictionary(key, cacheKey, identifier, dict);
     }
 
@@ -147,7 +147,7 @@ public class Jt {
         return JtDataObject.toRule(service);
     }
 
-    public static Integration toIntegration(final IService service) {
+    public static KIntegration toIntegration(final IService service) {
         return JtDataObject.toIntegration(service);
     }
 

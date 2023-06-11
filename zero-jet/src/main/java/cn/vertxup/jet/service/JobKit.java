@@ -68,9 +68,9 @@ public class JobKit {
             KName.RULE_UNIQUE,
             /*
              * Zero standard configuration
-             * 1) Integration
+             * 1) KIntegration
              * 2) Database
-             * Here should be configuration for `Database` & `Integration`
+             * Here should be configuration for `Database` & `KIntegration`
              */
             KName.Api.CONFIG_INTEGRATION,
             KName.Api.CONFIG_DATABASE,
@@ -100,9 +100,9 @@ public class JobKit {
                     KName.RULE_UNIQUE,
                     /*
                      * Zero standard configuration
-                     * 1) Integration
+                     * 1) KIntegration
                      * 2) Database
-                     * Here should be configuration for `Database` & `Integration`
+                     * Here should be configuration for `Database` & `KIntegration`
                      */
                     KName.Api.CONFIG_INTEGRATION,
                     KName.Api.CONFIG_DATABASE,

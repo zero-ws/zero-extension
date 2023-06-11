@@ -10,8 +10,8 @@ import io.vertx.mod.jet.error._501ChannelErrorException;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.annotations.Contract;
-import io.vertx.up.atom.exchange.DFabric;
-import io.vertx.up.atom.exchange.DSetting;
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictConfig;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.commune.ActIn;
 import io.vertx.up.commune.ActOut;
@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Abstract channel
  * reference matrix
- * Name                 Database            Integration         Mission
+ * Name                 Database            KIntegration         Mission
  * AdaptorChannel       Yes                 No                  No
  * ConnectorChannel     Yes                 Yes                 No
  * DirectorChannel      Yes                 No                  Yes
@@ -41,7 +41,7 @@ import java.util.concurrent.ConcurrentMap;
  * request to third part interface ( API ), you can use ConnectorChannel instead of others.
  * <p>
  * The left two: ActorChannel & DirectorChannel are Background task in zero ( Job Support ), the
- * difference between them is that whether the channel support Integration.
+ * difference between them is that whether the channel support KIntegration.
  * <p>
  * The full feature of channel should be : ActorChannel
  */
@@ -149,11 +149,11 @@ public abstract class AbstractChannel implements JtChannel {
         return Ux.future(request);
     }
 
-    private Future<DFabric> createFabric() {
+    private Future<KDictAtom> createFabric() {
         /*
          * Dict configuration
          */
-        final DSetting dict = this.commercial.dict();
+        final KDictConfig dict = this.commercial.dict();
         if (Objects.isNull(this.dictionary)) {
             final String appKey = this.commercial.app();
             final String identifier = this.commercial.identifier();
@@ -162,10 +162,10 @@ public abstract class AbstractChannel implements JtChannel {
                  * Bind dictionary to current dictionary reference
                  */
                 this.dictionary = dictionary;
-                return Ux.future(DFabric.create().dictionary(dictionary).epsilon(dict.getEpsilon()));
+                return Ux.future(KDictAtom.create().dictionary(dictionary).epsilon(dict.getEpsilon()));
             });
         } else {
-            return Ux.future(DFabric.create().dictionary(this.dictionary).epsilon(dict.getEpsilon()));
+            return Ux.future(KDictAtom.create().dictionary(this.dictionary).epsilon(dict.getEpsilon()));
         }
     }
 

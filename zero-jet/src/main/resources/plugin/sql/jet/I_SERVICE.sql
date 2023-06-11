@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS I_SERVICE
      * Channel：只可见 Envelop，生成 ActIn，并且传入
      * Component：只可见 Record，生成 ActOut
      *
-     * 构造最终对象：io.vertx.up.commune.config.Integration
+     * 构造最终对象：io.modello.atom.app.KIntegrationn
      * 构造最终对象：io.vertx.up.commune.config.Database
      */
     `CONFIG_INTEGRATION`   MEDIUMTEXT COMMENT '「configIntegration」- 集成配置信息，第三方专用',

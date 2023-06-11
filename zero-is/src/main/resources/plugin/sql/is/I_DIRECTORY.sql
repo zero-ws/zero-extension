@@ -29,7 +29,7 @@ CREATE TABLE `I_DIRECTORY`
     -- 4) integrationId不存在时，目录为虚拟目录，和 runComponent 配合执行
     `TYPE`            VARCHAR(36)  NOT NULL COMMENT '「type」- 目录类型：INTEGRATION / STORE / LINK',
     `OWNER`           VARCHAR(36) COMMENT '「owner」- 目录访问人',
-    `INTEGRATION_ID`  VARCHAR(36) COMMENT '「integrationId」- 该目录关联的 Integration，不关联则不转存',
+    `INTEGRATION_ID`  VARCHAR(36) COMMENT '「integrationId」- 该目录关联的 KIntegration，不关联则不转存',
     `RUN_COMPONENT`   TEXT COMMENT '「runComponent」- 目录执行组件，抓文件专用',
 
     -- 目录计算专用规则（以目录为核心权限）

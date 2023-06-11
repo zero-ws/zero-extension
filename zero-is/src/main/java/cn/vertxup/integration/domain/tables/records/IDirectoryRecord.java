@@ -184,7 +184,7 @@ public class IDirectoryRecord extends UpdatableRecordImpl<IDirectoryRecord> impl
 
     /**
      * Setter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 Integration，不关联则不转存
+     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public IDirectoryRecord setIntegrationId(String value) {
@@ -194,7 +194,7 @@ public class IDirectoryRecord extends UpdatableRecordImpl<IDirectoryRecord> impl
 
     /**
      * Getter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 Integration，不关联则不转存
+     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public String getIntegrationId() {

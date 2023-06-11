@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS X_ATTACHMENT
      *   REMOTE：远程集成
      *
      * 只有当 storeWay = REMOTE 时会执行远程同步
-     * - storeId：对应 Integration 中存储的相关集成配置信息
+     * - storeId：对应 KIntegration 中存储的相关集成配置信息
      * - storePath：远程存储文件的根地址，如：/root/txt 这种（不带协议和服务器部分）
      * - storeUri：远程存储文件转换的URI地址，主要用于网络访问
      */

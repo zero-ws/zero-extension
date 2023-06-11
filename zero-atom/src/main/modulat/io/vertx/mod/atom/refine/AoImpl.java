@@ -7,6 +7,7 @@ import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
 import io.modello.atom.app.KDS;
 import io.modello.atom.app.KDatabase;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.dynamic.modular.jdbc.Pin;
 import io.modello.specification.HRecord;
 import io.modello.specification.action.HDao;
@@ -19,7 +20,6 @@ import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.data.DataRecord;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
 import io.vertx.up.eon.KName;
 import io.vertx.up.plugin.database.DS;
 import io.vertx.up.plugin.database.DataPool;
@@ -53,7 +53,7 @@ class AoImpl {
      *   toModel(String, String)
      *
      * - Switcher
-     *   toSwitcher(Identity, JsonObject)
+     *   toSwitcher(KIdentity, JsonObject)
      */
     static Schema toSchema(final String appName, final JsonObject schemaJson) {
         final Schema schemaObj = toSchema(appName);
@@ -73,7 +73,7 @@ class AoImpl {
         return Ut.instance(implModel, ark);
     }
 
-    static Switcher toSwitcher(final Identity identity, final JsonObject options) {
+    static Switcher toSwitcher(final KIdentity identity, final JsonObject options) {
         return CC_SWITCHER.pick(() -> {
             final Class<?> implSwitcher = AoStore.clazzSwitcher();
             return Ut.instance(implSwitcher, identity, options);

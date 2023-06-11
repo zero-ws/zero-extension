@@ -142,19 +142,19 @@ public class DirService implements DirStub {
             final String integrationId = directoryJ.getString(KName.INTEGRATION_ID);
             if (Ut.isDiff(integrationId, directory.getIntegrationId())) {
                 /*
-                 * Integration Modification, it means that you must migrate from
+                 * KIntegration Modification, it means that you must migrate from
                  * one storage to another one storage.
                  */
                 final StoreUp store = CC_UP.pick(StoreMigration::new, StoreMigration.class.getName());
                 // Fn.po?lThread(POOL_UP, StoreMigration::new, StoreMigration.class.getName());
-                LOG.Web.info(this.getClass(), "Integration Changing: {0}", store.getClass());
+                LOG.Web.info(this.getClass(), "KIntegration Changing: {0}", store.getClass());
                 return store.migrate(directory, directoryJ);
             } else {
                 // StorePath
                 final String storePath = directoryJ.getString(KName.STORE_PATH);
                 if (Ut.isDiff(storePath, directory.getStorePath())) {
                     /*
-                     * Integration Not Changing, because of `storePath` changed, here are
+                     * KIntegration Not Changing, because of `storePath` changed, here are
                      * `rename` only
                      */
                     final StoreUp store = CC_UP.pick(StoreRename::new, StoreRename.class.getName());

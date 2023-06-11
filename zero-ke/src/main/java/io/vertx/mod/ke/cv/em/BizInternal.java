@@ -47,7 +47,7 @@ public interface BizInternal {
         Identity("zero.identity"),
 
 
-        // Integration Part
+        // KIntegration Part
         Integration("zero.integration"),
         Directory("zero.directory"),
 

@@ -72,9 +72,9 @@ public class IDirectory extends TableImpl<IDirectoryRecord> {
     public final TableField<IDirectoryRecord, String> OWNER = createField(DSL.name("OWNER"), SQLDataType.VARCHAR(36), this, "「owner」- 目录访问人");
     /**
      * The column <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 Integration，不关联则不转存
+     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
      */
-    public final TableField<IDirectoryRecord, String> INTEGRATION_ID = createField(DSL.name("INTEGRATION_ID"), SQLDataType.VARCHAR(36), this, "「integrationId」- 该目录关联的 Integration，不关联则不转存");
+    public final TableField<IDirectoryRecord, String> INTEGRATION_ID = createField(DSL.name("INTEGRATION_ID"), SQLDataType.VARCHAR(36), this, "「integrationId」- 该目录关联的 KIntegration，不关联则不转存");
     /**
      * The column <code>DB_ETERNAL.I_DIRECTORY.RUN_COMPONENT</code>.
      * 「runComponent」- 目录执行组件，抓文件专用

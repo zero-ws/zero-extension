@@ -1,14 +1,14 @@
 package io.vertx.mod.jet.uca.tunnel;
 
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.spi.jet.JtComponent;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DFabric;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
 import io.vertx.up.commune.config.XHeader;
 import io.vertx.up.specification.action.Commercial;
 import io.vertx.up.uca.cache.Rapid;
@@ -48,7 +48,7 @@ class Anagogic {
         return Ux.future(Boolean.TRUE);
     }
 
-    static Future<Boolean> componentAsync(final JtComponent component, final Commercial commercial, final Supplier<Future<DFabric>> supplier) {
+    static Future<Boolean> componentAsync(final JtComponent component, final Commercial commercial, final Supplier<Future<KDictAtom>> supplier) {
         if (Objects.nonNull(commercial)) {
             return supplier.get().compose(fabric -> {
                 /*
@@ -57,9 +57,9 @@ class Anagogic {
                 final JsonObject options = Ut.valueJObject(commercial.options());
 
                 Ut.contract(component, JsonObject.class, options);                  /* serviceConfig */
-                Ut.contract(component, Identity.class, commercial.identity());      /* identifierComponent -> converted to identity */
-                Ut.contract(component, BTree.class, commercial.mapping());    /* mappingConfig */
-                Ut.contract(component, DFabric.class, fabric);                   /* dictConfig -> converted to fabric */
+                Ut.contract(component, KIdentity.class, commercial.identity());      /* identifierComponent -> converted to identity */
+                Ut.contract(component, KMap.class, commercial.mapping());    /* mappingConfig */
+                Ut.contract(component, KDictAtom.class, fabric);                   /* dictConfig -> converted to fabric */
                 Ut.contract(component, HRule.class, commercial.rule());        /* Rule Unique */
 
                 return Future.succeededFuture(Boolean.TRUE);

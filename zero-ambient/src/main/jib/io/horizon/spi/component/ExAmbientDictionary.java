@@ -2,13 +2,13 @@ package io.horizon.spi.component;
 
 import cn.vertxup.ambient.service.DatumService;
 import cn.vertxup.ambient.service.DatumStub;
+import io.horizon.atom.datamation.KDictSource;
 import io.horizon.eon.em.EmDict;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.mod.ambient.uca.dict.Dpm;
-import io.vertx.up.atom.exchange.DSource;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 
@@ -28,7 +28,7 @@ public class ExAmbientDictionary implements Dictionary {
 
     @Override
     public Future<ConcurrentMap<String, JsonArray>> fetchAsync(final MultiMap paramMap,
-                                                               final List<DSource> sources) {
+                                                               final List<KDictSource> sources) {
         /*
          * Whether sources is empty
          */

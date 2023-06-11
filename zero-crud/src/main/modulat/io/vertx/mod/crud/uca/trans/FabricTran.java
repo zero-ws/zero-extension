@@ -2,16 +2,16 @@ package io.vertx.mod.crud.uca.trans;
 
 import io.aeon.experiment.specification.KModule;
 import io.aeon.runtime.channel.Pocket;
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictSource;
+import io.horizon.atom.datamation.KDictUse;
+import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.spi.component.Dictionary;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.exchange.DConsumer;
-import io.vertx.up.atom.exchange.DFabric;
-import io.vertx.up.atom.exchange.DSetting;
-import io.vertx.up.atom.exchange.DSource;
 import io.vertx.up.atom.extension.KTransform;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
@@ -55,7 +55,7 @@ class FabricTran implements Tran {
         }
     }
 
-    private Future<DFabric> fabric(final IxMod in) {
+    private Future<KDictAtom> fabric(final IxMod in) {
         final Envelop envelop = in.envelop();
         final KModule module = in.module();
         final KTransform transform = module.getTransform();
@@ -70,20 +70,20 @@ class FabricTran implements Tran {
                 /*
                  * Combine DiConsumer
                  */
-                final ConcurrentMap<String, DConsumer> connectConsumer = transform.epsilon();
+                final ConcurrentMap<String, KDictUse> connectConsumer = transform.epsilon();
                 if (Objects.nonNull(transformConnect)) {
                     connectConsumer.putAll(transformConnect.epsilon());
                 }
                 return this.fabric(connect, envelop).compose(dictConnect -> {
                     dictMap.putAll(dictConnect);
-                    return Ux.future(DFabric.create()
+                    return Ux.future(KDictAtom.create()
                         .dictionary(dictMap)
                         .epsilon(connectConsumer)
                     );
                 });
             } else {
                 // No Connect Module
-                return Ux.future(DFabric.create()
+                return Ux.future(KDictAtom.create()
                     .dictionary(dictMap)
                     .epsilon(transform.epsilon())
                 );
@@ -97,11 +97,11 @@ class FabricTran implements Tran {
             return Ux.future(new ConcurrentHashMap<>());
         }
         /* Epsilon */
-        final ConcurrentMap<String, DConsumer> epsilonMap = transform.epsilon();
+        final ConcurrentMap<String, KDictUse> epsilonMap = transform.epsilon();
         /* Channel Infusion, Here will enable Pool */
         final Dictionary plugin = Pocket.lookup(Dictionary.class);
         /* Dict */
-        final DSetting dict = transform.source();
+        final KDictConfig dict = transform.source();
         if (epsilonMap.isEmpty() || Objects.isNull(plugin) || !dict.validSource()) {
             /*
              * Direct returned
@@ -111,7 +111,7 @@ class FabricTran implements Tran {
             return Ux.future(new ConcurrentHashMap<>());
         }
         // Calculation
-        final List<DSource> sources = dict.getSource();
+        final List<KDictSource> sources = dict.getSource();
         final MultiMap paramMap = MultiMap.caseInsensitiveMultiMap();
         final JsonObject headers = envelop.headersX();
         paramMap.add(KName.SIGMA, headers.getString(KName.SIGMA));

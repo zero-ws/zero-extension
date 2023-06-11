@@ -2,18 +2,18 @@ package io.vertx.mod.jet.uca.business;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
 import io.horizon.atom.common.Refer;
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.uca.log.Annal;
+import io.modello.atom.app.KIntegration;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.refine.Jt;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DFabric;
-import io.vertx.up.atom.exchange.DSetting;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
-import io.vertx.up.commune.config.Integration;
 import io.vertx.up.eon.KName;
 import io.vertx.up.specification.action.Service;
 import io.vertx.up.uca.cache.RapidKey;
@@ -33,7 +33,7 @@ public abstract class AbstractJob implements Service {
      * - dictComponent
      * - dictEpsilon
      */
-    protected transient DFabric fabric;
+    protected transient KDictAtom fabric;
 
     /*
      * The four reference source came from Service instance here
@@ -54,21 +54,21 @@ public abstract class AbstractJob implements Service {
      * - mappingMode
      * - mappingComponent
      */
-    protected DSetting dict() {
-        final DSetting dict = Jt.toDict(this.service());
+    protected KDictConfig dict() {
+        final KDictConfig dict = Jt.toDict(this.service());
         if (Objects.isNull(this.fabric)) {
-            this.fabric = DFabric.create().epsilon(dict.getEpsilon());
+            this.fabric = KDictAtom.create().epsilon(dict.getEpsilon());
         }
         return dict;
     }
 
     @Override
-    public BTree mapping() {
+    public KMap mapping() {
         return Jt.toMapping(this.service());
     }
 
     @Override
-    public Identity identity() {
+    public KIdentity identity() {
         return Jt.toIdentity(this.service());
     }
 
@@ -97,7 +97,7 @@ public abstract class AbstractJob implements Service {
      */
     protected abstract Mission mission();
 
-    // ----------- Database / Integration --------
+    // ----------- Database / KIntegration --------
 
     /*
      * 1. Get database reference ( Database )
@@ -108,7 +108,7 @@ public abstract class AbstractJob implements Service {
         return Jt.toDatabase(this.service());
     }
 
-    protected Integration integration() {
+    protected KIntegration integration() {
         return Jt.toIntegration(this.service());
     }
 

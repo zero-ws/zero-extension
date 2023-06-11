@@ -1,7 +1,7 @@
 package io.horizon.spi.plugin;
 
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
-import io.vertx.up.atom.exchange.DFabric;
+import io.horizon.atom.datamation.KDictAtom;
 
 @SuppressWarnings("unchecked")
 public interface DataPlugin<T> {
@@ -10,7 +10,7 @@ public interface DataPlugin<T> {
         return (T) this;
     }
 
-    default T bind(final DFabric fabric) {
+    default T bind(final KDictAtom fabric) {
         return (T) this;
     }
 }

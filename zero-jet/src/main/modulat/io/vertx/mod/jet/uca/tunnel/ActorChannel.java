@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.commune.ActIn;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Integration;
+import io.modello.atom.app.KIntegration;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -15,7 +15,7 @@ public class ActorChannel extends AbstractChannel {
      * Step 1:
      * - The component defined Database reference, it could be initialized
      * Step 2:
-     * - The component defined Integration reference, it could be initialized
+     * - The component defined KIntegration reference, it could be initialized
      * Step 3:
      * - The component defined Mission reference, it could be initialized
      */
@@ -28,10 +28,10 @@ public class ActorChannel extends AbstractChannel {
             .compose(Anagogic::databaseAsync)
             .compose(database -> Ut.contractAsync(component, Database.class, database))
             /*
-             * Integration inited, mount to `JtComponent`
+             * KIntegration inited, mount to `JtComponent`
              */
             .compose(dbed -> Ux.future(this.commercial().integration()))
-            .compose(integration -> Ut.contractAsync(component, Integration.class, integration))
+            .compose(integration -> Ut.contractAsync(component, KIntegration.class, integration))
             /*
              * Mission inited, mount to `JtComponent`
              */

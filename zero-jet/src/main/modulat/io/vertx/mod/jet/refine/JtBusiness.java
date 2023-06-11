@@ -1,18 +1,18 @@
 package io.vertx.mod.jet.refine;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
+import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.eon.em.EmAop;
 import io.horizon.uca.cache.Cc;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
+import io.modello.atom.normalize.KIdentity;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DSetting;
-import io.vertx.up.commune.config.Identity;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
@@ -26,17 +26,17 @@ import java.util.concurrent.ConcurrentMap;
  * have been put into pool structure
  */
 class JtBusiness {
-    private static final Cc<String, DSetting> CC_DICT = Cc.open();
-    private static final Cc<String, BTree> CC_MAPPING = Cc.open();
-    private static final Cc<String, Identity> CC_IDENTITY = Cc.open();
+    private static final Cc<String, KDictConfig> CC_DICT = Cc.open();
+    private static final Cc<String, KMap> CC_MAPPING = Cc.open();
+    private static final Cc<String, KIdentity> CC_IDENTITY = Cc.open();
 
-    static DSetting toDict(final IService service) {
+    static KDictConfig toDict(final IService service) {
         return Fn.runOr(null, () -> CC_DICT.pick(() -> {
             /*
              * Dict Config for service
              */
             final String dictStr = service.getDictConfig();
-            final DSetting dict = new DSetting(dictStr);
+            final KDictConfig dict = new KDictConfig(dictStr);
             /*
              * When valid, inject component here
              */
@@ -59,13 +59,13 @@ class JtBusiness {
         }, service.getKey()), service);
     }
 
-    static BTree toMapping(final IService service) {
+    static KMap toMapping(final IService service) {
         return Fn.runOr(null, () -> CC_MAPPING.pick(() -> {
             /*
              * DualMapping
              */
             final EmAop.Effect mode = Ut.toEnum(service::getMappingMode, EmAop.Effect.class, EmAop.Effect.NONE);
-            final BTree mapping = new BTree();
+            final KMap mapping = new KMap();
             /*
              * The mode != NONE means that there must contain configuration
              */
@@ -79,12 +79,12 @@ class JtBusiness {
         }, service.getKey()), service);
     }
 
-    static Identity toIdentify(final IService service) {
+    static KIdentity toIdentify(final IService service) {
         return Fn.runOr(null, () -> CC_IDENTITY.pick(() -> {
             /*
-             * Identity for `identifier` processing
+             * KIdentity for `identifier` processing
              */
-            final Identity identity = new Identity();
+            final KIdentity identity = new KIdentity();
             identity.setIdentifier(service.getIdentifier());
             final Class<?> component = Ut.clazz(service.getIdentifierComponent(), null);
             identity.setIdentifierComponent(component);
@@ -96,7 +96,7 @@ class JtBusiness {
         }, service.getKey()), service);
     }
 
-    static Future<ConcurrentMap<String, JsonArray>> toDictionary(final String key, final String cacheKey, final String identifier, final DSetting dict) {
+    static Future<ConcurrentMap<String, JsonArray>> toDictionary(final String key, final String cacheKey, final String identifier, final KDictConfig dict) {
         /*
          * Params here for different situations
          */

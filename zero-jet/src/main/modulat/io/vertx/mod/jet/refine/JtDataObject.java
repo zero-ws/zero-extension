@@ -6,14 +6,14 @@ import cn.vertxup.jet.domain.tables.pojos.IService;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
 import io.modello.atom.app.KDS;
+import io.modello.atom.app.KIntegration;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.cv.em.WorkerType;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.exchange.DSetting;
+import io.horizon.atom.datamation.KDictConfig;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Integration;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
@@ -23,15 +23,15 @@ import java.util.Optional;
 
 class JtDataObject {
 
-    static Integration toIntegration(final IService service) {
+    static KIntegration toIntegration(final IService service) {
         if (Objects.isNull(service)) {
-            return new Integration();
+            return new KIntegration();
         } else {
             final JsonObject data = Ut.toJObject(service.getConfigIntegration());
-            final Integration integration = new Integration();
+            final KIntegration integration = new KIntegration();
             integration.fromJson(data);
             // Dict
-            final DSetting dict = JtBusiness.toDict(service);
+            final KDictConfig dict = JtBusiness.toDict(service);
             if (Objects.nonNull(dict) && !dict.getEpsilon().isEmpty()) {
                 /*
                  * Internal binding

@@ -1,19 +1,19 @@
 package io.vertx.mod.jet.atom;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
+import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.eon.em.Environment;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
+import io.modello.atom.app.KIntegration;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtKey;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DSetting;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.commune.config.Identity;
-import io.vertx.up.commune.config.Integration;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmTraffic;
 import io.vertx.up.specification.action.Commercial;
@@ -116,8 +116,8 @@ public abstract class JtCommercial implements Commercial {
     }
 
     @Override
-    public Integration integration() {
-        final Integration integration = Jt.toIntegration(this.service);
+    public KIntegration integration() {
+        final KIntegration integration = Jt.toIntegration(this.service);
         if (Environment.Mockito == this.environment) {
             /*
              * When pre-release here, the integration should be connected to actual
@@ -137,17 +137,17 @@ public abstract class JtCommercial implements Commercial {
     }
 
     @Override
-    public DSetting dict() {
+    public KDictConfig dict() {
         return Jt.toDict(this.service);
     }
 
     @Override
-    public BTree mapping() {
+    public KMap mapping() {
         return Jt.toMapping(this.service);
     }
 
     @Override
-    public Identity identity() {
+    public KIdentity identity() {
         return Jt.toIdentity(this.service);
     }
 

@@ -1,19 +1,19 @@
 package io.vertx.mod.jet.uca.business;
 
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictUse;
+import io.horizon.atom.datamation.KMap;
 import io.horizon.exception.WebException;
 import io.horizon.exception.web._501NotImplementException;
 import io.horizon.spi.jet.JtComponent;
 import io.horizon.uca.log.Annal;
+import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.annotations.Contract;
-import io.vertx.up.atom.exchange.BTree;
-import io.vertx.up.atom.exchange.DConsumer;
-import io.vertx.up.atom.exchange.DFabric;
 import io.vertx.up.commune.ActIn;
 import io.vertx.up.commune.ActOut;
-import io.vertx.up.commune.config.Identity;
 import io.vertx.up.commune.config.XHeader;
 import io.vertx.up.exception.web._400SigmaMissingException;
 import io.vertx.up.specification.action.Service;
@@ -67,7 +67,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
      * outTo / outFrom
      */
     @Contract
-    protected transient DFabric fabric;
+    protected transient KDictAtom fabric;
 
     /*
      * The four reference source came from `@Contract` injection here
@@ -89,9 +89,9 @@ public abstract class AbstractComponent implements JtComponent, Service {
     @Contract
     private transient JsonObject options;
     @Contract
-    private transient Identity identity;
+    private transient KIdentity identity;
     @Contract
-    private transient BTree mapping;
+    private transient KMap mapping;
     @Contract
     private transient HRule rule;
 
@@ -108,12 +108,12 @@ public abstract class AbstractComponent implements JtComponent, Service {
     }
 
     @Override
-    public Identity identity() {
+    public KIdentity identity() {
         return this.identity;
     }
 
     @Override
-    public BTree mapping() {
+    public KMap mapping() {
         return this.mapping;
     }
 
@@ -166,9 +166,9 @@ public abstract class AbstractComponent implements JtComponent, Service {
              * Here contract `Dict` will not be support under JtComponent here
              */
             Ut.contract(instance, JsonObject.class, this.options());
-            Ut.contract(instance, Identity.class, this.identity());
-            Ut.contract(instance, BTree.class, this.mapping());
-            Ut.contract(instance, DFabric.class, this.fabric);
+            Ut.contract(instance, KIdentity.class, this.identity());
+            Ut.contract(instance, KMap.class, this.mapping());
+            Ut.contract(instance, KDictAtom.class, this.fabric);
             Ut.contract(instance, XHeader.class, this.header);
             Ut.contract(instance, HRule.class, this.rule);
         }
@@ -187,8 +187,8 @@ public abstract class AbstractComponent implements JtComponent, Service {
      * - If the component use standard fabric, it could reference `protected` member directly.
      * - If the component use new fabric, it could created based on `fabric` with new `DictEpsilon` here.
      */
-    protected DFabric fabric(final JsonObject configured) {
-        final ConcurrentMap<String, DConsumer> compiled = Ux.dictEpsilon(configured);
+    protected KDictAtom fabric(final JsonObject configured) {
+        final ConcurrentMap<String, KDictUse> compiled = Ux.dictEpsilon(configured);
         return this.fabric.copy().epsilon(compiled);
     }
 

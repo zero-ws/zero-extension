@@ -1,12 +1,12 @@
 package io.horizon.spi.component;
 
+import io.horizon.atom.datamation.KDictSource;
+import io.horizon.atom.datamation.KDictUse;
 import io.horizon.eon.em.EmDict;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.uca.dict.Dpm;
-import io.vertx.up.atom.exchange.DConsumer;
-import io.vertx.up.atom.exchange.DSource;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 
@@ -52,7 +52,7 @@ public abstract class ExAttributeComponent {
             /*
              * Parameters
              */
-            final DSource sourceDict = new DSource(sourceDictJson);
+            final KDictSource sourceDict = new KDictSource(sourceDictJson);
             /*
              * Dpm
              */
@@ -97,7 +97,7 @@ public abstract class ExAttributeComponent {
     private JsonObject translateData(final JsonObject definition, final boolean isFrom) {
         /* Consumer */
         final JsonObject consumer = definition.getJsonObject(KName.SOURCE_CONSUMER);
-        final DConsumer epsilon = new DConsumer();
+        final KDictUse epsilon = new KDictUse();
         epsilon.fromJson(consumer);
 
         /* Data */

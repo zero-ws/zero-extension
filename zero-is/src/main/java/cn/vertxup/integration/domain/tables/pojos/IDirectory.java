@@ -292,7 +292,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
 
     /**
      * Getter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 Integration，不关联则不转存
+     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public String getIntegrationId() {
@@ -301,7 +301,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
 
     /**
      * Setter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 Integration，不关联则不转存
+     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public IDirectory setIntegrationId(String integrationId) {

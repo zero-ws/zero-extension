@@ -128,7 +128,7 @@ class AoCompare {
     }
 
     /*
-     * Integration -> Database
+     * KIntegration -> Database
      *
      * 「TP」= UCMDB
      */
