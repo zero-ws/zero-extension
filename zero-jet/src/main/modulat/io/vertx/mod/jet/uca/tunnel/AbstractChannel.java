@@ -1,5 +1,7 @@
 package io.vertx.mod.jet.uca.tunnel;
 
+import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.spi.jet.JtChannel;
 import io.horizon.spi.jet.JtComponent;
 import io.horizon.uca.log.Annal;
@@ -10,8 +12,6 @@ import io.vertx.mod.jet.error._501ChannelErrorException;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.annotations.Contract;
-import io.horizon.atom.datamation.KDictAtom;
-import io.horizon.atom.datamation.KDictConfig;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.commune.ActIn;
 import io.vertx.up.commune.ActOut;
@@ -162,10 +162,10 @@ public abstract class AbstractChannel implements JtChannel {
                  * Bind dictionary to current dictionary reference
                  */
                 this.dictionary = dictionary;
-                return Ux.future(KDictAtom.create().dictionary(dictionary).epsilon(dict.getEpsilon()));
+                return Ux.future(KDictAtom.create().dictionary(dictionary).epsilon(dict.configUse()));
             });
         } else {
-            return Ux.future(KDictAtom.create().dictionary(this.dictionary).epsilon(dict.getEpsilon()));
+            return Ux.future(KDictAtom.create().dictionary(this.dictionary).epsilon(dict.configUse()));
         }
     }
 

@@ -72,8 +72,8 @@ public class PayService implements PayStub {
                 return Ux.future(ignored);
             });*/
             /*
-            * 不进行更新数据的操作
-            * */
+             * 不进行更新数据的操作
+             * */
             return jq.insertAsync(compared.get(ChangeFlag.ADD));
         });
     }

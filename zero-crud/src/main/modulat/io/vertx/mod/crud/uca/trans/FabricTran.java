@@ -3,9 +3,9 @@ package io.vertx.mod.crud.uca.trans;
 import io.aeon.experiment.specification.KModule;
 import io.aeon.runtime.channel.Pocket;
 import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KDictSource;
 import io.horizon.atom.datamation.KDictUse;
-import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.spi.component.Dictionary;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
@@ -111,7 +111,7 @@ class FabricTran implements Tran {
             return Ux.future(new ConcurrentHashMap<>());
         }
         // Calculation
-        final List<KDictSource> sources = dict.getSource();
+        final List<KDictSource> sources = dict.configSource();
         final MultiMap paramMap = MultiMap.caseInsensitiveMultiMap();
         final JsonObject headers = envelop.headersX();
         paramMap.add(KName.SIGMA, headers.getString(KName.SIGMA));

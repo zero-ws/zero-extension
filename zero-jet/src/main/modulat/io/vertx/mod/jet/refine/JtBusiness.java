@@ -40,7 +40,7 @@ class JtBusiness {
             /*
              * When valid, inject component here
              */
-            if (!dict.getSource().isEmpty()) {
+            if (!dict.configSource().isEmpty()) {
                 final Class<?> component =
                     Ut.clazz(service.getDictComponent(), null);
                 dict.bind(component);
@@ -48,7 +48,7 @@ class JtBusiness {
                  * dictEpsilon configuration
                  */
                 final JsonObject epsilonJson = Ut.toJObject(service.getDictEpsilon());
-                dict.bind(Ux.dictEpsilon(epsilonJson));
+                dict.bind(Ux.dictUse(epsilonJson));
             }
             /*
              * If Dict is not required, means
@@ -111,7 +111,7 @@ class JtBusiness {
             final String appId = app.option(KName.APP_ID);
             paramMap.add(KName.APP_ID, appId);
         }
-        return Ux.dictCalc(dict, paramMap);
+        return Ux.dictData(dict, paramMap);
 
     }
 }

@@ -1,10 +1,10 @@
 package io.vertx.mod.jet.uca.business;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
-import io.horizon.atom.program.KRef;
 import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KMap;
+import io.horizon.atom.program.KRef;
 import io.horizon.uca.log.Annal;
 import io.modello.atom.app.KIntegration;
 import io.modello.atom.normalize.KIdentity;
@@ -57,7 +57,7 @@ public abstract class AbstractJob implements Service {
     protected KDictConfig dict() {
         final KDictConfig dict = Jt.toDict(this.service());
         if (Objects.isNull(this.fabric)) {
-            this.fabric = KDictAtom.create().epsilon(dict.getEpsilon());
+            this.fabric = KDictAtom.create().epsilon(dict.configUse());
         }
         return dict;
     }

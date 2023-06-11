@@ -3,6 +3,7 @@ package io.vertx.mod.jet.refine;
 import cn.vertxup.jet.domain.tables.pojos.IApi;
 import cn.vertxup.jet.domain.tables.pojos.IJob;
 import cn.vertxup.jet.domain.tables.pojos.IService;
+import io.horizon.atom.datamation.KDictConfig;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
 import io.modello.atom.app.KDS;
@@ -12,7 +13,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.cv.em.WorkerType;
 import io.vertx.mod.ke.refine.Ke;
-import io.horizon.atom.datamation.KDictConfig;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
@@ -32,11 +32,11 @@ class JtDataObject {
             integration.fromJson(data);
             // Dict
             final KDictConfig dict = JtBusiness.toDict(service);
-            if (Objects.nonNull(dict) && !dict.getEpsilon().isEmpty()) {
+            if (Objects.nonNull(dict) && !dict.configUse().isEmpty()) {
                 /*
                  * Internal binding
                  */
-                integration.setEpsilon(dict.getEpsilon());
+                integration.setEpsilon(dict.configUse());
             }
             /*
              * SSL Options

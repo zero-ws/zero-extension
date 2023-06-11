@@ -188,7 +188,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
      * - If the component use new fabric, it could created based on `fabric` with new `DictEpsilon` here.
      */
     protected KDictAtom fabric(final JsonObject configured) {
-        final ConcurrentMap<String, KDictUse> compiled = Ux.dictEpsilon(configured);
+        final ConcurrentMap<String, KDictUse> compiled = Ux.dictUse(configured);
         return this.fabric.copy().epsilon(compiled);
     }
 
