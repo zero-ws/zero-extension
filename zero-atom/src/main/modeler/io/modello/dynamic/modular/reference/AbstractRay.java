@@ -1,7 +1,7 @@
 package io.modello.dynamic.modular.reference;
 
-import io.modello.atom.normalize.RResult;
-import io.modello.atom.normalize.RRule;
+import io.modello.atom.reference.RResult;
+import io.modello.atom.reference.RRule;
 import io.modello.specification.HRecord;
 import io.modello.specification.atom.HReference;
 import io.vertx.core.Future;

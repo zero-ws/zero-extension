@@ -5,7 +5,7 @@ import cn.vertxup.atom.domain.tables.pojos.MField;
 import io.horizon.eon.VString;
 import io.modello.atom.normalize.KAttribute;
 import io.modello.atom.normalize.KMarkAttribute;
-import io.modello.atom.normalize.RRule;
+import io.modello.atom.reference.RRule;
 import io.modello.eon.em.EmAttribute;
 import io.modello.eon.em.EmValue;
 import io.modello.specification.atom.HAttribute;

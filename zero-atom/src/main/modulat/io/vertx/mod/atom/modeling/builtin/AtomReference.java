@@ -4,7 +4,7 @@ import cn.vertxup.atom.domain.tables.pojos.MAttribute;
 import io.aeon.experiment.shape.HAtomReference;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
-import io.modello.atom.normalize.RReference;
+import io.modello.atom.reference.RReference;
 import io.modello.eon.em.EmAttribute;
 import io.modello.specification.action.HDao;
 import io.modello.specification.atom.HAtom;

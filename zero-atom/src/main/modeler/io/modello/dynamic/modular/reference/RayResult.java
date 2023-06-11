@@ -2,7 +2,7 @@ package io.modello.dynamic.modular.reference;
 
 import io.horizon.atom.common.Kv;
 import io.horizon.uca.cache.Cc;
-import io.modello.atom.normalize.RResult;
+import io.modello.atom.reference.RResult;
 import io.modello.eon.em.EmValue;
 import io.modello.specification.HRecord;
 import io.vertx.core.json.JsonArray;

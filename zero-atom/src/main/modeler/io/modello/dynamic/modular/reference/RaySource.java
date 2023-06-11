@@ -1,9 +1,9 @@
 package io.modello.dynamic.modular.reference;
 
 import io.horizon.atom.common.Kv;
-import io.modello.atom.normalize.RDao;
-import io.modello.atom.normalize.RQuote;
-import io.modello.atom.normalize.RRule;
+import io.modello.atom.reference.RDao;
+import io.modello.atom.reference.RQuote;
+import io.modello.atom.reference.RRule;
 import io.modello.specification.HRecord;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
