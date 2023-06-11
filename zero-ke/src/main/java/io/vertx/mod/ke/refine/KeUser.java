@@ -1,6 +1,6 @@
 package io.vertx.mod.ke.refine;
 
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.spi.business.ExUser;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -78,7 +78,7 @@ class KeUser {
     private static Future<JsonObject> umUserInternal(final JsonObject input, final JsonObject config) {
         final JsonObject dataO = Ut.aiDataO(input);
         final JsonObject dataN = Ut.aiDataN(input);
-        final Refer userN = new Refer();
+        final KRef userN = new KRef();
         final JsonArray users = Ut.valueJArray(config, KName.USER);
         return umUser(dataN, users)
             .compose(userN::future)

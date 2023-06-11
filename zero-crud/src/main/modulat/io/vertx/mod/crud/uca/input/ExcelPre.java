@@ -1,7 +1,7 @@
 package io.vertx.mod.crud.uca.input;
 
 import io.aeon.experiment.specification.KModule;
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.horizon.exception.web._500InternalServerException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

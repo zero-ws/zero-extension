@@ -22,7 +22,7 @@ public abstract class AbstractTransfer extends BehaviourStandard {
      *      "traceKey": "WTicket Key",
      *      "record": {
      *          "key": "Entity / Extension Ticket Key",
-     *          "modelKey": "Refer WTicket Key"
+     *          "modelKey": "KRef WTicket Key"
      *      }
      * }
      * Here the request could be the spec situation

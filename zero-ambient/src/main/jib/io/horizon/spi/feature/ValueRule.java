@@ -2,7 +2,7 @@ package io.horizon.spi.feature;
 
 import cn.vertxup.ambient.domain.tables.daos.XActivityRuleDao;
 import cn.vertxup.ambient.domain.tables.pojos.XActivityRule;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.spi.modeler.Indent;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
@@ -43,9 +43,9 @@ public class ValueRule implements Valve {
         }
         LOG.Tabb.info(this.getClass(), "Qr condition for ActivityRule: {0}", criteria.encode());
         /* Not Skip */
-        final Refer ruleRef = new Refer();
-        final Refer inputRef = new Refer();
-        final Refer serialRef = new Refer();
+        final KRef ruleRef = new KRef();
+        final KRef inputRef = new KRef();
+        final KRef serialRef = new KRef();
         return Ke.umUser(data)
             .compose(inputRef::future)
 

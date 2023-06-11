@@ -1,6 +1,6 @@
 package io.vertx.mod.rbac.logged;
 
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.uca.cache.Cc;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.CompositeFuture;
@@ -76,8 +76,8 @@ public class ScUser {
             .map(ProfileGroup::new)
             .map(ProfileGroup::initAsync)
             .forEach(futures::add);
-        final Refer parentHod = new Refer();
-        final Refer childHod = new Refer();
+        final KRef parentHod = new KRef();
+        final KRef childHod = new KRef();
         return CompositeFuture.join(futures).compose(Fn::<ProfileGroup>combineT).compose(profiles -> Ux.future(profiles)
             /* Group Direct Mode */
             .compose(Align::flat)

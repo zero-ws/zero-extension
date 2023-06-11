@@ -1,6 +1,6 @@
 package io.vertx.mod.crud.uca.input;
 
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;

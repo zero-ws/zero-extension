@@ -4,7 +4,7 @@ import cn.vertxup.workflow.domain.tables.daos.WTicketDao;
 import cn.vertxup.workflow.domain.tables.daos.WTodoDao;
 import cn.vertxup.workflow.domain.tables.pojos.WTicket;
 import cn.vertxup.workflow.domain.tables.pojos.WTodo;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.workflow.atom.configuration.MetaInstance;
@@ -150,7 +150,7 @@ public class UTicket {
     // ------------- Private Update Operation ----------------------
     private Future<WRecord> insertTicket(final JsonObject params, final WTransition wTransition) {
         // Todo Build
-        final Refer refer = new Refer();
+        final KRef refer = new KRef();
         return this.metadata.todoInitialize(params).compose(refer::future)
             .compose(normalized -> {
                 // Ticket Workflow ( normalized = params )

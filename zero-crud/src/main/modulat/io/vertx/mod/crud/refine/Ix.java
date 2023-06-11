@@ -1,7 +1,7 @@
 package io.vertx.mod.crud.refine;
 
 import io.aeon.experiment.specification.KModule;
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.horizon.uca.aop.Aspect;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;

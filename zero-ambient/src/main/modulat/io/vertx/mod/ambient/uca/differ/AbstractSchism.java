@@ -4,7 +4,7 @@ import cn.vertxup.ambient.domain.tables.daos.XActivityChangeDao;
 import cn.vertxup.ambient.domain.tables.daos.XActivityDao;
 import cn.vertxup.ambient.domain.tables.pojos.XActivity;
 import cn.vertxup.ambient.domain.tables.pojos.XActivityChange;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.exception.web._501NotSupportException;
 import io.modello.atom.normalize.KMarkAtom;
 import io.modello.eon.em.EmAttribute;
@@ -60,7 +60,7 @@ public abstract class AbstractSchism implements Schism {
     }
 
     protected Future<JsonObject> createActivity(final XActivity activity, final List<XActivityChange> changes) {
-        final Refer responseJ = new Refer();
+        final KRef responseJ = new KRef();
         return Ux.Jooq.on(XActivityDao.class).insertJAsync(activity)
             .compose(responseJ::future)
             .compose(nil -> Ux.Jooq.on(XActivityChangeDao.class).insertAsync(changes))

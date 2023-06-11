@@ -1,6 +1,6 @@
 package io.vertx.mod.jet.uca.micro;
 
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.spi.jet.JtChannel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -42,7 +42,7 @@ class JtPandora {
     static Future<Envelop> async(final Envelop envelop,
                                  final Commercial commercial,
                                  final Mission mission,
-                                 final Refer refer,
+                                 final KRef refer,
                                  final JtMonitor monitor) {
         /* Channel class for current consumer thread */
         final Class<?> channelClass = getChannel(commercial);
@@ -75,8 +75,8 @@ class JtPandora {
     static Future<Envelop> async(final Envelop envelop, final Commercial commercial,
                                  final JtMonitor monitor) {
         /*
-         * Refer is only OK when Job
-         * 1) KIncome / Component / Outcome Shared Refer
+         * KRef is only OK when Job
+         * 1) KIncome / Component / Outcome Shared KRef
          * 2) In Api mode, it's not needed
          */
         return async(envelop, commercial, null, null, monitor);

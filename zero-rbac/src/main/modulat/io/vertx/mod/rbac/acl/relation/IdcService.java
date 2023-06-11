@@ -3,7 +3,7 @@ package io.vertx.mod.rbac.acl.relation;
 import cn.vertxup.rbac.domain.tables.daos.OUserDao;
 import cn.vertxup.rbac.domain.tables.daos.SUserDao;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -34,7 +34,7 @@ class IdcService extends AbstractIdc {
          * - roles      = R1, R2, R3
          * - groups     = G1, G2, G3
          */
-        final Refer inputArray = new Refer();
+        final KRef inputArray = new KRef();
         return this.runPre(user)
             // 按 username 压缩
             .compose(this::compress)
@@ -94,7 +94,7 @@ class IdcService extends AbstractIdc {
     }
 
     private Future<List<SUser>> createAsync(final JsonArray userJson) {
-        final Refer refer = new Refer();
+        final KRef refer = new KRef();
         return this.model(userJson)
             .compose(processed -> Sc.valueAuth(processed, this.sigma))
             .compose(Ux.Jooq.on(SUserDao.class)::insertAsync)

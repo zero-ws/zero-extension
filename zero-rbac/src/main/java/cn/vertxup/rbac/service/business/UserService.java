@@ -5,7 +5,7 @@ import cn.vertxup.rbac.domain.tables.daos.RUserGroupDao;
 import cn.vertxup.rbac.domain.tables.daos.RUserRoleDao;
 import cn.vertxup.rbac.domain.tables.daos.SUserDao;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.acl.relation.Junc;
@@ -77,7 +77,7 @@ public class UserService implements UserStub {
         if (Objects.isNull(user.getPassword())) {
             user.setPassword(Sc.valuePassword());
         }
-        final Refer refer = new Refer();
+        final KRef refer = new KRef();
         return Ux.Jooq.on(SUserDao.class).insertAsync(user)
             .compose(refer::future)
             // 创建认证信息

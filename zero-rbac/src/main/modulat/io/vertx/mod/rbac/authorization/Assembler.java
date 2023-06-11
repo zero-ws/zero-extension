@@ -62,7 +62,7 @@ public class Assembler {
                  * When the profile size is 1, it means that the default permission should be
                  * the only one role permissions, in this situation, the authorities set should
                  * not be new HashSet<>() here, but first.getAuthorities() instead.
-                 * Refer below line:  DEFAULT AUTHORITIES
+                 * KRef below line:  DEFAULT AUTHORITIES
                  */
                 final ProfileRole first = profiles.iterator().next();
                 /* 1. permissions = [] */

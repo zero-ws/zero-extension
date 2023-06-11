@@ -1,6 +1,6 @@
 package io.modello.dynamic.modular.reference;
 
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.modello.atom.reference.RDao;
 import io.modello.atom.reference.RQuote;
 import io.modello.atom.reference.RRule;

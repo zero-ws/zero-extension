@@ -7,7 +7,7 @@ import cn.vertxup.fm.service.business.FillStub;
 import cn.vertxup.fm.service.business.IndentStub;
 import cn.vertxup.fm.service.end.PayStub;
 import cn.vertxup.fm.service.end.QrStub;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -51,7 +51,7 @@ public class SettleActor {
     @Address(Addr.Settle.UP_PAYMENT)
     public Future<JsonObject> upPayment(final boolean isRunUp,      // S Bill
                                         final JsonObject data) {
-        final Refer settleRef = new Refer();
+        final KRef settleRef = new KRef();
         /*
          * 1. Settlement Creation with Number Generation
          * The number stored in `indent` of zero extension module, system will

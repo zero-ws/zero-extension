@@ -1,6 +1,6 @@
 package io.vertx.mod.crud.uca.next;
 
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.horizon.eon.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

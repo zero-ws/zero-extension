@@ -2,7 +2,7 @@ package io.horizon.spi.business;
 
 import cn.vertxup.rbac.domain.tables.daos.SUserDao;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -56,7 +56,7 @@ public class ExUserEpic implements ExUser {
 
     @Override
     public Future<ConcurrentMap<String, JsonObject>> mapUser(final Set<String> keys, final boolean extension) {
-        final Refer userRef = new Refer();
+        final KRef userRef = new KRef();
         return this.fetchList(keys)
             .compose(userRef::future)
             .compose(queried -> {

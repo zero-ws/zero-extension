@@ -1,7 +1,7 @@
 package io.vertx.mod.jet.uca.business;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KMap;
@@ -115,7 +115,7 @@ public abstract class AbstractJob implements Service {
     /*
      * Under way processing based on `identifier`
      */
-    protected Future<Refer> underway(final String identifier) {
+    protected Future<KRef> underway(final String identifier) {
         /*
          * Parameters
          */
@@ -125,7 +125,7 @@ public abstract class AbstractJob implements Service {
             /*
              * Chain 引用
              */
-            final Refer refer = new Refer();
+            final KRef refer = new KRef();
             refer.add(dictionary);
             return Ux.future(refer);
         });

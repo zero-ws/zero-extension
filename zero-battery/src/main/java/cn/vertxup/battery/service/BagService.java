@@ -1,7 +1,7 @@
 package cn.vertxup.battery.service;
 
 import cn.vertxup.battery.domain.tables.daos.BBagDao;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -25,7 +25,7 @@ public class BagService implements BagStub {
     @Override
     public Future<JsonArray> fetchBag(final String appId) {
         final JsonObject condition = Ux.whereAnd(KName.APP_ID, appId);
-        final Refer bagRef = new Refer();
+        final KRef bagRef = new KRef();
         // Bag Fetching
         return this.fetchBag(condition).compose(bagRef::future)
             // Block Fetching
@@ -57,7 +57,7 @@ public class BagService implements BagStub {
     public Future<JsonArray> fetchExtension(final String appId) {
         final JsonObject condition = Ux.whereAnd(KName.APP_ID, appId);
         condition.put(KName.TYPE, "EXTENSION");
-        final Refer bagRef = new Refer();
+        final KRef bagRef = new KRef();
         // Bag Fetching
         return this.fetchBag(condition).compose(bagRef::future)
             // Block Fetching

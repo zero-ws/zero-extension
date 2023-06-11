@@ -2,7 +2,7 @@ package cn.vertxup.rbac.service.accredit;
 
 import cn.vertxup.rbac.domain.tables.pojos.SAction;
 import cn.vertxup.rbac.domain.tables.pojos.SResource;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.exception.WebException;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
@@ -59,7 +59,7 @@ public class AccreditService implements AccreditStub {
         return Rapid.<String, JsonObject>t(config.getPoolResource())
             .cached(request.key(), () -> {
                 /* Fetch Action */
-                final Refer actionHod = new Refer();
+                final KRef actionHod = new KRef();
                 // Action Checking
                 return this.fetchAction(request)
                     .compose(action -> this.inspectAction(request, action))
@@ -96,7 +96,7 @@ public class AccreditService implements AccreditStub {
              * 提取RBAC配置信息（资源池的缓存）
              */
             final ScConfig config = ScPin.getConfig();
-            final Refer resourceRef = new Refer();
+            final KRef resourceRef = new KRef();
             return Rapid.<String, JsonObject>t(config.getPoolResource()).read(resource.key()).compose(data -> {
                 final SResource resourceT = Ux.fromJson(data.getJsonObject(KName.RECORD), SResource.class);
                 return resourceRef.future(resourceT);

@@ -1,7 +1,7 @@
 package io.modello.dynamic.modular.plugin;
 
 import cn.vertxup.atom.domain.tables.pojos.MAttribute;
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.horizon.fn.TiConsumer;
 import io.modello.specification.HRecord;
 import io.modello.specification.atom.HAttribute;

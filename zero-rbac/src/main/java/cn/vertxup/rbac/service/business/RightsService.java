@@ -6,7 +6,7 @@ import cn.vertxup.rbac.domain.tables.daos.SPermissionDao;
 import cn.vertxup.rbac.domain.tables.pojos.RRolePerm;
 import cn.vertxup.rbac.domain.tables.pojos.SPermSet;
 import cn.vertxup.rbac.domain.tables.pojos.SPermission;
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.horizon.eon.VString;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.vertx.core.Future;
@@ -84,8 +84,8 @@ public class RightsService implements RightsStub {
          * 1) Permission Compared ( Update / Add )
          * -- Combined for final on PERM_SET
          */
-        final Refer permSetRef = new Refer();
-        final Refer mapRef = new Refer();
+        final KRef permSetRef = new KRef();
+        final KRef mapRef = new KRef();
         return this.calcPermission(permissions, sigma).compose(mapRef::future).compose(compared -> {
             /*
              * ADD / UPDATE ( Processing )

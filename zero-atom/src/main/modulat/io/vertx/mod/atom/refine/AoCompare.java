@@ -1,6 +1,6 @@
 package io.vertx.mod.atom.refine;
 
-import io.horizon.atom.common.Kv;
+import io.horizon.atom.program.Kv;
 import io.horizon.eon.VValue;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.horizon.uca.compare.Vs;

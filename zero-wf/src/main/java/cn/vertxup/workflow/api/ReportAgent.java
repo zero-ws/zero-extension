@@ -10,7 +10,7 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 
 /**
- * Refer actor part to get data format
+ * KRef actor part to get data format
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */

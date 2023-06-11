@@ -1,6 +1,6 @@
 package io.vertx.mod.jet.uca.micro;
 
-import io.horizon.atom.common.Refer;
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.up.annotations.On;
@@ -62,7 +62,7 @@ public class JtThanatos extends AbstractMission {
     public Future<Envelop> start(final Envelop envelop,
                                  final Mission mission,
                                  final Commercial commercial,
-                                 final Refer refer) {
+                                 final KRef refer) {
         /*
          * Here provide another reference for Mission injection
          */
