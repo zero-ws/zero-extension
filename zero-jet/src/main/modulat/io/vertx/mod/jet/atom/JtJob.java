@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtKey;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.sch.KTimer;
+import io.vertx.up.atom.sch.KScheduler;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.eon.em.EmJob;
 import io.vertx.up.util.Ut;
@@ -124,15 +124,15 @@ public class JtJob extends JtCommercial {
          * Scheduler of Mission definition here and you can set any information
          * of current Part.
          */
-        final KTimer timer = new KTimer(mission.getCode());
+        final KScheduler timer = new KScheduler(mission.getCode());
         final String runFormula = this.job.getRunFormula();
         // Error-60054 Detect
         mission.detectPre(runFormula);
         final EmJob.JobType type = mission.getType();
         if (EmJob.JobType.ONCE != type) {
-            timer.scheduler(runFormula, this.job.getRunAt());
+            timer.configure(runFormula, this.job.getRunAt());
             if (Objects.nonNull(this.job.getDuration())) {
-                timer.scheduler(this.job.getDuration(), TimeUnit.MINUTES);
+                timer.configure(this.job.getDuration(), TimeUnit.MINUTES);
             }
             mission.timer(timer);
         }

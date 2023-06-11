@@ -1,5 +1,6 @@
 package io.vertx.mod.ke.booter;
 
+import io.horizon.atom.program.KTimer;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
@@ -11,7 +12,6 @@ import io.vertx.up.plugin.excel.ExcelInfix;
 import io.vertx.up.plugin.jooq.JooqInfix;
 import io.vertx.up.plugin.redis.RedisInfix;
 import io.vertx.up.unity.Ux;
-import io.vertx.up.unity.UxTimer;
 import io.vertx.up.util.Ut;
 
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ class BtLoader {
 class BtKit {
     private static final Annal LOGGER = Annal.get(BtKit.class);
 
-    static Handler<AsyncResult<Boolean>> complete(final String folder, final String prefix, final UxTimer timer) {
+    static Handler<AsyncResult<Boolean>> complete(final String folder, final String prefix, final KTimer timer) {
         return handler -> {
             if (handler.succeeded()) {
                 if (Objects.isNull(prefix)) {
@@ -64,7 +64,7 @@ class BtKit {
                 } else {
                     LOG.Ke.info(LOGGER, "The data folder `{0}` with `{1}` has been imported successfully!", folder, prefix);
                 }
-                timer.end(System.currentTimeMillis());
+                timer.end();
                 LOG.Ke.info(LOGGER, "TOTAL EXECUTION TIME = The total execution time = {0}!", timer.value());
                 System.exit(0);
             } else {

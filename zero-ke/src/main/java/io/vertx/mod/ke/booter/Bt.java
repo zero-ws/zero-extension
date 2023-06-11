@@ -1,9 +1,8 @@
 package io.vertx.mod.ke.booter;
 
+import io.horizon.atom.program.KTimer;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.unity.UxTimer;
 
 /*
  * Split booter for some divide application of tool
@@ -22,22 +21,22 @@ public class Bt {
     }
 
     public static void init(final String folder) {
-        final UxTimer timer = Ux.Timer.on().start(System.currentTimeMillis());
+        final KTimer timer = KTimer.of().start();
         initAsync(folder).onComplete(BtKit.complete(folder, null, timer));
     }
 
     public static void init(final String folder, final boolean isOob) {
-        final UxTimer timer = Ux.Timer.on().start(System.currentTimeMillis());
+        final KTimer timer = KTimer.of().start();
         initAsync(folder, isOob).onComplete(BtKit.complete(folder, null, timer));
     }
 
     public static void init(final String folder, final String prefix) {
-        final UxTimer timer = Ux.Timer.on().start(System.currentTimeMillis());
+        final KTimer timer = KTimer.of().start();
         initAsync(folder, prefix).onComplete(BtKit.complete(folder, null, timer));
     }
 
     public static void init(final String folder, final String prefix, final boolean isOob) {
-        final UxTimer timer = Ux.Timer.on().start(System.currentTimeMillis());
+        final KTimer timer = KTimer.of().start();
         initAsync(folder, prefix, isOob).onComplete(BtKit.complete(folder, null, timer));
     }
 
