@@ -2,10 +2,10 @@ package io.vertx.mod.crud.uca.trans;
 
 import io.aeon.experiment.specification.KModule;
 import io.aeon.runtime.channel.Pocket;
-import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KDictSource;
 import io.horizon.atom.datamation.KDictUse;
+import io.horizon.atom.datamation.KFabric;
 import io.horizon.spi.component.Dictionary;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
@@ -55,7 +55,7 @@ class FabricTran implements Tran {
         }
     }
 
-    private Future<KDictAtom> fabric(final IxMod in) {
+    private Future<KFabric> fabric(final IxMod in) {
         final Envelop envelop = in.envelop();
         final KModule module = in.module();
         final KTransform transform = module.getTransform();
@@ -76,14 +76,14 @@ class FabricTran implements Tran {
                 }
                 return this.fabric(connect, envelop).compose(dictConnect -> {
                     dictMap.putAll(dictConnect);
-                    return Ux.future(KDictAtom.create()
+                    return Ux.future(KFabric.create()
                         .dictionary(dictMap)
                         .epsilon(connectConsumer)
                     );
                 });
             } else {
                 // No Connect Module
-                return Ux.future(KDictAtom.create()
+                return Ux.future(KFabric.create()
                     .dictionary(dictMap)
                     .epsilon(transform.epsilon())
                 );

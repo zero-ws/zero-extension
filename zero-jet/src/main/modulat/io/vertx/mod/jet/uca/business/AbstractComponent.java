@@ -1,7 +1,7 @@
 package io.vertx.mod.jet.uca.business;
 
-import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictUse;
+import io.horizon.atom.datamation.KFabric;
 import io.horizon.atom.datamation.KMap;
 import io.horizon.exception.WebException;
 import io.horizon.exception.web._501NotImplementException;
@@ -67,7 +67,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
      * outTo / outFrom
      */
     @Contract
-    protected transient KDictAtom fabric;
+    protected transient KFabric fabric;
 
     /*
      * The four reference source came from `@Contract` injection here
@@ -168,7 +168,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
             Ut.contract(instance, JsonObject.class, this.options());
             Ut.contract(instance, KIdentity.class, this.identity());
             Ut.contract(instance, KMap.class, this.mapping());
-            Ut.contract(instance, KDictAtom.class, this.fabric);
+            Ut.contract(instance, KFabric.class, this.fabric);
             Ut.contract(instance, XHeader.class, this.header);
             Ut.contract(instance, HRule.class, this.rule);
         }
@@ -187,7 +187,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
      * - If the component use standard fabric, it could reference `protected` member directly.
      * - If the component use new fabric, it could created based on `fabric` with new `DictEpsilon` here.
      */
-    protected KDictAtom fabric(final JsonObject configured) {
+    protected KFabric fabric(final JsonObject configured) {
         final ConcurrentMap<String, KDictUse> compiled = Ux.dictUse(configured);
         return this.fabric.copy().epsilon(compiled);
     }

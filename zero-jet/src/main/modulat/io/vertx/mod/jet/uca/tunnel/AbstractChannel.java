@@ -1,7 +1,7 @@
 package io.vertx.mod.jet.uca.tunnel;
 
-import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KFabric;
 import io.horizon.spi.jet.JtChannel;
 import io.horizon.spi.jet.JtComponent;
 import io.horizon.uca.log.Annal;
@@ -149,7 +149,7 @@ public abstract class AbstractChannel implements JtChannel {
         return Ux.future(request);
     }
 
-    private Future<KDictAtom> createFabric() {
+    private Future<KFabric> createFabric() {
         /*
          * Dict configuration
          */
@@ -162,10 +162,10 @@ public abstract class AbstractChannel implements JtChannel {
                  * Bind dictionary to current dictionary reference
                  */
                 this.dictionary = dictionary;
-                return Ux.future(KDictAtom.create().dictionary(dictionary).epsilon(dict.configUse()));
+                return Ux.future(KFabric.create().dictionary(dictionary).epsilon(dict.configUse()));
             });
         } else {
-            return Ux.future(KDictAtom.create().dictionary(this.dictionary).epsilon(dict.configUse()));
+            return Ux.future(KFabric.create().dictionary(this.dictionary).epsilon(dict.configUse()));
         }
     }
 

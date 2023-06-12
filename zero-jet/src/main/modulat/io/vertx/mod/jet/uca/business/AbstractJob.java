@@ -1,8 +1,8 @@
 package io.vertx.mod.jet.uca.business;
 
 import cn.vertxup.jet.domain.tables.pojos.IService;
-import io.horizon.atom.datamation.KDictAtom;
 import io.horizon.atom.datamation.KDictConfig;
+import io.horizon.atom.datamation.KFabric;
 import io.horizon.atom.datamation.KMap;
 import io.horizon.atom.program.KRef;
 import io.horizon.uca.log.Annal;
@@ -33,7 +33,7 @@ public abstract class AbstractJob implements Service {
      * - dictComponent
      * - dictEpsilon
      */
-    protected transient KDictAtom fabric;
+    protected transient KFabric fabric;
 
     /*
      * The four reference source came from Service instance here
@@ -57,7 +57,7 @@ public abstract class AbstractJob implements Service {
     protected KDictConfig dict() {
         final KDictConfig dict = Jt.toDict(this.service());
         if (Objects.isNull(this.fabric)) {
-            this.fabric = KDictAtom.create().epsilon(dict.configUse());
+            this.fabric = KFabric.create().epsilon(dict.configUse());
         }
         return dict;
     }

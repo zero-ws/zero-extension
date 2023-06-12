@@ -1,6 +1,6 @@
 package io.vertx.mod.jet.uca.tunnel;
 
-import io.horizon.atom.datamation.KDictAtom;
+import io.horizon.atom.datamation.KFabric;
 import io.horizon.atom.datamation.KMap;
 import io.horizon.spi.jet.JtComponent;
 import io.modello.atom.normalize.KIdentity;
@@ -48,7 +48,7 @@ class Anagogic {
         return Ux.future(Boolean.TRUE);
     }
 
-    static Future<Boolean> componentAsync(final JtComponent component, final Commercial commercial, final Supplier<Future<KDictAtom>> supplier) {
+    static Future<Boolean> componentAsync(final JtComponent component, final Commercial commercial, final Supplier<Future<KFabric>> supplier) {
         if (Objects.nonNull(commercial)) {
             return supplier.get().compose(fabric -> {
                 /*
@@ -59,7 +59,7 @@ class Anagogic {
                 Ut.contract(component, JsonObject.class, options);                  /* serviceConfig */
                 Ut.contract(component, KIdentity.class, commercial.identity());      /* identifierComponent -> converted to identity */
                 Ut.contract(component, KMap.class, commercial.mapping());    /* mappingConfig */
-                Ut.contract(component, KDictAtom.class, fabric);                   /* dictConfig -> converted to fabric */
+                Ut.contract(component, KFabric.class, fabric);                   /* dictConfig -> converted to fabric */
                 Ut.contract(component, HRule.class, commercial.rule());        /* Rule Unique */
 
                 return Future.succeededFuture(Boolean.TRUE);
