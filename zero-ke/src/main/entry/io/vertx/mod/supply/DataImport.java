@@ -15,6 +15,7 @@ import io.vertx.up.plugin.jooq.JooqInfix;
 import io.vertx.up.plugin.shared.MapInfix;
 import io.vertx.up.plugin.shared.SharedClient;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import org.jooq.Configuration;
 
 import java.util.ArrayList;
@@ -146,7 +147,7 @@ public class DataImport {
     private Handler<AsyncResult<Boolean>> complete(final String folder, final String prefix, final KTimer timer) {
         return handler -> {
             if (handler.succeeded()) {
-                if (Objects.isNull(prefix)) {
+                if (Ut.isNil(prefix)) {
                     LOG.Ke.info(this.getClass(), "The data folder `{0}` has been imported successfully!", folder);
                 } else {
                     LOG.Ke.info(this.getClass(), "The data folder `{0}` with `{1}` has been imported successfully!", folder, prefix);

@@ -39,7 +39,7 @@ public interface KeIpc {
         // zero-graphic
         String G = "graphic";
         // zero-argument
-        String ATOM = "argument";
+        String ATOM = "atom";
         // zero-lbs
         String LBS = "lbs";
         // zero-wf

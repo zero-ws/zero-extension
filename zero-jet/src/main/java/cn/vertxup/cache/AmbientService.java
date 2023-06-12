@@ -26,11 +26,6 @@ public class AmbientService implements AmbientStub {
 
     @Override
     public Future<JsonObject> updateJob(final IJob job, final IService service) {
-        /*
-         * `io.vertx.mod.argument.jet.JtApp`
-         * -- reference extracted from
-         *    `io.horizon.environment.spi.AmbientOld`
-         */
         final String sigma = job.getSigma();
         final HArk ark = Ke.ark(sigma);
         if (Objects.isNull(ark)) {
@@ -67,11 +62,6 @@ public class AmbientService implements AmbientStub {
 
     @Override
     public Future<JsonObject> updateUri(final IApi api, final IService service) {
-        /*
-         * `io.vertx.mod.argument.jet.JtApp`
-         * -- reference extracted from
-         *    `io.horizon.environment.spi.AmbientOld`
-         */
         final String sigma = api.getSigma();
         final HArk ark = Ke.ark(sigma);
         if (Objects.isNull(ark)) {
