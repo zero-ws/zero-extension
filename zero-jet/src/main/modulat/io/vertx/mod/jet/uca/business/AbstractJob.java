@@ -102,7 +102,7 @@ public abstract class AbstractJob implements Service {
     /*
      * 1. Get database reference ( Database )
      * 2. Get dao reference ( OxDao )
-     * 3. Get data atom reference ( DataAtom )
+     * 3. Get data argument reference ( DataAtom )
      */
     protected Database database() {
         return Jt.toDatabase(this.service());

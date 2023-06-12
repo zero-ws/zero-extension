@@ -18,7 +18,7 @@
  *     consumer. This life cycle happened in ( agent -> eventbus -> ??? ), The ??? means consumer position in the
  *     whole request.
  *     !!!: Another thing is that if you defined consumer, you must import `zero-jet` project because the class
- *     appear in interface className = `io.vertx.mod.jet.io.vertx.up.atom.JtUri`.
+ *     appear in interface className = `io.vertx.mod.jet.io.vertx.up.argument.JtUri`.
  *
  * Extension 4:
  * 4. 「Channel」

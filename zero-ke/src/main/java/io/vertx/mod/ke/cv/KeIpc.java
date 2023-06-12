@@ -38,8 +38,8 @@ public interface KeIpc {
         String JET = "jet";
         // zero-graphic
         String G = "graphic";
-        // zero-atom
-        String ATOM = "atom";
+        // zero-argument
+        String ATOM = "argument";
         // zero-lbs
         String LBS = "lbs";
         // zero-wf

@@ -27,7 +27,7 @@ public interface Schism {
     }
 
     /*
-     * Bind the definition of atom, the data structure is as following:
+     * Bind the definition of argument, the data structure is as following:
      *
      */
     Schism bind(HAtom atom);

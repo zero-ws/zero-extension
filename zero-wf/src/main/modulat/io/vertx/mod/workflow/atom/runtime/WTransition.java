@@ -102,7 +102,7 @@ public class WTransition {
     public PassWay vague() {
         /*
          * java.lang.NullPointerException
-         * 	at io.vertx.mod.runtime.atom.workflow.WTransition.vague(WTransition.java:127)
+         * 	at io.vertx.mod.runtime.argument.workflow.WTransition.vague(WTransition.java:127)
          */
         return Objects.isNull(this.to) ? null : this.to.vague();
     }

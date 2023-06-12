@@ -1,6 +1,7 @@
 package io.vertx.mod.supply;
 
 import io.horizon.atom.program.KTimer;
+import io.horizon.uca.cache.Cc;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
@@ -38,6 +39,8 @@ import static io.vertx.mod.ke.refine.Ke.LOG;
  */
 public class DataImport {
 
+    private static final Cc<Integer, DataImport> CC_IMPORT = Cc.open();
+
     private final Vertx vertx;
 
     private DataImport(final Vertx vertx) {
@@ -48,14 +51,15 @@ public class DataImport {
         // 环境检查，防止导入问题，如果导入过程中没有准备好环境则直接抛出异常
         ensureEnvironment();
         // 构造导入器
-        return new DataImport(vertx);
+        return CC_IMPORT.pick(() -> new DataImport(vertx), vertx.hashCode());
     }
 
     public static DataImport of() {
         // 环境检查，防止导入问题，如果导入过程中没有准备好环境则直接抛出异常
         ensureEnvironment();
         // 构造导入器
-        return new DataImport(Ux.nativeVertx());
+        final Vertx vertx = Ux.nativeVertx();
+        return CC_IMPORT.pick(() -> new DataImport(vertx), vertx.hashCode());
     }
 
     private static void ensureEnvironment() {

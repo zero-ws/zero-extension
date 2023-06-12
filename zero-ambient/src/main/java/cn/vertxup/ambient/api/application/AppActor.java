@@ -56,7 +56,7 @@ public class AppActor {
      *      "database": "",
      *      "history": "",
      *      "workflow": "",
-     *      "atom": ""
+     *      "argument": ""
      * }
      */
     @Address(Addr.Init.SOURCE)
@@ -80,7 +80,7 @@ public class AppActor {
             response.put("database", consumer.apply(current.toJson()));
             response.put("history", consumer.apply(orbit.toJson()));
             response.put("workflow", consumer.apply(workflow.toJson()));
-            response.put("atom", consumer.apply(atom));
+            response.put("argument", consumer.apply(atom));
             return Ux.future(response);
         });
     }

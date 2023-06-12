@@ -49,7 +49,7 @@ public class DataModel extends AbstractHModel implements Model {
          * Call `initialize()` method again
          * Fix issue:
          * Caused by: java.lang.NullPointerException: null
-                at io.vertx.mod.builtin.modeling.atom.DataModel.dbAttributes(DataModel.java:126)
+                at io.vertx.mod.builtin.modeling.argument.DataModel.dbAttributes(DataModel.java:126)
          * Because parent class constructor is initialized first, it means that you must do as following:
          * 1) AbstractHModel create
          * 2) Current Object create

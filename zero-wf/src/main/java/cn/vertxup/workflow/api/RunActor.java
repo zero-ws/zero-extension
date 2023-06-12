@@ -165,7 +165,7 @@ public class RunActor {
             .compose(instance -> stay.keepAsync(request, instance))
             // Callback
             // Fix issue:
-            // No serializer found for class io.vertx.mod.runtime.atom.workflow.WRecord
+            // No serializer found for class io.vertx.mod.runtime.argument.workflow.WRecord
             // and no properties discovered to create BeanSerializer
             .compose(WRecord::futureJ);
     }
@@ -183,7 +183,7 @@ public class RunActor {
             .compose(instance -> stay.keepAsync(request, instance))
             // Callback
             // Fix issue:
-            // No serializer found for class io.vertx.mod.runtime.atom.workflow.WRecord
+            // No serializer found for class io.vertx.mod.runtime.argument.workflow.WRecord
             // and no properties discovered to create BeanSerializer
             .compose(WRecord::futureJ);
     }

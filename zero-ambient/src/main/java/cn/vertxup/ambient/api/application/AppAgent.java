@@ -67,7 +67,7 @@ public interface AppAgent {
      *      "database": "",
      *      "history": "",
      *      "workflow": "",
-     *      "atom": ""
+     *      "argument": ""
      * }
      */
     @GET

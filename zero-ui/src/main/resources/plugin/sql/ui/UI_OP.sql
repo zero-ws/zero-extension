@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS UI_OP
      * 3）控件类：CONTROL - OP（控件ID）
      * controlId 可区分维度，为了兼容动态模型、静态模型、流程模型，此处的操作可重构如下
      * 扩展 controlId 长度为 128，可存储某些专用的 code 值
-     * -- LIST/FORM 动态类（zero-atom）中绑定的操作读取（controlType = null OR controlType = ATOM）
+     * -- LIST/FORM 动态类（zero-argument）中绑定的操作读取（controlType = null OR controlType = ATOM）
      *    此时必须属性：
      *    -- event,事件名称
      *    -- clientId,clientKey, 一般是同样的值

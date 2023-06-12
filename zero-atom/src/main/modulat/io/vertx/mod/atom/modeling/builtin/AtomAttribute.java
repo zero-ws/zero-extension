@@ -123,7 +123,7 @@ class AtomAttribute implements HAttribute, Serializable {
         // Type analyzed, create current type
         /*
          * java.lang.NullPointerException
-             at io.vertx.mod.builtin.modeling.atom.AtomAttribute.<init>(AtomAttribute.java:124)
+             at io.vertx.mod.builtin.modeling.argument.AtomAttribute.<init>(AtomAttribute.java:124)
          */
         if (Objects.nonNull(attributeType)) {
             attributeJ.put(KName.TYPE, attributeType.getName());

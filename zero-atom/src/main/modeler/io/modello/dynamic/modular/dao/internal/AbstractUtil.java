@@ -52,7 +52,7 @@ public abstract class AbstractUtil<T extends AoBinder> implements AoBinder<T> {
 
     // ---------------------------
     protected DataEvent event() {
-        /* 检查 this.io.vertx.up.atom / this.sentence */
+        /* 检查 this.io.vertx.up.argument / this.sentence */
         Fn.outWeb(null == this.atom, _417DataAtomNullException.class, this.getClass());
         return DataEvent.create(this.atom, this.sentence).init(EventType.SINGLE);
     }
