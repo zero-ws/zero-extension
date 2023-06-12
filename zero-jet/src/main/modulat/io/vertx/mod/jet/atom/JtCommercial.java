@@ -121,7 +121,7 @@ public abstract class JtCommercial implements Commercial {
         if (Environment.Mockito == this.environment) {
             /*
              * When pre-release here, the integration should be connected to actual
-             * environment, in this kind of situation, you can call mock JtJob `mockOn`
+             * environment, in this kind of situation, you can call atom JtJob `mockOn`
              * to turn on `debug` options in integration, but it require the environment
              * to be `Mockito` instead of others.
              * Involve environment concept to split development/testing/production
