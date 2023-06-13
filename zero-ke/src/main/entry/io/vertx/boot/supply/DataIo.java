@@ -1,4 +1,4 @@
-package io.vertx.mod.supply;
+package io.vertx.boot.supply;
 
 import io.vertx.up.plugin.booting.HExtension;
 import io.vertx.up.util.Ut;

@@ -17,10 +17,9 @@ import static io.vertx.mod.jet.refine.Jt.LOG;
  * The json config must be set in `vertx-jet.yml` or other tp extension
  */
 public class JtPin implements HRegistry.Mod<Vertx> {
-    private static final JtConfig CONFIG = null;
 
     public static JtConfig getConfig() {
-        return CONFIG;
+        return JtConfiguration.getConfig();
     }
 
     public static ConcurrentMap<String, ServiceEnvironment> serviceEnvironment() {

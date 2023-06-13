@@ -1,4 +1,4 @@
-package io.vertx.mod.supply;
+package io.vertx.boot.supply;
 
 import io.horizon.atom.program.KTimer;
 import io.horizon.uca.cache.Cc;
@@ -66,13 +66,13 @@ public class DataImport {
     private static void ensureEnvironment() {
         // 检查一：Jooq基础环境是否准备
         final Configuration jooq = JooqInfix.get(YmlCore.jooq.PROVIDER);
-        Fn.outWeb(Objects.isNull(jooq), _417LoadingNotReadyException.class, DataImport.class);
+        Fn.outWeb(Objects.isNull(jooq), _417LoadingNotReadyException.class, DataImport.class, "jooq / provider");
         // 检查二：Excel导入环境是否准备
         final ExcelClient excel = ExcelInfix.getClient();
-        Fn.outWeb(Objects.isNull(excel), _417LoadingNotReadyException.class, DataImport.class);
+        Fn.outWeb(Objects.isNull(excel), _417LoadingNotReadyException.class, DataImport.class, "excel");
         // 检查三：Map导入环境是否准备
         final SharedClient<String, Object> shared = MapInfix.getClient();
-        Fn.outWeb(Objects.isNull(shared), _417LoadingNotReadyException.class, DataImport.class);
+        Fn.outWeb(Objects.isNull(shared), _417LoadingNotReadyException.class, DataImport.class, "shared");
     }
 
     /**

@@ -63,6 +63,10 @@ class JtConfiguration {
         });
     }
 
+    static JtConfig getConfig() {
+        return CONFIG;
+    }
+
     static ConcurrentMap<String, ServiceEnvironment> serviceEnvironment() {
         return CONTEXT;
     }

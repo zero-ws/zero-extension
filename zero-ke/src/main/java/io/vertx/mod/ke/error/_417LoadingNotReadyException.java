@@ -8,8 +8,8 @@ import io.horizon.exception.WebException;
  */
 public class _417LoadingNotReadyException extends WebException {
 
-    public _417LoadingNotReadyException(final Class<?> target) {
-        super(target);
+    public _417LoadingNotReadyException(final Class<?> target, final String key) {
+        super(target, key);
     }
 
     @Override

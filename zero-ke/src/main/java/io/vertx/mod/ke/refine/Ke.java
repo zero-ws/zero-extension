@@ -15,7 +15,6 @@ import org.jooq.Configuration;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -151,6 +150,7 @@ public class Ke extends _Um {
     public interface LOG {
         String MODULE = "Εισόδημα";
         LogModule Ke = Log.modulat(MODULE).program("Ke");
+        LogModule Ok = Log.modulat(MODULE).program("Ok");
         LogModule Turnel = Log.modulat(MODULE).program("Channel");
     }
 }
