@@ -1,5 +1,6 @@
 package io.vertx.boot.supply;
 
+import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.plugin.booting.HExtension;
 import io.vertx.up.util.Ut;
 
@@ -21,11 +22,13 @@ class DataIo {
     static Stream<String> ioFiles(final String folder, final String prefix, final boolean oob) {
 
         final List<String> files = Ut.ioFilesN(folder, null, prefix);
+        Ke.LOG.Ke.info(DataIo.class, "Before Extension Files = {0}", String.valueOf(files.size()));
         final Set<HExtension> boots = HExtension.initialize();
         if (!boots.isEmpty() && oob) {
             boots.forEach(boot -> files.addAll(boot.oob(prefix)));
             // boots.forEach(boot -> files.addAll(boot.oob(prefix)));
         }
+        Ke.LOG.Ke.info(DataIo.class, "After Extension Files = {0}", String.valueOf(files.size()));
         // 并行
         return files.parallelStream().filter(DataIo::ensure);
     }
