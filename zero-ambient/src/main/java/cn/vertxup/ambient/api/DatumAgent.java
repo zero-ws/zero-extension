@@ -8,6 +8,14 @@ import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KWeb;
 import jakarta.ws.rs.*;
 
+/**
+ * 此处为消费接口，最新版直接追加
+ * <pre><code>
+ *     SQL:         ACTIVE = TRUE
+ *     JSON:        active = true
+ * </code></pre>
+ * 的查询条件来对数据字典进行消费筛选（此处已追加）
+ */
 @EndPoint
 @Path("/api")
 public interface DatumAgent {
