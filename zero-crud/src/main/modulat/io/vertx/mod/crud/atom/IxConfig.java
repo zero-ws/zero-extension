@@ -1,10 +1,10 @@
 package io.vertx.mod.crud.atom;
 
-import com.fasterxml.jackson.databind.JsonArrayDeserializer;
-import com.fasterxml.jackson.databind.JsonArraySerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.vertx.core.json.JsonArray;
+import io.zerows.jackson.databind.JsonArrayDeserializer;
+import io.zerows.jackson.databind.JsonArraySerializer;
 
 import java.io.Serializable;
 

@@ -1,10 +1,6 @@
 package io.vertx.mod.workflow.atom.configuration;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.JsonArrayDeserializer;
-import com.fasterxml.jackson.databind.JsonArraySerializer;
-import com.fasterxml.jackson.databind.JsonObjectDeserializer;
-import com.fasterxml.jackson.databind.JsonObjectSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.horizon.eon.em.EmDS;
@@ -13,6 +9,10 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.runtime.env.MatureOn;
 import io.vertx.up.util.Ut;
+import io.zerows.jackson.databind.JsonArrayDeserializer;
+import io.zerows.jackson.databind.JsonArraySerializer;
+import io.zerows.jackson.databind.JsonObjectDeserializer;
+import io.zerows.jackson.databind.JsonObjectSerializer;
 
 import java.util.Objects;
 import java.util.Set;
