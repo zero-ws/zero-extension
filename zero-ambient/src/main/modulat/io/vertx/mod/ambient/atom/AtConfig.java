@@ -1,11 +1,11 @@
 package io.vertx.mod.ambient.atom;
 
-import com.fasterxml.jackson.databind.ClassDeserializer;
-import com.fasterxml.jackson.databind.ClassSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.horizon.spi.extension.Init;
 import io.horizon.spi.extension.Prerequisite;
+import io.zerows.jackson.databind.ClassDeserializer;
+import io.zerows.jackson.databind.ClassSerializer;
 
 import java.io.Serializable;
 
@@ -107,10 +107,10 @@ public class AtConfig implements Serializable {
     }
 
     public String getFileIntegration() {
-        return fileIntegration;
+        return this.fileIntegration;
     }
 
-    public void setFileIntegration(String fileIntegration) {
+    public void setFileIntegration(final String fileIntegration) {
         this.fileIntegration = fileIntegration;
     }
 
