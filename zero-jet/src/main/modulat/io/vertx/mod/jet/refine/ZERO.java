@@ -1,10 +1,10 @@
 package io.vertx.mod.jet.refine;
 
+import io.horizon.eon.em.web.EmTraffic;
 import io.vertx.mod.jet.uca.tunnel.ActorChannel;
 import io.vertx.mod.jet.uca.tunnel.AdaptorChannel;
 import io.vertx.mod.jet.uca.tunnel.ConnectorChannel;
 import io.vertx.mod.jet.uca.tunnel.DirectorChannel;
-import io.vertx.up.eon.em.EmTraffic;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

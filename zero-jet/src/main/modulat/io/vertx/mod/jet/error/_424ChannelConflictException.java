@@ -1,8 +1,8 @@
 package io.vertx.mod.jet.error;
 
+import io.horizon.eon.em.web.EmTraffic;
 import io.horizon.eon.em.web.HttpStatusCode;
 import io.horizon.exception.WebException;
-import io.vertx.up.eon.em.EmTraffic;
 
 /*
  * The channel type is not configured correctly

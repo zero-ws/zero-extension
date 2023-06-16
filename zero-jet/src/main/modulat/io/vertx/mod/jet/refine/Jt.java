@@ -6,6 +6,7 @@ import cn.vertxup.jet.domain.tables.pojos.IService;
 import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KMap;
 import io.horizon.eon.VString;
+import io.horizon.eon.em.web.EmTraffic;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
 import io.macrocosm.specification.program.HArk;
@@ -19,7 +20,6 @@ import io.vertx.mod.jet.atom.JtConfig;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.atom.JtWorker;
 import io.vertx.up.commune.config.Database;
-import io.vertx.up.eon.em.EmTraffic;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.Set;

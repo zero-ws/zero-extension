@@ -1,6 +1,7 @@
 package io.vertx.mod.jet.uca.micro;
 
 import io.horizon.atom.program.KRef;
+import io.horizon.eon.em.web.EmTraffic;
 import io.horizon.spi.jet.JtChannel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -14,7 +15,6 @@ import io.vertx.mod.jet.uca.tunnel.ConnectorChannel;
 import io.vertx.mod.jet.uca.tunnel.DirectorChannel;
 import io.vertx.up.atom.worker.Mission;
 import io.vertx.up.commune.Envelop;
-import io.vertx.up.eon.em.EmTraffic;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.specification.action.Commercial;
 import io.vertx.up.util.Ut;

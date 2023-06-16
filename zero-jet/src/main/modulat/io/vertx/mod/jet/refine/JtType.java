@@ -1,6 +1,7 @@
 package io.vertx.mod.jet.refine;
 
 import cn.vertxup.jet.domain.tables.pojos.IApi;
+import io.horizon.eon.em.web.EmTraffic;
 import io.horizon.spi.jet.JtConsumer;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.mod.jet.atom.JtWorker;
@@ -9,7 +10,6 @@ import io.vertx.mod.jet.cv.em.WorkerType;
 import io.vertx.mod.jet.error._500ConsumerSpecException;
 import io.vertx.mod.jet.error._500WorkerSpecException;
 import io.vertx.mod.jet.uca.tunnel.AdaptorChannel;
-import io.vertx.up.eon.em.EmTraffic;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 
