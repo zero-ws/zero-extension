@@ -256,12 +256,12 @@ public class Ao {
 
     public interface LOG {
         String MODULE = "διαμορφωτής";
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Atom = Log.modulat(MODULE).program("Atom");
-        LogModule Diff = Log.modulat(MODULE).program("Diff");
-        LogModule Plugin = Log.modulat(MODULE).program("Infusion");
-        LogModule SQL = Log.modulat(MODULE).program("SQL");
-        LogModule Uca = Log.modulat(MODULE).program("EmUca");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Atom = Log.modulat(MODULE).extension("Atom");
+        LogModule Diff = Log.modulat(MODULE).extension("Diff");
+        LogModule Plugin = Log.modulat(MODULE).extension("Infusion");
+        LogModule SQL = Log.modulat(MODULE).extension("SQL");
+        LogModule Uca = Log.modulat(MODULE).extension("EmUca");
     }
 
     /*

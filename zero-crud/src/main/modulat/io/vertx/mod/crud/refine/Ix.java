@@ -125,11 +125,11 @@ public class Ix {
 
         String MODULE = "Εκδήλωση";
 
-        LogModule Filter = Log.modulat(MODULE).program("Filter");
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Rest = Log.modulat(MODULE).program("Rest");
-        LogModule Web = Log.modulat(MODULE).program("Web");
-        LogModule Dao = Log.modulat(MODULE).program("Dao");
-        LogModule Verify = Log.modulat(MODULE).program("Verify");
+        LogModule Filter = Log.modulat(MODULE).extension("Filter");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Rest = Log.modulat(MODULE).extension("Rest");
+        LogModule Web = Log.modulat(MODULE).extension("Web");
+        LogModule Dao = Log.modulat(MODULE).extension("Dao");
+        LogModule Verify = Log.modulat(MODULE).extension("Verify");
     }
 }

@@ -144,13 +144,13 @@ public class Sc {
     public interface LOG {
         String MODULE = "Ακριβώς";
 
-        LogModule Auth = Log.modulat(MODULE).program("Auth");
-        LogModule Web = Log.modulat(MODULE).program("Web");
-        LogModule View = Log.modulat(MODULE).program("View");
-        LogModule Visit = Log.modulat(MODULE).program("Visit");
-        LogModule Resource = Log.modulat(MODULE).program("Resource");
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Credit = Log.modulat(MODULE).program("Credit");
-        LogModule Audit = Log.modulat(MODULE).program("Audit");
+        LogModule Auth = Log.modulat(MODULE).extension("Auth");
+        LogModule Web = Log.modulat(MODULE).extension("Web");
+        LogModule View = Log.modulat(MODULE).extension("View");
+        LogModule Visit = Log.modulat(MODULE).extension("Visit");
+        LogModule Resource = Log.modulat(MODULE).extension("Resource");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Credit = Log.modulat(MODULE).extension("Credit");
+        LogModule Audit = Log.modulat(MODULE).extension("Audit");
     }
 }

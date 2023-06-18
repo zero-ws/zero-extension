@@ -149,8 +149,8 @@ public class Ke extends _Um {
 
     public interface LOG {
         String MODULE = "Εισόδημα";
-        LogModule Ke = Log.modulat(MODULE).program("Ke");
-        LogModule Ok = Log.modulat(MODULE).program("Ok");
-        LogModule Turnel = Log.modulat(MODULE).program("Channel");
+        LogModule Ke = Log.modulat(MODULE).extension("Ke");
+        LogModule Ok = Log.modulat(MODULE).extension("Ok");
+        LogModule Turnel = Log.modulat(MODULE).extension("Channel");
     }
 }

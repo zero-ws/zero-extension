@@ -30,6 +30,6 @@ public final class Fm {
     public interface LOG {
         String MODULE = "χρηματοδότηση";
 
-        LogModule Book = Log.modulat(MODULE).program("Book");
+        LogModule Book = Log.modulat(MODULE).extension("Book");
     }
 }

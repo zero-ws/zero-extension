@@ -129,9 +129,9 @@ public class Is {
     public interface LOG {
         String MODULE = "Ολοκλήρωση";
 
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Web = Log.modulat(MODULE).program("Web");
-        LogModule File = Log.modulat(MODULE).program("File/Directory");
-        LogModule Path = Log.modulat(MODULE).program("Path");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Web = Log.modulat(MODULE).extension("Web");
+        LogModule File = Log.modulat(MODULE).extension("File/Directory");
+        LogModule Path = Log.modulat(MODULE).extension("Path");
     }
 }

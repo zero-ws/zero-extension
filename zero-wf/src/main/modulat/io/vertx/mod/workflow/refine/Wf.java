@@ -46,11 +46,11 @@ public class Wf {
     public interface LOG {
         String MODULE = "Ροή εργασίας";
 
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Queue = Log.modulat(MODULE).program("Queue");
-        LogModule Deploy = Log.modulat(MODULE).program("Deploy");
-        LogModule Move = Log.modulat(MODULE).program("Move");
-        LogModule Plugin = Log.modulat(MODULE).program("Infusion");
-        LogModule Web = Log.modulat(MODULE).program("Web");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Queue = Log.modulat(MODULE).extension("Queue");
+        LogModule Deploy = Log.modulat(MODULE).extension("Deploy");
+        LogModule Move = Log.modulat(MODULE).extension("Move");
+        LogModule Plugin = Log.modulat(MODULE).extension("Infusion");
+        LogModule Web = Log.modulat(MODULE).extension("Web");
     }
 }

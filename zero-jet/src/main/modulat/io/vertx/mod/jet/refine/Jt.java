@@ -154,10 +154,10 @@ public class Jt {
     public interface LOG {
         String MODULE = "Πίδακας δρομολογητή";
 
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Route = Log.modulat(MODULE).program("Route");
-        LogModule Worker = Log.modulat(MODULE).program("Worker");
-        LogModule Web = Log.modulat(MODULE).program("Web");
-        LogModule App = Log.modulat(MODULE).program("App");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Route = Log.modulat(MODULE).extension("Route");
+        LogModule Worker = Log.modulat(MODULE).extension("Worker");
+        LogModule Web = Log.modulat(MODULE).extension("Web");
+        LogModule App = Log.modulat(MODULE).extension("App");
     }
 }

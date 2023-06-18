@@ -43,8 +43,8 @@ public class Ui {
     public interface LOG {
         String MODULE = "διεπαφή χρήστη";
 
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Ui = Log.modulat(MODULE).program("Ui");
-        LogModule View = Log.modulat(MODULE).program("View");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Ui = Log.modulat(MODULE).extension("Ui");
+        LogModule View = Log.modulat(MODULE).extension("View");
     }
 }

@@ -11,6 +11,6 @@ public class Tl {
     public interface LOG {
         String MODULE = "Πρότυπο";
 
-        LogModule Qr = Log.modulat(MODULE).program("Qr");
+        LogModule Qr = Log.modulat(MODULE).extension("Qr");
     }
 }

@@ -89,11 +89,11 @@ public class At {
     public interface LOG {
         String MODULE = "περιβάλλων";
 
-        LogModule App = Log.modulat(MODULE).program("App");
-        LogModule File = Log.modulat(MODULE).program("File");
-        LogModule Flow = Log.modulat(MODULE).program("Flow");
-        LogModule HES = Log.modulat(MODULE).program("HES");
-        LogModule Init = Log.modulat(MODULE).program("Init");
-        LogModule Tabb = Log.modulat(MODULE).program("Tabb");
+        LogModule App = Log.modulat(MODULE).extension("App");
+        LogModule File = Log.modulat(MODULE).extension("File");
+        LogModule Flow = Log.modulat(MODULE).extension("Flow");
+        LogModule HES = Log.modulat(MODULE).extension("HES");
+        LogModule Init = Log.modulat(MODULE).extension("Init");
+        LogModule Tabb = Log.modulat(MODULE).extension("Tabb");
     }
 }
