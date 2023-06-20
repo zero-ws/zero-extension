@@ -124,6 +124,8 @@ class RegistryKit {
             backend.put(KName.App.APP_PORT, app.getAppPort());
             backend.put(KName.App.ROUTE, app.getRoute());
             normalized.put("backend", backend);
+            // Fix Dynamic Route
+            normalized.put(KName.App.ROUTE, app.getRoute());
             /*
              * Front-End
              * path - front end application information
@@ -136,6 +138,8 @@ class RegistryKit {
             frontend.put(KName.App.URL_ENTRY, app.getUrlEntry());
             frontend.put(KName.App.URL_MAIN, app.getUrlMain());
             normalized.put("frontend", frontend);
+            // Fix Dynamic Route
+            normalized.put(KName.App.PATH, app.getPath());
         }
         /* Auditor information */
         {
