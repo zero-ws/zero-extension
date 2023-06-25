@@ -44,6 +44,14 @@ final class WfConfiguration {
     private WfConfiguration() {
     }
 
+    private static MetaWorkflow configure() {
+        if (Objects.isNull(CONFIG) && ZeroStore.is(YmlCore.workflow.__KEY)) {
+            CONFIG = ZeroStore.option(YmlCore.workflow.__KEY, MetaWorkflow.class, null);
+            LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_T, CONFIG.toString());
+        }
+        return CONFIG;
+    }
+
     static Future<Boolean> registry(final HAmbient ambient, final Vertx vertx) {
         // 截断返回
         if (Objects.nonNull(CONFIG)) {
@@ -56,9 +64,7 @@ final class WfConfiguration {
 
         ambient.registry(module, configJ);
 
-        CONFIG = ZeroStore.option(YmlCore.workflow.__KEY, MetaWorkflow.class, null);
-        LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_T,
-            CONFIG.toString());
+        configure();
 
         final Configuration configuration = Ke.getConfiguration();
         final WFlowDao flowDao = new WFlowDao(configuration, vertx);
@@ -109,7 +115,8 @@ final class WfConfiguration {
     }
 
     static Set<String> camundaBuiltIn() {
-        return Optional.ofNullable(CONFIG)
+        final MetaWorkflow configRef = configure();
+        return Optional.ofNullable(configRef)
             .map(MetaWorkflow::camundaBuiltIn)
             .orElseGet(HashSet::new);
     }
