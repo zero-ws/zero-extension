@@ -5,8 +5,8 @@
         <url>
             <![CDATA[ jdbc:mysql://ox.engine.cn:3306/DB_ETERNAL?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&useSSL=false&allowPublicKeyRetrieval=true ]]>
         </url>
-        <username>${env:Z_DBR_USERNAME}</username>
-        <password>${env:Z_DBR_PASS}</password>
+        <username>${env.Z_DBR_USERNAME}</username>
+        <password>${env.Z_DBR_PASS}</password>
     </jdbc>
     <generator>
         <name>io.github.jklingsporn.vertx.jooq.generate.classic.ClassicJDBCVertxGenerator</name>
@@ -17,7 +17,7 @@
             <overridePrimaryKeys>override_primmary_key</overridePrimaryKeys>
             <name>org.jooq.meta.mysql.MySQLDatabase</name>
             <inputSchema>DB_ETERNAL</inputSchema>
-            <includes>(^(X_).*)</includes>
+            <includes>(^(X_|R_).*)</includes>
             <unsignedTypes>false</unsignedTypes>
         </database>
         <generate>

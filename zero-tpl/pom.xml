@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-tpl</artifactId>
-    <name>Extension / Template Definition Module</name>
+    <name>Ext Configuration / TPL_ / Template Definition</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

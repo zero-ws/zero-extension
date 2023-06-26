@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-atom</artifactId>
-    <name>Extension / Dynamic Modular</name>
+    <name>Ext Dynamic / M_ / Modular</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

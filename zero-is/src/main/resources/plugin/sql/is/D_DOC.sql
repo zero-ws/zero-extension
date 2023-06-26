@@ -1,25 +1,24 @@
 -- liquibase formatted sql
 
--- changeset Lang:i-doc-1
--- 文档专用表：I_DOC
+-- changeset Lang:d-doc-1
+-- 文档专用表：D_DOC
 /*
  * 注意文档和附件的区别，文档更多是用于描述文档的业务属性
  */
-DROP TABLE IF EXISTS I_DOC;
-CREATE TABLE IF NOT EXISTS I_DOC
+DROP TABLE IF EXISTS D_DOC;
+CREATE TABLE IF NOT EXISTS D_DOC
 (
     `KEY`         VARCHAR(36) COMMENT '「key」- 文档主键，唯一标识',
-    `STATUS`      VARCHAR(12) COMMENT '「status」- 状态',
     `CODE`        VARCHAR(255) COMMENT '「code」- 文档系统编号',
-    `TYPE`        VARCHAR(128) COMMENT '「type」- 文档类型，直接关联zero.doc.type 类型：如制度、法规',
+    `STATUS`      VARCHAR(12) COMMENT '「status」- 状态',
+    `TYPE`        VARCHAR(128) COMMENT '「type」- 文档类型，用于指定子表信息',
+    `CATEGORY`    VARCHAR(36) COMMENT '「category」- 文档类别, 关联对应的分类',
     /*
      关于 NAME / TITLE / FILE_NAME 三个属性的不同使用场景
      NAME - 文档名称，可在文档管理中用于别名，通常是文件本身去后缀的名称，存储文件物理属性
-     TITLE - 文档业务名称，内置文档内容的专用标题名
      FILE_NAME - 文档原始文件名，带扩展名，通常是文档上传文件名，下载时可用此作下载文件名
      */
-    `NAME`        VARCHAR(255) COMMENT '「name」- 文件名（带扩展名）',
-    `TITLE`       VARCHAR(255) COMMENT '「title」- 文档标题',
+    `NAME`        VARCHAR(255) COMMENT '「name」- 文档名称',
 
     -- 文档特殊属性
     `SN`          VARCHAR(255) COMMENT '「sn」- 文档编号',
@@ -32,13 +31,7 @@ CREATE TABLE IF NOT EXISTS I_DOC
     `AUTHOR`      VARCHAR(128) COMMENT '「author」- 文档作者',
     `AUTHOR_OR`   LONG COMMENT '「authorOr」- 第二作者、第三作者',
 
-    `ISSUED_BY`   VARCHAR(256) COMMENT '「issuedBy」- 发行机构名称',
-    `ISSUED_AT`   DATETIME COMMENT '「issuedAt」- 发行时间',
-    `ISSUED_SN`   DATETIME COMMENT '「issuedSn」- 发行编号，正式发行编号信息',
-
-    `VALIDITY`    BIT COMMENT '「validity」- 是否包含有效期',
-    `EXPIRED_AT`  DATETIME COMMENT '「expiredAt」- 文档过期时间，若包含有效期此字段必须',
-
+    -- 自引用
     `COPY`        BIT COMMENT '「copy」- 是否副本',
     `COPY_TO`     VARCHAR(36) COMMENT '「copy」- 若是副本，则标注是哪份文档的副本',
 
@@ -63,10 +56,10 @@ CREATE TABLE IF NOT EXISTS I_DOC
     `UPDATED_BY`  VARCHAR(36) COMMENT '「updatedBy」- 更新人',
     PRIMARY KEY (`KEY`) USING BTREE
 );
--- changeset Lang:i-doc-2
-ALTER TABLE I_DOC
+-- changeset Lang:d-doc-2
+ALTER TABLE D_DOC
     ADD UNIQUE (`FILE_KEY`) USING BTREE;
-ALTER TABLE I_DOC
+ALTER TABLE D_DOC
     ADD UNIQUE (`NAME`, `SIGMA`, `VERSION`) USING BTREE;
-ALTER TABLE I_DOC
+ALTER TABLE D_DOC
     ADD UNIQUE (`CODE`, `SIGMA`, `VERSION`) USING BTREE;

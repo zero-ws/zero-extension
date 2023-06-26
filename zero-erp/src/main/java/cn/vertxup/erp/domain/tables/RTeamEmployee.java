@@ -38,6 +38,11 @@ public class RTeamEmployee extends TableImpl<RTeamEmployeeRecord> {
      */
     public final TableField<RTeamEmployeeRecord, String> EMPLOYEE_ID = createField(DSL.name("EMPLOYEE_ID"), SQLDataType.VARCHAR(36).nullable(false), this, "「employeeId」- 员工ID");
     /**
+     * The column <code>DB_ETERNAL.R_TEAM_EMPLOYEE.LINK_COMPONENT</code>.
+     * 「linkComponent」- 关联执行组件（扩展用）
+     */
+    public final TableField<RTeamEmployeeRecord, String> LINK_COMPONENT = createField(DSL.name("LINK_COMPONENT"), SQLDataType.VARCHAR(255), this, "「linkComponent」- 关联执行组件（扩展用）");
+    /**
      * The column <code>DB_ETERNAL.R_TEAM_EMPLOYEE.COMMENT</code>. 「comment」-
      * 关系备注
      */
@@ -134,18 +139,18 @@ public class RTeamEmployee extends TableImpl<RTeamEmployeeRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row3 type methods
+    // Row4 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row3<String, String, String> fieldsRow() {
-        return (Row3) super.fieldsRow();
+    public Row4<String, String, String, String> fieldsRow() {
+        return (Row4) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function3<? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function4<? super String, ? super String, ? super String, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -153,7 +158,7 @@ public class RTeamEmployee extends TableImpl<RTeamEmployeeRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function3<? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function4<? super String, ? super String, ? super String, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

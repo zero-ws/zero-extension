@@ -16,7 +16,6 @@ import org.jooq.impl.TableImpl;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 
 
 /**
@@ -94,6 +93,11 @@ public class XNumber extends TableImpl<XNumberRecord> {
      * The column <code>DB_ETERNAL.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public final TableField<XNumberRecord, String> APP_ID = createField(DSL.name("APP_ID"), SQLDataType.VARCHAR(255), this, "「appId」- 关联的应用程序ID");
+    /**
+     * The column <code>DB_ETERNAL.X_NUMBER.RUN_COMPONENT</code>.
+     * 「runComponent」- 发号器执行组件，雪花算法所需
+     */
+    public final TableField<XNumberRecord, String> RUN_COMPONENT = createField(DSL.name("RUN_COMPONENT"), SQLDataType.CLOB, this, "「runComponent」- 发号器执行组件，雪花算法所需");
     /**
      * The column <code>DB_ETERNAL.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
      */
@@ -224,29 +228,5 @@ public class XNumber extends TableImpl<XNumberRecord> {
     @Override
     public XNumber rename(Table<?> name) {
         return new XNumber(name.getQualifiedName(), null);
-    }
-
-    // -------------------------------------------------------------------------
-    // Row22 type methods
-    // -------------------------------------------------------------------------
-
-    @Override
-    public Row22<String, String, String, Long, String, String, String, String, String, Integer, Integer, Boolean, String, Boolean, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row22) super.fieldsRow();
-    }
-
-    /**
-     * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
-     */
-    public <U> SelectField<U> mapping(Function22<? super String, ? super String, ? super String, ? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Boolean, ? super String, ? super Boolean, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
-        return convertFrom(Records.mapping(from));
-    }
-
-    /**
-     * Convenience mapping calling {@link SelectField#convertFrom(Class,
-     * Function)}.
-     */
-    public <U> SelectField<U> mapping(Class<U> toType, Function22<? super String, ? super String, ? super String, ? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Boolean, ? super String, ? super Boolean, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
-        return convertFrom(toType, Records.mapping(from));
     }
 }

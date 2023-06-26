@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-ui</artifactId>
-    <name>Extension / Web UI ( React )</name>
+    <name>Ext Dynamic / UI_ / Web UI ( React )</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

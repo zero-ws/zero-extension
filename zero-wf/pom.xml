@@ -11,7 +11,7 @@
 
     <artifactId>zero-wf</artifactId>
 
-    <name>Extension / Workflow Engine ( Camunda )</name>
+    <name>Ext Configuration / W_ / Workflow ( Camunda )</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

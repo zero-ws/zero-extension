@@ -58,5 +58,5 @@ databaseChangeLog:
       file: plugin/sql/ambient/X_TAG.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ambient/R_TAB_ENTITY.sql
+      file: plugin/sql/ambient/R_TAG_ENTITY.sql
       relativeToChangelogFile: false

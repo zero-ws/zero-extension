@@ -64,9 +64,9 @@ public class EBrand extends TableImpl<EBrandRecord> {
     public final TableField<EBrandRecord, String> CATEGORY_NAME = createField(DSL.name("CATEGORY_NAME"), SQLDataType.VARCHAR(128), this, "「categoryName」- 类别名称");
     /**
      * The column <code>DB_ETERNAL.E_BRAND.AREA</code>. 「area」-
-     * GB/T2659-2000国际标准区域码
+     * 区域码，如：GB/T2659-2000国际标准
      */
-    public final TableField<EBrandRecord, String> AREA = createField(DSL.name("AREA"), SQLDataType.VARCHAR(128), this, "「area」- GB/T2659-2000国际标准区域码");
+    public final TableField<EBrandRecord, String> AREA = createField(DSL.name("AREA"), SQLDataType.VARCHAR(128), this, "「area」- 区域码，如：GB/T2659-2000国际标准");
     /**
      * The column <code>DB_ETERNAL.E_BRAND.AREA_NAME</code>. 「areaName」- 区域名称
      */

@@ -4,10 +4,7 @@
 package cn.vertxup.integration.domain;
 
 
-import cn.vertxup.integration.domain.tables.IDirectory;
-import cn.vertxup.integration.domain.tables.IIntegration;
-import cn.vertxup.integration.domain.tables.IMessage;
-import cn.vertxup.integration.domain.tables.IPortfolio;
+import cn.vertxup.integration.domain.tables.*;
 import io.vertx.mod.ke.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
@@ -28,6 +25,36 @@ public class Db extends SchemaImpl {
      */
     public static final Db DB_ETERNAL = new Db();
     private static final long serialVersionUID = 1L;
+    /**
+     * The table <code>DB_ETERNAL.D_COMMENT</code>.
+     */
+    public final DComment D_COMMENT = DComment.D_COMMENT;
+
+    /**
+     * The table <code>DB_ETERNAL.D_DOC</code>.
+     */
+    public final DDoc D_DOC = DDoc.D_DOC;
+
+    /**
+     * The table <code>DB_ETERNAL.D_DOC_CLAUSE</code>.
+     */
+    public final DDocClause D_DOC_CLAUSE = DDocClause.D_DOC_CLAUSE;
+
+    /**
+     * The table <code>DB_ETERNAL.D_DOC_SEGMENT</code>.
+     */
+    public final DDocSegment D_DOC_SEGMENT = DDocSegment.D_DOC_SEGMENT;
+
+    /**
+     * The table <code>DB_ETERNAL.D_REFER</code>.
+     */
+    public final DRefer D_REFER = DRefer.D_REFER;
+
+    /**
+     * The table <code>DB_ETERNAL.D_RESULT</code>.
+     */
+    public final DResult D_RESULT = DResult.D_RESULT;
+
     /**
      * The table <code>DB_ETERNAL.I_DIRECTORY</code>.
      */
@@ -64,6 +91,12 @@ public class Db extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            DComment.D_COMMENT,
+            DDoc.D_DOC,
+            DDocClause.D_DOC_CLAUSE,
+            DDocSegment.D_DOC_SEGMENT,
+            DRefer.D_REFER,
+            DResult.D_RESULT,
             IDirectory.I_DIRECTORY,
             IIntegration.I_INTEGRATION,
             IMessage.I_MESSAGE,

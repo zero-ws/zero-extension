@@ -36,12 +36,17 @@ public class RAssetShare extends TableImpl<RAssetShareRecord> {
      * The column <code>DB_ETERNAL.R_ASSET_SHARE.ENTITY_TYPE</code>.
      * 「entityType」- 关联类型
      */
-    public final TableField<RAssetShareRecord, String> ENTITY_TYPE = createField(DSL.name("ENTITY_TYPE"), SQLDataType.VARCHAR(255).nullable(false), this, "「entityType」- 关联类型");
+    public final TableField<RAssetShareRecord, String> ENTITY_TYPE = createField(DSL.name("ENTITY_TYPE"), SQLDataType.VARCHAR(64).nullable(false), this, "「entityType」- 关联类型");
     /**
      * The column <code>DB_ETERNAL.R_ASSET_SHARE.ENTITY_ID</code>. 「entityId」-
      * 关联实体ID
      */
     public final TableField<RAssetShareRecord, String> ENTITY_ID = createField(DSL.name("ENTITY_ID"), SQLDataType.VARCHAR(36).nullable(false), this, "「entityId」- 关联实体ID");
+    /**
+     * The column <code>DB_ETERNAL.R_ASSET_SHARE.LINK_COMPONENT</code>.
+     * 「linkComponent」- 关联执行组件（扩展用）
+     */
+    public final TableField<RAssetShareRecord, String> LINK_COMPONENT = createField(DSL.name("LINK_COMPONENT"), SQLDataType.VARCHAR(255), this, "「linkComponent」- 关联执行组件（扩展用）");
     /**
      * The column <code>DB_ETERNAL.R_ASSET_SHARE.COMMENT</code>. 「comment」- 关系备注
      */
@@ -138,18 +143,18 @@ public class RAssetShare extends TableImpl<RAssetShareRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row4 type methods
+    // Row5 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row4<String, String, String, String> fieldsRow() {
-        return (Row4) super.fieldsRow();
+    public Row5<String, String, String, String, String> fieldsRow() {
+        return (Row5) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function4<? super String, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function5<? super String, ? super String, ? super String, ? super String, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -157,7 +162,7 @@ public class RAssetShare extends TableImpl<RAssetShareRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function4<? super String, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function5<? super String, ? super String, ? super String, ? super String, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

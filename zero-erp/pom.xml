@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-erp</artifactId>
-    <name>Extension / Enterprise Resource</name>
+    <name>Extension / E_ / ERP Module</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

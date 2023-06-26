@@ -39,7 +39,7 @@ build/
 .idea/
 document/
 *.versionsBackup
-script/code/*.jar
+*/script/code/*.jar
 git-push.sh
 git-upstream.sh
 tree.txt

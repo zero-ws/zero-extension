@@ -59,6 +59,14 @@ public class XTag extends TableImpl<XTagRecord> {
      */
     public final TableField<XTagRecord, String> DESCRIPTION = createField(DSL.name("DESCRIPTION"), SQLDataType.CLOB, this, "「description」- 标签描述");
     /**
+     * The column <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     */
+    public final TableField<XTagRecord, String> UI_STYLE = createField(DSL.name("UI_STYLE"), SQLDataType.CLOB, this, "「uiStyle」- 标签的其他风格处理");
+    /**
+     * The column <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     */
+    public final TableField<XTagRecord, String> UI_CONFIG = createField(DSL.name("UI_CONFIG"), SQLDataType.CLOB, this, "「uiConfig」- 标签的其他配置");
+    /**
      * The column <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public final TableField<XTagRecord, String> APP_ID = createField(DSL.name("APP_ID"), SQLDataType.VARCHAR(255), this, "「appId」- 关联的应用程序ID");
@@ -191,18 +199,18 @@ public class XTag extends TableImpl<XTagRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row16 type methods
+    // Row18 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row16<String, String, String, String, Long, Boolean, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row16) super.fieldsRow();
+    public Row18<String, String, String, String, Long, Boolean, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row18) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function16<? super String, ? super String, ? super String, ? super String, ? super Long, ? super Boolean, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function18<? super String, ? super String, ? super String, ? super String, ? super Long, ? super Boolean, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -210,7 +218,7 @@ public class XTag extends TableImpl<XTagRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function16<? super String, ? super String, ? super String, ? super String, ? super Long, ? super Boolean, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function18<? super String, ? super String, ? super String, ? super String, ? super Long, ? super Boolean, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

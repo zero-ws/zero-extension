@@ -4,14 +4,27 @@
 package cn.vertxup.integration.domain;
 
 
+import cn.vertxup.integration.domain.tables.DComment;
+import cn.vertxup.integration.domain.tables.DDoc;
+import cn.vertxup.integration.domain.tables.DDocClause;
+import cn.vertxup.integration.domain.tables.DDocSegment;
+import cn.vertxup.integration.domain.tables.DRefer;
+import cn.vertxup.integration.domain.tables.DResult;
 import cn.vertxup.integration.domain.tables.IDirectory;
 import cn.vertxup.integration.domain.tables.IIntegration;
 import cn.vertxup.integration.domain.tables.IMessage;
 import cn.vertxup.integration.domain.tables.IPortfolio;
+import cn.vertxup.integration.domain.tables.records.DCommentRecord;
+import cn.vertxup.integration.domain.tables.records.DDocClauseRecord;
+import cn.vertxup.integration.domain.tables.records.DDocRecord;
+import cn.vertxup.integration.domain.tables.records.DDocSegmentRecord;
+import cn.vertxup.integration.domain.tables.records.DReferRecord;
+import cn.vertxup.integration.domain.tables.records.DResultRecord;
 import cn.vertxup.integration.domain.tables.records.IDirectoryRecord;
 import cn.vertxup.integration.domain.tables.records.IIntegrationRecord;
 import cn.vertxup.integration.domain.tables.records.IMessageRecord;
 import cn.vertxup.integration.domain.tables.records.IPortfolioRecord;
+
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -29,6 +42,16 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<DCommentRecord> KEY_D_COMMENT_PRIMARY = Internal.createUniqueKey(DComment.D_COMMENT, DSL.name("KEY_D_COMMENT_PRIMARY"), new TableField[] { DComment.D_COMMENT.KEY }, true);
+    public static final UniqueKey<DDocRecord> KEY_D_DOC_CODE = Internal.createUniqueKey(DDoc.D_DOC, DSL.name("KEY_D_DOC_CODE"), new TableField[] { DDoc.D_DOC.CODE, DDoc.D_DOC.SIGMA, DDoc.D_DOC.VERSION }, true);
+    public static final UniqueKey<DDocRecord> KEY_D_DOC_FILE_KEY = Internal.createUniqueKey(DDoc.D_DOC, DSL.name("KEY_D_DOC_FILE_KEY"), new TableField[] { DDoc.D_DOC.FILE_KEY }, true);
+    public static final UniqueKey<DDocRecord> KEY_D_DOC_NAME = Internal.createUniqueKey(DDoc.D_DOC, DSL.name("KEY_D_DOC_NAME"), new TableField[] { DDoc.D_DOC.NAME, DDoc.D_DOC.SIGMA, DDoc.D_DOC.VERSION }, true);
+    public static final UniqueKey<DDocRecord> KEY_D_DOC_PRIMARY = Internal.createUniqueKey(DDoc.D_DOC, DSL.name("KEY_D_DOC_PRIMARY"), new TableField[] { DDoc.D_DOC.KEY }, true);
+    public static final UniqueKey<DDocClauseRecord> KEY_D_DOC_CLAUSE_PRIMARY = Internal.createUniqueKey(DDocClause.D_DOC_CLAUSE, DSL.name("KEY_D_DOC_CLAUSE_PRIMARY"), new TableField[] { DDocClause.D_DOC_CLAUSE.KEY }, true);
+    public static final UniqueKey<DDocSegmentRecord> KEY_D_DOC_SEGMENT_NAME = Internal.createUniqueKey(DDocSegment.D_DOC_SEGMENT, DSL.name("KEY_D_DOC_SEGMENT_NAME"), new TableField[] { DDocSegment.D_DOC_SEGMENT.NAME, DDocSegment.D_DOC_SEGMENT.DOC_ID, DDocSegment.D_DOC_SEGMENT.PARENT_ID }, true);
+    public static final UniqueKey<DDocSegmentRecord> KEY_D_DOC_SEGMENT_PRIMARY = Internal.createUniqueKey(DDocSegment.D_DOC_SEGMENT, DSL.name("KEY_D_DOC_SEGMENT_PRIMARY"), new TableField[] { DDocSegment.D_DOC_SEGMENT.KEY }, true);
+    public static final UniqueKey<DReferRecord> KEY_D_REFER_PRIMARY = Internal.createUniqueKey(DRefer.D_REFER, DSL.name("KEY_D_REFER_PRIMARY"), new TableField[] { DRefer.D_REFER.FROM_ID, DRefer.D_REFER.FROM_TYPE, DRefer.D_REFER.TO_ID, DRefer.D_REFER.TO_TYPE }, true);
+    public static final UniqueKey<DResultRecord> KEY_D_RESULT_PRIMARY = Internal.createUniqueKey(DResult.D_RESULT, DSL.name("KEY_D_RESULT_PRIMARY"), new TableField[] { DResult.D_RESULT.KEY }, true);
     public static final UniqueKey<IDirectoryRecord> KEY_I_DIRECTORY_CODE = Internal.createUniqueKey(IDirectory.I_DIRECTORY, DSL.name("KEY_I_DIRECTORY_CODE"), new TableField[] { IDirectory.I_DIRECTORY.CODE, IDirectory.I_DIRECTORY.SIGMA }, true);
     public static final UniqueKey<IDirectoryRecord> KEY_I_DIRECTORY_NAME = Internal.createUniqueKey(IDirectory.I_DIRECTORY, DSL.name("KEY_I_DIRECTORY_NAME"), new TableField[] { IDirectory.I_DIRECTORY.NAME, IDirectory.I_DIRECTORY.PARENT_ID, IDirectory.I_DIRECTORY.SIGMA }, true);
     public static final UniqueKey<IDirectoryRecord> KEY_I_DIRECTORY_PRIMARY = Internal.createUniqueKey(IDirectory.I_DIRECTORY, DSL.name("KEY_I_DIRECTORY_PRIMARY"), new TableField[] { IDirectory.I_DIRECTORY.KEY }, true);

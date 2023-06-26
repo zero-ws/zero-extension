@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-crud</artifactId>
-    <name>Extension Component / CRUD Normalization</name>
+    <name>Ext Rapid / CRUD Normalization</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

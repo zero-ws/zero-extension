@@ -26,6 +26,11 @@ public class Db extends SchemaImpl {
     public static final Db DB_ETERNAL = new Db();
     private static final long serialVersionUID = 1L;
     /**
+     * The table <code>DB_ETERNAL.R_TAG_OBJECT</code>.
+     */
+    public final RTagObject R_TAG_OBJECT = RTagObject.R_TAG_OBJECT;
+
+    /**
      * The table <code>DB_ETERNAL.X_ACTIVITY</code>.
      */
     public final XActivity X_ACTIVITY = XActivity.X_ACTIVITY;
@@ -116,6 +121,7 @@ public class Db extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            RTagObject.R_TAG_OBJECT,
             XActivity.X_ACTIVITY,
             XActivityChange.X_ACTIVITY_CHANGE,
             XActivityRule.X_ACTIVITY_RULE,
