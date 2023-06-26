@@ -53,10 +53,6 @@ final class WfConfiguration {
     }
 
     static Future<Boolean> registry(final HAmbient ambient, final Vertx vertx) {
-        // 截断返回
-        if (Objects.nonNull(CONFIG)) {
-            return Future.succeededFuture(Boolean.TRUE);
-        }
         final JsonObject configJ = ZeroStore.option(YmlCore.workflow.__KEY);
         final String module = Ke.getExtension(KeIpc.Module.WF);
         LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_J,
