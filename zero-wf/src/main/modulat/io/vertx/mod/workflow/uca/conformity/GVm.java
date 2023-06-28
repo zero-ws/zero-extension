@@ -58,11 +58,33 @@ public final class GVm {
 
     public static void finish(final JsonObject params, final WTransition wTransition) {
         final String status = Ut.valueString(params, KName.STATUS);
+        final String phase = Ut.valueString(params, KName.PHASE);
         /*
-         * 状态改动成 FINISHED 的基础条件设置
+         * 此处重做关闭流程
+         * 1）先检查状态，若状态为空则表示开始流程
+         *    status = FINISHED 的结果
+         * 2）若状态不为空，则表示中间流程
+         *    phase = REJECTED 则表示拒绝
+         *    phase != REJECTED 则表示完成
+         * 暂时以此种方案为主
          */
-        if (Ut.isNil(status) || TodoStatus.PENDING.name().equals(status)) {
+        if (Ut.isNil(status)) {
+            // 开始流程
+            // status = null ----> FINISHED
             params.put(KName.STATUS, TodoStatus.FINISHED.name());
+        } else {
+            // 中间流程
+            if (TodoStatus.REJECTED.name().equals(phase)) {
+                // 拒绝
+                // phase = REJECTED ----> REJECTED
+                params.put(KName.STATUS, TodoStatus.REJECTED.name());
+            } else {
+                // 不拒绝
+                // status = PENDING: 完成处理
+                if (TodoStatus.PENDING.name().equals(status)) {
+                    params.put(KName.STATUS, TodoStatus.FINISHED.name());
+                }
+            }
         }
     }
 
