@@ -14,6 +14,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.workflow.atom.EngineOn;
 import io.vertx.mod.workflow.atom.configuration.MetaInstance;
+import io.vertx.mod.workflow.error._410TaskStateException;
 import io.vertx.mod.workflow.uca.camunda.Io;
 import io.vertx.mod.workflow.uca.modeling.ActionOn;
 import io.vertx.up.eon.KName;
@@ -295,7 +296,12 @@ public class WRecord implements Serializable {
             Objects.requireNonNull(todo);
             final Io<Task> ioTask = Io.ioTask();
             final String taskId = todo.getTaskId();
-            return ioTask.run(taskId).compose(ioFlow::run);
+            return ioTask.run(taskId).compose(task -> {
+                if (Objects.isNull(task)) {
+                    return Fn.outWeb(_410TaskStateException.class, this.getClass(), taskId);
+                }
+                return ioFlow.run(task);
+            });
         } else {
             // Instance must not be null
             Objects.requireNonNull(this.ticket);
