@@ -6,7 +6,7 @@ import cn.vertxup.workflow.service.TaskStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.workflow.uca.conformity.GVm;
+import io.vertx.mod.workflow.uca.transition.Vm;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -79,7 +79,7 @@ public class ReportActor {
         // -- DRAFT
         // -- ACCEPTED
         final JsonObject qrStatus = Ux.whereAnd();
-        qrStatus.put(KName.STATUS + ",i", GVm.Status.QUEUE);
+        qrStatus.put(KName.STATUS + ",i", Vm.Status.QUEUE);
         final JsonObject qrCombine = Ux.irAndQH(qr, "$Q$", qrStatus);
         LOG.Queue.info(this.getClass(), "Qr Report Combined: {0}", qrCombine.encode());
         return this.taskStub.fetchQueue(qrCombine); // this.condStub.qrQueue(qr, userId)

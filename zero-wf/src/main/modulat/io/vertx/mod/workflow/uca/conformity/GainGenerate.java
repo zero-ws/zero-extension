@@ -4,6 +4,8 @@ import cn.vertxup.workflow.domain.tables.pojos.WTicket;
 import cn.vertxup.workflow.domain.tables.pojos.WTodo;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.workflow.uca.transition.Vm;
+import io.vertx.mod.workflow.uca.transition.VmOf;
 import io.vertx.up.unity.Ux;
 import org.camunda.bpm.engine.task.Task;
 
@@ -29,7 +31,8 @@ class GainGenerate extends AbstractGain {
             generated.setCommentReject(null);
 
             // Status by VM
-            GVm.generate(generated, wTask, this.ticket);
+            final Vm vm = VmOf.gateway(wTask);
+            vm.generate(generated, wTask, this.ticket);
 
             // Auditor Processing
             generated.setFinishedAt(null);

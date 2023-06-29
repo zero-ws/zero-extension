@@ -9,7 +9,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.workflow.error._404ProcessMissingException;
 import io.vertx.mod.workflow.uca.camunda.Io;
-import io.vertx.mod.workflow.uca.conformity.GVm;
+import io.vertx.mod.workflow.uca.transition.Vm;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.commune.config.XHeader;
@@ -115,7 +115,7 @@ public class QueueActor {
         // -- DRAFT
         // -- ACCEPTED
         final JsonObject qrStatus = Ux.whereAnd();
-        qrStatus.put(KName.STATUS + ",i", GVm.Status.QUEUE);
+        qrStatus.put(KName.STATUS + ",i", Vm.Status.QUEUE);
         final JsonObject qrCombine = Ux.irAndQH(qr, "$Q$", qrStatus);
         LOG.Queue.info(this.getClass(), "Qr Queue Combined: {0}", qrCombine.encode());
         return this.taskStub.fetchQueue(qrCombine); // this.condStub.qrQueue(qr, userId)
