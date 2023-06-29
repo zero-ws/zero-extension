@@ -92,6 +92,7 @@ public abstract class AbstractTube implements Tube {
          * LocalDateTime processing
          */
         activity.setCreatedAt(LocalDateTime.now());
+        activity.setCreatedBy(activity.getUpdatedBy());
         activity.setUpdatedAt(LocalDateTime.now());
         /*
          * serial       ( System Generated )
