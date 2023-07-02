@@ -28,10 +28,14 @@ public class GearStandard extends AbstractGear {
         if (Objects.isNull(task)) {
             return Ux.futureL();
         }
-        // 0. Keep the same acceptedBy / toUser value and do nothing
+
+        // 0. Pre-Assignment: toUser -> acceptedBy
+        this.buildAssign(parameters);
+
+        // 1. Keep the same acceptedBy / toUser value and do nothing
         final Gain starter = Gain.starter(ticket);
         return starter.buildAsync(parameters, task, null).compose(generated -> {
-            // 1. Select Method to set Serial
+            // 2. Select Method to set Serial
             generated.setSerialFork(null);
             this.buildSerial(generated, ticket, null);
 
