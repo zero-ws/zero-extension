@@ -21,10 +21,9 @@ public class HQrHistory implements HQR {
     @Override
     public Future<JsonObject> compile(final JsonObject data, final JsonObject qr) {
         final String userKey = Ut.valueString(data, KName.USER);
-        // 默认条件:  openGroup is null AND acceptedGroup is null
+        // 默认条件:  openGroup is null
         final JsonObject defaultQr = Ux.whereAnd()
-            .put("openGroup,n", VString.EMPTY)
-            .put("acceptedGroup,n", VString.EMPTY);
+            .put("openGroup,n", VString.EMPTY);
 
         return Ux.channel(ExUser.class, () -> defaultQr, stub -> stub.userGroup(userKey).compose(groups -> {
             // groups information
@@ -35,8 +34,6 @@ public class HQrHistory implements HQR {
             combineQr.put("$DFT$", defaultQr);
             // openGroup
             combineQr.put("openGroup,i", groups);
-            // acceptedGroup
-            Ut.itJArray(groups, String.class, (group, index) -> combineQr.put("acceptedGroup,c", group));
 
             return Ux.future(combineQr);
         }));
