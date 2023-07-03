@@ -4,7 +4,6 @@ import cn.vertxup.integration.domain.tables.daos.IDirectoryDao;
 import cn.vertxup.integration.domain.tables.pojos.IDirectory;
 import io.horizon.atom.program.Kv;
 import io.horizon.eon.VString;
-import io.horizon.eon.em.typed.ChangeFlag;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -160,43 +159,6 @@ class IsDir {
             }
         }
         return Ux.Jooq.on(IDirectoryDao.class).fetchAsync(condition);
-    }
-
-    static ConcurrentMap<ChangeFlag, JsonArray> diff(final JsonArray input, final List<IDirectory> directories) {
-        /*
-         *  IDirectory
-         */
-        final ConcurrentMap<String, IDirectory> directoryMap = Ut.elementMap(directories, IDirectory::getStorePath);
-        final JsonArray queueAD = new JsonArray();
-        final JsonArray queueUP = new JsonArray();
-
-        Ut.itJArray(input).forEach(json -> {
-            final String path = json.getString(KName.STORE_PATH);
-            if (directoryMap.containsKey(path)) {
-                // UPDATE Queue
-                final JsonObject normalized = Ux.toJson(directoryMap.getOrDefault(path, null));
-                queueUP.add(normalized);
-                directoryMap.remove(path);
-            } else {
-                // ADD Queue
-                queueAD.add(json);
-            }
-        });
-        final JsonArray queueDft = new JsonArray();
-        if (!directoryMap.isEmpty()) {
-            directoryMap.values().forEach(item -> {
-                final JsonObject record = Ux.toJson(item);
-                record.put(KName.DIRECTORY_ID, item.getKey());
-                queueDft.add(record);
-            });
-        }
-        return new ConcurrentHashMap<>() {
-            {
-                this.put(ChangeFlag.ADD, queueAD);
-                this.put(ChangeFlag.UPDATE, queueUP);
-                this.put(ChangeFlag.NONE, queueDft);
-            }
-        };
     }
 
     /*

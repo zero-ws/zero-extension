@@ -29,9 +29,9 @@ public class ExPath implements ExIo {
     @Override
     public Future<JsonArray> docInitialize(final JsonArray data, final JsonObject config) {
         /*
-         * 1. Fetch all data of IDirectory
-         * -- The condition is `storePath` instead of other information
-         * 2. Build the map of `storePath = IDirectory`, here will put `directoryId` into each data
+         * 新版文档管理目录的初始化流程
+         * 1. 读取所有 IDirectory 记录，条件中包含 storePath
+         * 2. 构造 storePath = IDirectory 的 Map，同时将 directoryId 放入每个数据中
          */
         return Is.fsDocument(data, config).compose(Is::dataOut);
     }

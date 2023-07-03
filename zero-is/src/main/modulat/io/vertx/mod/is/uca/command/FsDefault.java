@@ -62,8 +62,15 @@ public class FsDefault extends AbstractFs {
 
     @Override
     public Future<JsonArray> synchronize(final JsonArray data, final JsonObject config) {
-        // Data Part for I_DIRECTORY Initializing
-        return this.initialize(data, config).compose(this::mkdir);
+        return this.initialize(data, config)
+            /*
+             * 新版此处需注意
+             * - initialize 方法的返回值为插入数据，即新增的数据，若是因为做迁移会导致迁移的
+             *   目录数据并未在 inserted 数据中，所以此处的 inserted 不可以用来执行 mkdir
+             *   的指令
+             * - mkdir 应该具有一定幂等性，可反复执行，而真正需要同步的目录为 data 传入数据
+             */
+            .compose(inserted -> this.mkdir(data));
     }
 
     @Override

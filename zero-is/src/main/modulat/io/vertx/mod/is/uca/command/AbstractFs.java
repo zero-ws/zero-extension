@@ -21,52 +21,64 @@ import java.util.concurrent.ConcurrentMap;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public abstract class AbstractFs implements Fs {
-    /*
-     *  storeParent calculating
-     *  1. Here the integrationId must be the same
+    /**
+     * 此方法为初始化文档存储的专用方法，且实现基于子类来完成
+     *
+     * @param data   传入的目录数据
+     * @param config 传入的配置数据
+     *
+     * @return 返回初始化后的数据
      */
     protected Future<JsonArray> initialize(final JsonArray data, final JsonObject config) {
-        final JsonArray formatted = data.copy();
-        Ut.itJArray(formatted).forEach(json -> json.put(KName.KEY, UUID.randomUUID().toString()));
         /*
-         * Group by `storePath`
-         * Group by `storeParent`
+         * 步骤一：根据传入数据执行初始化行为，传入数据中
+         * - 如果带有 key 则证明是已经初始化过的数据，直接返回
+         * - 如果不带 key 则证明是新数据，执行初始化（添加逻辑）
+         */
+        final JsonArray formatted = data.copy();
+        Ut.itJArray(formatted).forEach(json -> {
+            if (!json.containsKey(KName.KEY)) {
+                json.put(KName.KEY, UUID.randomUUID().toString());
+            }
+        });
+
+
+        /*
+         * 步骤二：分组执行
+         * - storePath,   根据存储路径的分组
+         * - storeParent, 根据存储路径中的父路径的分组
          */
         final ConcurrentMap<String, JsonObject> stored = Ut.elementMap(formatted, KName.STORE_PATH);
         final ConcurrentMap<String, JsonArray> storeParent = Ut.elementGroup(formatted, KName.STORE_PARENT);
+
+
         /*
-         * Fetch by `parent`
+         * 步骤三：执行所有父路径的严格模式读取，若前边传入已经存在路径信息，则这种读取方法会直接读取这些传入路径的所有父路径信息
+         * - 1. 直接使用 IN 语法严格读取所有付路径 storeParent 关联的存储目录数据
+         * - 2. 读取的数据会被存储到 storeMap 中，storePath = IDirectory（父路径目录中的键为 storePath 属性对应的值）
          */
         return Is.directoryQr(formatted, KName.STORE_PARENT, true).compose(queried -> {
-            /*
-             * Apply data by storeParent
-             */
             final ConcurrentMap<String, IDirectory> storeMap = Ut.elementMap(queried, IDirectory::getStorePath);
 
+
+            // 此处直接提取配置数据中的 initialize 属性的相关信息，此属性中包含了初始化的基础信息
+            final JsonObject initialize = config.getJsonObject(KName.INITIALIZE, new JsonObject());
+
+
             /*
-             * storeParent:
-             * -- parentPath = Data
-             * storeParentMap
-             * -- parentPath = Data
+             * 步骤四：添加队列计算，此处方法只执行初始化，所以只做数据插入，若本身存在，由于是初始化生命周期，依旧不做任何
+             * 数据同步的操作（不执行UPDATE），而在添加过程中根据 initialize 中的基础配置数据执行两种初始化
+             * - 基础初始化（可重写），调用内置方法 initialize
+             * - 父目录结构初始化（可重写），调用内置方法 initialize
              */
             final List<IDirectory> inserted = new ArrayList<>();
-            final JsonObject initialize = config.getJsonObject(KName.INITIALIZE, new JsonObject());
-            /*
-             * Initialized for queueAdd
-             */
             storeParent.forEach((pathParent, dataGroup) -> {
                 final IDirectory storeObj = storeMap.get(pathParent);
                 final JsonObject storeInput = stored.get(pathParent);
                 Ut.itJArray(dataGroup).forEach(json -> {
                     final JsonObject dataRecord = json.copy();
-                    /*
-                     * sync 2 steps
-                     * 1. basic information
-                     * 2. parent information
-                     */
                     final JsonObject directoryJ = this.initialize(dataRecord, initialize);
                     final IDirectory normalized = this.initialize(directoryJ, storeObj, storeInput);
-
                     inserted.add(normalized);
                 });
             });
