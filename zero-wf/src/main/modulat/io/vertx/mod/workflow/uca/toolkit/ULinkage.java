@@ -41,10 +41,22 @@ public class ULinkage {
 
     public static Future<WRecord> readLinkage(final WRecord record) {
         final ULinkage helper = new ULinkage(record);
-        return helper.fetchAsync(record);
+        return helper.fetchAsync(record, false);
     }
 
-    private Future<WRecord> fetchAsync(final WRecord record) {
+    /*
+     * 算法切换，针对当前 record 以及上一个 record 其加载流程会有少许变化，主要在于 Linkage 部分的小范围加载
+     * 1）如果 previous = false
+     *    则表示当前 record 为新创建的 record，此时需要加载所有的 Linkage，且执行强制加载，做 linkage 的刷新
+     * 2）如果 previous = true
+     *    则表示当前 record 为上一个 record，此时加载要引入只加载一次的核心算法
+     *    - 更新之前，同上边流程
+     *    - 更新之后，若 linkage 部分已经有数据则不再加载数据
+     *
+     * FIX: 附件上传时新旧值一样的问题
+     *      https://e.gitee.com/szzw/issues/table?issue=I7HOTO
+     */
+    private Future<WRecord> fetchAsync(final WRecord record, final boolean previous) {
         // Linkage Extract
         if (this.metadata.linkSkip()) {
             return Ux.future(record);
@@ -59,7 +71,18 @@ public class ULinkage {
             futures.put(field, respect.fetchAsync(record));
         });
         return Fn.combineM(futures).compose(dataMap -> {
-            dataMap.forEach(record::linkage);
+            dataMap.forEach((field, linkageData) -> {
+                if (previous) {
+                    final JsonArray stored = record.linkage(field);
+                    if (Ut.isNil(stored)) {
+                        // 尺寸为 0 时加载，只加载一次
+                        record.linkage(field, linkageData);
+                    }
+                } else {
+                    // 强制加载
+                    record.linkage(field, linkageData);
+                }
+            });
             return Ux.future(record);
         });
     }
@@ -70,7 +93,7 @@ public class ULinkage {
          */
         final WRecord prev = record.prev();
         if (Objects.nonNull(prev) && prev.data().size() > 0) {
-            return this.fetchAsync(prev).compose(prevRecord -> {
+            return this.fetchAsync(prev, true).compose(prevRecord -> {
                 record.prev(prevRecord);
                 return this.syncAsyncInternal(params, record);
             });

@@ -30,7 +30,11 @@ public class MoveOnGenerate extends AbstractMoveOn {
          **/
         final JsonObject requestJ = request.request();
         return this.todoKit.generateAsync(requestJ, wTransition, request.record())
-            // Linkage Sync
+            /*
+             * 此处同步数据基础信息，但不重新加载 linkage 数据信息，由于 linkage 数据信息在此处执行时
+             * 已经存在，若重新加载位于更新之后，会加载到更新之后的数据信息作为最终数据信息，所以此处
+             * 针对 record 需要调整，检查 record 信息如下
+             */
             .compose(record -> this.linkageKit.syncAsync(requestJ, record));
     }
 }

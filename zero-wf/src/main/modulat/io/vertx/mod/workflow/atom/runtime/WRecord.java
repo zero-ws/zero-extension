@@ -166,6 +166,10 @@ public class WRecord implements Serializable {
         return this;
     }
 
+    public JsonArray linkage(final String field) {
+        return this.linkage.getOrDefault(field, new JsonArray());
+    }
+
 
     // ------------- Field Get
     /*
