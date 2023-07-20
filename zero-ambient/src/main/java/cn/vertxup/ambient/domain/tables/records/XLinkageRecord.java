@@ -28,7 +28,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Setter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     @Override
     public XLinkageRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Getter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Setter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     @Override
     public XLinkageRecord setName(String value) {
@@ -54,7 +54,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Getter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     @Override
     public String getName() {
@@ -62,7 +62,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Setter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     @Override
     public XLinkageRecord setType(String value) {
@@ -71,7 +71,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Getter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     @Override
     public String getType() {
@@ -79,7 +79,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Setter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     @Override
     public XLinkageRecord setAlias(String value) {
@@ -88,7 +88,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Getter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     @Override
     public String getAlias() {
@@ -96,7 +96,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Setter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     @Override
@@ -106,7 +106,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Getter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     @Override
@@ -115,8 +115,8 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Setter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     @Override
     public XLinkageRecord setLinkKey(String value) {
@@ -125,8 +125,8 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Getter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     @Override
     public String getLinkKey() {
@@ -134,8 +134,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Setter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     @Override
     public XLinkageRecord setLinkType(String value) {
@@ -144,8 +143,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Getter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     @Override
     public String getLinkType() {
@@ -153,8 +151,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Setter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     @Override
     public XLinkageRecord setLinkData(String value) {
@@ -163,8 +160,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Getter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     @Override
     public String getLinkData() {
@@ -172,7 +168,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     @Override
     public XLinkageRecord setSourceKey(String value) {
@@ -181,7 +177,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     @Override
     public String getSourceKey() {
@@ -189,8 +185,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     @Override
     public XLinkageRecord setSourceType(String value) {
@@ -199,8 +194,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     @Override
     public String getSourceType() {
@@ -208,7 +202,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     @Override
@@ -218,7 +212,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     @Override
@@ -227,8 +221,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     @Override
     public XLinkageRecord setTargetKey(String value) {
@@ -237,8 +230,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     @Override
     public String getTargetKey() {
@@ -246,8 +238,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     @Override
     public XLinkageRecord setTargetType(String value) {
@@ -256,8 +247,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     @Override
     public String getTargetType() {
@@ -265,7 +255,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     @Override
@@ -275,7 +265,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     @Override
@@ -284,7 +274,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XLinkageRecord setSigma(String value) {
@@ -293,7 +283,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -301,7 +291,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XLinkageRecord setLanguage(String value) {
@@ -310,7 +300,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -318,7 +308,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XLinkageRecord setActive(Boolean value) {
@@ -327,7 +317,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -335,7 +325,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Setter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public XLinkageRecord setMetadata(String value) {
@@ -344,7 +334,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Getter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public String getMetadata() {
@@ -352,8 +342,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XLinkageRecord setCreatedAt(LocalDateTime value) {
@@ -362,8 +351,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -371,7 +359,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XLinkageRecord setCreatedBy(String value) {
@@ -380,7 +368,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -388,8 +376,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XLinkageRecord setUpdatedAt(LocalDateTime value) {
@@ -398,8 +385,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -407,7 +393,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XLinkageRecord setUpdatedBy(String value) {
@@ -416,7 +402,7 @@ public class XLinkageRecord extends UpdatableRecordImpl<XLinkageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

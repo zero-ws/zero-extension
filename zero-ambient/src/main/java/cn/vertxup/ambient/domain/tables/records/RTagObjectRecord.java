@@ -26,7 +26,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     @Override
     public RTagObjectRecord setTagId(String value) {
@@ -35,7 +35,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     @Override
     public String getTagId() {
@@ -43,8 +43,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     @Override
     public RTagObjectRecord setEntityType(String value) {
@@ -53,8 +52,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     @Override
     public String getEntityType() {
@@ -62,8 +60,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     @Override
     public RTagObjectRecord setEntityId(String value) {
@@ -72,8 +69,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     @Override
     public String getEntityId() {
@@ -81,8 +77,8 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Setter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     @Override
     public RTagObjectRecord setLinkComponent(String value) {
@@ -91,8 +87,8 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Getter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     @Override
     public String getLinkComponent() {
@@ -100,7 +96,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Setter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public RTagObjectRecord setComment(String value) {
@@ -109,7 +105,7 @@ public class RTagObjectRecord extends UpdatableRecordImpl<RTagObjectRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Getter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public String getComment() {

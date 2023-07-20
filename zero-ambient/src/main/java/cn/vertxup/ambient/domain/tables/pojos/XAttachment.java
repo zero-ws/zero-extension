@@ -140,7 +140,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.KEY</code>. 「key」- 附件的ID值
+     * Getter for <code>ZDB.X_ATTACHMENT.KEY</code>. 「key」- 附件的ID值
      */
     @Override
     public String getKey() {
@@ -148,7 +148,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.KEY</code>. 「key」- 附件的ID值
+     * Setter for <code>ZDB.X_ATTACHMENT.KEY</code>. 「key」- 附件的ID值
      */
     @Override
     public XAttachment setKey(String key) {
@@ -157,7 +157,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.NAME</code>. 「name」- 文件名（带扩展名）
+     * Getter for <code>ZDB.X_ATTACHMENT.NAME</code>. 「name」- 文件名（带扩展名）
      */
     @Override
     public String getName() {
@@ -165,7 +165,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.NAME</code>. 「name」- 文件名（带扩展名）
+     * Setter for <code>ZDB.X_ATTACHMENT.NAME</code>. 「name」- 文件名（带扩展名）
      */
     @Override
     public XAttachment setName(String name) {
@@ -174,8 +174,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.EXTENSION</code>. 「extension」-
-     * 文件扩展名
+     * Getter for <code>ZDB.X_ATTACHMENT.EXTENSION</code>. 「extension」- 文件扩展名
      */
     @Override
     public String getExtension() {
@@ -183,8 +182,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.EXTENSION</code>. 「extension」-
-     * 文件扩展名
+     * Setter for <code>ZDB.X_ATTACHMENT.EXTENSION</code>. 「extension」- 文件扩展名
      */
     @Override
     public XAttachment setExtension(String extension) {
@@ -193,7 +191,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.TYPE</code>. 「type」-
+     * Getter for <code>ZDB.X_ATTACHMENT.TYPE</code>. 「type」-
      * 文件类型，直接关联zero.file.tree类型
      */
     @Override
@@ -202,7 +200,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.TYPE</code>. 「type」-
+     * Setter for <code>ZDB.X_ATTACHMENT.TYPE</code>. 「type」-
      * 文件类型，直接关联zero.file.tree类型
      */
     @Override
@@ -212,7 +210,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.MIME</code>. 「mime」- 该文件的MIME类型
+     * Getter for <code>ZDB.X_ATTACHMENT.MIME</code>. 「mime」- 该文件的MIME类型
      */
     @Override
     public String getMime() {
@@ -220,7 +218,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.MIME</code>. 「mime」- 该文件的MIME类型
+     * Setter for <code>ZDB.X_ATTACHMENT.MIME</code>. 「mime」- 该文件的MIME类型
      */
     @Override
     public XAttachment setMime(String mime) {
@@ -229,7 +227,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.SIZE</code>. 「size」- 该文件的尺寸
+     * Getter for <code>ZDB.X_ATTACHMENT.SIZE</code>. 「size」- 该文件的尺寸
      */
     @Override
     public Integer getSize() {
@@ -237,7 +235,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.SIZE</code>. 「size」- 该文件的尺寸
+     * Setter for <code>ZDB.X_ATTACHMENT.SIZE</code>. 「size」- 该文件的尺寸
      */
     @Override
     public XAttachment setSize(Integer size) {
@@ -246,8 +244,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.STATUS</code>. 「status」-
-     * 状态，PROGRESS / SUCCESS
+     * Getter for <code>ZDB.X_ATTACHMENT.STATUS</code>. 「status」- 状态，PROGRESS /
+     * SUCCESS
      */
     @Override
     public String getStatus() {
@@ -255,8 +253,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.STATUS</code>. 「status」-
-     * 状态，PROGRESS / SUCCESS
+     * Setter for <code>ZDB.X_ATTACHMENT.STATUS</code>. 「status」- 状态，PROGRESS /
+     * SUCCESS
      */
     @Override
     public XAttachment setStatus(String status) {
@@ -265,8 +263,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.DIRECTORY_ID</code>.
-     * 「directoryId」- 文件存储所属目录
+     * Getter for <code>ZDB.X_ATTACHMENT.DIRECTORY_ID</code>. 「directoryId」-
+     * 文件存储所属目录
      */
     @Override
     public String getDirectoryId() {
@@ -274,8 +272,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.DIRECTORY_ID</code>.
-     * 「directoryId」- 文件存储所属目录
+     * Setter for <code>ZDB.X_ATTACHMENT.DIRECTORY_ID</code>. 「directoryId」-
+     * 文件存储所属目录
      */
     @Override
     public XAttachment setDirectoryId(String directoryId) {
@@ -284,8 +282,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_WAY</code>. 「storeWay」-
-     * 存储方式，BLOB / FILE / REMOTE
+     * Getter for <code>ZDB.X_ATTACHMENT.STORE_WAY</code>. 「storeWay」- 存储方式，BLOB
+     * / FILE / REMOTE
      */
     @Override
     public String getStoreWay() {
@@ -293,8 +291,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_WAY</code>. 「storeWay」-
-     * 存储方式，BLOB / FILE / REMOTE
+     * Setter for <code>ZDB.X_ATTACHMENT.STORE_WAY</code>. 「storeWay」- 存储方式，BLOB
+     * / FILE / REMOTE
      */
     @Override
     public XAttachment setStoreWay(String storeWay) {
@@ -303,7 +301,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_PATH</code>. 「storePath」-
+     * Getter for <code>ZDB.X_ATTACHMENT.STORE_PATH</code>. 「storePath」-
      * 远程存储的目录信息（显示专用，去服务器和协议部分）
      */
     @Override
@@ -312,7 +310,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_PATH</code>. 「storePath」-
+     * Setter for <code>ZDB.X_ATTACHMENT.STORE_PATH</code>. 「storePath」-
      * 远程存储的目录信息（显示专用，去服务器和协议部分）
      */
     @Override
@@ -322,7 +320,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_URI</code>. 「storeUri」-
+     * Getter for <code>ZDB.X_ATTACHMENT.STORE_URI</code>. 「storeUri」-
      * 远程存储的目录URI部分
      */
     @Override
@@ -331,7 +329,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.STORE_URI</code>. 「storeUri」-
+     * Setter for <code>ZDB.X_ATTACHMENT.STORE_URI</code>. 「storeUri」-
      * 远程存储的目录URI部分
      */
     @Override
@@ -341,7 +339,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_ID</code>. 「modelId」-
+     * Getter for <code>ZDB.X_ATTACHMENT.MODEL_ID</code>. 「modelId」-
      * 关联的模型identifier，用于描述
      */
     @Override
@@ -350,7 +348,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_ID</code>. 「modelId」-
+     * Setter for <code>ZDB.X_ATTACHMENT.MODEL_ID</code>. 「modelId」-
      * 关联的模型identifier，用于描述
      */
     @Override
@@ -360,7 +358,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_KEY</code>. 「modelKey」-
+     * Getter for <code>ZDB.X_ATTACHMENT.MODEL_KEY</code>. 「modelKey」-
      * 关联的模型记录ID，用于描述哪一个Model中的记录
      */
     @Override
@@ -369,7 +367,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_KEY</code>. 「modelKey」-
+     * Setter for <code>ZDB.X_ATTACHMENT.MODEL_KEY</code>. 「modelKey」-
      * 关联的模型记录ID，用于描述哪一个Model中的记录
      */
     @Override
@@ -379,8 +377,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_CATEGORY</code>.
-     * 「modelCategory」- 如果一个模型记录包含多种附件，则需要设置模型相关字段，等价于 field
+     * Getter for <code>ZDB.X_ATTACHMENT.MODEL_CATEGORY</code>. 「modelCategory」-
+     * 如果一个模型记录包含多种附件，则需要设置模型相关字段，等价于 field
      */
     @Override
     public String getModelCategory() {
@@ -388,8 +386,8 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.MODEL_CATEGORY</code>.
-     * 「modelCategory」- 如果一个模型记录包含多种附件，则需要设置模型相关字段，等价于 field
+     * Setter for <code>ZDB.X_ATTACHMENT.MODEL_CATEGORY</code>. 「modelCategory」-
+     * 如果一个模型记录包含多种附件，则需要设置模型相关字段，等价于 field
      */
     @Override
     public XAttachment setModelCategory(String modelCategory) {
@@ -398,7 +396,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_NAME</code>. 「fileName」-
+     * Getter for <code>ZDB.X_ATTACHMENT.FILE_NAME</code>. 「fileName」-
      * 原始文件名（不带扩展名）
      */
     @Override
@@ -407,7 +405,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_NAME</code>. 「fileName」-
+     * Setter for <code>ZDB.X_ATTACHMENT.FILE_NAME</code>. 「fileName」-
      * 原始文件名（不带扩展名）
      */
     @Override
@@ -417,7 +415,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_KEY</code>. 「fileKey」-
+     * Getter for <code>ZDB.X_ATTACHMENT.FILE_KEY</code>. 「fileKey」-
      * TPL模式中的文件唯一的key（全局唯一）
      */
     @Override
@@ -426,7 +424,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_KEY</code>. 「fileKey」-
+     * Setter for <code>ZDB.X_ATTACHMENT.FILE_KEY</code>. 「fileKey」-
      * TPL模式中的文件唯一的key（全局唯一）
      */
     @Override
@@ -436,7 +434,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_URL</code>. 「fileUrl」-
+     * Getter for <code>ZDB.X_ATTACHMENT.FILE_URL</code>. 「fileUrl」-
      * 该文件的下载链接（全局唯一）
      */
     @Override
@@ -445,7 +443,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_URL</code>. 「fileUrl」-
+     * Setter for <code>ZDB.X_ATTACHMENT.FILE_URL</code>. 「fileUrl」-
      * 该文件的下载链接（全局唯一）
      */
     @Override
@@ -455,7 +453,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_PATH</code>. 「filePath」-
+     * Getter for <code>ZDB.X_ATTACHMENT.FILE_PATH</code>. 「filePath」-
      * 该文件的存储地址，FILE时使用
      */
     @Override
@@ -464,7 +462,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.FILE_PATH</code>. 「filePath」-
+     * Setter for <code>ZDB.X_ATTACHMENT.FILE_PATH</code>. 「filePath」-
      * 该文件的存储地址，FILE时使用
      */
     @Override
@@ -474,7 +472,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_ATTACHMENT.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -482,7 +480,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_ATTACHMENT.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XAttachment setActive(Boolean active) {
@@ -491,7 +489,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_ATTACHMENT.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -499,7 +497,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_ATTACHMENT.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XAttachment setSigma(String sigma) {
@@ -508,8 +506,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.X_ATTACHMENT.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -517,8 +514,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.X_ATTACHMENT.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XAttachment setMetadata(String metadata) {
@@ -527,8 +523,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.X_ATTACHMENT.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -536,8 +531,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.X_ATTACHMENT.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XAttachment setLanguage(String language) {
@@ -546,8 +540,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_ATTACHMENT.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -555,8 +548,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_ATTACHMENT.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XAttachment setCreatedAt(LocalDateTime createdAt) {
@@ -565,8 +557,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.X_ATTACHMENT.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -574,8 +565,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.X_ATTACHMENT.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XAttachment setCreatedBy(String createdBy) {
@@ -584,8 +574,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_ATTACHMENT.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -593,8 +582,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_ATTACHMENT.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XAttachment setUpdatedAt(LocalDateTime updatedAt) {
@@ -603,8 +591,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ATTACHMENT.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.X_ATTACHMENT.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -612,8 +599,7 @@ public class XAttachment implements VertxPojo, IXAttachment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ATTACHMENT.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.X_ATTACHMENT.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XAttachment setUpdatedBy(String updatedBy) {

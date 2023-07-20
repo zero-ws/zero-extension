@@ -28,7 +28,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
      */
     @Override
     public XActivityChangeRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
      */
     @Override
     public String getKey() {
@@ -45,8 +45,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>.
-     * 「activityId」- 关联的操作ID
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>. 「activityId」-
+     * 关联的操作ID
      */
     @Override
     public XActivityChangeRecord setActivityId(String value) {
@@ -55,8 +55,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>.
-     * 「activityId」- 关联的操作ID
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>. 「activityId」-
+     * 关联的操作ID
      */
     @Override
     public String getActivityId() {
@@ -64,8 +64,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.TYPE</code>. 「type」-
-     * 字段变更类型：ADD | DELETE | UPDATE 三种
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.TYPE</code>. 「type」- 字段变更类型：ADD |
+     * DELETE | UPDATE 三种
      */
     @Override
     public XActivityChangeRecord setType(String value) {
@@ -74,8 +74,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.TYPE</code>. 「type」-
-     * 字段变更类型：ADD | DELETE | UPDATE 三种
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.TYPE</code>. 「type」- 字段变更类型：ADD |
+     * DELETE | UPDATE 三种
      */
     @Override
     public String getType() {
@@ -83,7 +83,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
      * 待确认变更状态：CONFIRMED | PENDING
      */
     @Override
@@ -93,7 +93,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
      * 待确认变更状态：CONFIRMED | PENDING
      */
     @Override
@@ -102,8 +102,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_NAME</code>.
-     * 「fieldName」- 如果是变更记录则需要生成变更日志
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_NAME</code>. 「fieldName」-
+     * 如果是变更记录则需要生成变更日志
      */
     @Override
     public XActivityChangeRecord setFieldName(String value) {
@@ -112,8 +112,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_NAME</code>.
-     * 「fieldName」- 如果是变更记录则需要生成变更日志
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_NAME</code>. 「fieldName」-
+     * 如果是变更记录则需要生成变更日志
      */
     @Override
     public String getFieldName() {
@@ -121,8 +121,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>.
-     * 「fieldAlias」- 字段对应的别名
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>. 「fieldAlias」-
+     * 字段对应的别名
      */
     @Override
     public XActivityChangeRecord setFieldAlias(String value) {
@@ -131,8 +131,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>.
-     * 「fieldAlias」- 字段对应的别名
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>. 「fieldAlias」-
+     * 字段对应的别名
      */
     @Override
     public String getFieldAlias() {
@@ -140,8 +140,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_TYPE</code>.
-     * 「fieldType」- 变更字段的数据类型，直接从模型定义中读取
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_TYPE</code>. 「fieldType」-
+     * 变更字段的数据类型，直接从模型定义中读取
      */
     @Override
     public XActivityChangeRecord setFieldType(String value) {
@@ -150,8 +150,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_TYPE</code>.
-     * 「fieldType」- 变更字段的数据类型，直接从模型定义中读取
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_TYPE</code>. 「fieldType」-
+     * 变更字段的数据类型，直接从模型定义中读取
      */
     @Override
     public String getFieldType() {
@@ -159,8 +159,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_OLD</code>.
-     * 「valueOld」- 旧值
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_OLD</code>. 「valueOld」- 旧值
      */
     @Override
     public XActivityChangeRecord setValueOld(String value) {
@@ -169,8 +168,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_OLD</code>.
-     * 「valueOld」- 旧值
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_OLD</code>. 「valueOld」- 旧值
      */
     @Override
     public String getValueOld() {
@@ -178,8 +176,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_NEW</code>.
-     * 「valueNew」- 新值
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_NEW</code>. 「valueNew」- 新值
      */
     @Override
     public XActivityChangeRecord setValueNew(String value) {
@@ -188,8 +185,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_NEW</code>.
-     * 「valueNew」- 新值
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_NEW</code>. 「valueNew」- 新值
      */
     @Override
     public String getValueNew() {
@@ -197,8 +193,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」-
-     * 用户组绑定的统一标识
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     @Override
     public XActivityChangeRecord setSigma(String value) {
@@ -207,8 +202,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」-
-     * 用户组绑定的统一标识
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     @Override
     public String getSigma() {
@@ -216,8 +210,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.LANGUAGE</code>.
-     * 「language」- 使用的语言
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XActivityChangeRecord setLanguage(String value) {
@@ -226,8 +219,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.LANGUAGE</code>.
-     * 「language」- 使用的语言
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -235,8 +227,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」-
-     * 是否启用
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XActivityChangeRecord setActive(Boolean value) {
@@ -245,8 +236,7 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」-
-     * 是否启用
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -254,8 +244,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.METADATA</code>.
-     * 「metadata」- 附加配置数据
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.METADATA</code>. 「metadata」-
+     * 附加配置数据
      */
     @Override
     public XActivityChangeRecord setMetadata(String value) {
@@ -264,8 +254,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.METADATA</code>.
-     * 「metadata」- 附加配置数据
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.METADATA</code>. 「metadata」-
+     * 附加配置数据
      */
     @Override
     public String getMetadata() {
@@ -273,8 +263,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_AT</code>. 「createdAt」-
+     * 创建时间
      */
     @Override
     public XActivityChangeRecord setCreatedAt(LocalDateTime value) {
@@ -283,8 +273,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_AT</code>. 「createdAt」-
+     * 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -292,8 +282,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_BY</code>. 「createdBy」-
+     * 创建人
      */
     @Override
     public XActivityChangeRecord setCreatedBy(String value) {
@@ -302,8 +292,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_BY</code>. 「createdBy」-
+     * 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -311,8 +301,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_AT</code>. 「updatedAt」-
+     * 更新时间
      */
     @Override
     public XActivityChangeRecord setUpdatedAt(LocalDateTime value) {
@@ -321,8 +311,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_AT</code>. 「updatedAt」-
+     * 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -330,8 +320,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_BY</code>. 「updatedBy」-
+     * 更新人
      */
     @Override
     public XActivityChangeRecord setUpdatedBy(String value) {
@@ -340,8 +330,8 @@ public class XActivityChangeRecord extends UpdatableRecordImpl<XActivityChangeRe
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_BY</code>. 「updatedBy」-
+     * 更新人
      */
     @Override
     public String getUpdatedBy() {

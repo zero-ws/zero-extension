@@ -128,7 +128,7 @@ public class XNumber implements VertxPojo, IXNumber {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.KEY</code>. 「key」- 主键
+     * Getter for <code>ZDB.X_NUMBER.KEY</code>. 「key」- 主键
      */
     @Override
     public String getKey() {
@@ -136,7 +136,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.KEY</code>. 「key」- 主键
+     * Setter for <code>ZDB.X_NUMBER.KEY</code>. 「key」- 主键
      */
     @Override
     public XNumber setKey(String key) {
@@ -145,7 +145,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CODE</code>. 「code」- 编码
+     * Getter for <code>ZDB.X_NUMBER.CODE</code>. 「code」- 编码
      */
     @Override
     public String getCode() {
@@ -153,7 +153,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CODE</code>. 「code」- 编码
+     * Setter for <code>ZDB.X_NUMBER.CODE</code>. 「code」- 编码
      */
     @Override
     public XNumber setCode(String code) {
@@ -162,7 +162,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.COMMENT</code>. 「comment」-
+     * Getter for <code>ZDB.X_NUMBER.COMMENT</code>. 「comment」-
      * 编号备注信息，用于描述编号数据,comment,S_COMMENT
      */
     @Override
@@ -171,7 +171,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.COMMENT</code>. 「comment」-
+     * Setter for <code>ZDB.X_NUMBER.COMMENT</code>. 「comment」-
      * 编号备注信息，用于描述编号数据,comment,S_COMMENT
      */
     @Override
@@ -181,7 +181,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CURRENT</code>.
+     * Getter for <code>ZDB.X_NUMBER.CURRENT</code>.
      * 「current」编号当前值，对应${seed}，每次变化时current提取后更新为：current + step或current -
      * step,current,L_CURRENT
      */
@@ -191,7 +191,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CURRENT</code>.
+     * Setter for <code>ZDB.X_NUMBER.CURRENT</code>.
      * 「current」编号当前值，对应${seed}，每次变化时current提取后更新为：current + step或current -
      * step,current,L_CURRENT
      */
@@ -202,7 +202,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.FORMAT</code>.
+     * Getter for <code>ZDB.X_NUMBER.FORMAT</code>.
      * 「format」格式信息，用于处理最终格式：,format,S_FORMAT
      */
     @Override
@@ -211,7 +211,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.FORMAT</code>.
+     * Setter for <code>ZDB.X_NUMBER.FORMAT</code>.
      * 「format」格式信息，用于处理最终格式：,format,S_FORMAT
      */
     @Override
@@ -221,7 +221,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.IDENTIFIER</code>.
+     * Getter for <code>ZDB.X_NUMBER.IDENTIFIER</code>.
      * 「identifier」编号对应的identifier，用于查询当前identifier使用的序号信息,identifier,S_IDENTIFIER
      */
     @Override
@@ -230,7 +230,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.IDENTIFIER</code>.
+     * Setter for <code>ZDB.X_NUMBER.IDENTIFIER</code>.
      * 「identifier」编号对应的identifier，用于查询当前identifier使用的序号信息,identifier,S_IDENTIFIER
      */
     @Override
@@ -240,8 +240,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.PREFIX</code>.
-     * 「prefix」编号前缀,prefix,S_PREFIX
+     * Getter for <code>ZDB.X_NUMBER.PREFIX</code>. 「prefix」编号前缀,prefix,S_PREFIX
      */
     @Override
     public String getPrefix() {
@@ -249,8 +248,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.PREFIX</code>.
-     * 「prefix」编号前缀,prefix,S_PREFIX
+     * Setter for <code>ZDB.X_NUMBER.PREFIX</code>. 「prefix」编号前缀,prefix,S_PREFIX
      */
     @Override
     public XNumber setPrefix(String prefix) {
@@ -259,8 +257,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.SUFFIX</code>.
-     * 「suffix」编号后缀,suffix,S_SUFFIX
+     * Getter for <code>ZDB.X_NUMBER.SUFFIX</code>. 「suffix」编号后缀,suffix,S_SUFFIX
      */
     @Override
     public String getSuffix() {
@@ -268,8 +265,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.SUFFIX</code>.
-     * 「suffix」编号后缀,suffix,S_SUFFIX
+     * Setter for <code>ZDB.X_NUMBER.SUFFIX</code>. 「suffix」编号后缀,suffix,S_SUFFIX
      */
     @Override
     public XNumber setSuffix(String suffix) {
@@ -278,7 +274,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.TIME</code>.
+     * Getter for <code>ZDB.X_NUMBER.TIME</code>.
      * 「time」时间对应Pattern，对应${time}：YYYY-MM-DD
      * HH:mm:ss用于描述时间格式生成序号时间部分,time,S_TIME
      */
@@ -288,7 +284,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.TIME</code>.
+     * Setter for <code>ZDB.X_NUMBER.TIME</code>.
      * 「time」时间对应Pattern，对应${time}：YYYY-MM-DD
      * HH:mm:ss用于描述时间格式生成序号时间部分,time,S_TIME
      */
@@ -299,7 +295,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.LENGTH</code>.
+     * Getter for <code>ZDB.X_NUMBER.LENGTH</code>.
      * 「length」编号长度，编号长度不包含prefix和suffix部分,length,I_LENGTH
      */
     @Override
@@ -308,7 +304,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.LENGTH</code>.
+     * Setter for <code>ZDB.X_NUMBER.LENGTH</code>.
      * 「length」编号长度，编号长度不包含prefix和suffix部分,length,I_LENGTH
      */
     @Override
@@ -318,7 +314,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.STEP</code>.
+     * Getter for <code>ZDB.X_NUMBER.STEP</code>.
      * 「step」编号的步进系数，每次按照step进行变化,step,I_STEP
      */
     @Override
@@ -327,7 +323,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.STEP</code>.
+     * Setter for <code>ZDB.X_NUMBER.STEP</code>.
      * 「step」编号的步进系数，每次按照step进行变化,step,I_STEP
      */
     @Override
@@ -337,7 +333,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.DECREMENT</code>.
+     * Getter for <code>ZDB.X_NUMBER.DECREMENT</code>.
      * 「decrement」递增/递减？如果为true则递减，为false则是递增,decrement,IS_DECREMENT
      */
     @Override
@@ -346,7 +342,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.DECREMENT</code>.
+     * Setter for <code>ZDB.X_NUMBER.DECREMENT</code>.
      * 「decrement」递增/递减？如果为true则递减，为false则是递增,decrement,IS_DECREMENT
      */
     @Override
@@ -356,7 +352,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -364,7 +360,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XNumber setAppId(String appId) {
@@ -373,8 +369,8 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.RUN_COMPONENT</code>.
-     * 「runComponent」- 发号器执行组件，雪花算法所需
+     * Getter for <code>ZDB.X_NUMBER.RUN_COMPONENT</code>. 「runComponent」-
+     * 发号器执行组件，雪花算法所需
      */
     @Override
     public String getRunComponent() {
@@ -382,8 +378,8 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.RUN_COMPONENT</code>.
-     * 「runComponent」- 发号器执行组件，雪花算法所需
+     * Setter for <code>ZDB.X_NUMBER.RUN_COMPONENT</code>. 「runComponent」-
+     * 发号器执行组件，雪花算法所需
      */
     @Override
     public XNumber setRunComponent(String runComponent) {
@@ -392,7 +388,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
+     * Getter for <code>ZDB.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
      */
     @Override
     public Boolean getRenewal() {
@@ -400,7 +396,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
+     * Setter for <code>ZDB.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
      */
     @Override
     public XNumber setRenewal(Boolean renewal) {
@@ -409,7 +405,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -417,7 +413,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XNumber setActive(Boolean active) {
@@ -426,7 +422,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -434,7 +430,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XNumber setSigma(String sigma) {
@@ -443,7 +439,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -451,7 +447,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XNumber setMetadata(String metadata) {
@@ -460,7 +456,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -468,7 +464,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XNumber setLanguage(String language) {
@@ -477,7 +473,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -485,7 +481,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XNumber setCreatedAt(LocalDateTime createdAt) {
@@ -494,7 +490,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -502,7 +498,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XNumber setCreatedBy(String createdBy) {
@@ -511,7 +507,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -519,7 +515,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XNumber setUpdatedAt(LocalDateTime updatedAt) {
@@ -528,7 +524,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -536,7 +532,7 @@ public class XNumber implements VertxPojo, IXNumber {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XNumber setUpdatedBy(String updatedBy) {

@@ -18,156 +18,152 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXModule extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.KEY</code>. 「key」- 模块唯一主键
+     * Setter for <code>ZDB.X_MODULE.KEY</code>. 「key」- 模块唯一主键
      */
     public IXModule setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.KEY</code>. 「key」- 模块唯一主键
+     * Getter for <code>ZDB.X_MODULE.KEY</code>. 「key」- 模块唯一主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.NAME</code>. 「name」- 模块名称
+     * Setter for <code>ZDB.X_MODULE.NAME</code>. 「name」- 模块名称
      */
     public IXModule setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.NAME</code>. 「name」- 模块名称
+     * Getter for <code>ZDB.X_MODULE.NAME</code>. 「name」- 模块名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CODE</code>. 「code」- 模块编码
+     * Setter for <code>ZDB.X_MODULE.CODE</code>. 「code」- 模块编码
      */
     public IXModule setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CODE</code>. 「code」- 模块编码
+     * Getter for <code>ZDB.X_MODULE.CODE</code>. 「code」- 模块编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
+     * Setter for <code>ZDB.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
      */
     public IXModule setEntry(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
+     * Getter for <code>ZDB.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
      */
     public String getEntry();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.BLOCK_CODE</code>. 「blockCode」—
-     * 所属模块系统编码
+     * Setter for <code>ZDB.X_MODULE.BLOCK_CODE</code>. 「blockCode」— 所属模块系统编码
      */
     public IXModule setBlockCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.BLOCK_CODE</code>. 「blockCode」—
-     * 所属模块系统编码
+     * Getter for <code>ZDB.X_MODULE.BLOCK_CODE</code>. 「blockCode」— 所属模块系统编码
      */
     public String getBlockCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public IXModule setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.MODEL_ID</code>. 「modelId」-
-     * 当前模块关联的主模型ID
+     * Setter for <code>ZDB.X_MODULE.MODEL_ID</code>. 「modelId」- 当前模块关联的主模型ID
      */
     public IXModule setModelId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.MODEL_ID</code>. 「modelId」-
-     * 当前模块关联的主模型ID
+     * Getter for <code>ZDB.X_MODULE.MODEL_ID</code>. 「modelId」- 当前模块关联的主模型ID
      */
     public String getModelId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_MODULE.ACTIVE</code>. 「active」- 是否启用
      */
     public IXModule setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_MODULE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXModule setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_MODULE.METADATA</code>. 「metadata」- 附加配置
      */
     public IXModule setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_MODULE.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXModule setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXModule setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXModule setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXModule setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXModule setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

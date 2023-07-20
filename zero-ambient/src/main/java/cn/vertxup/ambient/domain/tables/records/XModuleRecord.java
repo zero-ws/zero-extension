@@ -28,7 +28,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.KEY</code>. 「key」- 模块唯一主键
+     * Setter for <code>ZDB.X_MODULE.KEY</code>. 「key」- 模块唯一主键
      */
     @Override
     public XModuleRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.KEY</code>. 「key」- 模块唯一主键
+     * Getter for <code>ZDB.X_MODULE.KEY</code>. 「key」- 模块唯一主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.NAME</code>. 「name」- 模块名称
+     * Setter for <code>ZDB.X_MODULE.NAME</code>. 「name」- 模块名称
      */
     @Override
     public XModuleRecord setName(String value) {
@@ -54,7 +54,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.NAME</code>. 「name」- 模块名称
+     * Getter for <code>ZDB.X_MODULE.NAME</code>. 「name」- 模块名称
      */
     @Override
     public String getName() {
@@ -62,7 +62,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CODE</code>. 「code」- 模块编码
+     * Setter for <code>ZDB.X_MODULE.CODE</code>. 「code」- 模块编码
      */
     @Override
     public XModuleRecord setCode(String value) {
@@ -71,7 +71,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CODE</code>. 「code」- 模块编码
+     * Getter for <code>ZDB.X_MODULE.CODE</code>. 「code」- 模块编码
      */
     @Override
     public String getCode() {
@@ -79,7 +79,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
+     * Setter for <code>ZDB.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
      */
     @Override
     public XModuleRecord setEntry(String value) {
@@ -88,7 +88,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
+     * Getter for <code>ZDB.X_MODULE.ENTRY</code>. 「entry」— 模块入口地址
      */
     @Override
     public String getEntry() {
@@ -96,8 +96,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.BLOCK_CODE</code>. 「blockCode」—
-     * 所属模块系统编码
+     * Setter for <code>ZDB.X_MODULE.BLOCK_CODE</code>. 「blockCode」— 所属模块系统编码
      */
     @Override
     public XModuleRecord setBlockCode(String value) {
@@ -106,8 +105,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.BLOCK_CODE</code>. 「blockCode」—
-     * 所属模块系统编码
+     * Getter for <code>ZDB.X_MODULE.BLOCK_CODE</code>. 「blockCode」— 所属模块系统编码
      */
     @Override
     public String getBlockCode() {
@@ -115,7 +113,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XModuleRecord setAppId(String value) {
@@ -124,7 +122,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_MODULE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -132,8 +130,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.MODEL_ID</code>. 「modelId」-
-     * 当前模块关联的主模型ID
+     * Setter for <code>ZDB.X_MODULE.MODEL_ID</code>. 「modelId」- 当前模块关联的主模型ID
      */
     @Override
     public XModuleRecord setModelId(String value) {
@@ -142,8 +139,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.MODEL_ID</code>. 「modelId」-
-     * 当前模块关联的主模型ID
+     * Getter for <code>ZDB.X_MODULE.MODEL_ID</code>. 「modelId」- 当前模块关联的主模型ID
      */
     @Override
     public String getModelId() {
@@ -151,7 +147,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_MODULE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XModuleRecord setActive(Boolean value) {
@@ -160,7 +156,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_MODULE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -168,7 +164,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XModuleRecord setSigma(String value) {
@@ -177,7 +173,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_MODULE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -185,7 +181,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_MODULE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XModuleRecord setMetadata(String value) {
@@ -194,7 +190,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_MODULE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -202,7 +198,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XModuleRecord setLanguage(String value) {
@@ -211,7 +207,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_MODULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -219,7 +215,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XModuleRecord setCreatedAt(LocalDateTime value) {
@@ -228,7 +224,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_MODULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -236,7 +232,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XModuleRecord setCreatedBy(String value) {
@@ -245,7 +241,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_MODULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -253,7 +249,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XModuleRecord setUpdatedAt(LocalDateTime value) {
@@ -262,7 +258,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_MODULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -270,7 +266,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XModuleRecord setUpdatedBy(String value) {
@@ -279,7 +275,7 @@ public class XModuleRecord extends UpdatableRecordImpl<XModuleRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_MODULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

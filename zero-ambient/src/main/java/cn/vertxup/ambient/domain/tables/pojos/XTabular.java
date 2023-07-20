@@ -104,7 +104,7 @@ public class XTabular implements VertxPojo, IXTabular {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.KEY</code>. 「key」- 列表主键
+     * Getter for <code>ZDB.X_TABULAR.KEY</code>. 「key」- 列表主键
      */
     @Override
     public String getKey() {
@@ -112,7 +112,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.KEY</code>. 「key」- 列表主键
+     * Setter for <code>ZDB.X_TABULAR.KEY</code>. 「key」- 列表主键
      */
     @Override
     public XTabular setKey(String key) {
@@ -121,7 +121,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.NAME</code>. 「name」- 列表名称
+     * Getter for <code>ZDB.X_TABULAR.NAME</code>. 「name」- 列表名称
      */
     @Override
     public String getName() {
@@ -129,7 +129,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.NAME</code>. 「name」- 列表名称
+     * Setter for <code>ZDB.X_TABULAR.NAME</code>. 「name」- 列表名称
      */
     @Override
     public XTabular setName(String name) {
@@ -138,7 +138,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.CODE</code>. 「code」- 列表编号
+     * Getter for <code>ZDB.X_TABULAR.CODE</code>. 「code」- 列表编号
      */
     @Override
     public String getCode() {
@@ -146,7 +146,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.CODE</code>. 「code」- 列表编号
+     * Setter for <code>ZDB.X_TABULAR.CODE</code>. 「code」- 列表编号
      */
     @Override
     public XTabular setCode(String code) {
@@ -155,7 +155,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.TYPE</code>. 「type」- 列表类型
+     * Getter for <code>ZDB.X_TABULAR.TYPE</code>. 「type」- 列表类型
      */
     @Override
     public String getType() {
@@ -163,7 +163,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.TYPE</code>. 「type」- 列表类型
+     * Setter for <code>ZDB.X_TABULAR.TYPE</code>. 「type」- 列表类型
      */
     @Override
     public XTabular setType(String type) {
@@ -172,7 +172,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.ICON</code>. 「icon」- 列表图标
+     * Getter for <code>ZDB.X_TABULAR.ICON</code>. 「icon」- 列表图标
      */
     @Override
     public String getIcon() {
@@ -180,7 +180,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.ICON</code>. 「icon」- 列表图标
+     * Setter for <code>ZDB.X_TABULAR.ICON</code>. 「icon」- 列表图标
      */
     @Override
     public XTabular setIcon(String icon) {
@@ -189,7 +189,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.SORT</code>. 「sort」- 排序信息
+     * Getter for <code>ZDB.X_TABULAR.SORT</code>. 「sort」- 排序信息
      */
     @Override
     public Integer getSort() {
@@ -197,7 +197,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.SORT</code>. 「sort」- 排序信息
+     * Setter for <code>ZDB.X_TABULAR.SORT</code>. 「sort」- 排序信息
      */
     @Override
     public XTabular setSort(Integer sort) {
@@ -206,7 +206,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.COMMENT</code>. 「comment」- 备注信息
+     * Getter for <code>ZDB.X_TABULAR.COMMENT</code>. 「comment」- 备注信息
      */
     @Override
     public String getComment() {
@@ -214,7 +214,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.COMMENT</code>. 「comment」- 备注信息
+     * Setter for <code>ZDB.X_TABULAR.COMMENT</code>. 「comment」- 备注信息
      */
     @Override
     public XTabular setComment(String comment) {
@@ -223,7 +223,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_TABULAR.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -231,7 +231,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_TABULAR.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XTabular setAppId(String appId) {
@@ -240,8 +240,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件
+     * Getter for <code>ZDB.X_TABULAR.RUN_COMPONENT</code>. 「runComponent」- 执行组件
      */
     @Override
     public String getRunComponent() {
@@ -249,8 +248,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件
+     * Setter for <code>ZDB.X_TABULAR.RUN_COMPONENT</code>. 「runComponent」- 执行组件
      */
     @Override
     public XTabular setRunComponent(String runComponent) {
@@ -259,7 +257,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_TABULAR.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -267,7 +265,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_TABULAR.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XTabular setActive(Boolean active) {
@@ -276,7 +274,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_TABULAR.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -284,7 +282,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_TABULAR.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XTabular setSigma(String sigma) {
@@ -293,7 +291,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_TABULAR.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -301,7 +299,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_TABULAR.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XTabular setMetadata(String metadata) {
@@ -310,7 +308,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_TABULAR.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -318,7 +316,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_TABULAR.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XTabular setLanguage(String language) {
@@ -327,8 +325,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_TABULAR.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -336,8 +333,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_TABULAR.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XTabular setCreatedAt(LocalDateTime createdAt) {
@@ -346,7 +342,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_TABULAR.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -354,7 +350,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_TABULAR.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XTabular setCreatedBy(String createdBy) {
@@ -363,8 +359,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_TABULAR.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -372,8 +367,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_TABULAR.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XTabular setUpdatedAt(LocalDateTime updatedAt) {
@@ -382,7 +376,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TABULAR.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_TABULAR.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -390,7 +384,7 @@ public class XTabular implements VertxPojo, IXTabular {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TABULAR.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_TABULAR.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XTabular setUpdatedBy(String updatedBy) {

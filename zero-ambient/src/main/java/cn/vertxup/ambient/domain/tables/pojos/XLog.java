@@ -108,7 +108,7 @@ public class XLog implements VertxPojo, IXLog {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.KEY</code>. 「key」- 日志的主键
+     * Getter for <code>ZDB.X_LOG.KEY</code>. 「key」- 日志的主键
      */
     @Override
     public String getKey() {
@@ -116,7 +116,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.KEY</code>. 「key」- 日志的主键
+     * Setter for <code>ZDB.X_LOG.KEY</code>. 「key」- 日志的主键
      */
     @Override
     public XLog setKey(String key) {
@@ -125,7 +125,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.TYPE</code>. 「type」- 日志的分类
+     * Getter for <code>ZDB.X_LOG.TYPE</code>. 「type」- 日志的分类
      */
     @Override
     public String getType() {
@@ -133,7 +133,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.TYPE</code>. 「type」- 日志的分类
+     * Setter for <code>ZDB.X_LOG.TYPE</code>. 「type」- 日志的分类
      */
     @Override
     public XLog setType(String type) {
@@ -142,8 +142,8 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR /
-     * WARN / INFO
+     * Getter for <code>ZDB.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR / WARN /
+     * INFO
      */
     @Override
     public String getLevel() {
@@ -151,8 +151,8 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR /
-     * WARN / INFO
+     * Setter for <code>ZDB.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR / WARN /
+     * INFO
      */
     @Override
     public XLog setLevel(String level) {
@@ -161,7 +161,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
+     * Getter for <code>ZDB.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
      */
     @Override
     public String getInfoStack() {
@@ -169,7 +169,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
+     * Setter for <code>ZDB.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
      */
     @Override
     public XLog setInfoStack(String infoStack) {
@@ -178,7 +178,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
+     * Getter for <code>ZDB.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
      */
     @Override
     public String getInfoSystem() {
@@ -186,7 +186,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
+     * Setter for <code>ZDB.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
      */
     @Override
     public XLog setInfoSystem(String infoSystem) {
@@ -195,8 +195,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_READABLE</code>. 「infoReadable」-
-     * 日志的可读信息
+     * Getter for <code>ZDB.X_LOG.INFO_READABLE</code>. 「infoReadable」- 日志的可读信息
      */
     @Override
     public String getInfoReadable() {
@@ -204,8 +203,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_READABLE</code>. 「infoReadable」-
-     * 日志的可读信息
+     * Setter for <code>ZDB.X_LOG.INFO_READABLE</code>. 「infoReadable」- 日志的可读信息
      */
     @Override
     public XLog setInfoReadable(String infoReadable) {
@@ -214,7 +212,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
+     * Getter for <code>ZDB.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
      */
     @Override
     public LocalDateTime getInfoAt() {
@@ -222,7 +220,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
+     * Setter for <code>ZDB.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
      */
     @Override
     public XLog setInfoAt(LocalDateTime infoAt) {
@@ -231,8 +229,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的
-     * agent 信息
+     * Getter for <code>ZDB.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的 agent 信息
      */
     @Override
     public String getLogAgent() {
@@ -240,8 +237,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的
-     * agent 信息
+     * Setter for <code>ZDB.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的 agent 信息
      */
     @Override
     public XLog setLogAgent(String logAgent) {
@@ -250,7 +246,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
+     * Getter for <code>ZDB.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
      */
     @Override
     public String getLogIp() {
@@ -258,7 +254,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
+     * Setter for <code>ZDB.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
      */
     @Override
     public XLog setLogIp(String logIp) {
@@ -267,7 +263,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
+     * Getter for <code>ZDB.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
      */
     @Override
     public String getLogUser() {
@@ -275,7 +271,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
+     * Setter for <code>ZDB.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
      */
     @Override
     public XLog setLogUser(String logUser) {
@@ -284,7 +280,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_LOG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -292,7 +288,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_LOG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XLog setActive(Boolean active) {
@@ -301,7 +297,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_LOG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -309,7 +305,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_LOG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XLog setSigma(String sigma) {
@@ -318,7 +314,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_LOG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -326,7 +322,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_LOG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XLog setMetadata(String metadata) {
@@ -335,7 +331,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -343,7 +339,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XLog setLanguage(String language) {
@@ -352,7 +348,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -360,7 +356,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XLog setCreatedAt(LocalDateTime createdAt) {
@@ -369,7 +365,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -377,7 +373,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XLog setCreatedBy(String createdBy) {
@@ -386,7 +382,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -394,7 +390,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XLog setUpdatedAt(LocalDateTime updatedAt) {
@@ -403,7 +399,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -411,7 +407,7 @@ public class XLog implements VertxPojo, IXLog {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XLog setUpdatedBy(String updatedBy) {

@@ -17,58 +17,54 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IRTagObject extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     public IRTagObject setTagId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     public String getTagId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     public IRTagObject setEntityType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     public String getEntityType();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     public IRTagObject setEntityId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     public String getEntityId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Setter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     public IRTagObject setLinkComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Getter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     public String getLinkComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Setter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     public IRTagObject setComment(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Getter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     public String getComment();
 

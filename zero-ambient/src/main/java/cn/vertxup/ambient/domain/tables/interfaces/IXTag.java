@@ -18,182 +18,182 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXTag extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Setter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     public IXTag setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Getter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Setter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     public IXTag setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Getter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Setter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     public IXTag setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Getter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Setter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     public IXTag setIcon(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Getter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     public String getIcon();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Setter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     public IXTag setSort(Long value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Getter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     public Long getSort();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Setter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     public IXTag setShow(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Getter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     public Boolean getShow();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Setter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     public IXTag setDescription(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Getter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     public String getDescription();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Setter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     public IXTag setUiStyle(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Getter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     public String getUiStyle();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Setter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     public IXTag setUiConfig(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Getter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     public String getUiConfig();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public IXTag setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     public IXTag setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXTag setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     public IXTag setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXTag setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXTag setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXTag setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXTag setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXTag setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

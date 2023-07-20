@@ -128,7 +128,7 @@ public class XApp implements VertxPojo, IXApp {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.KEY</code>. 「key」- 应用程序主键
+     * Getter for <code>ZDB.X_APP.KEY</code>. 「key」- 应用程序主键
      */
     @Override
     public String getKey() {
@@ -136,7 +136,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.KEY</code>. 「key」- 应用程序主键
+     * Setter for <code>ZDB.X_APP.KEY</code>. 「key」- 应用程序主键
      */
     @Override
     public XApp setKey(String key) {
@@ -145,7 +145,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.NAME</code>. 「name」- 应用程序名称
+     * Getter for <code>ZDB.X_APP.NAME</code>. 「name」- 应用程序名称
      */
     @Override
     public String getName() {
@@ -153,7 +153,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.NAME</code>. 「name」- 应用程序名称
+     * Setter for <code>ZDB.X_APP.NAME</code>. 「name」- 应用程序名称
      */
     @Override
     public XApp setName(String name) {
@@ -162,7 +162,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CODE</code>. 「code」- 应用程序编码
+     * Getter for <code>ZDB.X_APP.CODE</code>. 「code」- 应用程序编码
      */
     @Override
     public String getCode() {
@@ -170,7 +170,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CODE</code>. 「code」- 应用程序编码
+     * Setter for <code>ZDB.X_APP.CODE</code>. 「code」- 应用程序编码
      */
     @Override
     public XApp setCode(String code) {
@@ -179,7 +179,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Getter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     @Override
     public String getTitle() {
@@ -187,7 +187,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Setter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     @Override
     public XApp setTitle(String title) {
@@ -196,7 +196,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Getter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
      */
     @Override
     public String getLogo() {
@@ -204,7 +204,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Setter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
      */
     @Override
     public XApp setLogo(String logo) {
@@ -213,7 +213,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Getter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
      */
     @Override
     public String getIcp() {
@@ -221,7 +221,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Setter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
      */
     @Override
     public XApp setIcp(String icp) {
@@ -230,8 +230,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.COPY_RIGHT</code>. 「copyRight」-
-     * CopyRight版权信息
+     * Getter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
      */
     @Override
     public String getCopyRight() {
@@ -239,8 +238,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.COPY_RIGHT</code>. 「copyRight」-
-     * CopyRight版权信息
+     * Setter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
      */
     @Override
     public XApp setCopyRight(String copyRight) {
@@ -249,7 +247,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     * Getter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
      */
     @Override
     public String getEmail() {
@@ -257,7 +255,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     * Setter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
      */
     @Override
     public XApp setEmail(String email) {
@@ -266,7 +264,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     * Getter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
      */
     @Override
     public String getDomain() {
@@ -274,7 +272,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     * Setter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
      */
     @Override
     public XApp setDomain(String domain) {
@@ -283,7 +281,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.APP_PORT</code>. 「appPort」-
+     * Getter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
      * 应用程序端口号，和SOURCE的端口号区别开
      */
     @Override
@@ -292,7 +290,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.APP_PORT</code>. 「appPort」-
+     * Setter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
      * 应用程序端口号，和SOURCE的端口号区别开
      */
     @Override
@@ -302,8 +300,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.URL_ENTRY</code>. 「urlEntry」—
-     * 应用程序入口页面（登录页）
+     * Getter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
      */
     @Override
     public String getUrlEntry() {
@@ -311,8 +308,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.URL_ENTRY</code>. 「urlEntry」—
-     * 应用程序入口页面（登录页）
+     * Setter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
      */
     @Override
     public XApp setUrlEntry(String urlEntry) {
@@ -321,8 +317,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.URL_MAIN</code>. 「urlMain」-
-     * 应用程序内置主页（带安全）
+     * Getter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
      */
     @Override
     public String getUrlMain() {
@@ -330,8 +325,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.URL_MAIN</code>. 「urlMain」-
-     * 应用程序内置主页（带安全）
+     * Setter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
      */
     @Override
     public XApp setUrlMain(String urlMain) {
@@ -340,7 +334,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Getter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
      */
     @Override
     public String getPath() {
@@ -348,7 +342,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Setter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
      */
     @Override
     public XApp setPath(String path) {
@@ -357,7 +351,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Getter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
      */
     @Override
     public String getRoute() {
@@ -365,7 +359,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Setter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
      */
     @Override
     public XApp setRoute(String route) {
@@ -374,8 +368,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.APP_KEY</code>. 「appKey」-
-     * 应用程序专用唯一hashKey
+     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
      */
     @Override
     public String getAppKey() {
@@ -383,8 +376,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.APP_KEY</code>. 「appKey」-
-     * 应用程序专用唯一hashKey
+     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
      */
     @Override
     public XApp setAppKey(String appKey) {
@@ -393,7 +385,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -401,7 +393,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XApp setActive(Boolean active) {
@@ -410,7 +402,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_APP.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -418,7 +410,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_APP.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XApp setSigma(String sigma) {
@@ -427,7 +419,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_APP.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -435,7 +427,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_APP.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XApp setMetadata(String metadata) {
@@ -444,7 +436,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_APP.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -452,7 +444,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_APP.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XApp setLanguage(String language) {
@@ -461,7 +453,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -469,7 +461,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XApp setCreatedAt(LocalDateTime createdAt) {
@@ -478,7 +470,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -486,7 +478,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XApp setCreatedBy(String createdBy) {
@@ -495,7 +487,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -503,7 +495,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XApp setUpdatedAt(LocalDateTime updatedAt) {
@@ -512,7 +504,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -520,7 +512,7 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XApp setUpdatedBy(String updatedBy) {

@@ -18,204 +18,194 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXActivityChange extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
      */
     public IXActivityChange setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.KEY</code>. 「key」- 操作行为主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>.
-     * 「activityId」- 关联的操作ID
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>. 「activityId」-
+     * 关联的操作ID
      */
     public IXActivityChange setActivityId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>.
-     * 「activityId」- 关联的操作ID
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVITY_ID</code>. 「activityId」-
+     * 关联的操作ID
      */
     public String getActivityId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.TYPE</code>. 「type」-
-     * 字段变更类型：ADD | DELETE | UPDATE 三种
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.TYPE</code>. 「type」- 字段变更类型：ADD |
+     * DELETE | UPDATE 三种
      */
     public IXActivityChange setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.TYPE</code>. 「type」-
-     * 字段变更类型：ADD | DELETE | UPDATE 三种
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.TYPE</code>. 「type」- 字段变更类型：ADD |
+     * DELETE | UPDATE 三种
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
      * 待确认变更状态：CONFIRMED | PENDING
      */
     public IXActivityChange setStatus(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.STATUS</code>. 「status」-
      * 待确认变更状态：CONFIRMED | PENDING
      */
     public String getStatus();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_NAME</code>.
-     * 「fieldName」- 如果是变更记录则需要生成变更日志
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_NAME</code>. 「fieldName」-
+     * 如果是变更记录则需要生成变更日志
      */
     public IXActivityChange setFieldName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_NAME</code>.
-     * 「fieldName」- 如果是变更记录则需要生成变更日志
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_NAME</code>. 「fieldName」-
+     * 如果是变更记录则需要生成变更日志
      */
     public String getFieldName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>.
-     * 「fieldAlias」- 字段对应的别名
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>. 「fieldAlias」-
+     * 字段对应的别名
      */
     public IXActivityChange setFieldAlias(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>.
-     * 「fieldAlias」- 字段对应的别名
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_ALIAS</code>. 「fieldAlias」-
+     * 字段对应的别名
      */
     public String getFieldAlias();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_TYPE</code>.
-     * 「fieldType」- 变更字段的数据类型，直接从模型定义中读取
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_TYPE</code>. 「fieldType」-
+     * 变更字段的数据类型，直接从模型定义中读取
      */
     public IXActivityChange setFieldType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.FIELD_TYPE</code>.
-     * 「fieldType」- 变更字段的数据类型，直接从模型定义中读取
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.FIELD_TYPE</code>. 「fieldType」-
+     * 变更字段的数据类型，直接从模型定义中读取
      */
     public String getFieldType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_OLD</code>.
-     * 「valueOld」- 旧值
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_OLD</code>. 「valueOld」- 旧值
      */
     public IXActivityChange setValueOld(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_OLD</code>.
-     * 「valueOld」- 旧值
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_OLD</code>. 「valueOld」- 旧值
      */
     public String getValueOld();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_NEW</code>.
-     * 「valueNew」- 新值
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_NEW</code>. 「valueNew」- 新值
      */
     public IXActivityChange setValueNew(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.VALUE_NEW</code>.
-     * 「valueNew」- 新值
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.VALUE_NEW</code>. 「valueNew」- 新值
      */
     public String getValueNew();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」-
-     * 用户组绑定的统一标识
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     public IXActivityChange setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」-
-     * 用户组绑定的统一标识
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.LANGUAGE</code>.
-     * 「language」- 使用的语言
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXActivityChange setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.LANGUAGE</code>.
-     * 「language」- 使用的语言
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」-
-     * 是否启用
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」- 是否启用
      */
     public IXActivityChange setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」-
-     * 是否启用
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.METADATA</code>.
-     * 「metadata」- 附加配置数据
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.METADATA</code>. 「metadata」-
+     * 附加配置数据
      */
     public IXActivityChange setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.METADATA</code>.
-     * 「metadata」- 附加配置数据
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.METADATA</code>. 「metadata」-
+     * 附加配置数据
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_AT</code>. 「createdAt」-
+     * 创建时间
      */
     public IXActivityChange setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_AT</code>. 「createdAt」-
+     * 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_BY</code>. 「createdBy」-
+     * 创建人
      */
     public IXActivityChange setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.CREATED_BY</code>. 「createdBy」-
+     * 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_AT</code>. 「updatedAt」-
+     * 更新时间
      */
     public IXActivityChange setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_AT</code>. 「updatedAt」-
+     * 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_BY</code>. 「updatedBy」-
+     * 更新人
      */
     public IXActivityChange setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_CHANGE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_ACTIVITY_CHANGE.UPDATED_BY</code>. 「updatedBy」-
+     * 更新人
      */
     public String getUpdatedBy();
 

@@ -18,258 +18,254 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXNumber extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.KEY</code>. 「key」- 主键
+     * Setter for <code>ZDB.X_NUMBER.KEY</code>. 「key」- 主键
      */
     public IXNumber setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.KEY</code>. 「key」- 主键
+     * Getter for <code>ZDB.X_NUMBER.KEY</code>. 「key」- 主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CODE</code>. 「code」- 编码
+     * Setter for <code>ZDB.X_NUMBER.CODE</code>. 「code」- 编码
      */
     public IXNumber setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CODE</code>. 「code」- 编码
+     * Getter for <code>ZDB.X_NUMBER.CODE</code>. 「code」- 编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.COMMENT</code>. 「comment」-
+     * Setter for <code>ZDB.X_NUMBER.COMMENT</code>. 「comment」-
      * 编号备注信息，用于描述编号数据,comment,S_COMMENT
      */
     public IXNumber setComment(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.COMMENT</code>. 「comment」-
+     * Getter for <code>ZDB.X_NUMBER.COMMENT</code>. 「comment」-
      * 编号备注信息，用于描述编号数据,comment,S_COMMENT
      */
     public String getComment();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CURRENT</code>.
+     * Setter for <code>ZDB.X_NUMBER.CURRENT</code>.
      * 「current」编号当前值，对应${seed}，每次变化时current提取后更新为：current + step或current -
      * step,current,L_CURRENT
      */
     public IXNumber setCurrent(Long value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CURRENT</code>.
+     * Getter for <code>ZDB.X_NUMBER.CURRENT</code>.
      * 「current」编号当前值，对应${seed}，每次变化时current提取后更新为：current + step或current -
      * step,current,L_CURRENT
      */
     public Long getCurrent();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.FORMAT</code>.
+     * Setter for <code>ZDB.X_NUMBER.FORMAT</code>.
      * 「format」格式信息，用于处理最终格式：,format,S_FORMAT
      */
     public IXNumber setFormat(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.FORMAT</code>.
+     * Getter for <code>ZDB.X_NUMBER.FORMAT</code>.
      * 「format」格式信息，用于处理最终格式：,format,S_FORMAT
      */
     public String getFormat();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.IDENTIFIER</code>.
+     * Setter for <code>ZDB.X_NUMBER.IDENTIFIER</code>.
      * 「identifier」编号对应的identifier，用于查询当前identifier使用的序号信息,identifier,S_IDENTIFIER
      */
     public IXNumber setIdentifier(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.IDENTIFIER</code>.
+     * Getter for <code>ZDB.X_NUMBER.IDENTIFIER</code>.
      * 「identifier」编号对应的identifier，用于查询当前identifier使用的序号信息,identifier,S_IDENTIFIER
      */
     public String getIdentifier();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.PREFIX</code>.
-     * 「prefix」编号前缀,prefix,S_PREFIX
+     * Setter for <code>ZDB.X_NUMBER.PREFIX</code>. 「prefix」编号前缀,prefix,S_PREFIX
      */
     public IXNumber setPrefix(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.PREFIX</code>.
-     * 「prefix」编号前缀,prefix,S_PREFIX
+     * Getter for <code>ZDB.X_NUMBER.PREFIX</code>. 「prefix」编号前缀,prefix,S_PREFIX
      */
     public String getPrefix();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.SUFFIX</code>.
-     * 「suffix」编号后缀,suffix,S_SUFFIX
+     * Setter for <code>ZDB.X_NUMBER.SUFFIX</code>. 「suffix」编号后缀,suffix,S_SUFFIX
      */
     public IXNumber setSuffix(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.SUFFIX</code>.
-     * 「suffix」编号后缀,suffix,S_SUFFIX
+     * Getter for <code>ZDB.X_NUMBER.SUFFIX</code>. 「suffix」编号后缀,suffix,S_SUFFIX
      */
     public String getSuffix();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.TIME</code>.
+     * Setter for <code>ZDB.X_NUMBER.TIME</code>.
      * 「time」时间对应Pattern，对应${time}：YYYY-MM-DD
      * HH:mm:ss用于描述时间格式生成序号时间部分,time,S_TIME
      */
     public IXNumber setTime(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.TIME</code>.
+     * Getter for <code>ZDB.X_NUMBER.TIME</code>.
      * 「time」时间对应Pattern，对应${time}：YYYY-MM-DD
      * HH:mm:ss用于描述时间格式生成序号时间部分,time,S_TIME
      */
     public String getTime();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.LENGTH</code>.
+     * Setter for <code>ZDB.X_NUMBER.LENGTH</code>.
      * 「length」编号长度，编号长度不包含prefix和suffix部分,length,I_LENGTH
      */
     public IXNumber setLength(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.LENGTH</code>.
+     * Getter for <code>ZDB.X_NUMBER.LENGTH</code>.
      * 「length」编号长度，编号长度不包含prefix和suffix部分,length,I_LENGTH
      */
     public Integer getLength();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.STEP</code>.
+     * Setter for <code>ZDB.X_NUMBER.STEP</code>.
      * 「step」编号的步进系数，每次按照step进行变化,step,I_STEP
      */
     public IXNumber setStep(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.STEP</code>.
+     * Getter for <code>ZDB.X_NUMBER.STEP</code>.
      * 「step」编号的步进系数，每次按照step进行变化,step,I_STEP
      */
     public Integer getStep();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.DECREMENT</code>.
+     * Setter for <code>ZDB.X_NUMBER.DECREMENT</code>.
      * 「decrement」递增/递减？如果为true则递减，为false则是递增,decrement,IS_DECREMENT
      */
     public IXNumber setDecrement(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.DECREMENT</code>.
+     * Getter for <code>ZDB.X_NUMBER.DECREMENT</code>.
      * 「decrement」递增/递减？如果为true则递减，为false则是递增,decrement,IS_DECREMENT
      */
     public Boolean getDecrement();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public IXNumber setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_NUMBER.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.RUN_COMPONENT</code>.
-     * 「runComponent」- 发号器执行组件，雪花算法所需
+     * Setter for <code>ZDB.X_NUMBER.RUN_COMPONENT</code>. 「runComponent」-
+     * 发号器执行组件，雪花算法所需
      */
     public IXNumber setRunComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.RUN_COMPONENT</code>.
-     * 「runComponent」- 发号器执行组件，雪花算法所需
+     * Getter for <code>ZDB.X_NUMBER.RUN_COMPONENT</code>. 「runComponent」-
+     * 发号器执行组件，雪花算法所需
      */
     public String getRunComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
+     * Setter for <code>ZDB.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
      */
     public IXNumber setRenewal(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
+     * Getter for <code>ZDB.X_NUMBER.RENEWAL</code>. 「renewal」- 是否循环
      */
     public Boolean getRenewal();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
      */
     public IXNumber setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_NUMBER.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXNumber setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_NUMBER.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
      */
     public IXNumber setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_NUMBER.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXNumber setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_NUMBER.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXNumber setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_NUMBER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXNumber setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_NUMBER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXNumber setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_NUMBER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXNumber setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_NUMBER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

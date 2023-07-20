@@ -25,7 +25,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.KEY</code>. 「key」- 类型主键
+     * Setter for <code>ZDB.X_CATEGORY.KEY</code>. 「key」- 类型主键
      */
     @Override
     public XCategoryRecord setKey(String value) {
@@ -34,7 +34,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.KEY</code>. 「key」- 类型主键
+     * Getter for <code>ZDB.X_CATEGORY.KEY</code>. 「key」- 类型主键
      */
     @Override
     public String getKey() {
@@ -42,7 +42,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.NAME</code>. 「name」- 类型名称
+     * Setter for <code>ZDB.X_CATEGORY.NAME</code>. 「name」- 类型名称
      */
     @Override
     public XCategoryRecord setName(String value) {
@@ -51,7 +51,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.NAME</code>. 「name」- 类型名称
+     * Getter for <code>ZDB.X_CATEGORY.NAME</code>. 「name」- 类型名称
      */
     @Override
     public String getName() {
@@ -59,7 +59,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.CODE</code>. 「code」- 类型编号
+     * Setter for <code>ZDB.X_CATEGORY.CODE</code>. 「code」- 类型编号
      */
     @Override
     public XCategoryRecord setCode(String value) {
@@ -68,7 +68,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.CODE</code>. 「code」- 类型编号
+     * Getter for <code>ZDB.X_CATEGORY.CODE</code>. 「code」- 类型编号
      */
     @Override
     public String getCode() {
@@ -76,7 +76,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.ICON</code>. 「icon」- 类型图标
+     * Setter for <code>ZDB.X_CATEGORY.ICON</code>. 「icon」- 类型图标
      */
     @Override
     public XCategoryRecord setIcon(String value) {
@@ -85,7 +85,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.ICON</code>. 「icon」- 类型图标
+     * Getter for <code>ZDB.X_CATEGORY.ICON</code>. 「icon」- 类型图标
      */
     @Override
     public String getIcon() {
@@ -93,7 +93,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.TYPE</code>. 「type」- 类型的分类
+     * Setter for <code>ZDB.X_CATEGORY.TYPE</code>. 「type」- 类型的分类
      */
     @Override
     public XCategoryRecord setType(String value) {
@@ -102,7 +102,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.TYPE</code>. 「type」- 类型的分类
+     * Getter for <code>ZDB.X_CATEGORY.TYPE</code>. 「type」- 类型的分类
      */
     @Override
     public String getType() {
@@ -110,7 +110,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.SORT</code>. 「sort」- 排序信息
+     * Setter for <code>ZDB.X_CATEGORY.SORT</code>. 「sort」- 排序信息
      */
     @Override
     public XCategoryRecord setSort(Integer value) {
@@ -119,7 +119,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.SORT</code>. 「sort」- 排序信息
+     * Getter for <code>ZDB.X_CATEGORY.SORT</code>. 「sort」- 排序信息
      */
     @Override
     public Integer getSort() {
@@ -127,7 +127,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.LEAF</code>. 「leaf」- 是否叶节点
+     * Setter for <code>ZDB.X_CATEGORY.LEAF</code>. 「leaf」- 是否叶节点
      */
     @Override
     public XCategoryRecord setLeaf(Boolean value) {
@@ -136,7 +136,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.LEAF</code>. 「leaf」- 是否叶节点
+     * Getter for <code>ZDB.X_CATEGORY.LEAF</code>. 「leaf」- 是否叶节点
      */
     @Override
     public Boolean getLeaf() {
@@ -144,7 +144,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.PARENT_ID</code>. 「parentId」- 父类ID
+     * Setter for <code>ZDB.X_CATEGORY.PARENT_ID</code>. 「parentId」- 父类ID
      */
     @Override
     public XCategoryRecord setParentId(String value) {
@@ -153,7 +153,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.PARENT_ID</code>. 「parentId」- 父类ID
+     * Getter for <code>ZDB.X_CATEGORY.PARENT_ID</code>. 「parentId」- 父类ID
      */
     @Override
     public String getParentId() {
@@ -161,7 +161,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.IDENTIFIER</code>. 「identifier」-
+     * Setter for <code>ZDB.X_CATEGORY.IDENTIFIER</code>. 「identifier」-
      * 当前类型描述的Model的标识
      */
     @Override
@@ -171,7 +171,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.IDENTIFIER</code>. 「identifier」-
+     * Getter for <code>ZDB.X_CATEGORY.IDENTIFIER</code>. 「identifier」-
      * 当前类型描述的Model的标识
      */
     @Override
@@ -180,7 +180,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.COMMENT</code>. 「comment」- 备注信息
+     * Setter for <code>ZDB.X_CATEGORY.COMMENT</code>. 「comment」- 备注信息
      */
     @Override
     public XCategoryRecord setComment(String value) {
@@ -189,7 +189,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.COMMENT</code>. 「comment」- 备注信息
+     * Getter for <code>ZDB.X_CATEGORY.COMMENT</code>. 「comment」- 备注信息
      */
     @Override
     public String getComment() {
@@ -197,7 +197,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_CATEGORY.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XCategoryRecord setAppId(String value) {
@@ -206,7 +206,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_CATEGORY.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -214,8 +214,8 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.TREE_COMPONENT</code>.
-     * 「treeComponent」- 目录组件，构造树专用
+     * Setter for <code>ZDB.X_CATEGORY.TREE_COMPONENT</code>. 「treeComponent」-
+     * 目录组件，构造树专用
      */
     @Override
     public XCategoryRecord setTreeComponent(String value) {
@@ -224,8 +224,8 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.TREE_COMPONENT</code>.
-     * 「treeComponent」- 目录组件，构造树专用
+     * Getter for <code>ZDB.X_CATEGORY.TREE_COMPONENT</code>. 「treeComponent」-
+     * 目录组件，构造树专用
      */
     @Override
     public String getTreeComponent() {
@@ -233,7 +233,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.TREE_CONFIG</code>. 「treeConfig」-
+     * Setter for <code>ZDB.X_CATEGORY.TREE_CONFIG</code>. 「treeConfig」-
      * 目录组件运行配置，特殊场景专用
      */
     @Override
@@ -243,7 +243,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.TREE_CONFIG</code>. 「treeConfig」-
+     * Getter for <code>ZDB.X_CATEGORY.TREE_CONFIG</code>. 「treeConfig」-
      * 目录组件运行配置，特殊场景专用
      */
     @Override
@@ -252,8 +252,8 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件
+     * Setter for <code>ZDB.X_CATEGORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件
      */
     @Override
     public XCategoryRecord setRunComponent(String value) {
@@ -262,8 +262,8 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件
+     * Getter for <code>ZDB.X_CATEGORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件
      */
     @Override
     public String getRunComponent() {
@@ -271,8 +271,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件相关配置
+     * Setter for <code>ZDB.X_CATEGORY.RUN_CONFIG</code>. 「runConfig」- 执行组件相关配置
      */
     @Override
     public XCategoryRecord setRunConfig(String value) {
@@ -281,8 +280,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件相关配置
+     * Getter for <code>ZDB.X_CATEGORY.RUN_CONFIG</code>. 「runConfig」- 执行组件相关配置
      */
     @Override
     public String getRunConfig() {
@@ -290,7 +288,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_CATEGORY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XCategoryRecord setActive(Boolean value) {
@@ -299,7 +297,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_CATEGORY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -307,7 +305,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_CATEGORY.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XCategoryRecord setSigma(String value) {
@@ -316,7 +314,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_CATEGORY.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -324,7 +322,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_CATEGORY.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XCategoryRecord setMetadata(String value) {
@@ -333,7 +331,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_CATEGORY.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -341,7 +339,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_CATEGORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XCategoryRecord setLanguage(String value) {
@@ -350,7 +348,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_CATEGORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -358,8 +356,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_CATEGORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XCategoryRecord setCreatedAt(LocalDateTime value) {
@@ -368,8 +365,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_CATEGORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -377,8 +373,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.X_CATEGORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XCategoryRecord setCreatedBy(String value) {
@@ -387,8 +382,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.X_CATEGORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -396,8 +390,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_CATEGORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XCategoryRecord setUpdatedAt(LocalDateTime value) {
@@ -406,8 +399,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_CATEGORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -415,8 +407,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_CATEGORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.X_CATEGORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XCategoryRecord setUpdatedBy(String value) {
@@ -425,8 +416,7 @@ public class XCategoryRecord extends UpdatableRecordImpl<XCategoryRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_CATEGORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.X_CATEGORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

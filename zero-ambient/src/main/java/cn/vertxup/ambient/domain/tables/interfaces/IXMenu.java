@@ -18,182 +18,182 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXMenu extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.KEY</code>. 「key」- 菜单主键
+     * Setter for <code>ZDB.X_MENU.KEY</code>. 「key」- 菜单主键
      */
     public IXMenu setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.KEY</code>. 「key」- 菜单主键
+     * Getter for <code>ZDB.X_MENU.KEY</code>. 「key」- 菜单主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.NAME</code>. 「name」- 菜单名称
+     * Setter for <code>ZDB.X_MENU.NAME</code>. 「name」- 菜单名称
      */
     public IXMenu setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.NAME</code>. 「name」- 菜单名称
+     * Getter for <code>ZDB.X_MENU.NAME</code>. 「name」- 菜单名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
+     * Setter for <code>ZDB.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
      */
     public IXMenu setIcon(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
+     * Getter for <code>ZDB.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
      */
     public String getIcon();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.TEXT</code>. 「text」- 菜单显示文字
+     * Setter for <code>ZDB.X_MENU.TEXT</code>. 「text」- 菜单显示文字
      */
     public IXMenu setText(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.TEXT</code>. 「text」- 菜单显示文字
+     * Getter for <code>ZDB.X_MENU.TEXT</code>. 「text」- 菜单显示文字
      */
     public String getText();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
+     * Setter for <code>ZDB.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
      */
     public IXMenu setUri(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
+     * Getter for <code>ZDB.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
      */
     public String getUri();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.TYPE</code>. 「type」- 菜单类型
+     * Setter for <code>ZDB.X_MENU.TYPE</code>. 「type」- 菜单类型
      */
     public IXMenu setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.TYPE</code>. 「type」- 菜单类型
+     * Getter for <code>ZDB.X_MENU.TYPE</code>. 「type」- 菜单类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ORDER</code>. 「order」- 菜单排序
+     * Setter for <code>ZDB.X_MENU.ORDER</code>. 「order」- 菜单排序
      */
     public IXMenu setOrder(Long value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ORDER</code>. 「order」- 菜单排序
+     * Getter for <code>ZDB.X_MENU.ORDER</code>. 「order」- 菜单排序
      */
     public Long getOrder();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.LEVEL</code>. 「level」- 菜单层级
+     * Setter for <code>ZDB.X_MENU.LEVEL</code>. 「level」- 菜单层级
      */
     public IXMenu setLevel(Long value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.LEVEL</code>. 「level」- 菜单层级
+     * Getter for <code>ZDB.X_MENU.LEVEL</code>. 「level」- 菜单层级
      */
     public Long getLevel();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
+     * Setter for <code>ZDB.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
      */
     public IXMenu setParentId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
+     * Getter for <code>ZDB.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
      */
     public String getParentId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
+     * Setter for <code>ZDB.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
      */
     public IXMenu setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
+     * Getter for <code>ZDB.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_MENU.ACTIVE</code>. 「active」- 是否启用
      */
     public IXMenu setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_MENU.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_MENU.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXMenu setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_MENU.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_MENU.METADATA</code>. 「metadata」- 附加配置
      */
     public IXMenu setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_MENU.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXMenu setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXMenu setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXMenu setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXMenu setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXMenu setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

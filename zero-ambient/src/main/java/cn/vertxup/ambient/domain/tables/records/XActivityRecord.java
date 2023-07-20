@@ -28,7 +28,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.KEY</code>. 「key」- 操作行为主键
+     * Setter for <code>ZDB.X_ACTIVITY.KEY</code>. 「key」- 操作行为主键
      */
     @Override
     public XActivityRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.KEY</code>. 「key」- 操作行为主键
+     * Getter for <code>ZDB.X_ACTIVITY.KEY</code>. 「key」- 操作行为主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.TYPE</code>. 「type」- 操作类型
+     * Setter for <code>ZDB.X_ACTIVITY.TYPE</code>. 「type」- 操作类型
      */
     @Override
     public XActivityRecord setType(String value) {
@@ -54,7 +54,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.TYPE</code>. 「type」- 操作类型
+     * Getter for <code>ZDB.X_ACTIVITY.TYPE</code>. 「type」- 操作类型
      */
     @Override
     public String getType() {
@@ -62,7 +62,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.SERIAL</code>. 「serial」- 变更记录号
+     * Setter for <code>ZDB.X_ACTIVITY.SERIAL</code>. 「serial」- 变更记录号
      */
     @Override
     public XActivityRecord setSerial(String value) {
@@ -71,7 +71,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.SERIAL</code>. 「serial」- 变更记录号
+     * Getter for <code>ZDB.X_ACTIVITY.SERIAL</code>. 「serial」- 变更记录号
      */
     @Override
     public String getSerial() {
@@ -79,8 +79,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.DESCRIPTION</code>. 「description」-
-     * 操作描述信息
+     * Setter for <code>ZDB.X_ACTIVITY.DESCRIPTION</code>. 「description」- 操作描述信息
      */
     @Override
     public XActivityRecord setDescription(String value) {
@@ -89,8 +88,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.DESCRIPTION</code>. 「description」-
-     * 操作描述信息
+     * Getter for <code>ZDB.X_ACTIVITY.DESCRIPTION</code>. 「description」- 操作描述信息
      */
     @Override
     public String getDescription() {
@@ -98,7 +96,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_ID</code>. 「modelId」-
+     * Setter for <code>ZDB.X_ACTIVITY.MODEL_ID</code>. 「modelId」-
      * 组所关联的模型identifier，用于描述
      */
     @Override
@@ -108,7 +106,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_ID</code>. 「modelId」-
+     * Getter for <code>ZDB.X_ACTIVITY.MODEL_ID</code>. 「modelId」-
      * 组所关联的模型identifier，用于描述
      */
     @Override
@@ -117,7 +115,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_KEY</code>. 「modelKey」-
+     * Setter for <code>ZDB.X_ACTIVITY.MODEL_KEY</code>. 「modelKey」-
      * 组所关联的模型记录ID，用于描述哪一个Model中的记录
      */
     @Override
@@ -127,7 +125,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_KEY</code>. 「modelKey」-
+     * Getter for <code>ZDB.X_ACTIVITY.MODEL_KEY</code>. 「modelKey」-
      * 组所关联的模型记录ID，用于描述哪一个Model中的记录
      */
     @Override
@@ -136,8 +134,8 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_CATEGORY</code>.
-     * 「modelCategory」- 关联的category记录，只包含叶节点
+     * Setter for <code>ZDB.X_ACTIVITY.MODEL_CATEGORY</code>. 「modelCategory」-
+     * 关联的category记录，只包含叶节点
      */
     @Override
     public XActivityRecord setModelCategory(String value) {
@@ -146,8 +144,8 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.MODEL_CATEGORY</code>.
-     * 「modelCategory」- 关联的category记录，只包含叶节点
+     * Getter for <code>ZDB.X_ACTIVITY.MODEL_CATEGORY</code>. 「modelCategory」-
+     * 关联的category记录，只包含叶节点
      */
     @Override
     public String getModelCategory() {
@@ -155,7 +153,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.TASK_NAME</code>. 「taskName」- 任务名称
+     * Setter for <code>ZDB.X_ACTIVITY.TASK_NAME</code>. 「taskName」- 任务名称
      */
     @Override
     public XActivityRecord setTaskName(String value) {
@@ -164,7 +162,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.TASK_NAME</code>. 「taskName」- 任务名称
+     * Getter for <code>ZDB.X_ACTIVITY.TASK_NAME</code>. 「taskName」- 任务名称
      */
     @Override
     public String getTaskName() {
@@ -172,8 +170,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.TASK_SERIAL</code>. 「taskSerial」-
-     * 任务单号
+     * Setter for <code>ZDB.X_ACTIVITY.TASK_SERIAL</code>. 「taskSerial」- 任务单号
      */
     @Override
     public XActivityRecord setTaskSerial(String value) {
@@ -182,8 +179,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.TASK_SERIAL</code>. 「taskSerial」-
-     * 任务单号
+     * Getter for <code>ZDB.X_ACTIVITY.TASK_SERIAL</code>. 「taskSerial」- 任务单号
      */
     @Override
     public String getTaskSerial() {
@@ -191,7 +187,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.RECORD_OLD</code>. 「recordOld」-
+     * Setter for <code>ZDB.X_ACTIVITY.RECORD_OLD</code>. 「recordOld」-
      * 变更之前的数据（用于回滚）
      */
     @Override
@@ -201,7 +197,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.RECORD_OLD</code>. 「recordOld」-
+     * Getter for <code>ZDB.X_ACTIVITY.RECORD_OLD</code>. 「recordOld」-
      * 变更之前的数据（用于回滚）
      */
     @Override
@@ -210,7 +206,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.RECORD_NEW</code>. 「recordNew」-
+     * Setter for <code>ZDB.X_ACTIVITY.RECORD_NEW</code>. 「recordNew」-
      * 变更之后的数据（用于更新）
      */
     @Override
@@ -220,7 +216,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.RECORD_NEW</code>. 「recordNew」-
+     * Getter for <code>ZDB.X_ACTIVITY.RECORD_NEW</code>. 「recordNew」-
      * 变更之后的数据（用于更新）
      */
     @Override
@@ -229,7 +225,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
+     * Setter for <code>ZDB.X_ACTIVITY.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     @Override
     public XActivityRecord setSigma(String value) {
@@ -238,7 +234,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
+     * Getter for <code>ZDB.X_ACTIVITY.SIGMA</code>. 「sigma」- 用户组绑定的统一标识
      */
     @Override
     public String getSigma() {
@@ -246,7 +242,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_ACTIVITY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XActivityRecord setLanguage(String value) {
@@ -255,7 +251,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_ACTIVITY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -263,7 +259,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_ACTIVITY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XActivityRecord setActive(Boolean value) {
@@ -272,7 +268,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_ACTIVITY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -280,8 +276,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Setter for <code>ZDB.X_ACTIVITY.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public XActivityRecord setMetadata(String value) {
@@ -290,8 +285,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Getter for <code>ZDB.X_ACTIVITY.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public String getMetadata() {
@@ -299,8 +293,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_ACTIVITY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XActivityRecord setCreatedAt(LocalDateTime value) {
@@ -309,8 +302,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_ACTIVITY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -318,8 +310,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.X_ACTIVITY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XActivityRecord setCreatedBy(String value) {
@@ -328,8 +319,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.X_ACTIVITY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -337,8 +327,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_ACTIVITY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XActivityRecord setUpdatedAt(LocalDateTime value) {
@@ -347,8 +336,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_ACTIVITY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -356,8 +344,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.X_ACTIVITY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XActivityRecord setUpdatedBy(String value) {
@@ -366,8 +353,7 @@ public class XActivityRecord extends UpdatableRecordImpl<XActivityRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.X_ACTIVITY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

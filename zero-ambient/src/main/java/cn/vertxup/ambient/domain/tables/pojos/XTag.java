@@ -108,7 +108,7 @@ public class XTag implements VertxPojo, IXTag {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Getter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     @Override
     public String getKey() {
@@ -116,7 +116,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Setter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     @Override
     public XTag setKey(String key) {
@@ -125,7 +125,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Getter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     @Override
     public String getName() {
@@ -133,7 +133,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Setter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     @Override
     public XTag setName(String name) {
@@ -142,7 +142,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Getter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     @Override
     public String getType() {
@@ -150,7 +150,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Setter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     @Override
     public XTag setType(String type) {
@@ -159,7 +159,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Getter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     @Override
     public String getIcon() {
@@ -167,7 +167,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Setter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     @Override
     public XTag setIcon(String icon) {
@@ -176,7 +176,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Getter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     @Override
     public Long getSort() {
@@ -184,7 +184,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Setter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     @Override
     public XTag setSort(Long sort) {
@@ -193,7 +193,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Getter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     @Override
     public Boolean getShow() {
@@ -201,7 +201,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Setter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     @Override
     public XTag setShow(Boolean show) {
@@ -210,7 +210,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Getter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     @Override
     public String getDescription() {
@@ -218,7 +218,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Setter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     @Override
     public XTag setDescription(String description) {
@@ -227,7 +227,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Getter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     @Override
     public String getUiStyle() {
@@ -235,7 +235,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Setter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     @Override
     public XTag setUiStyle(String uiStyle) {
@@ -244,7 +244,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Getter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     @Override
     public String getUiConfig() {
@@ -252,7 +252,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Setter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     @Override
     public XTag setUiConfig(String uiConfig) {
@@ -261,7 +261,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -269,7 +269,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XTag setAppId(String appId) {
@@ -278,7 +278,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -286,7 +286,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XTag setActive(Boolean active) {
@@ -295,7 +295,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -303,7 +303,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XTag setSigma(String sigma) {
@@ -312,7 +312,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -320,7 +320,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XTag setMetadata(String metadata) {
@@ -329,7 +329,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -337,7 +337,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XTag setLanguage(String language) {
@@ -346,7 +346,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -354,7 +354,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XTag setCreatedAt(LocalDateTime createdAt) {
@@ -363,7 +363,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -371,7 +371,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XTag setCreatedBy(String createdBy) {
@@ -380,7 +380,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -388,7 +388,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XTag setUpdatedAt(LocalDateTime updatedAt) {
@@ -397,7 +397,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -405,7 +405,7 @@ public class XTag implements VertxPojo, IXTag {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XTag setUpdatedBy(String updatedBy) {

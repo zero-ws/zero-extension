@@ -18,282 +18,264 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXActivityRule extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
      */
     public IXActivityRule setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
      * 「definitionKey」- 流程对应的 definitionKey，用于查询所有规则用
      */
     public IXActivityRule setDefinitionKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
      * 「definitionKey」- 流程对应的 definitionKey，用于查询所有规则用
      */
     public String getDefinitionKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
      * 和待办绑定的taskKey
      */
     public IXActivityRule setTaskKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
      * 和待办绑定的taskKey
      */
     public String getTaskKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
      */
     public IXActivityRule setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
      * 规则名称，如果 type = ATOM 时读取，并设置到 typeName 中
      */
     public IXActivityRule setRuleName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
      * 规则名称，如果 type = ATOM 时读取，并设置到 typeName 中
      */
     public String getRuleName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_ORDER</code>.
-     * 「ruleOrder」- 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_ORDER</code>. 「ruleOrder」-
+     * 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
      */
     public IXActivityRule setRuleOrder(Long value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_ORDER</code>.
-     * 「ruleOrder」- 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_ORDER</code>. 「ruleOrder」-
+     * 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
      */
     public Long getRuleOrder();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」-
-     * 规则所属主模型名空间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」- 规则所属主模型名空间
      */
     public IXActivityRule setRuleNs(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」-
-     * 规则所属主模型名空间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」- 规则所属主模型名空间
      */
     public String getRuleNs();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
      * 「ruleIdentifier」- 主模型ID
      */
     public IXActivityRule setRuleIdentifier(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
      * 「ruleIdentifier」- 主模型ID
      */
     public String getRuleIdentifier();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_FIELD</code>.
-     * 「ruleField」- 主字段名
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_FIELD</code>. 「ruleField」- 主字段名
      */
     public IXActivityRule setRuleField(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_FIELD</code>.
-     * 「ruleField」- 主字段名
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_FIELD</code>. 「ruleField」- 主字段名
      */
     public String getRuleField();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
      * 「ruleExpression」- 规则触发表达式 ( 可以是多个，JsonArray格式 )
      */
     public IXActivityRule setRuleExpression(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
      * 「ruleExpression」- 规则触发表达式 ( 可以是多个，JsonArray格式 )
      */
     public String getRuleExpression();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
      * 参数模板专用，JsonObject结构
      */
     public IXActivityRule setRuleTpl(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
      * 参数模板专用，JsonObject结构
      */
     public String getRuleTpl();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_CONFIG</code>.
-     * 「ruleConfig」- 规则对应的额外配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_CONFIG</code>. 「ruleConfig」-
+     * 规则对应的额外配置
      */
     public IXActivityRule setRuleConfig(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_CONFIG</code>.
-     * 「ruleConfig」- 规则对应的额外配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_CONFIG</code>. 「ruleConfig」-
+     * 规则对应的额外配置
      */
     public String getRuleConfig();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_MESSAGE</code>.
-     * 「ruleMessage」- 输出消息专用, Ut.fromExpression解析（特殊解析）
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_MESSAGE</code>. 「ruleMessage」-
+     * 输出消息专用, Ut.fromExpression解析（特殊解析）
      */
     public IXActivityRule setRuleMessage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_MESSAGE</code>.
-     * 「ruleMessage」- 输出消息专用, Ut.fromExpression解析（特殊解析）
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_MESSAGE</code>. 「ruleMessage」-
+     * 输出消息专用, Ut.fromExpression解析（特殊解析）
      */
     public String getRuleMessage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
      * 「hookComponent」-- 回调钩子组件
      */
     public IXActivityRule setHookComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
      * 「hookComponent」-- 回调钩子组件
      */
     public String getHookComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_CONFIG</code>.
-     * 「hookConfig」-- 回调钩子组件配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.HOOK_CONFIG</code>. 「hookConfig」--
+     * 回调钩子组件配置
      */
     public IXActivityRule setHookConfig(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_CONFIG</code>.
-     * 「hookConfig」-- 回调钩子组件配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.HOOK_CONFIG</code>. 「hookConfig」--
+     * 回调钩子组件配置
      */
     public String getHookConfig();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LOGGING</code>. 「logging」-
-     * 是否记录日志
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.LOGGING</code>. 「logging」- 是否记录日志
      */
     public IXActivityRule setLogging(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LOGGING</code>. 「logging」-
-     * 是否记录日志
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.LOGGING</code>. 「logging」- 是否记录日志
      */
     public Boolean getLogging();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
      */
     public IXActivityRule setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXActivityRule setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.METADATA</code>. 「metadata」- 附加配置
      */
     public IXActivityRule setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXActivityRule setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXActivityRule setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXActivityRule setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXActivityRule setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXActivityRule setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

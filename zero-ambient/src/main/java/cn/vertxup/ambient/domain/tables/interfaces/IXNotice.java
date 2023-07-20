@@ -18,164 +18,162 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXNotice extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.KEY</code>. 「key」- 公告主键
+     * Setter for <code>ZDB.X_NOTICE.KEY</code>. 「key」- 公告主键
      */
     public IXNotice setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.KEY</code>. 「key」- 公告主键
+     * Getter for <code>ZDB.X_NOTICE.KEY</code>. 「key」- 公告主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.NAME</code>. 「name」- 公告标题
+     * Setter for <code>ZDB.X_NOTICE.NAME</code>. 「name」- 公告标题
      */
     public IXNotice setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.NAME</code>. 「name」- 公告标题
+     * Getter for <code>ZDB.X_NOTICE.NAME</code>. 「name」- 公告标题
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CODE</code>. 「code」- 公告编码
+     * Setter for <code>ZDB.X_NOTICE.CODE</code>. 「code」- 公告编码
      */
     public IXNotice setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CODE</code>. 「code」- 公告编码
+     * Getter for <code>ZDB.X_NOTICE.CODE</code>. 「code」- 公告编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.TYPE</code>. 「type」- 公告类型
+     * Setter for <code>ZDB.X_NOTICE.TYPE</code>. 「type」- 公告类型
      */
     public IXNotice setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.TYPE</code>. 「type」- 公告类型
+     * Getter for <code>ZDB.X_NOTICE.TYPE</code>. 「type」- 公告类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.STATUS</code>. 「status」- 公告状态
+     * Setter for <code>ZDB.X_NOTICE.STATUS</code>. 「status」- 公告状态
      */
     public IXNotice setStatus(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.STATUS</code>. 「status」- 公告状态
+     * Getter for <code>ZDB.X_NOTICE.STATUS</code>. 「status」- 公告状态
      */
     public String getStatus();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CONTENT</code>. 「content」- 公告内容
+     * Setter for <code>ZDB.X_NOTICE.CONTENT</code>. 「content」- 公告内容
      */
     public IXNotice setContent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CONTENT</code>. 「content」- 公告内容
+     * Getter for <code>ZDB.X_NOTICE.CONTENT</code>. 「content」- 公告内容
      */
     public String getContent();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.EXPIRED_AT</code>. 「createdAt」-
-     * 公告到期时间
+     * Setter for <code>ZDB.X_NOTICE.EXPIRED_AT</code>. 「createdAt」- 公告到期时间
      */
     public IXNotice setExpiredAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.EXPIRED_AT</code>. 「createdAt」-
-     * 公告到期时间
+     * Getter for <code>ZDB.X_NOTICE.EXPIRED_AT</code>. 「createdAt」- 公告到期时间
      */
     public LocalDateTime getExpiredAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
+     * Setter for <code>ZDB.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
      */
     public IXNotice setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
+     * Getter for <code>ZDB.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
      */
     public IXNotice setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXNotice setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
      */
     public IXNotice setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXNotice setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXNotice setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXNotice setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXNotice setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXNotice setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

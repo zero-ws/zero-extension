@@ -120,7 +120,7 @@ public class XSource implements VertxPojo, IXSource {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.KEY</code>. 「key」- 数据源主键
+     * Getter for <code>ZDB.X_SOURCE.KEY</code>. 「key」- 数据源主键
      */
     @Override
     public String getKey() {
@@ -128,7 +128,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.KEY</code>. 「key」- 数据源主键
+     * Setter for <code>ZDB.X_SOURCE.KEY</code>. 「key」- 数据源主键
      */
     @Override
     public XSource setKey(String key) {
@@ -137,7 +137,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
+     * Getter for <code>ZDB.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public String getIpV4() {
@@ -145,7 +145,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
+     * Setter for <code>ZDB.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public XSource setIpV4(String ipV4) {
@@ -154,7 +154,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
+     * Getter for <code>ZDB.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public String getIpV6() {
@@ -162,7 +162,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
+     * Setter for <code>ZDB.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public XSource setIpV6(String ipV6) {
@@ -171,7 +171,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
+     * Getter for <code>ZDB.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public String getHostname() {
@@ -179,7 +179,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
+     * Setter for <code>ZDB.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public XSource setHostname(String hostname) {
@@ -188,7 +188,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.PORT</code>. 「port」- 端口号
+     * Getter for <code>ZDB.X_SOURCE.PORT</code>. 「port」- 端口号
      */
     @Override
     public Integer getPort() {
@@ -196,7 +196,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.PORT</code>. 「port」- 端口号
+     * Setter for <code>ZDB.X_SOURCE.PORT</code>. 「port」- 端口号
      */
     @Override
     public XSource setPort(Integer port) {
@@ -205,7 +205,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
+     * Getter for <code>ZDB.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
      */
     @Override
     public String getCategory() {
@@ -213,7 +213,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
+     * Setter for <code>ZDB.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
      */
     @Override
     public XSource setCategory(String category) {
@@ -222,7 +222,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.DRIVER_CLASS_NAME</code>.
+     * Getter for <code>ZDB.X_SOURCE.DRIVER_CLASS_NAME</code>.
      * 「driverClassName」- 数据库驱动指定，JDBC4之前
      */
     @Override
@@ -231,7 +231,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.DRIVER_CLASS_NAME</code>.
+     * Setter for <code>ZDB.X_SOURCE.DRIVER_CLASS_NAME</code>.
      * 「driverClassName」- 数据库驱动指定，JDBC4之前
      */
     @Override
@@ -241,8 +241,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」-
-     * JDBC连接字符串
+     * Getter for <code>ZDB.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」- JDBC连接字符串
      */
     @Override
     public String getJdbcUrl() {
@@ -250,8 +249,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」-
-     * JDBC连接字符串
+     * Setter for <code>ZDB.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」- JDBC连接字符串
      */
     @Override
     public XSource setJdbcUrl(String jdbcUrl) {
@@ -260,7 +258,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
+     * Getter for <code>ZDB.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
      * 连接字符串中的配置key=value
      */
     @Override
@@ -269,7 +267,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
+     * Setter for <code>ZDB.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
      * 连接字符串中的配置key=value
      */
     @Override
@@ -279,7 +277,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
+     * Getter for <code>ZDB.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
      */
     @Override
     public String getInstance() {
@@ -287,7 +285,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
+     * Setter for <code>ZDB.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
      */
     @Override
     public XSource setInstance(String instance) {
@@ -296,7 +294,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.USERNAME</code>. 「username」- 账号
+     * Getter for <code>ZDB.X_SOURCE.USERNAME</code>. 「username」- 账号
      */
     @Override
     public String getUsername() {
@@ -304,7 +302,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.USERNAME</code>. 「username」- 账号
+     * Setter for <code>ZDB.X_SOURCE.USERNAME</code>. 「username」- 账号
      */
     @Override
     public XSource setUsername(String username) {
@@ -313,7 +311,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.PASSWORD</code>. 「password」- 密码
+     * Getter for <code>ZDB.X_SOURCE.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public String getPassword() {
@@ -321,7 +319,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.PASSWORD</code>. 「password」- 密码
+     * Setter for <code>ZDB.X_SOURCE.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public XSource setPassword(String password) {
@@ -330,7 +328,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -338,7 +336,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XSource setAppId(String appId) {
@@ -347,7 +345,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -355,7 +353,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XSource setActive(Boolean active) {
@@ -364,7 +362,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -372,7 +370,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XSource setSigma(String sigma) {
@@ -381,7 +379,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -389,7 +387,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XSource setMetadata(String metadata) {
@@ -398,7 +396,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -406,7 +404,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XSource setLanguage(String language) {
@@ -415,7 +413,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -423,7 +421,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XSource setCreatedAt(LocalDateTime createdAt) {
@@ -432,7 +430,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -440,7 +438,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XSource setCreatedBy(String createdBy) {
@@ -449,7 +447,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -457,7 +455,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XSource setUpdatedAt(LocalDateTime updatedAt) {
@@ -466,7 +464,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -474,7 +472,7 @@ public class XSource implements VertxPojo, IXSource {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XSource setUpdatedBy(String updatedBy) {

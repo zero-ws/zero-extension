@@ -108,7 +108,7 @@ public class XMenu implements VertxPojo, IXMenu {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.KEY</code>. 「key」- 菜单主键
+     * Getter for <code>ZDB.X_MENU.KEY</code>. 「key」- 菜单主键
      */
     @Override
     public String getKey() {
@@ -116,7 +116,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.KEY</code>. 「key」- 菜单主键
+     * Setter for <code>ZDB.X_MENU.KEY</code>. 「key」- 菜单主键
      */
     @Override
     public XMenu setKey(String key) {
@@ -125,7 +125,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.NAME</code>. 「name」- 菜单名称
+     * Getter for <code>ZDB.X_MENU.NAME</code>. 「name」- 菜单名称
      */
     @Override
     public String getName() {
@@ -133,7 +133,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.NAME</code>. 「name」- 菜单名称
+     * Setter for <code>ZDB.X_MENU.NAME</code>. 「name」- 菜单名称
      */
     @Override
     public XMenu setName(String name) {
@@ -142,7 +142,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
+     * Getter for <code>ZDB.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
      */
     @Override
     public String getIcon() {
@@ -150,7 +150,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
+     * Setter for <code>ZDB.X_MENU.ICON</code>. 「icon」- 菜单使用的icon
      */
     @Override
     public XMenu setIcon(String icon) {
@@ -159,7 +159,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.TEXT</code>. 「text」- 菜单显示文字
+     * Getter for <code>ZDB.X_MENU.TEXT</code>. 「text」- 菜单显示文字
      */
     @Override
     public String getText() {
@@ -167,7 +167,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.TEXT</code>. 「text」- 菜单显示文字
+     * Setter for <code>ZDB.X_MENU.TEXT</code>. 「text」- 菜单显示文字
      */
     @Override
     public XMenu setText(String text) {
@@ -176,7 +176,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
+     * Getter for <code>ZDB.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
      */
     @Override
     public String getUri() {
@@ -184,7 +184,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
+     * Setter for <code>ZDB.X_MENU.URI</code>. 「uri」- 菜单地址（不包含应用的path）
      */
     @Override
     public XMenu setUri(String uri) {
@@ -193,7 +193,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.TYPE</code>. 「type」- 菜单类型
+     * Getter for <code>ZDB.X_MENU.TYPE</code>. 「type」- 菜单类型
      */
     @Override
     public String getType() {
@@ -201,7 +201,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.TYPE</code>. 「type」- 菜单类型
+     * Setter for <code>ZDB.X_MENU.TYPE</code>. 「type」- 菜单类型
      */
     @Override
     public XMenu setType(String type) {
@@ -210,7 +210,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ORDER</code>. 「order」- 菜单排序
+     * Getter for <code>ZDB.X_MENU.ORDER</code>. 「order」- 菜单排序
      */
     @Override
     public Long getOrder() {
@@ -218,7 +218,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ORDER</code>. 「order」- 菜单排序
+     * Setter for <code>ZDB.X_MENU.ORDER</code>. 「order」- 菜单排序
      */
     @Override
     public XMenu setOrder(Long order) {
@@ -227,7 +227,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.LEVEL</code>. 「level」- 菜单层级
+     * Getter for <code>ZDB.X_MENU.LEVEL</code>. 「level」- 菜单层级
      */
     @Override
     public Long getLevel() {
@@ -235,7 +235,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.LEVEL</code>. 「level」- 菜单层级
+     * Setter for <code>ZDB.X_MENU.LEVEL</code>. 「level」- 菜单层级
      */
     @Override
     public XMenu setLevel(Long level) {
@@ -244,7 +244,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
+     * Getter for <code>ZDB.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
      */
     @Override
     public String getParentId() {
@@ -252,7 +252,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
+     * Setter for <code>ZDB.X_MENU.PARENT_ID</code>. 「parentId」- 菜单父ID
      */
     @Override
     public XMenu setParentId(String parentId) {
@@ -261,7 +261,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
+     * Getter for <code>ZDB.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
      */
     @Override
     public String getAppId() {
@@ -269,7 +269,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
+     * Setter for <code>ZDB.X_MENU.APP_ID</code>. 「appId」- 应用程序ID
      */
     @Override
     public XMenu setAppId(String appId) {
@@ -278,7 +278,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_MENU.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -286,7 +286,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_MENU.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XMenu setActive(Boolean active) {
@@ -295,7 +295,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_MENU.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -303,7 +303,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_MENU.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XMenu setSigma(String sigma) {
@@ -312,7 +312,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_MENU.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -320,7 +320,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_MENU.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XMenu setMetadata(String metadata) {
@@ -329,7 +329,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -337,7 +337,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_MENU.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XMenu setLanguage(String language) {
@@ -346,7 +346,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -354,7 +354,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_MENU.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XMenu setCreatedAt(LocalDateTime createdAt) {
@@ -363,7 +363,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -371,7 +371,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_MENU.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XMenu setCreatedBy(String createdBy) {
@@ -380,7 +380,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -388,7 +388,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_MENU.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XMenu setUpdatedAt(LocalDateTime updatedAt) {
@@ -397,7 +397,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -405,7 +405,7 @@ public class XMenu implements VertxPojo, IXMenu {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_MENU.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XMenu setUpdatedBy(String updatedBy) {

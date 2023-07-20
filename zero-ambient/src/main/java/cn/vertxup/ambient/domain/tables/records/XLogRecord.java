@@ -28,7 +28,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.KEY</code>. 「key」- 日志的主键
+     * Setter for <code>ZDB.X_LOG.KEY</code>. 「key」- 日志的主键
      */
     @Override
     public XLogRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.KEY</code>. 「key」- 日志的主键
+     * Getter for <code>ZDB.X_LOG.KEY</code>. 「key」- 日志的主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.TYPE</code>. 「type」- 日志的分类
+     * Setter for <code>ZDB.X_LOG.TYPE</code>. 「type」- 日志的分类
      */
     @Override
     public XLogRecord setType(String value) {
@@ -54,7 +54,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.TYPE</code>. 「type」- 日志的分类
+     * Getter for <code>ZDB.X_LOG.TYPE</code>. 「type」- 日志的分类
      */
     @Override
     public String getType() {
@@ -62,8 +62,8 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR /
-     * WARN / INFO
+     * Setter for <code>ZDB.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR / WARN /
+     * INFO
      */
     @Override
     public XLogRecord setLevel(String value) {
@@ -72,8 +72,8 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR /
-     * WARN / INFO
+     * Getter for <code>ZDB.X_LOG.LEVEL</code>. 「level」- 日志级别：ERROR / WARN /
+     * INFO
      */
     @Override
     public String getLevel() {
@@ -81,7 +81,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
+     * Setter for <code>ZDB.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
      */
     @Override
     public XLogRecord setInfoStack(String value) {
@@ -90,7 +90,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
+     * Getter for <code>ZDB.X_LOG.INFO_STACK</code>. 「infoStack」- 堆栈信息
      */
     @Override
     public String getInfoStack() {
@@ -98,7 +98,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
+     * Setter for <code>ZDB.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
      */
     @Override
     public XLogRecord setInfoSystem(String value) {
@@ -107,7 +107,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
+     * Getter for <code>ZDB.X_LOG.INFO_SYSTEM</code>. 「infoSystem」- 日志内容
      */
     @Override
     public String getInfoSystem() {
@@ -115,8 +115,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_READABLE</code>. 「infoReadable」-
-     * 日志的可读信息
+     * Setter for <code>ZDB.X_LOG.INFO_READABLE</code>. 「infoReadable」- 日志的可读信息
      */
     @Override
     public XLogRecord setInfoReadable(String value) {
@@ -125,8 +124,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_READABLE</code>. 「infoReadable」-
-     * 日志的可读信息
+     * Getter for <code>ZDB.X_LOG.INFO_READABLE</code>. 「infoReadable」- 日志的可读信息
      */
     @Override
     public String getInfoReadable() {
@@ -134,7 +132,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
+     * Setter for <code>ZDB.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
      */
     @Override
     public XLogRecord setInfoAt(LocalDateTime value) {
@@ -143,7 +141,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
+     * Getter for <code>ZDB.X_LOG.INFO_AT</code>. 「infoAt」- 日志记录时间
      */
     @Override
     public LocalDateTime getInfoAt() {
@@ -151,8 +149,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的
-     * agent 信息
+     * Setter for <code>ZDB.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的 agent 信息
      */
     @Override
     public XLogRecord setLogAgent(String value) {
@@ -161,8 +158,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的
-     * agent 信息
+     * Getter for <code>ZDB.X_LOG.LOG_AGENT</code>. 「logAgent」- 记录日志的 agent 信息
      */
     @Override
     public String getLogAgent() {
@@ -170,7 +166,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
+     * Setter for <code>ZDB.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
      */
     @Override
     public XLogRecord setLogIp(String value) {
@@ -179,7 +175,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
+     * Getter for <code>ZDB.X_LOG.LOG_IP</code>. 「logIp」- 日志扩展组件
      */
     @Override
     public String getLogIp() {
@@ -187,7 +183,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
+     * Setter for <code>ZDB.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
      */
     @Override
     public XLogRecord setLogUser(String value) {
@@ -196,7 +192,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
+     * Getter for <code>ZDB.X_LOG.LOG_USER</code>. 「logUser」- 日志记录人
      */
     @Override
     public String getLogUser() {
@@ -204,7 +200,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_LOG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XLogRecord setActive(Boolean value) {
@@ -213,7 +209,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_LOG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -221,7 +217,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_LOG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XLogRecord setSigma(String value) {
@@ -230,7 +226,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_LOG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -238,7 +234,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_LOG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XLogRecord setMetadata(String value) {
@@ -247,7 +243,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_LOG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -255,7 +251,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XLogRecord setLanguage(String value) {
@@ -264,7 +260,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_LOG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -272,7 +268,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XLogRecord setCreatedAt(LocalDateTime value) {
@@ -281,7 +277,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_LOG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -289,7 +285,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XLogRecord setCreatedBy(String value) {
@@ -298,7 +294,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_LOG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -306,7 +302,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XLogRecord setUpdatedAt(LocalDateTime value) {
@@ -315,7 +311,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_LOG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -323,7 +319,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XLogRecord setUpdatedBy(String value) {
@@ -332,7 +328,7 @@ public class XLogRecord extends UpdatableRecordImpl<XLogRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_LOG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

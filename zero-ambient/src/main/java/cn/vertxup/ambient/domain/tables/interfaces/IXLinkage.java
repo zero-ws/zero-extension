@@ -18,244 +18,230 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXLinkage extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Setter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     public IXLinkage setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Getter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Setter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     public IXLinkage setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Getter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Setter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     public IXLinkage setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Getter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Setter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     public IXLinkage setAlias(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Getter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     public String getAlias();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Setter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     public IXLinkage setRegion(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Getter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     public String getRegion();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Setter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     public IXLinkage setLinkKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Getter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     public String getLinkKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Setter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     public IXLinkage setLinkType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Getter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     public String getLinkType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Setter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     public IXLinkage setLinkData(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Getter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     public String getLinkData();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     public IXLinkage setSourceKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     public String getSourceKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     public IXLinkage setSourceType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     public String getSourceType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     public IXLinkage setSourceData(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     public String getSourceData();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     public IXLinkage setTargetKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     public String getTargetKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     public IXLinkage setTargetType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     public String getTargetType();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     public IXLinkage setTargetData(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     public String getTargetData();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXLinkage setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXLinkage setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     public IXLinkage setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Setter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     public IXLinkage setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Getter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXLinkage setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXLinkage setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXLinkage setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXLinkage setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

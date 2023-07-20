@@ -28,7 +28,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Setter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     @Override
     public XTagRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.KEY</code>. 「key」- 标签主键
+     * Getter for <code>ZDB.X_TAG.KEY</code>. 「key」- 标签主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Setter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     @Override
     public XTagRecord setName(String value) {
@@ -54,7 +54,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.NAME</code>. 「name」- 标签名称
+     * Getter for <code>ZDB.X_TAG.NAME</code>. 「name」- 标签名称
      */
     @Override
     public String getName() {
@@ -62,7 +62,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Setter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     @Override
     public XTagRecord setType(String value) {
@@ -71,7 +71,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.TYPE</code>. 「type」- 标签类型
+     * Getter for <code>ZDB.X_TAG.TYPE</code>. 「type」- 标签类型
      */
     @Override
     public String getType() {
@@ -79,7 +79,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Setter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     @Override
     public XTagRecord setIcon(String value) {
@@ -88,7 +88,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ICON</code>. 「icon」- 标签使用的图标
+     * Getter for <code>ZDB.X_TAG.ICON</code>. 「icon」- 标签使用的图标
      */
     @Override
     public String getIcon() {
@@ -96,7 +96,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Setter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     @Override
     public XTagRecord setSort(Long value) {
@@ -105,7 +105,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SORT</code>. 「sort」- 标签排序
+     * Getter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     @Override
     public Long getSort() {
@@ -113,7 +113,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Setter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     @Override
     public XTagRecord setShow(Boolean value) {
@@ -122,7 +122,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
+     * Getter for <code>ZDB.X_TAG.SHOW</code>. 「show」- 是否显示在导航栏
      */
     @Override
     public Boolean getShow() {
@@ -130,7 +130,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Setter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     @Override
     public XTagRecord setDescription(String value) {
@@ -139,7 +139,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
+     * Getter for <code>ZDB.X_TAG.DESCRIPTION</code>. 「description」- 标签描述
      */
     @Override
     public String getDescription() {
@@ -147,7 +147,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Setter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     @Override
     public XTagRecord setUiStyle(String value) {
@@ -156,7 +156,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
+     * Getter for <code>ZDB.X_TAG.UI_STYLE</code>. 「uiStyle」- 标签的其他风格处理
      */
     @Override
     public String getUiStyle() {
@@ -164,7 +164,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Setter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     @Override
     public XTagRecord setUiConfig(String value) {
@@ -173,7 +173,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
+     * Getter for <code>ZDB.X_TAG.UI_CONFIG</code>. 「uiConfig」- 标签的其他配置
      */
     @Override
     public String getUiConfig() {
@@ -181,7 +181,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XTagRecord setAppId(String value) {
@@ -190,7 +190,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_TAG.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -198,7 +198,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XTagRecord setActive(Boolean value) {
@@ -207,7 +207,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_TAG.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -215,7 +215,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XTagRecord setSigma(String value) {
@@ -224,7 +224,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_TAG.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -232,7 +232,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XTagRecord setMetadata(String value) {
@@ -241,7 +241,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_TAG.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -249,7 +249,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XTagRecord setLanguage(String value) {
@@ -258,7 +258,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_TAG.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -266,7 +266,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XTagRecord setCreatedAt(LocalDateTime value) {
@@ -275,7 +275,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_TAG.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -283,7 +283,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XTagRecord setCreatedBy(String value) {
@@ -292,7 +292,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_TAG.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -300,7 +300,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XTagRecord setUpdatedAt(LocalDateTime value) {
@@ -309,7 +309,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_TAG.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -317,7 +317,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XTagRecord setUpdatedBy(String value) {
@@ -326,7 +326,7 @@ public class XTagRecord extends UpdatableRecordImpl<XTagRecord> implements Vertx
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_TAG.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

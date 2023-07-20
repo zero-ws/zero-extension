@@ -18,242 +18,234 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IXApp extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.KEY</code>. 「key」- 应用程序主键
+     * Setter for <code>ZDB.X_APP.KEY</code>. 「key」- 应用程序主键
      */
     public IXApp setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.KEY</code>. 「key」- 应用程序主键
+     * Getter for <code>ZDB.X_APP.KEY</code>. 「key」- 应用程序主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.NAME</code>. 「name」- 应用程序名称
+     * Setter for <code>ZDB.X_APP.NAME</code>. 「name」- 应用程序名称
      */
     public IXApp setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.NAME</code>. 「name」- 应用程序名称
+     * Getter for <code>ZDB.X_APP.NAME</code>. 「name」- 应用程序名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CODE</code>. 「code」- 应用程序编码
+     * Setter for <code>ZDB.X_APP.CODE</code>. 「code」- 应用程序编码
      */
     public IXApp setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CODE</code>. 「code」- 应用程序编码
+     * Getter for <code>ZDB.X_APP.CODE</code>. 「code」- 应用程序编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Setter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     public IXApp setTitle(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Getter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     public String getTitle();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Setter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
      */
     public IXApp setLogo(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Getter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
      */
     public String getLogo();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Setter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
      */
     public IXApp setIcp(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Getter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
      */
     public String getIcp();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.COPY_RIGHT</code>. 「copyRight」-
-     * CopyRight版权信息
+     * Setter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
      */
     public IXApp setCopyRight(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.COPY_RIGHT</code>. 「copyRight」-
-     * CopyRight版权信息
+     * Getter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
      */
     public String getCopyRight();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     * Setter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
      */
     public IXApp setEmail(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     * Getter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
      */
     public String getEmail();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     * Setter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
      */
     public IXApp setDomain(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     * Getter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
      */
     public String getDomain();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.APP_PORT</code>. 「appPort」-
+     * Setter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
      * 应用程序端口号，和SOURCE的端口号区别开
      */
     public IXApp setAppPort(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.APP_PORT</code>. 「appPort」-
+     * Getter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
      * 应用程序端口号，和SOURCE的端口号区别开
      */
     public Integer getAppPort();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.URL_ENTRY</code>. 「urlEntry」—
-     * 应用程序入口页面（登录页）
+     * Setter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
      */
     public IXApp setUrlEntry(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.URL_ENTRY</code>. 「urlEntry」—
-     * 应用程序入口页面（登录页）
+     * Getter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
      */
     public String getUrlEntry();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.URL_MAIN</code>. 「urlMain」-
-     * 应用程序内置主页（带安全）
+     * Setter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
      */
     public IXApp setUrlMain(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.URL_MAIN</code>. 「urlMain」-
-     * 应用程序内置主页（带安全）
+     * Getter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
      */
     public String getUrlMain();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Setter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
      */
     public IXApp setPath(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Getter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
      */
     public String getPath();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Setter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
      */
     public IXApp setRoute(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Getter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
      */
     public String getRoute();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.APP_KEY</code>. 「appKey」-
-     * 应用程序专用唯一hashKey
+     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
      */
     public IXApp setAppKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.APP_KEY</code>. 「appKey」-
-     * 应用程序专用唯一hashKey
+     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
      */
     public String getAppKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
      */
     public IXApp setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_APP.SIGMA</code>. 「sigma」- 统一标识
      */
     public IXApp setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_APP.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_APP.METADATA</code>. 「metadata」- 附加配置
      */
     public IXApp setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_APP.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_APP.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IXApp setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_APP.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IXApp setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_APP.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IXApp setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_APP.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IXApp setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_APP.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IXApp setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_APP.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

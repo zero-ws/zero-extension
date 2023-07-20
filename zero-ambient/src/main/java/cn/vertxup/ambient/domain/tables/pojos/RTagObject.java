@@ -54,7 +54,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     @Override
     public String getTagId() {
@@ -62,7 +62,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.TAG_ID</code>. 「tagId」- 标签ID
      */
     @Override
     public RTagObject setTagId(String tagId) {
@@ -71,8 +71,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     @Override
     public String getEntityType() {
@@ -80,8 +79,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_TYPE</code>.
-     * 「entityType」- 关联类型
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_TYPE</code>. 「entityType」- 关联类型
      */
     @Override
     public RTagObject setEntityType(String entityType) {
@@ -90,8 +88,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Getter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     @Override
     public String getEntityId() {
@@ -99,8 +96,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」-
-     * 关联实体ID
+     * Setter for <code>ZDB.R_TAG_OBJECT.ENTITY_ID</code>. 「entityId」- 关联实体ID
      */
     @Override
     public RTagObject setEntityId(String entityId) {
@@ -109,8 +105,8 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Getter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     @Override
     public String getLinkComponent() {
@@ -118,8 +114,8 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.LINK_COMPONENT</code>.
-     * 「linkComponent」- 关联执行组件（扩展用）
+     * Setter for <code>ZDB.R_TAG_OBJECT.LINK_COMPONENT</code>. 「linkComponent」-
+     * 关联执行组件（扩展用）
      */
     @Override
     public RTagObject setLinkComponent(String linkComponent) {
@@ -128,7 +124,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Getter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public String getComment() {
@@ -136,7 +132,7 @@ public class RTagObject implements VertxPojo, IRTagObject {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
+     * Setter for <code>ZDB.R_TAG_OBJECT.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public RTagObject setComment(String comment) {

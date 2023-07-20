@@ -124,7 +124,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Getter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     @Override
     public String getKey() {
@@ -132,7 +132,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.KEY</code>. 「key」- 连接主键
+     * Setter for <code>ZDB.X_LINKAGE.KEY</code>. 「key」- 连接主键
      */
     @Override
     public XLinkage setKey(String key) {
@@ -141,7 +141,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Getter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     @Override
     public String getName() {
@@ -149,7 +149,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.NAME</code>. 「name」- 名称
+     * Setter for <code>ZDB.X_LINKAGE.NAME</code>. 「name」- 名称
      */
     @Override
     public XLinkage setName(String name) {
@@ -158,7 +158,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Getter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     @Override
     public String getType() {
@@ -166,7 +166,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TYPE</code>. 「type」- 连接类型
+     * Setter for <code>ZDB.X_LINKAGE.TYPE</code>. 「type」- 连接类型
      */
     @Override
     public XLinkage setType(String type) {
@@ -175,7 +175,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Getter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     @Override
     public String getAlias() {
@@ -183,7 +183,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ALIAS</code>. 「alias」- 别称
+     * Setter for <code>ZDB.X_LINKAGE.ALIAS</code>. 「alias」- 别称
      */
     @Override
     public XLinkage setAlias(String alias) {
@@ -192,7 +192,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Getter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     @Override
@@ -201,7 +201,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.REGION</code>. 「region」-
+     * Setter for <code>ZDB.X_LINKAGE.REGION</code>. 「region」-
      * 连接区域标识，同一个区域算一个连接（批次）
      */
     @Override
@@ -211,8 +211,8 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Getter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     @Override
     public String getLinkKey() {
@@ -220,8 +220,8 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_KEY</code>. 「linkKey」-
-     * 双向Key计算，根据 source / target 计算
+     * Setter for <code>ZDB.X_LINKAGE.LINK_KEY</code>. 「linkKey」- 双向Key计算，根据
+     * source / target 计算
      */
     @Override
     public XLinkage setLinkKey(String linkKey) {
@@ -230,8 +230,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Getter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     @Override
     public String getLinkType() {
@@ -239,8 +238,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_TYPE</code>. 「linkType」-
-     * 关系记录类型
+     * Setter for <code>ZDB.X_LINKAGE.LINK_TYPE</code>. 「linkType」- 关系记录类型
      */
     @Override
     public XLinkage setLinkType(String linkType) {
@@ -249,8 +247,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Getter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     @Override
     public String getLinkData() {
@@ -258,8 +255,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LINK_DATA</code>. 「linkData」-
-     * 关联数据Json格式
+     * Setter for <code>ZDB.X_LINKAGE.LINK_DATA</code>. 「linkData」- 关联数据Json格式
      */
     @Override
     public XLinkage setLinkData(String linkData) {
@@ -268,7 +264,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     @Override
     public String getSourceKey() {
@@ -276,7 +272,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_KEY</code>. 「sourceKey」- 源实体
      */
     @Override
     public XLinkage setSourceKey(String sourceKey) {
@@ -285,8 +281,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     @Override
     public String getSourceType() {
@@ -294,8 +289,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」-
-     * 源实体类型
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_TYPE</code>. 「sourceType」- 源实体类型
      */
     @Override
     public XLinkage setSourceType(String sourceType) {
@@ -304,7 +298,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Getter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     @Override
@@ -313,7 +307,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
+     * Setter for <code>ZDB.X_LINKAGE.SOURCE_DATA</code>. 「sourceData」-
      * 源记录Json格式
      */
     @Override
@@ -323,8 +317,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     @Override
     public String getTargetKey() {
@@ -332,8 +325,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_KEY</code>. 「targetKey」-
-     * 目标实体
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_KEY</code>. 「targetKey」- 目标实体
      */
     @Override
     public XLinkage setTargetKey(String targetKey) {
@@ -342,8 +334,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     @Override
     public String getTargetType() {
@@ -351,8 +342,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_TYPE</code>. 「targetType」-
-     * 目标实体类型
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_TYPE</code>. 「targetType」- 目标实体类型
      */
     @Override
     public XLinkage setTargetType(String targetType) {
@@ -361,7 +351,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Getter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     @Override
@@ -370,7 +360,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
+     * Setter for <code>ZDB.X_LINKAGE.TARGET_DATA</code>. 「targetData」-
      * 目标记录Json格式
      */
     @Override
@@ -380,7 +370,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -388,7 +378,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_LINKAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XLinkage setSigma(String sigma) {
@@ -397,7 +387,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -405,7 +395,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_LINKAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XLinkage setLanguage(String language) {
@@ -414,7 +404,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -422,7 +412,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_LINKAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XLinkage setActive(Boolean active) {
@@ -431,7 +421,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Getter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public String getMetadata() {
@@ -439,7 +429,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
+     * Setter for <code>ZDB.X_LINKAGE.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public XLinkage setMetadata(String metadata) {
@@ -448,8 +438,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -457,8 +446,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XLinkage setCreatedAt(LocalDateTime createdAt) {
@@ -467,7 +455,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -475,7 +463,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_LINKAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XLinkage setCreatedBy(String createdBy) {
@@ -484,8 +472,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -493,8 +480,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XLinkage setUpdatedAt(LocalDateTime updatedAt) {
@@ -503,7 +489,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -511,7 +497,7 @@ public class XLinkage implements VertxPojo, IXLinkage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_LINKAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XLinkage setUpdatedBy(String updatedBy) {

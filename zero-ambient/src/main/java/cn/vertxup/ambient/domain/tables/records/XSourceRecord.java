@@ -28,7 +28,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.KEY</code>. 「key」- 数据源主键
+     * Setter for <code>ZDB.X_SOURCE.KEY</code>. 「key」- 数据源主键
      */
     @Override
     public XSourceRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.KEY</code>. 「key」- 数据源主键
+     * Getter for <code>ZDB.X_SOURCE.KEY</code>. 「key」- 数据源主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
+     * Setter for <code>ZDB.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public XSourceRecord setIpV4(String value) {
@@ -54,7 +54,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
+     * Getter for <code>ZDB.X_SOURCE.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public String getIpV4() {
@@ -62,7 +62,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
+     * Setter for <code>ZDB.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public XSourceRecord setIpV6(String value) {
@@ -71,7 +71,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
+     * Getter for <code>ZDB.X_SOURCE.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public String getIpV6() {
@@ -79,7 +79,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
+     * Setter for <code>ZDB.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public XSourceRecord setHostname(String value) {
@@ -88,7 +88,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
+     * Getter for <code>ZDB.X_SOURCE.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public String getHostname() {
@@ -96,7 +96,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.PORT</code>. 「port」- 端口号
+     * Setter for <code>ZDB.X_SOURCE.PORT</code>. 「port」- 端口号
      */
     @Override
     public XSourceRecord setPort(Integer value) {
@@ -105,7 +105,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.PORT</code>. 「port」- 端口号
+     * Getter for <code>ZDB.X_SOURCE.PORT</code>. 「port」- 端口号
      */
     @Override
     public Integer getPort() {
@@ -113,7 +113,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
+     * Setter for <code>ZDB.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
      */
     @Override
     public XSourceRecord setCategory(String value) {
@@ -122,7 +122,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
+     * Getter for <code>ZDB.X_SOURCE.CATEGORY</code>. 「category」- 数据库类型
      */
     @Override
     public String getCategory() {
@@ -130,7 +130,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.DRIVER_CLASS_NAME</code>.
+     * Setter for <code>ZDB.X_SOURCE.DRIVER_CLASS_NAME</code>.
      * 「driverClassName」- 数据库驱动指定，JDBC4之前
      */
     @Override
@@ -140,7 +140,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.DRIVER_CLASS_NAME</code>.
+     * Getter for <code>ZDB.X_SOURCE.DRIVER_CLASS_NAME</code>.
      * 「driverClassName」- 数据库驱动指定，JDBC4之前
      */
     @Override
@@ -149,8 +149,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」-
-     * JDBC连接字符串
+     * Setter for <code>ZDB.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」- JDBC连接字符串
      */
     @Override
     public XSourceRecord setJdbcUrl(String value) {
@@ -159,8 +158,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」-
-     * JDBC连接字符串
+     * Getter for <code>ZDB.X_SOURCE.JDBC_URL</code>. 「jdbcUrl」- JDBC连接字符串
      */
     @Override
     public String getJdbcUrl() {
@@ -168,7 +166,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
+     * Setter for <code>ZDB.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
      * 连接字符串中的配置key=value
      */
     @Override
@@ -178,7 +176,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
+     * Getter for <code>ZDB.X_SOURCE.JDBC_CONFIG</code>. 「jdbcConfig」-
      * 连接字符串中的配置key=value
      */
     @Override
@@ -187,7 +185,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
+     * Setter for <code>ZDB.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
      */
     @Override
     public XSourceRecord setInstance(String value) {
@@ -196,7 +194,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
+     * Getter for <code>ZDB.X_SOURCE.INSTANCE</code>. 「instance」- 实例名称
      */
     @Override
     public String getInstance() {
@@ -204,7 +202,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.USERNAME</code>. 「username」- 账号
+     * Setter for <code>ZDB.X_SOURCE.USERNAME</code>. 「username」- 账号
      */
     @Override
     public XSourceRecord setUsername(String value) {
@@ -213,7 +211,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.USERNAME</code>. 「username」- 账号
+     * Getter for <code>ZDB.X_SOURCE.USERNAME</code>. 「username」- 账号
      */
     @Override
     public String getUsername() {
@@ -221,7 +219,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.PASSWORD</code>. 「password」- 密码
+     * Setter for <code>ZDB.X_SOURCE.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public XSourceRecord setPassword(String value) {
@@ -230,7 +228,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.PASSWORD</code>. 「password」- 密码
+     * Getter for <code>ZDB.X_SOURCE.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public String getPassword() {
@@ -238,7 +236,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public XSourceRecord setAppId(String value) {
@@ -247,7 +245,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.X_SOURCE.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -255,7 +253,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XSourceRecord setActive(Boolean value) {
@@ -264,7 +262,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_SOURCE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -272,7 +270,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XSourceRecord setSigma(String value) {
@@ -281,7 +279,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_SOURCE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -289,7 +287,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XSourceRecord setMetadata(String value) {
@@ -298,7 +296,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_SOURCE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -306,7 +304,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XSourceRecord setLanguage(String value) {
@@ -315,7 +313,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_SOURCE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -323,7 +321,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XSourceRecord setCreatedAt(LocalDateTime value) {
@@ -332,7 +330,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_SOURCE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -340,7 +338,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XSourceRecord setCreatedBy(String value) {
@@ -349,7 +347,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_SOURCE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -357,7 +355,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XSourceRecord setUpdatedAt(LocalDateTime value) {
@@ -366,7 +364,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_SOURCE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -374,7 +372,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XSourceRecord setUpdatedBy(String value) {
@@ -383,7 +381,7 @@ public class XSourceRecord extends UpdatableRecordImpl<XSourceRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_SOURCE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

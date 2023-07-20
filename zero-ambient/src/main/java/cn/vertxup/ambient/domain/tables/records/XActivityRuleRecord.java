@@ -25,7 +25,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
      */
     @Override
     public XActivityRuleRecord setKey(String value) {
@@ -34,7 +34,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.KEY</code>. 「key」- 规则主键
      */
     @Override
     public String getKey() {
@@ -42,7 +42,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
      * 「definitionKey」- 流程对应的 definitionKey，用于查询所有规则用
      */
     @Override
@@ -52,7 +52,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.DEFINITION_KEY</code>.
      * 「definitionKey」- 流程对应的 definitionKey，用于查询所有规则用
      */
     @Override
@@ -61,7 +61,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
      * 和待办绑定的taskKey
      */
     @Override
@@ -71,7 +71,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.TASK_KEY</code>. 「taskKey」-
      * 和待办绑定的taskKey
      */
     @Override
@@ -80,7 +80,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
      */
     @Override
     public XActivityRuleRecord setType(String value) {
@@ -89,7 +89,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.TYPE</code>. 「type」- 规则类型
      */
     @Override
     public String getType() {
@@ -97,7 +97,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
      * 规则名称，如果 type = ATOM 时读取，并设置到 typeName 中
      */
     @Override
@@ -107,7 +107,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_NAME</code>. 「ruleName」-
      * 规则名称，如果 type = ATOM 时读取，并设置到 typeName 中
      */
     @Override
@@ -116,8 +116,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_ORDER</code>.
-     * 「ruleOrder」- 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_ORDER</code>. 「ruleOrder」-
+     * 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
      */
     @Override
     public XActivityRuleRecord setRuleOrder(Long value) {
@@ -126,8 +126,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_ORDER</code>.
-     * 「ruleOrder」- 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_ORDER</code>. 「ruleOrder」-
+     * 规则触发顺序，修正两个时间戳，生成时序号统一，先生成的规则排序在上边
      */
     @Override
     public Long getRuleOrder() {
@@ -135,8 +135,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」-
-     * 规则所属主模型名空间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」- 规则所属主模型名空间
      */
     @Override
     public XActivityRuleRecord setRuleNs(String value) {
@@ -145,8 +144,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」-
-     * 规则所属主模型名空间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_NS</code>. 「ruleNs」- 规则所属主模型名空间
      */
     @Override
     public String getRuleNs() {
@@ -154,7 +152,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
      * 「ruleIdentifier」- 主模型ID
      */
     @Override
@@ -164,7 +162,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_IDENTIFIER</code>.
      * 「ruleIdentifier」- 主模型ID
      */
     @Override
@@ -173,8 +171,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_FIELD</code>.
-     * 「ruleField」- 主字段名
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_FIELD</code>. 「ruleField」- 主字段名
      */
     @Override
     public XActivityRuleRecord setRuleField(String value) {
@@ -183,8 +180,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_FIELD</code>.
-     * 「ruleField」- 主字段名
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_FIELD</code>. 「ruleField」- 主字段名
      */
     @Override
     public String getRuleField() {
@@ -192,7 +188,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
      * 「ruleExpression」- 规则触发表达式 ( 可以是多个，JsonArray格式 )
      */
     @Override
@@ -202,7 +198,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_EXPRESSION</code>.
      * 「ruleExpression」- 规则触发表达式 ( 可以是多个，JsonArray格式 )
      */
     @Override
@@ -211,7 +207,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
      * 参数模板专用，JsonObject结构
      */
     @Override
@@ -221,7 +217,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_TPL</code>. 「ruleTpl」-
      * 参数模板专用，JsonObject结构
      */
     @Override
@@ -230,8 +226,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_CONFIG</code>.
-     * 「ruleConfig」- 规则对应的额外配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_CONFIG</code>. 「ruleConfig」-
+     * 规则对应的额外配置
      */
     @Override
     public XActivityRuleRecord setRuleConfig(String value) {
@@ -240,8 +236,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_CONFIG</code>.
-     * 「ruleConfig」- 规则对应的额外配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_CONFIG</code>. 「ruleConfig」-
+     * 规则对应的额外配置
      */
     @Override
     public String getRuleConfig() {
@@ -249,8 +245,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_MESSAGE</code>.
-     * 「ruleMessage」- 输出消息专用, Ut.fromExpression解析（特殊解析）
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.RULE_MESSAGE</code>. 「ruleMessage」-
+     * 输出消息专用, Ut.fromExpression解析（特殊解析）
      */
     @Override
     public XActivityRuleRecord setRuleMessage(String value) {
@@ -259,8 +255,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.RULE_MESSAGE</code>.
-     * 「ruleMessage」- 输出消息专用, Ut.fromExpression解析（特殊解析）
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.RULE_MESSAGE</code>. 「ruleMessage」-
+     * 输出消息专用, Ut.fromExpression解析（特殊解析）
      */
     @Override
     public String getRuleMessage() {
@@ -268,7 +264,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
      * 「hookComponent」-- 回调钩子组件
      */
     @Override
@@ -278,7 +274,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.HOOK_COMPONENT</code>.
      * 「hookComponent」-- 回调钩子组件
      */
     @Override
@@ -287,8 +283,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_CONFIG</code>.
-     * 「hookConfig」-- 回调钩子组件配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.HOOK_CONFIG</code>. 「hookConfig」--
+     * 回调钩子组件配置
      */
     @Override
     public XActivityRuleRecord setHookConfig(String value) {
@@ -297,8 +293,8 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.HOOK_CONFIG</code>.
-     * 「hookConfig」-- 回调钩子组件配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.HOOK_CONFIG</code>. 「hookConfig」--
+     * 回调钩子组件配置
      */
     @Override
     public String getHookConfig() {
@@ -306,8 +302,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LOGGING</code>. 「logging」-
-     * 是否记录日志
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.LOGGING</code>. 「logging」- 是否记录日志
      */
     @Override
     public XActivityRuleRecord setLogging(Boolean value) {
@@ -316,8 +311,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LOGGING</code>. 「logging」-
-     * 是否记录日志
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.LOGGING</code>. 「logging」- 是否记录日志
      */
     @Override
     public Boolean getLogging() {
@@ -325,7 +319,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XActivityRuleRecord setActive(Boolean value) {
@@ -334,7 +328,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -342,7 +336,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XActivityRuleRecord setSigma(String value) {
@@ -351,7 +345,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -359,8 +353,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XActivityRuleRecord setMetadata(String value) {
@@ -369,8 +362,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -378,8 +370,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XActivityRuleRecord setLanguage(String value) {
@@ -388,8 +379,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -397,8 +387,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XActivityRuleRecord setCreatedAt(LocalDateTime value) {
@@ -407,8 +396,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_AT</code>.
-     * 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -416,8 +404,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XActivityRuleRecord setCreatedBy(String value) {
@@ -426,8 +413,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.CREATED_BY</code>.
-     * 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -435,8 +421,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XActivityRuleRecord setUpdatedAt(LocalDateTime value) {
@@ -445,8 +430,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_AT</code>.
-     * 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -454,8 +438,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XActivityRuleRecord setUpdatedBy(String value) {
@@ -464,8 +447,7 @@ public class XActivityRuleRecord extends UpdatableRecordImpl<XActivityRuleRecord
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_ACTIVITY_RULE.UPDATED_BY</code>.
-     * 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_ACTIVITY_RULE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

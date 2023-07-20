@@ -28,7 +28,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.KEY</code>. 「key」- 公告主键
+     * Setter for <code>ZDB.X_NOTICE.KEY</code>. 「key」- 公告主键
      */
     @Override
     public XNoticeRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.KEY</code>. 「key」- 公告主键
+     * Getter for <code>ZDB.X_NOTICE.KEY</code>. 「key」- 公告主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.NAME</code>. 「name」- 公告标题
+     * Setter for <code>ZDB.X_NOTICE.NAME</code>. 「name」- 公告标题
      */
     @Override
     public XNoticeRecord setName(String value) {
@@ -54,7 +54,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.NAME</code>. 「name」- 公告标题
+     * Getter for <code>ZDB.X_NOTICE.NAME</code>. 「name」- 公告标题
      */
     @Override
     public String getName() {
@@ -62,7 +62,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CODE</code>. 「code」- 公告编码
+     * Setter for <code>ZDB.X_NOTICE.CODE</code>. 「code」- 公告编码
      */
     @Override
     public XNoticeRecord setCode(String value) {
@@ -71,7 +71,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CODE</code>. 「code」- 公告编码
+     * Getter for <code>ZDB.X_NOTICE.CODE</code>. 「code」- 公告编码
      */
     @Override
     public String getCode() {
@@ -79,7 +79,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.TYPE</code>. 「type」- 公告类型
+     * Setter for <code>ZDB.X_NOTICE.TYPE</code>. 「type」- 公告类型
      */
     @Override
     public XNoticeRecord setType(String value) {
@@ -88,7 +88,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.TYPE</code>. 「type」- 公告类型
+     * Getter for <code>ZDB.X_NOTICE.TYPE</code>. 「type」- 公告类型
      */
     @Override
     public String getType() {
@@ -96,7 +96,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.STATUS</code>. 「status」- 公告状态
+     * Setter for <code>ZDB.X_NOTICE.STATUS</code>. 「status」- 公告状态
      */
     @Override
     public XNoticeRecord setStatus(String value) {
@@ -105,7 +105,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.STATUS</code>. 「status」- 公告状态
+     * Getter for <code>ZDB.X_NOTICE.STATUS</code>. 「status」- 公告状态
      */
     @Override
     public String getStatus() {
@@ -113,7 +113,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CONTENT</code>. 「content」- 公告内容
+     * Setter for <code>ZDB.X_NOTICE.CONTENT</code>. 「content」- 公告内容
      */
     @Override
     public XNoticeRecord setContent(String value) {
@@ -122,7 +122,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CONTENT</code>. 「content」- 公告内容
+     * Getter for <code>ZDB.X_NOTICE.CONTENT</code>. 「content」- 公告内容
      */
     @Override
     public String getContent() {
@@ -130,8 +130,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.EXPIRED_AT</code>. 「createdAt」-
-     * 公告到期时间
+     * Setter for <code>ZDB.X_NOTICE.EXPIRED_AT</code>. 「createdAt」- 公告到期时间
      */
     @Override
     public XNoticeRecord setExpiredAt(LocalDateTime value) {
@@ -140,8 +139,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.EXPIRED_AT</code>. 「createdAt」-
-     * 公告到期时间
+     * Getter for <code>ZDB.X_NOTICE.EXPIRED_AT</code>. 「createdAt」- 公告到期时间
      */
     @Override
     public LocalDateTime getExpiredAt() {
@@ -149,7 +147,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
+     * Setter for <code>ZDB.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public XNoticeRecord setAppId(String value) {
@@ -158,7 +156,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
+     * Getter for <code>ZDB.X_NOTICE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public String getAppId() {
@@ -166,7 +164,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public XNoticeRecord setActive(Boolean value) {
@@ -175,7 +173,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.X_NOTICE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -183,7 +181,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public XNoticeRecord setSigma(String value) {
@@ -192,7 +190,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.X_NOTICE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -200,7 +198,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public XNoticeRecord setMetadata(String value) {
@@ -209,7 +207,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.X_NOTICE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -217,7 +215,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public XNoticeRecord setLanguage(String value) {
@@ -226,7 +224,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.X_NOTICE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -234,7 +232,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public XNoticeRecord setCreatedAt(LocalDateTime value) {
@@ -243,7 +241,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.X_NOTICE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -251,7 +249,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public XNoticeRecord setCreatedBy(String value) {
@@ -260,7 +258,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.X_NOTICE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -268,7 +266,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public XNoticeRecord setUpdatedAt(LocalDateTime value) {
@@ -277,7 +275,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.X_NOTICE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -285,7 +283,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public XNoticeRecord setUpdatedBy(String value) {
@@ -294,7 +292,7 @@ public class XNoticeRecord extends UpdatableRecordImpl<XNoticeRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.X_NOTICE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
