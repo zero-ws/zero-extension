@@ -4,97 +4,113 @@
 package cn.vertxup.rbac.domain;
 
 
-import cn.vertxup.rbac.domain.tables.*;
+import cn.vertxup.rbac.domain.tables.OAccessToken;
+import cn.vertxup.rbac.domain.tables.OUser;
+import cn.vertxup.rbac.domain.tables.RGroupRole;
+import cn.vertxup.rbac.domain.tables.RRolePerm;
+import cn.vertxup.rbac.domain.tables.RUserGroup;
+import cn.vertxup.rbac.domain.tables.RUserRole;
+import cn.vertxup.rbac.domain.tables.SAction;
+import cn.vertxup.rbac.domain.tables.SGroup;
+import cn.vertxup.rbac.domain.tables.SPacket;
+import cn.vertxup.rbac.domain.tables.SPath;
+import cn.vertxup.rbac.domain.tables.SPermSet;
+import cn.vertxup.rbac.domain.tables.SPermission;
+import cn.vertxup.rbac.domain.tables.SResource;
+import cn.vertxup.rbac.domain.tables.SRole;
+import cn.vertxup.rbac.domain.tables.SUser;
+import cn.vertxup.rbac.domain.tables.SView;
+import cn.vertxup.rbac.domain.tables.SVisitant;
 
 
 /**
- * Convenience access to all tables in DB_ETERNAL.
+ * Convenience access to all tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>DB_ETERNAL.O_ACCESS_TOKEN</code>.
+     * The table <code>ZDB.O_ACCESS_TOKEN</code>.
      */
     public static final OAccessToken O_ACCESS_TOKEN = OAccessToken.O_ACCESS_TOKEN;
 
     /**
-     * The table <code>DB_ETERNAL.O_USER</code>.
+     * The table <code>ZDB.O_USER</code>.
      */
     public static final OUser O_USER = OUser.O_USER;
 
     /**
-     * The table <code>DB_ETERNAL.R_GROUP_ROLE</code>.
+     * The table <code>ZDB.R_GROUP_ROLE</code>.
      */
     public static final RGroupRole R_GROUP_ROLE = RGroupRole.R_GROUP_ROLE;
 
     /**
-     * The table <code>DB_ETERNAL.R_ROLE_PERM</code>.
+     * The table <code>ZDB.R_ROLE_PERM</code>.
      */
     public static final RRolePerm R_ROLE_PERM = RRolePerm.R_ROLE_PERM;
 
     /**
-     * The table <code>DB_ETERNAL.R_USER_GROUP</code>.
+     * The table <code>ZDB.R_USER_GROUP</code>.
      */
     public static final RUserGroup R_USER_GROUP = RUserGroup.R_USER_GROUP;
 
     /**
-     * The table <code>DB_ETERNAL.R_USER_ROLE</code>.
+     * The table <code>ZDB.R_USER_ROLE</code>.
      */
     public static final RUserRole R_USER_ROLE = RUserRole.R_USER_ROLE;
 
     /**
-     * The table <code>DB_ETERNAL.S_ACTION</code>.
+     * The table <code>ZDB.S_ACTION</code>.
      */
     public static final SAction S_ACTION = SAction.S_ACTION;
 
     /**
-     * The table <code>DB_ETERNAL.S_GROUP</code>.
+     * The table <code>ZDB.S_GROUP</code>.
      */
     public static final SGroup S_GROUP = SGroup.S_GROUP;
 
     /**
-     * The table <code>DB_ETERNAL.S_PACKET</code>.
+     * The table <code>ZDB.S_PACKET</code>.
      */
     public static final SPacket S_PACKET = SPacket.S_PACKET;
 
     /**
-     * The table <code>DB_ETERNAL.S_PATH</code>.
+     * The table <code>ZDB.S_PATH</code>.
      */
     public static final SPath S_PATH = SPath.S_PATH;
 
     /**
-     * The table <code>DB_ETERNAL.S_PERM_SET</code>.
+     * The table <code>ZDB.S_PERM_SET</code>.
      */
     public static final SPermSet S_PERM_SET = SPermSet.S_PERM_SET;
 
     /**
-     * The table <code>DB_ETERNAL.S_PERMISSION</code>.
+     * The table <code>ZDB.S_PERMISSION</code>.
      */
     public static final SPermission S_PERMISSION = SPermission.S_PERMISSION;
 
     /**
-     * The table <code>DB_ETERNAL.S_RESOURCE</code>.
+     * The table <code>ZDB.S_RESOURCE</code>.
      */
     public static final SResource S_RESOURCE = SResource.S_RESOURCE;
 
     /**
-     * The table <code>DB_ETERNAL.S_ROLE</code>.
+     * The table <code>ZDB.S_ROLE</code>.
      */
     public static final SRole S_ROLE = SRole.S_ROLE;
 
     /**
-     * The table <code>DB_ETERNAL.S_USER</code>.
+     * The table <code>ZDB.S_USER</code>.
      */
     public static final SUser S_USER = SUser.S_USER;
 
     /**
-     * The table <code>DB_ETERNAL.S_VIEW</code>.
+     * The table <code>ZDB.S_VIEW</code>.
      */
     public static final SView S_VIEW = SView.S_VIEW;
 
     /**
-     * The table <code>DB_ETERNAL.S_VISITANT</code>.
+     * The table <code>ZDB.S_VISITANT</code>.
      */
     public static final SVisitant S_VISITANT = SVisitant.S_VISITANT;
 }

@@ -4,7 +4,15 @@
 package cn.vertxup.rbac.domain;
 
 
-import cn.vertxup.rbac.domain.tables.*;
+import cn.vertxup.rbac.domain.tables.OUser;
+import cn.vertxup.rbac.domain.tables.RUserGroup;
+import cn.vertxup.rbac.domain.tables.RUserRole;
+import cn.vertxup.rbac.domain.tables.SAction;
+import cn.vertxup.rbac.domain.tables.SPacket;
+import cn.vertxup.rbac.domain.tables.SPath;
+import cn.vertxup.rbac.domain.tables.SUser;
+import cn.vertxup.rbac.domain.tables.SVisitant;
+
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -12,7 +20,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in DB_ETERNAL.
+ * A class modelling indexes of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {
@@ -26,6 +34,7 @@ public class Indexes {
     public static final Index S_ACTION_IDX_S_ACTION_PERMISSION_ID = Internal.createIndex(DSL.name("IDX_S_ACTION_PERMISSION_ID"), SAction.S_ACTION, new OrderField[] { SAction.S_ACTION.PERMISSION_ID }, false);
     public static final Index S_PACKET_IDX_S_PACKET_PATH_CODE_SIGMA = Internal.createIndex(DSL.name("IDX_S_PACKET_PATH_CODE_SIGMA"), SPacket.S_PACKET, new OrderField[] { SPacket.S_PACKET.CODE, SPacket.S_PACKET.SIGMA }, false);
     public static final Index S_PATH_IDX_S_PATH_RUN_TYPE_SIGMA = Internal.createIndex(DSL.name("IDX_S_PATH_RUN_TYPE_SIGMA"), SPath.S_PATH, new OrderField[] { SPath.S_PATH.RUN_TYPE, SPath.S_PATH.SIGMA }, false);
+    public static final Index S_USER_IDX_S_USER_MODEL_KEY = Internal.createIndex(DSL.name("IDX_S_USER_MODEL_KEY"), SUser.S_USER, new OrderField[] { SUser.S_USER.MODEL_KEY }, false);
     public static final Index S_USER_IDX_S_USER_USERNAME = Internal.createIndex(DSL.name("IDX_S_USER_USERNAME"), SUser.S_USER, new OrderField[] { SUser.S_USER.USERNAME }, false);
     public static final Index O_USER_IDXM_O_USER_OAUTH_AUTHORIZE_APP = Internal.createIndex(DSL.name("IDXM_O_USER_OAUTH_AUTHORIZE_APP"), OUser.O_USER, new OrderField[] { OUser.O_USER.SCOPE, OUser.O_USER.CLIENT_ID, OUser.O_USER.CLIENT_SECRET }, false);
     public static final Index O_USER_IDXM_O_USER_OAUTH_AUTHORIZE_FULL = Internal.createIndex(DSL.name("IDXM_O_USER_OAUTH_AUTHORIZE_FULL"), OUser.O_USER, new OrderField[] { OUser.O_USER.SCOPE, OUser.O_USER.CLIENT_ID, OUser.O_USER.CLIENT_SECRET, OUser.O_USER.LANGUAGE }, false);

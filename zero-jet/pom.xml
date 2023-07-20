@@ -26,8 +26,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/jet.properties</propertyFile>
-                    <changeLogFile>plugin/sql/jet.yml</changeLogFile>
+                    <propertyFile>plugin/jet/db.properties</propertyFile>
+                    <changeLogFile>plugin/jet/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

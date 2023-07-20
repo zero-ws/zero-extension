@@ -5,6 +5,7 @@ package cn.vertxup.jet.domain;
 
 
 import cn.vertxup.jet.domain.tables.IJob;
+
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -12,7 +13,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in DB_ETERNAL.
+ * A class modelling indexes of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {

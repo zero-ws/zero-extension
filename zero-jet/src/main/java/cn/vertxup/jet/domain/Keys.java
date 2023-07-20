@@ -10,6 +10,7 @@ import cn.vertxup.jet.domain.tables.IService;
 import cn.vertxup.jet.domain.tables.records.IApiRecord;
 import cn.vertxup.jet.domain.tables.records.IJobRecord;
 import cn.vertxup.jet.domain.tables.records.IServiceRecord;
+
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -17,8 +18,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling foreign key relationships and constraints of tables in
- * DB_ETERNAL.
+ * A class modelling foreign key relationships and constraints of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Keys {

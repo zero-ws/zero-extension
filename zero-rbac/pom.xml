@@ -31,8 +31,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/rbac.properties</propertyFile>
-                    <changeLogFile>plugin/sql/rbac.yml</changeLogFile>
+                    <propertyFile>plugin/rbac/db.properties</propertyFile>
+                    <changeLogFile>plugin/rbac/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

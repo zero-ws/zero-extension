@@ -1,10 +1,11 @@
 databaseChangeLog:
+  # 安全表
   - include:
-      file: plugin/sql/wf/W_FLOW.sql
+      file: plugin/jet/sql/I_API.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/wf/W_TODO.sql
+      file: plugin/jet/sql/I_SERVICE.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/wf/W_TICKET.sql
+      file: plugin/jet/sql/I_JOB.sql
       relativeToChangelogFile: false

@@ -61,8 +61,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/wf.properties</propertyFile>
-                    <changeLogFile>plugin/sql/wf.yml</changeLogFile>
+                    <propertyFile>plugin/wf/db.properties</propertyFile>
+                    <changeLogFile>plugin/wf/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

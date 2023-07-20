@@ -4,8 +4,31 @@
 package cn.vertxup.psi.domain;
 
 
-import cn.vertxup.psi.domain.tables.*;
-import cn.vertxup.psi.domain.tables.records.*;
+import cn.vertxup.psi.domain.tables.PAmountSpec;
+import cn.vertxup.psi.domain.tables.PBuyItem;
+import cn.vertxup.psi.domain.tables.PBuyOrder;
+import cn.vertxup.psi.domain.tables.PBuyTicket;
+import cn.vertxup.psi.domain.tables.PCommodity;
+import cn.vertxup.psi.domain.tables.PCommodityHis;
+import cn.vertxup.psi.domain.tables.PInItem;
+import cn.vertxup.psi.domain.tables.PInTicket;
+import cn.vertxup.psi.domain.tables.POutItem;
+import cn.vertxup.psi.domain.tables.POutTicket;
+import cn.vertxup.psi.domain.tables.PPos;
+import cn.vertxup.psi.domain.tables.PWh;
+import cn.vertxup.psi.domain.tables.records.PAmountSpecRecord;
+import cn.vertxup.psi.domain.tables.records.PBuyItemRecord;
+import cn.vertxup.psi.domain.tables.records.PBuyOrderRecord;
+import cn.vertxup.psi.domain.tables.records.PBuyTicketRecord;
+import cn.vertxup.psi.domain.tables.records.PCommodityHisRecord;
+import cn.vertxup.psi.domain.tables.records.PCommodityRecord;
+import cn.vertxup.psi.domain.tables.records.PInItemRecord;
+import cn.vertxup.psi.domain.tables.records.PInTicketRecord;
+import cn.vertxup.psi.domain.tables.records.POutItemRecord;
+import cn.vertxup.psi.domain.tables.records.POutTicketRecord;
+import cn.vertxup.psi.domain.tables.records.PPosRecord;
+import cn.vertxup.psi.domain.tables.records.PWhRecord;
+
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -13,8 +36,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling foreign key relationships and constraints of tables in
- * DB_ETERNAL.
+ * A class modelling foreign key relationships and constraints of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Keys {

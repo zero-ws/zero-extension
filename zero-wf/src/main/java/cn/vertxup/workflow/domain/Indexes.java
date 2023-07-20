@@ -6,6 +6,7 @@ package cn.vertxup.workflow.domain;
 
 import cn.vertxup.workflow.domain.tables.WTicket;
 import cn.vertxup.workflow.domain.tables.WTodo;
+
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -13,7 +14,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in DB_ETERNAL.
+ * A class modelling indexes of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {

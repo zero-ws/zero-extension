@@ -1,45 +1,45 @@
 databaseChangeLog:
   # Schema表结构 - UI表
   - include:
-      file: plugin/sql/ui/UI_LAYOUT.sql
+      file: plugin/ui/sql/UI_LAYOUT.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_PAGE.sql
+      file: plugin/ui/sql/UI_PAGE.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_CONTROL.sql
+      file: plugin/ui/sql/UI_CONTROL.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_FORM.sql
+      file: plugin/ui/sql/UI_FORM.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_FIELD.sql
+      file: plugin/ui/sql/UI_FIELD.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_COLUMN.sql
+      file: plugin/ui/sql/UI_COLUMN.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_OP.sql
+      file: plugin/ui/sql/UI_OP.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_LIST.sql
+      file: plugin/ui/sql/UI_LIST.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_VIEW.sql
+      file: plugin/ui/sql/UI_VIEW.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/ui/UI_VISITOR.sql
+      file: plugin/ui/sql/UI_VISITOR.sql
       relativeToChangelogFile: false
   # UI选项专用表
   - include:
-      file: plugin/sql/option/V_QUERY.sql
+      file: plugin/ui/sql/V_QUERY.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/option/V_SEARCH.sql
+      file: plugin/ui/sql/V_SEARCH.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/option/V_FRAGMENT.sql
+      file: plugin/ui/sql/V_FRAGMENT.sql
       relativeToChangelogFile: false
   - include:
-      file: plugin/sql/option/V_TABLE.sql
+      file: plugin/ui/sql/V_TABLE.sql
       relativeToChangelogFile: false

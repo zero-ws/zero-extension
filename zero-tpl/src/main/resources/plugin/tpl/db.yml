@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - include:
+      file: plugin/tpl/sql/TPL_MESSAGE.sql  # 消息模板
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/TPL_MODEL.sql  # 模型模板
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/TPL_TICKET.sql  # 工单模板
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_TPL.sql  # 我的模板
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_BAG.sql  # 我的应用
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_MENU.sql  # 我的菜单
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_FAVOR.sql  # 我的收藏夹
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_SETTING.sql  # 我的设置
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_DESKTOP.sql  # 我的工作台
+      relativeToChangelogFile: false
