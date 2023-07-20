@@ -4,57 +4,65 @@
 package cn.vertxup.atom.domain;
 
 
-import cn.vertxup.atom.domain.tables.*;
+import cn.vertxup.atom.domain.tables.MAcc;
+import cn.vertxup.atom.domain.tables.MAttribute;
+import cn.vertxup.atom.domain.tables.MEntity;
+import cn.vertxup.atom.domain.tables.MField;
+import cn.vertxup.atom.domain.tables.MIndex;
+import cn.vertxup.atom.domain.tables.MJoin;
+import cn.vertxup.atom.domain.tables.MKey;
+import cn.vertxup.atom.domain.tables.MModel;
+import cn.vertxup.atom.domain.tables.MRelation;
 
 
 /**
- * Convenience access to all tables in DB_ETERNAL.
+ * Convenience access to all tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>DB_ETERNAL.M_ACC</code>.
+     * The table <code>ZDB.M_ACC</code>.
      */
     public static final MAcc M_ACC = MAcc.M_ACC;
 
     /**
-     * The table <code>DB_ETERNAL.M_ATTRIBUTE</code>.
+     * The table <code>ZDB.M_ATTRIBUTE</code>.
      */
     public static final MAttribute M_ATTRIBUTE = MAttribute.M_ATTRIBUTE;
 
     /**
-     * The table <code>DB_ETERNAL.M_ENTITY</code>.
+     * The table <code>ZDB.M_ENTITY</code>.
      */
     public static final MEntity M_ENTITY = MEntity.M_ENTITY;
 
     /**
-     * The table <code>DB_ETERNAL.M_FIELD</code>.
+     * The table <code>ZDB.M_FIELD</code>.
      */
     public static final MField M_FIELD = MField.M_FIELD;
 
     /**
-     * The table <code>DB_ETERNAL.M_INDEX</code>.
+     * The table <code>ZDB.M_INDEX</code>.
      */
     public static final MIndex M_INDEX = MIndex.M_INDEX;
 
     /**
-     * The table <code>DB_ETERNAL.M_JOIN</code>.
+     * The table <code>ZDB.M_JOIN</code>.
      */
     public static final MJoin M_JOIN = MJoin.M_JOIN;
 
     /**
-     * The table <code>DB_ETERNAL.M_KEY</code>.
+     * The table <code>ZDB.M_KEY</code>.
      */
     public static final MKey M_KEY = MKey.M_KEY;
 
     /**
-     * The table <code>DB_ETERNAL.M_MODEL</code>.
+     * The table <code>ZDB.M_MODEL</code>.
      */
     public static final MModel M_MODEL = MModel.M_MODEL;
 
     /**
-     * The table <code>DB_ETERNAL.M_RELATION</code>.
+     * The table <code>ZDB.M_RELATION</code>.
      */
     public static final MRelation M_RELATION = MRelation.M_RELATION;
 }

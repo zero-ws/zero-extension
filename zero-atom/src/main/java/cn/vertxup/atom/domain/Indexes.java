@@ -4,7 +4,13 @@
 package cn.vertxup.atom.domain;
 
 
-import cn.vertxup.atom.domain.tables.*;
+import cn.vertxup.atom.domain.tables.MAttribute;
+import cn.vertxup.atom.domain.tables.MField;
+import cn.vertxup.atom.domain.tables.MIndex;
+import cn.vertxup.atom.domain.tables.MJoin;
+import cn.vertxup.atom.domain.tables.MKey;
+import cn.vertxup.atom.domain.tables.MRelation;
+
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -12,7 +18,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in DB_ETERNAL.
+ * A class modelling indexes of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {
