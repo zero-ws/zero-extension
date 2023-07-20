@@ -18,106 +18,102 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface ITOaVacation extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_OA_VACATION.KEY</code>. 「key」- Ticket Primary Key
      */
     public ITOaVacation setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_OA_VACATION.KEY</code>. 「key」- Ticket Primary Key
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_OA_VACATION.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     public ITOaVacation setCommentExtension(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_OA_VACATION.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     public String getCommentExtension();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.REQUEST_BY</code>. 「requestBy」-
+     * Setter for <code>ZDB.T_OA_VACATION.REQUEST_BY</code>. 「requestBy」-
      * Request User
      */
     public ITOaVacation setRequestBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.REQUEST_BY</code>. 「requestBy」-
+     * Getter for <code>ZDB.T_OA_VACATION.REQUEST_BY</code>. 「requestBy」-
      * Request User
      */
     public String getRequestBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.CLASSIFICATION</code>.
+     * Setter for <code>ZDB.T_OA_VACATION.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     public ITOaVacation setClassification(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.CLASSIFICATION</code>.
+     * Getter for <code>ZDB.T_OA_VACATION.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     public String getClassification();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.START_AT</code>. 「startAt」-
-     * From
+     * Setter for <code>ZDB.T_OA_VACATION.START_AT</code>. 「startAt」- From
      */
     public ITOaVacation setStartAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.START_AT</code>. 「startAt」-
-     * From
+     * Getter for <code>ZDB.T_OA_VACATION.START_AT</code>. 「startAt」- From
      */
     public LocalDateTime getStartAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_OA_VACATION.END_AT</code>. 「endAt」- To
      */
     public ITOaVacation setEndAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_OA_VACATION.END_AT</code>. 「endAt」- To
      */
     public LocalDateTime getEndAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.DAYS</code>. 「days」- Duration
+     * Setter for <code>ZDB.T_OA_VACATION.DAYS</code>. 「days」- Duration
      */
     public ITOaVacation setDays(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.DAYS</code>. 「days」- Duration
+     * Getter for <code>ZDB.T_OA_VACATION.DAYS</code>. 「days」- Duration
      */
     public Integer getDays();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.REASON</code>. 「reason」- The
-     * reason to be done
+     * Setter for <code>ZDB.T_OA_VACATION.REASON</code>. 「reason」- The reason to
+     * be done
      */
     public ITOaVacation setReason(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.REASON</code>. 「reason」- The
-     * reason to be done
+     * Getter for <code>ZDB.T_OA_VACATION.REASON</code>. 「reason」- The reason to
+     * be done
      */
     public String getReason();
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_VACATION.WORK_CONTENT</code>.
-     * 「workContent」- Working Assignment Content
+     * Setter for <code>ZDB.T_OA_VACATION.WORK_CONTENT</code>. 「workContent」-
+     * Working Assignment Content
      */
     public ITOaVacation setWorkContent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_VACATION.WORK_CONTENT</code>.
-     * 「workContent」- Working Assignment Content
+     * Getter for <code>ZDB.T_OA_VACATION.WORK_CONTENT</code>. 「workContent」-
+     * Working Assignment Content
      */
     public String getWorkContent();
 

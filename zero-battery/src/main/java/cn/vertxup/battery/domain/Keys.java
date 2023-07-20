@@ -4,8 +4,17 @@
 package cn.vertxup.battery.domain;
 
 
-import cn.vertxup.battery.domain.tables.*;
-import cn.vertxup.battery.domain.tables.records.*;
+import cn.vertxup.battery.domain.tables.BAuthority;
+import cn.vertxup.battery.domain.tables.BBag;
+import cn.vertxup.battery.domain.tables.BBlock;
+import cn.vertxup.battery.domain.tables.BComponent;
+import cn.vertxup.battery.domain.tables.BWeb;
+import cn.vertxup.battery.domain.tables.records.BAuthorityRecord;
+import cn.vertxup.battery.domain.tables.records.BBagRecord;
+import cn.vertxup.battery.domain.tables.records.BBlockRecord;
+import cn.vertxup.battery.domain.tables.records.BComponentRecord;
+import cn.vertxup.battery.domain.tables.records.BWebRecord;
+
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -13,8 +22,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling foreign key relationships and constraints of tables in
- * DB_ETERNAL.
+ * A class modelling foreign key relationships and constraints of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Keys {

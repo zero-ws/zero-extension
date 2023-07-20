@@ -68,8 +68,8 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public String getKey() {
@@ -77,8 +77,8 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public TVendorCheckOut setKey(String key) {
@@ -87,7 +87,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -96,7 +96,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -106,7 +106,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.CLASSIFICATION</code>.
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -115,7 +115,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.CLASSIFICATION</code>.
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -125,8 +125,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.START_AT</code>.
-     * 「startAt」- From
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -134,8 +133,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.START_AT</code>.
-     * 「startAt」- From
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.START_AT</code>. 「startAt」- From
      */
     @Override
     public TVendorCheckOut setStartAt(LocalDateTime startAt) {
@@ -144,7 +142,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -152,7 +150,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.END_AT</code>. 「endAt」- To
      */
     @Override
     public TVendorCheckOut setEndAt(LocalDateTime endAt) {
@@ -161,8 +159,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.DAYS</code>. 「days」-
-     * Duration
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -170,8 +167,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.DAYS</code>. 「days」-
-     * Duration
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.DAYS</code>. 「days」- Duration
      */
     @Override
     public TVendorCheckOut setDays(Integer days) {
@@ -180,8 +176,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.LEAVE_AT</code>.
-     * 「leaveAt」- To
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.LEAVE_AT</code>. 「leaveAt」- To
      */
     @Override
     public LocalDateTime getLeaveAt() {
@@ -189,8 +184,7 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.LEAVE_AT</code>.
-     * 「leaveAt」- To
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.LEAVE_AT</code>. 「leaveAt」- To
      */
     @Override
     public TVendorCheckOut setLeaveAt(LocalDateTime leaveAt) {
@@ -199,8 +193,8 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.REASON</code>. 「reason」-
-     * The reason to be done
+     * Getter for <code>ZDB.T_VENDOR_CHECK_OUT.REASON</code>. 「reason」- The
+     * reason to be done
      */
     @Override
     public String getReason() {
@@ -208,8 +202,8 @@ public class TVendorCheckOut implements VertxPojo, ITVendorCheckOut {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_OUT.REASON</code>. 「reason」-
-     * The reason to be done
+     * Setter for <code>ZDB.T_VENDOR_CHECK_OUT.REASON</code>. 「reason」- The
+     * reason to be done
      */
     @Override
     public TVendorCheckOut setReason(String reason) {

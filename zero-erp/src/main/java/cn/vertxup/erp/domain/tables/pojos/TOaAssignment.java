@@ -68,8 +68,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public String getKey() {
@@ -77,8 +77,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public TOaAssignment setKey(String key) {
@@ -87,7 +87,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -96,7 +96,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -106,8 +106,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.REQUEST_BY</code>.
-     * 「requestBy」- Request User
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.REQUEST_BY</code>. 「requestBy」-
+     * Request User
      */
     @Override
     public String getRequestBy() {
@@ -115,8 +115,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.REQUEST_BY</code>.
-     * 「requestBy」- Request User
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.REQUEST_BY</code>. 「requestBy」-
+     * Request User
      */
     @Override
     public TOaAssignment setRequestBy(String requestBy) {
@@ -125,8 +125,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.START_AT</code>. 「startAt」-
-     * From
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -134,8 +133,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.START_AT</code>. 「startAt」-
-     * From
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.START_AT</code>. 「startAt」- From
      */
     @Override
     public TOaAssignment setStartAt(LocalDateTime startAt) {
@@ -144,7 +142,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -152,7 +150,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.END_AT</code>. 「endAt」- To
      */
     @Override
     public TOaAssignment setEndAt(LocalDateTime endAt) {
@@ -161,7 +159,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.DAYS</code>. 「days」- Duration
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -169,7 +167,7 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.DAYS</code>. 「days」- Duration
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.DAYS</code>. 「days」- Duration
      */
     @Override
     public TOaAssignment setDays(Integer days) {
@@ -178,8 +176,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.REASON</code>. 「reason」- The
-     * reason to be done
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.REASON</code>. 「reason」- The reason
+     * to be done
      */
     @Override
     public String getReason() {
@@ -187,8 +185,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.REASON</code>. 「reason」- The
-     * reason to be done
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.REASON</code>. 「reason」- The reason
+     * to be done
      */
     @Override
     public TOaAssignment setReason(String reason) {
@@ -197,8 +195,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.WORK_CONTENT</code>.
-     * 「workContent」- Working Assignment Content
+     * Getter for <code>ZDB.T_OA_ASSIGNMENT.WORK_CONTENT</code>. 「workContent」-
+     * Working Assignment Content
      */
     @Override
     public String getWorkContent() {
@@ -206,8 +204,8 @@ public class TOaAssignment implements VertxPojo, ITOaAssignment {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_ASSIGNMENT.WORK_CONTENT</code>.
-     * 「workContent」- Working Assignment Content
+     * Setter for <code>ZDB.T_OA_ASSIGNMENT.WORK_CONTENT</code>. 「workContent」-
+     * Working Assignment Content
      */
     @Override
     public TOaAssignment setWorkContent(String workContent) {

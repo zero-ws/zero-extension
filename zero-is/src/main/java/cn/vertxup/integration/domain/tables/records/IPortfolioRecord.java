@@ -25,7 +25,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Setter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     @Override
     public IPortfolioRecord setKey(String value) {
@@ -34,7 +34,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Getter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     @Override
     public String getKey() {
@@ -42,7 +42,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Setter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     @Override
     public IPortfolioRecord setName(String value) {
@@ -51,7 +51,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Getter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     @Override
     public String getName() {
@@ -59,7 +59,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Setter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     @Override
     public IPortfolioRecord setCode(String value) {
@@ -68,7 +68,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Getter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     @Override
     public String getCode() {
@@ -76,7 +76,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Setter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     @Override
     public IPortfolioRecord setStatus(String value) {
@@ -85,7 +85,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Getter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     @Override
     public String getStatus() {
@@ -93,7 +93,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Setter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     @Override
     public IPortfolioRecord setType(String value) {
@@ -102,7 +102,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Getter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     @Override
     public String getType() {
@@ -110,8 +110,8 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Setter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     @Override
     public IPortfolioRecord setIntegrationId(String value) {
@@ -120,8 +120,8 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Getter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     @Override
     public String getIntegrationId() {
@@ -129,8 +129,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     @Override
     public IPortfolioRecord setOwnerType(String value) {
@@ -139,8 +138,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     @Override
     public String getOwnerType() {
@@ -148,7 +146,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     @Override
     public IPortfolioRecord setOwner(String value) {
@@ -157,7 +155,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     @Override
     public String getOwner() {
@@ -165,8 +163,8 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     @Override
     public IPortfolioRecord setRunComponent(String value) {
@@ -175,8 +173,8 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     @Override
     public String getRunComponent() {
@@ -184,8 +182,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     @Override
     public IPortfolioRecord setRunConfig(String value) {
@@ -194,8 +191,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     @Override
     public String getRunConfig() {
@@ -203,8 +199,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     @Override
     public IPortfolioRecord setDataKey(String value) {
@@ -213,8 +208,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     @Override
     public String getDataKey() {
@@ -222,8 +216,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     @Override
     public IPortfolioRecord setDataConfig(String value) {
@@ -232,8 +225,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     @Override
     public String getDataConfig() {
@@ -241,8 +233,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     @Override
     public IPortfolioRecord setDataSecure(String value) {
@@ -251,8 +242,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     @Override
     public String getDataSecure() {
@@ -260,7 +250,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     @Override
@@ -270,7 +260,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     @Override
@@ -279,7 +269,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public IPortfolioRecord setAppId(String value) {
@@ -288,7 +278,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -296,7 +286,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IPortfolioRecord setActive(Boolean value) {
@@ -305,7 +295,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -313,7 +303,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IPortfolioRecord setSigma(String value) {
@@ -322,7 +312,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -330,7 +320,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IPortfolioRecord setMetadata(String value) {
@@ -339,7 +329,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -347,8 +337,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IPortfolioRecord setLanguage(String value) {
@@ -357,8 +346,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -366,8 +354,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IPortfolioRecord setCreatedAt(LocalDateTime value) {
@@ -376,8 +363,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -385,8 +371,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IPortfolioRecord setCreatedBy(String value) {
@@ -395,8 +380,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -404,8 +388,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IPortfolioRecord setUpdatedAt(LocalDateTime value) {
@@ -414,8 +397,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -423,8 +405,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IPortfolioRecord setUpdatedBy(String value) {
@@ -433,8 +414,7 @@ public class IPortfolioRecord extends UpdatableRecordImpl<IPortfolioRecord> impl
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

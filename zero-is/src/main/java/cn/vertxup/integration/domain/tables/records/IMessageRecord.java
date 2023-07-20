@@ -28,7 +28,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Setter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     @Override
     public IMessageRecord setKey(String value) {
@@ -37,7 +37,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Getter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     @Override
     public String getKey() {
@@ -45,7 +45,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Setter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     @Override
     public IMessageRecord setName(String value) {
@@ -54,7 +54,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Getter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     @Override
     public String getName() {
@@ -62,7 +62,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Setter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     @Override
     public IMessageRecord setCode(String value) {
@@ -71,7 +71,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Getter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     @Override
     public String getCode() {
@@ -79,7 +79,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Setter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     @Override
     public IMessageRecord setType(String value) {
@@ -88,7 +88,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Getter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     @Override
     public String getType() {
@@ -96,7 +96,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Setter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     @Override
     public IMessageRecord setStatus(String value) {
@@ -105,7 +105,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Getter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     @Override
     public String getStatus() {
@@ -113,7 +113,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Setter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     @Override
     public IMessageRecord setSubject(String value) {
@@ -122,7 +122,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Getter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     @Override
     public String getSubject() {
@@ -130,7 +130,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Setter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     @Override
     public IMessageRecord setContent(String value) {
@@ -139,7 +139,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Getter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     @Override
     public String getContent() {
@@ -147,7 +147,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     @Override
     public IMessageRecord setFrom(String value) {
@@ -156,7 +156,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     @Override
     public String getFrom() {
@@ -164,7 +164,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     @Override
     public IMessageRecord setTo(String value) {
@@ -173,7 +173,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     @Override
     public String getTo() {
@@ -181,7 +181,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Setter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     @Override
     public IMessageRecord setSendBy(String value) {
@@ -190,7 +190,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Getter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     @Override
     public String getSendBy() {
@@ -198,7 +198,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Setter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     @Override
     public IMessageRecord setSendAt(String value) {
@@ -207,7 +207,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Getter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     @Override
     public String getSendAt() {
@@ -215,7 +215,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Setter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public IMessageRecord setAppId(String value) {
@@ -224,7 +224,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Getter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public String getAppId() {
@@ -232,7 +232,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IMessageRecord setActive(Boolean value) {
@@ -241,7 +241,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -249,7 +249,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IMessageRecord setSigma(String value) {
@@ -258,7 +258,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -266,7 +266,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IMessageRecord setMetadata(String value) {
@@ -275,7 +275,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -283,7 +283,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IMessageRecord setLanguage(String value) {
@@ -292,7 +292,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -300,8 +300,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IMessageRecord setCreatedAt(LocalDateTime value) {
@@ -310,8 +309,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -319,7 +317,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IMessageRecord setCreatedBy(String value) {
@@ -328,7 +326,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -336,8 +334,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IMessageRecord setUpdatedAt(LocalDateTime value) {
@@ -346,8 +343,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -355,7 +351,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IMessageRecord setUpdatedBy(String value) {
@@ -364,7 +360,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

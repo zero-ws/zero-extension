@@ -160,7 +160,7 @@ public class ECompany implements VertxPojo, IECompany {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.KEY</code>. 「key」- 公司主键
+     * Getter for <code>ZDB.E_COMPANY.KEY</code>. 「key」- 公司主键
      */
     @Override
     public String getKey() {
@@ -168,7 +168,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.KEY</code>. 「key」- 公司主键
+     * Setter for <code>ZDB.E_COMPANY.KEY</code>. 「key」- 公司主键
      */
     @Override
     public ECompany setKey(String key) {
@@ -177,7 +177,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.NAME</code>. 「name」- 公司名称
+     * Getter for <code>ZDB.E_COMPANY.NAME</code>. 「name」- 公司名称
      */
     @Override
     public String getName() {
@@ -185,7 +185,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.NAME</code>. 「name」- 公司名称
+     * Setter for <code>ZDB.E_COMPANY.NAME</code>. 「name」- 公司名称
      */
     @Override
     public ECompany setName(String name) {
@@ -194,7 +194,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.ALIAS</code>. 「alias」- 公司别称
+     * Getter for <code>ZDB.E_COMPANY.ALIAS</code>. 「alias」- 公司别称
      */
     @Override
     public String getAlias() {
@@ -202,7 +202,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.ALIAS</code>. 「alias」- 公司别称
+     * Setter for <code>ZDB.E_COMPANY.ALIAS</code>. 「alias」- 公司别称
      */
     @Override
     public ECompany setAlias(String alias) {
@@ -211,7 +211,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.TITLE</code>. 「title」- 公司显示标题
+     * Getter for <code>ZDB.E_COMPANY.TITLE</code>. 「title」- 公司显示标题
      */
     @Override
     public String getTitle() {
@@ -219,7 +219,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.TITLE</code>. 「title」- 公司显示标题
+     * Setter for <code>ZDB.E_COMPANY.TITLE</code>. 「title」- 公司显示标题
      */
     @Override
     public ECompany setTitle(String title) {
@@ -228,7 +228,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CODE</code>. 「code」- 公司编号
+     * Getter for <code>ZDB.E_COMPANY.CODE</code>. 「code」- 公司编号
      */
     @Override
     public String getCode() {
@@ -236,7 +236,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CODE</code>. 「code」- 公司编号
+     * Setter for <code>ZDB.E_COMPANY.CODE</code>. 「code」- 公司编号
      */
     @Override
     public ECompany setCode(String code) {
@@ -245,7 +245,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.COMMENT</code>. 「comment」- 公司简介
+     * Getter for <code>ZDB.E_COMPANY.COMMENT</code>. 「comment」- 公司简介
      */
     @Override
     public String getComment() {
@@ -253,7 +253,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.COMMENT</code>. 「comment」- 公司简介
+     * Setter for <code>ZDB.E_COMPANY.COMMENT</code>. 「comment」- 公司简介
      */
     @Override
     public ECompany setComment(String comment) {
@@ -262,7 +262,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.TAX_CODE</code>. 「taxCode」- 公司税号
+     * Getter for <code>ZDB.E_COMPANY.TAX_CODE</code>. 「taxCode」- 公司税号
      */
     @Override
     public String getTaxCode() {
@@ -270,7 +270,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.TAX_CODE</code>. 「taxCode」- 公司税号
+     * Setter for <code>ZDB.E_COMPANY.TAX_CODE</code>. 「taxCode」- 公司税号
      */
     @Override
     public ECompany setTaxCode(String taxCode) {
@@ -279,7 +279,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.TAX_TITLE</code>. 「taxTitle」- 开票抬头
+     * Getter for <code>ZDB.E_COMPANY.TAX_TITLE</code>. 「taxTitle」- 开票抬头
      */
     @Override
     public String getTaxTitle() {
@@ -287,7 +287,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.TAX_TITLE</code>. 「taxTitle」- 开票抬头
+     * Setter for <code>ZDB.E_COMPANY.TAX_TITLE</code>. 「taxTitle」- 开票抬头
      */
     @Override
     public ECompany setTaxTitle(String taxTitle) {
@@ -296,7 +296,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.EMAIL</code>. 「email」- 企业邮箱
+     * Getter for <code>ZDB.E_COMPANY.EMAIL</code>. 「email」- 企业邮箱
      */
     @Override
     public String getEmail() {
@@ -304,7 +304,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.EMAIL</code>. 「email」- 企业邮箱
+     * Setter for <code>ZDB.E_COMPANY.EMAIL</code>. 「email」- 企业邮箱
      */
     @Override
     public ECompany setEmail(String email) {
@@ -313,7 +313,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.FAX</code>. 「fax」- 传真号
+     * Getter for <code>ZDB.E_COMPANY.FAX</code>. 「fax」- 传真号
      */
     @Override
     public String getFax() {
@@ -321,7 +321,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.FAX</code>. 「fax」- 传真号
+     * Setter for <code>ZDB.E_COMPANY.FAX</code>. 「fax」- 传真号
      */
     @Override
     public ECompany setFax(String fax) {
@@ -330,7 +330,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.HOMEPAGE</code>. 「homepage」- 公司主页
+     * Getter for <code>ZDB.E_COMPANY.HOMEPAGE</code>. 「homepage」- 公司主页
      */
     @Override
     public String getHomepage() {
@@ -338,7 +338,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.HOMEPAGE</code>. 「homepage」- 公司主页
+     * Setter for <code>ZDB.E_COMPANY.HOMEPAGE</code>. 「homepage」- 公司主页
      */
     @Override
     public ECompany setHomepage(String homepage) {
@@ -347,8 +347,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.LOGO</code>. 「logo」- 附件对应的
-     * attachment Key
+     * Getter for <code>ZDB.E_COMPANY.LOGO</code>. 「logo」- 附件对应的 attachment Key
      */
     @Override
     public String getLogo() {
@@ -356,8 +355,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.LOGO</code>. 「logo」- 附件对应的
-     * attachment Key
+     * Setter for <code>ZDB.E_COMPANY.LOGO</code>. 「logo」- 附件对应的 attachment Key
      */
     @Override
     public ECompany setLogo(String logo) {
@@ -366,7 +364,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.PHONE</code>. 「phone」- 公司座机
+     * Getter for <code>ZDB.E_COMPANY.PHONE</code>. 「phone」- 公司座机
      */
     @Override
     public String getPhone() {
@@ -374,7 +372,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.PHONE</code>. 「phone」- 公司座机
+     * Setter for <code>ZDB.E_COMPANY.PHONE</code>. 「phone」- 公司座机
      */
     @Override
     public ECompany setPhone(String phone) {
@@ -383,7 +381,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.ADDRESS</code>. 「address」- 公司地址
+     * Getter for <code>ZDB.E_COMPANY.ADDRESS</code>. 「address」- 公司地址
      */
     @Override
     public String getAddress() {
@@ -391,7 +389,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.ADDRESS</code>. 「address」- 公司地址
+     * Setter for <code>ZDB.E_COMPANY.ADDRESS</code>. 「address」- 公司地址
      */
     @Override
     public ECompany setAddress(String address) {
@@ -400,7 +398,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.LOCATION_ID</code>. 「locationId」-
+     * Getter for <code>ZDB.E_COMPANY.LOCATION_ID</code>. 「locationId」-
      * 启用LBS时对应的Location主键
      */
     @Override
@@ -409,7 +407,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.LOCATION_ID</code>. 「locationId」-
+     * Setter for <code>ZDB.E_COMPANY.LOCATION_ID</code>. 「locationId」-
      * 启用LBS时对应的Location主键
      */
     @Override
@@ -419,7 +417,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CORPORATION_NAME</code>.
+     * Getter for <code>ZDB.E_COMPANY.CORPORATION_NAME</code>.
      * 「corporationName」- 企业法人
      */
     @Override
@@ -428,7 +426,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CORPORATION_NAME</code>.
+     * Setter for <code>ZDB.E_COMPANY.CORPORATION_NAME</code>.
      * 「corporationName」- 企业法人
      */
     @Override
@@ -438,7 +436,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CORPORATION_PHONE</code>.
+     * Getter for <code>ZDB.E_COMPANY.CORPORATION_PHONE</code>.
      * 「corporationPhone」- 法人电话
      */
     @Override
@@ -447,7 +445,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CORPORATION_PHONE</code>.
+     * Setter for <code>ZDB.E_COMPANY.CORPORATION_PHONE</code>.
      * 「corporationPhone」- 法人电话
      */
     @Override
@@ -457,8 +455,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CONTACT_NAME</code>. 「contactName」-
-     * 联系人电话
+     * Getter for <code>ZDB.E_COMPANY.CONTACT_NAME</code>. 「contactName」- 联系人电话
      */
     @Override
     public String getContactName() {
@@ -466,8 +463,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CONTACT_NAME</code>. 「contactName」-
-     * 联系人电话
+     * Setter for <code>ZDB.E_COMPANY.CONTACT_NAME</code>. 「contactName」- 联系人电话
      */
     @Override
     public ECompany setContactName(String contactName) {
@@ -476,8 +472,8 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CONTACT_PHONE</code>.
-     * 「contactPhone」- 联系人电话
+     * Getter for <code>ZDB.E_COMPANY.CONTACT_PHONE</code>. 「contactPhone」-
+     * 联系人电话
      */
     @Override
     public String getContactPhone() {
@@ -485,8 +481,8 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CONTACT_PHONE</code>.
-     * 「contactPhone」- 联系人电话
+     * Setter for <code>ZDB.E_COMPANY.CONTACT_PHONE</code>. 「contactPhone」-
+     * 联系人电话
      */
     @Override
     public ECompany setContactPhone(String contactPhone) {
@@ -495,8 +491,8 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CONTACT_ONLINE</code>.
-     * 「contactOnline」- 在线联系方式
+     * Getter for <code>ZDB.E_COMPANY.CONTACT_ONLINE</code>. 「contactOnline」-
+     * 在线联系方式
      */
     @Override
     public String getContactOnline() {
@@ -504,8 +500,8 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CONTACT_ONLINE</code>.
-     * 「contactOnline」- 在线联系方式
+     * Setter for <code>ZDB.E_COMPANY.CONTACT_ONLINE</code>. 「contactOnline」-
+     * 在线联系方式
      */
     @Override
     public ECompany setContactOnline(String contactOnline) {
@@ -514,7 +510,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.COMPANY_ID</code>. 「companyId」-
+     * Getter for <code>ZDB.E_COMPANY.COMPANY_ID</code>. 「companyId」-
      * 公司、子公司结构时需要
      */
     @Override
@@ -523,7 +519,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.COMPANY_ID</code>. 「companyId」-
+     * Setter for <code>ZDB.E_COMPANY.COMPANY_ID</code>. 「companyId」-
      * 公司、子公司结构时需要
      */
     @Override
@@ -533,7 +529,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CUSTOMER_ID</code>. 「customerId」-
+     * Getter for <code>ZDB.E_COMPANY.CUSTOMER_ID</code>. 「customerId」-
      * 公司作为客户时的客户信息
      */
     @Override
@@ -542,7 +538,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CUSTOMER_ID</code>. 「customerId」-
+     * Setter for <code>ZDB.E_COMPANY.CUSTOMER_ID</code>. 「customerId」-
      * 公司作为客户时的客户信息
      */
     @Override
@@ -552,7 +548,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.TYPE</code>. 「type」- 公司分类
+     * Getter for <code>ZDB.E_COMPANY.TYPE</code>. 「type」- 公司分类
      */
     @Override
     public String getType() {
@@ -560,7 +556,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.TYPE</code>. 「type」- 公司分类
+     * Setter for <code>ZDB.E_COMPANY.TYPE</code>. 「type」- 公司分类
      */
     @Override
     public ECompany setType(String type) {
@@ -569,7 +565,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_COMPANY.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -577,7 +573,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_COMPANY.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public ECompany setMetadata(String metadata) {
@@ -586,7 +582,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_COMPANY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -594,7 +590,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_COMPANY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public ECompany setActive(Boolean active) {
@@ -603,7 +599,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
+     * Getter for <code>ZDB.E_COMPANY.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public String getSigma() {
@@ -611,7 +607,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
+     * Setter for <code>ZDB.E_COMPANY.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public ECompany setSigma(String sigma) {
@@ -620,7 +616,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_COMPANY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -628,7 +624,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_COMPANY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public ECompany setLanguage(String language) {
@@ -637,8 +633,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.E_COMPANY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -646,8 +641,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.E_COMPANY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public ECompany setCreatedAt(LocalDateTime createdAt) {
@@ -656,7 +650,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.E_COMPANY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -664,7 +658,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.E_COMPANY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public ECompany setCreatedBy(String createdBy) {
@@ -673,8 +667,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.E_COMPANY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -682,8 +675,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.E_COMPANY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public ECompany setUpdatedAt(LocalDateTime updatedAt) {
@@ -692,7 +684,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_COMPANY.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.E_COMPANY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -700,7 +692,7 @@ public class ECompany implements VertxPojo, IECompany {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_COMPANY.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.E_COMPANY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public ECompany setUpdatedBy(String updatedBy) {

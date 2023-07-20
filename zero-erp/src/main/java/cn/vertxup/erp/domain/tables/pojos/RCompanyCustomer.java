@@ -50,8 +50,8 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMPANY_ID</code>.
-     * 「companyId」- 企业的ID
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.COMPANY_ID</code>. 「companyId」-
+     * 企业的ID
      */
     @Override
     public String getCompanyId() {
@@ -59,8 +59,8 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMPANY_ID</code>.
-     * 「companyId」- 企业的ID
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.COMPANY_ID</code>. 「companyId」-
+     * 企业的ID
      */
     @Override
     public RCompanyCustomer setCompanyId(String companyId) {
@@ -69,8 +69,8 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>.
-     * 「customerId」- 客户信息的ID
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>. 「customerId」-
+     * 客户信息的ID
      */
     @Override
     public String getCustomerId() {
@@ -78,8 +78,8 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>.
-     * 「customerId」- 客户信息的ID
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>. 「customerId」-
+     * 客户信息的ID
      */
     @Override
     public RCompanyCustomer setCustomerId(String customerId) {
@@ -88,7 +88,7 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     @Override
@@ -97,7 +97,7 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     @Override
@@ -107,8 +107,7 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public String getComment() {
@@ -116,8 +115,7 @@ public class RCompanyCustomer implements VertxPojo, IRCompanyCustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」- 关系备注
      */
     @Override
     public RCompanyCustomer setComment(String comment) {

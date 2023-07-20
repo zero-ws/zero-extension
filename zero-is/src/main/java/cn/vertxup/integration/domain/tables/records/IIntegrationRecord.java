@@ -25,7 +25,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Setter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     @Override
     public IIntegrationRecord setKey(String value) {
@@ -34,7 +34,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Getter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     @Override
     public String getKey() {
@@ -42,7 +42,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Setter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     @Override
     public IIntegrationRecord setName(String value) {
@@ -51,7 +51,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Getter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     @Override
     public String getName() {
@@ -59,7 +59,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Setter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     @Override
     public IIntegrationRecord setType(String value) {
@@ -68,7 +68,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Getter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     @Override
     public String getType() {
@@ -76,7 +76,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public IIntegrationRecord setIpV4(String value) {
@@ -85,7 +85,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public String getIpV4() {
@@ -93,7 +93,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public IIntegrationRecord setIpV6(String value) {
@@ -102,7 +102,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public String getIpV6() {
@@ -110,8 +110,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Setter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public IIntegrationRecord setHostname(String value) {
@@ -120,8 +119,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Getter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public String getHostname() {
@@ -129,7 +127,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Setter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     @Override
     public IIntegrationRecord setPort(Integer value) {
@@ -138,7 +136,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Getter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     @Override
     public Integer getPort() {
@@ -146,7 +144,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Setter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     @Override
@@ -156,7 +154,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Getter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     @Override
@@ -165,8 +163,8 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     @Override
     public IIntegrationRecord setSecurePort(Integer value) {
@@ -175,8 +173,8 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     @Override
     public Integer getSecurePort() {
@@ -184,7 +182,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     @Override
@@ -194,7 +192,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     @Override
@@ -203,8 +201,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Setter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     @Override
     public IIntegrationRecord setEndpoint(String value) {
@@ -213,8 +210,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Getter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     @Override
     public String getEndpoint() {
@@ -222,7 +218,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Setter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     @Override
     public IIntegrationRecord setPath(String value) {
@@ -231,7 +227,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Getter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     @Override
     public String getPath() {
@@ -239,7 +235,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Setter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     @Override
     public IIntegrationRecord setOsKey(String value) {
@@ -248,7 +244,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Getter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     @Override
     public String getOsKey() {
@@ -256,7 +252,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Setter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     @Override
@@ -266,7 +262,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Getter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     @Override
@@ -275,8 +271,8 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     @Override
     public IIntegrationRecord setOsAuthorize(String value) {
@@ -285,8 +281,8 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     @Override
     public String getOsAuthorize() {
@@ -294,8 +290,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     @Override
     public IIntegrationRecord setOsToken(String value) {
@@ -304,8 +299,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     @Override
     public String getOsToken() {
@@ -313,7 +307,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Setter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     @Override
     public IIntegrationRecord setUsername(String value) {
@@ -322,7 +316,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Getter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     @Override
     public String getUsername() {
@@ -330,7 +324,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Setter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public IIntegrationRecord setPassword(String value) {
@@ -339,7 +333,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Getter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public String getPassword() {
@@ -347,8 +341,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Setter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     @Override
     public IIntegrationRecord setPublicKey(String value) {
@@ -357,8 +350,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Getter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     @Override
     public String getPublicKey() {
@@ -366,8 +358,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Setter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     @Override
     public IIntegrationRecord setOptions(String value) {
@@ -376,8 +367,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Getter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     @Override
     public String getOptions() {
@@ -385,8 +375,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Setter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public IIntegrationRecord setAppId(String value) {
@@ -395,8 +384,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Getter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -404,7 +392,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IIntegrationRecord setActive(Boolean value) {
@@ -413,7 +401,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -421,7 +409,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IIntegrationRecord setSigma(String value) {
@@ -430,7 +418,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -438,8 +426,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IIntegrationRecord setMetadata(String value) {
@@ -448,8 +435,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -457,8 +443,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IIntegrationRecord setLanguage(String value) {
@@ -467,8 +452,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -476,8 +460,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IIntegrationRecord setCreatedAt(LocalDateTime value) {
@@ -486,8 +469,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -495,8 +477,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IIntegrationRecord setCreatedBy(String value) {
@@ -505,8 +486,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -514,8 +494,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IIntegrationRecord setUpdatedAt(LocalDateTime value) {
@@ -524,8 +503,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -533,8 +511,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IIntegrationRecord setUpdatedBy(String value) {
@@ -543,8 +520,7 @@ public class IIntegrationRecord extends UpdatableRecordImpl<IIntegrationRecord> 
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

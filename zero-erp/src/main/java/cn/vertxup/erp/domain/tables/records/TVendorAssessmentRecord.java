@@ -28,7 +28,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.KEY</code>. 「key」- Ticket
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.KEY</code>. 「key」- Ticket
      * Primary Key
      */
     @Override
@@ -38,7 +38,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.KEY</code>. 「key」- Ticket
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.KEY</code>. 「key」- Ticket
      * Primary Key
      */
     @Override
@@ -47,7 +47,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -57,7 +57,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -66,7 +66,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.CLASSIFICATION</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -76,7 +76,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.CLASSIFICATION</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -85,8 +85,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.START_AT</code>.
-     * 「startAt」- From
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.START_AT</code>. 「startAt」- From
      */
     @Override
     public TVendorAssessmentRecord setStartAt(LocalDateTime value) {
@@ -95,8 +94,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.START_AT</code>.
-     * 「startAt」- From
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -104,8 +102,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.END_AT</code>. 「endAt」-
-     * To
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.END_AT</code>. 「endAt」- To
      */
     @Override
     public TVendorAssessmentRecord setEndAt(LocalDateTime value) {
@@ -114,8 +111,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.END_AT</code>. 「endAt」-
-     * To
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -123,8 +119,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.DAYS</code>. 「days」-
-     * Duration
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.DAYS</code>. 「days」- Duration
      */
     @Override
     public TVendorAssessmentRecord setDays(Integer value) {
@@ -133,8 +128,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.DAYS</code>. 「days」-
-     * Duration
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -142,8 +136,8 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.ASSESS_ON</code>.
-     * 「assessOn」- The user that will be assessed
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.ASSESS_ON</code>. 「assessOn」-
+     * The user that will be assessed
      */
     @Override
     public TVendorAssessmentRecord setAssessOn(String value) {
@@ -152,8 +146,8 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.ASSESS_ON</code>.
-     * 「assessOn」- The user that will be assessed
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.ASSESS_ON</code>. 「assessOn」-
+     * The user that will be assessed
      */
     @Override
     public String getAssessOn() {
@@ -161,7 +155,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.ASSESS_SCORE</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.ASSESS_SCORE</code>.
      * 「assessScore」- The score of the user
      */
     @Override
@@ -171,7 +165,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.ASSESS_SCORE</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.ASSESS_SCORE</code>.
      * 「assessScore」- The score of the user
      */
     @Override
@@ -180,7 +174,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_DEPT</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_DEPT</code>.
      * 「commentDept」- from department
      */
     @Override
@@ -190,7 +184,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_DEPT</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_DEPT</code>.
      * 「commentDept」- from department
      */
     @Override
@@ -199,7 +193,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_ASSESS</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_ASSESS</code>.
      * 「commentAssess」- from assess
      */
     @Override
@@ -209,7 +203,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_ASSESS</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_ASSESS</code>.
      * 「commentAssess」- from assess
      */
     @Override
@@ -218,7 +212,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_LEADER</code>.
+     * Setter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_LEADER</code>.
      * 「commentLeader」- from leader of project
      */
     @Override
@@ -228,7 +222,7 @@ public class TVendorAssessmentRecord extends UpdatableRecordImpl<TVendorAssessme
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_ASSESSMENT.COMMENT_LEADER</code>.
+     * Getter for <code>ZDB.T_VENDOR_ASSESSMENT.COMMENT_LEADER</code>.
      * 「commentLeader」- from leader of project
      */
     @Override

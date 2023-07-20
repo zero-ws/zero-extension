@@ -18,206 +18,202 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IIMessage extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Setter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     public IIMessage setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Getter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Setter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     public IIMessage setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Getter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Setter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     public IIMessage setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Getter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Setter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     public IIMessage setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Getter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Setter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     public IIMessage setStatus(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Getter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     public String getStatus();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Setter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     public IIMessage setSubject(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Getter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     public String getSubject();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Setter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     public IIMessage setContent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Getter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     public String getContent();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     public IIMessage setFrom(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     public String getFrom();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     public IIMessage setTo(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     public String getTo();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Setter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     public IIMessage setSendBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Getter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     public String getSendBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Setter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     public IIMessage setSendAt(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Getter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     public String getSendAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Setter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     public IIMessage setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Getter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     public IIMessage setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IIMessage setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     public IIMessage setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IIMessage setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IIMessage setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IIMessage setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IIMessage setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IIMessage setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

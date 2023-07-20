@@ -152,7 +152,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Getter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     @Override
     public String getKey() {
@@ -160,7 +160,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Setter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     @Override
     public IIntegration setKey(String key) {
@@ -169,7 +169,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Getter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     @Override
     public String getName() {
@@ -177,7 +177,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Setter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     @Override
     public IIntegration setName(String name) {
@@ -186,7 +186,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Getter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     @Override
     public String getType() {
@@ -194,7 +194,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Setter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     @Override
     public IIntegration setType(String type) {
@@ -203,7 +203,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public String getIpV4() {
@@ -211,7 +211,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     @Override
     public IIntegration setIpV4(String ipV4) {
@@ -220,7 +220,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public String getIpV6() {
@@ -228,7 +228,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     @Override
     public IIntegration setIpV6(String ipV6) {
@@ -237,8 +237,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Getter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public String getHostname() {
@@ -246,8 +245,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Setter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     @Override
     public IIntegration setHostname(String hostname) {
@@ -256,7 +254,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Getter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     @Override
     public Integer getPort() {
@@ -264,7 +262,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Setter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     @Override
     public IIntegration setPort(Integer port) {
@@ -273,7 +271,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Getter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     @Override
@@ -282,7 +280,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Setter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     @Override
@@ -292,8 +290,8 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     @Override
     public Integer getSecurePort() {
@@ -301,8 +299,8 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     @Override
     public IIntegration setSecurePort(Integer securePort) {
@@ -311,7 +309,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     @Override
@@ -320,7 +318,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     @Override
@@ -330,8 +328,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Getter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     @Override
     public String getEndpoint() {
@@ -339,8 +336,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Setter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     @Override
     public IIntegration setEndpoint(String endpoint) {
@@ -349,7 +345,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Getter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     @Override
     public String getPath() {
@@ -357,7 +353,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Setter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     @Override
     public IIntegration setPath(String path) {
@@ -366,7 +362,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Getter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     @Override
     public String getOsKey() {
@@ -374,7 +370,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Setter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     @Override
     public IIntegration setOsKey(String osKey) {
@@ -383,7 +379,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Getter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     @Override
@@ -392,7 +388,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Setter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     @Override
@@ -402,8 +398,8 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     @Override
     public String getOsAuthorize() {
@@ -411,8 +407,8 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     @Override
     public IIntegration setOsAuthorize(String osAuthorize) {
@@ -421,8 +417,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     @Override
     public String getOsToken() {
@@ -430,8 +425,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     @Override
     public IIntegration setOsToken(String osToken) {
@@ -440,7 +434,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Getter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     @Override
     public String getUsername() {
@@ -448,7 +442,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Setter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     @Override
     public IIntegration setUsername(String username) {
@@ -457,7 +451,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Getter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public String getPassword() {
@@ -465,7 +459,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Setter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     @Override
     public IIntegration setPassword(String password) {
@@ -474,8 +468,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Getter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     @Override
     public String getPublicKey() {
@@ -483,8 +476,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Setter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     @Override
     public IIntegration setPublicKey(String publicKey) {
@@ -493,8 +485,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Getter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     @Override
     public String getOptions() {
@@ -502,8 +493,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Setter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     @Override
     public IIntegration setOptions(String options) {
@@ -512,8 +502,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Getter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -521,8 +510,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Setter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public IIntegration setAppId(String appId) {
@@ -531,7 +519,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -539,7 +527,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IIntegration setActive(Boolean active) {
@@ -548,7 +536,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -556,7 +544,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IIntegration setSigma(String sigma) {
@@ -565,8 +553,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -574,8 +561,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IIntegration setMetadata(String metadata) {
@@ -584,8 +570,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -593,8 +578,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IIntegration setLanguage(String language) {
@@ -603,8 +587,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -612,8 +595,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IIntegration setCreatedAt(LocalDateTime createdAt) {
@@ -622,8 +604,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -631,8 +612,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IIntegration setCreatedBy(String createdBy) {
@@ -641,8 +621,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -650,8 +629,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IIntegration setUpdatedAt(LocalDateTime updatedAt) {
@@ -660,8 +638,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -669,8 +646,7 @@ public class IIntegration implements VertxPojo, IIIntegration {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IIntegration setUpdatedBy(String updatedBy) {

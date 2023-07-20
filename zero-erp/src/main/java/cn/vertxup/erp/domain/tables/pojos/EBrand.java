@@ -108,7 +108,7 @@ public class EBrand implements VertxPojo, IEBrand {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.KEY</code>. 「key」- 品牌ID
+     * Getter for <code>ZDB.E_BRAND.KEY</code>. 「key」- 品牌ID
      */
     @Override
     public String getKey() {
@@ -116,7 +116,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.KEY</code>. 「key」- 品牌ID
+     * Setter for <code>ZDB.E_BRAND.KEY</code>. 「key」- 品牌ID
      */
     @Override
     public EBrand setKey(String key) {
@@ -125,7 +125,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.CODE</code>. 「code」- 品牌编码
+     * Getter for <code>ZDB.E_BRAND.CODE</code>. 「code」- 品牌编码
      */
     @Override
     public String getCode() {
@@ -133,7 +133,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.CODE</code>. 「code」- 品牌编码
+     * Setter for <code>ZDB.E_BRAND.CODE</code>. 「code」- 品牌编码
      */
     @Override
     public EBrand setCode(String code) {
@@ -142,7 +142,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.NAME</code>. 「name」- 品牌名称
+     * Getter for <code>ZDB.E_BRAND.NAME</code>. 「name」- 品牌名称
      */
     @Override
     public String getName() {
@@ -150,7 +150,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.NAME</code>. 「name」- 品牌名称
+     * Setter for <code>ZDB.E_BRAND.NAME</code>. 「name」- 品牌名称
      */
     @Override
     public EBrand setName(String name) {
@@ -159,7 +159,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.ALIAS</code>. 「alias」- 品牌别名
+     * Getter for <code>ZDB.E_BRAND.ALIAS</code>. 「alias」- 品牌别名
      */
     @Override
     public String getAlias() {
@@ -167,7 +167,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.ALIAS</code>. 「alias」- 品牌别名
+     * Setter for <code>ZDB.E_BRAND.ALIAS</code>. 「alias」- 品牌别名
      */
     @Override
     public EBrand setAlias(String alias) {
@@ -176,8 +176,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.COMPANY_NAME</code>. 「companyName」-
-     * 品牌公司名
+     * Getter for <code>ZDB.E_BRAND.COMPANY_NAME</code>. 「companyName」- 品牌公司名
      */
     @Override
     public String getCompanyName() {
@@ -185,8 +184,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.COMPANY_NAME</code>. 「companyName」-
-     * 品牌公司名
+     * Setter for <code>ZDB.E_BRAND.COMPANY_NAME</code>. 「companyName」- 品牌公司名
      */
     @Override
     public EBrand setCompanyName(String companyName) {
@@ -195,8 +193,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.CATEGORY_CODE</code>. 「categoryCode」-
-     * 类别代码
+     * Getter for <code>ZDB.E_BRAND.CATEGORY_CODE</code>. 「categoryCode」- 类别代码
      */
     @Override
     public String getCategoryCode() {
@@ -204,8 +201,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.CATEGORY_CODE</code>. 「categoryCode」-
-     * 类别代码
+     * Setter for <code>ZDB.E_BRAND.CATEGORY_CODE</code>. 「categoryCode」- 类别代码
      */
     @Override
     public EBrand setCategoryCode(String categoryCode) {
@@ -214,8 +210,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.CATEGORY_NAME</code>. 「categoryName」-
-     * 类别名称
+     * Getter for <code>ZDB.E_BRAND.CATEGORY_NAME</code>. 「categoryName」- 类别名称
      */
     @Override
     public String getCategoryName() {
@@ -223,8 +218,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.CATEGORY_NAME</code>. 「categoryName」-
-     * 类别名称
+     * Setter for <code>ZDB.E_BRAND.CATEGORY_NAME</code>. 「categoryName」- 类别名称
      */
     @Override
     public EBrand setCategoryName(String categoryName) {
@@ -233,8 +227,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.AREA</code>. 「area」-
-     * 区域码，如：GB/T2659-2000国际标准
+     * Getter for <code>ZDB.E_BRAND.AREA</code>. 「area」- 区域码，如：GB/T2659-2000国际标准
      */
     @Override
     public String getArea() {
@@ -242,8 +235,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.AREA</code>. 「area」-
-     * 区域码，如：GB/T2659-2000国际标准
+     * Setter for <code>ZDB.E_BRAND.AREA</code>. 「area」- 区域码，如：GB/T2659-2000国际标准
      */
     @Override
     public EBrand setArea(String area) {
@@ -252,7 +244,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.AREA_NAME</code>. 「areaName」- 区域名称
+     * Getter for <code>ZDB.E_BRAND.AREA_NAME</code>. 「areaName」- 区域名称
      */
     @Override
     public String getAreaName() {
@@ -260,7 +252,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.AREA_NAME</code>. 「areaName」- 区域名称
+     * Setter for <code>ZDB.E_BRAND.AREA_NAME</code>. 「areaName」- 区域名称
      */
     @Override
     public EBrand setAreaName(String areaName) {
@@ -269,8 +261,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.AREA_CATEGORY</code>. 「areaCategory」-
-     * 区域类别码
+     * Getter for <code>ZDB.E_BRAND.AREA_CATEGORY</code>. 「areaCategory」- 区域类别码
      */
     @Override
     public String getAreaCategory() {
@@ -278,8 +269,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.AREA_CATEGORY</code>. 「areaCategory」-
-     * 区域类别码
+     * Setter for <code>ZDB.E_BRAND.AREA_CATEGORY</code>. 「areaCategory」- 区域类别码
      */
     @Override
     public EBrand setAreaCategory(String areaCategory) {
@@ -288,7 +278,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_BRAND.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -296,7 +286,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_BRAND.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public EBrand setMetadata(String metadata) {
@@ -305,7 +295,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_BRAND.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -313,7 +303,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_BRAND.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public EBrand setActive(Boolean active) {
@@ -322,7 +312,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
+     * Getter for <code>ZDB.E_BRAND.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public String getSigma() {
@@ -330,7 +320,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
+     * Setter for <code>ZDB.E_BRAND.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public EBrand setSigma(String sigma) {
@@ -339,7 +329,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_BRAND.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -347,7 +337,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_BRAND.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public EBrand setLanguage(String language) {
@@ -356,7 +346,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.E_BRAND.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -364,7 +354,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.E_BRAND.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public EBrand setCreatedAt(LocalDateTime createdAt) {
@@ -373,7 +363,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.E_BRAND.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -381,7 +371,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.E_BRAND.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public EBrand setCreatedBy(String createdBy) {
@@ -390,7 +380,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.E_BRAND.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -398,7 +388,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.E_BRAND.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public EBrand setUpdatedAt(LocalDateTime updatedAt) {
@@ -407,7 +397,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_BRAND.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.E_BRAND.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -415,7 +405,7 @@ public class EBrand implements VertxPojo, IEBrand {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_BRAND.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.E_BRAND.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public EBrand setUpdatedBy(String updatedBy) {

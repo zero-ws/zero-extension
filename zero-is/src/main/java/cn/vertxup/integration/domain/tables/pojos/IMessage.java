@@ -116,7 +116,7 @@ public class IMessage implements VertxPojo, IIMessage {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Getter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     @Override
     public String getKey() {
@@ -124,7 +124,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.KEY</code>. 「key」- 消息主键
+     * Setter for <code>ZDB.I_MESSAGE.KEY</code>. 「key」- 消息主键
      */
     @Override
     public IMessage setKey(String key) {
@@ -133,7 +133,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Getter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     @Override
     public String getName() {
@@ -141,7 +141,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.NAME</code>. 「name」- 消息名称
+     * Setter for <code>ZDB.I_MESSAGE.NAME</code>. 「name」- 消息名称
      */
     @Override
     public IMessage setName(String name) {
@@ -150,7 +150,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Getter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     @Override
     public String getCode() {
@@ -158,7 +158,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CODE</code>. 「code」- 消息编码
+     * Setter for <code>ZDB.I_MESSAGE.CODE</code>. 「code」- 消息编码
      */
     @Override
     public IMessage setCode(String code) {
@@ -167,7 +167,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Getter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     @Override
     public String getType() {
@@ -175,7 +175,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TYPE</code>. 「type」- 消息类型
+     * Setter for <code>ZDB.I_MESSAGE.TYPE</code>. 「type」- 消息类型
      */
     @Override
     public IMessage setType(String type) {
@@ -184,7 +184,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Getter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     @Override
     public String getStatus() {
@@ -192,7 +192,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.STATUS</code>. 「status」- 消息状态
+     * Setter for <code>ZDB.I_MESSAGE.STATUS</code>. 「status」- 消息状态
      */
     @Override
     public IMessage setStatus(String status) {
@@ -201,7 +201,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Getter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     @Override
     public String getSubject() {
@@ -209,7 +209,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
+     * Setter for <code>ZDB.I_MESSAGE.SUBJECT</code>. 「subject」- 消息标题
      */
     @Override
     public IMessage setSubject(String subject) {
@@ -218,7 +218,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Getter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     @Override
     public String getContent() {
@@ -226,7 +226,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
+     * Setter for <code>ZDB.I_MESSAGE.CONTENT</code>. 「content」- 消息内容
      */
     @Override
     public IMessage setContent(String content) {
@@ -235,7 +235,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     @Override
     public String getFrom() {
@@ -243,7 +243,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
      */
     @Override
     public IMessage setFrom(String from) {
@@ -252,7 +252,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     @Override
     public String getTo() {
@@ -260,7 +260,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
      */
     @Override
     public IMessage setTo(String to) {
@@ -269,7 +269,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Getter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     @Override
     public String getSendBy() {
@@ -277,7 +277,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
+     * Setter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
      */
     @Override
     public IMessage setSendBy(String sendBy) {
@@ -286,7 +286,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Getter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     @Override
     public String getSendAt() {
@@ -294,7 +294,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
+     * Setter for <code>ZDB.I_MESSAGE.SEND_AT</code>. 「sendAt」- 发送时间
      */
     @Override
     public IMessage setSendAt(String sendAt) {
@@ -303,7 +303,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Getter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public String getAppId() {
@@ -311,7 +311,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
+     * Setter for <code>ZDB.I_MESSAGE.APP_ID</code>. 「appId」- 所属应用ID
      */
     @Override
     public IMessage setAppId(String appId) {
@@ -320,7 +320,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -328,7 +328,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_MESSAGE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IMessage setActive(Boolean active) {
@@ -337,7 +337,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -345,7 +345,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_MESSAGE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IMessage setSigma(String sigma) {
@@ -354,7 +354,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -362,7 +362,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_MESSAGE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IMessage setMetadata(String metadata) {
@@ -371,7 +371,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -379,7 +379,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.I_MESSAGE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IMessage setLanguage(String language) {
@@ -388,8 +388,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -397,8 +396,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IMessage setCreatedAt(LocalDateTime createdAt) {
@@ -407,7 +405,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -415,7 +413,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.I_MESSAGE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IMessage setCreatedBy(String createdBy) {
@@ -424,8 +422,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -433,8 +430,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IMessage setUpdatedAt(LocalDateTime updatedAt) {
@@ -443,7 +439,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -451,7 +447,7 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.I_MESSAGE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IMessage setUpdatedBy(String updatedBy) {

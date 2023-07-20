@@ -17,50 +17,46 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IRTeamEmployee extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.TEAM_ID</code>. 「teamId」-
-     * 组的ID
+     * Setter for <code>ZDB.R_TEAM_EMPLOYEE.TEAM_ID</code>. 「teamId」- 组的ID
      */
     public IRTeamEmployee setTeamId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.TEAM_ID</code>. 「teamId」-
-     * 组的ID
+     * Getter for <code>ZDB.R_TEAM_EMPLOYEE.TEAM_ID</code>. 「teamId」- 组的ID
      */
     public String getTeamId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.EMPLOYEE_ID</code>.
-     * 「employeeId」- 员工ID
+     * Setter for <code>ZDB.R_TEAM_EMPLOYEE.EMPLOYEE_ID</code>. 「employeeId」-
+     * 员工ID
      */
     public IRTeamEmployee setEmployeeId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.EMPLOYEE_ID</code>.
-     * 「employeeId」- 员工ID
+     * Getter for <code>ZDB.R_TEAM_EMPLOYEE.EMPLOYEE_ID</code>. 「employeeId」-
+     * 员工ID
      */
     public String getEmployeeId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.LINK_COMPONENT</code>.
+     * Setter for <code>ZDB.R_TEAM_EMPLOYEE.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     public IRTeamEmployee setLinkComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.LINK_COMPONENT</code>.
+     * Getter for <code>ZDB.R_TEAM_EMPLOYEE.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     public String getLinkComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Setter for <code>ZDB.R_TEAM_EMPLOYEE.COMMENT</code>. 「comment」- 关系备注
      */
     public IRTeamEmployee setComment(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_TEAM_EMPLOYEE.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Getter for <code>ZDB.R_TEAM_EMPLOYEE.COMMENT</code>. 「comment」- 关系备注
      */
     public String getComment();
 

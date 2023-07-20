@@ -28,8 +28,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_VENDOR_HOUR.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public TVendorHourRecord setKey(String value) {
@@ -38,8 +37,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_VENDOR_HOUR.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public String getKey() {
@@ -47,7 +45,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_VENDOR_HOUR.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -57,7 +55,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_VENDOR_HOUR.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -66,7 +64,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.CLASSIFICATION</code>.
+     * Setter for <code>ZDB.T_VENDOR_HOUR.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -76,7 +74,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.CLASSIFICATION</code>.
+     * Getter for <code>ZDB.T_VENDOR_HOUR.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -85,8 +83,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.START_AT</code>. 「startAt」-
-     * From
+     * Setter for <code>ZDB.T_VENDOR_HOUR.START_AT</code>. 「startAt」- From
      */
     @Override
     public TVendorHourRecord setStartAt(LocalDateTime value) {
@@ -95,8 +92,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.START_AT</code>. 「startAt」-
-     * From
+     * Getter for <code>ZDB.T_VENDOR_HOUR.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -104,7 +100,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_VENDOR_HOUR.END_AT</code>. 「endAt」- To
      */
     @Override
     public TVendorHourRecord setEndAt(LocalDateTime value) {
@@ -113,7 +109,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_VENDOR_HOUR.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -121,7 +117,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.DAYS</code>. 「days」- Duration
+     * Setter for <code>ZDB.T_VENDOR_HOUR.DAYS</code>. 「days」- Duration
      */
     @Override
     public TVendorHourRecord setDays(Integer value) {
@@ -130,7 +126,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.DAYS</code>. 「days」- Duration
+     * Getter for <code>ZDB.T_VENDOR_HOUR.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -138,8 +134,8 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.REQUEST_TYPE</code>.
-     * 「requestType」- Request type of hour
+     * Setter for <code>ZDB.T_VENDOR_HOUR.REQUEST_TYPE</code>. 「requestType」-
+     * Request type of hour
      */
     @Override
     public TVendorHourRecord setRequestType(String value) {
@@ -148,8 +144,8 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.REQUEST_TYPE</code>.
-     * 「requestType」- Request type of hour
+     * Getter for <code>ZDB.T_VENDOR_HOUR.REQUEST_TYPE</code>. 「requestType」-
+     * Request type of hour
      */
     @Override
     public String getRequestType() {
@@ -157,7 +153,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.FROM_TYPE</code>. 「fromType」
+     * Setter for <code>ZDB.T_VENDOR_HOUR.FROM_TYPE</code>. 「fromType」
      */
     @Override
     public TVendorHourRecord setFromType(String value) {
@@ -166,7 +162,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.FROM_TYPE</code>. 「fromType」
+     * Getter for <code>ZDB.T_VENDOR_HOUR.FROM_TYPE</code>. 「fromType」
      */
     @Override
     public String getFromType() {
@@ -174,7 +170,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.FROM_AT</code>. 「fromAt」
+     * Setter for <code>ZDB.T_VENDOR_HOUR.FROM_AT</code>. 「fromAt」
      */
     @Override
     public TVendorHourRecord setFromAt(LocalDateTime value) {
@@ -183,7 +179,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.FROM_AT</code>. 「fromAt」
+     * Getter for <code>ZDB.T_VENDOR_HOUR.FROM_AT</code>. 「fromAt」
      */
     @Override
     public LocalDateTime getFromAt() {
@@ -191,7 +187,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.TO_TYPE</code>. 「toType」
+     * Setter for <code>ZDB.T_VENDOR_HOUR.TO_TYPE</code>. 「toType」
      */
     @Override
     public TVendorHourRecord setToType(String value) {
@@ -200,7 +196,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.TO_TYPE</code>. 「toType」
+     * Getter for <code>ZDB.T_VENDOR_HOUR.TO_TYPE</code>. 「toType」
      */
     @Override
     public String getToType() {
@@ -208,7 +204,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_HOUR.TO_AT</code>. 「toAt」
+     * Setter for <code>ZDB.T_VENDOR_HOUR.TO_AT</code>. 「toAt」
      */
     @Override
     public TVendorHourRecord setToAt(LocalDateTime value) {
@@ -217,7 +213,7 @@ public class TVendorHourRecord extends UpdatableRecordImpl<TVendorHourRecord> im
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_HOUR.TO_AT</code>. 「toAt」
+     * Getter for <code>ZDB.T_VENDOR_HOUR.TO_AT</code>. 「toAt」
      */
     @Override
     public LocalDateTime getToAt() {

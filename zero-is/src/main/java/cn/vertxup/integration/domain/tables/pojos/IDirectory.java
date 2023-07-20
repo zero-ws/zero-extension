@@ -132,7 +132,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.KEY</code>. 「key」- 目录主键
+     * Getter for <code>ZDB.I_DIRECTORY.KEY</code>. 「key」- 目录主键
      */
     @Override
     public String getKey() {
@@ -140,7 +140,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.KEY</code>. 「key」- 目录主键
+     * Setter for <code>ZDB.I_DIRECTORY.KEY</code>. 「key」- 目录主键
      */
     @Override
     public IDirectory setKey(String key) {
@@ -149,7 +149,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.NAME</code>. 「name」- 目录名称
+     * Getter for <code>ZDB.I_DIRECTORY.NAME</code>. 「name」- 目录名称
      */
     @Override
     public String getName() {
@@ -157,7 +157,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.NAME</code>. 「name」- 目录名称
+     * Setter for <code>ZDB.I_DIRECTORY.NAME</code>. 「name」- 目录名称
      */
     @Override
     public IDirectory setName(String name) {
@@ -166,7 +166,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CODE</code>. 「code」- 目录编号
+     * Getter for <code>ZDB.I_DIRECTORY.CODE</code>. 「code」- 目录编号
      */
     @Override
     public String getCode() {
@@ -174,7 +174,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CODE</code>. 「code」- 目录编号
+     * Setter for <code>ZDB.I_DIRECTORY.CODE</code>. 「code」- 目录编号
      */
     @Override
     public IDirectory setCode(String code) {
@@ -183,8 +183,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.STORE_PATH</code>. 「storePath」-
-     * 目录相对路径
+     * Getter for <code>ZDB.I_DIRECTORY.STORE_PATH</code>. 「storePath」- 目录相对路径
      */
     @Override
     public String getStorePath() {
@@ -192,8 +191,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.STORE_PATH</code>. 「storePath」-
-     * 目录相对路径
+     * Setter for <code>ZDB.I_DIRECTORY.STORE_PATH</code>. 「storePath」- 目录相对路径
      */
     @Override
     public IDirectory setStorePath(String storePath) {
@@ -202,7 +200,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
+     * Getter for <code>ZDB.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
      * 链接路径，type = LINK 时专用
      */
     @Override
@@ -211,7 +209,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
+     * Setter for <code>ZDB.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
      * 链接路径，type = LINK 时专用
      */
     @Override
@@ -221,8 +219,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.PARENT_ID</code>. 「parentId」-
-     * 父目录ID
+     * Getter for <code>ZDB.I_DIRECTORY.PARENT_ID</code>. 「parentId」- 父目录ID
      */
     @Override
     public String getParentId() {
@@ -230,8 +227,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.PARENT_ID</code>. 「parentId」-
-     * 父目录ID
+     * Setter for <code>ZDB.I_DIRECTORY.PARENT_ID</code>. 「parentId」- 父目录ID
      */
     @Override
     public IDirectory setParentId(String parentId) {
@@ -240,8 +236,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CATEGORY</code>. 「category」-
-     * 目录连接的类型树
+     * Getter for <code>ZDB.I_DIRECTORY.CATEGORY</code>. 「category」- 目录连接的类型树
      */
     @Override
     public String getCategory() {
@@ -249,8 +244,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CATEGORY</code>. 「category」-
-     * 目录连接的类型树
+     * Setter for <code>ZDB.I_DIRECTORY.CATEGORY</code>. 「category」- 目录连接的类型树
      */
     @Override
     public IDirectory setCategory(String category) {
@@ -259,8 +253,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.TYPE</code>. 「type」-
-     * 目录类型：INTEGRATION / STORE / LINK
+     * Getter for <code>ZDB.I_DIRECTORY.TYPE</code>. 「type」- 目录类型：INTEGRATION /
+     * STORE / LINK
      */
     @Override
     public String getType() {
@@ -268,8 +262,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.TYPE</code>. 「type」-
-     * 目录类型：INTEGRATION / STORE / LINK
+     * Setter for <code>ZDB.I_DIRECTORY.TYPE</code>. 「type」- 目录类型：INTEGRATION /
+     * STORE / LINK
      */
     @Override
     public IDirectory setType(String type) {
@@ -278,7 +272,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
+     * Getter for <code>ZDB.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
      */
     @Override
     public String getOwner() {
@@ -286,7 +280,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
+     * Setter for <code>ZDB.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
      */
     @Override
     public IDirectory setOwner(String owner) {
@@ -295,8 +289,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
+     * Getter for <code>ZDB.I_DIRECTORY.INTEGRATION_ID</code>. 「integrationId」-
+     * 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public String getIntegrationId() {
@@ -304,8 +298,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
+     * Setter for <code>ZDB.I_DIRECTORY.INTEGRATION_ID</code>. 「integrationId」-
+     * 该目录关联的 KIntegration，不关联则不转存
      */
     @Override
     public IDirectory setIntegrationId(String integrationId) {
@@ -314,8 +308,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 目录执行组件，抓文件专用
+     * Getter for <code>ZDB.I_DIRECTORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 目录执行组件，抓文件专用
      */
     @Override
     public String getRunComponent() {
@@ -323,8 +317,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 目录执行组件，抓文件专用
+     * Setter for <code>ZDB.I_DIRECTORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 目录执行组件，抓文件专用
      */
     @Override
     public IDirectory setRunComponent(String runComponent) {
@@ -333,7 +327,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
      */
     @Override
     public Boolean getVisit() {
@@ -341,7 +335,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
      */
     @Override
     public IDirectory setVisit(Boolean visit) {
@@ -350,8 +344,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」-
-     * 目录模式：只读 / 可写，以后扩展为其他
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」- 目录模式：只读
+     * / 可写，以后扩展为其他
      */
     @Override
     public String getVisitMode() {
@@ -359,8 +353,8 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」-
-     * 目录模式：只读 / 可写，以后扩展为其他
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」- 目录模式：只读
+     * / 可写，以后扩展为其他
      */
     @Override
     public IDirectory setVisitMode(String visitMode) {
@@ -369,8 +363,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」-
-     * 目录访问角色
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」- 目录访问角色
      */
     @Override
     public String getVisitRole() {
@@ -378,8 +371,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」-
-     * 目录访问角色
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」- 目录访问角色
      */
     @Override
     public IDirectory setVisitRole(String visitRole) {
@@ -388,8 +380,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」-
-     * 目录访问组
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」- 目录访问组
      */
     @Override
     public String getVisitGroup() {
@@ -397,8 +388,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」-
-     * 目录访问组
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」- 目录访问组
      */
     @Override
     public IDirectory setVisitGroup(String visitGroup) {
@@ -407,7 +397,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_COMPONENT</code>.
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_COMPONENT</code>.
      * 「visitComponent」- 目录访问控制专用组件
      */
     @Override
@@ -416,7 +406,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_COMPONENT</code>.
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_COMPONENT</code>.
      * 「visitComponent」- 目录访问控制专用组件
      */
     @Override
@@ -426,7 +416,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -434,7 +424,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IDirectory setSigma(String sigma) {
@@ -443,8 +433,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_DIRECTORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -452,8 +441,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_DIRECTORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IDirectory setLanguage(String language) {
@@ -462,7 +450,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -470,7 +458,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IDirectory setActive(Boolean active) {
@@ -479,8 +467,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Getter for <code>ZDB.I_DIRECTORY.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public String getMetadata() {
@@ -488,8 +475,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Setter for <code>ZDB.I_DIRECTORY.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
     public IDirectory setMetadata(String metadata) {
@@ -498,8 +484,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_DIRECTORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -507,8 +492,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_DIRECTORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IDirectory setCreatedAt(LocalDateTime createdAt) {
@@ -517,8 +501,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_DIRECTORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -526,8 +509,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_DIRECTORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IDirectory setCreatedBy(String createdBy) {
@@ -536,8 +518,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -545,8 +526,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IDirectory setUpdatedAt(LocalDateTime updatedAt) {
@@ -555,8 +535,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -564,8 +543,7 @@ public class IDirectory implements VertxPojo, IIDirectory {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IDirectory setUpdatedBy(String updatedBy) {

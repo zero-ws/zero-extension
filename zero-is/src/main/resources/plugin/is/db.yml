@@ -1,0 +1,17 @@
+databaseChangeLog:
+  # 集成专用
+  - include:
+      file: plugin/is/sql/I_INTEGRATION.sql
+      relativeToChangelogFile: false
+  # 文档管理目录集成
+  - include:
+      file: plugin/is/sql/I_DIRECTORY.sql
+      relativeToChangelogFile: false
+  # 消息管理
+  - include:
+      file: plugin/is/sql/I_MESSAGE.sql
+      relativeToChangelogFile: false
+  # 公文包，文档组
+  - include:
+      file: plugin/is/sql/I_PORTFOLIO.sql
+      relativeToChangelogFile: false

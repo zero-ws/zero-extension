@@ -169,7 +169,7 @@ public class ECustomer implements VertxPojo, IECustomer {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.KEY</code>. 「key」- 客户ID
+     * Getter for <code>ZDB.E_CUSTOMER.KEY</code>. 「key」- 客户ID
      */
     @Override
     public String getKey() {
@@ -177,7 +177,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.KEY</code>. 「key」- 客户ID
+     * Setter for <code>ZDB.E_CUSTOMER.KEY</code>. 「key」- 客户ID
      */
     @Override
     public ECustomer setKey(String key) {
@@ -186,7 +186,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.NAME</code>. 「name」- 客户名称
+     * Getter for <code>ZDB.E_CUSTOMER.NAME</code>. 「name」- 客户名称
      */
     @Override
     public String getName() {
@@ -194,7 +194,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.NAME</code>. 「name」- 客户名称
+     * Setter for <code>ZDB.E_CUSTOMER.NAME</code>. 「name」- 客户名称
      */
     @Override
     public ECustomer setName(String name) {
@@ -203,7 +203,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CODE</code>. 「code」- 客户编号
+     * Getter for <code>ZDB.E_CUSTOMER.CODE</code>. 「code」- 客户编号
      */
     @Override
     public String getCode() {
@@ -211,7 +211,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CODE</code>. 「code」- 客户编号
+     * Setter for <code>ZDB.E_CUSTOMER.CODE</code>. 「code」- 客户编号
      */
     @Override
     public ECustomer setCode(String code) {
@@ -220,8 +220,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.TYPE</code>. 「type」-
-     * 客户分类（不同类型代表不同客户）
+     * Getter for <code>ZDB.E_CUSTOMER.TYPE</code>. 「type」- 客户分类（不同类型代表不同客户）
      */
     @Override
     public String getType() {
@@ -229,8 +228,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.TYPE</code>. 「type」-
-     * 客户分类（不同类型代表不同客户）
+     * Setter for <code>ZDB.E_CUSTOMER.TYPE</code>. 「type」- 客户分类（不同类型代表不同客户）
      */
     @Override
     public ECustomer setType(String type) {
@@ -239,7 +237,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.STATUS</code>. 「status」- 客户状态
+     * Getter for <code>ZDB.E_CUSTOMER.STATUS</code>. 「status」- 客户状态
      */
     @Override
     public String getStatus() {
@@ -247,7 +245,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.STATUS</code>. 「status」- 客户状态
+     * Setter for <code>ZDB.E_CUSTOMER.STATUS</code>. 「status」- 客户状态
      */
     @Override
     public ECustomer setStatus(String status) {
@@ -256,7 +254,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.TAX_CODE</code>. 「taxCode」- 税号
+     * Getter for <code>ZDB.E_CUSTOMER.TAX_CODE</code>. 「taxCode」- 税号
      */
     @Override
     public String getTaxCode() {
@@ -264,7 +262,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.TAX_CODE</code>. 「taxCode」- 税号
+     * Setter for <code>ZDB.E_CUSTOMER.TAX_CODE</code>. 「taxCode」- 税号
      */
     @Override
     public ECustomer setTaxCode(String taxCode) {
@@ -273,7 +271,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.TAX_TITLE</code>. 「taxTitle」- 开票抬头
+     * Getter for <code>ZDB.E_CUSTOMER.TAX_TITLE</code>. 「taxTitle」- 开票抬头
      */
     @Override
     public String getTaxTitle() {
@@ -281,7 +279,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.TAX_TITLE</code>. 「taxTitle」- 开票抬头
+     * Setter for <code>ZDB.E_CUSTOMER.TAX_TITLE</code>. 「taxTitle」- 开票抬头
      */
     @Override
     public ECustomer setTaxTitle(String taxTitle) {
@@ -290,8 +288,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_NAME</code>.
-     * 「contactName」- 联系人姓名
+     * Getter for <code>ZDB.E_CUSTOMER.CONTACT_NAME</code>. 「contactName」- 联系人姓名
      */
     @Override
     public String getContactName() {
@@ -299,8 +296,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_NAME</code>.
-     * 「contactName」- 联系人姓名
+     * Setter for <code>ZDB.E_CUSTOMER.CONTACT_NAME</code>. 「contactName」- 联系人姓名
      */
     @Override
     public ECustomer setContactName(String contactName) {
@@ -309,8 +305,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_PHONE</code>.
-     * 「contactPhone」- 联系人电话
+     * Getter for <code>ZDB.E_CUSTOMER.CONTACT_PHONE</code>. 「contactPhone」-
+     * 联系人电话
      */
     @Override
     public String getContactPhone() {
@@ -318,8 +314,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_PHONE</code>.
-     * 「contactPhone」- 联系人电话
+     * Setter for <code>ZDB.E_CUSTOMER.CONTACT_PHONE</code>. 「contactPhone」-
+     * 联系人电话
      */
     @Override
     public ECustomer setContactPhone(String contactPhone) {
@@ -328,8 +324,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_EMAIL</code>.
-     * 「contactEmail」- 联系人Email
+     * Getter for <code>ZDB.E_CUSTOMER.CONTACT_EMAIL</code>. 「contactEmail」-
+     * 联系人Email
      */
     @Override
     public String getContactEmail() {
@@ -337,8 +333,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_EMAIL</code>.
-     * 「contactEmail」- 联系人Email
+     * Setter for <code>ZDB.E_CUSTOMER.CONTACT_EMAIL</code>. 「contactEmail」-
+     * 联系人Email
      */
     @Override
     public ECustomer setContactEmail(String contactEmail) {
@@ -347,8 +343,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_ONLINE</code>.
-     * 「contactOnline」- 在线联系方式
+     * Getter for <code>ZDB.E_CUSTOMER.CONTACT_ONLINE</code>. 「contactOnline」-
+     * 在线联系方式
      */
     @Override
     public String getContactOnline() {
@@ -356,8 +352,8 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CONTACT_ONLINE</code>.
-     * 「contactOnline」- 在线联系方式
+     * Setter for <code>ZDB.E_CUSTOMER.CONTACT_ONLINE</code>. 「contactOnline」-
+     * 在线联系方式
      */
     @Override
     public ECustomer setContactOnline(String contactOnline) {
@@ -366,7 +362,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.TITLE</code>. 「title」- 客户显示标题
+     * Getter for <code>ZDB.E_CUSTOMER.TITLE</code>. 「title」- 客户显示标题
      */
     @Override
     public String getTitle() {
@@ -374,7 +370,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.TITLE</code>. 「title」- 客户显示标题
+     * Setter for <code>ZDB.E_CUSTOMER.TITLE</code>. 「title」- 客户显示标题
      */
     @Override
     public ECustomer setTitle(String title) {
@@ -383,7 +379,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.COMMENT</code>. 「comment」- 客户备注
+     * Getter for <code>ZDB.E_CUSTOMER.COMMENT</code>. 「comment」- 客户备注
      */
     @Override
     public String getComment() {
@@ -391,7 +387,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.COMMENT</code>. 「comment」- 客户备注
+     * Setter for <code>ZDB.E_CUSTOMER.COMMENT</code>. 「comment」- 客户备注
      */
     @Override
     public ECustomer setComment(String comment) {
@@ -400,7 +396,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.EMAIL</code>. 「email」- 企业邮箱
+     * Getter for <code>ZDB.E_CUSTOMER.EMAIL</code>. 「email」- 企业邮箱
      */
     @Override
     public String getEmail() {
@@ -408,7 +404,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.EMAIL</code>. 「email」- 企业邮箱
+     * Setter for <code>ZDB.E_CUSTOMER.EMAIL</code>. 「email」- 企业邮箱
      */
     @Override
     public ECustomer setEmail(String email) {
@@ -417,7 +413,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.FAX</code>. 「fax」- 传真号
+     * Getter for <code>ZDB.E_CUSTOMER.FAX</code>. 「fax」- 传真号
      */
     @Override
     public String getFax() {
@@ -425,7 +421,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.FAX</code>. 「fax」- 传真号
+     * Setter for <code>ZDB.E_CUSTOMER.FAX</code>. 「fax」- 传真号
      */
     @Override
     public ECustomer setFax(String fax) {
@@ -434,7 +430,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.HOMEPAGE</code>. 「homepage」- 客户主页
+     * Getter for <code>ZDB.E_CUSTOMER.HOMEPAGE</code>. 「homepage」- 客户主页
      */
     @Override
     public String getHomepage() {
@@ -442,7 +438,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.HOMEPAGE</code>. 「homepage」- 客户主页
+     * Setter for <code>ZDB.E_CUSTOMER.HOMEPAGE</code>. 「homepage」- 客户主页
      */
     @Override
     public ECustomer setHomepage(String homepage) {
@@ -451,8 +447,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.LOGO</code>. 「logo」- 附件对应的
-     * attachment Key
+     * Getter for <code>ZDB.E_CUSTOMER.LOGO</code>. 「logo」- 附件对应的 attachment Key
      */
     @Override
     public String getLogo() {
@@ -460,8 +455,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.LOGO</code>. 「logo」- 附件对应的
-     * attachment Key
+     * Setter for <code>ZDB.E_CUSTOMER.LOGO</code>. 「logo」- 附件对应的 attachment Key
      */
     @Override
     public ECustomer setLogo(String logo) {
@@ -470,7 +464,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.PHONE</code>. 「phone」- 客户座机
+     * Getter for <code>ZDB.E_CUSTOMER.PHONE</code>. 「phone」- 客户座机
      */
     @Override
     public String getPhone() {
@@ -478,7 +472,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.PHONE</code>. 「phone」- 客户座机
+     * Setter for <code>ZDB.E_CUSTOMER.PHONE</code>. 「phone」- 客户座机
      */
     @Override
     public ECustomer setPhone(String phone) {
@@ -487,7 +481,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.ADDRESS</code>. 「address」- 客户地址
+     * Getter for <code>ZDB.E_CUSTOMER.ADDRESS</code>. 「address」- 客户地址
      */
     @Override
     public String getAddress() {
@@ -495,7 +489,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.ADDRESS</code>. 「address」- 客户地址
+     * Setter for <code>ZDB.E_CUSTOMER.ADDRESS</code>. 「address」- 客户地址
      */
     @Override
     public ECustomer setAddress(String address) {
@@ -504,8 +498,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.SIGN_NAME</code>. 「signName」-
-     * 签单人姓名
+     * Getter for <code>ZDB.E_CUSTOMER.SIGN_NAME</code>. 「signName」- 签单人姓名
      */
     @Override
     public String getSignName() {
@@ -513,8 +506,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.SIGN_NAME</code>. 「signName」-
-     * 签单人姓名
+     * Setter for <code>ZDB.E_CUSTOMER.SIGN_NAME</code>. 「signName」- 签单人姓名
      */
     @Override
     public ECustomer setSignName(String signName) {
@@ -523,8 +515,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.SIGN_PHONE</code>. 「signPhone」-
-     * 签单人电话
+     * Getter for <code>ZDB.E_CUSTOMER.SIGN_PHONE</code>. 「signPhone」- 签单人电话
      */
     @Override
     public String getSignPhone() {
@@ -532,8 +523,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.SIGN_PHONE</code>. 「signPhone」-
-     * 签单人电话
+     * Setter for <code>ZDB.E_CUSTOMER.SIGN_PHONE</code>. 「signPhone」- 签单人电话
      */
     @Override
     public ECustomer setSignPhone(String signPhone) {
@@ -542,7 +532,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.RUN_UP</code>. 「runUp」- 挂账属性
+     * Getter for <code>ZDB.E_CUSTOMER.RUN_UP</code>. 「runUp」- 挂账属性
      */
     @Override
     public Boolean getRunUp() {
@@ -550,7 +540,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.RUN_UP</code>. 「runUp」- 挂账属性
+     * Setter for <code>ZDB.E_CUSTOMER.RUN_UP</code>. 「runUp」- 挂账属性
      */
     @Override
     public ECustomer setRunUp(Boolean runUp) {
@@ -559,8 +549,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.RUN_UP_AMOUNT</code>.
-     * 「runUpAmount」- 挂账限额
+     * Getter for <code>ZDB.E_CUSTOMER.RUN_UP_AMOUNT</code>. 「runUpAmount」- 挂账限额
      */
     @Override
     public BigDecimal getRunUpAmount() {
@@ -568,8 +557,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.RUN_UP_AMOUNT</code>.
-     * 「runUpAmount」- 挂账限额
+     * Setter for <code>ZDB.E_CUSTOMER.RUN_UP_AMOUNT</code>. 「runUpAmount」- 挂账限额
      */
     @Override
     public ECustomer setRunUpAmount(BigDecimal runUpAmount) {
@@ -578,7 +566,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.BANK_ID</code>. 「bankId」- 开户行
+     * Getter for <code>ZDB.E_CUSTOMER.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public String getBankId() {
@@ -586,7 +574,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.BANK_ID</code>. 「bankId」- 开户行
+     * Setter for <code>ZDB.E_CUSTOMER.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public ECustomer setBankId(String bankId) {
@@ -595,8 +583,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Getter for <code>ZDB.E_CUSTOMER.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public String getBankCard() {
@@ -604,8 +591,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Setter for <code>ZDB.E_CUSTOMER.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public ECustomer setBankCard(String bankCard) {
@@ -614,7 +600,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_CUSTOMER.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -622,7 +608,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_CUSTOMER.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public ECustomer setMetadata(String metadata) {
@@ -631,7 +617,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_CUSTOMER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -639,7 +625,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_CUSTOMER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public ECustomer setActive(Boolean active) {
@@ -648,8 +634,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.SIGMA</code>. 「sigma」-
-     * 统一标识（客户所属应用）
+     * Getter for <code>ZDB.E_CUSTOMER.SIGMA</code>. 「sigma」- 统一标识（客户所属应用）
      */
     @Override
     public String getSigma() {
@@ -657,8 +642,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.SIGMA</code>. 「sigma」-
-     * 统一标识（客户所属应用）
+     * Setter for <code>ZDB.E_CUSTOMER.SIGMA</code>. 「sigma」- 统一标识（客户所属应用）
      */
     @Override
     public ECustomer setSigma(String sigma) {
@@ -667,7 +651,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_CUSTOMER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -675,7 +659,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_CUSTOMER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public ECustomer setLanguage(String language) {
@@ -684,8 +668,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.E_CUSTOMER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -693,8 +676,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.E_CUSTOMER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public ECustomer setCreatedAt(LocalDateTime createdAt) {
@@ -703,8 +685,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.E_CUSTOMER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -712,8 +693,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.E_CUSTOMER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public ECustomer setCreatedBy(String createdBy) {
@@ -722,8 +702,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.E_CUSTOMER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -731,8 +710,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.E_CUSTOMER.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public ECustomer setUpdatedAt(LocalDateTime updatedAt) {
@@ -741,8 +719,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CUSTOMER.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.E_CUSTOMER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -750,8 +727,7 @@ public class ECustomer implements VertxPojo, IECustomer {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CUSTOMER.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.E_CUSTOMER.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public ECustomer setUpdatedBy(String updatedBy) {

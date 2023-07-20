@@ -11,28 +11,28 @@ import cn.vertxup.graphic.domain.tables.GNode;
 
 
 /**
- * Convenience access to all tables in DB_ETERNAL.
+ * Convenience access to all tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>DB_ETERNAL.G_CLUSTER</code>.
+     * The table <code>ZDB.G_CLUSTER</code>.
      */
     public static final GCluster G_CLUSTER = GCluster.G_CLUSTER;
 
     /**
-     * The table <code>DB_ETERNAL.G_EDGE</code>.
+     * The table <code>ZDB.G_EDGE</code>.
      */
     public static final GEdge G_EDGE = GEdge.G_EDGE;
 
     /**
-     * The table <code>DB_ETERNAL.G_GRAPHIC</code>.
+     * The table <code>ZDB.G_GRAPHIC</code>.
      */
     public static final GGraphic G_GRAPHIC = GGraphic.G_GRAPHIC;
 
     /**
-     * The table <code>DB_ETERNAL.G_NODE</code>.
+     * The table <code>ZDB.G_NODE</code>.
      */
     public static final GNode G_NODE = GNode.G_NODE;
 }

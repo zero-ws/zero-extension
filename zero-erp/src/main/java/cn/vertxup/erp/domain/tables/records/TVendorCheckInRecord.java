@@ -28,8 +28,8 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public TVendorCheckInRecord setKey(String value) {
@@ -38,8 +38,8 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.KEY</code>. 「key」- Ticket Primary
+     * Key
      */
     @Override
     public String getKey() {
@@ -47,7 +47,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -57,7 +57,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -66,7 +66,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.CLASSIFICATION</code>.
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -76,7 +76,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.CLASSIFICATION</code>.
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.CLASSIFICATION</code>.
      * 「classification」- The ticket related business type
      */
     @Override
@@ -85,8 +85,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.START_AT</code>. 「startAt」-
-     * From
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.START_AT</code>. 「startAt」- From
      */
     @Override
     public TVendorCheckInRecord setStartAt(LocalDateTime value) {
@@ -95,8 +94,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.START_AT</code>. 「startAt」-
-     * From
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -104,7 +102,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.END_AT</code>. 「endAt」- To
      */
     @Override
     public TVendorCheckInRecord setEndAt(LocalDateTime value) {
@@ -113,7 +111,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -121,8 +119,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.DAYS</code>. 「days」-
-     * Duration
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.DAYS</code>. 「days」- Duration
      */
     @Override
     public TVendorCheckInRecord setDays(Integer value) {
@@ -131,8 +128,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.DAYS</code>. 「days」-
-     * Duration
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -140,8 +136,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.ONBOARD_AT</code>.
-     * 「onboardAt」- To
+     * Setter for <code>ZDB.T_VENDOR_CHECK_IN.ONBOARD_AT</code>. 「onboardAt」- To
      */
     @Override
     public TVendorCheckInRecord setOnboardAt(LocalDateTime value) {
@@ -150,8 +145,7 @@ public class TVendorCheckInRecord extends UpdatableRecordImpl<TVendorCheckInReco
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_VENDOR_CHECK_IN.ONBOARD_AT</code>.
-     * 「onboardAt」- To
+     * Getter for <code>ZDB.T_VENDOR_CHECK_IN.ONBOARD_AT</code>. 「onboardAt」- To
      */
     @Override
     public LocalDateTime getOnboardAt() {

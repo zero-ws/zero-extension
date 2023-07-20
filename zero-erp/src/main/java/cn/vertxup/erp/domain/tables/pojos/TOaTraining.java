@@ -76,8 +76,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Getter for <code>ZDB.T_OA_TRAINING.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public String getKey() {
@@ -85,8 +84,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.KEY</code>. 「key」- Ticket
-     * Primary Key
+     * Setter for <code>ZDB.T_OA_TRAINING.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public TOaTraining setKey(String key) {
@@ -95,7 +93,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_OA_TRAINING.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -104,7 +102,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_OA_TRAINING.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -114,8 +112,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.START_AT</code>. 「startAt」-
-     * From
+     * Getter for <code>ZDB.T_OA_TRAINING.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -123,8 +120,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.START_AT</code>. 「startAt」-
-     * From
+     * Setter for <code>ZDB.T_OA_TRAINING.START_AT</code>. 「startAt」- From
      */
     @Override
     public TOaTraining setStartAt(LocalDateTime startAt) {
@@ -133,7 +129,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_OA_TRAINING.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -141,7 +137,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_OA_TRAINING.END_AT</code>. 「endAt」- To
      */
     @Override
     public TOaTraining setEndAt(LocalDateTime endAt) {
@@ -150,7 +146,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.TRAIN_LOCATION</code>.
+     * Getter for <code>ZDB.T_OA_TRAINING.TRAIN_LOCATION</code>.
      * 「trainLocation」- The location for training
      */
     @Override
@@ -159,7 +155,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.TRAIN_LOCATION</code>.
+     * Setter for <code>ZDB.T_OA_TRAINING.TRAIN_LOCATION</code>.
      * 「trainLocation」- The location for training
      */
     @Override
@@ -169,8 +165,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.TRAIN_MODE</code>. 「trainMode」-
-     * The mode of training
+     * Getter for <code>ZDB.T_OA_TRAINING.TRAIN_MODE</code>. 「trainMode」- The
+     * mode of training
      */
     @Override
     public String getTrainMode() {
@@ -178,8 +174,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.TRAIN_MODE</code>. 「trainMode」-
-     * The mode of training
+     * Setter for <code>ZDB.T_OA_TRAINING.TRAIN_MODE</code>. 「trainMode」- The
+     * mode of training
      */
     @Override
     public TOaTraining setTrainMode(String trainMode) {
@@ -188,8 +184,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.LEADER</code>. 「leader」- The
-     * training leader
+     * Getter for <code>ZDB.T_OA_TRAINING.LEADER</code>. 「leader」- The training
+     * leader
      */
     @Override
     public String getLeader() {
@@ -197,8 +193,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.LEADER</code>. 「leader」- The
-     * training leader
+     * Setter for <code>ZDB.T_OA_TRAINING.LEADER</code>. 「leader」- The training
+     * leader
      */
     @Override
     public TOaTraining setLeader(String leader) {
@@ -207,7 +203,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.LEADER_COMMENT</code>.
+     * Getter for <code>ZDB.T_OA_TRAINING.LEADER_COMMENT</code>.
      * 「leaderComment」- Comment from leader
      */
     @Override
@@ -216,7 +212,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.LEADER_COMMENT</code>.
+     * Setter for <code>ZDB.T_OA_TRAINING.LEADER_COMMENT</code>.
      * 「leaderComment」- Comment from leader
      */
     @Override
@@ -226,8 +222,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.REVIEWER</code>. 「reviewer」-
-     * The training reviewer
+     * Getter for <code>ZDB.T_OA_TRAINING.REVIEWER</code>. 「reviewer」- The
+     * training reviewer
      */
     @Override
     public String getReviewer() {
@@ -235,8 +231,8 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.REVIEWER</code>. 「reviewer」-
-     * The training reviewer
+     * Setter for <code>ZDB.T_OA_TRAINING.REVIEWER</code>. 「reviewer」- The
+     * training reviewer
      */
     @Override
     public TOaTraining setReviewer(String reviewer) {
@@ -245,7 +241,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRAINING.REVIEWER_COMMENT</code>.
+     * Getter for <code>ZDB.T_OA_TRAINING.REVIEWER_COMMENT</code>.
      * 「reviewerComment」- Comment from reviewer
      */
     @Override
@@ -254,7 +250,7 @@ public class TOaTraining implements VertxPojo, ITOaTraining {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRAINING.REVIEWER_COMMENT</code>.
+     * Setter for <code>ZDB.T_OA_TRAINING.REVIEWER_COMMENT</code>.
      * 「reviewerComment」- Comment from reviewer
      */
     @Override

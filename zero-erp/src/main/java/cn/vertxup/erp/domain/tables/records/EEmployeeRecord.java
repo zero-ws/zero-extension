@@ -25,7 +25,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
+     * Setter for <code>ZDB.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
      */
     @Override
     public EEmployeeRecord setKey(String value) {
@@ -34,7 +34,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
+     * Getter for <code>ZDB.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
      */
     @Override
     public String getKey() {
@@ -42,8 +42,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」-
-     * 所属公司
+     * Setter for <code>ZDB.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」- 所属公司
      */
     @Override
     public EEmployeeRecord setCompanyId(String value) {
@@ -52,8 +51,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」-
-     * 所属公司
+     * Getter for <code>ZDB.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」- 所属公司
      */
     @Override
     public String getCompanyId() {
@@ -61,7 +59,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
+     * Setter for <code>ZDB.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public EEmployeeRecord setDeptId(String value) {
@@ -70,7 +68,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
+     * Getter for <code>ZDB.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public String getDeptId() {
@@ -78,7 +76,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
+     * Setter for <code>ZDB.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
      */
     @Override
     public EEmployeeRecord setTeamId(String value) {
@@ -87,7 +85,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
+     * Getter for <code>ZDB.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
      */
     @Override
     public String getTeamId() {
@@ -95,8 +93,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」-
-     * 关联档案
+     * Setter for <code>ZDB.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」- 关联档案
      */
     @Override
     public EEmployeeRecord setIdentityId(String value) {
@@ -105,8 +102,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」-
-     * 关联档案
+     * Getter for <code>ZDB.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」- 关联档案
      */
     @Override
     public String getIdentityId() {
@@ -114,7 +110,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
      */
     @Override
     public EEmployeeRecord setViceName(String value) {
@@ -123,7 +119,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
      */
     @Override
     public String getViceName() {
@@ -131,8 +127,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」-
-     * 员工邮箱
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」- 员工邮箱
      */
     @Override
     public EEmployeeRecord setViceEmail(String value) {
@@ -141,8 +136,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」-
-     * 员工邮箱
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」- 员工邮箱
      */
     @Override
     public String getViceEmail() {
@@ -150,8 +144,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」-
-     * 员工手机
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」- 员工手机
      */
     @Override
     public EEmployeeRecord setViceMobile(String value) {
@@ -160,8 +153,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」-
-     * 员工手机
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」- 员工手机
      */
     @Override
     public String getViceMobile() {
@@ -169,8 +161,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」-
-     * 工号
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」- 工号
      */
     @Override
     public EEmployeeRecord setWorkNumber(String value) {
@@ -179,8 +170,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」-
-     * 工号
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」- 工号
      */
     @Override
     public String getWorkNumber() {
@@ -188,7 +178,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
      */
     @Override
     public EEmployeeRecord setWorkTitle(String value) {
@@ -197,7 +187,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
      */
     @Override
     public String getWorkTitle() {
@@ -205,8 +195,8 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_LOCATION</code>.
-     * 「workLocation」- 办公地点
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_LOCATION</code>. 「workLocation」-
+     * 办公地点
      */
     @Override
     public EEmployeeRecord setWorkLocation(String value) {
@@ -215,8 +205,8 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_LOCATION</code>.
-     * 「workLocation」- 办公地点
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_LOCATION</code>. 「workLocation」-
+     * 办公地点
      */
     @Override
     public String getWorkLocation() {
@@ -224,8 +214,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」-
-     * 办公电话
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」- 办公电话
      */
     @Override
     public EEmployeeRecord setWorkPhone(String value) {
@@ -234,8 +223,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」-
-     * 办公电话
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」- 办公电话
      */
     @Override
     public String getWorkPhone() {
@@ -243,8 +231,8 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_EXTENSION</code>.
-     * 「workExtension」- 分机号
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_EXTENSION</code>. 「workExtension」-
+     * 分机号
      */
     @Override
     public EEmployeeRecord setWorkExtension(String value) {
@@ -253,8 +241,8 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_EXTENSION</code>.
-     * 「workExtension」- 分机号
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_EXTENSION</code>. 「workExtension」-
+     * 分机号
      */
     @Override
     public String getWorkExtension() {
@@ -262,8 +250,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」-
-     * 入职时间
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」- 入职时间
      */
     @Override
     public EEmployeeRecord setWorkHireAt(LocalDateTime value) {
@@ -272,8 +259,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」-
-     * 入职时间
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」- 入职时间
      */
     @Override
     public LocalDateTime getWorkHireAt() {
@@ -281,7 +267,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
+     * Setter for <code>ZDB.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public EEmployeeRecord setBankId(String value) {
@@ -290,7 +276,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
+     * Getter for <code>ZDB.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public String getBankId() {
@@ -298,8 +284,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Setter for <code>ZDB.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public EEmployeeRecord setBankCard(String value) {
@@ -308,8 +293,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Getter for <code>ZDB.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public String getBankCard() {
@@ -317,7 +301,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
+     * Setter for <code>ZDB.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
      */
     @Override
     public EEmployeeRecord setType(String value) {
@@ -326,7 +310,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
+     * Getter for <code>ZDB.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
      */
     @Override
     public String getType() {
@@ -334,7 +318,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
+     * Setter for <code>ZDB.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
      */
     @Override
     public EEmployeeRecord setStatus(String value) {
@@ -343,7 +327,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
+     * Getter for <code>ZDB.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
      */
     @Override
     public String getStatus() {
@@ -351,7 +335,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public EEmployeeRecord setMetadata(String value) {
@@ -360,7 +344,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -368,7 +352,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public EEmployeeRecord setActive(Boolean value) {
@@ -377,7 +361,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -385,8 +369,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Setter for <code>ZDB.E_EMPLOYEE.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public EEmployeeRecord setSigma(String value) {
@@ -395,8 +378,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Getter for <code>ZDB.E_EMPLOYEE.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public String getSigma() {
@@ -404,7 +386,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public EEmployeeRecord setLanguage(String value) {
@@ -413,7 +395,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -421,8 +403,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public EEmployeeRecord setCreatedAt(LocalDateTime value) {
@@ -431,8 +412,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -440,8 +420,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public EEmployeeRecord setCreatedBy(String value) {
@@ -450,8 +429,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -459,8 +437,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public EEmployeeRecord setUpdatedAt(LocalDateTime value) {
@@ -469,8 +446,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -478,8 +454,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public EEmployeeRecord setUpdatedBy(String value) {
@@ -488,8 +463,7 @@ public class EEmployeeRecord extends UpdatableRecordImpl<EEmployeeRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

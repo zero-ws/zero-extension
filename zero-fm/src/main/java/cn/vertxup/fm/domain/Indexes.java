@@ -4,7 +4,15 @@
 package cn.vertxup.fm.domain;
 
 
-import cn.vertxup.fm.domain.tables.*;
+import cn.vertxup.fm.domain.tables.FBill;
+import cn.vertxup.fm.domain.tables.FBillItem;
+import cn.vertxup.fm.domain.tables.FBook;
+import cn.vertxup.fm.domain.tables.FInvoice;
+import cn.vertxup.fm.domain.tables.FPaymentItem;
+import cn.vertxup.fm.domain.tables.FPreAuthorize;
+import cn.vertxup.fm.domain.tables.FSettlement;
+import cn.vertxup.fm.domain.tables.FSettlementItem;
+
 import org.jooq.Index;
 import org.jooq.OrderField;
 import org.jooq.impl.DSL;
@@ -12,7 +20,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in DB_ETERNAL.
+ * A class modelling indexes of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {

@@ -26,8 +26,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/battery.properties</propertyFile>
-                    <changeLogFile>plugin/sql/battery.yml</changeLogFile>
+                    <propertyFile>plugin/battery/db.properties</propertyFile>
+                    <changeLogFile>plugin/battery/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

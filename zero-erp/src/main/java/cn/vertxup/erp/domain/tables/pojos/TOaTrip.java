@@ -80,8 +80,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary
-     * Key
+     * Getter for <code>ZDB.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public String getKey() {
@@ -89,8 +88,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary
-     * Key
+     * Setter for <code>ZDB.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public TOaTrip setKey(String key) {
@@ -99,7 +97,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_OA_TRIP.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -108,7 +106,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_OA_TRIP.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -118,8 +116,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」-
-     * Request User
+     * Getter for <code>ZDB.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」- Request
+     * User
      */
     @Override
     public String getRequestBy() {
@@ -127,8 +125,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」-
-     * Request User
+     * Setter for <code>ZDB.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」- Request
+     * User
      */
     @Override
     public TOaTrip setRequestBy(String requestBy) {
@@ -137,7 +135,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.START_AT</code>. 「startAt」- From
+     * Getter for <code>ZDB.T_OA_TRIP.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -145,7 +143,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.START_AT</code>. 「startAt」- From
+     * Setter for <code>ZDB.T_OA_TRIP.START_AT</code>. 「startAt」- From
      */
     @Override
     public TOaTrip setStartAt(LocalDateTime startAt) {
@@ -154,7 +152,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_OA_TRIP.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -162,7 +160,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_OA_TRIP.END_AT</code>. 「endAt」- To
      */
     @Override
     public TOaTrip setEndAt(LocalDateTime endAt) {
@@ -171,7 +169,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.DAYS</code>. 「days」- Duration
+     * Getter for <code>ZDB.T_OA_TRIP.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -179,7 +177,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.DAYS</code>. 「days」- Duration
+     * Setter for <code>ZDB.T_OA_TRIP.DAYS</code>. 「days」- Duration
      */
     @Override
     public TOaTrip setDays(Integer days) {
@@ -188,8 +186,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_PROVINCE</code>.
-     * 「tripProvince」- Trip Province
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_PROVINCE</code>. 「tripProvince」- Trip
+     * Province
      */
     @Override
     public String getTripProvince() {
@@ -197,8 +195,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_PROVINCE</code>.
-     * 「tripProvince」- Trip Province
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_PROVINCE</code>. 「tripProvince」- Trip
+     * Province
      */
     @Override
     public TOaTrip setTripProvince(String tripProvince) {
@@ -207,8 +205,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip
-     * City
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip City
      */
     @Override
     public String getTripCity() {
@@ -216,8 +213,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip
-     * City
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip City
      */
     @Override
     public TOaTrip setTripCity(String tripCity) {
@@ -226,8 +222,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」-
-     * Trip Address
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」- Trip
+     * Address
      */
     @Override
     public String getTripAddress() {
@@ -235,8 +231,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」-
-     * Trip Address
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」- Trip
+     * Address
      */
     @Override
     public TOaTrip setTripAddress(String tripAddress) {
@@ -245,8 +241,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.REASON</code>. 「reason」- The reason
-     * to be done
+     * Getter for <code>ZDB.T_OA_TRIP.REASON</code>. 「reason」- The reason to be
+     * done
      */
     @Override
     public String getReason() {
@@ -254,8 +250,8 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.REASON</code>. 「reason」- The reason
-     * to be done
+     * Setter for <code>ZDB.T_OA_TRIP.REASON</code>. 「reason」- The reason to be
+     * done
      */
     @Override
     public TOaTrip setReason(String reason) {
@@ -264,7 +260,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
+     * Getter for <code>ZDB.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
      * Working Assignment Content
      */
     @Override
@@ -273,7 +269,7 @@ public class TOaTrip implements VertxPojo, ITOaTrip {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
+     * Setter for <code>ZDB.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
      * Working Assignment Content
      */
     @Override

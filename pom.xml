@@ -37,7 +37,8 @@
         <module>zero-fm</module>                <!-- Finance -->
         <module>zero-lbs</module>               <!-- Location Service -->
         <module>zero-rbac</module>              <!-- RBAC -->
-        <module>zero-psi</module>               <!-- Purchase, Sale, In Management -->
+        <module>zero-psi</module>
+        <module>zero-doc</module>               <!-- Purchase, Sale, In Management -->
     </modules>
     <build>
         <plugins>

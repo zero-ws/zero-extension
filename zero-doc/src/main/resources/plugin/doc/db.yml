@@ -1,0 +1,22 @@
+databaseChangeLog:
+  # 文档信息 / 文档章节 / 文档条款
+  - include:
+      file: plugin/doc/sql/D_DOC.sql
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/doc/sql/D_DOC_SEGMENT.sql
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/doc/sql/D_DOC_CLAUSE.sql
+      relativeToChangelogFile: false
+  # 文档引用
+  - include:
+      file: plugin/doc/sql/D_REFER.sql
+      relativeToChangelogFile: false
+  # 文档批注 / 评定结果
+  - include:
+      file: plugin/doc/sql/D_RESULT.sql
+      relativeToChangelogFile: false
+  - include:
+      file: plugin/doc/sql/D_COMMENT.sql
+      relativeToChangelogFile: false

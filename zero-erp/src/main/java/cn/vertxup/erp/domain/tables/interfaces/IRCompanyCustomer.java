@@ -17,50 +17,48 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IRCompanyCustomer extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMPANY_ID</code>.
-     * 「companyId」- 企业的ID
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.COMPANY_ID</code>. 「companyId」-
+     * 企业的ID
      */
     public IRCompanyCustomer setCompanyId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMPANY_ID</code>.
-     * 「companyId」- 企业的ID
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.COMPANY_ID</code>. 「companyId」-
+     * 企业的ID
      */
     public String getCompanyId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>.
-     * 「customerId」- 客户信息的ID
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>. 「customerId」-
+     * 客户信息的ID
      */
     public IRCompanyCustomer setCustomerId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>.
-     * 「customerId」- 客户信息的ID
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.CUSTOMER_ID</code>. 「customerId」-
+     * 客户信息的ID
      */
     public String getCustomerId();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     public IRCompanyCustomer setLinkComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.LINK_COMPONENT</code>.
      * 「linkComponent」- 关联执行组件（扩展用）
      */
     public String getLinkComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Setter for <code>ZDB.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」- 关系备注
      */
     public IRCompanyCustomer setComment(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」-
-     * 关系备注
+     * Getter for <code>ZDB.R_COMPANY_CUSTOMER.COMMENT</code>. 「comment」- 关系备注
      */
     public String getComment();
 

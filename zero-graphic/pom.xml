@@ -37,8 +37,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/graphic.properties</propertyFile>
-                    <changeLogFile>plugin/sql/graphic.yml</changeLogFile>
+                    <propertyFile>plugin/graphic/db.properties</propertyFile>
+                    <changeLogFile>plugin/graphic/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

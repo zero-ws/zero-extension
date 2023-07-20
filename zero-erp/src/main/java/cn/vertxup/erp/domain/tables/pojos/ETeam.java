@@ -112,7 +112,7 @@ public class ETeam implements VertxPojo, IETeam {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.KEY</code>. 「key」- 组主键
+     * Getter for <code>ZDB.E_TEAM.KEY</code>. 「key」- 组主键
      */
     @Override
     public String getKey() {
@@ -120,7 +120,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.KEY</code>. 「key」- 组主键
+     * Setter for <code>ZDB.E_TEAM.KEY</code>. 「key」- 组主键
      */
     @Override
     public ETeam setKey(String key) {
@@ -129,7 +129,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.NAME</code>. 「name」- 组名称
+     * Getter for <code>ZDB.E_TEAM.NAME</code>. 「name」- 组名称
      */
     @Override
     public String getName() {
@@ -137,7 +137,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.NAME</code>. 「name」- 组名称
+     * Setter for <code>ZDB.E_TEAM.NAME</code>. 「name」- 组名称
      */
     @Override
     public ETeam setName(String name) {
@@ -146,7 +146,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.CODE</code>. 「code」- 组编号
+     * Getter for <code>ZDB.E_TEAM.CODE</code>. 「code」- 组编号
      */
     @Override
     public String getCode() {
@@ -154,7 +154,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.CODE</code>. 「code」- 组编号
+     * Setter for <code>ZDB.E_TEAM.CODE</code>. 「code」- 组编号
      */
     @Override
     public ETeam setCode(String code) {
@@ -163,7 +163,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.LEADER_ID</code>. 「leaderId」- 组长
+     * Getter for <code>ZDB.E_TEAM.LEADER_ID</code>. 「leaderId」- 组长
      */
     @Override
     public String getLeaderId() {
@@ -171,7 +171,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.LEADER_ID</code>. 「leaderId」- 组长
+     * Setter for <code>ZDB.E_TEAM.LEADER_ID</code>. 「leaderId」- 组长
      */
     @Override
     public ETeam setLeaderId(String leaderId) {
@@ -180,7 +180,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.LEADER_NAME</code>. 「leaderName」- 组长姓名
+     * Getter for <code>ZDB.E_TEAM.LEADER_NAME</code>. 「leaderName」- 组长姓名
      */
     @Override
     public String getLeaderName() {
@@ -188,7 +188,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.LEADER_NAME</code>. 「leaderName」- 组长姓名
+     * Setter for <code>ZDB.E_TEAM.LEADER_NAME</code>. 「leaderName」- 组长姓名
      */
     @Override
     public ETeam setLeaderName(String leaderName) {
@@ -197,7 +197,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.DEPT_ID</code>. 「deptId」- 所属部门
+     * Getter for <code>ZDB.E_TEAM.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public String getDeptId() {
@@ -205,7 +205,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.DEPT_ID</code>. 「deptId」- 所属部门
+     * Setter for <code>ZDB.E_TEAM.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public ETeam setDeptId(String deptId) {
@@ -214,7 +214,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.TEAM_ID</code>. 「teamId」- 父组ID
+     * Getter for <code>ZDB.E_TEAM.TEAM_ID</code>. 「teamId」- 父组ID
      */
     @Override
     public String getTeamId() {
@@ -222,7 +222,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.TEAM_ID</code>. 「teamId」- 父组ID
+     * Setter for <code>ZDB.E_TEAM.TEAM_ID</code>. 「teamId」- 父组ID
      */
     @Override
     public ETeam setTeamId(String teamId) {
@@ -231,7 +231,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.COMMENT</code>. 「comment」- 组备注
+     * Getter for <code>ZDB.E_TEAM.COMMENT</code>. 「comment」- 组备注
      */
     @Override
     public String getComment() {
@@ -239,7 +239,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.COMMENT</code>. 「comment」- 组备注
+     * Setter for <code>ZDB.E_TEAM.COMMENT</code>. 「comment」- 组备注
      */
     @Override
     public ETeam setComment(String comment) {
@@ -248,8 +248,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.BIND_ID</code>. 「bindId」-
-     * 绑定用户组ID,安全专用处理
+     * Getter for <code>ZDB.E_TEAM.BIND_ID</code>. 「bindId」- 绑定用户组ID,安全专用处理
      */
     @Override
     public String getBindId() {
@@ -257,8 +256,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.BIND_ID</code>. 「bindId」-
-     * 绑定用户组ID,安全专用处理
+     * Setter for <code>ZDB.E_TEAM.BIND_ID</code>. 「bindId」- 绑定用户组ID,安全专用处理
      */
     @Override
     public ETeam setBindId(String bindId) {
@@ -267,8 +265,8 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.BIND_COMPONENT</code>.
-     * 「bindComponent」- 绑定扩展组件
+     * Getter for <code>ZDB.E_TEAM.BIND_COMPONENT</code>. 「bindComponent」-
+     * 绑定扩展组件
      */
     @Override
     public String getBindComponent() {
@@ -276,8 +274,8 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.BIND_COMPONENT</code>.
-     * 「bindComponent」- 绑定扩展组件
+     * Setter for <code>ZDB.E_TEAM.BIND_COMPONENT</code>. 「bindComponent」-
+     * 绑定扩展组件
      */
     @Override
     public ETeam setBindComponent(String bindComponent) {
@@ -286,8 +284,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.BIND_CONFIG</code>. 「bindConfig」-
-     * 绑定JSON详细配置
+     * Getter for <code>ZDB.E_TEAM.BIND_CONFIG</code>. 「bindConfig」- 绑定JSON详细配置
      */
     @Override
     public String getBindConfig() {
@@ -295,8 +292,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.BIND_CONFIG</code>. 「bindConfig」-
-     * 绑定JSON详细配置
+     * Setter for <code>ZDB.E_TEAM.BIND_CONFIG</code>. 「bindConfig」- 绑定JSON详细配置
      */
     @Override
     public ETeam setBindConfig(String bindConfig) {
@@ -305,7 +301,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_TEAM.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -313,7 +309,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_TEAM.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public ETeam setMetadata(String metadata) {
@@ -322,7 +318,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_TEAM.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -330,7 +326,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_TEAM.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public ETeam setActive(Boolean active) {
@@ -339,7 +335,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.E_TEAM.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -347,7 +343,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.E_TEAM.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public ETeam setSigma(String sigma) {
@@ -356,7 +352,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_TEAM.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -364,7 +360,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_TEAM.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public ETeam setLanguage(String language) {
@@ -373,7 +369,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Getter for <code>ZDB.E_TEAM.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -381,7 +377,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.CREATED_AT</code>. 「createdAt」- 创建时间
+     * Setter for <code>ZDB.E_TEAM.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public ETeam setCreatedAt(LocalDateTime createdAt) {
@@ -390,7 +386,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.CREATED_BY</code>. 「createdBy」- 创建人
+     * Getter for <code>ZDB.E_TEAM.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -398,7 +394,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.CREATED_BY</code>. 「createdBy」- 创建人
+     * Setter for <code>ZDB.E_TEAM.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public ETeam setCreatedBy(String createdBy) {
@@ -407,7 +403,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Getter for <code>ZDB.E_TEAM.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -415,7 +411,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     * Setter for <code>ZDB.E_TEAM.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public ETeam setUpdatedAt(LocalDateTime updatedAt) {
@@ -424,7 +420,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_TEAM.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Getter for <code>ZDB.E_TEAM.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -432,7 +428,7 @@ public class ETeam implements VertxPojo, IETeam {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_TEAM.UPDATED_BY</code>. 「updatedBy」- 更新人
+     * Setter for <code>ZDB.E_TEAM.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public ETeam setUpdatedBy(String updatedBy) {

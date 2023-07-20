@@ -28,8 +28,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary
-     * Key
+     * Setter for <code>ZDB.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public TOaTripRecord setKey(String value) {
@@ -38,8 +37,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary
-     * Key
+     * Getter for <code>ZDB.T_OA_TRIP.KEY</code>. 「key」- Ticket Primary Key
      */
     @Override
     public String getKey() {
@@ -47,7 +45,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.COMMENT_EXTENSION</code>.
+     * Setter for <code>ZDB.T_OA_TRIP.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -57,7 +55,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.COMMENT_EXTENSION</code>.
+     * Getter for <code>ZDB.T_OA_TRIP.COMMENT_EXTENSION</code>.
      * 「commentExtension」- Extension Comment
      */
     @Override
@@ -66,8 +64,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」-
-     * Request User
+     * Setter for <code>ZDB.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」- Request
+     * User
      */
     @Override
     public TOaTripRecord setRequestBy(String value) {
@@ -76,8 +74,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」-
-     * Request User
+     * Getter for <code>ZDB.T_OA_TRIP.REQUEST_BY</code>. 「requestBy」- Request
+     * User
      */
     @Override
     public String getRequestBy() {
@@ -85,7 +83,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.START_AT</code>. 「startAt」- From
+     * Setter for <code>ZDB.T_OA_TRIP.START_AT</code>. 「startAt」- From
      */
     @Override
     public TOaTripRecord setStartAt(LocalDateTime value) {
@@ -94,7 +92,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.START_AT</code>. 「startAt」- From
+     * Getter for <code>ZDB.T_OA_TRIP.START_AT</code>. 「startAt」- From
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -102,7 +100,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.END_AT</code>. 「endAt」- To
+     * Setter for <code>ZDB.T_OA_TRIP.END_AT</code>. 「endAt」- To
      */
     @Override
     public TOaTripRecord setEndAt(LocalDateTime value) {
@@ -111,7 +109,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.END_AT</code>. 「endAt」- To
+     * Getter for <code>ZDB.T_OA_TRIP.END_AT</code>. 「endAt」- To
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -119,7 +117,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.DAYS</code>. 「days」- Duration
+     * Setter for <code>ZDB.T_OA_TRIP.DAYS</code>. 「days」- Duration
      */
     @Override
     public TOaTripRecord setDays(Integer value) {
@@ -128,7 +126,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.DAYS</code>. 「days」- Duration
+     * Getter for <code>ZDB.T_OA_TRIP.DAYS</code>. 「days」- Duration
      */
     @Override
     public Integer getDays() {
@@ -136,8 +134,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_PROVINCE</code>.
-     * 「tripProvince」- Trip Province
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_PROVINCE</code>. 「tripProvince」- Trip
+     * Province
      */
     @Override
     public TOaTripRecord setTripProvince(String value) {
@@ -146,8 +144,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_PROVINCE</code>.
-     * 「tripProvince」- Trip Province
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_PROVINCE</code>. 「tripProvince」- Trip
+     * Province
      */
     @Override
     public String getTripProvince() {
@@ -155,8 +153,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip
-     * City
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip City
      */
     @Override
     public TOaTripRecord setTripCity(String value) {
@@ -165,8 +162,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip
-     * City
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_CITY</code>. 「tripCity」- Trip City
      */
     @Override
     public String getTripCity() {
@@ -174,8 +170,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」-
-     * Trip Address
+     * Setter for <code>ZDB.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」- Trip
+     * Address
      */
     @Override
     public TOaTripRecord setTripAddress(String value) {
@@ -184,8 +180,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」-
-     * Trip Address
+     * Getter for <code>ZDB.T_OA_TRIP.TRIP_ADDRESS</code>. 「tripAddress」- Trip
+     * Address
      */
     @Override
     public String getTripAddress() {
@@ -193,8 +189,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.REASON</code>. 「reason」- The reason
-     * to be done
+     * Setter for <code>ZDB.T_OA_TRIP.REASON</code>. 「reason」- The reason to be
+     * done
      */
     @Override
     public TOaTripRecord setReason(String value) {
@@ -203,8 +199,8 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.REASON</code>. 「reason」- The reason
-     * to be done
+     * Getter for <code>ZDB.T_OA_TRIP.REASON</code>. 「reason」- The reason to be
+     * done
      */
     @Override
     public String getReason() {
@@ -212,7 +208,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
+     * Setter for <code>ZDB.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
      * Working Assignment Content
      */
     @Override
@@ -222,7 +218,7 @@ public class TOaTripRecord extends UpdatableRecordImpl<TOaTripRecord> implements
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
+     * Getter for <code>ZDB.T_OA_TRIP.WORK_CONTENT</code>. 「workContent」-
      * Working Assignment Content
      */
     @Override

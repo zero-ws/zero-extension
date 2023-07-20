@@ -140,7 +140,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
+     * Getter for <code>ZDB.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
      */
     @Override
     public String getKey() {
@@ -148,7 +148,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
+     * Setter for <code>ZDB.E_EMPLOYEE.KEY</code>. 「key」- 员工主键
      */
     @Override
     public EEmployee setKey(String key) {
@@ -157,8 +157,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」-
-     * 所属公司
+     * Getter for <code>ZDB.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」- 所属公司
      */
     @Override
     public String getCompanyId() {
@@ -166,8 +165,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」-
-     * 所属公司
+     * Setter for <code>ZDB.E_EMPLOYEE.COMPANY_ID</code>. 「companyId」- 所属公司
      */
     @Override
     public EEmployee setCompanyId(String companyId) {
@@ -176,7 +174,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
+     * Getter for <code>ZDB.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public String getDeptId() {
@@ -184,7 +182,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
+     * Setter for <code>ZDB.E_EMPLOYEE.DEPT_ID</code>. 「deptId」- 所属部门
      */
     @Override
     public EEmployee setDeptId(String deptId) {
@@ -193,7 +191,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
+     * Getter for <code>ZDB.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
      */
     @Override
     public String getTeamId() {
@@ -201,7 +199,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
+     * Setter for <code>ZDB.E_EMPLOYEE.TEAM_ID</code>. 「teamId」- 所属组
      */
     @Override
     public EEmployee setTeamId(String teamId) {
@@ -210,8 +208,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」-
-     * 关联档案
+     * Getter for <code>ZDB.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」- 关联档案
      */
     @Override
     public String getIdentityId() {
@@ -219,8 +216,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」-
-     * 关联档案
+     * Setter for <code>ZDB.E_EMPLOYEE.IDENTITY_ID</code>. 「identityId」- 关联档案
      */
     @Override
     public EEmployee setIdentityId(String identityId) {
@@ -229,7 +225,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
      */
     @Override
     public String getViceName() {
@@ -237,7 +233,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_NAME</code>. 「viceName」- 员工姓名
      */
     @Override
     public EEmployee setViceName(String viceName) {
@@ -246,8 +242,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」-
-     * 员工邮箱
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」- 员工邮箱
      */
     @Override
     public String getViceEmail() {
@@ -255,8 +250,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」-
-     * 员工邮箱
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_EMAIL</code>. 「viceEmail」- 员工邮箱
      */
     @Override
     public EEmployee setViceEmail(String viceEmail) {
@@ -265,8 +259,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」-
-     * 员工手机
+     * Getter for <code>ZDB.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」- 员工手机
      */
     @Override
     public String getViceMobile() {
@@ -274,8 +267,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」-
-     * 员工手机
+     * Setter for <code>ZDB.E_EMPLOYEE.VICE_MOBILE</code>. 「viceMobile」- 员工手机
      */
     @Override
     public EEmployee setViceMobile(String viceMobile) {
@@ -284,8 +276,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」-
-     * 工号
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」- 工号
      */
     @Override
     public String getWorkNumber() {
@@ -293,8 +284,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」-
-     * 工号
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_NUMBER</code>. 「workNumber」- 工号
      */
     @Override
     public EEmployee setWorkNumber(String workNumber) {
@@ -303,7 +293,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
      */
     @Override
     public String getWorkTitle() {
@@ -311,7 +301,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_TITLE</code>. 「workTitle」- 头衔
      */
     @Override
     public EEmployee setWorkTitle(String workTitle) {
@@ -320,8 +310,8 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_LOCATION</code>.
-     * 「workLocation」- 办公地点
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_LOCATION</code>. 「workLocation」-
+     * 办公地点
      */
     @Override
     public String getWorkLocation() {
@@ -329,8 +319,8 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_LOCATION</code>.
-     * 「workLocation」- 办公地点
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_LOCATION</code>. 「workLocation」-
+     * 办公地点
      */
     @Override
     public EEmployee setWorkLocation(String workLocation) {
@@ -339,8 +329,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」-
-     * 办公电话
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」- 办公电话
      */
     @Override
     public String getWorkPhone() {
@@ -348,8 +337,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」-
-     * 办公电话
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_PHONE</code>. 「workPhone」- 办公电话
      */
     @Override
     public EEmployee setWorkPhone(String workPhone) {
@@ -358,8 +346,8 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_EXTENSION</code>.
-     * 「workExtension」- 分机号
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_EXTENSION</code>. 「workExtension」-
+     * 分机号
      */
     @Override
     public String getWorkExtension() {
@@ -367,8 +355,8 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_EXTENSION</code>.
-     * 「workExtension」- 分机号
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_EXTENSION</code>. 「workExtension」-
+     * 分机号
      */
     @Override
     public EEmployee setWorkExtension(String workExtension) {
@@ -377,8 +365,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」-
-     * 入职时间
+     * Getter for <code>ZDB.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」- 入职时间
      */
     @Override
     public LocalDateTime getWorkHireAt() {
@@ -386,8 +373,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」-
-     * 入职时间
+     * Setter for <code>ZDB.E_EMPLOYEE.WORK_HIRE_AT</code>. 「workHireAt」- 入职时间
      */
     @Override
     public EEmployee setWorkHireAt(LocalDateTime workHireAt) {
@@ -396,7 +382,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
+     * Getter for <code>ZDB.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public String getBankId() {
@@ -404,7 +390,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
+     * Setter for <code>ZDB.E_EMPLOYEE.BANK_ID</code>. 「bankId」- 开户行
      */
     @Override
     public EEmployee setBankId(String bankId) {
@@ -413,8 +399,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Getter for <code>ZDB.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public String getBankCard() {
@@ -422,8 +407,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」-
-     * 开户行账号
+     * Setter for <code>ZDB.E_EMPLOYEE.BANK_CARD</code>. 「bankCard」- 开户行账号
      */
     @Override
     public EEmployee setBankCard(String bankCard) {
@@ -432,7 +416,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
+     * Getter for <code>ZDB.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
      */
     @Override
     public String getType() {
@@ -440,7 +424,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
+     * Setter for <code>ZDB.E_EMPLOYEE.TYPE</code>. 「type」- 员工分类
      */
     @Override
     public EEmployee setType(String type) {
@@ -449,7 +433,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
+     * Getter for <code>ZDB.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
      */
     @Override
     public String getStatus() {
@@ -457,7 +441,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
+     * Setter for <code>ZDB.E_EMPLOYEE.STATUS</code>. 「status」- 员工状态
      */
     @Override
     public EEmployee setStatus(String status) {
@@ -466,7 +450,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -474,7 +458,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_EMPLOYEE.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public EEmployee setMetadata(String metadata) {
@@ -483,7 +467,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -491,7 +475,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_EMPLOYEE.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public EEmployee setActive(Boolean active) {
@@ -500,8 +484,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Getter for <code>ZDB.E_EMPLOYEE.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public String getSigma() {
@@ -509,8 +492,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Setter for <code>ZDB.E_EMPLOYEE.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public EEmployee setSigma(String sigma) {
@@ -519,7 +501,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -527,7 +509,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_EMPLOYEE.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public EEmployee setLanguage(String language) {
@@ -536,8 +518,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -545,8 +526,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.E_EMPLOYEE.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public EEmployee setCreatedAt(LocalDateTime createdAt) {
@@ -555,8 +535,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -564,8 +543,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.E_EMPLOYEE.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public EEmployee setCreatedBy(String createdBy) {
@@ -574,8 +552,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -583,8 +560,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.E_EMPLOYEE.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public EEmployee setUpdatedAt(LocalDateTime updatedAt) {
@@ -593,8 +569,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -602,8 +577,7 @@ public class EEmployee implements VertxPojo, IEEmployee {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.E_EMPLOYEE.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public EEmployee setUpdatedBy(String updatedBy) {

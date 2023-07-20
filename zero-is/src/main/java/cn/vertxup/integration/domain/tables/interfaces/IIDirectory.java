@@ -18,276 +18,254 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IIDirectory extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.KEY</code>. 「key」- 目录主键
+     * Setter for <code>ZDB.I_DIRECTORY.KEY</code>. 「key」- 目录主键
      */
     public IIDirectory setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.KEY</code>. 「key」- 目录主键
+     * Getter for <code>ZDB.I_DIRECTORY.KEY</code>. 「key」- 目录主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.NAME</code>. 「name」- 目录名称
+     * Setter for <code>ZDB.I_DIRECTORY.NAME</code>. 「name」- 目录名称
      */
     public IIDirectory setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.NAME</code>. 「name」- 目录名称
+     * Getter for <code>ZDB.I_DIRECTORY.NAME</code>. 「name」- 目录名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CODE</code>. 「code」- 目录编号
+     * Setter for <code>ZDB.I_DIRECTORY.CODE</code>. 「code」- 目录编号
      */
     public IIDirectory setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CODE</code>. 「code」- 目录编号
+     * Getter for <code>ZDB.I_DIRECTORY.CODE</code>. 「code」- 目录编号
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.STORE_PATH</code>. 「storePath」-
-     * 目录相对路径
+     * Setter for <code>ZDB.I_DIRECTORY.STORE_PATH</code>. 「storePath」- 目录相对路径
      */
     public IIDirectory setStorePath(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.STORE_PATH</code>. 「storePath」-
-     * 目录相对路径
+     * Getter for <code>ZDB.I_DIRECTORY.STORE_PATH</code>. 「storePath」- 目录相对路径
      */
     public String getStorePath();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
+     * Setter for <code>ZDB.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
      * 链接路径，type = LINK 时专用
      */
     public IIDirectory setLinkedPath(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
+     * Getter for <code>ZDB.I_DIRECTORY.LINKED_PATH</code>. 「linkedPath」-
      * 链接路径，type = LINK 时专用
      */
     public String getLinkedPath();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.PARENT_ID</code>. 「parentId」-
-     * 父目录ID
+     * Setter for <code>ZDB.I_DIRECTORY.PARENT_ID</code>. 「parentId」- 父目录ID
      */
     public IIDirectory setParentId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.PARENT_ID</code>. 「parentId」-
-     * 父目录ID
+     * Getter for <code>ZDB.I_DIRECTORY.PARENT_ID</code>. 「parentId」- 父目录ID
      */
     public String getParentId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CATEGORY</code>. 「category」-
-     * 目录连接的类型树
+     * Setter for <code>ZDB.I_DIRECTORY.CATEGORY</code>. 「category」- 目录连接的类型树
      */
     public IIDirectory setCategory(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CATEGORY</code>. 「category」-
-     * 目录连接的类型树
+     * Getter for <code>ZDB.I_DIRECTORY.CATEGORY</code>. 「category」- 目录连接的类型树
      */
     public String getCategory();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.TYPE</code>. 「type」-
-     * 目录类型：INTEGRATION / STORE / LINK
+     * Setter for <code>ZDB.I_DIRECTORY.TYPE</code>. 「type」- 目录类型：INTEGRATION /
+     * STORE / LINK
      */
     public IIDirectory setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.TYPE</code>. 「type」-
-     * 目录类型：INTEGRATION / STORE / LINK
+     * Getter for <code>ZDB.I_DIRECTORY.TYPE</code>. 「type」- 目录类型：INTEGRATION /
+     * STORE / LINK
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
+     * Setter for <code>ZDB.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
      */
     public IIDirectory setOwner(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
+     * Getter for <code>ZDB.I_DIRECTORY.OWNER</code>. 「owner」- 目录访问人
      */
     public String getOwner();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
+     * Setter for <code>ZDB.I_DIRECTORY.INTEGRATION_ID</code>. 「integrationId」-
+     * 该目录关联的 KIntegration，不关联则不转存
      */
     public IIDirectory setIntegrationId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.INTEGRATION_ID</code>.
-     * 「integrationId」- 该目录关联的 KIntegration，不关联则不转存
+     * Getter for <code>ZDB.I_DIRECTORY.INTEGRATION_ID</code>. 「integrationId」-
+     * 该目录关联的 KIntegration，不关联则不转存
      */
     public String getIntegrationId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 目录执行组件，抓文件专用
+     * Setter for <code>ZDB.I_DIRECTORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 目录执行组件，抓文件专用
      */
     public IIDirectory setRunComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.RUN_COMPONENT</code>.
-     * 「runComponent」- 目录执行组件，抓文件专用
+     * Getter for <code>ZDB.I_DIRECTORY.RUN_COMPONENT</code>. 「runComponent」-
+     * 目录执行组件，抓文件专用
      */
     public String getRunComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
      */
     public IIDirectory setVisit(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT</code>. 「visit」- 公有 / 私有
      */
     public Boolean getVisit();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」-
-     * 目录模式：只读 / 可写，以后扩展为其他
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」- 目录模式：只读
+     * / 可写，以后扩展为其他
      */
     public IIDirectory setVisitMode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」-
-     * 目录模式：只读 / 可写，以后扩展为其他
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_MODE</code>. 「visitMode」- 目录模式：只读
+     * / 可写，以后扩展为其他
      */
     public String getVisitMode();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」-
-     * 目录访问角色
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」- 目录访问角色
      */
     public IIDirectory setVisitRole(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」-
-     * 目录访问角色
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_ROLE</code>. 「visitRole」- 目录访问角色
      */
     public String getVisitRole();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」-
-     * 目录访问组
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」- 目录访问组
      */
     public IIDirectory setVisitGroup(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」-
-     * 目录访问组
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_GROUP</code>. 「visitGroup」- 目录访问组
      */
     public String getVisitGroup();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_COMPONENT</code>.
+     * Setter for <code>ZDB.I_DIRECTORY.VISIT_COMPONENT</code>.
      * 「visitComponent」- 目录访问控制专用组件
      */
     public IIDirectory setVisitComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.VISIT_COMPONENT</code>.
+     * Getter for <code>ZDB.I_DIRECTORY.VISIT_COMPONENT</code>.
      * 「visitComponent」- 目录访问控制专用组件
      */
     public String getVisitComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
      */
     public IIDirectory setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_DIRECTORY.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_DIRECTORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IIDirectory setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_DIRECTORY.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
      */
     public IIDirectory setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_DIRECTORY.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Setter for <code>ZDB.I_DIRECTORY.METADATA</code>. 「metadata」- 附加配置数据
      */
     public IIDirectory setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.METADATA</code>. 「metadata」-
-     * 附加配置数据
+     * Getter for <code>ZDB.I_DIRECTORY.METADATA</code>. 「metadata」- 附加配置数据
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_DIRECTORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IIDirectory setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_DIRECTORY.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_DIRECTORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IIDirectory setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_DIRECTORY.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IIDirectory setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_DIRECTORY.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IIDirectory setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_DIRECTORY.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

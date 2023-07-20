@@ -26,7 +26,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.KEY</code>. 「key」- 合同主键
+     * Setter for <code>ZDB.E_CONTRACT.KEY</code>. 「key」- 合同主键
      */
     @Override
     public EContractRecord setKey(String value) {
@@ -35,7 +35,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.KEY</code>. 「key」- 合同主键
+     * Getter for <code>ZDB.E_CONTRACT.KEY</code>. 「key」- 合同主键
      */
     @Override
     public String getKey() {
@@ -43,7 +43,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.NAME</code>. 「name」- 合同名称
+     * Setter for <code>ZDB.E_CONTRACT.NAME</code>. 「name」- 合同名称
      */
     @Override
     public EContractRecord setName(String value) {
@@ -52,7 +52,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.NAME</code>. 「name」- 合同名称
+     * Getter for <code>ZDB.E_CONTRACT.NAME</code>. 「name」- 合同名称
      */
     @Override
     public String getName() {
@@ -60,7 +60,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.CODE</code>. 「code」- 合同编号
+     * Setter for <code>ZDB.E_CONTRACT.CODE</code>. 「code」- 合同编号
      */
     @Override
     public EContractRecord setCode(String value) {
@@ -69,7 +69,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.CODE</code>. 「code」- 合同编号
+     * Getter for <code>ZDB.E_CONTRACT.CODE</code>. 「code」- 合同编号
      */
     @Override
     public String getCode() {
@@ -77,7 +77,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.DEPT_ID</code>. 「deptId」- 所属部门,
+     * Setter for <code>ZDB.E_CONTRACT.DEPT_ID</code>. 「deptId」- 所属部门,
      * resource.departments
      */
     @Override
@@ -87,7 +87,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.DEPT_ID</code>. 「deptId」- 所属部门,
+     * Getter for <code>ZDB.E_CONTRACT.DEPT_ID</code>. 「deptId」- 所属部门,
      * resource.departments
      */
     @Override
@@ -96,8 +96,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.TYPE</code>. 「type」-
-     * 合同分类，zero.contract
+     * Setter for <code>ZDB.E_CONTRACT.TYPE</code>. 「type」- 合同分类，zero.contract
      */
     @Override
     public EContractRecord setType(String value) {
@@ -106,8 +105,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.TYPE</code>. 「type」-
-     * 合同分类，zero.contract
+     * Getter for <code>ZDB.E_CONTRACT.TYPE</code>. 「type」- 合同分类，zero.contract
      */
     @Override
     public String getType() {
@@ -115,7 +113,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.STATUS</code>. 「status」-
+     * Setter for <code>ZDB.E_CONTRACT.STATUS</code>. 「status」-
      * 合同状态，zero.contract.status
      */
     @Override
@@ -125,7 +123,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.STATUS</code>. 「status」-
+     * Getter for <code>ZDB.E_CONTRACT.STATUS</code>. 「status」-
      * 合同状态，zero.contract.status
      */
     @Override
@@ -134,7 +132,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.BUDGET</code>. 「budget」-
+     * Setter for <code>ZDB.E_CONTRACT.BUDGET</code>. 「budget」-
      * 所属预算，zero.contract.budget
      */
     @Override
@@ -144,7 +142,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.BUDGET</code>. 「budget」-
+     * Getter for <code>ZDB.E_CONTRACT.BUDGET</code>. 「budget」-
      * 所属预算，zero.contract.budget
      */
     @Override
@@ -153,7 +151,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.LEVEL</code>. 「level」-
+     * Setter for <code>ZDB.E_CONTRACT.LEVEL</code>. 「level」-
      * 合同级别，zero.contract.level
      */
     @Override
@@ -163,7 +161,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.LEVEL</code>. 「level」-
+     * Getter for <code>ZDB.E_CONTRACT.LEVEL</code>. 「level」-
      * 合同级别，zero.contract.level
      */
     @Override
@@ -172,7 +170,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.TITLE</code>. 「title」- 合同标题
+     * Setter for <code>ZDB.E_CONTRACT.TITLE</code>. 「title」- 合同标题
      */
     @Override
     public EContractRecord setTitle(String value) {
@@ -181,7 +179,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.TITLE</code>. 「title」- 合同标题
+     * Getter for <code>ZDB.E_CONTRACT.TITLE</code>. 「title」- 合同标题
      */
     @Override
     public String getTitle() {
@@ -189,7 +187,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.SUBJECT</code>. 「subject」- 合同目标
+     * Setter for <code>ZDB.E_CONTRACT.SUBJECT</code>. 「subject」- 合同目标
      */
     @Override
     public EContractRecord setSubject(String value) {
@@ -198,7 +196,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.SUBJECT</code>. 「subject」- 合同目标
+     * Getter for <code>ZDB.E_CONTRACT.SUBJECT</code>. 「subject」- 合同目标
      */
     @Override
     public String getSubject() {
@@ -206,8 +204,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.DESCRIPTION</code>. 「description」-
-     * 合同描述
+     * Setter for <code>ZDB.E_CONTRACT.DESCRIPTION</code>. 「description」- 合同描述
      */
     @Override
     public EContractRecord setDescription(String value) {
@@ -216,8 +213,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.DESCRIPTION</code>. 「description」-
-     * 合同描述
+     * Getter for <code>ZDB.E_CONTRACT.DESCRIPTION</code>. 「description」- 合同描述
      */
     @Override
     public String getDescription() {
@@ -225,7 +221,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.AMOUNT</code>. 「amount」- 合同金额
+     * Setter for <code>ZDB.E_CONTRACT.AMOUNT</code>. 「amount」- 合同金额
      */
     @Override
     public EContractRecord setAmount(BigDecimal value) {
@@ -234,7 +230,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.AMOUNT</code>. 「amount」- 合同金额
+     * Getter for <code>ZDB.E_CONTRACT.AMOUNT</code>. 「amount」- 合同金额
      */
     @Override
     public BigDecimal getAmount() {
@@ -242,7 +238,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.REMARK</code>. 「remark」- 合同备注
+     * Setter for <code>ZDB.E_CONTRACT.REMARK</code>. 「remark」- 合同备注
      */
     @Override
     public EContractRecord setRemark(String value) {
@@ -251,7 +247,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.REMARK</code>. 「remark」- 合同备注
+     * Getter for <code>ZDB.E_CONTRACT.REMARK</code>. 「remark」- 合同备注
      */
     @Override
     public String getRemark() {
@@ -259,8 +255,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.PLAN_START_AT</code>.
-     * 「planStartAt」- 开始日期
+     * Setter for <code>ZDB.E_CONTRACT.PLAN_START_AT</code>. 「planStartAt」- 开始日期
      */
     @Override
     public EContractRecord setPlanStartAt(LocalDateTime value) {
@@ -269,8 +264,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.PLAN_START_AT</code>.
-     * 「planStartAt」- 开始日期
+     * Getter for <code>ZDB.E_CONTRACT.PLAN_START_AT</code>. 「planStartAt」- 开始日期
      */
     @Override
     public LocalDateTime getPlanStartAt() {
@@ -278,8 +272,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.PLAN_END_AT</code>. 「planEndAt」-
-     * 结束日期
+     * Setter for <code>ZDB.E_CONTRACT.PLAN_END_AT</code>. 「planEndAt」- 结束日期
      */
     @Override
     public EContractRecord setPlanEndAt(LocalDateTime value) {
@@ -288,8 +281,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.PLAN_END_AT</code>. 「planEndAt」-
-     * 结束日期
+     * Getter for <code>ZDB.E_CONTRACT.PLAN_END_AT</code>. 「planEndAt」- 结束日期
      */
     @Override
     public LocalDateTime getPlanEndAt() {
@@ -297,7 +289,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.START_AT</code>. 「startAt」- 实际开始日期
+     * Setter for <code>ZDB.E_CONTRACT.START_AT</code>. 「startAt」- 实际开始日期
      */
     @Override
     public EContractRecord setStartAt(LocalDateTime value) {
@@ -306,7 +298,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.START_AT</code>. 「startAt」- 实际开始日期
+     * Getter for <code>ZDB.E_CONTRACT.START_AT</code>. 「startAt」- 实际开始日期
      */
     @Override
     public LocalDateTime getStartAt() {
@@ -314,7 +306,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.END_AT</code>. 「endAt」- 实际结束日期
+     * Setter for <code>ZDB.E_CONTRACT.END_AT</code>. 「endAt」- 实际结束日期
      */
     @Override
     public EContractRecord setEndAt(LocalDateTime value) {
@@ -323,7 +315,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.END_AT</code>. 「endAt」- 实际结束日期
+     * Getter for <code>ZDB.E_CONTRACT.END_AT</code>. 「endAt」- 实际结束日期
      */
     @Override
     public LocalDateTime getEndAt() {
@@ -331,7 +323,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.SIGNED_BY</code>. 「signedBy」- 签订人
+     * Setter for <code>ZDB.E_CONTRACT.SIGNED_BY</code>. 「signedBy」- 签订人
      */
     @Override
     public EContractRecord setSignedBy(String value) {
@@ -340,7 +332,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.SIGNED_BY</code>. 「signedBy」- 签订人
+     * Getter for <code>ZDB.E_CONTRACT.SIGNED_BY</code>. 「signedBy」- 签订人
      */
     @Override
     public String getSignedBy() {
@@ -348,7 +340,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.SIGNED_AT</code>. 「signedAt」- 签订时间
+     * Setter for <code>ZDB.E_CONTRACT.SIGNED_AT</code>. 「signedAt」- 签订时间
      */
     @Override
     public EContractRecord setSignedAt(LocalDateTime value) {
@@ -357,7 +349,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.SIGNED_AT</code>. 「signedAt」- 签订时间
+     * Getter for <code>ZDB.E_CONTRACT.SIGNED_AT</code>. 「signedAt」- 签订时间
      */
     @Override
     public LocalDateTime getSignedAt() {
@@ -365,7 +357,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.PARTY_A</code>. 「partyA」-
+     * Setter for <code>ZDB.E_CONTRACT.PARTY_A</code>. 「partyA」-
      * 甲方（关联公司ID，E_COMPANY）
      */
     @Override
@@ -375,7 +367,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.PARTY_A</code>. 「partyA」-
+     * Getter for <code>ZDB.E_CONTRACT.PARTY_A</code>. 「partyA」-
      * 甲方（关联公司ID，E_COMPANY）
      */
     @Override
@@ -384,7 +376,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.PARTY_B</code>. 「partyB」-
+     * Setter for <code>ZDB.E_CONTRACT.PARTY_B</code>. 「partyB」-
      * 乙方（关联客户ID，E_CUSTOMER）
      */
     @Override
@@ -394,7 +386,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.PARTY_B</code>. 「partyB」-
+     * Getter for <code>ZDB.E_CONTRACT.PARTY_B</code>. 「partyB」-
      * 乙方（关联客户ID，E_CUSTOMER）
      */
     @Override
@@ -403,7 +395,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.A_NAME</code>. 「aName」-
+     * Setter for <code>ZDB.E_CONTRACT.A_NAME</code>. 「aName」-
      * 甲方名称（个人为姓名/企业为企业名）
      */
     @Override
@@ -413,7 +405,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.A_NAME</code>. 「aName」-
+     * Getter for <code>ZDB.E_CONTRACT.A_NAME</code>. 「aName」-
      * 甲方名称（个人为姓名/企业为企业名）
      */
     @Override
@@ -422,7 +414,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.A_PHONE</code>. 「aPhone」- 甲方电话
+     * Setter for <code>ZDB.E_CONTRACT.A_PHONE</code>. 「aPhone」- 甲方电话
      */
     @Override
     public EContractRecord setAPhone(String value) {
@@ -431,7 +423,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.A_PHONE</code>. 「aPhone」- 甲方电话
+     * Getter for <code>ZDB.E_CONTRACT.A_PHONE</code>. 「aPhone」- 甲方电话
      */
     @Override
     public String getAPhone() {
@@ -439,8 +431,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.A_LEGAL</code>. 「aLegal」-
-     * 甲方法人（企业合同专用）
+     * Setter for <code>ZDB.E_CONTRACT.A_LEGAL</code>. 「aLegal」- 甲方法人（企业合同专用）
      */
     @Override
     public EContractRecord setALegal(String value) {
@@ -449,8 +440,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.A_LEGAL</code>. 「aLegal」-
-     * 甲方法人（企业合同专用）
+     * Getter for <code>ZDB.E_CONTRACT.A_LEGAL</code>. 「aLegal」- 甲方法人（企业合同专用）
      */
     @Override
     public String getALegal() {
@@ -458,7 +448,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.A_ADDRESS</code>. 「aAddress」- 甲方地址
+     * Setter for <code>ZDB.E_CONTRACT.A_ADDRESS</code>. 「aAddress」- 甲方地址
      */
     @Override
     public EContractRecord setAAddress(String value) {
@@ -467,7 +457,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.A_ADDRESS</code>. 「aAddress」- 甲方地址
+     * Getter for <code>ZDB.E_CONTRACT.A_ADDRESS</code>. 「aAddress」- 甲方地址
      */
     @Override
     public String getAAddress() {
@@ -475,7 +465,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.B_NAME</code>. 「bName」-
+     * Setter for <code>ZDB.E_CONTRACT.B_NAME</code>. 「bName」-
      * 乙方名称（个人为姓名/企业为企业名）
      */
     @Override
@@ -485,7 +475,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.B_NAME</code>. 「bName」-
+     * Getter for <code>ZDB.E_CONTRACT.B_NAME</code>. 「bName」-
      * 乙方名称（个人为姓名/企业为企业名）
      */
     @Override
@@ -494,7 +484,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.B_PHONE</code>. 「bPhone」- 乙方人电话
+     * Setter for <code>ZDB.E_CONTRACT.B_PHONE</code>. 「bPhone」- 乙方人电话
      */
     @Override
     public EContractRecord setBPhone(String value) {
@@ -503,7 +493,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.B_PHONE</code>. 「bPhone」- 乙方人电话
+     * Getter for <code>ZDB.E_CONTRACT.B_PHONE</code>. 「bPhone」- 乙方人电话
      */
     @Override
     public String getBPhone() {
@@ -511,8 +501,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.B_LEGAL</code>. 「bLegal」-
-     * 乙方法人（企业合同专用）
+     * Setter for <code>ZDB.E_CONTRACT.B_LEGAL</code>. 「bLegal」- 乙方法人（企业合同专用）
      */
     @Override
     public EContractRecord setBLegal(String value) {
@@ -521,8 +510,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.B_LEGAL</code>. 「bLegal」-
-     * 乙方法人（企业合同专用）
+     * Getter for <code>ZDB.E_CONTRACT.B_LEGAL</code>. 「bLegal」- 乙方法人（企业合同专用）
      */
     @Override
     public String getBLegal() {
@@ -530,7 +518,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.B_ADDRESS</code>. 「bAddress」- 乙方地址
+     * Setter for <code>ZDB.E_CONTRACT.B_ADDRESS</code>. 「bAddress」- 乙方地址
      */
     @Override
     public EContractRecord setBAddress(String value) {
@@ -539,7 +527,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.B_ADDRESS</code>. 「bAddress」- 乙方地址
+     * Getter for <code>ZDB.E_CONTRACT.B_ADDRESS</code>. 「bAddress」- 乙方地址
      */
     @Override
     public String getBAddress() {
@@ -547,7 +535,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.E_CONTRACT.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public EContractRecord setMetadata(String value) {
@@ -556,7 +544,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.E_CONTRACT.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -564,7 +552,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.E_CONTRACT.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public EContractRecord setActive(Boolean value) {
@@ -573,7 +561,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.E_CONTRACT.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -581,8 +569,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Setter for <code>ZDB.E_CONTRACT.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public EContractRecord setSigma(String value) {
@@ -591,8 +578,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.SIGMA</code>. 「sigma」-
-     * 统一标识（公司所属应用）
+     * Getter for <code>ZDB.E_CONTRACT.SIGMA</code>. 「sigma」- 统一标识（公司所属应用）
      */
     @Override
     public String getSigma() {
@@ -600,7 +586,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.LANGUAGE</code>. 「language」- 使用的语言
+     * Setter for <code>ZDB.E_CONTRACT.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public EContractRecord setLanguage(String value) {
@@ -609,7 +595,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.LANGUAGE</code>. 「language」- 使用的语言
+     * Getter for <code>ZDB.E_CONTRACT.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -617,8 +603,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.E_CONTRACT.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public EContractRecord setCreatedAt(LocalDateTime value) {
@@ -627,8 +612,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.E_CONTRACT.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -636,8 +620,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.E_CONTRACT.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public EContractRecord setCreatedBy(String value) {
@@ -646,8 +629,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.E_CONTRACT.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -655,8 +637,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.E_CONTRACT.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public EContractRecord setUpdatedAt(LocalDateTime value) {
@@ -665,8 +646,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.E_CONTRACT.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -674,8 +654,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.E_CONTRACT.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.E_CONTRACT.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public EContractRecord setUpdatedBy(String value) {
@@ -684,8 +663,7 @@ public class EContractRecord extends UpdatableRecordImpl<EContractRecord> implem
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.E_CONTRACT.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.E_CONTRACT.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {

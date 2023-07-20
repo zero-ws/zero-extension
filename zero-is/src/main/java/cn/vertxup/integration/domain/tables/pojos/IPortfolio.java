@@ -128,7 +128,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
         }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Getter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     @Override
     public String getKey() {
@@ -136,7 +136,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Setter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     @Override
     public IPortfolio setKey(String key) {
@@ -145,7 +145,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Getter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     @Override
     public String getName() {
@@ -153,7 +153,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Setter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     @Override
     public IPortfolio setName(String name) {
@@ -162,7 +162,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Getter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     @Override
     public String getCode() {
@@ -170,7 +170,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Setter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     @Override
     public IPortfolio setCode(String code) {
@@ -179,7 +179,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Getter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     @Override
     public String getStatus() {
@@ -187,7 +187,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Setter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     @Override
     public IPortfolio setStatus(String status) {
@@ -196,7 +196,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Getter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     @Override
     public String getType() {
@@ -204,7 +204,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Setter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     @Override
     public IPortfolio setType(String type) {
@@ -213,8 +213,8 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Getter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     @Override
     public String getIntegrationId() {
@@ -222,8 +222,8 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Setter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     @Override
     public IPortfolio setIntegrationId(String integrationId) {
@@ -232,8 +232,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     @Override
     public String getOwnerType() {
@@ -241,8 +240,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     @Override
     public IPortfolio setOwnerType(String ownerType) {
@@ -251,7 +249,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     @Override
     public String getOwner() {
@@ -259,7 +257,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     @Override
     public IPortfolio setOwner(String owner) {
@@ -268,8 +266,8 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     @Override
     public String getRunComponent() {
@@ -277,8 +275,8 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     @Override
     public IPortfolio setRunComponent(String runComponent) {
@@ -287,8 +285,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     @Override
     public String getRunConfig() {
@@ -296,8 +293,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     @Override
     public IPortfolio setRunConfig(String runConfig) {
@@ -306,8 +302,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     @Override
     public String getDataKey() {
@@ -315,8 +310,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     @Override
     public IPortfolio setDataKey(String dataKey) {
@@ -325,8 +319,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     @Override
     public String getDataConfig() {
@@ -334,8 +327,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     @Override
     public IPortfolio setDataConfig(String dataConfig) {
@@ -344,8 +336,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     @Override
     public String getDataSecure() {
@@ -353,8 +344,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     @Override
     public IPortfolio setDataSecure(String dataSecure) {
@@ -363,7 +353,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     @Override
@@ -372,7 +362,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     @Override
@@ -382,7 +372,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public String getAppId() {
@@ -390,7 +380,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     @Override
     public IPortfolio setAppId(String appId) {
@@ -399,7 +389,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public Boolean getActive() {
@@ -407,7 +397,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
     public IPortfolio setActive(Boolean active) {
@@ -416,7 +406,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public String getSigma() {
@@ -424,7 +414,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
     public IPortfolio setSigma(String sigma) {
@@ -433,7 +423,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public String getMetadata() {
@@ -441,7 +431,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     @Override
     public IPortfolio setMetadata(String metadata) {
@@ -450,8 +440,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public String getLanguage() {
@@ -459,8 +448,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
     public IPortfolio setLanguage(String language) {
@@ -469,8 +457,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -478,8 +465,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
     public IPortfolio setCreatedAt(LocalDateTime createdAt) {
@@ -488,8 +474,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public String getCreatedBy() {
@@ -497,8 +482,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
     public IPortfolio setCreatedBy(String createdBy) {
@@ -507,8 +491,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -516,8 +499,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     @Override
     public IPortfolio setUpdatedAt(LocalDateTime updatedAt) {
@@ -526,8 +508,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public String getUpdatedBy() {
@@ -535,8 +516,7 @@ public class IPortfolio implements VertxPojo, IIPortfolio {
     }
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     @Override
     public IPortfolio setUpdatedBy(String updatedBy) {

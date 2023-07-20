@@ -18,326 +18,302 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IIIntegration extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Setter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     public IIIntegration setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
+     * Getter for <code>ZDB.I_INTEGRATION.KEY</code>. 「key」- 集成配置主键
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Setter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     public IIIntegration setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.NAME</code>. 「name」- 集成名称
+     * Getter for <code>ZDB.I_INTEGRATION.NAME</code>. 「name」- 集成名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Setter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     public IIIntegration setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
+     * Getter for <code>ZDB.I_INTEGRATION.TYPE</code>. 「type」- 集成类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     public IIIntegration setIpV4(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V4</code>. 「ipV4」- IP v4地址
      */
     public String getIpV4();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Setter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     public IIIntegration setIpV6(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
+     * Getter for <code>ZDB.I_INTEGRATION.IP_V6</code>. 「ipV6」- IP v6地址
      */
     public String getIpV6();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Setter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     public IIIntegration setHostname(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.HOSTNAME</code>. 「hostname」-
-     * 主机地址
+     * Getter for <code>ZDB.I_INTEGRATION.HOSTNAME</code>. 「hostname」- 主机地址
      */
     public String getHostname();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Setter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     public IIIntegration setPort(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PORT</code>. 「port」- 端口号
+     * Getter for <code>ZDB.I_INTEGRATION.PORT</code>. 「port」- 端口号
      */
     public Integer getPort();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Setter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     public IIIntegration setProtocol(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
+     * Getter for <code>ZDB.I_INTEGRATION.PROTOCOL</code>. 「protocol」-
      * 协议类型：HTTP, HTTPS, FTP
      */
     public String getProtocol();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     public IIIntegration setSecurePort(Integer value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PORT</code>.
-     * 「securePort」- 传输层安全接口
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PORT</code>. 「securePort」-
+     * 传输层安全接口
      */
     public Integer getSecurePort();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Setter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     public IIIntegration setSecureProtocol(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SECURE_PROTOCOL</code>.
+     * Getter for <code>ZDB.I_INTEGRATION.SECURE_PROTOCOL</code>.
      * 「secureProtocol」- 传入层协议：TLS / SSL（邮件服务器需要）
      */
     public String getSecureProtocol();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Setter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     public IIIntegration setEndpoint(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ENDPOINT</code>. 「endpoint」-
-     * 端地址
+     * Getter for <code>ZDB.I_INTEGRATION.ENDPOINT</code>. 「endpoint」- 端地址
      */
     public String getEndpoint();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Setter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     public IIIntegration setPath(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
+     * Getter for <code>ZDB.I_INTEGRATION.PATH</code>. 「path」- 集成专用根路径
      */
     public String getPath();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Setter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     public IIIntegration setOsKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
+     * Getter for <code>ZDB.I_INTEGRATION.OS_KEY</code>. 「osKey」- 开源专用Key
      */
     public String getOsKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Setter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     public IIIntegration setOsSecret(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
+     * Getter for <code>ZDB.I_INTEGRATION.OS_SECRET</code>. 「osSecret」-
      * 开源专用Secret
      */
     public String getOsSecret();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     public IIIntegration setOsAuthorize(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_AUTHORIZE</code>.
-     * 「osAuthorize」- Authorize接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_AUTHORIZE</code>. 「osAuthorize」-
+     * Authorize接口
      */
     public String getOsAuthorize();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Setter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     public IIIntegration setOsToken(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OS_TOKEN</code>. 「osToken」-
-     * Token接口
+     * Getter for <code>ZDB.I_INTEGRATION.OS_TOKEN</code>. 「osToken」- Token接口
      */
     public String getOsToken();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Setter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     public IIIntegration setUsername(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.USERNAME</code>. 「username」- 账号
+     * Getter for <code>ZDB.I_INTEGRATION.USERNAME</code>. 「username」- 账号
      */
     public String getUsername();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Setter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     public IIIntegration setPassword(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
+     * Getter for <code>ZDB.I_INTEGRATION.PASSWORD</code>. 「password」- 密码
      */
     public String getPassword();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Setter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     public IIIntegration setPublicKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」-
-     * Key文件
+     * Getter for <code>ZDB.I_INTEGRATION.PUBLIC_KEY</code>. 「publicKey」- Key文件
      */
     public String getPublicKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Setter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     public IIIntegration setOptions(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.OPTIONS</code>. 「options」-
-     * 集成相关配置
+     * Getter for <code>ZDB.I_INTEGRATION.OPTIONS</code>. 「options」- 集成相关配置
      */
     public String getOptions();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Setter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public IIIntegration setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.APP_ID</code>. 「appId」-
-     * 关联的应用程序ID
+     * Getter for <code>ZDB.I_INTEGRATION.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     public IIIntegration setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_INTEGRATION.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     public IIIntegration setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_INTEGRATION.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Setter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     public IIIntegration setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.METADATA</code>. 「metadata」-
-     * 附加配置
+     * Getter for <code>ZDB.I_INTEGRATION.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IIIntegration setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_INTEGRATION.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IIIntegration setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IIIntegration setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_INTEGRATION.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IIIntegration setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IIIntegration setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_INTEGRATION.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

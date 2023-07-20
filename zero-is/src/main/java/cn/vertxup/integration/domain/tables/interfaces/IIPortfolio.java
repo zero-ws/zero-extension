@@ -18,258 +18,238 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IIPortfolio extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Setter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     public IIPortfolio setKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
+     * Getter for <code>ZDB.I_PORTFOLIO.KEY</code>. 「key」- 目录专用ID
      */
     public String getKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Setter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     public IIPortfolio setName(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
+     * Getter for <code>ZDB.I_PORTFOLIO.NAME</code>. 「name」- 目录名称
      */
     public String getName();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Setter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     public IIPortfolio setCode(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
+     * Getter for <code>ZDB.I_PORTFOLIO.CODE</code>. 「code」- 目录系统编码
      */
     public String getCode();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Setter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     public IIPortfolio setStatus(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
+     * Getter for <code>ZDB.I_PORTFOLIO.STATUS</code>. 「status」- 目录状态
      */
     public String getStatus();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Setter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     public IIPortfolio setType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
+     * Getter for <code>ZDB.I_PORTFOLIO.TYPE</code>. 「type」- 目录类型
      */
     public String getType();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Setter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     public IIPortfolio setIntegrationId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.INTEGRATION_ID</code>.
-     * 「integrationId」- 是否关联集成配置，管理时直接同步
+     * Getter for <code>ZDB.I_PORTFOLIO.INTEGRATION_ID</code>. 「integrationId」-
+     * 是否关联集成配置，管理时直接同步
      */
     public String getIntegrationId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     public IIPortfolio setOwnerType(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」-
-     * 关联主体类型
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER_TYPE</code>. 「ownerType」- 关联主体类型
      */
     public String getOwnerType();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Setter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     public IIPortfolio setOwner(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
+     * Getter for <code>ZDB.I_PORTFOLIO.OWNER</code>. 「owner」- 关联主体主键
      */
     public String getOwner();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     public IIPortfolio setRunComponent(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_COMPONENT</code>.
-     * 「runComponent」- 执行组件，LDAP执行专用
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_COMPONENT</code>. 「runComponent」-
+     * 执行组件，LDAP执行专用
      */
     public String getRunComponent();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Setter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     public IIPortfolio setRunConfig(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」-
-     * 执行组件额外配置
+     * Getter for <code>ZDB.I_PORTFOLIO.RUN_CONFIG</code>. 「runConfig」- 执行组件额外配置
      */
     public String getRunConfig();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     public IIPortfolio setDataKey(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」-
-     * LDAP路径做完整标识
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_KEY</code>. 「dataKey」- LDAP路径做完整标识
      */
     public String getDataKey();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     public IIPortfolio setDataConfig(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」-
-     * 数据基础配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_CONFIG</code>. 「dataConfig」- 数据基础配置
      */
     public String getDataConfig();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     public IIPortfolio setDataSecure(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」-
-     * 安全专用配置
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_SECURE</code>. 「dataSecure」- 安全专用配置
      */
     public String getDataSecure();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Setter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     public IIPortfolio setDataIntegration(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.DATA_INTEGRATION</code>.
+     * Getter for <code>ZDB.I_PORTFOLIO.DATA_INTEGRATION</code>.
      * 「dataIntegration」- 绑定好过后，导入/导出数据专用配置
      */
     public String getDataIntegration();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Setter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public IIPortfolio setAppId(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
+     * Getter for <code>ZDB.I_PORTFOLIO.APP_ID</code>. 「appId」- 关联的应用程序ID
      */
     public String getAppId();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Setter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     public IIPortfolio setActive(Boolean value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
+     * Getter for <code>ZDB.I_PORTFOLIO.ACTIVE</code>. 「active」- 是否启用
      */
     public Boolean getActive();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Setter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     public IIPortfolio setSigma(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
+     * Getter for <code>ZDB.I_PORTFOLIO.SIGMA</code>. 「sigma」- 统一标识
      */
     public String getSigma();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Setter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     public IIPortfolio setMetadata(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
+     * Getter for <code>ZDB.I_PORTFOLIO.METADATA</code>. 「metadata」- 附加配置
      */
     public String getMetadata();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Setter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     public IIPortfolio setLanguage(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.LANGUAGE</code>. 「language」-
-     * 使用的语言
+     * Getter for <code>ZDB.I_PORTFOLIO.LANGUAGE</code>. 「language」- 使用的语言
      */
     public String getLanguage();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public IIPortfolio setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」-
-     * 创建时间
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Setter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public IIPortfolio setCreatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」-
-     * 创建人
+     * Getter for <code>ZDB.I_PORTFOLIO.CREATED_BY</code>. 「createdBy」- 创建人
      */
     public String getCreatedBy();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public IIPortfolio setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」-
-     * 更新时间
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_AT</code>. 「updatedAt」- 更新时间
      */
     public LocalDateTime getUpdatedAt();
 
     /**
-     * Setter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Setter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public IIPortfolio setUpdatedBy(String value);
 
     /**
-     * Getter for <code>DB_ETERNAL.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」-
-     * 更新人
+     * Getter for <code>ZDB.I_PORTFOLIO.UPDATED_BY</code>. 「updatedBy」- 更新人
      */
     public String getUpdatedBy();
 

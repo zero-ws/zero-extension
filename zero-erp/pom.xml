@@ -26,8 +26,8 @@
                 <configuration>
                     <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/sql/erp.properties</propertyFile>
-                    <changeLogFile>plugin/sql/erp-complete.yml</changeLogFile>
+                    <propertyFile>plugin/erp/db.properties</propertyFile>
+                    <changeLogFile>plugin/erp/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

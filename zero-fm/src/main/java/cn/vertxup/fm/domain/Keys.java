@@ -4,8 +4,35 @@
 package cn.vertxup.fm.domain;
 
 
-import cn.vertxup.fm.domain.tables.*;
-import cn.vertxup.fm.domain.tables.records.*;
+import cn.vertxup.fm.domain.tables.FBank;
+import cn.vertxup.fm.domain.tables.FBill;
+import cn.vertxup.fm.domain.tables.FBillItem;
+import cn.vertxup.fm.domain.tables.FBook;
+import cn.vertxup.fm.domain.tables.FCurrency;
+import cn.vertxup.fm.domain.tables.FDebt;
+import cn.vertxup.fm.domain.tables.FInvoice;
+import cn.vertxup.fm.domain.tables.FPayTerm;
+import cn.vertxup.fm.domain.tables.FPayment;
+import cn.vertxup.fm.domain.tables.FPaymentItem;
+import cn.vertxup.fm.domain.tables.FPreAuthorize;
+import cn.vertxup.fm.domain.tables.FSettlement;
+import cn.vertxup.fm.domain.tables.FSettlementItem;
+import cn.vertxup.fm.domain.tables.FSubject;
+import cn.vertxup.fm.domain.tables.records.FBankRecord;
+import cn.vertxup.fm.domain.tables.records.FBillItemRecord;
+import cn.vertxup.fm.domain.tables.records.FBillRecord;
+import cn.vertxup.fm.domain.tables.records.FBookRecord;
+import cn.vertxup.fm.domain.tables.records.FCurrencyRecord;
+import cn.vertxup.fm.domain.tables.records.FDebtRecord;
+import cn.vertxup.fm.domain.tables.records.FInvoiceRecord;
+import cn.vertxup.fm.domain.tables.records.FPayTermRecord;
+import cn.vertxup.fm.domain.tables.records.FPaymentItemRecord;
+import cn.vertxup.fm.domain.tables.records.FPaymentRecord;
+import cn.vertxup.fm.domain.tables.records.FPreAuthorizeRecord;
+import cn.vertxup.fm.domain.tables.records.FSettlementItemRecord;
+import cn.vertxup.fm.domain.tables.records.FSettlementRecord;
+import cn.vertxup.fm.domain.tables.records.FSubjectRecord;
+
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -13,8 +40,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling foreign key relationships and constraints of tables in
- * DB_ETERNAL.
+ * A class modelling foreign key relationships and constraints of tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Keys {

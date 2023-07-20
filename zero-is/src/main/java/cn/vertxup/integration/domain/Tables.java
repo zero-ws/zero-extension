@@ -4,12 +4,6 @@
 package cn.vertxup.integration.domain;
 
 
-import cn.vertxup.integration.domain.tables.DComment;
-import cn.vertxup.integration.domain.tables.DDoc;
-import cn.vertxup.integration.domain.tables.DDocClause;
-import cn.vertxup.integration.domain.tables.DDocSegment;
-import cn.vertxup.integration.domain.tables.DRefer;
-import cn.vertxup.integration.domain.tables.DResult;
 import cn.vertxup.integration.domain.tables.IDirectory;
 import cn.vertxup.integration.domain.tables.IIntegration;
 import cn.vertxup.integration.domain.tables.IMessage;
@@ -17,58 +11,28 @@ import cn.vertxup.integration.domain.tables.IPortfolio;
 
 
 /**
- * Convenience access to all tables in DB_ETERNAL.
+ * Convenience access to all tables in ZDB.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>DB_ETERNAL.D_COMMENT</code>.
-     */
-    public static final DComment D_COMMENT = DComment.D_COMMENT;
-
-    /**
-     * The table <code>DB_ETERNAL.D_DOC</code>.
-     */
-    public static final DDoc D_DOC = DDoc.D_DOC;
-
-    /**
-     * The table <code>DB_ETERNAL.D_DOC_CLAUSE</code>.
-     */
-    public static final DDocClause D_DOC_CLAUSE = DDocClause.D_DOC_CLAUSE;
-
-    /**
-     * The table <code>DB_ETERNAL.D_DOC_SEGMENT</code>.
-     */
-    public static final DDocSegment D_DOC_SEGMENT = DDocSegment.D_DOC_SEGMENT;
-
-    /**
-     * The table <code>DB_ETERNAL.D_REFER</code>.
-     */
-    public static final DRefer D_REFER = DRefer.D_REFER;
-
-    /**
-     * The table <code>DB_ETERNAL.D_RESULT</code>.
-     */
-    public static final DResult D_RESULT = DResult.D_RESULT;
-
-    /**
-     * The table <code>DB_ETERNAL.I_DIRECTORY</code>.
+     * The table <code>ZDB.I_DIRECTORY</code>.
      */
     public static final IDirectory I_DIRECTORY = IDirectory.I_DIRECTORY;
 
     /**
-     * The table <code>DB_ETERNAL.I_INTEGRATION</code>.
+     * The table <code>ZDB.I_INTEGRATION</code>.
      */
     public static final IIntegration I_INTEGRATION = IIntegration.I_INTEGRATION;
 
     /**
-     * The table <code>DB_ETERNAL.I_MESSAGE</code>.
+     * The table <code>ZDB.I_MESSAGE</code>.
      */
     public static final IMessage I_MESSAGE = IMessage.I_MESSAGE;
 
     /**
-     * The table <code>DB_ETERNAL.I_PORTFOLIO</code>.
+     * The table <code>ZDB.I_PORTFOLIO</code>.
      */
     public static final IPortfolio I_PORTFOLIO = IPortfolio.I_PORTFOLIO;
 }
