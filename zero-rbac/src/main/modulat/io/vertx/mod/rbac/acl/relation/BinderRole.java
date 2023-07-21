@@ -3,18 +3,21 @@ package io.vertx.mod.rbac.acl.relation;
 import cn.vertxup.rbac.domain.tables.daos.RUserRoleDao;
 import cn.vertxup.rbac.domain.tables.daos.SRoleDao;
 import cn.vertxup.rbac.domain.tables.pojos.RUserRole;
+import cn.vertxup.rbac.domain.tables.pojos.SPacket;
 import cn.vertxup.rbac.domain.tables.pojos.SRole;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
+import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;
 
@@ -32,7 +35,18 @@ public class BinderRole extends AbstractBind<SRole> {
         if (users.isEmpty()) {
             return Ux.futureA();
         }
-        return this.purgeAsync(users, RUserRoleDao.class, AuthKey.F_USER_ID)
+        // fix issue: https://e.gitee.com/wei-code/issues/table?issue=I7MRXK
+        final List<SUser> deleteUser = new ArrayList<>();
+        users.forEach(user -> {
+            Ut.itJArray(inputData).forEach(input -> {
+                final String roles = input.getString(KName.ROLES);
+                final String userName = input.getString(KName.USERNAME);
+                if(Ut.isNotNil(roles) && userName.equals(user.getUsername())){
+                    deleteUser.add(user);
+                }
+            });
+        });
+        return this.purgeAsync(deleteUser, RUserRoleDao.class, AuthKey.F_USER_ID)
             .compose(nil -> this.mapAsync(inputData, SRoleDao.class, KName.ROLES))
             .compose(roleMap -> {
                 /*
