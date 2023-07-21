@@ -3,21 +3,18 @@ package io.vertx.mod.rbac.acl.relation;
 import cn.vertxup.rbac.domain.tables.daos.RUserRoleDao;
 import cn.vertxup.rbac.domain.tables.daos.SRoleDao;
 import cn.vertxup.rbac.domain.tables.pojos.RUserRole;
-import cn.vertxup.rbac.domain.tables.pojos.SPacket;
 import cn.vertxup.rbac.domain.tables.pojos.SRole;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
-import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;
 
