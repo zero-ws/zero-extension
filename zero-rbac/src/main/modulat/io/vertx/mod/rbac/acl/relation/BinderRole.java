@@ -32,7 +32,7 @@ public class BinderRole extends AbstractBind<SRole> {
         if (users.isEmpty()) {
             return Ux.futureA();
         }
-        // fix issue: https://e.gitee.com/wei-code/issues/table?issue=I7MRXK
+        // Only Exist Roles Delete The RelationShip
         final List<SUser> deleteUser = new ArrayList<>();
         users.forEach(user -> {
             Ut.itJArray(inputData).forEach(input -> {
