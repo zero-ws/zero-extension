@@ -32,7 +32,18 @@ public class BinderRole extends AbstractBind<SRole> {
         if (users.isEmpty()) {
             return Ux.futureA();
         }
-        return this.purgeAsync(users, RUserRoleDao.class, AuthKey.F_USER_ID)
+        // Only Exist Roles Delete The RelationShip
+        final List<SUser> deleteUser = new ArrayList<>();
+        users.forEach(user -> {
+            Ut.itJArray(inputData).forEach(input -> {
+                final String roles = input.getString(KName.ROLES);
+                final String userName = input.getString(KName.USERNAME);
+                if(Ut.isNotNil(roles) && userName.equals(user.getUsername())){
+                    deleteUser.add(user);
+                }
+            });
+        });
+        return this.purgeAsync(deleteUser, RUserRoleDao.class, AuthKey.F_USER_ID)
             .compose(nil -> this.mapAsync(inputData, SRoleDao.class, KName.ROLES))
             .compose(roleMap -> {
                 /*
