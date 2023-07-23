@@ -1,0 +1,13 @@
+{
+    "name": "doc",
+    "daoCls": "cn.vertxup.doc.domain.tables.daos.DDocDao",
+    "field": {
+        "unique": [
+            [
+                "name",
+                "sigma",
+                "version"
+            ]
+        ]
+    }
+}
