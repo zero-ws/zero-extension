@@ -66,6 +66,11 @@ public class Zdb extends SchemaImpl {
     public final DQanswer D_QANSWER = DQanswer.D_QANSWER;
 
     /**
+     * The table <code>ZDB.D_QRULE</code>.
+     */
+    public final DQrule D_QRULE = DQrule.D_QRULE;
+
+    /**
      * The table <code>ZDB.D_QSTORE</code>.
      */
     public final DQstore D_QSTORE = DQstore.D_QSTORE;
@@ -119,6 +124,7 @@ public class Zdb extends SchemaImpl {
             DPaper.D_PAPER,
             DPaperRef.D_PAPER_REF,
             DQanswer.D_QANSWER,
+            DQrule.D_QRULE,
             DQstore.D_QSTORE,
             DQuestion.D_QUESTION,
             DRefer.D_REFER,

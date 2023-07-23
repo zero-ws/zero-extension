@@ -7,6 +7,7 @@ package cn.vertxup.doc.domain.tables.interfaces;
 import io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 
 import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
@@ -17,118 +18,144 @@ import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 public interface IDQanswer extends VertxPojo, Serializable {
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.REF_ID</code>. 「refId」- 关联考卷中问题实例，对应
-     * D_PAPER_REF 表中内容
+     * Setter for <code>ZDB.D_QANSWER.KEY</code>. 「key」- 答题主键
      */
-    public IDQanswer setRefId(String value);
+    public IDQanswer setKey(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.REF_ID</code>. 「refId」- 关联考卷中问题实例，对应
-     * D_PAPER_REF 表中内容
+     * Getter for <code>ZDB.D_QANSWER.KEY</code>. 「key」- 答题主键
      */
-    public String getRefId();
+    public String getKey();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.ANSWER_ID</code>. 「answerId」- 考卷ID
+     * Setter for <code>ZDB.D_QANSWER.CODE</code>. 「code」- 答案编号
      */
-    public IDQanswer setAnswerId(String value);
+    public IDQanswer setCode(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.ANSWER_ID</code>. 「answerId」- 考卷ID
+     * Getter for <code>ZDB.D_QANSWER.CODE</code>. 「code」- 答案编号
      */
-    public String getAnswerId();
+    public String getCode();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.PAPER_ID</code>. 「paperId」- 规则所属考卷ID
+     * Setter for <code>ZDB.D_QANSWER.NAME</code>. 「name」- 答案内容
      */
-    public IDQanswer setPaperId(String value);
+    public IDQanswer setName(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.PAPER_ID</code>. 「paperId」- 规则所属考卷ID
+     * Getter for <code>ZDB.D_QANSWER.NAME</code>. 「name」- 答案内容
      */
-    public String getPaperId();
+    public String getName();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.TYPE</code>. 「type」- 规则类型
+     * Setter for <code>ZDB.D_QANSWER.BRIEF</code>. 「brief」- 答案详细描述
      */
-    public IDQanswer setType(String value);
+    public IDQanswer setBrief(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.TYPE</code>. 「type」- 规则类型
+     * Getter for <code>ZDB.D_QANSWER.BRIEF</code>. 「brief」- 答案详细描述
      */
-    public String getType();
+    public String getBrief();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 问题ID
+     * Setter for <code>ZDB.D_QANSWER.UI_CONFIG</code>. 「uiConfig」- 答案呈现模式
+     */
+    public IDQanswer setUiConfig(String value);
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.UI_CONFIG</code>. 「uiConfig」- 答案呈现模式
+     */
+    public String getUiConfig();
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 所属问题
      */
     public IDQanswer setQuestionId(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 问题ID
+     * Getter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 所属问题
      */
     public String getQuestionId();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_REQUIRED</code>. 「isRequired」- 必答题
+     * Setter for <code>ZDB.D_QANSWER.SIGMA</code>. 「sigma」- 统一标识
      */
-    public IDQanswer setIsRequired(Boolean value);
+    public IDQanswer setSigma(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_REQUIRED</code>. 「isRequired」- 必答题
+     * Getter for <code>ZDB.D_QANSWER.SIGMA</code>. 「sigma」- 统一标识
      */
-    public Boolean getIsRequired();
+    public String getSigma();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_ATTACHED</code>. 「isAttached」- 附件必须
+     * Setter for <code>ZDB.D_QANSWER.LANGUAGE</code>. 「language」- 使用的语言
      */
-    public IDQanswer setIsAttached(Boolean value);
+    public IDQanswer setLanguage(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_ATTACHED</code>. 「isAttached」- 附件必须
+     * Getter for <code>ZDB.D_QANSWER.LANGUAGE</code>. 「language」- 使用的语言
      */
-    public Boolean getIsAttached();
+    public String getLanguage();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_PROOF</code>. 「isProof」- 证据必须
+     * Setter for <code>ZDB.D_QANSWER.ACTIVE</code>. 「active」- 是否启用
      */
-    public IDQanswer setIsProof(Boolean value);
+    public IDQanswer setActive(Boolean value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_PROOF</code>. 「isProof」- 证据必须
+     * Getter for <code>ZDB.D_QANSWER.ACTIVE</code>. 「active」- 是否启用
      */
-    public Boolean getIsProof();
+    public Boolean getActive();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_SET</code>. 「ruleSet」- 规则分批执行
+     * Setter for <code>ZDB.D_QANSWER.METADATA</code>. 「metadata」- 附加配置数据
      */
-    public IDQanswer setRuleSet(String value);
+    public IDQanswer setMetadata(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_SET</code>. 「ruleSet」- 规则分批执行
+     * Getter for <code>ZDB.D_QANSWER.METADATA</code>. 「metadata」- 附加配置数据
      */
-    public String getRuleSet();
+    public String getMetadata();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_CONFIG</code>. 「ruleConfig」- 规则相关配置
+     * Setter for <code>ZDB.D_QANSWER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
-    public IDQanswer setRuleConfig(String value);
+    public IDQanswer setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_CONFIG</code>. 「ruleConfig」- 规则相关配置
+     * Getter for <code>ZDB.D_QANSWER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
-    public String getRuleConfig();
+    public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_COMPONENT</code>. 「ruleComponent」-
-     * 规则执行组件（扩展用）
+     * Setter for <code>ZDB.D_QANSWER.CREATED_BY</code>. 「createdBy」- 创建人
      */
-    public IDQanswer setRuleComponent(String value);
+    public IDQanswer setCreatedBy(String value);
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_COMPONENT</code>. 「ruleComponent」-
-     * 规则执行组件（扩展用）
+     * Getter for <code>ZDB.D_QANSWER.CREATED_BY</code>. 「createdBy」- 创建人
      */
-    public String getRuleComponent();
+    public String getCreatedBy();
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     */
+    public IDQanswer setUpdatedAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     */
+    public LocalDateTime getUpdatedAt();
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     */
+    public IDQanswer setUpdatedBy(String value);
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     */
+    public String getUpdatedBy();
 
     // -------------------------------------------------------------------------
     // FROM and INTO
@@ -148,17 +175,20 @@ public interface IDQanswer extends VertxPojo, Serializable {
 
         @Override
         public default IDQanswer fromJson(io.vertx.core.json.JsonObject json) {
-                setOrThrow(this::setRefId,json::getString,"REF_ID","java.lang.String");
-                setOrThrow(this::setAnswerId,json::getString,"ANSWER_ID","java.lang.String");
-                setOrThrow(this::setPaperId,json::getString,"PAPER_ID","java.lang.String");
-                setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
+                setOrThrow(this::setKey,json::getString,"KEY","java.lang.String");
+                setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
+                setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
+                setOrThrow(this::setBrief,json::getString,"BRIEF","java.lang.String");
+                setOrThrow(this::setUiConfig,json::getString,"UI_CONFIG","java.lang.String");
                 setOrThrow(this::setQuestionId,json::getString,"QUESTION_ID","java.lang.String");
-                setOrThrow(this::setIsRequired,json::getBoolean,"IS_REQUIRED","java.lang.Boolean");
-                setOrThrow(this::setIsAttached,json::getBoolean,"IS_ATTACHED","java.lang.Boolean");
-                setOrThrow(this::setIsProof,json::getBoolean,"IS_PROOF","java.lang.Boolean");
-                setOrThrow(this::setRuleSet,json::getString,"RULE_SET","java.lang.String");
-                setOrThrow(this::setRuleConfig,json::getString,"RULE_CONFIG","java.lang.String");
-                setOrThrow(this::setRuleComponent,json::getString,"RULE_COMPONENT","java.lang.String");
+                setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
+                setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
+                setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
+                setOrThrow(this::setMetadata,json::getString,"METADATA","java.lang.String");
+                setOrThrow(this::setCreatedAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"CREATED_AT","java.time.LocalDateTime");
+                setOrThrow(this::setCreatedBy,json::getString,"CREATED_BY","java.lang.String");
+                setOrThrow(this::setUpdatedAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"UPDATED_AT","java.time.LocalDateTime");
+                setOrThrow(this::setUpdatedBy,json::getString,"UPDATED_BY","java.lang.String");
                 return this;
         }
 
@@ -166,17 +196,20 @@ public interface IDQanswer extends VertxPojo, Serializable {
         @Override
         public default io.vertx.core.json.JsonObject toJson() {
                 io.vertx.core.json.JsonObject json = new io.vertx.core.json.JsonObject();
-                json.put("REF_ID",getRefId());
-                json.put("ANSWER_ID",getAnswerId());
-                json.put("PAPER_ID",getPaperId());
-                json.put("TYPE",getType());
+                json.put("KEY",getKey());
+                json.put("CODE",getCode());
+                json.put("NAME",getName());
+                json.put("BRIEF",getBrief());
+                json.put("UI_CONFIG",getUiConfig());
                 json.put("QUESTION_ID",getQuestionId());
-                json.put("IS_REQUIRED",getIsRequired());
-                json.put("IS_ATTACHED",getIsAttached());
-                json.put("IS_PROOF",getIsProof());
-                json.put("RULE_SET",getRuleSet());
-                json.put("RULE_CONFIG",getRuleConfig());
-                json.put("RULE_COMPONENT",getRuleComponent());
+                json.put("SIGMA",getSigma());
+                json.put("LANGUAGE",getLanguage());
+                json.put("ACTIVE",getActive());
+                json.put("METADATA",getMetadata());
+                json.put("CREATED_AT",getCreatedAt()==null?null:getCreatedAt().toString());
+                json.put("CREATED_BY",getCreatedBy());
+                json.put("UPDATED_AT",getUpdatedAt()==null?null:getUpdatedAt().toString());
+                json.put("UPDATED_BY",getUpdatedBy());
                 return json;
         }
 

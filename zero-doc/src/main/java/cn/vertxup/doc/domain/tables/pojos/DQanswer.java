@@ -8,6 +8,8 @@ import cn.vertxup.doc.domain.tables.interfaces.IDQanswer;
 
 import io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo;
 
+import java.time.LocalDateTime;
+
 
 import static io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo.*;
 /**
@@ -18,58 +20,70 @@ public class DQanswer implements VertxPojo, IDQanswer {
 
     private static final long serialVersionUID = 1L;
 
-    private String refId;
-    private String answerId;
-    private String paperId;
-    private String type;
+    private String key;
+    private String code;
+    private String name;
+    private String brief;
+    private String uiConfig;
     private String questionId;
-    private Boolean isRequired;
-    private Boolean isAttached;
-    private Boolean isProof;
-    private String ruleSet;
-    private String ruleConfig;
-    private String ruleComponent;
+    private String sigma;
+    private String language;
+    private Boolean active;
+    private String metadata;
+    private LocalDateTime createdAt;
+    private String createdBy;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
     public DQanswer() {}
 
     public DQanswer(IDQanswer value) {
-        this.refId = value.getRefId();
-        this.answerId = value.getAnswerId();
-        this.paperId = value.getPaperId();
-        this.type = value.getType();
+        this.key = value.getKey();
+        this.code = value.getCode();
+        this.name = value.getName();
+        this.brief = value.getBrief();
+        this.uiConfig = value.getUiConfig();
         this.questionId = value.getQuestionId();
-        this.isRequired = value.getIsRequired();
-        this.isAttached = value.getIsAttached();
-        this.isProof = value.getIsProof();
-        this.ruleSet = value.getRuleSet();
-        this.ruleConfig = value.getRuleConfig();
-        this.ruleComponent = value.getRuleComponent();
+        this.sigma = value.getSigma();
+        this.language = value.getLanguage();
+        this.active = value.getActive();
+        this.metadata = value.getMetadata();
+        this.createdAt = value.getCreatedAt();
+        this.createdBy = value.getCreatedBy();
+        this.updatedAt = value.getUpdatedAt();
+        this.updatedBy = value.getUpdatedBy();
     }
 
     public DQanswer(
-        String refId,
-        String answerId,
-        String paperId,
-        String type,
+        String key,
+        String code,
+        String name,
+        String brief,
+        String uiConfig,
         String questionId,
-        Boolean isRequired,
-        Boolean isAttached,
-        Boolean isProof,
-        String ruleSet,
-        String ruleConfig,
-        String ruleComponent
+        String sigma,
+        String language,
+        Boolean active,
+        String metadata,
+        LocalDateTime createdAt,
+        String createdBy,
+        LocalDateTime updatedAt,
+        String updatedBy
     ) {
-        this.refId = refId;
-        this.answerId = answerId;
-        this.paperId = paperId;
-        this.type = type;
+        this.key = key;
+        this.code = code;
+        this.name = name;
+        this.brief = brief;
+        this.uiConfig = uiConfig;
         this.questionId = questionId;
-        this.isRequired = isRequired;
-        this.isAttached = isAttached;
-        this.isProof = isProof;
-        this.ruleSet = ruleSet;
-        this.ruleConfig = ruleConfig;
-        this.ruleComponent = ruleComponent;
+        this.sigma = sigma;
+        this.language = language;
+        this.active = active;
+        this.metadata = metadata;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+        this.updatedAt = updatedAt;
+        this.updatedBy = updatedBy;
     }
 
         public DQanswer(io.vertx.core.json.JsonObject json) {
@@ -78,77 +92,92 @@ public class DQanswer implements VertxPojo, IDQanswer {
         }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.REF_ID</code>. 「refId」- 关联考卷中问题实例，对应
-     * D_PAPER_REF 表中内容
+     * Getter for <code>ZDB.D_QANSWER.KEY</code>. 「key」- 答题主键
      */
     @Override
-    public String getRefId() {
-        return this.refId;
+    public String getKey() {
+        return this.key;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.REF_ID</code>. 「refId」- 关联考卷中问题实例，对应
-     * D_PAPER_REF 表中内容
+     * Setter for <code>ZDB.D_QANSWER.KEY</code>. 「key」- 答题主键
      */
     @Override
-    public DQanswer setRefId(String refId) {
-        this.refId = refId;
+    public DQanswer setKey(String key) {
+        this.key = key;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.ANSWER_ID</code>. 「answerId」- 考卷ID
+     * Getter for <code>ZDB.D_QANSWER.CODE</code>. 「code」- 答案编号
      */
     @Override
-    public String getAnswerId() {
-        return this.answerId;
+    public String getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.ANSWER_ID</code>. 「answerId」- 考卷ID
+     * Setter for <code>ZDB.D_QANSWER.CODE</code>. 「code」- 答案编号
      */
     @Override
-    public DQanswer setAnswerId(String answerId) {
-        this.answerId = answerId;
+    public DQanswer setCode(String code) {
+        this.code = code;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.PAPER_ID</code>. 「paperId」- 规则所属考卷ID
+     * Getter for <code>ZDB.D_QANSWER.NAME</code>. 「name」- 答案内容
      */
     @Override
-    public String getPaperId() {
-        return this.paperId;
+    public String getName() {
+        return this.name;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.PAPER_ID</code>. 「paperId」- 规则所属考卷ID
+     * Setter for <code>ZDB.D_QANSWER.NAME</code>. 「name」- 答案内容
      */
     @Override
-    public DQanswer setPaperId(String paperId) {
-        this.paperId = paperId;
+    public DQanswer setName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.TYPE</code>. 「type」- 规则类型
+     * Getter for <code>ZDB.D_QANSWER.BRIEF</code>. 「brief」- 答案详细描述
      */
     @Override
-    public String getType() {
-        return this.type;
+    public String getBrief() {
+        return this.brief;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.TYPE</code>. 「type」- 规则类型
+     * Setter for <code>ZDB.D_QANSWER.BRIEF</code>. 「brief」- 答案详细描述
      */
     @Override
-    public DQanswer setType(String type) {
-        this.type = type;
+    public DQanswer setBrief(String brief) {
+        this.brief = brief;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 问题ID
+     * Getter for <code>ZDB.D_QANSWER.UI_CONFIG</code>. 「uiConfig」- 答案呈现模式
+     */
+    @Override
+    public String getUiConfig() {
+        return this.uiConfig;
+    }
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.UI_CONFIG</code>. 「uiConfig」- 答案呈现模式
+     */
+    @Override
+    public DQanswer setUiConfig(String uiConfig) {
+        this.uiConfig = uiConfig;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 所属问题
      */
     @Override
     public String getQuestionId() {
@@ -156,7 +185,7 @@ public class DQanswer implements VertxPojo, IDQanswer {
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 问题ID
+     * Setter for <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 所属问题
      */
     @Override
     public DQanswer setQuestionId(String questionId) {
@@ -165,106 +194,138 @@ public class DQanswer implements VertxPojo, IDQanswer {
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_REQUIRED</code>. 「isRequired」- 必答题
+     * Getter for <code>ZDB.D_QANSWER.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
-    public Boolean getIsRequired() {
-        return this.isRequired;
+    public String getSigma() {
+        return this.sigma;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_REQUIRED</code>. 「isRequired」- 必答题
+     * Setter for <code>ZDB.D_QANSWER.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
-    public DQanswer setIsRequired(Boolean isRequired) {
-        this.isRequired = isRequired;
+    public DQanswer setSigma(String sigma) {
+        this.sigma = sigma;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_ATTACHED</code>. 「isAttached」- 附件必须
+     * Getter for <code>ZDB.D_QANSWER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
-    public Boolean getIsAttached() {
-        return this.isAttached;
+    public String getLanguage() {
+        return this.language;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_ATTACHED</code>. 「isAttached」- 附件必须
+     * Setter for <code>ZDB.D_QANSWER.LANGUAGE</code>. 「language」- 使用的语言
      */
     @Override
-    public DQanswer setIsAttached(Boolean isAttached) {
-        this.isAttached = isAttached;
+    public DQanswer setLanguage(String language) {
+        this.language = language;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.IS_PROOF</code>. 「isProof」- 证据必须
+     * Getter for <code>ZDB.D_QANSWER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
-    public Boolean getIsProof() {
-        return this.isProof;
+    public Boolean getActive() {
+        return this.active;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.IS_PROOF</code>. 「isProof」- 证据必须
+     * Setter for <code>ZDB.D_QANSWER.ACTIVE</code>. 「active」- 是否启用
      */
     @Override
-    public DQanswer setIsProof(Boolean isProof) {
-        this.isProof = isProof;
+    public DQanswer setActive(Boolean active) {
+        this.active = active;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_SET</code>. 「ruleSet」- 规则分批执行
+     * Getter for <code>ZDB.D_QANSWER.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
-    public String getRuleSet() {
-        return this.ruleSet;
+    public String getMetadata() {
+        return this.metadata;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_SET</code>. 「ruleSet」- 规则分批执行
+     * Setter for <code>ZDB.D_QANSWER.METADATA</code>. 「metadata」- 附加配置数据
      */
     @Override
-    public DQanswer setRuleSet(String ruleSet) {
-        this.ruleSet = ruleSet;
+    public DQanswer setMetadata(String metadata) {
+        this.metadata = metadata;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_CONFIG</code>. 「ruleConfig」- 规则相关配置
+     * Getter for <code>ZDB.D_QANSWER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
-    public String getRuleConfig() {
-        return this.ruleConfig;
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_CONFIG</code>. 「ruleConfig」- 规则相关配置
+     * Setter for <code>ZDB.D_QANSWER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
     @Override
-    public DQanswer setRuleConfig(String ruleConfig) {
-        this.ruleConfig = ruleConfig;
+    public DQanswer setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.D_QANSWER.RULE_COMPONENT</code>. 「ruleComponent」-
-     * 规则执行组件（扩展用）
+     * Getter for <code>ZDB.D_QANSWER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
-    public String getRuleComponent() {
-        return this.ruleComponent;
+    public String getCreatedBy() {
+        return this.createdBy;
     }
 
     /**
-     * Setter for <code>ZDB.D_QANSWER.RULE_COMPONENT</code>. 「ruleComponent」-
-     * 规则执行组件（扩展用）
+     * Setter for <code>ZDB.D_QANSWER.CREATED_BY</code>. 「createdBy」- 创建人
      */
     @Override
-    public DQanswer setRuleComponent(String ruleComponent) {
-        this.ruleComponent = ruleComponent;
+    public DQanswer setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     */
+    @Override
+    public LocalDateTime getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     */
+    @Override
+    public DQanswer setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.D_QANSWER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     */
+    @Override
+    public String getUpdatedBy() {
+        return this.updatedBy;
+    }
+
+    /**
+     * Setter for <code>ZDB.D_QANSWER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     */
+    @Override
+    public DQanswer setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
         return this;
     }
 
@@ -277,29 +338,35 @@ public class DQanswer implements VertxPojo, IDQanswer {
         if (getClass() != obj.getClass())
             return false;
         final DQanswer other = (DQanswer) obj;
-        if (this.refId == null) {
-            if (other.refId != null)
+        if (this.key == null) {
+            if (other.key != null)
                 return false;
         }
-        else if (!this.refId.equals(other.refId))
+        else if (!this.key.equals(other.key))
             return false;
-        if (this.answerId == null) {
-            if (other.answerId != null)
+        if (this.code == null) {
+            if (other.code != null)
                 return false;
         }
-        else if (!this.answerId.equals(other.answerId))
+        else if (!this.code.equals(other.code))
             return false;
-        if (this.paperId == null) {
-            if (other.paperId != null)
+        if (this.name == null) {
+            if (other.name != null)
                 return false;
         }
-        else if (!this.paperId.equals(other.paperId))
+        else if (!this.name.equals(other.name))
             return false;
-        if (this.type == null) {
-            if (other.type != null)
+        if (this.brief == null) {
+            if (other.brief != null)
                 return false;
         }
-        else if (!this.type.equals(other.type))
+        else if (!this.brief.equals(other.brief))
+            return false;
+        if (this.uiConfig == null) {
+            if (other.uiConfig != null)
+                return false;
+        }
+        else if (!this.uiConfig.equals(other.uiConfig))
             return false;
         if (this.questionId == null) {
             if (other.questionId != null)
@@ -307,41 +374,53 @@ public class DQanswer implements VertxPojo, IDQanswer {
         }
         else if (!this.questionId.equals(other.questionId))
             return false;
-        if (this.isRequired == null) {
-            if (other.isRequired != null)
+        if (this.sigma == null) {
+            if (other.sigma != null)
                 return false;
         }
-        else if (!this.isRequired.equals(other.isRequired))
+        else if (!this.sigma.equals(other.sigma))
             return false;
-        if (this.isAttached == null) {
-            if (other.isAttached != null)
+        if (this.language == null) {
+            if (other.language != null)
                 return false;
         }
-        else if (!this.isAttached.equals(other.isAttached))
+        else if (!this.language.equals(other.language))
             return false;
-        if (this.isProof == null) {
-            if (other.isProof != null)
+        if (this.active == null) {
+            if (other.active != null)
                 return false;
         }
-        else if (!this.isProof.equals(other.isProof))
+        else if (!this.active.equals(other.active))
             return false;
-        if (this.ruleSet == null) {
-            if (other.ruleSet != null)
+        if (this.metadata == null) {
+            if (other.metadata != null)
                 return false;
         }
-        else if (!this.ruleSet.equals(other.ruleSet))
+        else if (!this.metadata.equals(other.metadata))
             return false;
-        if (this.ruleConfig == null) {
-            if (other.ruleConfig != null)
+        if (this.createdAt == null) {
+            if (other.createdAt != null)
                 return false;
         }
-        else if (!this.ruleConfig.equals(other.ruleConfig))
+        else if (!this.createdAt.equals(other.createdAt))
             return false;
-        if (this.ruleComponent == null) {
-            if (other.ruleComponent != null)
+        if (this.createdBy == null) {
+            if (other.createdBy != null)
                 return false;
         }
-        else if (!this.ruleComponent.equals(other.ruleComponent))
+        else if (!this.createdBy.equals(other.createdBy))
+            return false;
+        if (this.updatedAt == null) {
+            if (other.updatedAt != null)
+                return false;
+        }
+        else if (!this.updatedAt.equals(other.updatedAt))
+            return false;
+        if (this.updatedBy == null) {
+            if (other.updatedBy != null)
+                return false;
+        }
+        else if (!this.updatedBy.equals(other.updatedBy))
             return false;
         return true;
     }
@@ -350,17 +429,20 @@ public class DQanswer implements VertxPojo, IDQanswer {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((this.refId == null) ? 0 : this.refId.hashCode());
-        result = prime * result + ((this.answerId == null) ? 0 : this.answerId.hashCode());
-        result = prime * result + ((this.paperId == null) ? 0 : this.paperId.hashCode());
-        result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+        result = prime * result + ((this.key == null) ? 0 : this.key.hashCode());
+        result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
+        result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+        result = prime * result + ((this.brief == null) ? 0 : this.brief.hashCode());
+        result = prime * result + ((this.uiConfig == null) ? 0 : this.uiConfig.hashCode());
         result = prime * result + ((this.questionId == null) ? 0 : this.questionId.hashCode());
-        result = prime * result + ((this.isRequired == null) ? 0 : this.isRequired.hashCode());
-        result = prime * result + ((this.isAttached == null) ? 0 : this.isAttached.hashCode());
-        result = prime * result + ((this.isProof == null) ? 0 : this.isProof.hashCode());
-        result = prime * result + ((this.ruleSet == null) ? 0 : this.ruleSet.hashCode());
-        result = prime * result + ((this.ruleConfig == null) ? 0 : this.ruleConfig.hashCode());
-        result = prime * result + ((this.ruleComponent == null) ? 0 : this.ruleComponent.hashCode());
+        result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
+        result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
+        result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
+        result = prime * result + ((this.metadata == null) ? 0 : this.metadata.hashCode());
+        result = prime * result + ((this.createdAt == null) ? 0 : this.createdAt.hashCode());
+        result = prime * result + ((this.createdBy == null) ? 0 : this.createdBy.hashCode());
+        result = prime * result + ((this.updatedAt == null) ? 0 : this.updatedAt.hashCode());
+        result = prime * result + ((this.updatedBy == null) ? 0 : this.updatedBy.hashCode());
         return result;
     }
 
@@ -368,17 +450,20 @@ public class DQanswer implements VertxPojo, IDQanswer {
     public String toString() {
         StringBuilder sb = new StringBuilder("DQanswer (");
 
-        sb.append(refId);
-        sb.append(", ").append(answerId);
-        sb.append(", ").append(paperId);
-        sb.append(", ").append(type);
+        sb.append(key);
+        sb.append(", ").append(code);
+        sb.append(", ").append(name);
+        sb.append(", ").append(brief);
+        sb.append(", ").append(uiConfig);
         sb.append(", ").append(questionId);
-        sb.append(", ").append(isRequired);
-        sb.append(", ").append(isAttached);
-        sb.append(", ").append(isProof);
-        sb.append(", ").append(ruleSet);
-        sb.append(", ").append(ruleConfig);
-        sb.append(", ").append(ruleComponent);
+        sb.append(", ").append(sigma);
+        sb.append(", ").append(language);
+        sb.append(", ").append(active);
+        sb.append(", ").append(metadata);
+        sb.append(", ").append(createdAt);
+        sb.append(", ").append(createdBy);
+        sb.append(", ").append(updatedAt);
+        sb.append(", ").append(updatedBy);
 
         sb.append(")");
         return sb.toString();
@@ -390,17 +475,20 @@ public class DQanswer implements VertxPojo, IDQanswer {
 
     @Override
     public void from(IDQanswer from) {
-        setRefId(from.getRefId());
-        setAnswerId(from.getAnswerId());
-        setPaperId(from.getPaperId());
-        setType(from.getType());
+        setKey(from.getKey());
+        setCode(from.getCode());
+        setName(from.getName());
+        setBrief(from.getBrief());
+        setUiConfig(from.getUiConfig());
         setQuestionId(from.getQuestionId());
-        setIsRequired(from.getIsRequired());
-        setIsAttached(from.getIsAttached());
-        setIsProof(from.getIsProof());
-        setRuleSet(from.getRuleSet());
-        setRuleConfig(from.getRuleConfig());
-        setRuleComponent(from.getRuleComponent());
+        setSigma(from.getSigma());
+        setLanguage(from.getLanguage());
+        setActive(from.getActive());
+        setMetadata(from.getMetadata());
+        setCreatedAt(from.getCreatedAt());
+        setCreatedBy(from.getCreatedBy());
+        setUpdatedAt(from.getUpdatedAt());
+        setUpdatedBy(from.getUpdatedBy());
     }
 
     @Override

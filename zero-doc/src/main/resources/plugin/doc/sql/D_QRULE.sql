@@ -5,8 +5,8 @@
 /*
  答案和题目相关的逻辑规则定义，针对每个试卷关联会存在一份，此处不和答案ID相关，而是和某个答题结果相关
  */
-DROP TABLE IF EXISTS D_QANSWER;
-CREATE TABLE IF NOT EXISTS D_QANSWER
+DROP TABLE IF EXISTS D_QRULE;
+CREATE TABLE IF NOT EXISTS D_QRULE
 (
     /*
      基础方向规则

@@ -12,6 +12,7 @@ import cn.vertxup.doc.domain.tables.DExam;
 import cn.vertxup.doc.domain.tables.DPaper;
 import cn.vertxup.doc.domain.tables.DPaperRef;
 import cn.vertxup.doc.domain.tables.DQanswer;
+import cn.vertxup.doc.domain.tables.DQrule;
 import cn.vertxup.doc.domain.tables.DQstore;
 import cn.vertxup.doc.domain.tables.DQuestion;
 import cn.vertxup.doc.domain.tables.DRefer;
@@ -65,6 +66,11 @@ public class Tables {
      * The table <code>ZDB.D_QANSWER</code>.
      */
     public static final DQanswer D_QANSWER = DQanswer.D_QANSWER;
+
+    /**
+     * The table <code>ZDB.D_QRULE</code>.
+     */
+    public static final DQrule D_QRULE = DQrule.D_QRULE;
 
     /**
      * The table <code>ZDB.D_QSTORE</code>.

@@ -8,15 +8,18 @@ import cn.vertxup.doc.domain.Keys;
 import cn.vertxup.doc.domain.Zdb;
 import cn.vertxup.doc.domain.tables.records.DQanswerRecord;
 
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function11;
+import org.jooq.Function14;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row11;
+import org.jooq.Row14;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -50,61 +53,74 @@ public class DQanswer extends TableImpl<DQanswerRecord> {
     }
 
     /**
-     * The column <code>ZDB.D_QANSWER.REF_ID</code>. 「refId」- 关联考卷中问题实例，对应
-     * D_PAPER_REF 表中内容
+     * The column <code>ZDB.D_QANSWER.KEY</code>. 「key」- 答题主键
      */
-    public final TableField<DQanswerRecord, String> REF_ID = createField(DSL.name("REF_ID"), SQLDataType.VARCHAR(36).nullable(false), this, "「refId」- 关联考卷中问题实例，对应 D_PAPER_REF 表中内容");
+    public final TableField<DQanswerRecord, String> KEY = createField(DSL.name("KEY"), SQLDataType.VARCHAR(36).nullable(false), this, "「key」- 答题主键");
 
     /**
-     * The column <code>ZDB.D_QANSWER.ANSWER_ID</code>. 「answerId」- 考卷ID
+     * The column <code>ZDB.D_QANSWER.CODE</code>. 「code」- 答案编号
      */
-    public final TableField<DQanswerRecord, String> ANSWER_ID = createField(DSL.name("ANSWER_ID"), SQLDataType.VARCHAR(36), this, "「answerId」- 考卷ID");
+    public final TableField<DQanswerRecord, String> CODE = createField(DSL.name("CODE"), SQLDataType.VARCHAR(255), this, "「code」- 答案编号");
 
     /**
-     * The column <code>ZDB.D_QANSWER.PAPER_ID</code>. 「paperId」- 规则所属考卷ID
+     * The column <code>ZDB.D_QANSWER.NAME</code>. 「name」- 答案内容
      */
-    public final TableField<DQanswerRecord, String> PAPER_ID = createField(DSL.name("PAPER_ID"), SQLDataType.VARCHAR(36), this, "「paperId」- 规则所属考卷ID");
+    public final TableField<DQanswerRecord, String> NAME = createField(DSL.name("NAME"), SQLDataType.VARCHAR(255), this, "「name」- 答案内容");
 
     /**
-     * The column <code>ZDB.D_QANSWER.TYPE</code>. 「type」- 规则类型
+     * The column <code>ZDB.D_QANSWER.BRIEF</code>. 「brief」- 答案详细描述
      */
-    public final TableField<DQanswerRecord, String> TYPE = createField(DSL.name("TYPE"), SQLDataType.VARCHAR(128).nullable(false), this, "「type」- 规则类型");
+    public final TableField<DQanswerRecord, String> BRIEF = createField(DSL.name("BRIEF"), SQLDataType.CLOB, this, "「brief」- 答案详细描述");
 
     /**
-     * The column <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 问题ID
+     * The column <code>ZDB.D_QANSWER.UI_CONFIG</code>. 「uiConfig」- 答案呈现模式
      */
-    public final TableField<DQanswerRecord, String> QUESTION_ID = createField(DSL.name("QUESTION_ID"), SQLDataType.VARCHAR(36), this, "「questionId」- 问题ID");
+    public final TableField<DQanswerRecord, String> UI_CONFIG = createField(DSL.name("UI_CONFIG"), SQLDataType.CLOB, this, "「uiConfig」- 答案呈现模式");
 
     /**
-     * The column <code>ZDB.D_QANSWER.IS_REQUIRED</code>. 「isRequired」- 必答题
+     * The column <code>ZDB.D_QANSWER.QUESTION_ID</code>. 「questionId」- 所属问题
      */
-    public final TableField<DQanswerRecord, Boolean> IS_REQUIRED = createField(DSL.name("IS_REQUIRED"), SQLDataType.BIT, this, "「isRequired」- 必答题");
+    public final TableField<DQanswerRecord, String> QUESTION_ID = createField(DSL.name("QUESTION_ID"), SQLDataType.VARCHAR(36), this, "「questionId」- 所属问题");
 
     /**
-     * The column <code>ZDB.D_QANSWER.IS_ATTACHED</code>. 「isAttached」- 附件必须
+     * The column <code>ZDB.D_QANSWER.SIGMA</code>. 「sigma」- 统一标识
      */
-    public final TableField<DQanswerRecord, Boolean> IS_ATTACHED = createField(DSL.name("IS_ATTACHED"), SQLDataType.BIT, this, "「isAttached」- 附件必须");
+    public final TableField<DQanswerRecord, String> SIGMA = createField(DSL.name("SIGMA"), SQLDataType.VARCHAR(32), this, "「sigma」- 统一标识");
 
     /**
-     * The column <code>ZDB.D_QANSWER.IS_PROOF</code>. 「isProof」- 证据必须
+     * The column <code>ZDB.D_QANSWER.LANGUAGE</code>. 「language」- 使用的语言
      */
-    public final TableField<DQanswerRecord, Boolean> IS_PROOF = createField(DSL.name("IS_PROOF"), SQLDataType.BIT, this, "「isProof」- 证据必须");
+    public final TableField<DQanswerRecord, String> LANGUAGE = createField(DSL.name("LANGUAGE"), SQLDataType.VARCHAR(10), this, "「language」- 使用的语言");
 
     /**
-     * The column <code>ZDB.D_QANSWER.RULE_SET</code>. 「ruleSet」- 规则分批执行
+     * The column <code>ZDB.D_QANSWER.ACTIVE</code>. 「active」- 是否启用
      */
-    public final TableField<DQanswerRecord, String> RULE_SET = createField(DSL.name("RULE_SET"), SQLDataType.VARCHAR(255).nullable(false), this, "「ruleSet」- 规则分批执行");
+    public final TableField<DQanswerRecord, Boolean> ACTIVE = createField(DSL.name("ACTIVE"), SQLDataType.BIT, this, "「active」- 是否启用");
 
     /**
-     * The column <code>ZDB.D_QANSWER.RULE_CONFIG</code>. 「ruleConfig」- 规则相关配置
+     * The column <code>ZDB.D_QANSWER.METADATA</code>. 「metadata」- 附加配置数据
      */
-    public final TableField<DQanswerRecord, String> RULE_CONFIG = createField(DSL.name("RULE_CONFIG"), SQLDataType.CLOB, this, "「ruleConfig」- 规则相关配置");
+    public final TableField<DQanswerRecord, String> METADATA = createField(DSL.name("METADATA"), SQLDataType.CLOB, this, "「metadata」- 附加配置数据");
 
     /**
-     * The column <code>ZDB.D_QANSWER.RULE_COMPONENT</code>. 「ruleComponent」-
-     * 规则执行组件（扩展用）
+     * The column <code>ZDB.D_QANSWER.CREATED_AT</code>. 「createdAt」- 创建时间
      */
-    public final TableField<DQanswerRecord, String> RULE_COMPONENT = createField(DSL.name("RULE_COMPONENT"), SQLDataType.VARCHAR(255), this, "「ruleComponent」- 规则执行组件（扩展用）");
+    public final TableField<DQanswerRecord, LocalDateTime> CREATED_AT = createField(DSL.name("CREATED_AT"), SQLDataType.LOCALDATETIME(0), this, "「createdAt」- 创建时间");
+
+    /**
+     * The column <code>ZDB.D_QANSWER.CREATED_BY</code>. 「createdBy」- 创建人
+     */
+    public final TableField<DQanswerRecord, String> CREATED_BY = createField(DSL.name("CREATED_BY"), SQLDataType.VARCHAR(36), this, "「createdBy」- 创建人");
+
+    /**
+     * The column <code>ZDB.D_QANSWER.UPDATED_AT</code>. 「updatedAt」- 更新时间
+     */
+    public final TableField<DQanswerRecord, LocalDateTime> UPDATED_AT = createField(DSL.name("UPDATED_AT"), SQLDataType.LOCALDATETIME(0), this, "「updatedAt」- 更新时间");
+
+    /**
+     * The column <code>ZDB.D_QANSWER.UPDATED_BY</code>. 「updatedBy」- 更新人
+     */
+    public final TableField<DQanswerRecord, String> UPDATED_BY = createField(DSL.name("UPDATED_BY"), SQLDataType.VARCHAR(36), this, "「updatedBy」- 更新人");
 
     private DQanswer(Name alias, Table<DQanswerRecord> aliased) {
         this(alias, aliased, null);
@@ -150,6 +166,11 @@ public class DQanswer extends TableImpl<DQanswerRecord> {
     }
 
     @Override
+    public List<UniqueKey<DQanswerRecord>> getUniqueKeys() {
+        return Arrays.asList(Keys.KEY_D_QANSWER_CODE, Keys.KEY_D_QANSWER_NAME);
+    }
+
+    @Override
     public DQanswer as(String alias) {
         return new DQanswer(DSL.name(alias), this);
     }
@@ -189,18 +210,18 @@ public class DQanswer extends TableImpl<DQanswerRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row11 type methods
+    // Row14 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row11<String, String, String, String, String, Boolean, Boolean, Boolean, String, String, String> fieldsRow() {
-        return (Row11) super.fieldsRow();
+    public Row14<String, String, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row14) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function11<? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super Boolean, ? super Boolean, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function14<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -208,7 +229,7 @@ public class DQanswer extends TableImpl<DQanswerRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function11<? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super Boolean, ? super Boolean, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function14<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }
