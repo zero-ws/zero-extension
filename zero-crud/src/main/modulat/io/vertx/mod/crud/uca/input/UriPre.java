@@ -4,6 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 
@@ -15,7 +16,8 @@ import java.util.Objects;
 class UriPre implements Pre {
     @Override
     public Future<JsonObject> inJAsync(final JsonObject data, final IxMod in) {
-        final User user = in.user();
+        final Envelop envelop = in.envelop();
+        final User user = envelop.user();
         /* Null user */
         if (Objects.isNull(user)) {
             return Ux.future(data);

@@ -7,7 +7,6 @@ import io.modello.eon.em.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.auth.User;
 import io.vertx.mod.crud.error._404ModuleMissingException;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
@@ -16,6 +15,7 @@ import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
+import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
@@ -74,10 +74,6 @@ public class IxMod {
 
     public Envelop envelop() {
         return this.envelop;
-    }
-
-    public User user() {
-        return this.envelop.user();
     }
 
     public JsonObject parameters() {
@@ -145,22 +141,25 @@ public class IxMod {
             return null;
         }
         KPoint target = null;
-        if (input instanceof String) {
+        if (input instanceof final String inputS) {
             /*
              * Connected by `module` parameters
              */
-            final String module = (String) input;
-            target = connect.point(module);
-        } else if (input instanceof JsonObject) {
+            final Hymn<String> hymn = Hymn.ofString(connect);
+            target = hymn.pointer(inputS); // connect.point(module);
+        } else if (input instanceof final JsonObject inputJ) {
             /*
              * Connected by `JsonObject` parameters
              */
-            target = connect.point((JsonObject) input);
-        } else if (input instanceof JsonArray) {
+
+            final Hymn<JsonObject> hymn = Hymn.ofJObject(connect);
+            target = hymn.pointer(inputJ); // connect.point((JsonObject) input);
+        } else if (input instanceof final JsonArray inputA) {
             /*
              * Connected by `JsonArray` parameters
              */
-            target = connect.point((JsonArray) input);
+            final Hymn<JsonArray> hymn = Hymn.ofJArray(connect);
+            target = hymn.pointer(inputA); // connect.point((JsonArray) input);
         }
         if (Objects.nonNull(target) && EmModel.Join.CRUD == target.modeTarget()) {
             final IxMod standBy = IxMod.create(target.getCrud()).bind(this.envelop);
@@ -223,7 +222,7 @@ public class IxMod {
      * kv put into final data
      */
     public JsonObject dataIn(final JsonObject input, final JsonObject active) {
-        final KPoint point = this.pointJoin();
+        final KPoint point = this.pointer();
         final KJoin connect = this.module.getConnect();
         /*
          * 1. Joined Key
@@ -245,7 +244,7 @@ public class IxMod {
      * 2) standBy data ( include `joinKey` )
      */
     public JsonObject dataOut(final JsonObject active, final JsonObject standBy) {
-        final KPoint point = this.pointJoin();
+        final KPoint point = this.pointer();
         final KJoin connect = this.module.getConnect();
         /*
          * 2. Mapping StandBy
@@ -298,7 +297,7 @@ public class IxMod {
         // Target Key
         String targetKey = null;
         if (this.canJoin()) {
-            final KPoint point = this.pointJoin();
+            final KPoint point = this.pointer();
             if (Objects.nonNull(point)) {
                 targetKey = point.getKeyJoin();
             }
@@ -312,7 +311,7 @@ public class IxMod {
      * It means that it's pure for Active Data Here.
      */
     public JsonObject dataIn(final JsonObject active) {
-        final KPoint point = this.pointJoin();
+        final KPoint point = this.pointer();
         final KJoin connect = this.module.getConnect();
         final JsonObject condJoin = new JsonObject();
         connect.dataIn(active, point, condJoin);
@@ -320,7 +319,7 @@ public class IxMod {
     }
 
     public JsonObject dataOut(final JsonObject active) {
-        final KPoint point = this.pointJoin();
+        final KPoint point = this.pointer();
         final KJoin connect = this.module.getConnect();
         final JsonObject condJoin = new JsonObject();
         connect.dataOut(active, point, condJoin);
@@ -328,7 +327,7 @@ public class IxMod {
     }
 
     public JsonObject dataCond(final JsonObject active) {
-        final KPoint point = this.pointJoin();
+        final KPoint point = this.pointer();
         final KJoin connect = this.module.getConnect();
         final JsonObject condJoin = new JsonObject();
         connect.dataCond(active, point, condJoin);
@@ -346,13 +345,19 @@ public class IxMod {
         return condition;
     }
 
-    public KPoint pointJoin() {
+    /**
+     * 内置存储了 {@link KModule} 两个模块引用，一个是当前模块，一个是被连接模块，完整情况如下：
+     *
+     * @return 返回连接点定义
+     */
+    public KPoint pointer() {
         if (this.canJoin()) {
             final KJoin join = this.module.getConnect();
             if (Objects.isNull(join)) {
                 return null;
             }
-            final KPoint point = join.point(this.connect.identifier());
+            final Hymn<String> hymn = Hymn.ofString(join);
+            final KPoint point = hymn.pointer(this.connect.identifier());
             LOG.Rest.info(this.getClass(), "Point = {0}, From = {1}, To = {2}",
                 point, this.module.identifier(), this.connect.identifier());
             return point;

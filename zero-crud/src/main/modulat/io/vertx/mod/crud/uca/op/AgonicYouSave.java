@@ -85,7 +85,7 @@ public class AgonicYouSave extends AgonicUnique {
         return jooq.fetchJAsync(condition).compose(queried -> {
 
             // KPoint to extract joinKey here
-            final KPoint point = this.module.pointJoin();
+            final KPoint point = this.module.pointer();
             if (Objects.isNull(point)) {
                 return Ux.future(input);
             }

@@ -13,6 +13,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
+import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.uca.jooq.UxJoin;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -130,7 +131,8 @@ class IxFn {
                     /*
                      * Json Object Processing
                      */
-                    final KPoint point = join.point(json);
+                    final Hymn<JsonObject> hymn = Hymn.ofJObject(join);
+                    final KPoint point = hymn.pointer(json); // join.point(json);
                     final KModule switched = IxPin.getActor(point.getCrud());
                     switchedJq = IxPin.jooq(switched, in.envelop());
 
@@ -151,7 +153,8 @@ class IxFn {
                         switchedJq = null;
                         point = null;
                     } else {
-                        point = join.point(json);
+                        final Hymn<JsonObject> hymn = Hymn.ofJObject(join);
+                        point = hymn.pointer(json); // join.point(json);
                         final KModule switched = IxPin.getActor(point.getCrud());
                         switchedJq = IxPin.jooq(switched, in.envelop());
                     }

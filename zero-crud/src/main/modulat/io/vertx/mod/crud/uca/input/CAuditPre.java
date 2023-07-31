@@ -8,6 +8,7 @@ import io.vertx.ext.auth.User;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.shape.KField;
+import io.vertx.up.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -26,7 +27,8 @@ class CAuditPre implements Pre {
 
     private void auditor(final JsonObject data, final IxMod in) {
         /* UserId */
-        final User user = in.user();
+        final Envelop envelop = in.envelop();
+        final User user = envelop.user();
         final KModule module = in.module();
         if (Objects.nonNull(user)) {
             final String userId = Ux.keyUser(user);
