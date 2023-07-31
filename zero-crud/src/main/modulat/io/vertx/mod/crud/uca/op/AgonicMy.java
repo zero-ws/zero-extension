@@ -54,7 +54,7 @@ class AgonicMy implements Agonic {
     }
 
     private Future<JsonObject> fetchResources(final JsonObject input, final UxJooq jooq, final IxMod in) {
-        final String key = in.cacheKey() + ":" + input.hashCode();
+        final String key = in.cached() + ":" + input.hashCode();
         return Rapid.<String, JsonObject>t(RapidKey.RESOURCE, Agonic.EXPIRED).cached(key,
             () -> Ux.channel(Seeker.class, JsonObject::new, seeker -> seeker.on(jooq).fetchImpact(input)));
     }

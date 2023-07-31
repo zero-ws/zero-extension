@@ -4,6 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
 
 /**
@@ -16,14 +17,16 @@ class NtJQr implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
 
     NtJQr(final IxMod in) {
         this.in = in;
-        this.record = Pooled.CC_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.keyPool());
+        this.record = Pooled.CC_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.cached());
         // Fn.po?lThread(Pooled.CO_MAP, () -> new NtJData(in), NtJData.class.getName() + in.keyPool());
     }
 
     @Override
     public Future<JsonObject> next(final JsonObject input, final JsonObject active) {
         if (this.in.canJoin()) {
-            final JsonObject params = this.in.dataCond(active);
+            final Conflate<JsonObject, JsonObject> conflate =
+                Conflate.ofQr(this.in.connect(), false);
+            final JsonObject params = conflate.treat(active, this.in.connectId());
             return Ux.future(params);
         } else {
             return Ux.future(active.copy());

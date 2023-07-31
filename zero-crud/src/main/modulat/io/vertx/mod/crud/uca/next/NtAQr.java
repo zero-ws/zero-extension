@@ -16,7 +16,7 @@ class NtAQr implements Co<JsonObject, JsonArray, JsonArray, JsonArray> {
 
     NtAQr(final IxMod in) {
         this.in = in;
-        this.record = Pooled.CC_CO.pick(() -> new NtAData(in), NtAData.class.getName() + in.keyPool());
+        this.record = Pooled.CC_CO.pick(() -> new NtAData(in), NtAData.class.getName() + in.cached());
         // Fn.po?lThread(Pooled.CO_MAP, () -> new NtAData(in), NtAData.class.getName() + in.keyPool());
     }
 

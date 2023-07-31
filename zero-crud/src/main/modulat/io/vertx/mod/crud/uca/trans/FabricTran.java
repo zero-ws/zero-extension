@@ -65,7 +65,7 @@ class FabricTran implements Tran {
                 /*
                  * Nested dictionary
                  */
-                final KModule connect = in.connect();
+                final KModule connect = in.connected();
                 final KTransform transformConnect = connect.getTransform();
                 /*
                  * Combine DiConsumer

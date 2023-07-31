@@ -5,6 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
 
 import static io.vertx.mod.crud.refine.Ix.LOG;
@@ -23,11 +24,10 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
     @Override
     public Future<JsonObject> next(final JsonObject input, final JsonObject active) {
         if (this.in.canJoin()) {
-            /*
-             * 1. Joined Key Processing
-             * 2. Mapping configuration
-             */
-            final JsonObject dataSt = this.in.dataIn(input, active);
+            final Conflate<JsonObject, JsonObject> conflate =
+                Conflate.ofJObject(this.in.connect(), false);
+
+            final JsonObject dataSt = conflate.treat(active, input, this.in.connectId());
             // Remove `key` of current
             final String key = this.in.module().getField().getKey();
             dataSt.remove(key);
@@ -47,18 +47,17 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
              * Major table contain value but the sub-table has no record
              */
             return Ux.future(active);
+        }
+        if (this.in.canJoin()) {
+            final Conflate<JsonObject, JsonObject> conflate =
+                Conflate.ofJObject(this.in.connect(), true);
+
+            final JsonObject dataSt = conflate.treat(active, standBy, this.in.connectId());
+            LOG.Web.info(this.getClass(), "Data Out: {0}", dataSt.encode());
+            return Ux.future(dataSt);
         } else {
-            if (this.in.canJoin()) {
-                /*
-                 * Result directly
-                 */
-                final JsonObject dataSt = this.in.dataOut(active, standBy);
-                LOG.Web.info(this.getClass(), "Data Out: {0}", dataSt.encode());
-                return Ux.future(dataSt);
-            } else {
-                // There is no joined module on current
-                return Ux.future(active.copy());
-            }
+            // There is no joined module on current
+            return Ux.future(active.copy());
         }
     }
 }

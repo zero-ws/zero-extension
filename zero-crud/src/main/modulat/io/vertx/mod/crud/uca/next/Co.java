@@ -34,17 +34,17 @@ public interface Co<I, A, S, O> {
 
     static Co nextQ(final IxMod in, final boolean isArray) {
         if (isArray) {
-            return Pooled.CC_CO.pick(() -> new NtAQr(in), NtAQr.class.getName() + in.keyPool());
+            return Pooled.CC_CO.pick(() -> new NtAQr(in), NtAQr.class.getName() + in.cached());
         } else {
-            return Pooled.CC_CO.pick(() -> new NtJQr(in), NtJQr.class.getName() + in.keyPool());
+            return Pooled.CC_CO.pick(() -> new NtJQr(in), NtJQr.class.getName() + in.cached());
         }
     }
 
     static Co nextJ(final IxMod in, final boolean isArray) {
         if (isArray) {
-            return Pooled.CC_CO.pick(() -> new NtAData(in), NtAData.class.getName() + in.keyPool());
+            return Pooled.CC_CO.pick(() -> new NtAData(in), NtAData.class.getName() + in.cached());
         } else {
-            return Pooled.CC_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.keyPool());
+            return Pooled.CC_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.cached());
         }
     }
 

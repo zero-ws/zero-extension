@@ -10,7 +10,10 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
+import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
+import io.vertx.up.uca.destine.Conflate;
+import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
@@ -31,7 +34,9 @@ public class AgonicYouSave extends AgonicUnique {
 
     @Override
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
-        final JsonObject condition = this.module.dataCond(input);
+        final Conflate<JsonObject, JsonObject> conflate =
+            Conflate.ofQr(this.module.connect(), false);
+        final JsonObject condition = conflate.treat(input, this.module.connectId());
         final KModule standBy = in.module();
         final UxJooq jooq = IxPin.jooq(in);
         return this.runUnique(condition, in,
@@ -78,14 +83,20 @@ public class AgonicYouSave extends AgonicUnique {
      */
     @Override
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
-        final JsonObject condition = this.module.dataCond(input);
+        final Conflate<JsonArray, JsonObject> conflate =
+            Conflate.ofQr(this.module.connect(), true);
+        final JsonObject condition = conflate.treat(input, this.module.connectId());
+
         LOG.Filter.info(this.getClass(), "( Batch ) By Joined: identifier: {0}, condition: {1}", in.module().identifier(), condition);
         final KModule standBy = in.module();
         final UxJooq jooq = IxPin.jooq(in);
         return jooq.fetchJAsync(condition).compose(queried -> {
-
-            // KPoint to extract joinKey here
-            final KPoint point = this.module.pointer();
+            final KJoin join = this.module.connect();
+            if (Objects.isNull(join)) {
+                return Ux.future(input);
+            }
+            final Hymn<String> hymn = Hymn.ofString(join);
+            final KPoint point = hymn.pointer(this.module.connectId());
             if (Objects.isNull(point)) {
                 return Ux.future(input);
             }

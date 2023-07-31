@@ -22,12 +22,12 @@ class AgonicSearch implements Agonic {
         if (in.canJoin()) {
             return Ix.searchFn(in).apply(input).compose(Fn.ofPage(KName.METADATA))
                 // Response Format
-                .compose(response -> Ux.future(Ix.serializeP(response, in.module(), in.connect())));
+                .compose(response -> Ux.future(Ix.serializeP(response, in.module(), in.connected())));
         } else {
             final UxJooq jooq = IxPin.jooq(in);
             return jooq.searchAsync(input).compose(Fn.ofPage(KName.METADATA))
                 // Response Format
-                .compose(response -> Ux.future(Ix.serializeP(response, in.module(), in.connect())));
+                .compose(response -> Ux.future(Ix.serializeP(response, in.module(), in.connected())));
         }
     }
 }

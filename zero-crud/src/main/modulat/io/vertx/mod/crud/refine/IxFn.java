@@ -13,6 +13,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
+import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.uca.jooq.UxJoin;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -60,7 +61,7 @@ class IxFn {
     static Function<JsonObject, Future<JsonArray>> fetchFn(final IxMod in) {
         return condition -> {
             // KModule
-            final KModule connect = in.connect();
+            final KModule connect = in.connected();
             if (Objects.isNull(connect)) {
                 // Direct
                 final UxJooq jooq = IxPin.jooq(in);
@@ -76,7 +77,7 @@ class IxFn {
     static Function<JsonObject, Future<JsonObject>> searchFn(final IxMod in) {
         return condition -> {
             // KModule
-            final KModule connect = in.connect();
+            final KModule connect = in.connected();
             if (Objects.isNull(connect)) {
                 // Direct
                 final UxJooq jooq = IxPin.jooq(in);
@@ -92,7 +93,7 @@ class IxFn {
     static Function<JsonObject, Future<Long>> countFn(final IxMod in) {
         return condition -> {
             // KModule
-            final KModule connect = in.connect();
+            final KModule connect = in.connected();
             if (Objects.isNull(connect)) {
                 // Direct
                 final UxJooq jooq = IxPin.jooq(in);
@@ -136,8 +137,10 @@ class IxFn {
                     final KModule switched = IxPin.getActor(point.getCrud());
                     switchedJq = IxPin.jooq(switched, in.envelop());
 
-                    /* Filters For Record */
-                    join.dataIn(json, point, filters);
+                    final Conflate<JsonObject, JsonObject> conflate = Conflate.ofQr(join, false);
+                    final JsonObject condition = conflate.treat(json, in.connectId());
+                    filters.mergeIn(condition, true);
+
                     if (Ut.isNil(switched.getPojo())) {
                         switchedJq.on(switched.getPojo());
                     }
@@ -159,10 +162,10 @@ class IxFn {
                         switchedJq = IxPin.jooq(switched, in.envelop());
                     }
                     if (Objects.nonNull(switchedJq)) {
+                        final Conflate<JsonObject, JsonObject> conflate = Conflate.ofQr(join, false);
                         /* Filters for Records */
                         Ut.itJArray(records).forEach(each -> {
-                            final JsonObject single = new JsonObject();
-                            join.dataIn(each, point, single);
+                            final JsonObject single = conflate.treat(each, in.connectId());
                             final String key = "$" + single.hashCode();
                             filters.put(key, single);
                         });

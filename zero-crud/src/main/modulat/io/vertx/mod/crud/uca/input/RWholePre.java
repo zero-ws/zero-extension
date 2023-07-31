@@ -27,7 +27,7 @@ class RWholePre implements Pre {
              */
             final KJoin join = in.module().getConnect();
             final String targetIndent = join.getTargetIndent();
-            final KModule connect = in.connect();
+            final KModule connect = in.connected();
             data.put(targetIndent, connect.identifier());
         }
         return Ux.future(data);

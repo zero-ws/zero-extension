@@ -30,7 +30,7 @@ class MapTran implements Tran {
             Ut.itJArray(data).forEach(each -> {
                 this.mapping(each, in.module());
                 if (in.canJoin()) {
-                    this.mapping(each, in.connect());
+                    this.mapping(each, in.connected());
                 }
             });
         }

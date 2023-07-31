@@ -116,7 +116,7 @@ class IxData {
         final JsonObject parameters = in.parameters();
         if (!parameters.containsKey(KName.MODULE)) {
             final KModule module = in.module();
-            final KModule connect = in.connect();
+            final KModule connect = in.connected();
             if (Objects.isNull(connect)) {
                 parameters.put(KName.MODULE, module.identifier());
             } else {
@@ -139,7 +139,7 @@ class IxData {
         final KModule module = active.module();
         final List<HMetaField> fieldList = new ArrayList<>();
 
-        final KModule connect = active.connect();
+        final KModule connect = active.connected();
         if (Objects.nonNull(connect)) {
             fieldList.addAll(field(connect, active.envelop(), headers));
         }

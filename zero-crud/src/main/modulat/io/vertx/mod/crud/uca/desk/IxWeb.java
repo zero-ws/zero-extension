@@ -49,7 +49,7 @@ public class IxWeb {
          */
         final String actor = Ux.getString(envelop);
         this.actor = actor;
-        this.active = IxMod.create(actor).bind(envelop);
+        this.active = IxMod.create(actor).envelop(envelop);
 
         // Different workflow to extract rest parameters
         String module = null;
