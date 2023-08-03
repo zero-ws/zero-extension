@@ -3,8 +3,8 @@ package io.vertx.mod.crud.uca.next;
 import io.horizon.eon.em.web.HttpStatusCode;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
 
@@ -41,7 +41,7 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
 
     @Override
     public Future<JsonObject> ok(final JsonObject active, final JsonObject standBy) {
-        final HttpStatusCode status = IxKit.getStatus(standBy);
+        final HttpStatusCode status = IxReply.getStatus(standBy);
         if (HttpStatusCode.NO_CONTENT == status) {
             /*
              * Major table contain value but the sub-table has no record

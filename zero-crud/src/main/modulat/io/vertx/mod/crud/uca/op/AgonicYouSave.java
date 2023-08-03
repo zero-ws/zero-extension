@@ -7,8 +7,8 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
@@ -59,7 +59,7 @@ public class AgonicYouSave extends AgonicUnique {
                     .compose(Ix.wrap(standBy, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, standBy))
                         .compose(jooq::insertAsync)
-                        .compose(updated -> IxKit.successJ(updated, standBy))
+                        .compose(updated -> IxReply.successJ(updated, standBy))
                     ));
             } else {
                 // Found ( Update )
@@ -72,7 +72,7 @@ public class AgonicYouSave extends AgonicUnique {
                     .compose(Ix.wrap(standBy, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, standBy))
                         .compose(jooq::updateAsync)
-                        .compose(updated -> IxKit.successJ(updated, standBy))
+                        .compose(updated -> IxReply.successJ(updated, standBy))
                     ));
             }
         });
@@ -113,7 +113,7 @@ public class AgonicYouSave extends AgonicUnique {
                 .compose(Ix.wrap(standBy, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
                     .compose(processed -> Ix.deserializeT(processed, standBy))
                     .compose(jooq::updateAsync)
-                    .compose(updated -> IxKit.successA(updated, standBy))
+                    .compose(updated -> IxReply.successA(updated, standBy))
                 ));
         });
     }

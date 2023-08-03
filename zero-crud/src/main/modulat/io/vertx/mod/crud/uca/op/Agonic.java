@@ -40,11 +40,11 @@ public interface Agonic {
     }
 
     static Agonic search() {
-        return Pooled.CC_AGONIC.pick(AgonicSearch::new, AgonicSearch.class.getName());
+        return Pooled.CC_AGONIC.pick(AgonicOpSearch::new, AgonicOpSearch.class.getName());
     }
 
     static Agonic count() {
-        return Pooled.CC_AGONIC.pick(AgonicCount::new, AgonicCount.class.getName());
+        return Pooled.CC_AGONIC.pick(AgonicOpCount::new, AgonicOpCount.class.getName());
     }
 
     static Agonic apeak(final boolean isMy) {
@@ -60,7 +60,7 @@ public interface Agonic {
     }
 
     static Agonic fetch() {
-        return Pooled.CC_AGONIC.pick(AgonicFetch::new, AgonicFetch.class.getName());
+        return Pooled.CC_AGONIC.pick(AgonicOpFetch::new, AgonicOpFetch.class.getName());
     }
 
     default Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {

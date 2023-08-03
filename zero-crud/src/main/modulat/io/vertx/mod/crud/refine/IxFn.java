@@ -15,7 +15,6 @@ import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.uca.destine.Hymn;
-import io.vertx.up.uca.jooq.UxJoin;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
@@ -55,54 +54,6 @@ class IxFn {
             }
             final ConcurrentMap<String, JsonObject> attachmentMap = field.fieldFile();
             return Ke.mapFn(attachmentMap, fileFn).apply(data);
-        };
-    }
-
-    static Function<JsonObject, Future<JsonArray>> fetchFn(final IxMod in) {
-        return condition -> {
-            // KModule
-            final KModule connect = in.connected();
-            if (Objects.isNull(connect)) {
-                // Direct
-                final UxJooq jooq = IxPin.jooq(in);
-                return jooq.fetchJAsync(condition);
-            } else {
-                // Join
-                final UxJoin join = IxPin.join(in, connect);
-                return join.fetchAsync(condition);
-            }
-        };
-    }
-
-    static Function<JsonObject, Future<JsonObject>> searchFn(final IxMod in) {
-        return condition -> {
-            // KModule
-            final KModule connect = in.connected();
-            if (Objects.isNull(connect)) {
-                // Direct
-                final UxJooq jooq = IxPin.jooq(in);
-                return jooq.searchAsync(condition);
-            } else {
-                // Join
-                final UxJoin join = IxPin.join(in, connect);
-                return join.searchAsync(condition);
-            }
-        };
-    }
-
-    static Function<JsonObject, Future<Long>> countFn(final IxMod in) {
-        return condition -> {
-            // KModule
-            final KModule connect = in.connected();
-            if (Objects.isNull(connect)) {
-                // Direct
-                final UxJooq jooq = IxPin.jooq(in);
-                return jooq.countAsync(condition);
-            } else {
-                // Join
-                final UxJoin join = IxPin.join(in, connect);
-                return join.countAsync(condition);
-            }
         };
     }
 

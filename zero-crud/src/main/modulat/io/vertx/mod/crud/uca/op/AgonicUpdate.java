@@ -9,8 +9,8 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.eon.KName;
@@ -42,7 +42,7 @@ class AgonicUpdate extends AgonicUnique {
         ).compose(json -> {
             if (Ut.isNil(json)) {
                 // Not Found
-                return IxKit.success204Pre();
+                return IxReply.success204Pre();
             } else {
                 // Do Update
                 final JsonObject merged = json.copy().mergeIn(input, true);
@@ -56,7 +56,7 @@ class AgonicUpdate extends AgonicUnique {
                     .compose(Ix.wrap(module, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, module))
                         .compose(jooq::updateAsync)
-                        .compose(updated -> IxKit.successJ(updated, module))
+                        .compose(updated -> IxReply.successJ(updated, module))
                     ));
             }
         });
@@ -92,7 +92,7 @@ class AgonicUpdate extends AgonicUnique {
             .compose(Ix.wrap(module, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
                 .compose(processed -> Ix.deserializeT(processed, module))
                 .compose(jooq::updateAsync)
-                .compose(updated -> IxKit.successA(updated, module))
+                .compose(updated -> IxReply.successA(updated, module))
             ));
     }
 }

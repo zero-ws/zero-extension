@@ -22,24 +22,47 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
  * Init Infusion for `init` static life
  */
 public class IxPin implements HRegistry.Mod<Vertx> {
-
-    public static KModule getActor(final String actor) {
-        return IxDao.get(actor);
-    }
-
+    /**
+     * 返回单表操作的 {@link UxJooq} 对象，针对主模块的构造操作
+     *
+     * @param in {@link IxMod} 模块输入参数
+     *
+     * @return {@link UxJooq} 操作对象
+     */
     public static UxJooq jooq(final IxMod in) {
         final Envelop envelop = in.envelop();
         return jooq(in.module(), envelop);
     }
 
+    /**
+     * 返回单表操作的 {@link UxJooq} 对象，针对主模块的构造操作
+     *
+     * @param module  {@link KModule} 模块输入参数
+     * @param envelop {@link Envelop} 请求的统一资源模型
+     *
+     * @return {@link UxJooq} 操作对象
+     */
     public static UxJooq jooq(final KModule module, final Envelop envelop) {
         final HOne<UxJooq> jq = HOne.jooq();
         return jq.combine(module, envelop.headers());
     }
 
+    /**
+     * 返回多表操作的 {@link UxJoin} 对象，针对双模块的专用操作
+     *
+     * @param in      {@link IxMod} 模块输入参数
+     * @param connect {@link KModule} 连接模块
+     *
+     * @return {@link UxJoin} 操作对象
+     */
     public static UxJoin join(final IxMod in, final KModule connect) {
         final HOne<UxJoin> jq = HOne.join();
         return jq.combine(in.module(), connect);
+    }
+
+    // ---------------------- 元数据处理 ----------------------
+    public static KModule getActor(final String actor) {
+        return IxDao.get(actor);
     }
 
     public static Set<String> getUris() {
@@ -58,6 +81,7 @@ public class IxPin implements HRegistry.Mod<Vertx> {
         return IxConfiguration.getLabel();
     }
 
+    // ---------------------- 注册流程 ----------------------
     /* 新版模块注册器 */
     @Override
     public Boolean configure(final Vertx vertx, final HAmbient ambient) {

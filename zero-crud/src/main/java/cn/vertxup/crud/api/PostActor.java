@@ -5,8 +5,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Addr;
 import io.vertx.mod.crud.cv.em.ApiSpec;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxPanel;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.desk.IxWeb;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
@@ -83,6 +83,6 @@ public class PostActor {
             /*
              * 4.2. 201 / 200
              */
-            .compose(IxKit::successPost);
+            .compose(IxReply::successPost);
     }
 }

@@ -7,8 +7,8 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -26,7 +26,7 @@ class AgonicByID implements Agonic {
         return jooq.fetchOneAsync(input).compose(entity -> {
             if (Objects.isNull(entity)) {
                 // STOP: Return to stop code executing
-                return IxKit.success204Pre();
+                return IxReply.success204Pre();
             }
             // For Format Beauty
             final KModule module = in.module();

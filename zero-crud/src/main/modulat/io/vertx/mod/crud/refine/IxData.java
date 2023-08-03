@@ -34,19 +34,19 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 class IxData {
     private static final Annal LOGGER = Annal.get(IxData.class);
 
-    static void audit(final JsonObject auditor, final JsonObject config, final String userId) {
+    static void audit(final JsonObject data, final JsonObject config, final String userId) {
         if (Objects.nonNull(config) && Ut.isNotNil(userId)) {
             /* User By */
             final String by = config.getString(KName.BY);
             if (Ut.isNotNil(by)) {
                 /* Audit Process */
                 LOG.Dao.info(LOGGER, "( Audit ) By -> \"{0}\" = {1}", by, userId);
-                auditor.put(by, userId);
+                data.put(by, userId);
             }
             final String at = config.getString(KName.AT);
             if (Ut.isNotNil(at)) {
                 LOG.Dao.info(LOGGER, "( Audit ) At Field -> {0}", at);
-                auditor.put(at, Instant.now());
+                data.put(at, Instant.now());
             }
         }
     }

@@ -8,8 +8,8 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.em.QrType;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.mod.crud.uca.desk.IxKit;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.trans.Tran;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -32,7 +32,7 @@ class AgonicCreate implements Agonic {
              */
             jooq.countAsync(condition).compose(counter -> 0 < counter ?
                     // Unique Existing
-                    IxKit.success201Pre(input, module)
+                    IxReply.success201Pre(input, module)
                     // Primary Key ( Not Existing )
                     : Ix.passion(input, in,
                         Pre.key(true)::inJAsync,                // UUID Generated
@@ -47,7 +47,7 @@ class AgonicCreate implements Agonic {
                     .compose(Ix.wrap(module, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, module))
                         .compose(jooq::insertAsync)
-                        .compose(entity -> IxKit.successJ(entity, module))
+                        .compose(entity -> IxReply.successJ(entity, module))
                     ))
             ));
     }
@@ -59,7 +59,7 @@ class AgonicCreate implements Agonic {
         return Ix.passion(input, in,
                 Pre.key(true)::inAAsync,                        // UUID Generated
                 Tran.tree(true)::inAAsync,                      // After GUID
-                Pre.serial()::inAAsync,                         // Serial/Number
+                Pre.serial()::inAAsync,                                // Serial/Number
                 Pre.audit(true)::inAAsync,                      // createdAt, createdBy
                 Pre.audit(false)::inAAsync                      // updatedAt, updatedBy
             )
@@ -69,7 +69,7 @@ class AgonicCreate implements Agonic {
             .compose(Ix.wrap(module, Aspect::wrapACreate, wrapData -> Ux.future(wrapData)
                 .compose(processed -> Ix.deserializeT(processed, module))
                 .compose(jooq::insertAsync)
-                .compose(inserted -> IxKit.successA(inserted, module))
+                .compose(inserted -> IxReply.successA(inserted, module))
             ));
     }
 }

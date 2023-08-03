@@ -15,7 +15,7 @@ import java.util.List;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 @SuppressWarnings("all")
-public final class IxKit {
+public final class IxReply {
 
     private static String STATUS = "$STATUS$";
     private static String RESULT = "$RESULT$";

@@ -4,31 +4,30 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.em.QrType;
-import io.vertx.mod.crud.init.IxPin;
-import io.vertx.mod.crud.refine.Ix;
+import io.vertx.mod.crud.uca.dao.Operate;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
-import io.vertx.up.uca.jooq.UxJooq;
 
 import static io.vertx.mod.crud.refine.Ix.LOG;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicFetch implements Agonic {
+class AgonicOpFetch implements Agonic {
     @Override
     public Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
         LOG.Filter.info(this.getClass(), "( All ) Condition: {0}", input);
-        if (in.canJoin()) {
-            return Ix.fetchFn(in).apply(input);
-        } else {
-            final UxJooq jooq = IxPin.jooq(in);
-            return jooq.fetchJAsync(input);
-        }
+
+        final Operate<JsonObject, JsonArray> operate = Operate.ofFetch();
+        /* 内置已经做过 in.canJoin() 的判断，所以此处不再考虑连接判断 */
+        return operate.annexFn(in).apply(input);
     }
 
     @Override
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
+        /*
+         * 按 Primary Key 做查询，查询一堆数据用于后续操作
+         */
         return Pre.qr(QrType.BY_PK).inAJAsync(input, in)
             .compose(condition -> this.runJAAsync(condition, in));
     }
