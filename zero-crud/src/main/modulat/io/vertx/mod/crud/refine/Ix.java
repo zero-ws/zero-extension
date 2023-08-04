@@ -38,7 +38,7 @@ public class Ix {
      * @return {@link Kv} 列解析结果
      */
     public static Kv<String, String> onColumn(final Object value) {
-        return IxData.field(value);
+        return IxData.column(value);
     }
 
 
