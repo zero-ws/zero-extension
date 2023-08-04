@@ -1,16 +1,19 @@
 package io.vertx.mod.crud.refine;
 
 import io.aeon.experiment.specification.KModule;
+import io.horizon.eon.VValue;
 import io.horizon.exception.WebException;
 import io.horizon.uca.aop.Aspect;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
@@ -29,6 +32,34 @@ class IxFn {
             }
         }
         return future;
+    }
+
+    @SafeVarargs
+    static <T> Future<T> peek(
+        final T data, final IxMod in,
+        final Supplier<T> defaultSupplier,
+        final BiFunction<T, IxMod, Future<T>>... executors) {
+        if (0 == executors.length) {
+            return Ux.future(defaultSupplier.get());
+        }
+        Future<T> first = executors[VValue.IDX].apply(data, in);
+        for (int start = 1; start < executors.length; start++) {
+            final int current = start;
+            first = first.compose(queried -> {
+                final boolean ifContinue;
+                if (queried instanceof final JsonObject json) {
+                    ifContinue = Ut.isNil(json);
+                } else {
+                    ifContinue = Objects.isNull(queried);
+                }
+                if (ifContinue) {
+                    return executors[current].apply(data, in);
+                } else {
+                    return Ux.future(queried);
+                }
+            });
+        }
+        return first;
     }
 
     @SafeVarargs

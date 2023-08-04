@@ -7,6 +7,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.op.aop.AgonicAop;
 import io.vertx.mod.crud.uca.op.view.AgonicView;
 
 /**
@@ -23,21 +24,15 @@ public interface Agonic {
     int EXPIRED = 2 * 60 * 60;
 
     static Agonic write(final ChangeFlag flag) {
-        if (ChangeFlag.ADD == flag) {
-            return Pooled.CC_AGONIC.pick(AgonicCreate::new, AgonicCreate.class.getName());
-        } else if (ChangeFlag.DELETE == flag) {
-            return Pooled.CC_AGONIC.pick(StepDelete::new, StepDelete.class.getName());
-        } else {
-            return Pooled.CC_AGONIC.pick(AgonicUpdate::new, AgonicUpdate.class.getName());
-        }
+        return AgonicAop.write(flag);
     }
 
-    static Agonic saveYou(final IxMod module) {
-        return Pooled.CC_AGONIC.pick(() -> new AgonicYouSave(module), AgonicYouSave.class.getName());
+    static Agonic write(final IxMod module) {
+        return AgonicAop.write(module);
     }
 
     static Agonic file() {
-        return Pooled.CC_AGONIC.pick(AgonicImport::new, AgonicImport.class.getName());
+        return Pooled.CC_AGONIC.pick(StepImport::new, StepImport.class.getName());
     }
 
     static Agonic get() {

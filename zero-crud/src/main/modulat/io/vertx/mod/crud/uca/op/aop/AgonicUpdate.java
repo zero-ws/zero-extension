@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.op;
+package io.vertx.mod.crud.uca.op.aop;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.em.typed.ChangeFlag;
@@ -7,11 +7,13 @@ import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.crud.cv.em.QrType;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
+import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -23,7 +25,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicUpdate extends BaseFetch {
+class AgonicUpdate implements Agonic {
 
     @Override
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
@@ -36,9 +38,11 @@ class AgonicUpdate extends BaseFetch {
          * 1. If the `field` exist, the field will be overwritten
          * 2. If the `field` does not exist, the field will be ignored
          * */
-        return this.runUnique(input, in,
-            this::fetchByPk,
-            this::fetchByUk
+        return Ix.peekJ(input, in,
+            (data, mod) -> Pre.qr(QrType.BY_PK).inJAsync(data, mod)
+                .compose(jooq::fetchJOneAsync),
+            (data, mod) -> Pre.qr(QrType.BY_UK).inJAsync(data, mod)
+                .compose(jooq::fetchJOneAsync)
         ).compose(json -> {
             if (Ut.isNil(json)) {
                 // Not Found

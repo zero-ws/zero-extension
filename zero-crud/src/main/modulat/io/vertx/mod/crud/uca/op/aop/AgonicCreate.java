@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.op;
+package io.vertx.mod.crud.uca.op.aop;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.uca.aop.Aspect;
@@ -11,6 +11,7 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
+import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.mod.crud.uca.trans.Tran;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;

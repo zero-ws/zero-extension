@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.op;
+package io.vertx.mod.crud.uca.op.aop;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.uca.aop.Aspect;
@@ -10,6 +10,7 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
+import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.uca.destine.Conflate;
@@ -25,7 +26,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicYouSave extends BaseFetch {
+class AgonicYouSave implements Agonic {
     private final transient IxMod module;
 
     AgonicYouSave(final IxMod module) {
@@ -39,9 +40,7 @@ class AgonicYouSave extends BaseFetch {
         final JsonObject condition = conflate.treat(input, this.module.connectId());
         final KModule standBy = in.module();
         final UxJooq jooq = IxPin.jooq(in);
-        return this.runUnique(condition, in,
-            this::fetchBy
-        ).compose(json -> {
+        return jooq.fetchJOneAsync(condition).compose(json -> {
             // Avoid overwrite primary key here
             final JsonObject inputJson = input.copy();
             inputJson.remove(standBy.getField().getKey());

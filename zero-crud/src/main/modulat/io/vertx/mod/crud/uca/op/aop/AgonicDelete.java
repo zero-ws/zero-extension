@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.op;
+package io.vertx.mod.crud.uca.op.aop;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.spi.feature.Trash;
@@ -12,6 +12,7 @@ import io.vertx.mod.crud.uca.dao.Operate;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
+import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 
@@ -21,7 +22,7 @@ import java.util.function.Function;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class StepDelete implements Agonic {
+class AgonicDelete implements Agonic {
     @Override
     public Future<JsonObject> runJAsync(final JsonObject criteria, final IxMod in) {
         final UxJooq jooq = IxPin.jooq(in);

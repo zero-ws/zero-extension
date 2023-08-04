@@ -55,7 +55,7 @@ public class PutActor {
              */
             .passion(
                 /* Active */Agonic.write(ChangeFlag.UPDATE)::runJAsync,
-                /* StandBy */Agonic.saveYou(request.active())::runJAsync
+                /* StandBy */Agonic.write(request.active())::runJAsync
             )
 
 
@@ -115,7 +115,7 @@ public class PutActor {
                 /* Active / StandBy Shared */
                 .passion(
                     Agonic.write(ChangeFlag.UPDATE)::runAAsync,
-                    Agonic.saveYou(request.active())::runAAsync
+                    Agonic.write(request.active())::runAAsync
                 )
 
                 .output(co::ok)

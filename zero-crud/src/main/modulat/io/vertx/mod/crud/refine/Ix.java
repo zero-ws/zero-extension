@@ -131,6 +131,11 @@ public class Ix {
         return IxFn.park(input, in, executors);
     }
 
+    @SafeVarargs
+    public static Future<JsonObject> peekJ(final JsonObject inputJ, final IxMod in, final BiFunction<JsonObject, IxMod, Future<JsonObject>>... executors) {
+        return IxFn.peek(inputJ, in, JsonObject::new, executors);
+    }
+
     public static <T> Function<T, Future<T>> aop(
         final KModule module, final BiFunction<Aspect, Function<T, Future<T>>, Function<T, Future<T>>> aopFn,
         final Function<T, Future<T>> executor) {
