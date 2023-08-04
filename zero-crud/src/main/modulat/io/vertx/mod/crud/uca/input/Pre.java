@@ -7,6 +7,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.cv.em.QrType;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.input.audit.PreAudit;
+import io.vertx.mod.crud.uca.input.file.PreFile;
+import io.vertx.mod.crud.uca.input.id.PreId;
+import io.vertx.mod.crud.uca.input.qr.PreQr;
+import io.vertx.mod.crud.uca.input.view.PreView;
 import io.vertx.up.plugin.excel.ExcelClient;
 
 /**
@@ -36,16 +41,11 @@ public interface Pre {
     }
 
     static Pre key(final boolean isNew) {
-        if (isNew) {
-            return Pooled.CC_PRE.pick(UuidPre::new, UuidPre.class.getName());
-        } else {
-            return Pooled.CC_PRE.pick(KeyPre::new, KeyPre.class.getName());
-        }
+        return PreId.key(isNew);
     }
 
     static Pre excel(final ExcelClient client) {
-        return Pooled.CC_PRE.pick(() -> new ExcelPre(client),
-            ExcelPre.class.getName() + client.hashCode());
+        return Pooled.CC_PRE.pick(() -> new ExcelPre(client), ExcelPre.class.getName() + client.hashCode());
     }
 
 
@@ -61,15 +61,11 @@ public interface Pre {
     }
 
     static Pre audit(final boolean created) {
-        if (created) {
-            return Pooled.CC_PRE.pick(CAuditPre::new, CAuditPre.class.getName());
-        } else {
-            return Pooled.CC_PRE.pick(UAuditPre::new, UAuditPre.class.getName());
-        }
+        return PreAudit.audit(created);
     }
 
     static Pre audit() {
-        return Pooled.CC_PRE.pick(DAuditPre::new, DAuditPre.class.getName());
+        return PreAudit.audit();
     }
 
     // ------------------- Column Related -------------------
@@ -82,24 +78,20 @@ public interface Pre {
     }
 
     static Pre apeak(final boolean isMy) {
-        if (isMy) {
-            return Pooled.CC_PRE.pick(ApeakMyPre::new, ApeakMyPre.class.getName());
-        } else {
-            return Pooled.CC_PRE.pick(ApeakPre::new, ApeakPre.class.getName());
-        }
+        return PreView.apeak(isMy);
     }
 
     // ------------------- Import / Export Pre -------------------
     static Pre fileIn(final boolean createOnly) {
-        if (createOnly) {
-            return Pooled.CC_PRE.pick(CFilePre::new, CFilePre.class.getName());
-        } else {
-            return Pooled.CC_PRE.pick(UFilePre::new, UFilePre.class.getName());
-        }
+        return PreFile.fileIn(createOnly);
     }
 
     static Pre fileOut() {
-        return Pooled.CC_PRE.pick(DFilePre::new, DFilePre.class.getName());
+        return PreFile.fileOut();
+    }
+
+    static Pre fileData() {
+        return PreFile.fileData();
     }
 
     // ------------------- Qr Related -------------------
@@ -110,15 +102,7 @@ public interface Pre {
      * 4) View key
      */
     static Pre qr(final QrType type) {
-        if (QrType.ALL == type) {
-            return Pooled.CC_PRE.pick(RWholePre::new, RWholePre.class.getName());
-        } else if (QrType.BY_UK == type) {
-            return Pooled.CC_PRE.pick(RUkPre::new, RUkPre.class.getName());
-        } else if (QrType.BY_VK == type) {
-            return Pooled.CC_PRE.pick(RVkPre::new, RVkPre.class.getName());
-        } else {
-            return Pooled.CC_PRE.pick(RPkPre::new, RPkPre.class.getName());
-        }
+        return PreQr.qr(type);
     }
 
     /*

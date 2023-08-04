@@ -1,14 +1,13 @@
 package io.vertx.mod.crud.uca.op;
 
 import io.aeon.experiment.specification.KModule;
-import io.horizon.spi.feature.Attachment;
 import io.vertx.core.Future;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
+import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -33,11 +32,7 @@ class AgonicByID implements Agonic {
             final JsonObject active = Ix.serializeJ(entity, module);
 
             // File: Attachment extraction
-            return Ix.fileFn(in, (criteria, dataArray) -> Ux.channel(
-                Attachment.class,                       // Component
-                JsonArray::new,                     // JsonArray Data
-                file -> file.fetchAsync(criteria)   // Execution Logical
-            )).apply(active).compose(dataJ -> {
+            return Pre.fileData().inJAsync(active, in).compose(dataJ -> {
                 // Try to connecting
                 final IxMod connect = in.connecting(dataJ);
                 if (Objects.isNull(connect)) {

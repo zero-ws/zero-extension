@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.input;
+package io.vertx.mod.crud.uca.input.view;
 
 import io.aeon.experiment.specification.KColumn;
 import io.aeon.experiment.specification.KModule;

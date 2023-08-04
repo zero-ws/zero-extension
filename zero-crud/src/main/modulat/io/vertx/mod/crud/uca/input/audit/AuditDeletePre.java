@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.input;
+package io.vertx.mod.crud.uca.input.audit;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.spi.business.ExUser;
@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class DAuditPre implements Pre {
+class AuditDeletePre extends AuditAction {
     @Override
     public Future<JsonArray> inAAsync(final JsonArray data, final IxMod in) {
         final KModule module = in.module();

@@ -2,7 +2,6 @@ package io.vertx.mod.crud.refine;
 
 import io.aeon.experiment.specification.KModule;
 import io.horizon.atom.program.Kv;
-import io.horizon.uca.log.Annal;
 import io.modello.specification.meta.HMetaAtom;
 import io.modello.specification.meta.HMetaField;
 import io.vertx.core.http.HttpMethod;
@@ -19,37 +18,16 @@ import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.util.Ut;
 
 import java.text.MessageFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import static io.vertx.mod.crud.refine.Ix.LOG;
-
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 class IxData {
-    private static final Annal LOGGER = Annal.get(IxData.class);
-
-    static void audit(final JsonObject data, final JsonObject config, final String userId) {
-        if (Objects.nonNull(config) && Ut.isNotNil(userId)) {
-            /* User By */
-            final String by = config.getString(KName.BY);
-            if (Ut.isNotNil(by)) {
-                /* Audit Process */
-                LOG.Dao.info(LOGGER, "( Audit ) By -> \"{0}\" = {1}", by, userId);
-                data.put(by, userId);
-            }
-            final String at = config.getString(KName.AT);
-            if (Ut.isNotNil(at)) {
-                LOG.Dao.info(LOGGER, "( Audit ) At Field -> {0}", at);
-                data.put(at, Instant.now());
-            }
-        }
-    }
 
     static Kv<String, HttpMethod> impact(final IxMod in) {
         final KModule module = in.module();

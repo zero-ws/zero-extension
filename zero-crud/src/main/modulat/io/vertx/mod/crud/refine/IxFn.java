@@ -9,8 +9,6 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.shape.KField;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.uca.destine.Conflate;
@@ -20,7 +18,6 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
-import java.util.concurrent.ConcurrentMap;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -29,33 +26,6 @@ import java.util.function.Supplier;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 class IxFn {
-
-    static Function<JsonObject, Future<JsonObject>> fileFn(final IxMod in,
-                                                           final BiFunction<JsonObject, JsonArray, Future<JsonArray>> fileFn) {
-        return data -> {
-            final KModule module = in.module();
-            final KField field = module.getField();
-            if (Objects.isNull(field)) {
-                /*
-                 * KField of new attachment:
-                 * {
-                 *      "attachment": [
-                 *          {
-                 *              "field": "model field name",
-                 *              "condition": {
-                 *                  "field1": "value1",
-                 *                  "field2": "value2"
-                 *              }
-                 *          }
-                 *      ]
-                 * }
-                 */
-                return Ux.future(data);
-            }
-            final ConcurrentMap<String, JsonObject> attachmentMap = field.fieldFile();
-            return Ke.mapFn(attachmentMap, fileFn).apply(data);
-        };
-    }
 
     // JqFn
     @SafeVarargs

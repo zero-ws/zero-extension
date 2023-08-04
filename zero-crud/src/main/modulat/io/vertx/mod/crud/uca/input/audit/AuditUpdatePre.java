@@ -1,11 +1,10 @@
-package io.vertx.mod.crud.uca.input;
+package io.vertx.mod.crud.uca.input.audit;
 
 import io.aeon.experiment.specification.KModule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.commune.Envelop;
@@ -17,7 +16,7 @@ import java.util.Objects;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class CAuditPre implements Pre {
+class AuditUpdatePre extends AuditAction {
     @Override
     public Future<JsonObject> inJAsync(final JsonObject data, final IxMod in) {
         /* UserId */
@@ -35,7 +34,7 @@ class CAuditPre implements Pre {
             if (Ut.isNotNil(userId)) {
                 final KField field = module.getField();
                 /* Created */
-                Ix.onAuditor(data, field.getCreated(), userId);
+                this.setAuditor(data, field.getUpdated(), userId);
             }
         }
     }

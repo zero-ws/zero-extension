@@ -24,22 +24,6 @@ public class Ix {
     // --------------------------------- New Version
 
     /**
-     * 主要针对 auditor 的四个核心字段
-     * <pre><code>
-     *     1. createdBy / createdAt
-     *     2. updatedBy / updatedAt
-     * </code></pre>
-     * 该API方法设置的时候，是分组设置的，即添加（created）、更新（updated）分别设置，其中 `by` 会设置成当前用户ID，`at` 会设置成当前时间戳
-     *
-     * @param data   被设置的对象数据
-     * @param config 被设置的配置数据
-     * @param userId 被设置的用户ID
-     */
-    public static void onAuditor(final JsonObject data, final JsonObject config, final String userId) {
-        IxData.audit(data, config, userId);
-    }
-
-    /**
      * 列解析器，直接根据提供的值解析列，主要针对 metadata 格式的列处理，如
      * <pre><code>
      *     1. 字符串格式：`name,名称`
@@ -126,10 +110,6 @@ public class Ix {
 
     public static <T> BiFunction<Supplier<T>, BiFunction<UxJooq, JsonObject, Future<T>>, Future<T>> seekFn(final IxMod in, final Object json) {
         return IxFn.seekFn(in, json);
-    }
-
-    public static Function<JsonObject, Future<JsonObject>> fileFn(final IxMod in, final BiFunction<JsonObject, JsonArray, Future<JsonArray>> fileFn) {
-        return IxFn.fileFn(in, fileFn);
     }
 
     // JqTool

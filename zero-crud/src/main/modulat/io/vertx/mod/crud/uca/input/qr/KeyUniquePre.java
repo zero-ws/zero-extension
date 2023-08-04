@@ -1,4 +1,4 @@
-package io.vertx.mod.crud.uca.input;
+package io.vertx.mod.crud.uca.input.qr;
 
 import io.horizon.eon.VString;
 import io.horizon.eon.VValue;
@@ -6,6 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -16,7 +17,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class RUkPre implements Pre {
+class KeyUniquePre implements Pre {
     @Override
     public Future<JsonObject> inJAsync(final JsonObject data, final IxMod in) {
         /* Unique Keys */

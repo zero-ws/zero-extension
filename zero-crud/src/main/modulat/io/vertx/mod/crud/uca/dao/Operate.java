@@ -1,8 +1,6 @@
 package io.vertx.mod.crud.uca.dao;
 
-import io.horizon.annotations.Memory;
 import io.horizon.exception.web._501NotImplementException;
-import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -45,11 +43,4 @@ public interface Operate<I, O> {
     default Function<I, Future<O>> annexFn(final IxMod in) {
         throw new _501NotImplementException(this.getClass());
     }
-}
-
-@SuppressWarnings("all")
-interface Pool {
-
-    @Memory(Cc.class)
-    Cc<String, Operate> CCT_OPERATE = Cc.openThread();
 }
