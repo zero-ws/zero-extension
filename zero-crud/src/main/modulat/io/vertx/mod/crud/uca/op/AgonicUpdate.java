@@ -23,7 +23,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicUpdate extends AgonicUnique {
+class AgonicUpdate extends BaseFetch {
 
     @Override
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
@@ -46,14 +46,14 @@ class AgonicUpdate extends AgonicUnique {
             } else {
                 // Do Update
                 final JsonObject merged = json.copy().mergeIn(input, true);
-                return Ix.passion(merged, in,
+                return Ix.pass(merged, in,
                         Pre.audit(false)::inJAsync,                 // updatedAt, updatedBy
                         Pre.fileIn(false)::inJAsync                 // File: Attachment creating
                     )
 
 
                     // 「AOP」Wrap JsonObject update
-                    .compose(Ix.wrap(module, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
+                    .compose(Ix.aop(module, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, module))
                         .compose(jooq::updateAsync)
                         .compose(updated -> IxReply.successJ(updated, module))
@@ -83,13 +83,13 @@ class AgonicUpdate extends AgonicUnique {
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
         final KModule module = in.module();
         final UxJooq jooq = IxPin.jooq(in);
-        return Ix.passion(input, in,
+        return Ix.pass(input, in,
                 Pre.audit(false)::inAAsync                      // updatedAt, updatedBy
             )
 
 
             // 「AOP」Wrap JsonArray update
-            .compose(Ix.wrap(module, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
+            .compose(Ix.aop(module, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
                 .compose(processed -> Ix.deserializeT(processed, module))
                 .compose(jooq::updateAsync)
                 .compose(updated -> IxReply.successA(updated, module))

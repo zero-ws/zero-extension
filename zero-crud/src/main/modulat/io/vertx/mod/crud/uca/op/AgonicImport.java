@@ -29,7 +29,7 @@ class AgonicImport implements Agonic {
          * Header And Compress
          */
         final UxJooq jooq = IxPin.jooq(in);
-        return Ix.passion(input, in,
+        return Ix.pass(input, in,
             Pre.head()::inAAsync,        /* Header Value */
             Pre.serial()::inAAsync,      /* Serial/Number */
             this::runCompress            /* Compress */

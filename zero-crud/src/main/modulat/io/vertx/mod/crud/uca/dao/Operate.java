@@ -16,6 +16,11 @@ import java.util.function.Function;
  */
 @SuppressWarnings("unchecked")
 public interface Operate<I, O> {
+    // 删除 DELETE 语法
+    static Operate<Object, Boolean> ofDelete() {
+        return Pool.CCT_OPERATE.pick(SingleDelete::new, SingleDelete.class.getName());
+    }
+
     // 查询 SELECT 语法
     static Operate<JsonObject, JsonArray> ofFetch() {
         return Pool.CCT_OPERATE.pick(OperateFetch::new, OperateFetch.class.getName());

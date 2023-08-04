@@ -7,6 +7,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.desk.IxMod;
+import io.vertx.mod.crud.uca.op.view.AgonicView;
 
 /**
  * 此处有一个特殊点需要说明，关于这些组件命名有特殊约定
@@ -25,7 +26,7 @@ public interface Agonic {
         if (ChangeFlag.ADD == flag) {
             return Pooled.CC_AGONIC.pick(AgonicCreate::new, AgonicCreate.class.getName());
         } else if (ChangeFlag.DELETE == flag) {
-            return Pooled.CC_AGONIC.pick(AgonicDelete::new, AgonicDelete.class.getName());
+            return Pooled.CC_AGONIC.pick(StepDelete::new, StepDelete.class.getName());
         } else {
             return Pooled.CC_AGONIC.pick(AgonicUpdate::new, AgonicUpdate.class.getName());
         }
@@ -51,16 +52,12 @@ public interface Agonic {
         return Pooled.CC_AGONIC.pick(JoinCount::new, JoinCount.class.getName());
     }
 
-    static Agonic apeak(final boolean isMy) {
-        if (isMy) {
-            return Pooled.CC_AGONIC.pick(AgonicMy::new, AgonicMy.class.getName());
-        } else {
-            return Pooled.CC_AGONIC.pick(AgonicFull::new, AgonicFull.class.getName());
-        }
+    static Agonic view(final boolean isMy) {
+        return AgonicView.view(isMy);
     }
 
     static Agonic view() {
-        return Pooled.CC_AGONIC.pick(AgonicView::new, AgonicView.class.getName());
+        return AgonicView.view();
     }
 
     static Agonic fetch() {

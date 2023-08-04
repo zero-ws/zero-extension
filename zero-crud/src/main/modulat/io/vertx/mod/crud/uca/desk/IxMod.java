@@ -1,10 +1,10 @@
 package io.vertx.mod.crud.uca.desk;
 
 import io.aeon.experiment.specification.KModule;
+import io.horizon.eon.VString;
 import io.horizon.exception.WebException;
 import io.horizon.exception.web._500InternalServerException;
 import io.modello.eon.em.EmModel;
-import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.error._404ModuleMissingException;
@@ -19,7 +19,6 @@ import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
-import java.util.function.BiFunction;
 
 /**
  * 当前请求专用的模块对象，此模块对象会在请求开始时创建，且创建两种
@@ -112,6 +111,15 @@ public class IxMod {
     }
 
     /**
+     * 返回异常信息
+     *
+     * @return {@link WebException}
+     */
+    public WebException error() {
+        return this.error;
+    }
+
+    /**
      * 「子模型」
      * 返回当前请求关联的子模型相关信息，若当前定义中不包含子模型，那么此处返回是 null
      *
@@ -150,6 +158,10 @@ public class IxMod {
     /**
      * 此方法定义的当前 {@link IxMod} 专用的缓存键，系统会根据缓存键来存储相关缓存的信息，根据
      * 这个缓存键来构造缓存的键值，这个缓存键值是根据模型本身来构造的。
+     * <pre><code>
+     *     - module identifier
+     *     - module identifier : connect identifier
+     * </code></pre>
      *
      * @return {@link String}
      */
@@ -157,6 +169,7 @@ public class IxMod {
         final StringBuilder key = new StringBuilder();
         key.append(this.module.identifier());
         if (this.canJoin()) {
+            key.append(VString.COLON);
             key.append(this.connect.identifier());
         }
         return key.toString();
@@ -293,16 +306,5 @@ public class IxMod {
             return standBy;
         }
         return null;
-    }
-
-    @SafeVarargs
-    public final <T> Future<T> ready(
-        final T input,
-        final BiFunction<T, IxMod, Future<T>>... executors) {
-        // Error Checking for request building
-        if (Objects.nonNull(this.error)) {
-            return Future.failedFuture(this.error);
-        }
-        return Ix.passion(input, this, executors);
     }
 }

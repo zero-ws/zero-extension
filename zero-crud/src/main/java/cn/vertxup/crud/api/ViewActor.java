@@ -48,7 +48,7 @@ public class ViewActor {
              *     "sigma": "The application uniform"
              * }
              */
-            .parallel(/* Active */Agonic.apeak(true)::runJAAsync, null)
+            .parallel(/* Active */Agonic.view(true)::runJAAsync, null)
             .output(/* Columns connected */Co.endV(true)::ok)
             .runJ(request.dataV());
     }
@@ -73,7 +73,7 @@ class T {
              *     "sigma": "The application uniform"
              * }
              */
-            .parallel(/* Active */Agonic.apeak(false)::runJAAsync)
+            .parallel(/* Active */Agonic.view(false)::runJAAsync)
             .output(/* Columns connected */Co.endV(false)::ok);
     }
 }

@@ -18,7 +18,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicUnique implements Agonic {
+class BaseFetch implements Agonic {
 
     protected Future<JsonObject> fetchBy(final JsonObject condition, final IxMod in) {
         LOG.Filter.info(this.getClass(), "( Unique ) By: identifier: {0}, condition: {1}",

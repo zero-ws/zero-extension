@@ -25,7 +25,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public class AgonicYouSave extends AgonicUnique {
+class AgonicYouSave extends BaseFetch {
     private final transient IxMod module;
 
     AgonicYouSave(final IxMod module) {
@@ -47,7 +47,7 @@ public class AgonicYouSave extends AgonicUnique {
             inputJson.remove(standBy.getField().getKey());
             if (Ut.isNil(json)) {
                 // Not Found ( Insert )
-                return Ix.passion(inputJson, in,
+                return Ix.pass(inputJson, in,
                         Pre.key(true)::inJAsync,                // UUID Generated
                         Pre.serial()::inJAsync,                 // Serial/Number
                         Pre.audit(true)::inJAsync,              // createdAt, createdBy
@@ -56,7 +56,7 @@ public class AgonicYouSave extends AgonicUnique {
 
 
                     // 「AOP」Wrap JsonObject create
-                    .compose(Ix.wrap(standBy, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
+                    .compose(Ix.aop(standBy, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, standBy))
                         .compose(jooq::insertAsync)
                         .compose(updated -> IxReply.successJ(updated, standBy))
@@ -64,12 +64,12 @@ public class AgonicYouSave extends AgonicUnique {
             } else {
                 // Found ( Update )
                 final JsonObject merged = json.copy().mergeIn(inputJson, true);
-                return Ix.passion(merged, in,
+                return Ix.pass(merged, in,
                         Pre.audit(false)::inJAsync         // updatedAt, updatedBy
                     )
 
                     // 「AOP」Wrap JsonArray update
-                    .compose(Ix.wrap(standBy, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
+                    .compose(Ix.aop(standBy, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, standBy))
                         .compose(jooq::updateAsync)
                         .compose(updated -> IxReply.successJ(updated, standBy))
@@ -104,13 +104,13 @@ public class AgonicYouSave extends AgonicUnique {
             final JsonArray combined = Ux.updateJ(queried, input, joinedKey);
 
             // Update Combine Json Data
-            return Ix.passion(combined, in,
+            return Ix.pass(combined, in,
                     Pre.audit(false)::inAAsync                  // updatedAt, updatedBy
                 )
 
 
                 // 「AOP」Wrap JsonArray update
-                .compose(Ix.wrap(standBy, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
+                .compose(Ix.aop(standBy, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
                     .compose(processed -> Ix.deserializeT(processed, standBy))
                     .compose(jooq::updateAsync)
                     .compose(updated -> IxReply.successA(updated, standBy))

@@ -5,6 +5,7 @@ import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -158,7 +159,7 @@ public class IxPanel {
          * standByFn is null, return A
          */
         final Function<I, Future<A>> activeFn =
-            (inputActive) -> this.active.ready(inputActive, this.executors)
+            (inputActive) -> Ix.park(inputActive, this.active, this.executors)
                 .compose(normalized -> this.activeFn.apply(normalized, this.active));
         final Function<I, Future<S>> standFn;
         if (Objects.isNull(this.standByFn) || Objects.isNull(this.standBy)) {
@@ -171,7 +172,7 @@ public class IxPanel {
             /*
              * standByFn return S.
              */
-            standFn = (inputStand) -> this.standBy.ready(inputStand, this.executors)
+            standFn = (inputStand) -> Ix.park(inputStand, this.standBy, this.executors)
                 .compose(normalized -> (Future<S>) this.standByFn.apply(normalized, this.standBy));
         }
         if (this.sequence) {

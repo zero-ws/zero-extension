@@ -34,7 +34,7 @@ class AgonicCreate implements Agonic {
                     // Unique Existing
                     IxReply.success201Pre(input, module)
                     // Primary Key ( Not Existing )
-                    : Ix.passion(input, in,
+                    : Ix.pass(input, in,
                         Pre.key(true)::inJAsync,                // UUID Generated
                         Pre.serial()::inJAsync,                         // Serial/Number
                         Pre.audit(true)::inJAsync,              // createdAt, createdBy
@@ -44,7 +44,7 @@ class AgonicCreate implements Agonic {
 
 
                     // 「AOP」Wrap JsonObject create
-                    .compose(Ix.wrap(module, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
+                    .compose(Ix.aop(module, Aspect::wrapJCreate, wrapData -> Ux.future(wrapData)
                         .compose(processed -> Ix.deserializeT(processed, module))
                         .compose(jooq::insertAsync)
                         .compose(entity -> IxReply.successJ(entity, module))
@@ -56,7 +56,7 @@ class AgonicCreate implements Agonic {
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
         final KModule module = in.module();
         final UxJooq jooq = IxPin.jooq(in);
-        return Ix.passion(input, in,
+        return Ix.pass(input, in,
                 Pre.key(true)::inAAsync,                        // UUID Generated
                 Tran.tree(true)::inAAsync,                      // After GUID
                 Pre.serial()::inAAsync,                                // Serial/Number
@@ -66,7 +66,7 @@ class AgonicCreate implements Agonic {
 
 
             // 「AOP」Wrap JsonArray create
-            .compose(Ix.wrap(module, Aspect::wrapACreate, wrapData -> Ux.future(wrapData)
+            .compose(Ix.aop(module, Aspect::wrapACreate, wrapData -> Ux.future(wrapData)
                 .compose(processed -> Ix.deserializeT(processed, module))
                 .compose(jooq::insertAsync)
                 .compose(inserted -> IxReply.successA(inserted, module))

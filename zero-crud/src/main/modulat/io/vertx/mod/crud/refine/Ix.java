@@ -12,13 +12,11 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.shape.KField;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class Ix {
     // --------------------------------- New Version
@@ -108,20 +106,35 @@ public class Ix {
 
     // --------------------------------- Function Part
 
-    public static <T> BiFunction<Supplier<T>, BiFunction<UxJooq, JsonObject, Future<T>>, Future<T>> seekFn(final IxMod in, final Object json) {
-        return IxFn.seekFn(in, json);
-    }
-
-    // JqTool
+    /**
+     * 顺序执行，函数流，上一个函数的输出是下一个函数的输入
+     * <pre><code>
+     *     T    -> executors[0] -> T0
+     *     T0   -> executors[1] -> T1
+     *     T1   -> ...          -> Tn
+     * </code></pre>
+     *
+     * @param input     输入参数
+     * @param in        {@link IxMod} 模型对象
+     * @param executors 执行链
+     * @param <T>       输入类型
+     *
+     * @return {@link Future} 执行结果
+     */
     @SafeVarargs
-    public static <T> Future<T> passion(final T input, final IxMod in, final BiFunction<T, IxMod, Future<T>>... executors) {
-        return IxFn.passion(input, in, executors);
+    public static <T> Future<T> pass(final T input, final IxMod in, final BiFunction<T, IxMod, Future<T>>... executors) {
+        return IxFn.pass(input, in, executors);
     }
 
-    public static <T> Function<T, Future<T>> wrap(
+    @SafeVarargs
+    public static <T> Future<T> park(final T input, final IxMod in, final BiFunction<T, IxMod, Future<T>>... executors) {
+        return IxFn.park(input, in, executors);
+    }
+
+    public static <T> Function<T, Future<T>> aop(
         final KModule module, final BiFunction<Aspect, Function<T, Future<T>>, Function<T, Future<T>>> aopFn,
         final Function<T, Future<T>> executor) {
-        return IxFn.wrap(module, aopFn, executor);
+        return IxFn.aop(module, aopFn, executor);
     }
 
     // --------------------------------- Serialization / Deserialization System
