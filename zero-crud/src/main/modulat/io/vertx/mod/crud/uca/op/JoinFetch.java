@@ -13,7 +13,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicOpFetch implements Agonic {
+class JoinFetch implements Agonic {
     @Override
     public Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
         LOG.Filter.info(this.getClass(), "( All ) Condition: {0}", input);

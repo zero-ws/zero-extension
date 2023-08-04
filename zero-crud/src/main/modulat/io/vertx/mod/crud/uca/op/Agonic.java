@@ -9,7 +9,11 @@ import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.desk.IxMod;
 
 /**
- * I -> I
+ * 此处有一个特殊点需要说明，关于这些组件命名有特殊约定
+ * <pre><code>
+ *     1. 带 Join 前缀的内置使用了 JOIN 语法，双表或多表直接执行 JOIN
+ *     2. 带 Step 为步骤执行，优先考虑主表执行，再考虑子表执行
+ * </code></pre>
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
@@ -36,15 +40,15 @@ public interface Agonic {
     }
 
     static Agonic get() {
-        return Pooled.CC_AGONIC.pick(AgonicByID::new, AgonicByID.class.getName());
+        return Pooled.CC_AGONIC.pick(StepByID::new, StepByID.class.getName());
     }
 
     static Agonic search() {
-        return Pooled.CC_AGONIC.pick(AgonicOpSearch::new, AgonicOpSearch.class.getName());
+        return Pooled.CC_AGONIC.pick(JoinSearch::new, JoinSearch.class.getName());
     }
 
     static Agonic count() {
-        return Pooled.CC_AGONIC.pick(AgonicOpCount::new, AgonicOpCount.class.getName());
+        return Pooled.CC_AGONIC.pick(JoinCount::new, JoinCount.class.getName());
     }
 
     static Agonic apeak(final boolean isMy) {
@@ -60,7 +64,7 @@ public interface Agonic {
     }
 
     static Agonic fetch() {
-        return Pooled.CC_AGONIC.pick(AgonicOpFetch::new, AgonicOpFetch.class.getName());
+        return Pooled.CC_AGONIC.pick(JoinFetch::new, JoinFetch.class.getName());
     }
 
     default Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {

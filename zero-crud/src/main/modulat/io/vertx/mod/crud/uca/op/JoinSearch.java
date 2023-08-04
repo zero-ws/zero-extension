@@ -14,7 +14,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-class AgonicOpSearch implements Agonic {
+class JoinSearch implements Agonic {
     @Override
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
         LOG.Filter.info(this.getClass(), "( Search ) Condition: {0}", input);
