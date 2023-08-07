@@ -20,6 +20,6 @@ public interface AgonicAop {
     }
 
     static Agonic write(final IxMod module) {
-        return Pooled.CC_AGONIC.pick(() -> new AgonicYouSave(module), AgonicYouSave.class.getName());
+        return Pooled.CC_AGONIC.pick(() -> new StandBySave(module), StandBySave.class.getName());
     }
 }

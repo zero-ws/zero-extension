@@ -1,8 +1,6 @@
 package io.vertx.mod.crud.uca.op.aop;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.aop.Aspect;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -20,8 +18,6 @@ import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
-import java.util.function.Function;
-
 import static io.vertx.mod.crud.refine.Ix.LOG;
 
 /**
@@ -36,6 +32,8 @@ class AgonicUpdate implements Agonic {
                 // 如果没有读取到可更新的记录，则直接返回 204 正常记录提取以保证API幂等性
                 return IxReply.success204Pre();
             }
+
+
             /*
              * 深度合并两个Json对象
              * - input：输入的新数据
@@ -44,24 +42,13 @@ class AgonicUpdate implements Agonic {
             final JsonObject combineJ = json.copy().mergeIn(input, true);
             return Ix.pass(combineJ, in,
                     Pre.audit(false)::inJAsync,                 // updatedAt, updatedBy
-                    Pre.fileIn(false)::inJAsync                 // File: Attachment creating
+                    Pre.fileIn(false)::inJAsync               // File: Attachment creating
                 )
 
-                // 「AOP」带 AOP 的核心更新执行逻辑
-                .compose(this.updateFnJ(combineJ, in));
-        });
-    }
 
-    private Function<JsonObject, Future<JsonObject>> updateFnJ(
-        final JsonObject responseJ, final IxMod in) {
-        final KModule module = in.module();
-        final UxJooq jooq = IxPin.jooq(in);
-        return Ix.aop(module, Aspect::wrapJUpdate,
-            // AOP中的核心逻辑函数
-            aopJ -> Ix.deserializeT(aopJ, module)
-                .compose(jooq::updateAsync)
-                .compose(nil -> IxReply.successJ(responseJ, module))
-        );
+                // 「AOP」带 AOP 的核心更新执行逻辑
+                .compose(AgonicJq.updateFnJ(in));
+        });
     }
 
     /**
@@ -76,7 +63,7 @@ class AgonicUpdate implements Agonic {
      * 更新数据过程中的数据提取和按ID提取其内部逻辑有所区别，所以此处的提取必须使用 “标识规则” 来完成
      * 整体数据提取流程。
      *
-     * @param inputJ 输入的数据信息
+     * @param inputJ 输入的数据信息，查询条件
      * @param in     {@link IxMod} 模型信息
      *
      * @return {@link Future} 异步记录结果
@@ -88,9 +75,13 @@ class AgonicUpdate implements Agonic {
          * 若是 JsonObject，则执行 Ut.isNil 的持续判断，否则直接返回第一个方法的结果。
          */
         return Ix.peekJ(inputJ, in,
+
+
             // 按主键读取数据记录
             (data, mod) -> Pre.qr(QrType.BY_PK)
                 .inJAsync(data, mod).compose(jooq::fetchJOneAsync),
+
+
             // 按标识规则读取数据记录
             (data, mod) -> Pre.qr(QrType.BY_UK)
                 .inJAsync(data, mod).compose(jooq::fetchJOneAsync)
@@ -99,10 +90,7 @@ class AgonicUpdate implements Agonic {
 
     @Override
     public Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
-        final JsonObject query = input.getJsonObject(Ir.KEY_CRITERIA);
-        LOG.Filter.info(this.getClass(), "( Mass Update ) Condition: {0}", query);
-        final UxJooq jooq = IxPin.jooq(in);
-        return jooq.fetchJAsync(query)
+        return this.uniqueAAsync(input, in)
             .compose(original -> {
                 final KField fieldConfig = in.module().getField();
                 final JsonArray matrix = Ix.onMatrix(fieldConfig);
@@ -114,24 +102,36 @@ class AgonicUpdate implements Agonic {
             });
     }
 
+    /**
+     * 批量读取数据记录集，读取满足条件的所有记录集，此处不可以直接使用 {@link Pre}，原因在于该接口支持的三个提取方法主要针对单记录
+     * <pre><code>
+     *     1. 根据ID读取单记录
+     *     2. 根据主键读取单记录
+     *     3. 根据唯一键读取单记录
+     * </code></pre>
+     * 方法内置调用的是 {@link UxJooq#fetchJAsync}，返回值内置类型为 {@link JsonArray}
+     *
+     * @param inputJ 输入的数据信息（包含查询条件）
+     * @param in     {@link IxMod} 模型信息
+     *
+     * @return {@link Future} 异步记录结果
+     */
+    private Future<JsonArray> uniqueAAsync(final JsonObject inputJ, final IxMod in) {
+        final JsonObject query = inputJ.getJsonObject(Ir.KEY_CRITERIA);
+        LOG.Filter.info(this.getClass(), "( Mass Update ) Condition: {0}", query);
+        final UxJooq jooq = IxPin.jooq(in);
+        return jooq.fetchJAsync(query);
+    }
+
     @Override
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
         return Ix.pass(input, in,
                 Pre.audit(false)::inAAsync                      // updatedAt, updatedBy
+                // 批量模式不考虑附件部分的操作
             )
 
 
             // 「AOP」带 AOP 的核心更新执行逻辑
-            .compose(this.updateFnA(in));
-    }
-
-    private Function<JsonArray, Future<JsonArray>> updateFnA(final IxMod in) {
-        final UxJooq jooq = IxPin.jooq(in);
-        return Ix.aop(in.module(), Aspect::wrapAUpdate,
-            // AOP中的核心逻辑函数
-            aopA -> Ix.deserializeT(aopA, in.module())
-                .compose(jooq::updateAsync)
-                .compose(updated -> IxReply.successA(updated, in.module()))
-        );
+            .compose(AgonicJq.updateFnA(in));
     }
 }
