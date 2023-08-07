@@ -21,7 +21,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public class IxWeb {
+public class IxRequest {
     private final static String LOGGER_MOD = "active=\u001b[1;36m{0}\u001b[m, standby=\u001b[1;95m{1}\u001b[m, api={2}, view={3}";
     private final transient ApiSpec apiSpecification;
     // IxMod Calculation
@@ -34,15 +34,15 @@ public class IxWeb {
     private transient JsonObject bodyJ;
     private transient JsonArray bodyA;
 
-    private IxWeb(final ApiSpec spec) {
+    private IxRequest(final ApiSpec spec) {
         this.apiSpecification = spec;
     }
 
-    public static IxWeb create(final ApiSpec spec) {
-        return new IxWeb(spec);
+    public static IxRequest create(final ApiSpec spec) {
+        return new IxRequest(spec);
     }
 
-    public IxWeb build(final Envelop envelop) {
+    public IxRequest build(final Envelop envelop) {
         /*
          *  All the apis support the first parameter of actor
          *  Here we create the first module ( active module )
@@ -91,17 +91,18 @@ public class IxWeb {
 
         // Connecting the standBy instance
         {
+            final IxJunc junc = IxJunc.of(this.active);
             if (Objects.isNull(module)) {
                 if (Objects.nonNull(this.bodyJ)) {
                     // By Json
-                    this.standBy = this.active.connecting(this.bodyJ);
+                    this.standBy = junc.connect(this.bodyJ);
                 } else if (Objects.nonNull(this.bodyA)) {
                     // By Array
-                    this.standBy = this.active.connecting(this.bodyA);
+                    this.standBy = junc.connect(this.bodyA);
                 }
             } else {
                 // By Module
-                this.standBy = this.active.connecting(module);
+                this.standBy = junc.connect(module);
             }
         }
         LOG.Web.info(this.getClass(), LOGGER_MOD,

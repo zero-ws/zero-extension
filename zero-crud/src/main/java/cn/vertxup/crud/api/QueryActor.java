@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Addr;
 import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.uca.desk.IxPanel;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
@@ -41,7 +41,7 @@ public class QueryActor {
      */
     @Address(Addr.Post.SEARCH)
     public Future<Envelop> search(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_JSON).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_JSON).build(envelop);
         return IxPanel.on(request)
             .input(
                 Pre.codex()::inJAsync                   /* Codex */
@@ -52,7 +52,7 @@ public class QueryActor {
 
     @Address(Addr.Post.EXISTING)
     public Future<Envelop> existing(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_JSON).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_JSON).build(envelop);
         return IxPanel.on(request)
             .input(
                 Pre.codex()::inJAsync                   /* Codex */
@@ -64,7 +64,7 @@ public class QueryActor {
 
     @Address(Addr.Post.MISSING)
     public Future<Envelop> missing(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_JSON).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_JSON).build(envelop);
         return IxPanel.on(request)
             .input(
                 Pre.codex()::inJAsync                   /* Codex */

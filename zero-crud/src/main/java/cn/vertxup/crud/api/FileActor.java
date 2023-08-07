@@ -13,7 +13,7 @@ import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxPanel;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
@@ -44,7 +44,7 @@ public class FileActor {
          *  Import Data from file here
          *  Extract `filename` as file
          */
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_STRING).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_STRING).build(envelop);
         final IxPanel panel = IxPanel.on(request);
         final Co co = Co.nextJ(request.active(), true);
         return Pre.excel(this.client).inJAAsync(request.dataF(), request.active()).compose(data -> panel
@@ -64,7 +64,7 @@ public class FileActor {
     @Address(Addr.File.EXPORT)
     public Future<Envelop> exportFile(final Envelop envelop) {
         /* Search full column and it will be used in another method */
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_JSON).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_JSON).build(envelop);
 
         /* Exported columns here for future calculation */
         final JsonObject condition = request.dataJ();

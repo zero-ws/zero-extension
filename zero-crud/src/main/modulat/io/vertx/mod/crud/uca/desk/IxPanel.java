@@ -30,7 +30,7 @@ public class IxPanel {
     private transient BiFunction outputFn = null;
     private transient BiFunction nextFn = null;
 
-    private IxPanel(final IxWeb request) {
+    private IxPanel(final IxRequest request) {
         // Bind This
         this.active = request.active();
         this.standBy = request.standBy();
@@ -48,7 +48,7 @@ public class IxPanel {
         this.nextFn = (i, a) -> Ux.future(a);
     }
 
-    public static IxPanel on(final IxWeb request) {
+    public static IxPanel on(final IxRequest request) {
         return new IxPanel(request);
     }
 

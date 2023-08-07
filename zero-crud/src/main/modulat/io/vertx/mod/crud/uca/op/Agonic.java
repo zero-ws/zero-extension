@@ -32,19 +32,19 @@ public interface Agonic {
     }
 
     static Agonic file() {
-        return Pooled.CC_AGONIC.pick(StepImport::new, StepImport.class.getName());
+        return Pooled.CCT_AGONIC.pick(StepImport::new, StepImport.class.getName());
     }
 
     static Agonic get() {
-        return Pooled.CC_AGONIC.pick(StepByID::new, StepByID.class.getName());
+        return Pooled.CCT_AGONIC.pick(StepByID::new, StepByID.class.getName());
     }
 
     static Agonic search() {
-        return Pooled.CC_AGONIC.pick(JoinSearch::new, JoinSearch.class.getName());
+        return Pooled.CCT_AGONIC.pick(JoinSearch::new, JoinSearch.class.getName());
     }
 
     static Agonic count() {
-        return Pooled.CC_AGONIC.pick(JoinCount::new, JoinCount.class.getName());
+        return Pooled.CCT_AGONIC.pick(JoinCount::new, JoinCount.class.getName());
     }
 
     static Agonic view(final boolean isMy) {
@@ -56,7 +56,7 @@ public interface Agonic {
     }
 
     static Agonic fetch() {
-        return Pooled.CC_AGONIC.pick(JoinFetch::new, JoinFetch.class.getName());
+        return Pooled.CCT_AGONIC.pick(JoinFetch::new, JoinFetch.class.getName());
     }
 
     default Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {

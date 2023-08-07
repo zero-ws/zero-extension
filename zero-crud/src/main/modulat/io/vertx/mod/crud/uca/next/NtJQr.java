@@ -17,7 +17,7 @@ class NtJQr implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
 
     NtJQr(final IxMod in) {
         this.in = in;
-        this.record = Pooled.CC_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.cached());
+        this.record = Pooled.CCT_CO.pick(() -> new NtJData(in), NtJData.class.getName() + in.cached());
         // Fn.po?lThread(Pooled.CO_MAP, () -> new NtJData(in), NtJData.class.getName() + in.keyPool());
     }
 

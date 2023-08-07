@@ -11,15 +11,15 @@ import io.vertx.mod.crud.uca.op.Agonic;
 public interface AgonicAop {
     static Agonic write(final ChangeFlag flag) {
         if (ChangeFlag.ADD == flag) {
-            return Pooled.CC_AGONIC.pick(AgonicCreate::new, AgonicCreate.class.getName());
+            return Pooled.CCT_AGONIC.pick(AgonicCreate::new, AgonicCreate.class.getName());
         } else if (ChangeFlag.DELETE == flag) {
-            return Pooled.CC_AGONIC.pick(AgonicDelete::new, AgonicDelete.class.getName());
+            return Pooled.CCT_AGONIC.pick(AgonicDelete::new, AgonicDelete.class.getName());
         } else {
-            return Pooled.CC_AGONIC.pick(AgonicUpdate::new, AgonicUpdate.class.getName());
+            return Pooled.CCT_AGONIC.pick(AgonicUpdate::new, AgonicUpdate.class.getName());
         }
     }
 
     static Agonic write(final IxMod module) {
-        return Pooled.CC_AGONIC.pick(() -> new StandBySave(module), StandBySave.class.getName());
+        return Pooled.CCT_AGONIC.pick(() -> new StandBySave(module), StandBySave.class.getName());
     }
 }

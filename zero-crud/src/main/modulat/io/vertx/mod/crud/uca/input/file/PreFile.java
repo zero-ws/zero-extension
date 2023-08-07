@@ -9,17 +9,17 @@ import io.vertx.mod.crud.uca.input.Pre;
 public interface PreFile {
     static Pre fileIn(final boolean createOnly) {
         if (createOnly) {
-            return Pooled.CC_PRE.pick(FileUploadPre::new, FileUploadPre.class.getName());
+            return Pooled.CCT_PRE.pick(FileUploadPre::new, FileUploadPre.class.getName());
         } else {
-            return Pooled.CC_PRE.pick(FileSavePre::new, FileSavePre.class.getName());
+            return Pooled.CCT_PRE.pick(FileSavePre::new, FileSavePre.class.getName());
         }
     }
 
     static Pre fileOut() {
-        return Pooled.CC_PRE.pick(FileRemovePre::new, FileRemovePre.class.getName());
+        return Pooled.CCT_PRE.pick(FileRemovePre::new, FileRemovePre.class.getName());
     }
 
     static Pre fileData() {
-        return Pooled.CC_PRE.pick(FileFetchPre::new, FileFetchPre.class.getName());
+        return Pooled.CCT_PRE.pick(FileFetchPre::new, FileFetchPre.class.getName());
     }
 }

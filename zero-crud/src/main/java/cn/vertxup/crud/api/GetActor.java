@@ -8,7 +8,7 @@ import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.cv.em.QrType;
 import io.vertx.mod.crud.uca.desk.IxPanel;
 import io.vertx.mod.crud.uca.desk.IxReply;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
@@ -31,7 +31,7 @@ public class GetActor {
      */
     @Address(Addr.Get.BY_ID)
     public Future<Envelop> getById(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_STRING).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_STRING).build(envelop);
         return IxPanel.on(request)
             .passion(Agonic.get()::runJAsync, null)
             .<JsonObject, JsonObject, JsonObject>runJ(request.dataK())
@@ -47,7 +47,7 @@ public class GetActor {
      */
     @Address(Addr.Get.BY_SIGMA)
     public Future<Envelop> getAll(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_NONE).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_NONE).build(envelop);
         /* Headers */
         final JsonObject headers = envelop.headersX();
         final String sigma = headers.getString(KName.SIGMA);

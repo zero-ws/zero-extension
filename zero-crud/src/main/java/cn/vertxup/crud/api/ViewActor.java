@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.mod.crud.cv.Addr;
 import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.uca.desk.IxPanel;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
@@ -24,7 +24,7 @@ public class ViewActor {
      */
     @Address(Addr.Get.COLUMN_FULL)
     public Future<JsonArray> getFull(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_NONE).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_NONE).build(envelop);
         return T.fetchFull(request).runJ(request.dataV());
     }
 
@@ -34,7 +34,7 @@ public class ViewActor {
     @Address(Addr.Get.COLUMN_MY)
     @SuppressWarnings("all")
     public Future<JsonArray> getMy(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_NONE).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_NONE).build(envelop);
         return IxPanel.on(request)
             .input(
                 Pre.apeak(true)::inJAsync,              /* Apeak */
@@ -59,7 +59,7 @@ class T {
      * Shared Method mask as static method for two usage
      */
     @SuppressWarnings("all")
-    static IxPanel fetchFull(final IxWeb request) {
+    static IxPanel fetchFull(final IxRequest request) {
         return IxPanel.on(request)
             .input(
                 Pre.apeak(false)::inJAsync,             /* Apeak */

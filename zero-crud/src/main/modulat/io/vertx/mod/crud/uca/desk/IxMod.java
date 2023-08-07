@@ -4,18 +4,13 @@ import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.VString;
 import io.horizon.exception.WebException;
 import io.horizon.exception.web._500InternalServerException;
-import io.modello.eon.em.EmModel;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.error._404ModuleMissingException;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.atom.shape.KJoin;
-import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.commune.Envelop;
-import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;
@@ -127,6 +122,18 @@ public class IxMod {
      */
     public KModule connected() {
         return this.connect;
+    }
+
+    /**
+     * 连接点主函数
+     *
+     * @param in 被连接的 {@link IxMod} 对象
+     *
+     * @return {@link IxMod}
+     */
+    public IxMod connected(final IxMod in) {
+        this.connect = in.module;
+        return this;
     }
 
     /**
@@ -247,64 +254,5 @@ public class IxMod {
      */
     public boolean canTransform() {
         return Objects.nonNull(this.module.getTransform());
-    }
-
-    public IxMod connecting(final Object input) {
-        if (Objects.isNull(input)) {
-            return null;
-        }
-        /*
-         * This statement must execute before connect checking to avoid
-         * Returned
-         */
-        if (input instanceof String) {
-            this.parameters.put(KName.MODULE, (String) input);
-        }
-        /*
-         * 1. When ADD / UPDATE
-         *    1.1. P1: `module` parameter is the first priority
-         *    1.2. P2: When `module` has not been provided, here should be SMART processing on BODY
-         *    1.3. P3: The default workflow
-         *
-         * 2. Other situations
-         *    2.1. P1: `module` parameter is the first priority
-         *    2.2. P2: The default workflow
-         */
-        final KJoin connect = this.module.getConnect();
-        /*
-         * When `KJoin` is null, it means that current module does not support any
-         * extension for sub-modules, in this situation, clear the module parameters
-         * because it's useless.
-         */
-        if (Objects.isNull(connect)) {
-            return null;
-        }
-        KPoint target = null;
-        if (input instanceof final String inputS) {
-            /*
-             * Connected by `module` parameters
-             */
-            final Hymn<String> hymn = Hymn.ofString(connect);
-            target = hymn.pointer(inputS); // connect.point(module);
-        } else if (input instanceof final JsonObject inputJ) {
-            /*
-             * Connected by `JsonObject` parameters
-             */
-
-            final Hymn<JsonObject> hymn = Hymn.ofJObject(connect);
-            target = hymn.pointer(inputJ); // connect.point((JsonObject) input);
-        } else if (input instanceof final JsonArray inputA) {
-            /*
-             * Connected by `JsonArray` parameters
-             */
-            final Hymn<JsonArray> hymn = Hymn.ofJArray(connect);
-            target = hymn.pointer(inputA); // connect.point((JsonArray) input);
-        }
-        if (Objects.nonNull(target) && EmModel.Join.CRUD == target.modeTarget()) {
-            final IxMod standBy = IxMod.create(target.getCrud()).envelop(this.envelop);
-            this.connect = standBy.module;
-            return standBy;
-        }
-        return null;
     }
 }

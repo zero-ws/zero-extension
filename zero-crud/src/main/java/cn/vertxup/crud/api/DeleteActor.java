@@ -8,7 +8,7 @@ import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.cv.em.QrType;
 import io.vertx.mod.crud.uca.desk.IxPanel;
 import io.vertx.mod.crud.uca.desk.IxReply;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
@@ -24,7 +24,7 @@ public class DeleteActor {
      */
     @Address(Addr.Delete.BY_ID)
     public Future<Envelop> delete(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_STRING).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_STRING).build(envelop);
         final JsonObject params = request.dataK();
         return IxPanel.on(request)
             .passion(Agonic.write(ChangeFlag.DELETE)::runJAsync, null)
@@ -42,7 +42,7 @@ public class DeleteActor {
      */
     @Address(Addr.Delete.BATCH)
     public Future<Envelop> deleteBatch(final Envelop envelop) {
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_ARRAY).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_ARRAY).build(envelop);
         return IxPanel.on(request)
             .input(
                 Pre.qr(QrType.BY_PK)::inAJAsync                        /* keys,in */

@@ -10,9 +10,9 @@ public interface PreId {
 
     static Pre key(final boolean isNew) {
         if (isNew) {
-            return Pooled.CC_PRE.pick(UuidPre::new, UuidPre.class.getName());
+            return Pooled.CCT_PRE.pick(UuidPre::new, UuidPre.class.getName());
         } else {
-            return Pooled.CC_PRE.pick(KeyPre::new, KeyPre.class.getName());
+            return Pooled.CCT_PRE.pick(KeyPre::new, KeyPre.class.getName());
         }
     }
 }

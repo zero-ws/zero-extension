@@ -17,13 +17,13 @@ public interface PreQr {
      */
     static Pre qr(final QrType type) {
         if (QrType.ALL == type) {
-            return Pooled.CC_PRE.pick(KeyWholePre::new, KeyWholePre.class.getName());
+            return Pooled.CCT_PRE.pick(KeyWholePre::new, KeyWholePre.class.getName());
         } else if (QrType.BY_UK == type) {
-            return Pooled.CC_PRE.pick(KeyUniquePre::new, KeyUniquePre.class.getName());
+            return Pooled.CCT_PRE.pick(KeyUniquePre::new, KeyUniquePre.class.getName());
         } else if (QrType.BY_VK == type) {
-            return Pooled.CC_PRE.pick(KeyViewPre::new, KeyViewPre.class.getName());
+            return Pooled.CCT_PRE.pick(KeyViewPre::new, KeyViewPre.class.getName());
         } else {
-            return Pooled.CC_PRE.pick(KeyPrimaryPre::new, KeyPrimaryPre.class.getName());
+            return Pooled.CCT_PRE.pick(KeyPrimaryPre::new, KeyPrimaryPre.class.getName());
         }
     }
 }

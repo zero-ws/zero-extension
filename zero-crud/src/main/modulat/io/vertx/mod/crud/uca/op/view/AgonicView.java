@@ -10,13 +10,13 @@ public interface AgonicView {
 
     static Agonic view(final boolean isMy) {
         if (isMy) {
-            return Pooled.CC_AGONIC.pick(ViewMy::new, ViewMy.class.getName());
+            return Pooled.CCT_AGONIC.pick(ViewMy::new, ViewMy.class.getName());
         } else {
-            return Pooled.CC_AGONIC.pick(ViewFull::new, ViewFull.class.getName());
+            return Pooled.CCT_AGONIC.pick(ViewFull::new, ViewFull.class.getName());
         }
     }
 
     static Agonic view() {
-        return Pooled.CC_AGONIC.pick(ViewSync::new, ViewSync.class.getName());
+        return Pooled.CCT_AGONIC.pick(ViewSync::new, ViewSync.class.getName());
     }
 }

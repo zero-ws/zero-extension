@@ -5,6 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
+import io.vertx.mod.crud.uca.desk.IxJunc;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
@@ -35,7 +36,8 @@ class StepByID implements Agonic {
 
 
             // 动态连接，根据输入计算连接模型
-            final IxMod connect = in.connecting(dataJ);
+            final IxJunc junc = IxJunc.of(in);
+            final IxMod connect = junc.connect(dataJ);
             if (Objects.isNull(connect)) {
                 // 截断返回，此处只返回主模型
                 return Ux.future(dataJ);

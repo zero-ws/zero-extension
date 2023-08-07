@@ -7,7 +7,7 @@ import io.vertx.mod.crud.cv.Addr;
 import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.mod.crud.uca.desk.IxPanel;
 import io.vertx.mod.crud.uca.desk.IxReply;
-import io.vertx.mod.crud.uca.desk.IxWeb;
+import io.vertx.mod.crud.uca.desk.IxRequest;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
@@ -35,7 +35,7 @@ public class PostActor {
     @Address(Addr.Post.ADD)
     public Future<Envelop> create(final Envelop envelop) {
         /* Actor Extraction */
-        final IxWeb request = IxWeb.create(ApiSpec.BODY_JSON).build(envelop);
+        final IxRequest request = IxRequest.create(ApiSpec.BODY_JSON).build(envelop);
         final Co coJ = Co.nextJ(request.active(), false);
         return IxPanel.on(request)
 
