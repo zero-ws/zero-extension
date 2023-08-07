@@ -49,12 +49,12 @@ class AgonicDelete implements Agonic {
                     (stub) -> stub.backupAsync(module.identifier(), removed)))
 
                 // 「AOP」带 AOP 的核心删除执行逻辑
-                .compose(this.deleteFnJ(in, criteria));
+                .compose(this.deleteFnJ(criteria, in));
         });
     }
 
     private Function<JsonObject, Future<JsonObject>> deleteFnJ(
-        final IxMod in, final JsonObject criteria) {
+        final JsonObject criteria, final IxMod in) {
         final KModule module = in.module();
         final UxJooq jooq = IxPin.jooq(in);
         return Ix.aop(module, Aspect::wrapJDelete,
@@ -89,13 +89,13 @@ class AgonicDelete implements Agonic {
 
 
                 // 「AOP」带 AOP 的核心删除执行逻辑
-                .compose(this.deleteFnA(in, criteria))
+                .compose(this.deleteFnA(criteria, in))
                 .compose(nil -> Ux.future(array));
         });
     }
 
     private Function<JsonArray, Future<JsonArray>> deleteFnA(
-        final IxMod in, final JsonObject criteria) {
+        final JsonObject criteria, final IxMod in) {
         final KModule module = in.module();
         final UxJooq jooq = IxPin.jooq(in);
         return Ix.aop(module, Aspect::wrapADelete,

@@ -20,6 +20,8 @@ import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
+import java.util.function.Function;
+
 import static io.vertx.mod.crud.refine.Ix.LOG;
 
 /**
@@ -29,41 +31,70 @@ class AgonicUpdate implements Agonic {
 
     @Override
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
+        return this.uniqueJAsync(input, in).compose(json -> {
+            if (Ut.isNil(json)) {
+                // 如果没有读取到可更新的记录，则直接返回 204 正常记录提取以保证API幂等性
+                return IxReply.success204Pre();
+            }
+            /*
+             * 深度合并两个Json对象
+             * - input：输入的新数据
+             * - json：从数据库中提取的已经存储的记录
+             */
+            final JsonObject combineJ = json.copy().mergeIn(input, true);
+            return Ix.pass(combineJ, in,
+                    Pre.audit(false)::inJAsync,                 // updatedAt, updatedBy
+                    Pre.fileIn(false)::inJAsync                 // File: Attachment creating
+                )
+
+                // 「AOP」带 AOP 的核心更新执行逻辑
+                .compose(this.updateFnJ(combineJ, in));
+        });
+    }
+
+    private Function<JsonObject, Future<JsonObject>> updateFnJ(
+        final JsonObject responseJ, final IxMod in) {
         final KModule module = in.module();
         final UxJooq jooq = IxPin.jooq(in);
+        return Ix.aop(module, Aspect::wrapJUpdate,
+            // AOP中的核心逻辑函数
+            aopJ -> Ix.deserializeT(aopJ, module)
+                .compose(jooq::updateAsync)
+                .compose(nil -> IxReply.successJ(responseJ, module))
+        );
+    }
+
+    /**
+     * 更新记录时，会直接调用底层提取数据的相关方法实现更新的核心逻辑
+     * <pre><code>
+     *     1. 根据 PrimaryKey 和 UniqueKey 从数据库中抓取数据信息，抓取过程中的优先级如：
+     *        - PrimaryKey：先根据主键读取数据信息
+     *        - UniqueKey：然后根据唯一键读取数据信息
+     *     2. 本方法主要负责优先级的排列，以防止后续如果有其他模式读取信息的情况，此处的 UniqueKey
+     *        和唯一键相关的 “标识规则” 定义有关 {@link KField} 中的多维标识符定义
+     * </code></pre>
+     * 更新数据过程中的数据提取和按ID提取其内部逻辑有所区别，所以此处的提取必须使用 “标识规则” 来完成
+     * 整体数据提取流程。
+     *
+     * @param inputJ 输入的数据信息
+     * @param in     {@link IxMod} 模型信息
+     *
+     * @return {@link Future} 异步记录结果
+     */
+    private Future<JsonObject> uniqueJAsync(final JsonObject inputJ, final IxMod in) {
+        final UxJooq jooq = IxPin.jooq(in);
         /*
-         * Here the queryJ is the record that has been stored
-         * in database, this api should re-write and merge the input
-         * data into `queryJ`
-         * 1. If the `field` exist, the field will be overwritten
-         * 2. If the `field` does not exist, the field will be ignored
-         * */
-        return Ix.peekJ(input, in,
-            (data, mod) -> Pre.qr(QrType.BY_PK).inJAsync(data, mod)
-                .compose(jooq::fetchJOneAsync),
-            (data, mod) -> Pre.qr(QrType.BY_UK).inJAsync(data, mod)
-                .compose(jooq::fetchJOneAsync)
-        ).compose(json -> {
-            if (Ut.isNil(json)) {
-                // Not Found
-                return IxReply.success204Pre();
-            } else {
-                // Do Update
-                final JsonObject merged = json.copy().mergeIn(input, true);
-                return Ix.pass(merged, in,
-                        Pre.audit(false)::inJAsync,                 // updatedAt, updatedBy
-                        Pre.fileIn(false)::inJAsync                 // File: Attachment creating
-                    )
-
-
-                    // 「AOP」Wrap JsonObject update
-                    .compose(Ix.aop(module, Aspect::wrapJUpdate, wrapData -> Ux.future(wrapData)
-                        .compose(processed -> Ix.deserializeT(processed, module))
-                        .compose(jooq::updateAsync)
-                        .compose(updated -> IxReply.successJ(updated, module))
-                    ));
-            }
-        });
+         * 此处特殊方法调用，peekJ 会执行优先方法调用，第一个方法返回 null 则继续执行，
+         * 若是 JsonObject，则执行 Ut.isNil 的持续判断，否则直接返回第一个方法的结果。
+         */
+        return Ix.peekJ(inputJ, in,
+            // 按主键读取数据记录
+            (data, mod) -> Pre.qr(QrType.BY_PK)
+                .inJAsync(data, mod).compose(jooq::fetchJOneAsync),
+            // 按标识规则读取数据记录
+            (data, mod) -> Pre.qr(QrType.BY_UK)
+                .inJAsync(data, mod).compose(jooq::fetchJOneAsync)
+        );
     }
 
     @Override
@@ -85,18 +116,22 @@ class AgonicUpdate implements Agonic {
 
     @Override
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
-        final KModule module = in.module();
-        final UxJooq jooq = IxPin.jooq(in);
         return Ix.pass(input, in,
                 Pre.audit(false)::inAAsync                      // updatedAt, updatedBy
             )
 
 
-            // 「AOP」Wrap JsonArray update
-            .compose(Ix.aop(module, Aspect::wrapAUpdate, wrapData -> Ux.future(wrapData)
-                .compose(processed -> Ix.deserializeT(processed, module))
+            // 「AOP」带 AOP 的核心更新执行逻辑
+            .compose(this.updateFnA(in));
+    }
+
+    private Function<JsonArray, Future<JsonArray>> updateFnA(final IxMod in) {
+        final UxJooq jooq = IxPin.jooq(in);
+        return Ix.aop(in.module(), Aspect::wrapAUpdate,
+            // AOP中的核心逻辑函数
+            aopA -> Ix.deserializeT(aopA, in.module())
                 .compose(jooq::updateAsync)
-                .compose(updated -> IxReply.successA(updated, module))
-            ));
+                .compose(updated -> IxReply.successA(updated, in.module()))
+        );
     }
 }
