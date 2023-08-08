@@ -23,7 +23,7 @@ class AgonicCreate implements Agonic {
     public Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
         final KModule module = in.module();
         return this.uniqueJAsync(input, in).compose(json -> {
-            if (Ut.isNil(json)) {
+            if (Ut.isNotNil(json)) {
                 // 数据本身存在，返回 201 Created 响应，此处 201 针对业务标识
                 return IxReply.success201Pre(json, module);
             }
