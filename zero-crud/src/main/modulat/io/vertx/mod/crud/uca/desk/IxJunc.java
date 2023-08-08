@@ -35,33 +35,52 @@ public class IxJunc {
         if (Objects.isNull(input)) {
             return null;
         }
+
+        final KModule module = this.mod.module();
+        final KJoin connect = module.getConnect();
         /*
-         * This statement must execute before connect checking to avoid
-         * Returned
+         * 若 KJoin 无法提取，则证明当前模型不支持连接模型
+         * 1. 不支持子模型 sub-module
+         * 2. 不支持引用模型 refer-module
+         * 这种场景下可以完全不用考虑
+         */
+        if (Objects.isNull(connect)) {
+            return null;
+        }
+
+        if (connect.isRefer()) {
+            // 引用模型，引用模型不依赖输入信息
+            return this.connectRefer(connect);
+        } else {
+            // 子模型
+            return this.connectJoined(connect, input);
+        }
+    }
+
+    private IxMod connectRefer(final KJoin connect) {
+        final KPoint target = connect.getReference();
+        return this.createMod(target);
+    }
+
+
+    private IxMod connectJoined(final KJoin connect, final Object input) {
+        /*
+         * 一旦调用了此方法，证明启用了连接模式处理，这种场景下，需要启用连接模式，这种场景中会直接
+         * 设置
+         * module = input
          */
         if (input instanceof String) {
             this.mod.parameters().put(KName.MODULE, input);
         }
         /*
-         * 1. When ADD / UPDATE
-         *    1.1. P1: `module` parameter is the first priority
-         *    1.2. P2: When `module` has not been provided, here should be SMART processing on BODY
-         *    1.3. P3: The default workflow
-         *
-         * 2. Other situations
-         *    2.1. P1: `module` parameter is the first priority
-         *    2.2. P2: The default workflow
+         * 执行添加和删除 ADD / UPDATE
+         *    1.1. P1：module 参数是第一优先级，根据此参数执行提取得到连接点
+         *    1.2. P2：若 module 没有提供，此处会执行一个 SMART 流程对 Body 进行解析和分析
+         *    1.3. P3：默认流程执行
+         * 其他情况
+         *    2.1. P1：同上 P2
+         *    2.2. P2：同上 P3
          */
-        final KModule module = this.mod.module();
-        final KJoin connect = module.getConnect();
-        /*
-         * When `KJoin` is null, it means that current module does not support any
-         * extension for sub-modules, in this situation, clear the module parameters
-         * because it's useless.
-         */
-        if (Objects.isNull(connect)) {
-            return null;
-        }
         KPoint target = null;
         if (input instanceof final String inputS) {
             /*
@@ -83,6 +102,10 @@ public class IxJunc {
             final Hymn<JsonArray> hymn = Hymn.ofJArray(connect);
             target = hymn.pointer(inputA); // connect.point((JsonArray) input);
         }
+        return this.createMod(target);
+    }
+
+    private IxMod createMod(final KPoint target) {
         if (Objects.nonNull(target) && EmModel.Join.CRUD == target.modeTarget()) {
             final Envelop envelop = this.mod.envelop();
             final IxMod standBy = IxMod.create(target.getCrud()).envelop(envelop);
