@@ -46,7 +46,7 @@ class StepByID implements Agonic {
             // 针对连接模块的处理流程
             return this.nextAsync(
                 input,             // 基础输入数据
-                connect,           // 连接模块
+                in,                // 此处根据 in 计算 connect，所以基础参数应该是 in，并非 connect
                 // 连接模块依旧调用 fetchAsync 方法，只是切换模块对象
                 params -> this.fetchAsync(params, connect),
                 dataJ              // 主模型数据
