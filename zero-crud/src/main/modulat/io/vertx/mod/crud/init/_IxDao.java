@@ -114,15 +114,8 @@ class IxDao {
             module.setColumn(column);
         }
 
-        /* Header Processing */
-        final JsonObject header = Ut.valueJObject(module.getHeader());
-        /* sigma -> X-Sigma */
-        Fn.runAt(!header.containsKey(KName.SIGMA),
-            () -> header.put(KName.SIGMA, KWeb.HEADER.X_SIGMA));
-        /* language -> X-Lang */
-        Fn.runAt(!header.containsKey(KName.LANGUAGE),
-            () -> header.put(KName.LANGUAGE, KWeb.HEADER.X_LANG));
-        module.setHeader(header);
+        /* 处理请求头配置 */
+        initHeader(module);
 
         /* Auditor Processing */
         final KField field = Objects.isNull(module.getField()) ? new KField() : module.getField();
@@ -141,5 +134,38 @@ class IxDao {
         // Module field setting workflow for default
         module.setField(field);
         return identifier;
+    }
+
+    /**
+     * 根据 zero extension 的基础规范，初始化 header 部分默认值，主要针对头部定义追加需初始化的请求头信息
+     * <pre><code>
+     *     sigma,           X-Sigma     统一标识符
+     *     language,        X-Lang      语言信息
+     *     app-id,          X-App-Id    应用程序标识符
+     *     app-key,         X-App-Key   应用程序密钥
+     *     tenantId,        X-Tenant-Id 租户标识符
+     * </code></pre>
+     *
+     * @param module {@link KModule}
+     */
+    private static void initHeader(final KModule module) {
+        /* Header Processing */
+        final JsonObject header = Ut.valueJObject(module.getHeader());
+        /* sigma -> X-Sigma */
+        Fn.runAt(!header.containsKey(KName.SIGMA),
+            () -> header.put(KName.SIGMA, KWeb.HEADER.X_SIGMA));
+        /* language -> X-Lang */
+        Fn.runAt(!header.containsKey(KName.LANGUAGE),
+            () -> header.put(KName.LANGUAGE, KWeb.HEADER.X_LANG));
+        /* app-id -> X-App-Id */
+        Fn.runAt(!header.containsKey(KName.APP_ID),
+            () -> header.put(KName.APP_ID, KWeb.HEADER.X_APP_ID));
+        /* app-key -> X-App-Key */
+        Fn.runAt(!header.containsKey(KName.APP_KEY),
+            () -> header.put(KName.APP_KEY, KWeb.HEADER.X_APP_KEY));
+        /* tenantId -> X-Tenant-Id */
+        Fn.runAt(!header.containsKey(KName.TENANT_ID),
+            () -> header.put(KName.TENANT_ID, KWeb.HEADER.X_TENANT_ID));
+        module.setHeader(header);
     }
 }
