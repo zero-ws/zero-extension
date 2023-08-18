@@ -48,6 +48,8 @@ public interface KeIpc {
         String TPL = "tpl";
         // zero-crud
         String CRUD = "crud";
+        // zero-doc
+        String DOC = "doc";
     }
 
     /*

@@ -1,15 +1,11 @@
 package io.vertx.mod.crud.init;
 
-import io.aeon.experiment.specification.KColumn;
 import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.VPath;
 import io.horizon.eon.VString;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.IxFolder;
 import io.vertx.mod.crud.cv.IxMsg;
-import io.vertx.up.atom.shape.KField;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.plugin.booting.HExtension;
 import io.vertx.up.uca.log.DevEnv;
@@ -78,7 +74,7 @@ class IxDao {
         /* 2. Deserialize to IxConfig object */
         final KModule config = Ut.deserialize(data, KModule.class);
         /* 3. Default Values */
-        final String identifier = initValues(config, identifierDefault);
+        final String identifier = IxInitializer.configure(config, identifierDefault);
         /* 4. Url & Map */
         IxConfiguration.addUrs(config.getName());
         CONFIG_MAP.put(config.getName(), config);
@@ -103,69 +99,5 @@ class IxDao {
             LOG.Rest.info(IxDao.class, "Actor: name = `{0}`", actor);
             return config;
         }
-    }
-
-    private static String initValues(final KModule module, final String identifier) {
-        /* Default Column */
-        if (Objects.isNull(module.getColumn())) {
-            final KColumn column = new KColumn();
-            column.setDynamic(Boolean.FALSE);
-            column.setIdentifier(identifier);
-            module.setColumn(column);
-        }
-
-        /* 处理请求头配置 */
-        initHeader(module);
-
-        /* Auditor Processing */
-        final KField field = Objects.isNull(module.getField()) ? new KField() : module.getField();
-        // key -> key
-        Fn.runAt(Objects.isNull(field.getKey()), () -> field.setKey(KName.KEY));
-        // created
-        final JsonObject created = Ut.valueJObject(field.getCreated());
-        Fn.runAt(!created.containsKey(KName.AT), () -> created.put(KName.AT, KName.CREATED_AT));
-        Fn.runAt(!created.containsKey(KName.BY), () -> created.put(KName.BY, KName.CREATED_BY));
-        field.setCreated(created);
-        // updated
-        final JsonObject updated = Ut.valueJObject(field.getUpdated());
-        Fn.runAt(!updated.containsKey(KName.AT), () -> updated.put(KName.AT, KName.UPDATED_AT));
-        Fn.runAt(!updated.containsKey(KName.BY), () -> updated.put(KName.BY, KName.UPDATED_BY));
-        field.setUpdated(updated);
-        // Module field setting workflow for default
-        module.setField(field);
-        return identifier;
-    }
-
-    /**
-     * 根据 zero extension 的基础规范，初始化 header 部分默认值，主要针对头部定义追加需初始化的请求头信息
-     * <pre><code>
-     *     sigma,           X-Sigma     统一标识符
-     *     language,        X-Lang      语言信息
-     *     app-id,          X-App-Id    应用程序标识符
-     *     app-key,         X-App-Key   应用程序密钥
-     *     tenantId,        X-Tenant-Id 租户标识符
-     * </code></pre>
-     *
-     * @param module {@link KModule}
-     */
-    private static void initHeader(final KModule module) {
-        /* Header Processing */
-        final JsonObject header = Ut.valueJObject(module.getHeader());
-        /* sigma -> X-Sigma */
-        Fn.runAt(!header.containsKey(KName.SIGMA),
-            () -> header.put(KName.SIGMA, KWeb.HEADER.X_SIGMA));
-        /* language -> X-Lang */
-        Fn.runAt(!header.containsKey(KName.LANGUAGE),
-            () -> header.put(KName.LANGUAGE, KWeb.HEADER.X_LANG));
-        /* app-id -> X-App-Id */
-        Fn.runAt(!header.containsKey(KName.APP_ID),
-            () -> header.put(KName.APP_ID, KWeb.HEADER.X_APP_ID));
-        /* app-key -> X-App-Key */
-        Fn.runAt(!header.containsKey(KName.APP_KEY),
-            () -> header.put(KName.APP_KEY, KWeb.HEADER.X_APP_KEY));
-        /* tenantId -> X-Tenant-Id */
-        Fn.runAt(!header.containsKey(KName.TENANT_ID),
-            () -> header.put(KName.TENANT_ID, KWeb.HEADER.X_TENANT_ID));
-        module.setHeader(header);
     }
 }
