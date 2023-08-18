@@ -1,13 +1,12 @@
 package io.vertx.mod.crud.uca.desk;
 
 import io.aeon.experiment.specification.KModule;
-import io.modello.eon.em.EmModel;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
+import io.vertx.mod.crud.uca.destine.Probe;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
-import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.destine.Hymn;
 
@@ -59,7 +58,14 @@ public class IxJunc {
 
     private IxMod connectRefer(final KJoin connect) {
         final KPoint target = connect.getReference();
-        return this.createMod(target);
+        if (Objects.isNull(target)) {
+            return null;
+        }
+        final Probe probe = Probe.of(target.modeTarget());
+        if (Objects.isNull(probe)) {
+            return null;
+        }
+        return probe.create(target, this.mod);
     }
 
 
@@ -102,16 +108,14 @@ public class IxJunc {
             final Hymn<JsonArray> hymn = Hymn.ofJArray(connect);
             target = hymn.pointer(inputA); // connect.point((JsonArray) input);
         }
-        return this.createMod(target);
-    }
 
-    private IxMod createMod(final KPoint target) {
-        if (Objects.nonNull(target) && EmModel.Join.CRUD == target.modeTarget()) {
-            final Envelop envelop = this.mod.envelop();
-            final IxMod standBy = IxMod.create(target.getCrud()).envelop(envelop);
-            this.mod.connected(standBy);
-            return standBy;
+        if (Objects.isNull(target)) {
+            return null;
         }
-        return null;
+        final Probe probe = Probe.of(target.modeTarget());
+        if (Objects.isNull(probe)) {
+            return null;
+        }
+        return probe.create(target, this.mod);
     }
 }

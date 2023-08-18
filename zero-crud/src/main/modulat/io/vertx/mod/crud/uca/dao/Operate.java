@@ -18,22 +18,22 @@ import java.util.function.Function;
 public interface Operate<I, O> {
     // 删除 DELETE 语法
     static Operate<Object, Boolean> ofDelete() {
-        return Pool.CCT_OPERATE.pick(SingleDelete::new, SingleDelete.class.getName());
+        return POOL.CCT_OPERATE.pick(SingleDelete::new, SingleDelete.class.getName());
     }
 
     // 查询 SELECT 语法
     static Operate<JsonObject, JsonArray> ofFetch() {
-        return Pool.CCT_OPERATE.pick(OperateFetch::new, OperateFetch.class.getName());
+        return POOL.CCT_OPERATE.pick(OperateFetch::new, OperateFetch.class.getName());
     }
 
     // 查询：search，Qr语法
     static Operate<JsonObject, JsonObject> ofSearch() {
-        return Pool.CCT_OPERATE.pick(OperateSearch::new, OperateSearch.class.getName());
+        return POOL.CCT_OPERATE.pick(OperateSearch::new, OperateSearch.class.getName());
     }
 
     // 聚集：COUNT
     static Operate<JsonObject, Long> ofCount() {
-        return Pool.CCT_OPERATE.pick(OperateCount::new, OperateCount.class.getName());
+        return POOL.CCT_OPERATE.pick(OperateCount::new, OperateCount.class.getName());
     }
 
     /**

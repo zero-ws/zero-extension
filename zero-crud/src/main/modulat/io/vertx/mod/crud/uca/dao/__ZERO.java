@@ -5,7 +5,7 @@ import io.horizon.uca.cache.Cc;
 
 
 @SuppressWarnings("all")
-interface Pool {
+interface POOL {
 
     @Memory(Operate.class)
     Cc<String, Operate> CCT_OPERATE = Cc.openThread();

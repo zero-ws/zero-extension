@@ -89,7 +89,7 @@ public class IxMod {
         }
     }
 
-    public static IxMod create(final String actor) {
+    public static IxMod of(final String actor) {
         return new IxMod(actor);
     }
 
