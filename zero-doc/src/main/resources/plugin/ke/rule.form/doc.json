@@ -1,0 +1,7 @@
+{
+    "name": "文档",
+    "module": "doc.system",
+    "identifier": "d.doc",
+    "api": "doc",
+    "type": "resource.document"
+}

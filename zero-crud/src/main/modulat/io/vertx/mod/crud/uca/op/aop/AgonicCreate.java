@@ -30,11 +30,18 @@ class AgonicCreate implements Agonic {
 
 
             return Ix.pass(input, in,
-                    Pre.key(true)::inJAsync,                        // UUID Generated
-                    Pre.serial()::inJAsync,                               // Serial/Number
-                    Pre.audit(true)::inJAsync,                    // createdAt, createdBy
-                    Pre.audit(false)::inJAsync,                   // updatedAt, updatedBy
-                    Pre.fileIn(true)::inJAsync                  // File: Attachment creating
+                    // UUID 主键生成
+                    Pre.key(true)::inJAsync,
+                    // 反向引用模型树型
+                    Pre.ref()::inJAsync,
+                    // 编号生成
+                    Pre.serial()::inJAsync,
+                    // 创建：createdAt, createdBy
+                    Pre.audit(true)::inJAsync,
+                    // 更新：updatedAt, updatedBy
+                    Pre.audit(false)::inJAsync,
+                    // 附件: Attachment creating
+                    Pre.fileIn(true)::inJAsync
                 )
 
 
@@ -61,11 +68,18 @@ class AgonicCreate implements Agonic {
     @Override
     public Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
         return Ix.pass(input, in,
-                Pre.key(true)::inAAsync,                        // UUID Generated
-                Tran.tree(true)::inAAsync,                      // After GUID
-                Pre.serial()::inAAsync,                                // Serial/Number
-                Pre.audit(true)::inAAsync,                      // createdAt, createdBy
-                Pre.audit(false)::inAAsync                      // updatedAt, updatedBy
+                // UUID 主键生成
+                Pre.key(true)::inAAsync,
+                // 反向引用模型树型
+                Pre.ref()::inAAsync,
+                // UUID 生成后树型菜单
+                Tran.tree(true)::inAAsync,
+                // 编号生成
+                Pre.serial()::inAAsync,
+                // 创建：createdAt, createdBy
+                Pre.audit(true)::inAAsync,
+                // 附件: Attachment creating
+                Pre.audit(false)::inAAsync
             )
 
 

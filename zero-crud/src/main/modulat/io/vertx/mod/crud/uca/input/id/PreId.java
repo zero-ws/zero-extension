@@ -15,4 +15,8 @@ public interface PreId {
             return Pooled.CCT_PRE.pick(KeyPre::new, KeyPre.class.getName());
         }
     }
+
+    static Pre ref() {
+        return Pooled.CCT_PRE.pick(RefPre::new, RefPre.class.getName());
+    }
 }

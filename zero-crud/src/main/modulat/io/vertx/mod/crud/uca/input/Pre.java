@@ -44,6 +44,10 @@ public interface Pre {
         return PreId.key(isNew);
     }
 
+    static Pre ref() {
+        return PreId.ref();
+    }
+
     static Pre excel(final ExcelClient client) {
         return Pooled.CCT_PRE.pick(() -> new ExcelPre(client), ExcelPre.class.getName() + client.hashCode());
     }
