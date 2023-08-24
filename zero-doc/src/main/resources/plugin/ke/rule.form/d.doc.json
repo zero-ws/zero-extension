@@ -1,7 +1,8 @@
 {
-    "name": "文档",
-    "module": "doc.system",
-    "identifier": "d.doc",
-    "api": "doc",
-    "type": "resource.document"
+    "phase": "AFTER",
+    "data": {
+        "type": "RECORD",
+        "viewId": "`${viewId}`",
+        "identifier": "d.doc"
+    }
 }
