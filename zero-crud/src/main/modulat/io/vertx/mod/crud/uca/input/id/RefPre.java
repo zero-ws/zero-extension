@@ -12,6 +12,7 @@ import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -33,7 +34,7 @@ class RefPre implements Pre {
     private void generateReference(final JsonObject data, final KModule module) {
         final KJoin join = module.getConnect();
         /* 限定必须是 reference 类型 */
-        if (!join.isRefer()) {
+        if (Objects.isNull(join) || !join.isRefer()) {
             return;
         }
 
