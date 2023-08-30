@@ -8,6 +8,8 @@ import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.unity.Ux;
 
 /**
+ * 附件读取
+ *
  * @author lang : 2023-08-04
  */
 class FileFetchPre extends FileAction {

@@ -42,35 +42,22 @@ public class ExAttachment implements Attachment {
 
     @Override
     public Future<JsonArray> saveAsync(final JsonObject condition, final JsonArray data, final JsonObject params) {
-        /*
-         * Do not remove and add here because the existing attachments will be purged from
-         * Storage, in this kind of situation, here we should do the actual saving
-         *
-         * 1) Comparing the old attachments and new attachments
-         * 2) Get the ADD / UPDATE / DELETE queue for each channel
-         * - 2.1) For DELETE queue: Remove from the system and storage
-         * - 2.2) For UPDATE queue: Do nothing
-         * - 2.3) For ADD queue: Do uploading on new added attachments.
-         *
-         * But here should re-design the way to get three queues.
-         */
+
         final UxJooq jq = Ux.Jooq.on(XAttachmentDao.class);
         return jq.fetchJAsync(condition).compose(original -> {
+            // 计算的三通道
             final ConcurrentMap<ChangeFlag, JsonArray> compared =
                 Ux.compareJ(original, data, KName.KEY);
-            /*
-             * Delete First
-             */
+            // 删除通道
             final JsonArray deleted = compared.getOrDefault(ChangeFlag.DELETE, new JsonArray());
-            // Delete
-            return jq.deleteJAsync(deleted)
-                .compose(nil -> At.fileRemove(deleted))
-                // Add
+            // 1. 删除
+            return jq.deleteJAsync(deleted).compose(nil -> At.fileRemove(deleted))
+                // 2. 添加
                 .compose(nil -> {
                     final JsonArray added = compared.getOrDefault(ChangeFlag.ADD, new JsonArray());
                     return this.uploadAsync(added, params);
                 })
-                // Combine Update and Returned
+                // 3. 组合更新和添加
                 .compose(added -> {
                     final JsonArray combine = compared.getOrDefault(ChangeFlag.UPDATE, new JsonArray());
                     if (Ut.isNotNil(added)) {
@@ -84,7 +71,7 @@ public class ExAttachment implements Attachment {
     @Override
     public Future<JsonArray> uploadAsync(final JsonArray data) {
         /*
-         * Fix issue of NullPointer when executing AtFs Processing
+         * 此处的参数设置主要目的是防止 AtFs 中的 NullPointer 问题
          */
         final JsonObject params = this.uploadParams(data);
         return this.uploadAsync(data, params);
@@ -105,19 +92,19 @@ public class ExAttachment implements Attachment {
     public Future<JsonArray> uploadAsync(final JsonArray data, final JsonObject params) {
         if (Ut.isNil(data)) {
             return Ux.futureA();
-        } else {
-            return At.fileDir(data, params).compose(normalized -> {
-                // Fix: com.fasterxml.jackson.databind.exc.MismatchedInputException:
-                // Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
-                Ut.valueToString(normalized, KName.METADATA);
-                final List<XAttachment> attachments = Ux.fromJson(normalized, XAttachment.class);
-                return Ux.Jooq.on(XAttachmentDao.class).insertJAsync(attachments)
-
-                    // ExIo -> Call ExIo to impact actual file system ( Store )
-                    .compose(At::fileUpload)
-                    .compose(this::outAsync);
-            });
         }
+
+        return At.fileDir(data, params).compose(normalized -> {
+            // Fix: com.fasterxml.jackson.databind.exc.MismatchedInputException:
+            // Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+            Ut.valueToString(normalized, KName.METADATA);
+            final List<XAttachment> attachments = Ux.fromJson(normalized, XAttachment.class);
+            return Ux.Jooq.on(XAttachmentDao.class).insertJAsync(attachments)
+
+                // ExIo -> Call ExIo to impact actual file system ( Store )
+                .compose(At::fileUpload)
+                .compose(this::outAsync);
+        });
     }
 
     @Override

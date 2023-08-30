@@ -53,6 +53,21 @@ abstract class FileAction implements Pre {
                  */
                 return Ux.future(data);
             }
+            /*
+             * 此处得到的数据结构有必要说明，`condition` 的定义中包含了 JEXL 的表达式，此处构造的结构
+             * 如：
+             * {
+             *     "field1": "condition1",
+             *     "field2": "condition2",
+             *     "field3": "condition3"
+             * }
+             * 且此处只是提取定义，并且根据输入的 data 对 JEXL 执行表达式解析，解析的最终结果会填充到
+             * 参数中形成最终的查询参数，并提取附件。附件的提取在此处很重要，由于附件操作过程中会包含
+             * - 添加
+             * - 删除
+             * - 更新（替换）
+             * 这三种操作都依赖原始存在的附件记录，只有将原始的附件记录提取出来才能执行后续的操作。
+             */
             final ConcurrentMap<String, JsonObject> attachmentMap = field.fieldFile();
             return Ke.mapFn(attachmentMap, fileFn).apply(data);
         };

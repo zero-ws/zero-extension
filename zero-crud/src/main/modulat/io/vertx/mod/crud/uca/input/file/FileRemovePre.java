@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 附件删除
+ *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 class FileRemovePre extends FileAction {
