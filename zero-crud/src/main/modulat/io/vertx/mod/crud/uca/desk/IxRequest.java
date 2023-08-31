@@ -3,10 +3,13 @@ package io.vertx.mod.crud.uca.desk;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.em.ApiSpec;
+import io.vertx.up.atom.shape.KJoin;
+import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.util.Objects;
 
@@ -42,16 +45,38 @@ public class IxRequest {
         return new IxRequest(spec);
     }
 
-    public IxRequest build(final Envelop envelop) {
+    /**
+     * 直接从请求中解读关联的 module 的信息。解析优先级按如下顺序：
+     * <pre><code>
+     *     1. 根据请求中 API 的定义：{@link ApiSpec}。
+     *        - {@link ApiSpec#BODY_JSON}: Body格式是 {@link JsonObject} 内容的请求。
+     *        - {@link ApiSpec#BODY_ARRAY}：Body格式是 {@link JsonArray} 内容的请求。
+     *        - {@link ApiSpec#BODY_WITH_KEY}：Body格式是 {@link JsonObject} 内容的请求，同时包含了 `key` 的信息，近似于
+     *          {
+     *              "key": "????"
+     *          }
+     *        - {@link ApiSpec#BODY_NONE}：没有任何 Body 内容的请求。
+     *        - {@link ApiSpec#BODY_STRING}：Body格式是一个字符串类似的请求。
+     *     2. 第一优先级，直接使用 `module` 参数，此参数是最高优先级。
+     *        第二优先级，若 `module` 无法解析，则父从表模式可直接根据 reference 计算
+     *     *：如果是父主表模式，此处会跳过 reference 解析，原因很简单，在非 reference 模式下，父主表模式需要针对
+     *     子模型进行检索（搜索固定的子模型），而在 reference 模式下（父从表），除非制定 module 参数，否则有定义时
+     *     就只会存在唯一的情况，不需要关联模型的检索，可直接绑定（所以作为第二优先级）。简单说第一优先级交给用户自己
+     *     来决定，第二优先级是系统自动计算。
+     * </code></pre>
+     *
+     * @param envelop {@link Envelop} 请求的统一资源模型
+     *
+     * @return {@link String} 返回解析的 module 信息
+     */
+    public String inputConnected(final Envelop envelop) {
         /*
-         *  All the apis support the first parameter of actor
-         *  Here we create the first module ( active module )
-         */
+         * 所有的API都支持第一参数：actor，这是路径定义解析的结果，
+         * 所以此处的 `module` 参数代表（ 主模型：active ）。
+         ***/
         final String actor = Ux.getString(envelop);
         this.actor = actor;
         this.active = IxMod.of(actor).envelop(envelop);
-
-        // Different workflow to extract rest parameters
         String module = null;
         if (ApiSpec.BODY_JSON == this.apiSpecification) {
             // actor       body                key         module          view
@@ -84,27 +109,52 @@ public class IxRequest {
             this.view = Ux.getVis2(envelop);
         }
 
-        // Apply the default view information
+        // 若视图为 null，则使用默认视图 [DEFAULT, DEFAULT]
         if (Objects.isNull(this.view)) {
             this.view = Vis.smart(null);
         }
 
-        // Connecting the standBy instance
-        {
-            final IxJunc junc = IxJunc.of(this.active);
-            if (Objects.isNull(module)) {
-                if (Objects.nonNull(this.bodyJ)) {
-                    // By Json
-                    this.standBy = junc.connect(this.bodyJ);
-                } else if (Objects.nonNull(this.bodyA)) {
-                    // By Array
-                    this.standBy = junc.connect(this.bodyA);
-                }
-            } else {
-                // By Module
-                this.standBy = junc.connect(module);
-            }
+        // 此处计算的 module 就是最终的被连接模型
+        if (Ut.isNotNil(module)) {
+            return module;
         }
+
+        // 第二优先级
+        final KJoin join = this.active.connect();
+        if (Objects.nonNull(join) && join.isRefer()) {
+            // reference 的解析
+            final KPoint point = join.getReference();
+            module = Objects.isNull(point) ? null : point.indent();
+        }
+        return module;
+    }
+
+    public IxMod inputConnected(final String connected) {
+        // Connecting the standBy instance
+        final IxJunc junc = IxJunc.of(this.active);
+        IxMod standBy = null;
+        if (Objects.isNull(connected)) {
+            if (Objects.nonNull(this.bodyJ)) {
+                // By Json
+                standBy = junc.connect(this.bodyJ);
+            } else if (Objects.nonNull(this.bodyA)) {
+                // By Array
+                standBy = junc.connect(this.bodyA);
+            }
+        } else {
+            // By Module
+            standBy = junc.connect(connected);
+        }
+        return standBy;
+    }
+
+    public IxRequest build(final Envelop envelop) {
+        /* 关联模型解析 */
+        final String connected = this.inputConnected(envelop);
+
+        /* 构造 standBy 的模型 */
+        this.standBy = this.inputConnected(connected);
+
         LOG.Web.info(this.getClass(), LOGGER_MOD,
             this.active.module().identifier(),
             Objects.nonNull(this.standBy) ? this.standBy.module().identifier() : null,
@@ -118,6 +168,10 @@ public class IxRequest {
 
     public IxMod standBy() {
         return this.standBy;
+    }
+
+    public String inActor() {
+        return this.actor;
     }
 
     public JsonObject dataK() {
