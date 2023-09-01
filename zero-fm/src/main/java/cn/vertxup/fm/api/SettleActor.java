@@ -127,6 +127,7 @@ public class SettleActor {
              * 如果不是延迟计算则直接创建 FPayment 的直接结算流程，而后续结算管理会触发
              * 三个核心流程
              * - 直接结算 / 生成应收 / 生成退款，应收和退款在后续流程中二选一。
+             * 若此处不生成 Debt 时，结算单中的 finished 一定会是 false，而不是 true
              */
             .compose(settleItems -> {
                 final FSettlement settlement = settleRef.get();

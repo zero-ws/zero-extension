@@ -24,7 +24,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
     private String key;
     private String code;
     private String serial;
-    private String status;
     private BigDecimal amount;
     private String comment;
     private String rounded;
@@ -49,7 +48,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         this.key = value.getKey();
         this.code = value.getCode();
         this.serial = value.getSerial();
-        this.status = value.getStatus();
         this.amount = value.getAmount();
         this.comment = value.getComment();
         this.rounded = value.getRounded();
@@ -73,7 +71,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         String key,
         String code,
         String serial,
-        String status,
         BigDecimal amount,
         String comment,
         String rounded,
@@ -95,7 +92,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         this.key = key;
         this.code = code;
         this.serial = serial;
-        this.status = status;
         this.amount = amount;
         this.comment = comment;
         this.rounded = rounded;
@@ -168,23 +164,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
     @Override
     public FSettlement setSerial(String serial) {
         this.serial = serial;
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.F_SETTLEMENT.STATUS</code>. 「status」- 状态
-     */
-    @Override
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * Setter for <code>ZDB.F_SETTLEMENT.STATUS</code>. 「status」- 状态
-     */
-    @Override
-    public FSettlement setStatus(String status) {
-        this.status = status;
         return this;
     }
 
@@ -512,12 +491,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         }
         else if (!this.serial.equals(other.serial))
             return false;
-        if (this.status == null) {
-            if (other.status != null)
-                return false;
-        }
-        else if (!this.status.equals(other.status))
-            return false;
         if (this.amount == null) {
             if (other.amount != null)
                 return false;
@@ -630,7 +603,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         result = prime * result + ((this.key == null) ? 0 : this.key.hashCode());
         result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
         result = prime * result + ((this.serial == null) ? 0 : this.serial.hashCode());
-        result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
         result = prime * result + ((this.rounded == null) ? 0 : this.rounded.hashCode());
@@ -658,7 +630,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         sb.append(key);
         sb.append(", ").append(code);
         sb.append(", ").append(serial);
-        sb.append(", ").append(status);
         sb.append(", ").append(amount);
         sb.append(", ").append(comment);
         sb.append(", ").append(rounded);
@@ -690,7 +661,6 @@ public class FSettlement implements VertxPojo, IFSettlement {
         setKey(from.getKey());
         setCode(from.getCode());
         setSerial(from.getSerial());
-        setStatus(from.getStatus());
         setAmount(from.getAmount());
         setComment(from.getComment());
         setRounded(from.getRounded());
