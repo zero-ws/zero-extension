@@ -87,14 +87,26 @@ public class IndentService implements IndentStub {
     }
 
     @Override
-    public Future<FSettlement> settleAsync(final String indent, final JsonObject data) {
+    public Future<FSettlement> settleAsync(final String indent, final boolean runUp, final JsonObject data) {
         Objects.requireNonNull(indent);
-        // Bill building
+
+
+        /*
+         * 新的结算流程不再考虑 data 中是否包含了 finished 属性，直接根据传入的 runUp 计算
+         * runUp = true 表示延迟结账，此时 finished = false
+         * runUp = false 表示现结，当前结算单可以终结了，此时 finished = true
+         * 若 finished 时才会出现 finishedAt 的设置，否则不执行相关设置
+         */
         final FSettlement preSettlement = Ux.fromJson(data, FSettlement.class);
-        if (Objects.nonNull(preSettlement.getFinished()) && preSettlement.getFinished()) {
+        if (runUp) {
+            preSettlement.setFinished(Boolean.FALSE);
+        } else {
+            preSettlement.setFinished(Boolean.TRUE);
             preSettlement.setFinishedAt(LocalDateTime.now());
         }
-        // Serial Generation for Bill
+
+
+        // 生成结算单的单号
         return Ke.umIndent(preSettlement, preSettlement.getSigma(), indent, FSettlement::setSerial).compose(settlement -> {
             if (Objects.isNull(settlement.getCode())) {
                 settlement.setCode(settlement.getSerial());

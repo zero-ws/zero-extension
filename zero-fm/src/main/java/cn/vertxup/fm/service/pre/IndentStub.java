@@ -99,14 +99,15 @@ public interface IndentStub {
      * 结算单生成过程中会检查 finished 相关数据，如果 finished 为 true，则还会设置
      * 结算单的 finishedAt，这种情况一般是现结的情况。
      * 最终生成的序号存储在 code / serial 中，内置调用
-     * {@link IndentStub#settleAsync(String, JsonObject)}
+     * {@link IndentStub#settleAsync(String, boolean, JsonObject)}
      *
-     * @param data 输入数据
+     * @param runUp 是否延迟结算
+     * @param data  输入数据
      *
      * @return {@link FSettlement}
      */
-    default Future<FSettlement> settleAsync(final JsonObject data) {
-        return this.settleAsync(data.getString(KName.INDENT), data);
+    default Future<FSettlement> settleAsync(final boolean runUp, final JsonObject data) {
+        return this.settleAsync(data.getString(KName.INDENT), runUp, data);
     }
 
     /**
@@ -116,11 +117,12 @@ public interface IndentStub {
      * - 延迟结算模式处理
      *
      * @param indent X_NUMBER 中的 code 定义
+     * @param runUp  是否延迟结算
      * @param data   输入数据
      *
      * @return {@link FSettlement}
      */
-    Future<FSettlement> settleAsync(String indent, JsonObject data);
+    Future<FSettlement> settleAsync(String indent, final boolean runUp, JsonObject data);
 
     /**
      * 「账单结算」

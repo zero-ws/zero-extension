@@ -49,43 +49,64 @@ public class SettleActor {
 
     @Me
     @Address(Addr.Settle.UP_PAYMENT)
-    public Future<JsonObject> upPayment(final boolean isRunUp,      // S Bill
+    public Future<JsonObject> upPayment(final boolean runUp,      // S Bill
                                         final JsonObject data) {
         /*
          * 1. 结算单创建时会生成编号，这个编号是直接存储在
          *    模型的配置 `numbers` 中的，Zero Extension的模块会直接根据其定义
          *    `X_NUMBER` 来生成相关编号。
          * 2. 执行完成之后，结算单会存储在引用中，方便后续执行流程。
+         *
+         * 此处的是结算的分流点，比较特殊在于 runUp 的值
+         * - true: 表示当前结算单为未完成的状态，finished = false
+         *         这种表示延迟结账，您还需要在结算管理中执行结账操作
+         *         当前单子现结跳过，后续结算管理处理
+         *         - 直接结算
+         *         - 转应收 / 应退（按钮处理）
+         * - false：当前结算单就是已完成的状态，finished = true, finishedAt 有值
          */
         final KRef settleRef = new KRef();
-        return this.indentStub.settleAsync(data)
+        return this.indentStub.settleAsync(runUp, data)
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync)
             .compose(settleRef::future)
 
 
             /*
-             * BillItem updating for settlementId updated and status updating
+             * 结算单创建之后，要将 BillItem 账单子项中的 settlementId 和状态执行更新
              * Bill              Settlement
              *    \                /
              *     \              /
              *      \            /
              *        BillItem ( billId, settlementId )
+             *
+             * 此处的数据结构：
+             * {
+             *     "items": []
+             * }
+             * 此处的 items 的类型就是 JsonArray 类型，包含了所有的 BillItem （当前结算的）
+             * 且此处需要说明一点，就是关于 FBillItem 的状态，这里的逻辑是账单子项完成结算，所以
+             * 所有的账单子项状态都会是 Finished，简单说流程走到这里账单子项以及账单本身就已经完
+             * 成了。
              */
             .compose(inserted -> this.indentStub.settleAsync(data.getJsonArray(KName.ITEMS), data))
             .compose(items -> {
 
 
                 /*
-                 * Update field
-                 * - settlementId
-                 * - updatedAt
-                 * - updatedBy
+                 * 结合已经创建好的结算单，计算结算单和账单子项的关系，此处更新的内容如：
+                 * - settlementId：账单子项中结算单主键
+                 * - updatedAt / updatedBy：更新人、更新时间（Auditor相关信息）
                  */
                 this.fillStub.settle(settleRef.get(), items);
                 return Ux.Jooq.on(FBillItemDao.class).updateAsync(items).compose(itemsUpdated -> {
+
+
                     /*
-                     * FBook Updating,
-                     * status is Pending / Finished
+                     * 账单项更新之后，账本需重新记账，此处会有所有账本的keys，系统自动计算
+                     * 最终更新账本之后的状态：
+                     * - Pending：账本没有结算完成，还有待持续结算（部分结账）
+                     * - Finished：账本已经全部完成结算
+                     * 上述状态是系统自动计算，所以不用担心账本的同步问题。
                      */
                     final Set<String> bookKeys = Ut.toSet(data.getJsonArray("book"));
                     return this.accountStub.inBook(itemsUpdated, bookKeys)
@@ -94,34 +115,25 @@ public class SettleActor {
             })
 
 
-            // Settlement item copy from BillItem here
+            // 使用 账单子项 BillItem 拷贝数据生成 结算子项 SettlementItem 的过程
             .compose(items -> this.indentStub.settleAsync(settleRef.get(), items)
                 .compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync)
             )
 
 
             /*
-             * Debt generation here
-             * 1. Condition one: the price less than 0
-             * 2. Condition two: isRunUp ( Must generate debt )
+             * 此处流程上略有区别，由于要追加结算管理模块，所以此处不再生成 应收/退款 记录
+             * 而是根据 runUp 的值检查是否触发付款流程，如果是延迟结算，则不触发付款流程
+             * 如果不是延迟计算则直接创建 FPayment 的直接结算流程，而后续结算管理会触发
+             * 三个核心流程
+             * - 直接结算 / 生成应收 / 生成退款，应收和退款在后续流程中二选一。
              */
             .compose(settleItems -> {
                 final FSettlement settlement = settleRef.get();
-                /*
-                 * Here are different workflow for `FDebt` and `FPayment`
-                 * 1) When isRunUp = true, the system will create `FDebt` here and
-                 *    then when user process: Refund / Debt in future, the system will
-                 *    create `FPayment` soon.
-                 * 2) When isRunUp = false, ignore the FDebt creation because there is
-                 *    no continue workflow, create `FPayment` directly.
-                 */
-                if (isRunUp) {
-                    final FDebt debt = Ux.fromJson(data, FDebt.class);
-                    debt.setFinished(Boolean.FALSE);
-                    return this.createDebt(debt, settlement, settleItems);
-                } else {
+                if (!runUp) {
                     return this.createPayment(data, settlement);
                 }
+                return Ux.future();
             })
             .compose(nil -> Ux.future(settleRef.get()))
             .compose(Ux::futureJ);
