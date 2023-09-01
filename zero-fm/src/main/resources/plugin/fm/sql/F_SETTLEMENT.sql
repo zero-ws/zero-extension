@@ -9,6 +9,14 @@ CREATE TABLE `F_SETTLEMENT`
     `CODE`        VARCHAR(255)   NOT NULL COMMENT '「code」 - 结算单编号',
     `SERIAL`      VARCHAR(36)    NOT NULL COMMENT '「serial」 - 结算单据号',
 
+    -- 状态放到结算单
+    /*
+     * status  -  PENDING 待结算（只有待结算是延迟结，此时 finished = false）
+     *         -  SETTLED 已结算（此时 finished = true）
+     *         -  CANCELED 已取消（此时 finished = NULL）
+     */
+    `STATUS`      VARCHAR(64) COMMENT '「status」- 状态',
+
     -- 基本信息
     `AMOUNT`      DECIMAL(18, 2) NOT NULL COMMENT '「amount」——价税合计，所有明细对应的实际结算金额',
     `COMMENT`     LONGTEXT COMMENT '「comment」 - 结算单备注',

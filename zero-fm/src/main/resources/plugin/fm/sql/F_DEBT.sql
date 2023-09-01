@@ -10,6 +10,13 @@ CREATE TABLE `F_DEBT`
     `CODE`          VARCHAR(255)   NOT NULL COMMENT '「code」 - 应收单编号',
     `SERIAL`        VARCHAR(36)    NOT NULL COMMENT '「serial」 - 应收单据号',
 
+    -- 追加 type / status
+    /*
+     * 不再根据价格来判断是：应收还是付款
+     * type = REFUND 退款，DEBT 应收
+     */
+    `TYPE`          VARCHAR(64) COMMENT '「type」- 类型',
+
     -- 基本信息
     `AMOUNT`        DECIMAL(18, 2) NOT NULL COMMENT '「amount」——价税合计，所有明细对应的实际结算金额',
     `SIGN_NAME`     VARCHAR(128) DEFAULT NULL COMMENT '「signName」签单人姓名',

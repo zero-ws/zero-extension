@@ -85,6 +85,21 @@ public class FDebtDao extends AbstractVertxDAO<FDebtRecord, cn.vertxup.fm.domain
         }
 
         /**
+     * Find records that have <code>TYPE IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByType(Collection<String> values) {
+                return findManyByCondition(FDebt.F_DEBT.TYPE.in(values));
+        }
+
+        /**
+     * Find records that have <code>TYPE IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByType(Collection<String> values, int limit) {
+                return findManyByCondition(FDebt.F_DEBT.TYPE.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>AMOUNT IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByAmount(Collection<BigDecimal> values) {

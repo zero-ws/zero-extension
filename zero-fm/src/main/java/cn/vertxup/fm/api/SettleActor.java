@@ -3,10 +3,10 @@ package cn.vertxup.fm.api;
 import cn.vertxup.fm.domain.tables.daos.*;
 import cn.vertxup.fm.domain.tables.pojos.*;
 import cn.vertxup.fm.service.business.AccountStub;
-import cn.vertxup.fm.service.business.FillStub;
-import cn.vertxup.fm.service.business.IndentStub;
 import cn.vertxup.fm.service.end.PayStub;
 import cn.vertxup.fm.service.end.QrStub;
+import cn.vertxup.fm.service.pre.FillStub;
+import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -51,13 +51,13 @@ public class SettleActor {
     @Address(Addr.Settle.UP_PAYMENT)
     public Future<JsonObject> upPayment(final boolean isRunUp,      // S Bill
                                         final JsonObject data) {
-        final KRef settleRef = new KRef();
         /*
-         * 1. Settlement Creation with Number Generation
-         * The number stored in `indent` of zero extension module, system will
-         * call `X_NUMBER` by `code = indent`
-         * 2. After processing, the settlement object will be stored in settleRef
+         * 1. 结算单创建时会生成编号，这个编号是直接存储在
+         *    模型的配置 `numbers` 中的，Zero Extension的模块会直接根据其定义
+         *    `X_NUMBER` 来生成相关编号。
+         * 2. 执行完成之后，结算单会存储在引用中，方便后续执行流程。
          */
+        final KRef settleRef = new KRef();
         return this.indentStub.settleAsync(data)
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync)
             .compose(settleRef::future)

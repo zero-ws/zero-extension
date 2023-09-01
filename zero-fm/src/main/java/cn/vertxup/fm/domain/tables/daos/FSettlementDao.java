@@ -70,6 +70,21 @@ public class FSettlementDao extends AbstractVertxDAO<FSettlementRecord, cn.vertx
         }
 
         /**
+     * Find records that have <code>STATUS IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByStatus(Collection<String> values) {
+                return findManyByCondition(FSettlement.F_SETTLEMENT.STATUS.in(values));
+        }
+
+        /**
+     * Find records that have <code>STATUS IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByStatus(Collection<String> values, int limit) {
+                return findManyByCondition(FSettlement.F_SETTLEMENT.STATUS.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>AMOUNT IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByAmount(Collection<BigDecimal> values) {

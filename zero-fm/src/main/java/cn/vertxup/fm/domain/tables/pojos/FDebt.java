@@ -25,6 +25,7 @@ public class FDebt implements VertxPojo, IFDebt {
     private String name;
     private String code;
     private String serial;
+    private String type;
     private BigDecimal amount;
     private String signName;
     private String signMobile;
@@ -49,6 +50,7 @@ public class FDebt implements VertxPojo, IFDebt {
         this.name = value.getName();
         this.code = value.getCode();
         this.serial = value.getSerial();
+        this.type = value.getType();
         this.amount = value.getAmount();
         this.signName = value.getSignName();
         this.signMobile = value.getSignMobile();
@@ -72,6 +74,7 @@ public class FDebt implements VertxPojo, IFDebt {
         String name,
         String code,
         String serial,
+        String type,
         BigDecimal amount,
         String signName,
         String signMobile,
@@ -93,6 +96,7 @@ public class FDebt implements VertxPojo, IFDebt {
         this.name = name;
         this.code = code;
         this.serial = serial;
+        this.type = type;
         this.amount = amount;
         this.signName = signName;
         this.signMobile = signMobile;
@@ -181,6 +185,23 @@ public class FDebt implements VertxPojo, IFDebt {
     @Override
     public FDebt setSerial(String serial) {
         this.serial = serial;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.TYPE</code>. 「type」- 类型
+     */
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_DEBT.TYPE</code>. 「type」- 类型
+     */
+    @Override
+    public FDebt setType(String type) {
+        this.type = type;
         return this;
     }
 
@@ -491,6 +512,12 @@ public class FDebt implements VertxPojo, IFDebt {
         }
         else if (!this.serial.equals(other.serial))
             return false;
+        if (this.type == null) {
+            if (other.type != null)
+                return false;
+        }
+        else if (!this.type.equals(other.type))
+            return false;
         if (this.amount == null) {
             if (other.amount != null)
                 return false;
@@ -598,6 +625,7 @@ public class FDebt implements VertxPojo, IFDebt {
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
         result = prime * result + ((this.serial == null) ? 0 : this.serial.hashCode());
+        result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
         result = prime * result + ((this.signName == null) ? 0 : this.signName.hashCode());
         result = prime * result + ((this.signMobile == null) ? 0 : this.signMobile.hashCode());
@@ -625,6 +653,7 @@ public class FDebt implements VertxPojo, IFDebt {
         sb.append(", ").append(name);
         sb.append(", ").append(code);
         sb.append(", ").append(serial);
+        sb.append(", ").append(type);
         sb.append(", ").append(amount);
         sb.append(", ").append(signName);
         sb.append(", ").append(signMobile);
@@ -656,6 +685,7 @@ public class FDebt implements VertxPojo, IFDebt {
         setName(from.getName());
         setCode(from.getCode());
         setSerial(from.getSerial());
+        setType(from.getType());
         setAmount(from.getAmount());
         setSignName(from.getSignName());
         setSignMobile(from.getSignMobile());

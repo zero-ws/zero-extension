@@ -1,4 +1,4 @@
-package cn.vertxup.fm.service.business;
+package cn.vertxup.fm.service.pre;
 
 import cn.vertxup.fm.domain.tables.pojos.*;
 import io.vertx.core.json.JsonObject;

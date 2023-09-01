@@ -49,6 +49,16 @@ public interface IFSettlement extends VertxPojo, Serializable {
     public String getSerial();
 
     /**
+     * Setter for <code>ZDB.F_SETTLEMENT.STATUS</code>. 「status」- 状态
+     */
+    public IFSettlement setStatus(String value);
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT.STATUS</code>. 「status」- 状态
+     */
+    public String getStatus();
+
+    /**
      * Setter for <code>ZDB.F_SETTLEMENT.AMOUNT</code>.
      * 「amount」——价税合计，所有明细对应的实际结算金额
      */
@@ -247,6 +257,7 @@ public interface IFSettlement extends VertxPojo, Serializable {
                 setOrThrow(this::setKey,json::getString,"KEY","java.lang.String");
                 setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
                 setOrThrow(this::setSerial,json::getString,"SERIAL","java.lang.String");
+                setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
                 setOrThrow(this::setRounded,json::getString,"ROUNDED","java.lang.String");
@@ -274,6 +285,7 @@ public interface IFSettlement extends VertxPojo, Serializable {
                 json.put("KEY",getKey());
                 json.put("CODE",getCode());
                 json.put("SERIAL",getSerial());
+                json.put("STATUS",getStatus());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
                 json.put("COMMENT",getComment());
                 json.put("ROUNDED",getRounded());

@@ -59,6 +59,16 @@ public interface IFDebt extends VertxPojo, Serializable {
     public String getSerial();
 
     /**
+     * Setter for <code>ZDB.F_DEBT.TYPE</code>. 「type」- 类型
+     */
+    public IFDebt setType(String value);
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.TYPE</code>. 「type」- 类型
+     */
+    public String getType();
+
+    /**
      * Setter for <code>ZDB.F_DEBT.AMOUNT</code>. 「amount」——价税合计，所有明细对应的实际结算金额
      */
     public IFDebt setAmount(BigDecimal value);
@@ -242,6 +252,7 @@ public interface IFDebt extends VertxPojo, Serializable {
                 setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
                 setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
                 setOrThrow(this::setSerial,json::getString,"SERIAL","java.lang.String");
+                setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
                 setOrThrow(this::setSignName,json::getString,"SIGN_NAME","java.lang.String");
                 setOrThrow(this::setSignMobile,json::getString,"SIGN_MOBILE","java.lang.String");
@@ -269,6 +280,7 @@ public interface IFDebt extends VertxPojo, Serializable {
                 json.put("NAME",getName());
                 json.put("CODE",getCode());
                 json.put("SERIAL",getSerial());
+                json.put("TYPE",getType());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
                 json.put("SIGN_NAME",getSignName());
                 json.put("SIGN_MOBILE",getSignMobile());
