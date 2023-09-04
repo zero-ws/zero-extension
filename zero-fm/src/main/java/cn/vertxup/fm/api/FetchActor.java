@@ -13,6 +13,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.atom.BillData;
 import io.vertx.mod.fm.cv.Addr;
+import io.vertx.mod.fm.cv.em.EmDebt;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
@@ -156,17 +157,34 @@ public class FetchActor {
             final Set<String> keys = Ut.valueSetString(settlementData, KName.KEY);
             return this.qrStub.fetchDebtMap(keys).compose(debt -> {
                 Ut.itJArray(settlementData).forEach(settleJ -> {
-                    final String key = Ut.valueString(settleJ, KName.KEY);
-                    if (debt.containsKey(key)) {
-                        // linked
-                        final FDebt found = debt.get(key);
-                        if (0 < found.getAmount().doubleValue()) {
-                            settleJ.put("linked", "Debt");
+                    /*
+                     * 计算 linked 属性，此处 linked 属性要从原来的三属性转换成新的属性
+                     * - DONE: 正常结算
+                     * - DEBT：应收
+                     * - REFUND：应退
+                     * - PENDING：待结算
+                     */
+                    final boolean finished = settleJ.getBoolean(KName.FINISHED, Boolean.FALSE);
+                    if (finished) {
+                        // 已结算完成
+                        final String key = Ut.valueString(settleJ, KName.KEY);
+                        if (debt.containsKey(key)) {
+                            // linked
+                            final FDebt found = debt.get(key);
+                            if (0 < found.getAmount().doubleValue()) {
+                                // 应收
+                                settleJ.put(KName.LINKED, EmDebt.Linked.DEBT.name());
+                            } else {
+                                // 应退
+                                settleJ.put(KName.LINKED, EmDebt.Linked.REFUND.name());
+                            }
                         } else {
-                            settleJ.put("linked", "Refund");
+                            // 正常结算
+                            settleJ.put(KName.LINKED, EmDebt.Linked.DONE.name());
                         }
                     } else {
-                        settleJ.put("linked", "Pure");
+                        // 未结算
+                        settleJ.put(KName.LINKED, EmDebt.Linked.PENDING.name());
                     }
                 });
                 pageData.put("list", settlementData);

@@ -12,4 +12,17 @@ public class EmDebt {
         DEBT,       // 应收单
         REFUND,     // 退款单
     }
+
+    /*
+     * linked 属性专用值，主要包含四个值
+     */
+    public enum Linked {
+        // 已结算3种
+        DEBT,       // 应收
+        REFUND,     // 退款
+        DONE,       // 已结算
+
+        // 未结算
+        PENDING,    // 待结算
+    }
 }
