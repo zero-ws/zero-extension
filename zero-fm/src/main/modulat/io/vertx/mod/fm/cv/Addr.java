@@ -40,6 +40,8 @@ public interface Addr {
         String UP_BOOK = Prefix._EVENT + "BOOKS/UPDATING";
         // Finish
         String UP_PAYMENT = Prefix._EVENT + "BILL/PAYMENT";
+        // Settlement
+        String UP_SETTLEMENT = Prefix._EVENT + "SETTLEMENT/FINISH";
         // Debt / Refund
         String PAY_CREATE = Prefix._EVENT + "PAYMENT/CREATE";
         String PAY_DELETE = Prefix._EVENT + "PAYMENT/REMOVE/BY/KEY";

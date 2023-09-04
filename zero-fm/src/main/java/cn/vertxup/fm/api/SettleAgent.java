@@ -105,6 +105,12 @@ public interface SettleAgent {
     JsonObject upPayment(@PathParam("runup") boolean isRunUp,
                          @BodyParam JsonObject body);
 
+    @Path("/settle/finish/:key")
+    @PUT
+    @Address(Addr.Settle.UP_SETTLEMENT)
+    JsonObject upFinish(@PathParam(KName.KEY) String key,
+                        @BodyParam JsonObject body);
+
     /*
      * Unlock Authorize when settlement on `status`
      * From `Pending` to `Finished`

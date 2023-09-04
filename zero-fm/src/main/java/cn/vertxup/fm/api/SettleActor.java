@@ -1,10 +1,11 @@
 package cn.vertxup.fm.api;
 
 import cn.vertxup.fm.domain.tables.daos.*;
-import cn.vertxup.fm.domain.tables.pojos.*;
+import cn.vertxup.fm.domain.tables.pojos.FDebt;
+import cn.vertxup.fm.domain.tables.pojos.FPaymentItem;
+import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.service.business.AccountStub;
-import cn.vertxup.fm.service.end.PayStub;
-import cn.vertxup.fm.service.end.QrStub;
 import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.atom.program.KRef;
@@ -22,8 +23,9 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -40,12 +42,6 @@ public class SettleActor {
 
     @Inject
     private transient FillStub fillStub;
-
-    @Inject
-    private transient QrStub qrStub;
-
-    @Inject
-    private transient PayStub payStub;
 
     @Me
     @Address(Addr.Settle.UP_PAYMENT)
@@ -140,6 +136,52 @@ public class SettleActor {
             .compose(Ux::futureJ);
     }
 
+    /**
+     * 请求中包含了两种基础数据
+     * - 如果是标准结账，调用 {@link SettleActor#createPayment(JsonObject, FSettlement)}
+     * - 如果是否则标准结账，调用 {@link SettleActor#createDebt(JsonObject, FSettlement)}
+     *
+     * @param key  结算单 `key` 主键
+     * @param data 结算单基础数据
+     *
+     * @return 结算单数据
+     */
+    @Address(Addr.Settle.UP_SETTLEMENT)
+    public Future<JsonObject> upFinish(final String key, final JsonObject data,
+                                       final User user) {
+        return Ux.Jooq.on(FSettlementDao.class).<FSettlement>fetchByIdAsync(key)
+            // 更新 Settlement
+            .compose(settlement -> this.updateSettle(settlement, user))
+            .compose(settlement -> {
+                if (Objects.isNull(settlement)) {
+                    return Ux.futureJ();
+                }
+                // 根据结账类型执行不同的流程
+                final String finishType = Ut.valueString(data, "finishType");
+                if ("RUN_UP".equals(finishType)) {
+                    // 挂账，Debt 部分
+                    return this.createDebt(data, settlement)
+                        .compose(nil -> Ux.futureJ(settlement));
+                } else {
+                    // 直接结算，Payment 部分
+                    return this.createPayment(data, settlement)
+                        .compose(nil -> Ux.futureJ(settlement));
+                }
+            });
+    }
+
+    private Future<FSettlement> updateSettle(final FSettlement settlement, final User user) {
+        if (Objects.isNull(settlement)) {
+            return Ux.future();
+        }
+        final LocalDateTime nowAt = LocalDateTime.now();
+        settlement.setFinished(Boolean.TRUE);
+        settlement.setFinishedAt(nowAt);
+        settlement.setUpdatedBy(Ux.keyUser(user));
+        settlement.setUpdatedAt(nowAt);
+        return Ux.Jooq.on(FSettlementDao.class).updateAsync(settlement);
+    }
+
     private Future<Boolean> createPayment(final JsonObject data, final FSettlement settlement) {
         final JsonArray paymentJ = Ut.valueJArray(data, FmCv.ID.PAYMENT);
         final List<FPaymentItem> payments = Ux.fromJson(paymentJ, FPaymentItem.class);
@@ -148,51 +190,27 @@ public class SettleActor {
             .compose(nil -> Ux.futureT());
     }
 
-    private Future<Boolean> createDebt(final FDebt debt,
-                                       final FSettlement settlement,
-                                       final List<FSettlementItem> settleItems) {
+    private Future<Boolean> createDebt(final JsonObject data,
+                                       final FSettlement settlement) {
+        final KRef ref = new KRef();
+        // 构造应收 / 退款
+        final FDebt debt = Ux.fromJson(data, FDebt.class);
         this.fillStub.settle(settlement, debt);
-        return Ux.Jooq.on(FDebtDao.class).insertAsync(debt).compose(insertd -> {
-            settleItems.forEach(each -> each.setDebtId(insertd.getKey()));
-            return Ux.Jooq.on(FSettlementItemDao.class).updateAsync(settleItems)
-                .compose(nil -> Ux.futureT());
-        });
-    }
-
-
-    @Address(Addr.Settle.UNLOCK_AUTHORIZE)
-    public Future<JsonArray> unlockAuthorize(final JsonArray authorized, final User user) {
-        // Authorized Modification
-        final String userKey = Ux.keyUser(user);
-        Ut.itJArray(authorized).forEach(json -> {
-            json.put(KName.UPDATED_AT, Instant.now());
-            json.put(KName.UPDATED_BY, userKey);
-            json.put(KName.STATUS, FmCv.Status.FINISHED);
-        });
-        final List<FPreAuthorize> authorizeList = Ux.fromJson(authorized, FPreAuthorize.class);
-        return Ux.Jooq.on(FPreAuthorizeDao.class).updateAsync(authorizeList).compose(Ux::futureA);
-    }
-
-    @Address(Addr.Settle.UP_BOOK)
-    public Future<JsonArray> finalizeBook(final JsonArray books, final User user) {
-        // Book Finalize ( Not Settlement )
-        final String userKey = Ux.keyUser(user);
-        Ut.itJArray(books).forEach(json -> {
-            json.put(KName.UPDATED_AT, Instant.now());
-            json.put(KName.UPDATED_BY, userKey);
-        });
-        final List<FBook> bookList = Ux.fromJson(books, FBook.class);
-        return Ux.Jooq.on(FBookDao.class).updateAsync(bookList).compose(Ux::futureA);
-    }
-
-    @Me
-    @Address(Addr.Settle.PAY_CREATE)
-    public Future<JsonObject> paymentCreate(final JsonObject data) {
-        return this.payStub.createAsync(data);
-    }
-
-    @Address(Addr.Settle.PAY_DELETE)
-    public Future<Boolean> paymentDelete(final String key) {
-        return this.payStub.deleteByItem(key);
+        return Ux.Jooq.on(FDebtDao.class).insertAsync(debt)
+            .compose(ref::future)
+            // 更新 items 对应信息
+            .compose(insertd -> {
+                final JsonObject condition = Ux.whereAnd();
+                condition.put(KName.SIGMA, settlement.getKey());
+                condition.put("settlementId", settlement.getKey());
+                return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchAsync(condition);
+            })
+            .compose(items -> {
+                final FDebt inserted = ref.get();
+                Objects.requireNonNull(inserted);
+                items.forEach(each -> each.setDebtId(inserted.getKey()));
+                return Ux.Jooq.on(FSettlementItemDao.class).updateAsync(items);
+            })
+            .compose(nil -> Ux.futureT());
     }
 }
