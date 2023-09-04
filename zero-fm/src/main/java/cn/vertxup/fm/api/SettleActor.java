@@ -201,7 +201,7 @@ public class SettleActor {
             // 更新 items 对应信息
             .compose(insertd -> {
                 final JsonObject condition = Ux.whereAnd();
-                condition.put(KName.SIGMA, settlement.getKey());
+                condition.put(KName.SIGMA, settlement.getSigma());
                 condition.put("settlementId", settlement.getKey());
                 return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchAsync(condition);
             })
