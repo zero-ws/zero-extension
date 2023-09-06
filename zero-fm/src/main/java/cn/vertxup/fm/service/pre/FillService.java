@@ -3,6 +3,7 @@ package cn.vertxup.fm.service.pre;
 import cn.vertxup.fm.domain.tables.pojos.*;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.cv.em.EmDebt;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
@@ -155,14 +156,21 @@ public class FillService implements FillStub {
     @Override
     public void settle(final FSettlement settlement, final FDebt debt) {
         debt.setSettlementId(settlement.getKey());
+        debt.setFinished(Boolean.FALSE);            // 此处必须有，防止查询不了数据
+        if (Objects.isNull(debt.getCreatedBy())) {
+            debt.setCreatedBy(settlement.getUpdatedBy());
+            debt.setCreatedAt(LocalDateTime.now());
+        }
         if (0 > settlement.getAmount().doubleValue()) {
             // Refund
             debt.setSerial("R" + settlement.getSerial().substring(1));
             debt.setCode("R" + settlement.getCode().substring(1));
+            debt.setType(EmDebt.Type.REFUND.name());
         } else {
             // DEBT Serial
             debt.setSerial("D" + settlement.getSerial().substring(1));
             debt.setCode("D" + settlement.getCode().substring(1));
+            debt.setType(EmDebt.Type.DEBT.name());
         }
     }
 
