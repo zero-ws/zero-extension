@@ -1,6 +1,8 @@
 [
     "plugin/doc/oob/cab/d.doc.xlsx",
+    "plugin/doc/oob/cab/d.exam.xlsx",
     "plugin/doc/oob/data/doc.directory.tree.xlsx",
     "plugin/doc/oob/data/doc.directory.xlsx",
-    "plugin/doc/oob/role/ADMIN.SUPER/falcon.d.doc.xlsx"
+    "plugin/doc/oob/role/ADMIN.SUPER/falcon.d.doc.xlsx",
+    "plugin/doc/oob/role/ADMIN.SUPER/falcon.d.exam.xlsx"
 ]

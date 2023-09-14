@@ -1,0 +1,12 @@
+{
+    "name": "exam",
+    "daoCls": "cn.vertxup.doc.domain.tables.daos.DExamDao",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}
