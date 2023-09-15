@@ -17,6 +17,11 @@
             <groupId>io.zerows</groupId>
             <artifactId>zero-ke</artifactId>
         </dependency>
+        <!-- Office Doc -->
+        <dependency>
+            <groupId>com.inversoft</groupId>
+            <artifactId>prime-jwt</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
