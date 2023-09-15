@@ -30,6 +30,21 @@
         "dataIndex": "type"
     },
     {
+        "metadata": "status,状态,MAPPING",
+        "$mapping": {
+            "DRAFT": "草稿",
+            "PENDING": "待审批",
+            "RELEASE": "已发布",
+            "ARCHIVE": "已归档",
+            "RUNNING": "活动中",
+            "STOPPED": "已结束"
+        }
+    },
+    {
+        "title": "版本",
+        "dataIndex": "version"
+    },
+    {
         "title": "更新人",
         "dataIndex": "updatedBy",
         "$render": "USER",
