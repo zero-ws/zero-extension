@@ -1,12 +1,8 @@
 package cn.vertxup.ambient.service.file;
 
-import cn.vertxup.ambient.service.DatumStub;
 import io.horizon.spi.business.ExIo;
 import io.horizon.spi.business.ExUser;
-import io.horizon.spi.feature.Arbor;
 import io.horizon.spi.feature.Attachment;
-import io.horizon.uca.cache.Cc;
-import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
@@ -23,10 +19,6 @@ import java.util.Set;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class DocReader implements DocRStub {
-    private static final Cc<String, Arbor> CC_ARBOR = Cc.openThread();
-    private static final Annal LOGGER = Annal.get(DocReader.class);
-    @Inject
-    private transient DatumStub stub;
     @Inject
     private transient Attachment attachment;
 

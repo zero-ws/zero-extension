@@ -12,5 +12,7 @@ interface Prefix{
 }
 public interface Addr {
 
-    String TOKEN_REQUEST = Prefix._EVENT + "X-TOKEN/REQUEST";
+    String TOKEN_REQUEST = Prefix._EVENT + "DC-TOKEN/REQUEST";
+
+    String DOC_DOWNLOAD = Prefix._EVENT + "DC-PUB/DOWNLOAD";
 }

@@ -12,7 +12,6 @@ import java.util.concurrent.ConcurrentMap;
  */
 public interface ExUser {
 
-
     // ------------------ Common Processing --------------------
     /*
      * Nexus implementation by specific definition here.
