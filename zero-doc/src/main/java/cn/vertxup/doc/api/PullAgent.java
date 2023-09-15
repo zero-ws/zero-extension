@@ -14,6 +14,7 @@ import jakarta.ws.rs.core.MediaType;
  * 1. 只可以使用 fileKey 下载文件，其他内容的下载模式不支持
  * 2. 此接口是公共的（不带安全认证，Document Server不可以执行反向认证）
  * 3. zero-doc 才开放这种接口，保证基本安全性，token 值会使用 zero-rbac 做强验证
+ *
  * @author lang : 2023-09-15
  */
 @EndPoint
@@ -22,7 +23,6 @@ public class PullAgent {
     @GET
     @Address(Addr.DOC_DOWNLOAD)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
-    @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     public JsonObject download(@PathParam("fileKey") final String key,
                                @QueryParam("token") final String token) {
         return new JsonObject()
