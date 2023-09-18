@@ -135,14 +135,17 @@ public class ExAttachment implements Attachment {
 
     @Override
     public Future<JsonArray> fetchAsync(final JsonObject condition) {
-        return this.fetchAsyncInternal(condition).compose(this::outAsync);
+        LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
+        return Ux.Jooq.on(XAttachmentDao.class)
+            .fetchJAsync(condition)
+            .compose(this::outAsync);
     }
 
     @Override
     public Future<Buffer> downloadAsync(final Set<String> keys) {
         final JsonObject condition = new JsonObject();
         condition.put(KName.KEY + ",i", Ut.toJArray(keys));
-        return this.fetchAsyncInternal(condition)
+        return this.fetchAsync(condition)
 
             // ExIo -> Call ExIo to impact actual file system ( Store )
             .compose(At::fileDownload);
@@ -159,11 +162,18 @@ public class ExAttachment implements Attachment {
             .compose(At::fileDownload);
     }
 
-    // ----------------- Private Method Interface ----------------------
-    private Future<JsonArray> fetchAsyncInternal(final JsonObject condition) {
-        LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
-        return Ux.Jooq.on(XAttachmentDao.class).fetchJAsync(condition);
+    @Override
+    public Future<Buffer> downloadByAsync(final String keyQr) {
+        final JsonObject condition = new JsonObject();
+        condition.put(KName.KEY, keyQr);
+        LOG.File.info(LOGGER, "Fetch Operation ( By ), condition: {0}", condition);
+        return Ux.Jooq.on(XAttachmentDao.class).fetchJOneAsync(condition)
+
+            // ExIo -> Call ExIo to impact actual file system ( Store )
+            .compose(At::fileDownload);
     }
+
+    // ----------------- Private Method Interface ----------------------
 
     private Future<JsonArray> outAsync(final JsonArray files) {
         /*

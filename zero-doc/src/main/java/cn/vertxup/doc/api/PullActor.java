@@ -20,7 +20,7 @@ public class PullActor {
 
     @Address(Addr.DOC_DOWNLOAD)
     public Future<Buffer> download(final JsonObject data) {
-        final String key = Ut.valueString(data, KName.KEY);
+        final String fileKey = Ut.valueString(data, KName.KEY);
         final String token = Ut.valueString(data, KName.TOKEN);
         return this.verifyAsync(token).compose(verified -> {
             if (!verified) {
@@ -35,7 +35,7 @@ public class PullActor {
              * 验证通过，返回文件内容（调用下载接口）
              */
             return Ux.channel(Attachment.class, Buffer::buffer,
-                attachment -> attachment.downloadAsync(key));
+                attachment -> attachment.downloadByAsync(fileKey));
         });
     }
 
