@@ -157,11 +157,14 @@ public class ExAttachment implements Attachment {
          * 此处使用双条件，key 只会有两种格式
          * 1）主键，KEY = key
          * 2）文件唯一键，FILE_KEY = key
-         * 所以使用双条件查询以保证附件下载的完备性
+         * 所以使用双条件查询以保证附件下载的完备性，此处依赖 UUID 的判断条件
          */
-        final JsonObject condition = Ux.whereOr();
-        condition.put(KName.KEY, key);
-        condition.put(KName.FILE_KEY, key);
+        final JsonObject condition = new JsonObject();
+        if (Ut.isUUID(key)) {
+            condition.put(KName.KEY, key);
+        } else {
+            condition.put(KName.FILE_KEY, key);
+        }
         LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
         return Ux.Jooq.on(XAttachmentDao.class).fetchJOneAsync(condition)
 
