@@ -90,7 +90,5 @@ public interface Attachment {
 
     Future<Buffer> downloadAsync(String key);
 
-    Future<Buffer> downloadByAsync(String fileKey);
-
     // ----------------- Remove Condition ----------------------
 }

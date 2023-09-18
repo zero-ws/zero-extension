@@ -153,20 +153,16 @@ public class ExAttachment implements Attachment {
 
     @Override
     public Future<Buffer> downloadAsync(final String key) {
-        final JsonObject condition = new JsonObject();
+        /*
+         * 此处使用双条件，key 只会有两种格式
+         * 1）主键，KEY = key
+         * 2）文件唯一键，FILE_KEY = key
+         * 所以使用双条件查询以保证附件下载的完备性
+         */
+        final JsonObject condition = Ux.whereOr();
         condition.put(KName.KEY, key);
+        condition.put(KName.FILE_KEY, key);
         LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
-        return Ux.Jooq.on(XAttachmentDao.class).fetchJOneAsync(condition)
-
-            // ExIo -> Call ExIo to impact actual file system ( Store )
-            .compose(At::fileDownload);
-    }
-
-    @Override
-    public Future<Buffer> downloadByAsync(final String keyQr) {
-        final JsonObject condition = new JsonObject();
-        condition.put(KName.KEY, keyQr);
-        LOG.File.info(LOGGER, "Fetch Operation ( By ), condition: {0}", condition);
         return Ux.Jooq.on(XAttachmentDao.class).fetchJOneAsync(condition)
 
             // ExIo -> Call ExIo to impact actual file system ( Store )

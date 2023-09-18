@@ -35,7 +35,7 @@ public class PullActor {
              * 验证通过，返回文件内容（调用下载接口）
              */
             return Ux.channel(Attachment.class, Buffer::buffer,
-                attachment -> attachment.downloadByAsync(fileKey));
+                attachment -> attachment.downloadAsync(fileKey));
         });
     }
 
