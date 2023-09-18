@@ -24,13 +24,12 @@ public class SafePermit implements Permit {
         // 拆分出来的 token 信息
         final JsonObject extract = Ux.Jwt.extract(token);
 
-        // accessToken / user
-        final String accessToken = extract.getString(KName.ACCESS_TOKEN);
+        // token / user
         final String user = extract.getString(KName.USER);
 
         // 验证 accessToken 是否存在
         return Ux.Jooq.on(OAccessTokenDao.class)
-            .<OAccessToken>fetchAsync(KName.TOKEN, accessToken.getBytes(VValue.DFT.CHARSET))
+            .<OAccessToken>fetchAsync(KName.TOKEN, token.getBytes(VValue.DFT.CHARSET))
             .compose(tokens -> Sc.jwtToken(tokens, user));
     }
 }
