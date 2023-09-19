@@ -135,14 +135,17 @@ public class ExAttachment implements Attachment {
 
     @Override
     public Future<JsonArray> fetchAsync(final JsonObject condition) {
-        return this.fetchAsyncInternal(condition).compose(this::outAsync);
+        LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
+        return Ux.Jooq.on(XAttachmentDao.class)
+            .fetchJAsync(condition)
+            .compose(this::outAsync);
     }
 
     @Override
     public Future<Buffer> downloadAsync(final Set<String> keys) {
         final JsonObject condition = new JsonObject();
         condition.put(KName.KEY + ",i", Ut.toJArray(keys));
-        return this.fetchAsyncInternal(condition)
+        return this.fetchAsync(condition)
 
             // ExIo -> Call ExIo to impact actual file system ( Store )
             .compose(At::fileDownload);
@@ -150,8 +153,18 @@ public class ExAttachment implements Attachment {
 
     @Override
     public Future<Buffer> downloadAsync(final String key) {
+        /*
+         * 此处使用双条件，key 只会有两种格式
+         * 1）主键，KEY = key
+         * 2）文件唯一键，FILE_KEY = key
+         * 所以使用双条件查询以保证附件下载的完备性，此处依赖 UUID 的判断条件
+         */
         final JsonObject condition = new JsonObject();
-        condition.put(KName.KEY, key);
+        if (Ut.isUUID(key)) {
+            condition.put(KName.KEY, key);
+        } else {
+            condition.put(KName.FILE_KEY, key);
+        }
         LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
         return Ux.Jooq.on(XAttachmentDao.class).fetchJOneAsync(condition)
 
@@ -160,10 +173,6 @@ public class ExAttachment implements Attachment {
     }
 
     // ----------------- Private Method Interface ----------------------
-    private Future<JsonArray> fetchAsyncInternal(final JsonObject condition) {
-        LOG.File.info(LOGGER, "Fetch Operation, condition: {0}", condition);
-        return Ux.Jooq.on(XAttachmentDao.class).fetchJAsync(condition);
-    }
 
     private Future<JsonArray> outAsync(final JsonArray files) {
         /*

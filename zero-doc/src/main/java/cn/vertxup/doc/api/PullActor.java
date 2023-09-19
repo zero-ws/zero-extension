@@ -4,10 +4,13 @@ import io.horizon.spi.environment.Permit;
 import io.horizon.spi.feature.Attachment;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
+import io.vertx.core.json.JsonObject;
 import io.vertx.mod.doc.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
+import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 /**
  * @author lang : 2023-09-15
@@ -16,8 +19,9 @@ import io.vertx.up.unity.Ux;
 public class PullActor {
 
     @Address(Addr.DOC_DOWNLOAD)
-    public Future<Buffer> download(final String key,
-                                   final String token) {
+    public Future<Buffer> download(final JsonObject data) {
+        final String fileKey = Ut.valueString(data, KName.KEY);
+        final String token = Ut.valueString(data, KName.TOKEN);
         return this.verifyAsync(token).compose(verified -> {
             if (!verified) {
                 /*
@@ -31,7 +35,7 @@ public class PullActor {
              * 验证通过，返回文件内容（调用下载接口）
              */
             return Ux.channel(Attachment.class, Buffer::buffer,
-                attachment -> attachment.downloadAsync(key));
+                attachment -> attachment.downloadAsync(fileKey));
         });
     }
 

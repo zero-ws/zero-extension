@@ -86,7 +86,6 @@ public interface Attachment {
     Future<JsonArray> fetchAsync(JsonObject condition);
 
     // ----------------- File Interface ----------------------
-
     Future<Buffer> downloadAsync(Set<String> keys);
 
     Future<Buffer> downloadAsync(String key);
