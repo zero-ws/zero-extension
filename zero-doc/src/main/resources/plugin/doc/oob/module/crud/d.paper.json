@@ -1,0 +1,12 @@
+{
+    "name": "paper",
+    "daoCls": "cn.vertxup.doc.domain.tables.daos.DPaperDao",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}
