@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS D_COMMENT
     /*
      第一维度
      备注的类型信息，不同类型表示此备注的不同业务解释
-     - EXPLAIN：备注表示解读
+     - EXPLAIN：标准化解读
+     - COMMENT：定制化解读
      - REMARK：备注表示普通备注
      - NODE：备注表示读书笔记
      */

@@ -1,0 +1,12 @@
+{
+    "name": "comment",
+    "daoCls": "cn.vertxup.doc.domain.tables.daos.DCommentDao",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}
