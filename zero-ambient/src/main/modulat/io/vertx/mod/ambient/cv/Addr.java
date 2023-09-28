@@ -132,4 +132,13 @@ public interface Addr {
 
         String SYNC_B = Prefix._EVENT + "X-LINKAGE/SYNC-B";
     }
+
+    interface Tag {
+        // Tag Post，替换原始 /api/x-tag
+        String SYNC_SAVE = Prefix._EVENT + "X-TAG/SYNC-SAVING";
+        // Tag Delete，删除原始 /api/x-tag/:key
+        String SYNC_DELETE = Prefix._EVENT + "X-TAG/SYNC-REMOVING";
+        // Tag Fetch
+        String FETCH_BY_MODEL = Prefix._EVENT + "X-TAG/FETCH/BY-MODEL";
+    }
 }
