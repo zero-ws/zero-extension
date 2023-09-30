@@ -140,5 +140,7 @@ public interface Addr {
         String SYNC_DELETE = Prefix._EVENT + "X-TAG/SYNC-REMOVING";
         // Tag Fetch
         String FETCH_BY_MODEL = Prefix._EVENT + "X-TAG/FETCH/BY-MODEL";
+        // Tag Remove，仅删除关联
+        String REMOVE_BY_MODEL = Prefix._EVENT + "X-TAG/REMOVE/BY-MODEL";
     }
 }

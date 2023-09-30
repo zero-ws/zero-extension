@@ -31,7 +31,8 @@ public class TagService implements TagStub {
                     final XTag inserted = Ux.fromJson(body, XTag.class);
                     return Ux.Jooq.on(XTagDao.class).insertAsync(inserted);
                 } else {
-                    return Ux.future(entity);
+                    final XTag updated = Ux.updateT(entity, body);
+                    return Ux.Jooq.on(XTagDao.class).updateAsync(updated);
                 }
             })
             .compose(synced -> {

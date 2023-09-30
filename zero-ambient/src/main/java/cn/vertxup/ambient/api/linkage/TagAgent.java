@@ -24,6 +24,13 @@ public interface TagAgent {
     @Address(Addr.Tag.SYNC_DELETE)
     JsonObject deleteTag(@PathParam(KName.KEY) String key);
 
+    @DELETE
+    @Path("/x-tag/m/:identifier/:key/:tid")
+    @Address(Addr.Tag.REMOVE_BY_MODEL)
+    JsonObject unlinkAsync(@PathParam(KName.IDENTIFIER) String modelId,
+                           @PathParam(KName.KEY) String modelKey,
+                           @PathParam("tid") String tagId);
+
     @GET
     @Path("/x-tag/m/:identifier/:key")
     @Address(Addr.Tag.FETCH_BY_MODEL)

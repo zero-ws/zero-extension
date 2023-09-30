@@ -37,6 +37,17 @@ public class TagActor {
         return this.stub.deleteAsync(key);
     }
 
+    @Address(Addr.Tag.REMOVE_BY_MODEL)
+    public Future<Boolean> unlinkAsync(final String modelId,
+                                       final String modelKey,
+                                       final String tagId) {
+        final JsonObject qr = Ux.whereAnd();
+        qr.put("entityType", modelId);
+        qr.put(KName.ENTITY_ID, modelKey);
+        qr.put("tagId", tagId);
+        return Ux.Jooq.on(RTagObject.class).deleteByAsync(qr);
+    }
+
     @Address(Addr.Tag.FETCH_BY_MODEL)
     public Future<JsonArray> fetchByModel(final String modelId,
                                           final String modelKey) {
