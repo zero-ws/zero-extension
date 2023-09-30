@@ -1,5 +1,6 @@
 package cn.vertxup.ambient.api.linkage;
 
+import cn.vertxup.ambient.domain.tables.daos.RTagObjectDao;
 import cn.vertxup.ambient.domain.tables.daos.XTagDao;
 import cn.vertxup.ambient.domain.tables.pojos.RTagObject;
 import cn.vertxup.ambient.service.linkage.TagStub;
@@ -45,7 +46,7 @@ public class TagActor {
         qr.put("entityType", modelId);
         qr.put(KName.ENTITY_ID, modelKey);
         qr.put("tagId", tagId);
-        return Ux.Jooq.on(RTagObject.class).deleteByAsync(qr);
+        return Ux.Jooq.on(RTagObjectDao.class).deleteByAsync(qr);
     }
 
     @Address(Addr.Tag.FETCH_BY_MODEL)
