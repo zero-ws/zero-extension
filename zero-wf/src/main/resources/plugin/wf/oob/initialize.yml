@@ -6,3 +6,7 @@
     unique:
     - code
     - sigma
+-   dao: cn.vertxup.workflow.domain.tables.daos.WTicketDao     # W_TICKET
+    unique:
+    - code
+    - sigma
