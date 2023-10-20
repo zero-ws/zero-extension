@@ -58,6 +58,16 @@ public interface IXTag extends VertxPojo, Serializable {
     public String getIcon();
 
     /**
+     * Setter for <code>ZDB.X_TAG.COLOR</code>. 「color」- 标签颜色
+     */
+    public IXTag setColor(String value);
+
+    /**
+     * Getter for <code>ZDB.X_TAG.COLOR</code>. 「color」- 标签颜色
+     */
+    public String getColor();
+
+    /**
      * Setter for <code>ZDB.X_TAG.SORT</code>. 「sort」- 标签排序
      */
     public IXTag setSort(Long value);
@@ -219,6 +229,7 @@ public interface IXTag extends VertxPojo, Serializable {
                 setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
                 setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setIcon,json::getString,"ICON","java.lang.String");
+                setOrThrow(this::setColor,json::getString,"COLOR","java.lang.String");
                 setOrThrow(this::setSort,json::getLong,"SORT","java.lang.Long");
                 setOrThrow(this::setShow,json::getBoolean,"SHOW","java.lang.Boolean");
                 setOrThrow(this::setDescription,json::getString,"DESCRIPTION","java.lang.String");
@@ -244,6 +255,7 @@ public interface IXTag extends VertxPojo, Serializable {
                 json.put("NAME",getName());
                 json.put("TYPE",getType());
                 json.put("ICON",getIcon());
+                json.put("COLOR",getColor());
                 json.put("SORT",getSort());
                 json.put("SHOW",getShow());
                 json.put("DESCRIPTION",getDescription());

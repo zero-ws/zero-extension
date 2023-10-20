@@ -24,6 +24,7 @@ public class XTag implements VertxPojo, IXTag {
     private String name;
     private String type;
     private String icon;
+    private String color;
     private Long sort;
     private Boolean show;
     private String description;
@@ -46,6 +47,7 @@ public class XTag implements VertxPojo, IXTag {
         this.name = value.getName();
         this.type = value.getType();
         this.icon = value.getIcon();
+        this.color = value.getColor();
         this.sort = value.getSort();
         this.show = value.getShow();
         this.description = value.getDescription();
@@ -67,6 +69,7 @@ public class XTag implements VertxPojo, IXTag {
         String name,
         String type,
         String icon,
+        String color,
         Long sort,
         Boolean show,
         String description,
@@ -86,6 +89,7 @@ public class XTag implements VertxPojo, IXTag {
         this.name = name;
         this.type = type;
         this.icon = icon;
+        this.color = color;
         this.sort = sort;
         this.show = show;
         this.description = description;
@@ -172,6 +176,23 @@ public class XTag implements VertxPojo, IXTag {
     @Override
     public XTag setIcon(String icon) {
         this.icon = icon;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_TAG.COLOR</code>. 「color」- 标签颜色
+     */
+    @Override
+    public String getColor() {
+        return this.color;
+    }
+
+    /**
+     * Setter for <code>ZDB.X_TAG.COLOR</code>. 「color」- 标签颜色
+     */
+    @Override
+    public XTag setColor(String color) {
+        this.color = color;
         return this;
     }
 
@@ -446,6 +467,12 @@ public class XTag implements VertxPojo, IXTag {
         }
         else if (!this.icon.equals(other.icon))
             return false;
+        if (this.color == null) {
+            if (other.color != null)
+                return false;
+        }
+        else if (!this.color.equals(other.color))
+            return false;
         if (this.sort == null) {
             if (other.sort != null)
                 return false;
@@ -541,6 +568,7 @@ public class XTag implements VertxPojo, IXTag {
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.icon == null) ? 0 : this.icon.hashCode());
+        result = prime * result + ((this.color == null) ? 0 : this.color.hashCode());
         result = prime * result + ((this.sort == null) ? 0 : this.sort.hashCode());
         result = prime * result + ((this.show == null) ? 0 : this.show.hashCode());
         result = prime * result + ((this.description == null) ? 0 : this.description.hashCode());
@@ -566,6 +594,7 @@ public class XTag implements VertxPojo, IXTag {
         sb.append(", ").append(name);
         sb.append(", ").append(type);
         sb.append(", ").append(icon);
+        sb.append(", ").append(color);
         sb.append(", ").append(sort);
         sb.append(", ").append(show);
         sb.append(", ").append(description);
@@ -595,6 +624,7 @@ public class XTag implements VertxPojo, IXTag {
         setName(from.getName());
         setType(from.getType());
         setIcon(from.getIcon());
+        setColor(from.getColor());
         setSort(from.getSort());
         setShow(from.getShow());
         setDescription(from.getDescription());

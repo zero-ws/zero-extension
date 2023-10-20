@@ -3,11 +3,20 @@
         "metadata": "name,标签名称"
     },
     {
-        "metadata": "icon,图标,TAG",
+        "metadata": "color,标签颜色,TAG",
         "$config": {
-            "enabled": [
-                "icon",
-                "image"
+            "items": [
+                "geekblue,极客蓝",
+                "magenta,粉红",
+                "red,红色",
+                "volcano,火山红",
+                "orange,橙色",
+                "gold,金色",
+                "lime,青柠绿",
+                "green,绿色",
+                "cyan,青色",
+                "blue,蓝色",
+                "purple,紫色"
             ]
         }
     },

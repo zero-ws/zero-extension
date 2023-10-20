@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS X_TAG
     `TYPE`        VARCHAR(255) COMMENT '「type」- 标签类型',
 
     `ICON`        VARCHAR(255) COMMENT '「icon」- 标签使用的图标',
+    `COLOR`       VARCHAR(32) COMMENT '「color」- 标签颜色',
     `SORT`        BIGINT COMMENT '「sort」- 标签排序',
     `SHOW`        BIT         DEFAULT FALSE COMMENT '「show」- 是否显示在导航栏',
     `DESCRIPTION` LONGTEXT COMMENT '「description」- 标签描述',
