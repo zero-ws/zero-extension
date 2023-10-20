@@ -84,6 +84,21 @@ public class XTagDao extends AbstractVertxDAO<XTagRecord, cn.vertxup.ambient.dom
         }
 
         /**
+     * Find records that have <code>COLOR IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.ambient.domain.tables.pojos.XTag>> findManyByColor(Collection<String> values) {
+                return findManyByCondition(XTag.X_TAG.COLOR.in(values));
+        }
+
+        /**
+     * Find records that have <code>COLOR IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.ambient.domain.tables.pojos.XTag>> findManyByColor(Collection<String> values, int limit) {
+                return findManyByCondition(XTag.X_TAG.COLOR.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>SORT IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.ambient.domain.tables.pojos.XTag>> findManyBySort(Collection<Long> values) {
