@@ -8,6 +8,7 @@ import io.vertx.mod.crud.uca.destine.Probe;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.eon.KName;
+import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.uca.destine.Hymn;
 
 import java.util.Objects;
@@ -47,11 +48,12 @@ public class IxJunc {
             return null;
         }
 
-        if (connect.isRefer()) {
-            // 引用模型，引用模型不依赖输入信息
+
+        if (EmPRI.Connect.PARENT_STANDBY == connect.refer()) {
+            // 父从表：引用模型，引用模型不依赖输入信息
             return this.connectRefer(connect);
         } else {
-            // 子模型
+            // 父主表：子模型
             return this.connectJoined(connect, input);
         }
     }

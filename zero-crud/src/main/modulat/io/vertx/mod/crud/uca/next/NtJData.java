@@ -8,6 +8,7 @@ import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
+import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
@@ -105,7 +106,7 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
             final Conflate<JsonObject, JsonObject> conflate =
                 Conflate.ofJObject(this.in.connect(), true);
 
-            this.referenceSource(standBy);
+            this.referenceOut(standBy);
 
             final JsonObject dataSt = conflate.treat(active, standBy, this.in.connectId());
             LOG.Web.info(this.getClass(), "Data Out: {0}", dataSt.encode());
@@ -124,19 +125,28 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
      *     2. 父主表模式
      *        - aKey 存在（无视）
      *        - 被 Join 的表的主键会直接移除
+     *        由于主表的 key 存在，所以 standByJ 可直接覆盖
      *        父从表模式
      *        - 主要是防止主键 primary key 直接被覆盖
+     *        由于主表的 key 不存在，所以 standByJ 不可以覆盖
+     *     3. 两种模式输出的时候信息不一致
+     *        - 父主表：主表输出为 standBy 从表主键（父表有第二属性 aKey）
+     *        - 父从表：主表输出为主表逐渐，standBy 的逐渐忽略（从表有第二属性 aKey）
      * </code></pre>
      */
     private void referenceOut(final JsonObject standByJ) {
         // 默认异常行为
         this.referenceSource(standByJ);
 
-        final KModule connect = this.in.connected();
-        Objects.requireNonNull(connect);
-        final String keyField = connect.getField().getKey();
-        if (Ut.isNotNil(keyField)) {
-            standByJ.remove(keyField);
+        final KModule module = this.in.module();
+        final KJoin join = module.getConnect();
+        if (EmPRI.Connect.PARENT_STANDBY == join.refer()) {
+            final KModule connect = this.in.connected();
+            Objects.requireNonNull(connect);
+            final String keyField = connect.getField().getKey();
+            if (Ut.isNotNil(keyField)) {
+                standByJ.remove(keyField);
+            }
         }
     }
 

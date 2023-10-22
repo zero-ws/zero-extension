@@ -9,6 +9,7 @@ import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.atom.shape.KField;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
+import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -34,7 +35,7 @@ class RefPre implements Pre {
     private void generateReference(final JsonObject data, final KModule module) {
         final KJoin join = module.getConnect();
         /* 限定必须是 reference 类型 */
-        if (Objects.isNull(join) || !join.isRefer()) {
+        if (Objects.isNull(join) || EmPRI.Connect.PARENT_ACTIVE == join.refer()) {
             return;
         }
 

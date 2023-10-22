@@ -8,6 +8,7 @@ import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
+import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -121,7 +122,7 @@ public class IxRequest {
 
         // 第二优先级
         final KJoin join = this.active.connect();
-        if (Objects.nonNull(join) && join.isRefer()) {
+        if (Objects.nonNull(join) && EmPRI.Connect.PARENT_STANDBY == join.refer()) {
             // reference 的解析
             final KPoint point = join.getReference();
             module = Objects.isNull(point) ? null : point.indent();
