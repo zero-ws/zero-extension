@@ -1,0 +1,12 @@
+{
+    "name": "doc-clause",
+    "daoCls": "cn.vertxup.doc.domain.tables.daos.DDocClauseDao",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}
