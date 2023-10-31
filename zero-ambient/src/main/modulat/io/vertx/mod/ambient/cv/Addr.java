@@ -138,9 +138,13 @@ public interface Addr {
         String SYNC_SAVE = Prefix._EVENT + "X-TAG/SYNC-SAVING";
         // Tag Delete，删除原始 /api/x-tag/:key
         String SYNC_DELETE = Prefix._EVENT + "X-TAG/SYNC-REMOVING";
+
         // Tag Fetch
-        String FETCH_BY_MODEL = Prefix._EVENT + "X-TAG/FETCH/BY-MODEL";
+        String MODEL_OF_FETCH = Prefix._EVENT + "X-TAG/FETCH/BY-MODEL";
         // Tag Remove，仅删除关联
-        String REMOVE_BY_MODEL = Prefix._EVENT + "X-TAG/REMOVE/BY-MODEL";
+        String MODEL_OF_REMOVE = Prefix._EVENT + "X-TAG/REMOVE/BY-MODEL";
+
+        // Tag Linkage，标签关联，直接关联实体标签信息填充 R_TAG_OBJECT
+        String MODEL_OF_TAGS = Prefix._EVENT + "X-TAG/SYNC-LINKAGE";
     }
 }
