@@ -1,5 +1,6 @@
 package cn.vertxup.ambient.api.linkage;
 
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.up.annotations.Address;
@@ -24,16 +25,23 @@ public interface TagAgent {
     @Address(Addr.Tag.SYNC_DELETE)
     JsonObject deleteTag(@PathParam(KName.KEY) String key);
 
+    @GET
+    @Path("/x-tag/m/:identifier/:key")
+    @Address(Addr.Tag.MODEL_OF_FETCH)
+    JsonObject fetchByModel(@PathParam(KName.IDENTIFIER) String modelId,
+                            @PathParam(KName.KEY) String modelKey);
+
     @DELETE
     @Path("/x-tag/m/:identifier/:key/:tid")
-    @Address(Addr.Tag.REMOVE_BY_MODEL)
+    @Address(Addr.Tag.MODEL_OF_REMOVE)
     JsonObject unlinkAsync(@PathParam(KName.IDENTIFIER) String modelId,
                            @PathParam(KName.KEY) String modelKey,
                            @PathParam("tid") String tagId);
 
-    @GET
+    @POST
     @Path("/x-tag/m/:identifier/:key")
-    @Address(Addr.Tag.FETCH_BY_MODEL)
-    JsonObject fetchByModel(@PathParam(KName.IDENTIFIER) String modelId,
-                            @PathParam(KName.KEY) String modelKey);
+    @Address(Addr.Tag.MODEL_OF_TAGS)
+    JsonObject linkAsync(@PathParam(KName.IDENTIFIER) String modelId,
+                         @PathParam(KName.KEY) String modelKey,
+                         @BodyParam JsonArray body);
 }
