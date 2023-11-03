@@ -3,7 +3,8 @@
         "query": {
             "sourceType": "w.ticket",
             "targetType": "w.ticket"
-        }
+        },
+        "page": "关联工单"
     },
     "message": {
         "window": "选择关联工单",

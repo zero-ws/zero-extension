@@ -4,6 +4,7 @@
         "query": {
             "modelId": "w.ticket",
             "modelCategory": "`${flowDefinitionKey}`"
-        }
+        },
+        "page": "关联附件"
     }
 }

@@ -3,7 +3,8 @@
         "query": {
             "sourceType": "w.ticket",
             "targetType": "ci.device"
-        }
+        },
+        "page": "关联资产"
     },
     "message": {
         "window": "选择关联资产",
