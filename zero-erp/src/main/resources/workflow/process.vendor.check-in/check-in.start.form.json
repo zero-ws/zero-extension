@@ -68,6 +68,13 @@
         ],
         "ASSIGNMENT": "ASSIGN_SINGLE"
     },
+    "combiner": {
+        "segment": [
+            "TICKET",
+            "ASSIGNMENT",
+            "TICKET_OPEN"
+        ]
+    },
     "synonym": {
         "toUserNo": "审批人工号",
         "toUserName": "审批人",
