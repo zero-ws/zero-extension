@@ -3,6 +3,10 @@
         "metadata": "name,标签名称"
     },
     {
+        "metadata": "type,标签类型,DATUM",
+        "$datum": "source=tag.type,value=key,display=name"
+    },
+    {
         "metadata": "color,标签颜色,TAG",
         "$config": {
             "items": [

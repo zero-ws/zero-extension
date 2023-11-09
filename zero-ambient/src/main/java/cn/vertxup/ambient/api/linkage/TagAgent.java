@@ -16,7 +16,7 @@ import jakarta.ws.rs.*;
 public interface TagAgent {
 
     @POST
-    @Path("/x-tag")
+    @Path("/x-tag/m")
     @Address(Addr.Tag.SYNC_SAVE)
     JsonObject saveTag(@BodyParam JsonObject body);
 
