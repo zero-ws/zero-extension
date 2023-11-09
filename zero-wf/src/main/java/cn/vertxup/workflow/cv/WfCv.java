@@ -8,6 +8,8 @@ public interface WfCv {
 
     String FOLDER_ROOT = "workflow";
 
+    String FOLDER_LINKAGE = "workflow/linkage";
+
     String BPMN_FLOW_TYPE = "SequenceFlow";
 
     String CODE_HISTORY = "workflow.history";

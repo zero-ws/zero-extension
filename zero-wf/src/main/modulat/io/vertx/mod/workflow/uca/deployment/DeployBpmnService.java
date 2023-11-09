@@ -45,6 +45,7 @@ class DeployBpmnService implements DeployOn {
         // Avoid duplicated deployment when container started.
         this.builder.enableDuplicateFiltering(Boolean.TRUE);
         final List<String> files = Ut.ioFiles(workflow);
+        LOG.Deploy.info(this.getClass(), "Load BPMN file for `{0}`", workflow);
         final String bpmnFile = files.stream()
             .filter(item -> item.endsWith(VString.DOT + VPath.SUFFIX.BPMN))
             .findAny().orElse(null);
