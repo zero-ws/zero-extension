@@ -25,6 +25,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
     private String code;
     private String serial;
     private BigDecimal amount;
+    private BigDecimal amountGap;
     private String comment;
     private String rounded;
     private Boolean finished;
@@ -49,6 +50,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         this.code = value.getCode();
         this.serial = value.getSerial();
         this.amount = value.getAmount();
+        this.amountGap = value.getAmountGap();
         this.comment = value.getComment();
         this.rounded = value.getRounded();
         this.finished = value.getFinished();
@@ -72,6 +74,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         String code,
         String serial,
         BigDecimal amount,
+        BigDecimal amountGap,
         String comment,
         String rounded,
         Boolean finished,
@@ -93,6 +96,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         this.code = code;
         this.serial = serial;
         this.amount = amount;
+        this.amountGap = amountGap;
         this.comment = comment;
         this.rounded = rounded;
         this.finished = finished;
@@ -183,6 +187,25 @@ public class FSettlement implements VertxPojo, IFSettlement {
     @Override
     public FSettlement setAmount(BigDecimal amount) {
         this.amount = amount;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    @Override
+    public BigDecimal getAmountGap() {
+        return this.amountGap;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    @Override
+    public FSettlement setAmountGap(BigDecimal amountGap) {
+        this.amountGap = amountGap;
         return this;
     }
 
@@ -497,6 +520,12 @@ public class FSettlement implements VertxPojo, IFSettlement {
         }
         else if (!this.amount.equals(other.amount))
             return false;
+        if (this.amountGap == null) {
+            if (other.amountGap != null)
+                return false;
+        }
+        else if (!this.amountGap.equals(other.amountGap))
+            return false;
         if (this.comment == null) {
             if (other.comment != null)
                 return false;
@@ -604,6 +633,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
         result = prime * result + ((this.serial == null) ? 0 : this.serial.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
+        result = prime * result + ((this.amountGap == null) ? 0 : this.amountGap.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
         result = prime * result + ((this.rounded == null) ? 0 : this.rounded.hashCode());
         result = prime * result + ((this.finished == null) ? 0 : this.finished.hashCode());
@@ -631,6 +661,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         sb.append(", ").append(code);
         sb.append(", ").append(serial);
         sb.append(", ").append(amount);
+        sb.append(", ").append(amountGap);
         sb.append(", ").append(comment);
         sb.append(", ").append(rounded);
         sb.append(", ").append(finished);
@@ -662,6 +693,7 @@ public class FSettlement implements VertxPojo, IFSettlement {
         setCode(from.getCode());
         setSerial(from.getSerial());
         setAmount(from.getAmount());
+        setAmountGap(from.getAmountGap());
         setComment(from.getComment());
         setRounded(from.getRounded());
         setFinished(from.getFinished());

@@ -11,6 +11,8 @@ CREATE TABLE `F_SETTLEMENT`
 
     -- 基本信息
     `AMOUNT`      DECIMAL(18, 2) NOT NULL COMMENT '「amount」——价税合计，所有明细对应的实际结算金额',
+    `AMOUNT_GAP`  DECIMAL(18, 2) COMMENT '「amountGap」——差价，根据 rounded 计算差价', -- 可以为空，如果没有此值则表示没有差价
+
     `COMMENT`     LONGTEXT COMMENT '「comment」 - 结算单备注',
     `ROUNDED`     VARCHAR(12) COMMENT '「rounded」抹零方式：四舍五入, HALF：零头舍掉, FLOOR, 零头入进, CEIL',
     `FINISHED`    BIT COMMENT '「finished」- 是否完成',
