@@ -14,7 +14,15 @@ CREATE TABLE `F_SETTLEMENT`
     `AMOUNT_GAP`  DECIMAL(18, 2) COMMENT '「amountGap」——差价，根据 rounded 计算差价', -- 可以为空，如果没有此值则表示没有差价
 
     `COMMENT`     LONGTEXT COMMENT '「comment」 - 结算单备注',
-    `ROUNDED`     VARCHAR(12) COMMENT '「rounded」抹零方式：四舍五入, HALF：零头舍掉, FLOOR, 零头入进, CEIL',
+    /*
+     * 此处在原始基础上拓展了五个值
+     * - NONE：不处理
+     * - HALF：四舍五入
+     * - FLOOR：零头舍弃
+     * - CEIL：零头入进
+     * - INPUT：折扣（自定义）
+     */
+    `ROUNDED`     VARCHAR(12) COMMENT '「rounded」抹零方式，不同抹零方式会影响验证规则',
     `FINISHED`    BIT COMMENT '「finished」- 是否完成',
     `FINISHED_AT` DATETIME COMMENT '「createdAt」- 完成时间',
     `SIGN_NAME`   VARCHAR(128)  DEFAULT NULL COMMENT '「signName」签单人姓名',
