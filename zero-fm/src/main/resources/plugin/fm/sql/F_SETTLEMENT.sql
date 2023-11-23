@@ -20,7 +20,7 @@ CREATE TABLE `F_SETTLEMENT`
      * - HALF：四舍五入
      * - FLOOR：零头舍弃
      * - CEIL：零头入进
-     * - INPUT：折扣（自定义）
+     * - INPUT：自定义
      */
     `ROUNDED`     VARCHAR(12) COMMENT '「rounded」抹零方式，不同抹零方式会影响验证规则',
     `FINISHED`    BIT COMMENT '「finished」- 是否完成',
