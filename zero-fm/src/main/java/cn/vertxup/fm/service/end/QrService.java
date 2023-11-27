@@ -12,7 +12,6 @@ import io.vertx.up.util.Ut;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
@@ -50,24 +49,30 @@ public class QrService implements QrStub {
     @Override
     public Future<JsonObject> fetchDebt(final String key) {
         final JsonObject response = new JsonObject();
-        return Ux.Jooq.on(FDebtDao.class)
-            .<FDebt>fetchByIdAsync(key).compose(debt -> {
-                // FSettlement Details Here
-                Objects.requireNonNull(debt.getSettlementId());
-                response.mergeIn(Ux.toJson(debt));
-                return this.fetchItems(debt.getSettlementId(), response)
-                    .compose(nil -> Ux.future(debt));
-            }).compose(debt -> this.fetchPayment(debt.getSettlementId(), false))
-            .compose(payments -> {
-                response.put(FmCv.ID.PAYMENT, payments);
-                return Ux.future(response);
-            });
+        // PKG-FM-102
+        // TODO: 重写此方法，根据 Debt 主键提取信息
+        return Ux.futureJ();
+        //        return Ux.Jooq.on(FDebtDao.class)
+        //            .<FDebt>fetchByIdAsync(key).compose(debt -> {
+        //                // FSettlement Details Here
+        //                Objects.requireNonNull(debt.getSettlementId());
+        //                response.mergeIn(Ux.toJson(debt));
+        //                return this.fetchItems(debt.getSettlementId(), response)
+        //                    .compose(nil -> Ux.future(debt));
+        //            }).compose(debt -> this.fetchPayment(debt.getSettlementId(), false))
+        //            .compose(payments -> {
+        //                response.put(FmCv.ID.PAYMENT, payments);
+        //                return Ux.future(response);
+        //            });
     }
 
     @Override
     public Future<ConcurrentMap<String, FDebt>> fetchDebtMap(final Set<String> settlementId) {
-        return Ux.Jooq.on(FDebtDao.class).<FDebt>fetchInAsync(FmCv.ID.SETTLEMENT_ID, Ut.toJArray(settlementId))
-            .compose(dataA -> Ux.future(Ut.elementMap(dataA, FDebt::getSettlementId)));
+        // PKG-FM-102
+        // TODO: 重写此方法，根据 Debt 主键提取信息
+        return Ux.future();
+        //        return Ux.Jooq.on(FDebtDao.class).<FDebt>fetchInAsync(FmCv.ID.SETTLEMENT_ID, Ut.toJArray(settlementId))
+        //            .compose(dataA -> Ux.future(Ut.elementMap(dataA, FDebt::getSettlementId)));
     }
 
     private Future<Boolean> fetchItems(final String settlementId, final JsonObject response) {

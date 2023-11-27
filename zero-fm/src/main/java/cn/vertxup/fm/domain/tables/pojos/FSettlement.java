@@ -227,8 +227,8 @@ public class FSettlement implements VertxPojo, IFSettlement {
     }
 
     /**
-     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     @Override
     public String getRounded() {
@@ -236,8 +236,8 @@ public class FSettlement implements VertxPojo, IFSettlement {
     }
 
     /**
-     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     @Override
     public FSettlement setRounded(String rounded) {

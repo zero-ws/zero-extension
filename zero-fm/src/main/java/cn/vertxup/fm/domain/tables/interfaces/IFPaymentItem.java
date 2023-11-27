@@ -81,16 +81,26 @@ public interface IFPaymentItem extends VertxPojo, Serializable {
     public BigDecimal getAmountPre();
 
     /**
-     * Setter for <code>ZDB.F_PAYMENT_ITEM.SETTLEMENT_ID</code>.
-     * 「settlementId」结算单ID
+     * Setter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_ID</code>. 「objectId」付款对象ID
      */
-    public IFPaymentItem setSettlementId(String value);
+    public IFPaymentItem setObjectId(String value);
 
     /**
-     * Getter for <code>ZDB.F_PAYMENT_ITEM.SETTLEMENT_ID</code>.
-     * 「settlementId」结算单ID
+     * Getter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_ID</code>. 「objectId」付款对象ID
      */
-    public String getSettlementId();
+    public String getObjectId();
+
+    /**
+     * Setter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_TYPE</code>.
+     * 「objectType」付款对象类型
+     */
+    public IFPaymentItem setObjectType(String value);
+
+    /**
+     * Getter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_TYPE</code>.
+     * 「objectType」付款对象类型
+     */
+    public String getObjectType();
 
     /**
      * Setter for <code>ZDB.F_PAYMENT_ITEM.PAYMENT_ID</code>. 「paymentId」收款单ID
@@ -246,7 +256,8 @@ public interface IFPaymentItem extends VertxPojo, Serializable {
                 setOrThrow(this::setSerial,json::getString,"SERIAL","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
                 setOrThrow(this::setAmountPre,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT_PRE","java.math.BigDecimal");
-                setOrThrow(this::setSettlementId,json::getString,"SETTLEMENT_ID","java.lang.String");
+                setOrThrow(this::setObjectId,json::getString,"OBJECT_ID","java.lang.String");
+                setOrThrow(this::setObjectType,json::getString,"OBJECT_TYPE","java.lang.String");
                 setOrThrow(this::setPaymentId,json::getString,"PAYMENT_ID","java.lang.String");
                 setOrThrow(this::setPayName,json::getString,"PAY_NAME","java.lang.String");
                 setOrThrow(this::setPayMobile,json::getString,"PAY_MOBILE","java.lang.String");
@@ -273,7 +284,8 @@ public interface IFPaymentItem extends VertxPojo, Serializable {
                 json.put("SERIAL",getSerial());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
                 json.put("AMOUNT_PRE",getAmountPre()==null?null:getAmountPre().toString());
-                json.put("SETTLEMENT_ID",getSettlementId());
+                json.put("OBJECT_ID",getObjectId());
+                json.put("OBJECT_TYPE",getObjectType());
                 json.put("PAYMENT_ID",getPaymentId());
                 json.put("PAY_NAME",getPayName());
                 json.put("PAY_MOBILE",getPayMobile());

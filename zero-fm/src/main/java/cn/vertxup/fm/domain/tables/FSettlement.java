@@ -88,10 +88,10 @@ public class FSettlement extends TableImpl<FSettlementRecord> {
     public final TableField<FSettlementRecord, String> COMMENT = createField(DSL.name("COMMENT"), SQLDataType.CLOB, this, "「comment」 - 结算单备注");
 
     /**
-     * The column <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * The column <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
-    public final TableField<FSettlementRecord, String> ROUNDED = createField(DSL.name("ROUNDED"), SQLDataType.VARCHAR(12), this, "「rounded」抹零方式：四舍五入, HALF：零头舍掉, FLOOR, 零头入进, CEIL");
+    public final TableField<FSettlementRecord, String> ROUNDED = createField(DSL.name("ROUNDED"), SQLDataType.VARCHAR(12), this, "「rounded」抹零方式，不同抹零方式会影响验证规则");
 
     /**
      * The column <code>ZDB.F_SETTLEMENT.FINISHED</code>. 「finished」- 是否完成

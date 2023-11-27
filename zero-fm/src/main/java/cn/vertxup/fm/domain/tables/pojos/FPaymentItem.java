@@ -27,7 +27,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
     private String serial;
     private BigDecimal amount;
     private BigDecimal amountPre;
-    private String settlementId;
+    private String objectId;
+    private String objectType;
     private String paymentId;
     private String payName;
     private String payMobile;
@@ -51,7 +52,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         this.serial = value.getSerial();
         this.amount = value.getAmount();
         this.amountPre = value.getAmountPre();
-        this.settlementId = value.getSettlementId();
+        this.objectId = value.getObjectId();
+        this.objectType = value.getObjectType();
         this.paymentId = value.getPaymentId();
         this.payName = value.getPayName();
         this.payMobile = value.getPayMobile();
@@ -74,7 +76,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         String serial,
         BigDecimal amount,
         BigDecimal amountPre,
-        String settlementId,
+        String objectId,
+        String objectType,
         String paymentId,
         String payName,
         String payMobile,
@@ -95,7 +98,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         this.serial = serial;
         this.amount = amount;
         this.amountPre = amountPre;
-        this.settlementId = settlementId;
+        this.objectId = objectId;
+        this.objectType = objectType;
         this.paymentId = paymentId;
         this.payName = payName;
         this.payMobile = payMobile;
@@ -221,21 +225,38 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
     }
 
     /**
-     * Getter for <code>ZDB.F_PAYMENT_ITEM.SETTLEMENT_ID</code>.
-     * 「settlementId」结算单ID
+     * Getter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_ID</code>. 「objectId」付款对象ID
      */
     @Override
-    public String getSettlementId() {
-        return this.settlementId;
+    public String getObjectId() {
+        return this.objectId;
     }
 
     /**
-     * Setter for <code>ZDB.F_PAYMENT_ITEM.SETTLEMENT_ID</code>.
-     * 「settlementId」结算单ID
+     * Setter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_ID</code>. 「objectId」付款对象ID
      */
     @Override
-    public FPaymentItem setSettlementId(String settlementId) {
-        this.settlementId = settlementId;
+    public FPaymentItem setObjectId(String objectId) {
+        this.objectId = objectId;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_TYPE</code>.
+     * 「objectType」付款对象类型
+     */
+    @Override
+    public String getObjectType() {
+        return this.objectType;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_PAYMENT_ITEM.OBJECT_TYPE</code>.
+     * 「objectType」付款对象类型
+     */
+    @Override
+    public FPaymentItem setObjectType(String objectType) {
+        this.objectType = objectType;
         return this;
     }
 
@@ -505,11 +526,17 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         }
         else if (!this.amountPre.equals(other.amountPre))
             return false;
-        if (this.settlementId == null) {
-            if (other.settlementId != null)
+        if (this.objectId == null) {
+            if (other.objectId != null)
                 return false;
         }
-        else if (!this.settlementId.equals(other.settlementId))
+        else if (!this.objectId.equals(other.objectId))
+            return false;
+        if (this.objectType == null) {
+            if (other.objectType != null)
+                return false;
+        }
+        else if (!this.objectType.equals(other.objectType))
             return false;
         if (this.paymentId == null) {
             if (other.paymentId != null)
@@ -602,7 +629,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         result = prime * result + ((this.serial == null) ? 0 : this.serial.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
         result = prime * result + ((this.amountPre == null) ? 0 : this.amountPre.hashCode());
-        result = prime * result + ((this.settlementId == null) ? 0 : this.settlementId.hashCode());
+        result = prime * result + ((this.objectId == null) ? 0 : this.objectId.hashCode());
+        result = prime * result + ((this.objectType == null) ? 0 : this.objectType.hashCode());
         result = prime * result + ((this.paymentId == null) ? 0 : this.paymentId.hashCode());
         result = prime * result + ((this.payName == null) ? 0 : this.payName.hashCode());
         result = prime * result + ((this.payMobile == null) ? 0 : this.payMobile.hashCode());
@@ -629,7 +657,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         sb.append(", ").append(serial);
         sb.append(", ").append(amount);
         sb.append(", ").append(amountPre);
-        sb.append(", ").append(settlementId);
+        sb.append(", ").append(objectId);
+        sb.append(", ").append(objectType);
         sb.append(", ").append(paymentId);
         sb.append(", ").append(payName);
         sb.append(", ").append(payMobile);
@@ -660,7 +689,8 @@ public class FPaymentItem implements VertxPojo, IFPaymentItem {
         setSerial(from.getSerial());
         setAmount(from.getAmount());
         setAmountPre(from.getAmountPre());
-        setSettlementId(from.getSettlementId());
+        setObjectId(from.getObjectId());
+        setObjectType(from.getObjectType());
         setPaymentId(from.getPaymentId());
         setPayName(from.getPayName());
         setPayMobile(from.getPayMobile());

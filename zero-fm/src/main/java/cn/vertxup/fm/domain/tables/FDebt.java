@@ -16,11 +16,11 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function21;
+import org.jooq.Function20;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row21;
+import org.jooq.Row20;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -114,12 +114,6 @@ public class FDebt extends TableImpl<FDebtRecord> {
     public final TableField<FDebtRecord, String> CUSTOMER_ID = createField(DSL.name("CUSTOMER_ID"), SQLDataType.VARCHAR(36), this, "「customerId」结算对象（单位ID）");
 
     /**
-     * The column <code>ZDB.F_DEBT.SETTLEMENT_ID</code>. 「settlementId」-
-     * 结算单ID，该字段有值标识已经结算
-     */
-    public final TableField<FDebtRecord, String> SETTLEMENT_ID = createField(DSL.name("SETTLEMENT_ID"), SQLDataType.VARCHAR(36), this, "「settlementId」- 结算单ID，该字段有值标识已经结算");
-
-    /**
      * The column <code>ZDB.F_DEBT.SIGMA</code>. 「sigma」- 统一标识
      */
     public final TableField<FDebtRecord, String> SIGMA = createField(DSL.name("SIGMA"), SQLDataType.VARCHAR(32), this, "「sigma」- 统一标识");
@@ -204,7 +198,7 @@ public class FDebt extends TableImpl<FDebtRecord> {
 
     @Override
     public List<UniqueKey<FDebtRecord>> getUniqueKeys() {
-        return Arrays.asList(Keys.KEY_F_DEBT_CODE, Keys.KEY_F_DEBT_SERIAL, Keys.KEY_F_DEBT_SETTLEMENT_ID, Keys.KEY_F_DEBT_SETTLEMENT_ID_2);
+        return Arrays.asList(Keys.KEY_F_DEBT_CODE, Keys.KEY_F_DEBT_SERIAL);
     }
 
     @Override
@@ -247,18 +241,18 @@ public class FDebt extends TableImpl<FDebtRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row21 type methods
+    // Row20 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row21<String, String, String, String, String, BigDecimal, String, String, Boolean, LocalDateTime, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row21) super.fieldsRow();
+    public Row20<String, String, String, String, String, BigDecimal, String, String, Boolean, LocalDateTime, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row20) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function21<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -266,7 +260,7 @@ public class FDebt extends TableImpl<FDebtRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function21<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

@@ -115,19 +115,34 @@ public class FPaymentItemDao extends AbstractVertxDAO<FPaymentItemRecord, cn.ver
         }
 
         /**
-     * Find records that have <code>SETTLEMENT_ID IN (values)</code>
-     * asynchronously
+     * Find records that have <code>OBJECT_ID IN (values)</code> asynchronously
      */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyBySettlementId(Collection<String> values) {
-                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.SETTLEMENT_ID.in(values));
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyByObjectId(Collection<String> values) {
+                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.OBJECT_ID.in(values));
         }
 
         /**
-     * Find records that have <code>SETTLEMENT_ID IN (values)</code>
+     * Find records that have <code>OBJECT_ID IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyByObjectId(Collection<String> values, int limit) {
+                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.OBJECT_ID.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>OBJECT_TYPE IN (values)</code>
+     * asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyByObjectType(Collection<String> values) {
+                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.OBJECT_TYPE.in(values));
+        }
+
+        /**
+     * Find records that have <code>OBJECT_TYPE IN (values)</code>
      * asynchronously limited by the given limit
      */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyBySettlementId(Collection<String> values, int limit) {
-                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.SETTLEMENT_ID.in(values),limit);
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FPaymentItem>> findManyByObjectType(Collection<String> values, int limit) {
+                return findManyByCondition(FPaymentItem.F_PAYMENT_ITEM.OBJECT_TYPE.in(values),limit);
         }
 
         /**
