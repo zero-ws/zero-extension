@@ -51,7 +51,7 @@
             "placeholder": "资产编号/名称"
         },
         "ajax": {
-            "uri": "/api/nm/ci.device/search",
+            "uri": "/api/ox/ci.device/search",
             "method": "POST",
             "error": {
                 "message": "资产模块未启用",
