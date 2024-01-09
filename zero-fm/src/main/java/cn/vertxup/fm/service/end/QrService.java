@@ -31,7 +31,7 @@ public class QrService implements QrStub {
                     .compose(nil -> Ux.future(settlement));
             })
             // Payment fetching for all settlement
-            .compose(settlement -> Ux.Jooq.on(FPaymentItemDao.class)
+            .compose(settlement -> Ux.Jooq.on(FTransItemDao.class)
                 .fetchJAsync(FmCv.ID.SETTLEMENT_ID, settlement.getKey())
                 .compose(payment -> {
                     response.put(FmCv.ID.PAYMENT, payment);
@@ -86,24 +86,24 @@ public class QrService implements QrStub {
 
     @Override
     public Future<JsonArray> fetchPayment(final String settlementId, final boolean tree) {
-        return Ux.Jooq.on(FPaymentItemDao.class)
-            .<FPaymentItem>fetchAsync(FmCv.ID.SETTLEMENT_ID, settlementId).compose(items -> {
+        return Ux.Jooq.on(FTransItemDao.class)
+            .<FTransItem>fetchAsync(FmCv.ID.SETTLEMENT_ID, settlementId).compose(items -> {
                 if (tree) {
                     // Payment Information
                     final Set<String> paymentIds = items.stream()
-                        .map(FPaymentItem::getPaymentId)
+                        .map(FTransItem::getTransactionId)
                         .filter(Ut::isNotNil)
                         .collect(Collectors.toSet());
                     // List<Payment>
-                    return Ux.Jooq.on(FPaymentDao.class)
-                        .<FPayment>fetchInAsync(KName.KEY, Ut.toJArray(paymentIds)).compose(payment -> {
-                            final ConcurrentMap<String, List<FPaymentItem>> grouped =
-                                Ut.elementGroup(items, FPaymentItem::getPaymentId, item -> item);
+                    return Ux.Jooq.on(FTransDao.class)
+                        .<FTrans>fetchInAsync(KName.KEY, Ut.toJArray(paymentIds)).compose(payment -> {
+                            final ConcurrentMap<String, List<FTransItem>> grouped =
+                                Ut.elementGroup(items, FTransItem::getTransactionId, item -> item);
                             final JsonArray data = Ux.toJson(payment);
                             Ut.itJArray(data).forEach(item -> {
                                 final String payKey = item.getString(KName.KEY);
                                 if (grouped.containsKey(payKey)) {
-                                    final List<FPaymentItem> refs = grouped.getOrDefault(payKey, new ArrayList<>());
+                                    final List<FTransItem> refs = grouped.getOrDefault(payKey, new ArrayList<>());
                                     item.put(KName.ITEMS, Ux.toJson(refs));
                                 } else {
                                     item.put(KName.ITEMS, new JsonArray());

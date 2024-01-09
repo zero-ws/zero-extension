@@ -233,7 +233,7 @@ public interface FillStub {
      * @param settlement from = 结算单
      * @param payments   to = 付款项
      */
-    void payment(FSettlement settlement, List<FPaymentItem> payments);
+    void payment(FSettlement settlement, List<FTransItem> payments);
 
     /**
      * 「付款」付款单
@@ -246,5 +246,5 @@ public interface FillStub {
      * @param payment  from = 付款单
      * @param payments to = 付款项
      */
-    void payment(FPayment payment, List<FPaymentItem> payments);
+    void payment(FTrans payment, List<FTransItem> payments);
 }

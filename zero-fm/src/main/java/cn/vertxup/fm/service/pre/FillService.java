@@ -4,12 +4,10 @@ import cn.vertxup.fm.domain.tables.pojos.*;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.fm.cv.em.EmDebt;
-import io.vertx.mod.fm.cv.em.EmPay;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -177,31 +175,31 @@ public class FillService implements FillStub {
     }
 
     @Override
-    public void payment(final FSettlement settlement, final List<FPaymentItem> payments) {
+    public void payment(final FSettlement settlement, final List<FTransItem> payments) {
         for (int idx = 0; idx < payments.size(); idx++) {
-            final FPaymentItem item = payments.get(idx);
+            final FTransItem item = payments.get(idx);
             // PKG-FM-102
             // 替换旧版单连接
-            item.setObjectType(EmPay.Type.AT.name());
-            item.setObjectId(settlement.getKey());
+            //            item.setObjectType(EmPay.Type.AT.name());
+            //            item.setObjectId(settlement.getKey());
             // item.setSettlementId(settlement.getKey());
 
             item.setSerial(settlement.getSerial() + "-" + Ut.fromAdjust(idx + 1, 2));
             item.setCode(settlement.getCode() + "-" + Ut.fromAdjust(idx + 1, 2));
             // Fix: Field 'AMOUNT_PRE' doesn't have a default value
-            if (Objects.isNull(item.getAmountPre())) {
-                item.setAmountPre(BigDecimal.ZERO);
-            }
+            //            if (Objects.isNull(item.getAmountPre())) {
+            //                item.setAmountPre(BigDecimal.ZERO);
+            //            }
 
             Ke.umCreated(item, settlement);
         }
     }
 
     @Override
-    public void payment(final FPayment payment, final List<FPaymentItem> payments) {
+    public void payment(final FTrans payment, final List<FTransItem> payments) {
         for (int idx = 0; idx < payments.size(); idx++) {
-            final FPaymentItem item = payments.get(idx);
-            item.setPaymentId(payment.getKey());
+            final FTransItem item = payments.get(idx);
+            item.setTransactionId(payment.getKey());
             if (Objects.isNull(item.getCode()) || Objects.isNull(item.getSerial())) {
                 item.setSerial(payment.getSerial() + "-" + Ut.fromAdjust(idx + 1, 2));
                 item.setCode(payment.getCode() + "-" + Ut.fromAdjust(idx + 1, 2));

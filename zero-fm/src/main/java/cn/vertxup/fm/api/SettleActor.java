@@ -2,9 +2,9 @@ package cn.vertxup.fm.api;
 
 import cn.vertxup.fm.domain.tables.daos.*;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
-import cn.vertxup.fm.domain.tables.pojos.FPaymentItem;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
+import cn.vertxup.fm.domain.tables.pojos.FTransItem;
 import cn.vertxup.fm.service.business.AccountStub;
 import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
@@ -190,9 +190,9 @@ public class SettleActor {
 
     private Future<Boolean> createPayment(final JsonObject data, final FSettlement settlement) {
         final JsonArray paymentJ = Ut.valueJArray(data, FmCv.ID.PAYMENT);
-        final List<FPaymentItem> payments = Ux.fromJson(paymentJ, FPaymentItem.class);
+        final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
         this.fillStub.payment(settlement, payments);
-        return Ux.Jooq.on(FPaymentItemDao.class).insertAsync(payments)
+        return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments)
             .compose(nil -> Ux.futureT());
     }
 

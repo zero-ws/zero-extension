@@ -1,10 +1,10 @@
 package cn.vertxup.fm.service.end;
 
 import cn.vertxup.fm.domain.tables.daos.FDebtDao;
-import cn.vertxup.fm.domain.tables.daos.FPaymentDao;
-import cn.vertxup.fm.domain.tables.daos.FPaymentItemDao;
+import cn.vertxup.fm.domain.tables.daos.FTransDao;
+import cn.vertxup.fm.domain.tables.daos.FTransItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
-import cn.vertxup.fm.domain.tables.pojos.FPaymentItem;
+import cn.vertxup.fm.domain.tables.pojos.FTransItem;
 import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
 import com.google.inject.Inject;
@@ -46,43 +46,43 @@ public class PayService implements PayStub {
          */
         final JsonArray endKeys = data.getJsonArray("finished");
         return this.indentStub.payAsync(data)
-            .compose(Ux.Jooq.on(FPaymentDao.class)::insertAsync)
+            .compose(Ux.Jooq.on(FTransItemDao.class)::insertAsync)
             .compose(payment -> {
                 final JsonArray paymentArr = data.getJsonArray(FmCv.ID.PAYMENT, new JsonArray());
-                final List<FPaymentItem> payments = Ux.fromJson(paymentArr, FPaymentItem.class);
+                final List<FTransItem> payments = Ux.fromJson(paymentArr, FTransItem.class);
                 this.fillStub.payment(payment, payments);
                 return this.savePayment(endKeys, payments);
             })
             .compose(payments -> this.forwardDebt(payments, Ut.toSet(endKeys)));
     }
 
-    private Future<List<FPaymentItem>> savePayment(final JsonArray endKeys, final List<FPaymentItem> payments) {
-        final UxJooq jq = Ux.Jooq.on(FPaymentItemDao.class);
-        return jq.<FPaymentItem>fetchInAsync(FmCv.ID.SETTLEMENT_ID, endKeys).compose(original -> {
-            final ConcurrentMap<ChangeFlag, List<FPaymentItem>> compared =
-                Ux.compare(original, payments, FPaymentItem::getSerial);
+    private Future<List<FTransItem>> savePayment(final JsonArray endKeys, final List<FTransItem> payments) {
+        final UxJooq jq = Ux.Jooq.on(FTransItemDao.class);
+        return jq.<FTransItem>fetchInAsync(FmCv.ID.SETTLEMENT_ID, endKeys).compose(original -> {
+            final ConcurrentMap<ChangeFlag, List<FTransItem>> compared =
+                Ux.compare(original, payments, FTransItem::getSerial);
             return jq.insertAsync(compared.get(ChangeFlag.ADD)).compose(inserted -> {
                 // 返回合并值
-                final List<FPaymentItem> ignored = compared.get(ChangeFlag.UPDATE);
+                final List<FTransItem> ignored = compared.get(ChangeFlag.UPDATE);
                 ignored.addAll(inserted);
                 return Ux.future(ignored);
             });
         });
     }
 
-    private Future<JsonObject> forwardDebt(final List<FPaymentItem> payments, final Set<String> endKeys) {
+    private Future<JsonObject> forwardDebt(final List<FTransItem> payments, final Set<String> endKeys) {
         // PKG-FM-102
         return Ux.futureJ();
         //        return this.fetchDebt(payments).compose(debts -> {
         //            final List<FDebt> qUpdate = new ArrayList<>();
         //            /*
         //             * 针对 PaymentItem 按结算总金额进行分组
-        //             * settlementId = List<FPaymentItem>
+        //             * settlementId = List<FTransItem>
         //             * 1）Debt 中的 debtId 和 settlementId 的对比关系是1:1
         //             * 2）根据 Debt 金额执行计算
         //             * -- 金额为负：退款
         //             * -- 金额为正：应收
-        //             * 3）所有 FPaymentItem 中的金额之和 >= 退款/应收金额绝对值：finished = true，反之 false
+        //             * 3）所有 FTransItem 中的金额之和 >= 退款/应收金额绝对值：finished = true，反之 false
         //             */
         //            final ConcurrentMap<String, BigDecimal> payedMap = new ConcurrentHashMap<>();
         //            payments.forEach(payment -> {
@@ -138,17 +138,17 @@ public class PayService implements PayStub {
         });
     }
 
-    private Future<List<FPaymentItem>> fetchAllItems(final String itemKey) {
-        final UxJooq jq = Ux.Jooq.on(FPaymentItemDao.class);
-        return jq.<FPaymentItem>fetchByIdAsync(itemKey).compose(item -> {
-            if (Objects.isNull(item) || Objects.isNull(item.getPaymentId())) {
+    private Future<List<FTransItem>> fetchAllItems(final String itemKey) {
+        final UxJooq jq = Ux.Jooq.on(FTransItemDao.class);
+        return jq.<FTransItem>fetchByIdAsync(itemKey).compose(item -> {
+            if (Objects.isNull(item) || Objects.isNull(item.getTransactionId())) {
                 /*
                  * 1. item is not exist
                  * 2. item -> paymentId = null
                  */
                 return Ux.futureL();
             }
-            return jq.fetchAsync("paymentId", item.getPaymentId());
+            return jq.fetchAsync("paymentId", item.getTransactionId());
         });
     }
 
@@ -176,7 +176,7 @@ public class PayService implements PayStub {
         //        });
     }
 
-    private Future<Boolean> revertDebt(final List<FPaymentItem> items) {
+    private Future<Boolean> revertDebt(final List<FTransItem> items) {
         return this.fetchDebt(items).compose(debts -> {
             debts.forEach(debt -> {
                 debt.setFinished(Boolean.FALSE);
@@ -188,29 +188,29 @@ public class PayService implements PayStub {
         });
     }
 
-    private Future<List<FDebt>> fetchDebt(final List<FPaymentItem> items) {
+    private Future<List<FDebt>> fetchDebt(final List<FTransItem> items) {
 
         // PKG-FM-102
         return Ux.futureL();
         //        final Set<String> settlementIds = items.stream()
-        //            .map(FPaymentItem::getSettlementId)
+        //            .map(FTransItem::getSettlementId)
         //            .filter(Ut::isNotNil)
         //            .collect(Collectors.toSet());
         //        final UxJooq jq = Ux.Jooq.on(FDebtDao.class);
         //        return jq.fetchInAsync("settlementId", Ut.toJArray(settlementIds));
     }
 
-    private Future<Boolean> deleteCascade(final List<FPaymentItem> items) {
+    private Future<Boolean> deleteCascade(final List<FTransItem> items) {
         final String paymentId = items
             .stream()
-            .map(FPaymentItem::getPaymentId)
+            .map(FTransItem::getTransactionId)
             .findFirst().orElse(null);
         Objects.requireNonNull(paymentId);
         final JsonObject condition = new JsonObject();
         condition.put("paymentId", paymentId);
         // Delete all items
-        return Ux.Jooq.on(FPaymentItemDao.class).deleteByAsync(condition)
+        return Ux.Jooq.on(FTransItemDao.class).deleteByAsync(condition)
             // Delete the major payment ticket
-            .compose(nil -> Ux.Jooq.on(FPaymentDao.class).deleteByIdAsync(paymentId));
+            .compose(nil -> Ux.Jooq.on(FTransDao.class).deleteByIdAsync(paymentId));
     }
 }

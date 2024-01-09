@@ -16,7 +16,7 @@ public interface BillStub {
 
     Future<List<FSettlement>> fetchSettlements(List<FBillItem> items);
 
-    Future<List<FPaymentItem>> fetchPayments(List<FSettlement> settlements);
+    Future<List<FTransItem>> fetchPayments(List<FSettlement> settlements);
 
     Future<List<FSettlementItem>> fetchBySettlements(List<FSettlement> settlements);
 }

@@ -23,11 +23,11 @@ public class BillService implements BillStub {
     private transient BookStub bookStub;
 
     @Override
-    public Future<List<FPaymentItem>> fetchPayments(final List<FSettlement> settlements) {
+    public Future<List<FTransItem>> fetchPayments(final List<FSettlement> settlements) {
         final Set<String> settlementIds = Ut.valueSetString(settlements, FSettlement::getKey);
         final JsonObject condition = Ux.whereAnd();
         condition.put("settlementId,i", Ut.toJArray(settlementIds));
-        return Ux.Jooq.on(FPaymentItemDao.class).fetchAsync(condition);
+        return Ux.Jooq.on(FTransItemDao.class).fetchAsync(condition);
     }
 
     @Override
