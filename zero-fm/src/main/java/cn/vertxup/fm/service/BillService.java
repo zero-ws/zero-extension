@@ -23,20 +23,17 @@ public class BillService implements BillStub {
     private transient BookStub bookStub;
 
     @Override
-    public Future<List<FTransItem>> fetchPayments(final List<FSettlement> settlements) {
+    public Future<List<FTransItem>> fetchTransItems(final List<FSettlement> settlements) {
         final Set<String> settlementIds = Ut.valueSetString(settlements, FSettlement::getKey);
         final JsonObject condition = Ux.whereAnd();
-        condition.put("settlementId,i", Ut.toJArray(settlementIds));
+        condition.put(KName.Finance.SETTLEMENT_ID + ",i", Ut.toJArray(settlementIds));
         return Ux.Jooq.on(FTransItemDao.class).fetchAsync(condition);
     }
 
     @Override
     public Future<List<FBill>> fetchByOrder(final String orderId) {
-        /*
-         * Fetch Bill List
-         */
         final JsonObject condBill = Ux.whereAnd();
-        condBill.put("orderId", orderId);
+        condBill.put(KName.Finance.ORDER_ID, orderId);
         return Ux.Jooq.on(FBillDao.class).fetchAsync(condBill);
     }
 
@@ -44,28 +41,31 @@ public class BillService implements BillStub {
     public Future<List<FBillItem>> fetchByBills(final List<FBill> bills) {
         if (bills.isEmpty()) {
             return Ux.future(new ArrayList<>());
-        } else {
-            final JsonObject condition = Ux.whereAnd();
-            condition.put("billId,i", Ut.toJArray(bills.stream().map(FBill::getKey)
-                .filter(Objects::nonNull)
-                .collect(Collectors.toSet())));
-            return Ux.Jooq.on(FBillItemDao.class).fetchAsync(condition);
         }
+
+        final JsonObject condition = Ux.whereAnd();
+        condition.put(KName.Finance.BILL_ID + ",i",
+            Ut.toJArray(bills.stream().map(FBill::getKey)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toSet()))
+        );
+        return Ux.Jooq.on(FBillItemDao.class).fetchAsync(condition);
     }
 
     @Override
     public Future<List<FSettlement>> fetchSettlements(final List<FBillItem> items) {
         if (items.isEmpty()) {
             return Ux.future(new ArrayList<>());
-        } else {
-            final JsonObject condition = Ux.whereAnd();
-            condition.put(KName.KEY, Ut.toJArray(items.stream()
-                .map(FBillItem::getSettlementId)
-                .filter(Ut::isNotNil)
-                .collect(Collectors.toSet())
-            ));
-            return Ux.Jooq.on(FSettlementDao.class).fetchAsync(condition);
         }
+
+        
+        final JsonObject condition = Ux.whereAnd();
+        condition.put(KName.KEY, Ut.toJArray(items.stream()
+            .map(FBillItem::getSettlementId)
+            .filter(Ut::isNotNil)
+            .collect(Collectors.toSet())
+        ));
+        return Ux.Jooq.on(FSettlementDao.class).fetchAsync(condition);
     }
 
     @Override

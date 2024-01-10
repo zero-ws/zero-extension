@@ -42,17 +42,26 @@ public class FetchActor {
 
     @Address(Addr.BillItem.FETCH_AGGR)
     public Future<JsonObject> fetchAggr(final String orderId) {
-        /* bookId / orderId to build List<FBook> */
         final BillData data = new BillData();
+        /* 按照 orderId 查询账单集合信息 */
         return this.billStub.fetchByOrder(orderId)
             .compose(data::bill)
-            /* Fetch Items */
+
+
+            /* 根据账单查询 账单明细 信息 */
             .compose(bills -> this.billStub.fetchByBills(bills))
             .compose(data::items)
+
+
+            /* 根据账单明细查询 结算单 信息 */
             .compose(this.billStub::fetchSettlements)
             .compose(data::settlement)
-            .compose(this.billStub::fetchPayments)
-            .compose(payments -> data.response(true));
+
+            /*
+             * 旧版本多查询了一步，但实际这个步骤查询下来没有任何用
+             * 根据结算单查询 交易明细 信息
+             */
+            .compose(nil -> data.response(true));
     }
 
 
@@ -100,7 +109,7 @@ public class FetchActor {
             return this.billStub.fetchByBills(bills).compose(items -> {
                 response.put(KName.ITEMS, Ux.toJson(items));
                 return this.billStub.fetchSettlements(items);
-            }).compose(settlements -> this.billStub.fetchPayments(settlements).compose(payments -> {
+            }).compose(settlements -> this.billStub.fetchTransItems(settlements).compose(payments -> {
                 // Append `payment` into settlement list ( JsonArray )
                 final JsonArray paymentJ = Ux.toJson(payments);
                 final ConcurrentMap<String, JsonArray> paymentMap =

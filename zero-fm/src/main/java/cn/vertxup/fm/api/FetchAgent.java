@@ -14,6 +14,18 @@ import jakarta.ws.rs.*;
 @EndPoint
 @Path("/api")
 public interface FetchAgent {
+    /**
+     * 进入账单界面的时查询结算单的专用接口，完整的查询流程：
+     * 1. 根据订单 orderId 查询此订单相关的所有账单列表
+     * 2. 根据账单列表查询所有的 `账单明细` 信息
+     * 3. 根据账单项反向查询 `结算明细` 相关信息
+     * 4. 根据结算项深度查询交易信息来完成整体的构造
+     * 底层调用 {@link cn.vertxup.fm.service.BillStub} 中的方法来实现四个流程的读取整合，读取过程会有一个依赖关系
+     *
+     * @param orderId 订单ID
+     *
+     * @return {@link io.vertx.core.json.JsonObject}
+     */
     @GET
     @Path("/bills/order/:orderId")
     @Address(Addr.BillItem.FETCH_AGGR)

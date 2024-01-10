@@ -16,6 +16,24 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
+ * 「账单聚合模型」
+ * 账单聚合模型以 账单明细 为核心进行模型构建，横跨结算单和账单的基础数据，最终的数据结构如下：
+ * <pre><code>
+ *     {
+ *         "items": [],
+ *         "settlements": [],
+ *         "bills": []
+ *     }
+ * </code></pre>
+ * 此模型主要用于账单界面的数据统一提取，有了这个模型之后，您就可以在：账单 - 结算 两个环节中进行数据整合
+ * 此处的整合不牵涉关联部分，简单说三个节点各自代表不同的对象
+ * <pre><code>
+ *     - items：账单明细
+ *     - settlements：结算单
+ *     - bills：账单
+ *     账单明细中会包含结算单和账单的关联信息，分别使用 settlementId 和 billId 来关联。
+ * </code></pre>
+ *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class BillData implements Serializable {
@@ -41,7 +59,20 @@ public class BillData implements Serializable {
         return Ux.future(settlements);
     }
 
-
+    /**
+     * 响应结构生成器，根据 reduce 参数来判断是否做强校验
+     * <pre><code>
+     *     - 强校验模式：对账单和结算单进行过滤，只保留当前账单明细中存在的账单和结算单
+     *       这种模式下更符合业务场景，即所有返回的账单和结算单都和当前明细相关
+     *       当明细出现过滤或筛选的时候，这种模式是有效的。
+     *
+     *     - 非强校验模式：不做过滤，直接返回所有的账单和结算单
+     * </code></pre>
+     *
+     * @param reduce 是否强校验
+     *
+     * @return {@link io.vertx.core.json.JsonObject}
+     */
     public Future<JsonObject> response(final boolean reduce) {
         final JsonObject response = new JsonObject();
         response.put(KName.ITEMS, Ux.toJson(this.items));
