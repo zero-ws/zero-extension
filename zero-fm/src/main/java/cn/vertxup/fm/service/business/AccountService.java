@@ -64,7 +64,7 @@ public class AccountService implements AccountStub {
 
     @Override
     public Future<Boolean> inBook(final List<FBillItem> items, final Set<String> closedKeys) {
-        // Collect bill ids from items
+        // Collect income ids from items
         final Set<String> billKeys = items.stream()
             .map(FBillItem::getBillId)
             .filter(Objects::nonNull)

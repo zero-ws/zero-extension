@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public interface PayStub {
+public interface TransStub {
     /*
      * Debt / Refund Creating
      */

@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public class PayService implements PayStub {
+public class TransService implements TransStub {
 
     @Inject
     private IndentStub indentStub;

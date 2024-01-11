@@ -24,6 +24,6 @@ public interface BookStub {
     // Create Main
     Future<List<FBook>> createAsync(List<FBook> books, KNaming spec);
 
-    // Fetch Book with bill and items
+    // Fetch Book with income and items
     Future<JsonObject> fetchByKey(String key);
 }

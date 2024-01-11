@@ -1,4 +1,4 @@
-package cn.vertxup.fm.api;
+package cn.vertxup.fm.api.end;
 
 import cn.vertxup.fm.domain.tables.daos.*;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;

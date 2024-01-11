@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset Lang:f-bill-item-1
+-- changeset Lang:f-income-item-1
 DROP TABLE IF EXISTS `F_BILL_ITEM`;
 CREATE TABLE `F_BILL_ITEM`
 (
@@ -50,7 +50,7 @@ CREATE TABLE `F_BILL_ITEM`
     `UPDATED_BY`    VARCHAR(36) COMMENT '「updatedBy」- 更新人',
     PRIMARY KEY (`KEY`)
 );
--- changeset Lang:f-bill-item-2
+-- changeset Lang:f-income-item-2
 ALTER TABLE F_BILL_ITEM
     ADD UNIQUE (`CODE`, `BILL_ID`, `SIGMA`);
 ALTER TABLE F_BILL_ITEM

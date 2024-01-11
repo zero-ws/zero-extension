@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public class BillService implements BillStub {
+public class FetchService implements FetchStub {
     @Inject
     private transient BookStub bookStub;
 
@@ -58,7 +58,7 @@ public class BillService implements BillStub {
             return Ux.future(new ArrayList<>());
         }
 
-        
+
         final JsonObject condition = Ux.whereAnd();
         condition.put(KName.KEY, Ut.toJArray(items.stream()
             .map(FBillItem::getSettlementId)
@@ -72,7 +72,7 @@ public class BillService implements BillStub {
     public Future<List<FSettlementItem>> fetchBySettlements(final List<FSettlement> settlements) {
         final Set<String> settlementIds = Ut.valueSetString(settlements, FSettlement::getKey);
         final JsonObject condition = Ux.whereAnd();
-        condition.put("settlementId,i", Ut.toJArray(settlementIds));
+        condition.put(KName.Finance.SETTLEMENT_ID + ",i", Ut.toJArray(settlementIds));
         return Ux.Jooq.on(FSettlementItemDao.class).fetchAsync(condition);
     }
 }

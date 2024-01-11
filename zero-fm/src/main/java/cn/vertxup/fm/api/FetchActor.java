@@ -5,8 +5,8 @@ import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.daos.FSettlementDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
-import cn.vertxup.fm.service.BillStub;
 import cn.vertxup.fm.service.BookStub;
+import cn.vertxup.fm.service.FetchStub;
 import cn.vertxup.fm.service.end.QrStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -34,7 +34,7 @@ import java.util.concurrent.ConcurrentMap;
 @Queue
 public class FetchActor {
     @Inject
-    private transient BillStub billStub;
+    private transient FetchStub fetchStub;
     @Inject
     private transient BookStub bookStub;
     @Inject
@@ -44,17 +44,17 @@ public class FetchActor {
     public Future<JsonObject> fetchAggr(final String orderId) {
         final BillData data = new BillData();
         /* 按照 orderId 查询账单集合信息 */
-        return this.billStub.fetchByOrder(orderId)
+        return this.fetchStub.fetchByOrder(orderId)
             .compose(data::bill)
 
 
             /* 根据账单查询 账单明细 信息 */
-            .compose(bills -> this.billStub.fetchByBills(bills))
+            .compose(bills -> this.fetchStub.fetchByBills(bills))
             .compose(data::items)
 
 
             /* 根据账单明细查询 结算单 信息 */
-            .compose(this.billStub::fetchSettlements)
+            .compose(this.fetchStub::fetchSettlements)
             .compose(data::settlement)
 
             /*
@@ -106,10 +106,10 @@ public class FetchActor {
             response.mergeIn(Ux.toJson(bill));
             final List<FBill> bills = new ArrayList<>();
             bills.add(bill);
-            return this.billStub.fetchByBills(bills).compose(items -> {
+            return this.fetchStub.fetchByBills(bills).compose(items -> {
                 response.put(KName.ITEMS, Ux.toJson(items));
-                return this.billStub.fetchSettlements(items);
-            }).compose(settlements -> this.billStub.fetchTransItems(settlements).compose(payments -> {
+                return this.fetchStub.fetchSettlements(items);
+            }).compose(settlements -> this.fetchStub.fetchTransItems(settlements).compose(payments -> {
                 // Append `payment` into settlement list ( JsonArray )
                 final JsonArray paymentJ = Ux.toJson(payments);
                 final ConcurrentMap<String, JsonArray> paymentMap =

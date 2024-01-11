@@ -163,7 +163,7 @@ public interface FillStub {
      *
      *     转入项：
      *     1. 清空 key 主键（新建时自动生成）
-     *     2. 清空 billId 的原始关联（转出的账单要和 bill 断开关联）
+     *     2. 清空 billId 的原始关联（转出的账单要和 income 断开关联）
      *     3. active = true
      *     4. status = Pending
      *     5. 原项编号为：CODE-XX，那么子项编号为：

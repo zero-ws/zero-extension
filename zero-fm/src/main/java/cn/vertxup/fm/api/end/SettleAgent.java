@@ -1,6 +1,5 @@
-package cn.vertxup.fm.api;
+package cn.vertxup.fm.api.end;
 
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.up.annotations.Address;
@@ -9,7 +8,7 @@ import io.vertx.up.eon.KName;
 import jakarta.ws.rs.*;
 
 /**
- * @author <a href="http://www.origin-x.cn">Lang</a>
+ * @author lang : 2024-01-11
  */
 @EndPoint
 @Path("/api")
@@ -110,45 +109,4 @@ public interface SettleAgent {
     @Address(Addr.Settle.UP_SETTLEMENT)
     JsonObject upFinish(@PathParam(KName.KEY) String key,
                         @BodyParam JsonObject body);
-
-    /*
-     * Unlock Authorize when settlement on `status`
-     * From `Pending` to `Finished`
-     */
-    @PUT
-    @Path("/settle/authorize/unlock")
-    @Address(Addr.Settle.UNLOCK_AUTHORIZE)
-    JsonObject unlockAuthorize(@BodyParam JsonArray authorize);
-
-    /*
-     * Saving the book information when settlement on book information
-     * - checked
-     * - checkedDesc
-     * - exceed
-     * - exceedDesc
-     */
-    @PUT
-    @Path("/settle/book/finalize")
-    @Address(Addr.Settle.UP_BOOK)
-    JsonObject finalizeBook(@BodyParam JsonArray books);
-
-    /*
-     * settlementId for payment creation
-     * {
-     *      "cross":"true / false",
-     *      "payment": []
-     * }
-     * payment + payment items
-     * 1: 1 ( cross = true, size = 1)
-     * 1: N ( cross = false, size > 1)
-     */
-    @Path("/payment/create")
-    @POST
-    @Address(Addr.Settle.PAY_CREATE)
-    JsonObject paymentCreate(@BodyParam JsonObject payment);
-
-    @Path("/payment/cascade/:key")
-    @DELETE
-    @Address(Addr.Settle.PAY_DELETE)
-    JsonObject paymentDelete(@PathParam(KName.KEY) String key);
 }

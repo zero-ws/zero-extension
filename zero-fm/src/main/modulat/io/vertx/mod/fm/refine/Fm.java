@@ -1,6 +1,7 @@
 package io.vertx.mod.fm.refine;
 
 import cn.vertxup.fm.domain.tables.pojos.FBook;
+import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
 import io.vertx.core.json.JsonObject;
@@ -13,6 +14,14 @@ import java.util.List;
  */
 public final class Fm {
     private Fm() {
+    }
+
+    /**
+     * 直接从 data 中提取 preAuthorize 节点来构造预授权对象
+     * {@link FPreAuthorize}
+     */
+    public static FPreAuthorize toAuthorize(final JsonObject data) {
+        return FmPre.toAuthorize(data);
     }
 
     public static JsonObject qrBook(final KNaming spec) {

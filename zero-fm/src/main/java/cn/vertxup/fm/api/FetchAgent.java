@@ -1,5 +1,6 @@
 package cn.vertxup.fm.api;
 
+import cn.vertxup.fm.service.FetchStub;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;
@@ -20,7 +21,7 @@ public interface FetchAgent {
      * 2. 根据账单列表查询所有的 `账单明细` 信息
      * 3. 根据账单项反向查询 `结算明细` 相关信息
      * 4. 根据结算项深度查询交易信息来完成整体的构造
-     * 底层调用 {@link cn.vertxup.fm.service.BillStub} 中的方法来实现四个流程的读取整合，读取过程会有一个依赖关系
+     * 底层调用 {@link FetchStub} 中的方法来实现四个流程的读取整合，读取过程会有一个依赖关系
      *
      * @param orderId 订单ID
      *

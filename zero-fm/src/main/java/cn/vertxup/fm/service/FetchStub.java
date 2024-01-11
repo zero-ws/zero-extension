@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public interface BillStub {
+public interface FetchStub {
     /**
      * 根据 ER 模型图，账单对象 {@link FBill} 中包含了 orderId 来表示当前账单集合隶属于哪个订单，账单会出现两种关联模型
      * <pre><code>
@@ -68,6 +68,7 @@ public interface BillStub {
      * @return {@link io.vertx.core.Future}
      */
     Future<List<FSettlement>> fetchSettlements(List<FBillItem> items);
+
 
     /**
      * 根据 ER 模型图，结算单和结算明细有父子级关系，此处的查询是 多查多 的模式，即：
