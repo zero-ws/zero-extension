@@ -94,7 +94,7 @@ public class XAttachment extends TableImpl<XAttachmentRecord> {
      * The column <code>ZDB.X_ATTACHMENT.STORE_WAY</code>. 「storeWay」- 存储方式，BLOB
      * / FILE / REMOTE
      */
-    public final TableField<XAttachmentRecord, String> STORE_WAY = createField(DSL.name("STORE_WAY"), SQLDataType.VARCHAR(12), this, "「storeWay」- 存储方式，BLOB / FILE / REMOTE");
+    public final TableField<XAttachmentRecord, String> STORE_WAY = createField(DSL.name("STORE_WAY"), SQLDataType.VARCHAR(255), this, "「storeWay」- 存储方式，BLOB / FILE / REMOTE");
 
     /**
      * The column <code>ZDB.X_ATTACHMENT.STORE_PATH</code>. 「storePath」-
