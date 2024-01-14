@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS X_ATTACHMENT
      * - storeUri：远程存储文件转换的URI地址，主要用于网络访问
      */
     `DIRECTORY_ID`   VARCHAR(36) COMMENT '「directoryId」- 文件存储所属目录',
-    `STORE_WAY`      VARCHAR(12) COMMENT '「storeWay」- 存储方式，BLOB / FILE / REMOTE',
+    `STORE_WAY`      VARCHAR(255) COMMENT '「storeWay」- 存储方式，BLOB / FILE / REMOTE',
     `STORE_PATH`     VARCHAR(1024) COMMENT '「storePath」- 远程存储的目录信息（显示专用，去服务器和协议部分）',
     `STORE_URI`      VARCHAR(1024) COMMENT '「storeUri」- 远程存储的目录URI部分',
 
