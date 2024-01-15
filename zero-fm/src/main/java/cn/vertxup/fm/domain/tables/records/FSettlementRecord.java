@@ -135,8 +135,8 @@ public class FSettlementRecord extends UpdatableRecordImpl<FSettlementRecord> im
     }
 
     /**
-     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     @Override
     public FSettlementRecord setRounded(String value) {
@@ -145,8 +145,8 @@ public class FSettlementRecord extends UpdatableRecordImpl<FSettlementRecord> im
     }
 
     /**
-     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     @Override
     public String getRounded() {

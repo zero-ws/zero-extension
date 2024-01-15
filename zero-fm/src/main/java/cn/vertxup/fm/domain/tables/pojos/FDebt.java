@@ -33,7 +33,6 @@ public class FDebt implements VertxPojo, IFDebt {
     private LocalDateTime finishedAt;
     private String comment;
     private String customerId;
-    private String settlementId;
     private String sigma;
     private String language;
     private Boolean active;
@@ -58,7 +57,6 @@ public class FDebt implements VertxPojo, IFDebt {
         this.finishedAt = value.getFinishedAt();
         this.comment = value.getComment();
         this.customerId = value.getCustomerId();
-        this.settlementId = value.getSettlementId();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -82,7 +80,6 @@ public class FDebt implements VertxPojo, IFDebt {
         LocalDateTime finishedAt,
         String comment,
         String customerId,
-        String settlementId,
         String sigma,
         String language,
         Boolean active,
@@ -104,7 +101,6 @@ public class FDebt implements VertxPojo, IFDebt {
         this.finishedAt = finishedAt;
         this.comment = comment;
         this.customerId = customerId;
-        this.settlementId = settlementId;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -325,25 +321,6 @@ public class FDebt implements VertxPojo, IFDebt {
     }
 
     /**
-     * Getter for <code>ZDB.F_DEBT.SETTLEMENT_ID</code>. 「settlementId」-
-     * 结算单ID，该字段有值标识已经结算
-     */
-    @Override
-    public String getSettlementId() {
-        return this.settlementId;
-    }
-
-    /**
-     * Setter for <code>ZDB.F_DEBT.SETTLEMENT_ID</code>. 「settlementId」-
-     * 结算单ID，该字段有值标识已经结算
-     */
-    @Override
-    public FDebt setSettlementId(String settlementId) {
-        this.settlementId = settlementId;
-        return this;
-    }
-
-    /**
      * Getter for <code>ZDB.F_DEBT.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
@@ -560,12 +537,6 @@ public class FDebt implements VertxPojo, IFDebt {
         }
         else if (!this.customerId.equals(other.customerId))
             return false;
-        if (this.settlementId == null) {
-            if (other.settlementId != null)
-                return false;
-        }
-        else if (!this.settlementId.equals(other.settlementId))
-            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -633,7 +604,6 @@ public class FDebt implements VertxPojo, IFDebt {
         result = prime * result + ((this.finishedAt == null) ? 0 : this.finishedAt.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
         result = prime * result + ((this.customerId == null) ? 0 : this.customerId.hashCode());
-        result = prime * result + ((this.settlementId == null) ? 0 : this.settlementId.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -661,7 +631,6 @@ public class FDebt implements VertxPojo, IFDebt {
         sb.append(", ").append(finishedAt);
         sb.append(", ").append(comment);
         sb.append(", ").append(customerId);
-        sb.append(", ").append(settlementId);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -693,7 +662,6 @@ public class FDebt implements VertxPojo, IFDebt {
         setFinishedAt(from.getFinishedAt());
         setComment(from.getComment());
         setCustomerId(from.getCustomerId());
-        setSettlementId(from.getSettlementId());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());

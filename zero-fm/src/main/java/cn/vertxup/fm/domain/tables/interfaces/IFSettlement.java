@@ -83,14 +83,14 @@ public interface IFSettlement extends VertxPojo, Serializable {
     public String getComment();
 
     /**
-     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     public IFSettlement setRounded(String value);
 
     /**
-     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>. 「rounded」抹零方式：四舍五入,
-     * HALF：零头舍掉, FLOOR, 零头入进, CEIL
+     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
+     * 「rounded」抹零方式，不同抹零方式会影响验证规则
      */
     public String getRounded();
 

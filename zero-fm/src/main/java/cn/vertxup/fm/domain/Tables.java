@@ -12,12 +12,13 @@ import cn.vertxup.fm.domain.tables.FCurrency;
 import cn.vertxup.fm.domain.tables.FDebt;
 import cn.vertxup.fm.domain.tables.FInvoice;
 import cn.vertxup.fm.domain.tables.FPayTerm;
-import cn.vertxup.fm.domain.tables.FPayment;
-import cn.vertxup.fm.domain.tables.FPaymentItem;
 import cn.vertxup.fm.domain.tables.FPreAuthorize;
 import cn.vertxup.fm.domain.tables.FSettlement;
 import cn.vertxup.fm.domain.tables.FSettlementItem;
 import cn.vertxup.fm.domain.tables.FSubject;
+import cn.vertxup.fm.domain.tables.FTrans;
+import cn.vertxup.fm.domain.tables.FTransItem;
+import cn.vertxup.fm.domain.tables.FTransOf;
 
 
 /**
@@ -67,16 +68,6 @@ public class Tables {
     public static final FPayTerm F_PAY_TERM = FPayTerm.F_PAY_TERM;
 
     /**
-     * The table <code>ZDB.F_PAYMENT</code>.
-     */
-    public static final FPayment F_PAYMENT = FPayment.F_PAYMENT;
-
-    /**
-     * The table <code>ZDB.F_PAYMENT_ITEM</code>.
-     */
-    public static final FPaymentItem F_PAYMENT_ITEM = FPaymentItem.F_PAYMENT_ITEM;
-
-    /**
      * The table <code>ZDB.F_PRE_AUTHORIZE</code>.
      */
     public static final FPreAuthorize F_PRE_AUTHORIZE = FPreAuthorize.F_PRE_AUTHORIZE;
@@ -95,4 +86,19 @@ public class Tables {
      * The table <code>ZDB.F_SUBJECT</code>.
      */
     public static final FSubject F_SUBJECT = FSubject.F_SUBJECT;
+
+    /**
+     * The table <code>ZDB.F_TRANS</code>.
+     */
+    public static final FTrans F_TRANS = FTrans.F_TRANS;
+
+    /**
+     * The table <code>ZDB.F_TRANS_ITEM</code>.
+     */
+    public static final FTransItem F_TRANS_ITEM = FTransItem.F_TRANS_ITEM;
+
+    /**
+     * The table <code>ZDB.F_TRANS_OF</code>.
+     */
+    public static final FTransOf F_TRANS_OF = FTransOf.F_TRANS_OF;
 }

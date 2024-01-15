@@ -28,11 +28,11 @@ public class IndentService implements IndentStub {
     private transient FillStub fillStub;
 
     @Override
-    public Future<FPayment> payAsync(final JsonObject data) {
+    public Future<FTrans> payAsync(final JsonObject data) {
         final String indent = data.getString(KName.INDENT);
         Objects.requireNonNull(indent);
-        final FPayment prePayment = Ux.fromJson(data, FPayment.class);
-        return Ke.umIndent(prePayment, prePayment.getSigma(), indent, FPayment::setSerial).compose(payment -> {
+        final FTrans prePayment = Ux.fromJson(data, FTrans.class);
+        return Ke.umIndent(prePayment, prePayment.getSigma(), indent, FTrans::setSerial).compose(payment -> {
             if (Objects.isNull(payment.getCode())) {
                 payment.setCode(payment.getSerial());
             }

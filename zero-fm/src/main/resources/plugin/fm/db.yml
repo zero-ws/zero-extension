@@ -41,18 +41,23 @@ databaseChangeLog:
   - include:
       file: plugin/fm/sql/F_DEBT.sql
       relativeToChangelogFile: false
-  # 应收明细
-  - include:
-      file: plugin/fm/sql/F_PAYMENT_ITEM.sql
-      relativeToChangelogFile: false
-  # 付款单
-  - include:
-      file: plugin/fm/sql/F_PAYMENT.sql
-      relativeToChangelogFile: false
   # 银行/币种
   - include:
       file: plugin/fm/sql/F_BANK.sql
       relativeToChangelogFile: false
   - include:
       file: plugin/fm/sql/F_CURRENCY.sql
+      relativeToChangelogFile: false
+  # ------------
+  # 交易单
+  - include:
+      file: plugin/fm/sql/F_TRANS.sql
+      relativeToChangelogFile: false
+  # 交易明细
+  - include:
+      file: plugin/fm/sql/F_TRANS_ITEM.sql
+      relativeToChangelogFile: false
+  # 交易关系（针对什么内容的交易）
+  - include:
+      file: plugin/fm/sql/F_TRANS_OF.sql
       relativeToChangelogFile: false

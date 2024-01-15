@@ -139,18 +139,6 @@ public interface IFDebt extends VertxPojo, Serializable {
     public String getCustomerId();
 
     /**
-     * Setter for <code>ZDB.F_DEBT.SETTLEMENT_ID</code>. 「settlementId」-
-     * 结算单ID，该字段有值标识已经结算
-     */
-    public IFDebt setSettlementId(String value);
-
-    /**
-     * Getter for <code>ZDB.F_DEBT.SETTLEMENT_ID</code>. 「settlementId」-
-     * 结算单ID，该字段有值标识已经结算
-     */
-    public String getSettlementId();
-
-    /**
      * Setter for <code>ZDB.F_DEBT.SIGMA</code>. 「sigma」- 统一标识
      */
     public IFDebt setSigma(String value);
@@ -260,7 +248,6 @@ public interface IFDebt extends VertxPojo, Serializable {
                 setOrThrow(this::setFinishedAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"FINISHED_AT","java.time.LocalDateTime");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
                 setOrThrow(this::setCustomerId,json::getString,"CUSTOMER_ID","java.lang.String");
-                setOrThrow(this::setSettlementId,json::getString,"SETTLEMENT_ID","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
@@ -288,7 +275,6 @@ public interface IFDebt extends VertxPojo, Serializable {
                 json.put("FINISHED_AT",getFinishedAt()==null?null:getFinishedAt().toString());
                 json.put("COMMENT",getComment());
                 json.put("CUSTOMER_ID",getCustomerId());
-                json.put("SETTLEMENT_ID",getSettlementId());
                 json.put("SIGMA",getSigma());
                 json.put("LANGUAGE",getLanguage());
                 json.put("ACTIVE",getActive());

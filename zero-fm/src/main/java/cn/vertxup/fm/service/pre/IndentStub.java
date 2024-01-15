@@ -167,7 +167,7 @@ public interface IndentStub {
      *
      * @param data 输入数据
      *
-     * @return {@link FPayment}
+     * @return {@link FTrans}
      */
-    Future<FPayment> payAsync(JsonObject data);
+    Future<FTrans> payAsync(JsonObject data);
 }

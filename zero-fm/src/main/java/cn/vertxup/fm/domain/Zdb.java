@@ -66,16 +66,6 @@ public class Zdb extends SchemaImpl {
     public final FPayTerm F_PAY_TERM = FPayTerm.F_PAY_TERM;
 
     /**
-     * The table <code>ZDB.F_PAYMENT</code>.
-     */
-    public final FPayment F_PAYMENT = FPayment.F_PAYMENT;
-
-    /**
-     * The table <code>ZDB.F_PAYMENT_ITEM</code>.
-     */
-    public final FPaymentItem F_PAYMENT_ITEM = FPaymentItem.F_PAYMENT_ITEM;
-
-    /**
      * The table <code>ZDB.F_PRE_AUTHORIZE</code>.
      */
     public final FPreAuthorize F_PRE_AUTHORIZE = FPreAuthorize.F_PRE_AUTHORIZE;
@@ -94,6 +84,21 @@ public class Zdb extends SchemaImpl {
      * The table <code>ZDB.F_SUBJECT</code>.
      */
     public final FSubject F_SUBJECT = FSubject.F_SUBJECT;
+
+    /**
+     * The table <code>ZDB.F_TRANS</code>.
+     */
+    public final FTrans F_TRANS = FTrans.F_TRANS;
+
+    /**
+     * The table <code>ZDB.F_TRANS_ITEM</code>.
+     */
+    public final FTransItem F_TRANS_ITEM = FTransItem.F_TRANS_ITEM;
+
+    /**
+     * The table <code>ZDB.F_TRANS_OF</code>.
+     */
+    public final FTransOf F_TRANS_OF = FTransOf.F_TRANS_OF;
 
     /**
      * No further instances allowed
@@ -119,12 +124,13 @@ public class Zdb extends SchemaImpl {
             FDebt.F_DEBT,
             FInvoice.F_INVOICE,
             FPayTerm.F_PAY_TERM,
-            FPayment.F_PAYMENT,
-            FPaymentItem.F_PAYMENT_ITEM,
             FPreAuthorize.F_PRE_AUTHORIZE,
             FSettlement.F_SETTLEMENT,
             FSettlementItem.F_SETTLEMENT_ITEM,
-            FSubject.F_SUBJECT
+            FSubject.F_SUBJECT,
+            FTrans.F_TRANS,
+            FTransItem.F_TRANS_ITEM,
+            FTransOf.F_TRANS_OF
         );
     }
 }

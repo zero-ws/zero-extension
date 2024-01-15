@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public interface QrStub {
 
-    // Fetch Book with bill and items
+    // Fetch Book with income and items
     Future<JsonObject> fetchSettlement(String key);
 
     // Fetch Debt
