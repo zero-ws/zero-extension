@@ -155,6 +155,18 @@ public interface IFBill extends VertxPojo, Serializable {
     public String getModelKey();
 
     /**
+     * Setter for <code>ZDB.F_BILL.MODEL_NEW_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述新的Model中的记录
+     */
+    public IFBill setModelNewKey(String value);
+
+    /**
+     * Getter for <code>ZDB.F_BILL.MODEL_NEW_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述新的Model中的记录
+     */
+    public String getModelNewKey();
+
+    /**
      * Setter for <code>ZDB.F_BILL.SIGMA</code>. 「sigma」- 统一标识
      */
     public IFBill setSigma(String value);
@@ -265,6 +277,7 @@ public interface IFBill extends VertxPojo, Serializable {
                 setOrThrow(this::setBookId,json::getString,"BOOK_ID","java.lang.String");
                 setOrThrow(this::setModelId,json::getString,"MODEL_ID","java.lang.String");
                 setOrThrow(this::setModelKey,json::getString,"MODEL_KEY","java.lang.String");
+                setOrThrow(this::setModelNewKey,json::getString,"MODEL_NEW_KEY","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
@@ -293,6 +306,7 @@ public interface IFBill extends VertxPojo, Serializable {
                 json.put("BOOK_ID",getBookId());
                 json.put("MODEL_ID",getModelId());
                 json.put("MODEL_KEY",getModelKey());
+                json.put("MODEL_NEW_KEY",getModelNewKey());
                 json.put("SIGMA",getSigma());
                 json.put("LANGUAGE",getLanguage());
                 json.put("ACTIVE",getActive());

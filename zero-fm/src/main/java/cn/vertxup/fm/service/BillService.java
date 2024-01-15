@@ -9,10 +9,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -59,10 +56,14 @@ public class BillService implements BillStub {
             return Ux.future(new ArrayList<>());
         } else {
             final JsonObject condition = Ux.whereAnd();
-            condition.put(KName.KEY, Ut.toJArray(items.stream()
-                .map(FBillItem::getSettlementId)
-                .filter(Ut::isNotNil)
-                .collect(Collectors.toSet())
+            Set<String> set = new HashSet<>();
+            for (FBillItem fBillItem : items) {
+                String settlementId = fBillItem.getSettlementId();
+                if (Ut.isNotNil(settlementId)) {
+                    set.add(settlementId);
+                }
+            }
+            condition.put(KName.KEY, Ut.toJArray(set
             ));
             return Ux.Jooq.on(FSettlementDao.class).fetchAsync(condition);
         }

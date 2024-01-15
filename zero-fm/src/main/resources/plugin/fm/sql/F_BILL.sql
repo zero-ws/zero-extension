@@ -23,6 +23,7 @@ CREATE TABLE `F_BILL`
     `BOOK_ID`    VARCHAR(36) COMMENT '「bookId」- 关联账本ID',
     `MODEL_ID`   VARCHAR(255) COMMENT '「modelId」- 关联的模型identifier，用于描述',
     `MODEL_KEY`  VARCHAR(36) COMMENT '「modelKey」- 关联的模型记录ID，用于描述哪一个Model中的记录',
+    `MODEL_NEW_KEY` VARCHAR(36) COMMENT '「modelKey」- 关联的模型记录新ID，用于描述新的Model中的某一条新记录',
 
     -- 特殊字段
     `SIGMA`      VARCHAR(32) COMMENT '「sigma」- 统一标识',

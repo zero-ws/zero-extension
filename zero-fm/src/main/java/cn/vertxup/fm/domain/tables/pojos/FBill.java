@@ -34,6 +34,7 @@ public class FBill implements VertxPojo, IFBill {
     private String bookId;
     private String modelId;
     private String modelKey;
+    private String modelNewKey;
     private String sigma;
     private String language;
     private Boolean active;
@@ -59,6 +60,7 @@ public class FBill implements VertxPojo, IFBill {
         this.bookId = value.getBookId();
         this.modelId = value.getModelId();
         this.modelKey = value.getModelKey();
+        this.modelNewKey = value.getModelNewKey();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -83,6 +85,7 @@ public class FBill implements VertxPojo, IFBill {
         String bookId,
         String modelId,
         String modelKey,
+        String modelNewKey,
         String sigma,
         String language,
         Boolean active,
@@ -105,6 +108,7 @@ public class FBill implements VertxPojo, IFBill {
         this.bookId = bookId;
         this.modelId = modelId;
         this.modelKey = modelKey;
+        this.modelNewKey = modelNewKey;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -348,6 +352,25 @@ public class FBill implements VertxPojo, IFBill {
     }
 
     /**
+     * Getter for <code>ZDB.F_BILL.MODEL_NEW_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述新的Model中的记录
+     */
+    @Override
+    public String getModelNewKey() {
+        return this.modelNewKey;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_BILL.MODEL_NEW_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述新的Model中的记录
+     */
+    @Override
+    public FBill setModelNewKey(String modelNewKey) {
+        this.modelNewKey = modelNewKey;
+        return this;
+    }
+
+    /**
      * Getter for <code>ZDB.F_BILL.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
@@ -570,6 +593,12 @@ public class FBill implements VertxPojo, IFBill {
         }
         else if (!this.modelKey.equals(other.modelKey))
             return false;
+        if (this.modelNewKey == null) {
+            if (other.modelNewKey != null)
+                return false;
+        }
+        else if (!this.modelNewKey.equals(other.modelNewKey))
+            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -638,6 +667,7 @@ public class FBill implements VertxPojo, IFBill {
         result = prime * result + ((this.bookId == null) ? 0 : this.bookId.hashCode());
         result = prime * result + ((this.modelId == null) ? 0 : this.modelId.hashCode());
         result = prime * result + ((this.modelKey == null) ? 0 : this.modelKey.hashCode());
+        result = prime * result + ((this.modelNewKey == null) ? 0 : this.modelNewKey.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -666,6 +696,7 @@ public class FBill implements VertxPojo, IFBill {
         sb.append(", ").append(bookId);
         sb.append(", ").append(modelId);
         sb.append(", ").append(modelKey);
+        sb.append(", ").append(modelNewKey);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -698,6 +729,7 @@ public class FBill implements VertxPojo, IFBill {
         setBookId(from.getBookId());
         setModelId(from.getModelId());
         setModelKey(from.getModelKey());
+        setModelNewKey(from.getModelNewKey());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());
