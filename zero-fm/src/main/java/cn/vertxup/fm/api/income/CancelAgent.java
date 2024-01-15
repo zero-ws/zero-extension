@@ -32,7 +32,7 @@ public interface CancelAgent {
      * @return 撤销结果
      */
     @PUT
-    @Path("/income-item/cancel/:type")
+    @Path("/bill-item/cancel/:type")
     @Address(Addr.BillItem.UP_CANCEL)
     JsonObject upCancel(@PathParam(KName.TYPE) String type, @BodyParam JsonObject data);
 }

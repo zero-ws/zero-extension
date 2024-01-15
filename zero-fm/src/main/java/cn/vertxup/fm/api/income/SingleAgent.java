@@ -57,7 +57,7 @@ public interface SingleAgent {
      * </code></pre>
      */
     @POST
-    @Path("/income/pre")
+    @Path("/bill/pre")
     @Address(Addr.Bill.IN_PRE)
     JsonObject inPre(@BodyParam JsonObject data);
 
@@ -86,7 +86,7 @@ public interface SingleAgent {
      * @return {@link JsonObject}
      */
     @POST
-    @Path("/income/single")
+    @Path("/bill/single")
     @Address(Addr.Bill.IN_COMMON)
     JsonObject inCommon(@BodyParam JsonObject data);
 }

@@ -18,19 +18,42 @@ import jakarta.ws.rs.PathParam;
 @EndPoint
 @Path("/api")
 public interface VarietyAgent {
-
+    /**
+     * 拆账
+     *
+     * @param key  被拆的账单明细记录
+     * @param data 拆账的数据
+     *
+     * @return 拆账结果
+     */
     @PUT
-    @Path("/income-item/split/:key")
+    @Path("/bill-item/split/:key")
     @Address(Addr.BillItem.UP_SPLIT)
     JsonObject upSplit(@PathParam(KName.KEY) String key, @BodyParam JsonObject data);
 
+    /**
+     * 冲账
+     *
+     * @param key  被冲账的账单明细记录
+     * @param data 冲账的数据
+     *
+     * @return 冲账结果
+     */
     @PUT
-    @Path("/income-item/revert/:key")
+    @Path("/bill-item/revert/:key")
     @Address(Addr.BillItem.UP_REVERT)
     JsonObject upRevert(@PathParam(KName.KEY) String key, @BodyParam JsonObject data);
 
+    /**
+     * 转账
+     *
+     * @param bookId 账本ID
+     * @param data   转账数据
+     *
+     * @return 转账结果
+     */
     @PUT
-    @Path("/income-item/transfer/:key")
+    @Path("/bill-item/transfer/:key")
     @Address(Addr.Bill.UP_TRANSFER)
     JsonObject upTransfer(@PathParam(KName.KEY) String bookId, @BodyParam JsonObject data);
 }

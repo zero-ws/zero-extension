@@ -94,7 +94,7 @@ public interface MultiAgent {
      * @return {@link JsonObject}
      */
     @POST
-    @Path("/income/multi")
+    @Path("/bill/multi")
     @Address(Addr.Bill.IN_MULTI)
     JsonObject inMulti(@BodyParam JsonObject data);
 }
