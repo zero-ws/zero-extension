@@ -1,9 +1,6 @@
 package io.vertx.mod.fm.uca.enter;
 
-import cn.vertxup.fm.domain.tables.pojos.FBill;
-import cn.vertxup.fm.domain.tables.pojos.FBillItem;
-import cn.vertxup.fm.domain.tables.pojos.FSettlement;
-import cn.vertxup.fm.domain.tables.pojos.FTrans;
+import cn.vertxup.fm.domain.tables.pojos.*;
 import io.horizon.annotations.Memory;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
@@ -48,5 +45,9 @@ public final class MakerObj {
     // --------------- 更新专用 -------------------
     public static Maker<String, FBillItem> upBI() {
         return (Maker<String, FBillItem>) POOL.CCT_MAKER.pick(UpdaterBI::new, UpdaterBI.class.getName());
+    }
+
+    public static Maker<FSettlement, FSettlementItem> upSTI() {
+        return (Maker<FSettlement, FSettlementItem>) POOL.CCT_MAKER.pick(UpdaterSTI::new, UpdaterSTI.class.getName());
     }
 }

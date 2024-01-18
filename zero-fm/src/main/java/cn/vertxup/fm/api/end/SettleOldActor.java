@@ -6,7 +6,6 @@ import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
 import cn.vertxup.fm.service.business.AccountStub;
-import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -35,9 +34,6 @@ import java.util.Set;
 @Queue
 @Deprecated
 public class SettleOldActor {
-
-    @Inject
-    private transient IndentStub indentStub;
 
     @Inject
     private transient AccountStub accountStub;
@@ -115,13 +111,13 @@ public class SettleOldActor {
                      */
                     final Set<String> bookKeys = Ut.toSet(data.getJsonArray("book"));
                     return this.accountStub.inBook(itemsUpdated, bookKeys)
-                        .compose(nil -> Ux.future(items));
+                        .compose(nil -> Ux.futureA(items));
                 });
             })
 
 
             // 使用 账单子项 BillItem 拷贝数据生成 结算子项 SettlementItem 的过程
-            .compose(items -> this.indentStub.settleAsync(settleRef.get(), items)
+            .compose(items -> MakerObj.upSTI().buildAsync(items, settleRef.get())
                 .compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync)
             )
 

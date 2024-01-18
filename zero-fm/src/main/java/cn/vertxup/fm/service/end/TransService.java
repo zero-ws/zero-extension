@@ -5,8 +5,6 @@ import cn.vertxup.fm.domain.tables.daos.FTransDao;
 import cn.vertxup.fm.domain.tables.daos.FTransItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import cn.vertxup.fm.service.pre.IndentStub;
-import com.google.inject.Inject;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -29,9 +27,6 @@ import java.util.concurrent.ConcurrentMap;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class TransService implements TransStub {
-
-    @Inject
-    private IndentStub indentStub;
 
     @Override
     public Future<JsonObject> createAsync(final JsonObject data) {
