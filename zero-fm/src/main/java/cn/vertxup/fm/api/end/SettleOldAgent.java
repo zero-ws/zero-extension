@@ -12,7 +12,8 @@ import jakarta.ws.rs.*;
  */
 @EndPoint
 @Path("/api")
-public interface SettleAgent {
+@Deprecated
+public interface SettleOldAgent {
     /*
      * Settlement
      {

@@ -1,4 +1,4 @@
-package cn.vertxup.fm.service.business;
+package cn.vertxup.fm.service.income;
 
 import cn.vertxup.fm.domain.tables.daos.FBillDao;
 import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
@@ -6,9 +6,10 @@ import cn.vertxup.fm.domain.tables.daos.FPreAuthorizeDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
-import cn.vertxup.fm.service.pre.FillStub;
+import cn.vertxup.fm.service.AccountStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
@@ -24,8 +25,6 @@ import java.util.Objects;
  */
 public class BillService implements BillStub {
     @Inject
-    private transient FillStub fillStub;
-    @Inject
     private transient AccountStub accountStub;
 
     @Override
@@ -35,11 +34,14 @@ public class BillService implements BillStub {
             billItem.setAmount(BigDecimal.ZERO);
         }
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
-            this.fillStub.income(bill, billItem);
+            // UCA
+            IkWay.ofB2BI().transfer(bill, billItem);
+
             final List<Future<JsonObject>> futures = new ArrayList<>();
             futures.add(Ux.Jooq.on(FBillItemDao.class).insertJAsync(billItem));
             if (Objects.nonNull(authorize)) {
-                this.fillStub.income(bill, authorize);
+                // UCA
+                IkWay.ofB2A().transfer(bill, authorize);
                 futures.add(Ux.Jooq.on(FPreAuthorizeDao.class).insertJAsync(authorize));
             }
             final List<FBillItem> itemList = new ArrayList<>();
@@ -60,7 +62,9 @@ public class BillService implements BillStub {
         items.forEach(item -> item.setKey(null));
 
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
-            this.fillStub.income(bill, items);
+            // UCA
+            IkWay.ofB2BI().transfer(bill, items);
+
             return Ux.Jooq.on(FBillItemDao.class).insertJAsync(items)
                 .compose(nil -> this.accountStub.inBook(bill, items))
                 .compose(nil -> this.billAsync(bill, items));

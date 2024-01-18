@@ -64,7 +64,7 @@ public interface UserAgent {
     @Address(Addr.User.DELETE)
     Boolean delete(@PathParam("key") String key);
 
-    // ---------------- All Usage business api for `user + type` extracting
+    // ---------------- All Usage income api for `user + type` extracting
 
     /*
      * The user usage in zero extension

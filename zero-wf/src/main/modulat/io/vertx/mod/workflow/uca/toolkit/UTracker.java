@@ -30,7 +30,7 @@ import static io.vertx.mod.workflow.refine.Wf.LOG;
  * This tracker implementation is based on X_ACTIVITY_RULE
  *
  * 1) The default logging will be put into camunda
- * 2) Tracker is for business activities
+ * 2) Tracker is for income activities
  *
  * Internal call Journal interface for `zero-ambient` activity generation instead.
  *

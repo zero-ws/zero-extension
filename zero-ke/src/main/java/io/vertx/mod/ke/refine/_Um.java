@@ -17,41 +17,92 @@ class _Um extends _Key {
     protected _Um() {
     }
 
+    /**
+     * 将数据从 input 拷贝到 output 中，内部调用在这种模式下有几个限制
+     * <pre><code>
+     *     1. 此接口不支持映射关系 `pojo/xxx.yml` 映射模型
+     *     2. 由于 isUpdated = false，作用如下四个字段
+     *        createdAt
+     *        createdBy
+     *        updatedAt
+     *        updatedBy
+     * </code></pre>
+     *
+     * @param output 目标对象
+     * @param input  源对象
+     * @param <T>    源泛型类型
+     * @param <I>    目标泛型类型
+     */
     public static <T, I> void umCreated(final I output, final T input) {
         KeEnv.audit(output, null, input, null, false);
     }
 
-    /*
-     * Data Audit
-     * - umCreated
-     *      - active
-     *      - language
-     *      - sigma
-     *      - metadata
-     *      - updatedAt
-     *      - updatedBy
-     *      - createdAt
-     *      - createdBy
-     * - umUpdated
-     *      - active
-     *      - language
-     *      - sigma
-     *      - metadata
-     *      - updatedAt
-     *      - updatedBy
-     * - umIndent
-     *      - XNumber Generation
-     *      - Support T and Json
+    /**
+     * 将数据从 input 拷贝到 output 中，内部调用在这种模式下有几个限制
+     * <pre><code>
+     *     1. 映射关系
+     *        - 不支持目标映射关系 `pojo/xxx.yml` 映射模型
+     *        - 支持源映射关系 `pojo/xxx.yml` 映射模型
+     *     2. 由于 isUpdated = false，作用如下四个字段
+     *        createdAt
+     *        createdBy
+     *        updatedAt
+     *        updatedBy
+     * </code></pre>
+     *
+     * @param output 目标对象
+     * @param input  源对象
+     * @param pojo   源映射模型
+     * @param <T>    源泛型类型
+     * @param <I>    目标泛型类型
      */
-
     public static <T, I> void umCreated(final I output, final T input, final String pojo) {
         KeEnv.audit(output, null, input, pojo, false);
     }
 
+    /**
+     * 将数据从 input 拷贝到 output 中，内部调用在这种模式下有几个限制
+     * <pre><code>
+     *     1. 映射关系
+     *        - 支持目标映射关系 `pojo/xxx.yml` 映射模型
+     *        - 不支持源映射关系 `pojo/xxx.yml` 映射模型
+     *     2. 由于 isUpdated = false，作用如下四个字段
+     *        createdAt
+     *        createdBy
+     *        updatedAt
+     *        updatedBy
+     * </code></pre>
+     *
+     * @param output 目标对象
+     * @param pojo   目标映射模型
+     * @param input  源对象
+     * @param <T>    源泛型类型
+     * @param <I>    目标泛型类型
+     */
     public static <T, I> void umCreated(final I output, final String pojo, final T input) {
         KeEnv.audit(output, pojo, input, null, false);
     }
 
+    /**
+     * 将数据从 input 拷贝到 output 中，内部调用在这种模式下有几个限制
+     * <pre><code>
+     *     1. 映射关系
+     *        - 支持目标映射关系 `pojo/xxx.yml` 映射模型
+     *        - 支持源映射关系 `pojo/xxx.yml` 映射模型
+     *     2. 由于 isUpdated = false，作用如下四个字段
+     *        createdAt
+     *        createdBy
+     *        updatedAt
+     *        updatedBy
+     * </code></pre>
+     *
+     * @param output  目标对象
+     * @param outPojo 目标映射模型
+     * @param input   源对象
+     * @param inPojo  源映射模型
+     * @param <T>     源泛型类型
+     * @param <I>     目标泛型类型
+     */
     public static <T, I> void umCreated(final I output, final String outPojo, final T input, final String inPojo) {
         KeEnv.audit(output, outPojo, input, inPojo, false);
     }
@@ -100,6 +151,26 @@ class _Um extends _Key {
         return KeEnv.indent(input, sigma, code, fnConsumer);
     }
 
+    /**
+     * 直接根据输入的列表分别设置对应的序列号，此处序号设置是统一的
+     * <pre><code>
+     *     1. 根据 code 从 X_NUMBER 中生成序号，生成序号数量为 input 的长度 {@link List#size()}
+     *     2. 生成序号的范围为 sigma 划定的范围
+     *        简单说就是 sigma -> X_NUMBER -> [serial] x N
+     *     3. 将生成的序号对齐：前进先出的方式执行设置函数
+     *     4. 设置函数使用 fnConsumer 来完成，此处的 fnConsumer 为 BiConsumer
+     *        - 第一个参数是 List 中的元素
+     *        - 第二个参数就是对齐过后的序号
+     * </code></pre>
+     *
+     * @param input      输入列表
+     * @param sigma      sigma值，统一标识符
+     * @param code       序列号定义
+     * @param fnConsumer 序列号设置函数，此处设置函数针对每一个元素
+     * @param <T>        泛型类型
+     *
+     * @return {@link Future} 已经设置好的列表
+     */
     public static <T> Future<List<T>> umIndent(final List<T> input, final String sigma,
                                                final String code,
                                                final BiConsumer<T, String> fnConsumer) {

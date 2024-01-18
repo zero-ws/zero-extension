@@ -2,7 +2,7 @@ package io.vertx.mod.ke.cv.em;
 
 /**
  * Lower case required here for usage
- * 1) Biz means business type
+ * 1) Biz means income type
  * 2) Here are typed fixed value:
  * - TypeEntity:                The fixed value of extension table metadata
  * - TypeUser:                  The modelId of SUser

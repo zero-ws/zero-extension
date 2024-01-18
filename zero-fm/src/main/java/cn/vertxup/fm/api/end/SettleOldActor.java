@@ -5,9 +5,7 @@ import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import cn.vertxup.fm.service.business.AccountStub;
-import cn.vertxup.fm.service.pre.FillStub;
-import cn.vertxup.fm.service.pre.IndentStub;
+import cn.vertxup.fm.service.AccountStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -15,6 +13,8 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -32,16 +32,11 @@ import java.util.Set;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 @Queue
-public class SettleActor {
-
-    @Inject
-    private transient IndentStub indentStub;
+@Deprecated
+public class SettleOldActor {
 
     @Inject
     private transient AccountStub accountStub;
-
-    @Inject
-    private transient FillStub fillStub;
 
     @Me
     @Address(Addr.Settle.UP_PAYMENT)
@@ -62,7 +57,16 @@ public class SettleActor {
          * - false：当前结算单就是已完成的状态，finished = true, finishedAt 有值
          */
         final KRef settleRef = new KRef();
-        return this.indentStub.settleAsync(runUp, data)
+        return Maker.ofST().buildFastAsync(data)
+            .compose(generated -> {
+                if (runUp) {
+                    generated.setFinished(Boolean.FALSE);
+                } else {
+                    generated.setFinished(Boolean.TRUE);
+                    generated.setFinishedAt(LocalDateTime.now());
+                }
+                return Ux.future(generated);
+            })
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync)
             .compose(settleRef::future)
 
@@ -84,7 +88,7 @@ public class SettleActor {
              * 所有的账单子项状态都会是 Finished，简单说流程走到这里账单子项以及账单本身就已经完
              * 成了。
              */
-            .compose(inserted -> this.indentStub.settleAsync(data.getJsonArray(KName.ITEMS), data))
+            .compose(inserted -> Maker.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), data))
             .compose(items -> {
 
 
@@ -93,7 +97,8 @@ public class SettleActor {
                  * - settlementId：账单子项中结算单主键
                  * - updatedAt / updatedBy：更新人、更新时间（Auditor相关信息）
                  */
-                this.fillStub.settle(settleRef.get(), items);
+                IkWay.ofST2BI().transfer(settleRef.get(), items);
+
                 return Ux.Jooq.on(FBillItemDao.class).updateAsync(items).compose(itemsUpdated -> {
 
 
@@ -106,13 +111,13 @@ public class SettleActor {
                      */
                     final Set<String> bookKeys = Ut.toSet(data.getJsonArray("book"));
                     return this.accountStub.inBook(itemsUpdated, bookKeys)
-                        .compose(nil -> Ux.future(items));
+                        .compose(nil -> Ux.futureA(items));
                 });
             })
 
 
             // 使用 账单子项 BillItem 拷贝数据生成 结算子项 SettlementItem 的过程
-            .compose(items -> this.indentStub.settleAsync(settleRef.get(), items)
+            .compose(items -> Maker.upSTI().buildAsync(items, settleRef.get())
                 .compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync)
             )
 
@@ -139,8 +144,8 @@ public class SettleActor {
     /**
      * 请求中包含了两种基础数据：
      * <pre><code>
-     *     - 如果是标准结账，调用 {@link SettleActor#createPayment(JsonObject, FSettlement)}
-     *     - 如果是否则标准结账，调用 {@link SettleActor#createDebt(JsonObject, FSettlement)}
+     *     - 如果是标准结账，调用 {@link SettleOldActor#createPayment(JsonObject, FSettlement)}
+     *     - 如果是否则标准结账，调用 {@link SettleOldActor#createDebt(JsonObject, FSettlement)}
      * </code></pre>
      * 此处的数据结构部分包含了虚拟属性 `finishType` ，这个属性值有两种：
      * <pre><code>
@@ -194,7 +199,10 @@ public class SettleActor {
     private Future<Boolean> createPayment(final JsonObject data, final FSettlement settlement) {
         final JsonArray paymentJ = Ut.valueJArray(data, FmCv.ID.PAYMENT);
         final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
-        this.fillStub.payment(settlement, payments);
+
+        // UCA
+        IkWay.ofST2TI().transfer(settlement, payments);
+
         return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments)
             .compose(nil -> Ux.futureT());
     }
@@ -204,7 +212,9 @@ public class SettleActor {
         final KRef ref = new KRef();
         // 构造应收 / 退款
         final FDebt debt = Ux.fromJson(data, FDebt.class);
-        this.fillStub.settle(settlement, debt);
+        // UCA
+        IkWay.ofST2D().transfer(settlement, debt);
+
         return Ux.Jooq.on(FDebtDao.class).insertAsync(debt)
             .compose(ref::future)
             // 更新 items 对应信息

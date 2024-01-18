@@ -1,6 +1,6 @@
 package cn.vertxup.fm.api.income;
 
-import cn.vertxup.fm.service.business.CancelStub;
+import cn.vertxup.fm.service.income.CancelStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

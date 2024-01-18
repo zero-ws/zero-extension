@@ -1,4 +1,4 @@
-package cn.vertxup.fm.service.business;
+package cn.vertxup.fm.service;
 
 import cn.vertxup.fm.domain.tables.daos.FBillDao;
 import cn.vertxup.fm.domain.tables.daos.FBookDao;

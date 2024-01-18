@@ -38,10 +38,6 @@ public interface Addr {
         String UNLOCK_AUTHORIZE = Prefix._EVENT + "AUTHORIZE/UNLOCK";
         // Book Saving for Multi
         String UP_BOOK = Prefix._EVENT + "BOOKS/UPDATING";
-        // Finish
-        String UP_PAYMENT = Prefix._EVENT + "BILL/PAYMENT";
-        // Settlement
-        String UP_SETTLEMENT = Prefix._EVENT + "SETTLEMENT/FINISH";
         // Debt / Refund
         String PAY_CREATE = Prefix._EVENT + "PAYMENT/CREATE";
         String PAY_DELETE = Prefix._EVENT + "PAYMENT/REMOVE/BY/KEY";
@@ -50,5 +46,23 @@ public interface Addr {
         String FETCH_BY_QR = Prefix._EVENT + "FETCH/SETTLEMENT/SEARCH";
         // Fetch Debt
         String FETCH_DEBT = Prefix._EVENT + "FETCH/DEBT/BY/KEY";
+
+        // Finish
+        @Deprecated
+        String UP_PAYMENT = Prefix._EVENT + "BILL/PAYMENT";
+        // Settlement
+        @Deprecated
+        String UP_SETTLEMENT = Prefix._EVENT + "SETTLEMENT/FINISH";
+    }
+
+    interface Trans {
+
+        String START_DIRECT = Prefix._EVENT + "TRANS/DIRECT";
+
+        String START_DEBT = Prefix._EVENT + "TRANS/DEBT";
+
+        String START_DELAY = Prefix._EVENT + "TRANS/DELAY";
+        String END_TRANS = Prefix._EVENT + "TRANS-END/FINISH";
+        String END_DEBT = Prefix._EVENT + "TRANS-END/DEBT";
     }
 }

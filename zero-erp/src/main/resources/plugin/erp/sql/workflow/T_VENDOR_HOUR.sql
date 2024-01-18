@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS T_VENDOR_HOUR
     `COMMENT_EXTENSION` LONGTEXT COMMENT '「commentExtension」- Extension Comment',
 
     -- SHARED
-    `CLASSIFICATION`    VARCHAR(64) COMMENT '「classification」- The ticket related business type',
+    `CLASSIFICATION`    VARCHAR(64) COMMENT '「classification」- The ticket related income type',
 
     `START_AT`          DATETIME COMMENT '「startAt」- From',
     `END_AT`            DATETIME COMMENT '「endAt」- To',
