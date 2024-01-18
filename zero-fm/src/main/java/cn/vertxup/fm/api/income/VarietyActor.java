@@ -8,8 +8,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;
-import io.vertx.mod.fm.uca.enter.MakerObj;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -35,7 +35,7 @@ public class VarietyActor {
     @Me
     @Address(Addr.BillItem.UP_SPLIT)
     public Future<JsonObject> upSplit(final String key, final JsonObject data) {
-        return MakerObj.upBI().buildAsync(data, key).compose(item -> {
+        return Maker.upBI().buildAsync(data, key).compose(item -> {
             final List<FBillItem> items = Ux.fromJson(data.getJsonArray(KName.ITEMS), FBillItem.class);
             return this.varietyStub.splitAsync(item, items);
         });
@@ -44,7 +44,7 @@ public class VarietyActor {
     @Me
     @Address(Addr.BillItem.UP_REVERT)
     public Future<JsonObject> upRevert(final String key, final JsonObject data) {
-        return MakerObj.upBI().buildAsync(data, key).compose(item -> {
+        return Maker.upBI().buildAsync(data, key).compose(item -> {
             final FBillItem to = Ux.fromJson(data.getJsonObject("item"), FBillItem.class);
             return this.varietyStub.revertAsync(item, to);
         });
@@ -67,10 +67,10 @@ public class VarietyActor {
             });
 
             // 新数据构造
-            return MakerObj.ofBIT().buildAsync((JsonArray) null, itemFrom)
+            return Maker.ofBIT().buildAsync((JsonArray) null, itemFrom)
                 .compose(itemTo -> {
                     // UCA
-                    IkWayObj.ofBIT().transfer(itemFrom, itemTo);
+                    IkWay.ofBIT().transfer(itemFrom, itemTo);
                     // 填充 true, false
                     final ConcurrentMap<Boolean, List<FBillItem>> map = new ConcurrentHashMap<>();
                     map.put(Boolean.FALSE, itemFrom);

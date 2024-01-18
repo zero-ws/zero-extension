@@ -8,7 +8,7 @@ import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
@@ -34,13 +34,13 @@ public class BillService implements BillStub {
         }
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
             // UCA
-            IkWayObj.ofB2BI().transfer(bill, billItem);
+            IkWay.ofB2BI().transfer(bill, billItem);
 
             final List<Future<JsonObject>> futures = new ArrayList<>();
             futures.add(Ux.Jooq.on(FBillItemDao.class).insertJAsync(billItem));
             if (Objects.nonNull(authorize)) {
                 // UCA
-                IkWayObj.ofB2A().transfer(bill, authorize);
+                IkWay.ofB2A().transfer(bill, authorize);
                 futures.add(Ux.Jooq.on(FPreAuthorizeDao.class).insertJAsync(authorize));
             }
             final List<FBillItem> itemList = new ArrayList<>();
@@ -62,7 +62,7 @@ public class BillService implements BillStub {
 
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
             // UCA
-            IkWayObj.ofB2BI().transfer(bill, items);
+            IkWay.ofB2BI().transfer(bill, items);
 
             return Ux.Jooq.on(FBillItemDao.class).insertJAsync(items)
                 .compose(nil -> this.accountStub.inBook(bill, items))

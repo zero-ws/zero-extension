@@ -5,7 +5,7 @@ import cn.vertxup.fm.service.business.BillStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;
-import io.vertx.mod.fm.uca.enter.MakerObj;
+import io.vertx.mod.fm.uca.enter.Maker;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -30,7 +30,7 @@ public class MutliActor {
     @Address(Addr.Bill.IN_MULTI)
     public Future<JsonObject> inMulti(final JsonObject data) {
         final List<FBillItem> items = Ux.fromJson(Ut.valueJArray(data, KName.ITEMS), FBillItem.class);
-        return MakerObj.ofB().buildFastAsync(data)
+        return Maker.ofB().buildFastAsync(data)
             /* 账单：1，账单明细：N */
             .compose(bill -> this.billStub.multiAsync(
                 bill,                                   // 账单对象

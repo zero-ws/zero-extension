@@ -10,8 +10,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
-import io.vertx.mod.fm.uca.enter.MakerObj;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -38,14 +38,14 @@ public class TransService implements TransStub {
          * ]
          */
         final JsonArray endKeys = data.getJsonArray("finished");
-        return MakerObj.ofT().buildFastAsync(data)
+        return Maker.ofT().buildFastAsync(data)
             .compose(Ux.Jooq.on(FTransItemDao.class)::insertAsync)
             .compose(payment -> {
                 final JsonArray paymentArr = data.getJsonArray(FmCv.ID.PAYMENT, new JsonArray());
                 final List<FTransItem> payments = Ux.fromJson(paymentArr, FTransItem.class);
 
                 // UCA
-                IkWayObj.ofT2TI().transfer(payment, payments);
+                IkWay.ofT2TI().transfer(payment, payments);
                 return this.savePayment(endKeys, payments);
             })
             .compose(payments -> this.forwardDebt(payments, Ut.toSet(endKeys)));

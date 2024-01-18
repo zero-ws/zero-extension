@@ -6,8 +6,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
-import io.vertx.mod.fm.uca.enter.MakerObj;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -26,7 +26,7 @@ public class CancelService implements CancelStub {
         condition.put("key,i", keys);
         final UxJooq jq = Ux.Jooq.on(FBillItemDao.class);
         return jq.<FBillItem>fetchAsync(condition).compose(queried -> {
-            queried.forEach(each -> IkWayObj.ofBIC().transfer(each, params));
+            queried.forEach(each -> IkWay.ofBIC().transfer(each, params));
             return jq.updateAsync(queried).compose(this.accountStub::inBook);
         });
     }
@@ -41,7 +41,7 @@ public class CancelService implements CancelStub {
         updated.put(KName.ACTIVE, Boolean.TRUE);
         updated.put(KName.STATUS, FmCv.Status.PENDING);
         return Ux.Jooq.on(FBillItemDao.class).deleteByAsync(condition)
-            .compose(nil -> MakerObj.upBI().buildAsync(updated, key))
+            .compose(nil -> Maker.upBI().buildAsync(updated, key))
             .compose(Ux.Jooq.on(FBillItemDao.class)::updateAsync)
             .compose(nil -> Ux.futureT());
     }

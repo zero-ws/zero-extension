@@ -8,8 +8,8 @@ import cn.vertxup.fm.domain.tables.pojos.FBook;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.fm.uca.enter.MakerObj;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -29,7 +29,7 @@ public class VarietyService implements VarietyStub {
     @Override
     public Future<JsonObject> splitAsync(final FBillItem item, final List<FBillItem> items) {
         // UCA
-        IkWayObj.ofBIS().transfer(item, items);
+        IkWay.ofBIS().transfer(item, items);
 
         final UxJooq jooq = Ux.Jooq.on(FBillItemDao.class);
         return jooq.updateAsync(item)
@@ -40,7 +40,7 @@ public class VarietyService implements VarietyStub {
     @Override
     public Future<JsonObject> revertAsync(final FBillItem item, final FBillItem to) {
         // UCA
-        IkWayObj.ofBIR().transfer(item, to);
+        IkWay.ofBIR().transfer(item, to);
 
         final UxJooq jooq = Ux.Jooq.on(FBillItemDao.class);
         return jooq.updateAsync(item)
@@ -59,9 +59,9 @@ public class VarietyService implements VarietyStub {
          *  2. Bill Item set comment ( newItem )
          */
         final String comment = params.getString(KName.COMMENT);
-        return MakerObj.ofB().buildFastAsync(params).compose(preBill -> {
+        return Maker.ofB().buildFastAsync(params).compose(preBill -> {
             // UCA
-            IkWayObj.ofBKT().transfer(book, preBill);
+            IkWay.ofBKT().transfer(book, preBill);
 
             preBill.setComment(comment);
             return Ux.Jooq.on(FBillDao.class).insertAsync(preBill).compose(bill -> {

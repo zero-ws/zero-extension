@@ -13,8 +13,8 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
-import io.vertx.mod.fm.uca.enter.MakerObj;
-import io.vertx.mod.fm.uca.replica.IkWayObj;
+import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -57,7 +57,7 @@ public class SettleOldActor {
          * - false：当前结算单就是已完成的状态，finished = true, finishedAt 有值
          */
         final KRef settleRef = new KRef();
-        return MakerObj.ofST().buildFastAsync(data)
+        return Maker.ofST().buildFastAsync(data)
             .compose(generated -> {
                 if (runUp) {
                     generated.setFinished(Boolean.FALSE);
@@ -88,7 +88,7 @@ public class SettleOldActor {
              * 所有的账单子项状态都会是 Finished，简单说流程走到这里账单子项以及账单本身就已经完
              * 成了。
              */
-            .compose(inserted -> MakerObj.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), data))
+            .compose(inserted -> Maker.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), data))
             .compose(items -> {
 
 
@@ -97,7 +97,7 @@ public class SettleOldActor {
                  * - settlementId：账单子项中结算单主键
                  * - updatedAt / updatedBy：更新人、更新时间（Auditor相关信息）
                  */
-                IkWayObj.ofST2BI().transfer(settleRef.get(), items);
+                IkWay.ofST2BI().transfer(settleRef.get(), items);
 
                 return Ux.Jooq.on(FBillItemDao.class).updateAsync(items).compose(itemsUpdated -> {
 
@@ -117,7 +117,7 @@ public class SettleOldActor {
 
 
             // 使用 账单子项 BillItem 拷贝数据生成 结算子项 SettlementItem 的过程
-            .compose(items -> MakerObj.upSTI().buildAsync(items, settleRef.get())
+            .compose(items -> Maker.upSTI().buildAsync(items, settleRef.get())
                 .compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync)
             )
 
@@ -201,7 +201,7 @@ public class SettleOldActor {
         final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
 
         // UCA
-        IkWayObj.ofST2TI().transfer(settlement, payments);
+        IkWay.ofST2TI().transfer(settlement, payments);
 
         return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments)
             .compose(nil -> Ux.futureT());
@@ -213,7 +213,7 @@ public class SettleOldActor {
         // 构造应收 / 退款
         final FDebt debt = Ux.fromJson(data, FDebt.class);
         // UCA
-        IkWayObj.ofST2D().transfer(settlement, debt);
+        IkWay.ofST2D().transfer(settlement, debt);
 
         return Ux.Jooq.on(FDebtDao.class).insertAsync(debt)
             .compose(ref::future)
