@@ -27,37 +27,6 @@ public class FillService implements FillStub {
     }
 
     @Override
-    public void transfer(final List<FBillItem> from, final List<FBillItem> to) {
-        from.forEach(fromItem -> {
-            fromItem.setActive(Boolean.FALSE);
-            fromItem.setStatus(FmCv.Status.INVALID);
-            fromItem.setType(FmCv.Type.TRANSFER_FROM);
-            fromItem.setSerial(fromItem.getSerial() + "F");
-            fromItem.setCode(fromItem.getCode() + "F");
-        });
-        to.forEach(toItem -> {
-            toItem.setKey(null);
-            toItem.setBillId(null);
-            toItem.setSerial(toItem.getSerial() + "T");
-            toItem.setCode(toItem.getCode() + "T");
-            toItem.setStatus(FmCv.Status.PENDING);
-            toItem.setActive(Boolean.TRUE);
-        });
-    }
-
-    @Override
-    public void transfer(final FBook book, final FBill bill) {
-        bill.setKey(null);
-        bill.setBookId(book.getKey());
-        bill.setOrderId(book.getOrderId());
-        bill.setModelId(book.getModelId());
-        bill.setModelKey(book.getModelKey());
-        // Created
-        bill.setCreatedAt(bill.getUpdatedAt());
-        bill.setCreatedBy(bill.getUpdatedBy());
-    }
-
-    @Override
     public void settle(final FSettlement settlement, final List<FBillItem> items) {
         items.forEach(item -> {
             item.setSettlementId(settlement.getKey());

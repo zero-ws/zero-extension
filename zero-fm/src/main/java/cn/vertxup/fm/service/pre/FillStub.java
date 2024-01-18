@@ -65,44 +65,6 @@ public interface FillStub {
     void cancel(FBillItem item, JsonObject params);
 
     /**
-     * 「转账」批量转账处理，拉平对齐的处理模式
-     * <pre><code>
-     *     转出项：
-     *     1. active = false
-     *     2. status = InValid
-     *     3. type = TransferFrom （类型变更）
-     *     4. 原项编号为：CODE-XX，那么子项编号为：
-     *        CODE-XXF
-     *
-     *     转入项：
-     *     1. 清空 key 主键（新建时自动生成）
-     *     2. 清空 billId 的原始关联（转出的账单要和 income 断开关联）
-     *     3. active = true
-     *     4. status = Pending
-     *     5. 原项编号为：CODE-XX，那么子项编号为：
-     *        CODE-XXT
-     * </code></pre>
-     *
-     * @param from from = 源账单
-     * @param to   to = 目标账单
-     */
-    void transfer(List<FBillItem> from, List<FBillItem> to);
-
-    /**
-     * 「转账」转账过程中填充账单信息专用，直接将账本信息复制到账单
-     * <pre><code>
-     *     1. bookId：关联账本主键
-     *     2. orderId：关联订单主键
-     *     3. modelId / modelKey：广义关联模型
-     *     4. 新账单需要清空 key 主键（新建时自动生成）
-     * </code></pre>
-     *
-     * @param book from = 账本
-     * @param bill to = 账单
-     */
-    void transfer(FBook book, FBill bill);
-
-    /**
      * 「结算」现结模式的结算处理
      * <pre><code>
      *     账单子项中包含了两个特殊字段：

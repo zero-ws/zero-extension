@@ -6,6 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
@@ -79,7 +80,9 @@ public class IndentService implements IndentStub {
             itemN.setCreatedBy(item.getUpdatedBy());
             itemTo.add(itemN);
         });
-        this.fillStub.transfer(itemFrom, itemTo);
+        // UCA
+        IkWayObj.bit().transfer(itemFrom, itemTo);
+
         final ConcurrentMap<Boolean, List<FBillItem>> map = new ConcurrentHashMap<>();
         map.put(Boolean.FALSE, itemFrom);
         map.put(Boolean.TRUE, itemTo);
