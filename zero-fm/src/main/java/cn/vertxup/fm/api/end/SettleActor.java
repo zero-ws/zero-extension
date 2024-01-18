@@ -137,13 +137,16 @@ public class SettleActor {
     }
 
     /**
-     * 请求中包含了两种基础数据
-     * - 如果是标准结账，调用 {@link SettleActor#createPayment(JsonObject, FSettlement)}
-     * - 如果是否则标准结账，调用 {@link SettleActor#createDebt(JsonObject, FSettlement)}
-     *
+     * 请求中包含了两种基础数据：
+     * <pre><code>
+     *     - 如果是标准结账，调用 {@link SettleActor#createPayment(JsonObject, FSettlement)}
+     *     - 如果是否则标准结账，调用 {@link SettleActor#createDebt(JsonObject, FSettlement)}
+     * </code></pre>
      * 此处的数据结构部分包含了虚拟属性 `finishType` ，这个属性值有两种：
-     * - RUN_UP：生成应收和退款
-     * - STANDARD：直接结算
+     * <pre><code>
+     *     - RUN_UP：生成应收和退款
+     *     - STANDARD：直接结算
+     * </code></pre>
      * 两种内容会触发不同的流程，但不论哪个流程最终的结算单的 finished 属性都是 true。
      *
      * @param key  结算单 `key` 主键
