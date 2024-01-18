@@ -2,7 +2,7 @@ package cn.vertxup.fm.api.income;
 
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
-import cn.vertxup.fm.service.business.BillStub;
+import cn.vertxup.fm.service.income.BillStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;

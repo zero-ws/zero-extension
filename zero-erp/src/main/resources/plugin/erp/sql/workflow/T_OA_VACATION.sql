@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS T_OA_VACATION
     `COMMENT_EXTENSION` LONGTEXT COMMENT '「commentExtension」- Extension Comment',
     -- Request By
     `REQUEST_BY`        VARCHAR(36) COMMENT '「requestBy」- Request User',
-    `CLASSIFICATION`    VARCHAR(64) COMMENT '「classification」- The ticket related business type',
+    `CLASSIFICATION`    VARCHAR(64) COMMENT '「classification」- The ticket related income type',
 
     `START_AT`          DATETIME COMMENT '「startAt」- From',
     `END_AT`            DATETIME COMMENT '「endAt」- To',

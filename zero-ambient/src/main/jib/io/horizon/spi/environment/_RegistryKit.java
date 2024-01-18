@@ -108,7 +108,7 @@ class RegistryKit {
             business.put(KName.App.ICP, app.getIcp());
             business.put(KName.App.EMAIL, app.getEmail());
             business.put(KName.App.COPY_RIGHT, app.getCopyRight());
-            normalized.put("business", business);
+            normalized.put("income", business);
         }
         /* Deployment information */
         {

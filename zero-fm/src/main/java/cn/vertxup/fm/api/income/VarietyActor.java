@@ -3,7 +3,7 @@ package cn.vertxup.fm.api.income;
 import cn.vertxup.fm.domain.tables.daos.FBookDao;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FBook;
-import cn.vertxup.fm.service.business.VarietyStub;
+import cn.vertxup.fm.service.income.VarietyStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

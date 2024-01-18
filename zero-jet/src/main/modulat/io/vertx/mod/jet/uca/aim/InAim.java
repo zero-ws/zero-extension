@@ -23,7 +23,7 @@ import io.vertx.up.commune.Envelop;
  * ------
  * 4. 「Optional」The last step is executing JS Engine ( JavaScript, IN_SCRIPT ), the javascript
  * could call following service component, also it's dynamic to define different code-logical and
- * business requirement. Here it's easy to expand. It's more smart.
+ * income requirement. Here it's easy to expand. It's more smart.
  * ------
  * The final execution sequence is as following：
  * IN_RULE -> IN_MAPPING -> IN_PLUG -> IN_SCRIPT
