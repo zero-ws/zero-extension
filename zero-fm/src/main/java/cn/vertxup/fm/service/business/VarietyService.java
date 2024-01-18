@@ -5,10 +5,10 @@ import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FBook;
-import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.uca.enter.MakerObj;
 import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -23,8 +23,6 @@ import java.util.concurrent.ConcurrentMap;
  * @author lang : 2024-01-11
  */
 public class VarietyService implements VarietyStub {
-    @Inject
-    private transient IndentStub indentStub;
     @Inject
     private transient AccountStub accountStub;
 
@@ -61,7 +59,7 @@ public class VarietyService implements VarietyStub {
          *  2. Bill Item set comment ( newItem )
          */
         final String comment = params.getString(KName.COMMENT);
-        return this.indentStub.initAsync(params).compose(preBill -> {
+        return MakerObj.ofB().buildFastAsync(params).compose(preBill -> {
             // UCA
             IkWayObj.ofBKT().transfer(book, preBill);
 

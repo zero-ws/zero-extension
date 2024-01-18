@@ -2,11 +2,11 @@ package cn.vertxup.fm.service.business;
 
 import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
-import cn.vertxup.fm.service.pre.IndentStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.enter.MakerObj;
 import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -19,8 +19,6 @@ import jakarta.inject.Inject;
 public class CancelService implements CancelStub {
     @Inject
     private transient AccountStub accountStub;
-    @Inject
-    private transient IndentStub indentStub;
 
     @Override
     public Future<Boolean> cancelAsync(final JsonArray keys, final JsonObject params) {
@@ -43,7 +41,7 @@ public class CancelService implements CancelStub {
         updated.put(KName.ACTIVE, Boolean.TRUE);
         updated.put(KName.STATUS, FmCv.Status.PENDING);
         return Ux.Jooq.on(FBillItemDao.class).deleteByAsync(condition)
-            .compose(nil -> this.indentStub.itemAsync(key, updated))
+            .compose(nil -> MakerObj.upBI().buildAsync(updated, key))
             .compose(Ux.Jooq.on(FBillItemDao.class)::updateAsync)
             .compose(nil -> Ux.futureT());
     }

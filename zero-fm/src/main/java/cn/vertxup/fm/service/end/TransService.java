@@ -12,6 +12,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.enter.MakerObj;
 import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJooq;
@@ -42,7 +43,7 @@ public class TransService implements TransStub {
          * ]
          */
         final JsonArray endKeys = data.getJsonArray("finished");
-        return this.indentStub.payAsync(data)
+        return MakerObj.ofT().buildFastAsync(data)
             .compose(Ux.Jooq.on(FTransItemDao.class)::insertAsync)
             .compose(payment -> {
                 final JsonArray paymentArr = data.getJsonArray(FmCv.ID.PAYMENT, new JsonArray());

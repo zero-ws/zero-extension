@@ -14,6 +14,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.enter.MakerObj;
 import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
@@ -60,7 +61,16 @@ public class SettleOldActor {
          * - false：当前结算单就是已完成的状态，finished = true, finishedAt 有值
          */
         final KRef settleRef = new KRef();
-        return this.indentStub.settleAsync(runUp, data)
+        return MakerObj.ofST().buildFastAsync(data)
+            .compose(generated -> {
+                if (runUp) {
+                    generated.setFinished(Boolean.FALSE);
+                } else {
+                    generated.setFinished(Boolean.TRUE);
+                    generated.setFinishedAt(LocalDateTime.now());
+                }
+                return Ux.future(generated);
+            })
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync)
             .compose(settleRef::future)
 
@@ -82,7 +92,7 @@ public class SettleOldActor {
              * 所有的账单子项状态都会是 Finished，简单说流程走到这里账单子项以及账单本身就已经完
              * 成了。
              */
-            .compose(inserted -> this.indentStub.settleAsync(data.getJsonArray(KName.ITEMS), data))
+            .compose(inserted -> MakerObj.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), data))
             .compose(items -> {
 
 
