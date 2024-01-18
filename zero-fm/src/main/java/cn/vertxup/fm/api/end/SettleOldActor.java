@@ -32,7 +32,8 @@ import java.util.Set;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 @Queue
-public class SettleActor {
+@Deprecated
+public class SettleOldActor {
 
     @Inject
     private transient IndentStub indentStub;
@@ -139,8 +140,8 @@ public class SettleActor {
     /**
      * 请求中包含了两种基础数据：
      * <pre><code>
-     *     - 如果是标准结账，调用 {@link SettleActor#createPayment(JsonObject, FSettlement)}
-     *     - 如果是否则标准结账，调用 {@link SettleActor#createDebt(JsonObject, FSettlement)}
+     *     - 如果是标准结账，调用 {@link SettleOldActor#createPayment(JsonObject, FSettlement)}
+     *     - 如果是否则标准结账，调用 {@link SettleOldActor#createDebt(JsonObject, FSettlement)}
      * </code></pre>
      * 此处的数据结构部分包含了虚拟属性 `finishType` ，这个属性值有两种：
      * <pre><code>

@@ -106,6 +106,7 @@ public interface IndentStub {
      *
      * @return {@link FSettlement}
      */
+    @Deprecated
     default Future<FSettlement> settleAsync(final boolean runUp, final JsonObject data) {
         return this.settleAsync(data.getString(KName.INDENT), runUp, data);
     }
@@ -122,6 +123,7 @@ public interface IndentStub {
      *
      * @return {@link FSettlement}
      */
+    @Deprecated
     Future<FSettlement> settleAsync(String indent, final boolean runUp, JsonObject data);
 
     /**
@@ -137,6 +139,7 @@ public interface IndentStub {
      *
      * @return {@link List}
      */
+    @Deprecated
     Future<List<FBillItem>> settleAsync(JsonArray items, JsonObject data);
 
     /**
@@ -159,6 +162,7 @@ public interface IndentStub {
      *
      * @return {@link List}
      */
+    @Deprecated
     Future<List<FSettlementItem>> settleAsync(FSettlement settlement, List<FBillItem> items);
 
     /**

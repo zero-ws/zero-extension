@@ -16,24 +16,6 @@ import java.util.Objects;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class FillService implements FillStub {
-    /*
-     * Bill -> BillItem
-     */
-    @Override
-    public void income(final FBill bill, final List<FBillItem> items) {
-        for (int idx = 0; idx < items.size(); idx++) {
-            final FBillItem item = items.get(idx);
-            final int number = (idx + 1);
-            item.setBillId(bill.getKey());
-            item.setSerial(bill.getSerial() + "-" + Ut.fromAdjust(number, 2));
-            item.setCode(bill.getCode() + "-" + Ut.fromAdjust(number, 2));
-            item.setAmountTotal(item.getAmount());
-            item.setStatus(FmCv.Status.PENDING);
-            item.setIncome(bill.getIncome());
-            // auditor
-            Ke.umCreated(item, bill);
-        }
-    }
 
     @Override
     public void cancel(final FBillItem item, final JsonObject params) {
@@ -42,74 +24,6 @@ public class FillService implements FillStub {
         item.setType(FmCv.Type.CANCEL);
         item.setUpdatedAt(LocalDateTime.now());
         item.setUpdatedBy(params.getString(KName.UPDATED_BY));
-    }
-
-    /*
-     * Bill -> BillItem
-     */
-    @Override
-    public void income(final FBill bill, final FBillItem item) {
-        item.setBillId(bill.getKey());
-        item.setSerial(bill.getSerial() + "-01");
-        item.setCode(bill.getCode() + "-01");
-        item.setStatus(FmCv.Status.PENDING);
-        item.setIncome(bill.getIncome());
-        // price, quanlity, total
-        item.setPrice(item.getAmount());
-        item.setQuantity(1);
-        item.setAmountTotal(item.getAmount());
-        Ke.umCreated(item, bill);
-    }
-
-    @Override
-    public void income(final FBill bill, final FPreAuthorize authorize) {
-        if (Objects.nonNull(authorize)) {
-            authorize.setBillId(bill.getKey());
-            authorize.setSerial(bill.getSerial() + "-A");
-            authorize.setCode(bill.getCode() + "-A");
-            authorize.setStatus(FmCv.Status.PENDING);
-            // active, sigma
-            Ke.umCreated(authorize, bill);
-        }
-    }
-
-    @Override
-    public void split(final FBillItem item, final List<FBillItem> items) {
-        Objects.requireNonNull(item);
-        if (Objects.nonNull(items) && !items.isEmpty()) {
-            final int size = items.size();
-            item.setActive(Boolean.FALSE);          // Old Disabled
-            item.setStatus(FmCv.Status.INVALID);
-            for (int idx = 0; idx < size; idx++) {
-                final FBillItem split = items.get(idx);
-                split.setKey(null);
-                split.setBillId(item.getBillId());
-                split.setSerial(item.getSerial() + FmCv.SEQ[idx]);
-                split.setCode(item.getCode() + FmCv.SEQ[idx]);
-                split.setStatus(FmCv.Status.PENDING);
-                split.setRelatedId(item.getKey());
-                split.setIncome(item.getIncome());
-                // active, sigma
-                Ke.umCreated(split, item);
-                split.setActive(Boolean.TRUE);      // New Enabled
-            }
-        }
-    }
-
-    @Override
-    public void revert(final FBillItem item, final FBillItem to) {
-        Objects.requireNonNull(item);
-        item.setActive(Boolean.FALSE);
-        item.setStatus(FmCv.Status.INVALID);
-        // To
-        to.setKey(null);
-        to.setBillId(item.getBillId());
-        to.setSerial(item.getSerial() + "R");
-        to.setCode(item.getCode() + "R");
-        to.setStatus(FmCv.Status.INVALID);
-        to.setRelatedId(item.getKey());
-        to.setIncome(item.getIncome());
-        Ke.umCreated(to, item);
     }
 
     @Override

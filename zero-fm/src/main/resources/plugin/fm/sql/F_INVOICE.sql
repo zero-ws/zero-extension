@@ -32,8 +32,10 @@ CREATE TABLE `F_INVOICE`
     `NAME_BILLING`   VARCHAR(36) COMMENT '「nameBilling」开票人',
     `NAME_SELLING`   VARCHAR(36) COMMENT '「nameSelling」销售人',
 
-    -- 打印信息
+    -- 是否隶属于订单（追加广义关联模型）
     `ORDER_ID`       VARCHAR(36) COMMENT '「orderId」- 订单对应的订单ID',
+    `MODEL_ID`       VARCHAR(255) COMMENT '「modelId」- 关联的模型identifier，用于描述',
+    `MODEL_KEY`      VARCHAR(36) COMMENT '「modelKey」- 关联的模型记录ID，用于描述哪一个Model中的记录',
 
     -- 特殊字段
     `SIGMA`          VARCHAR(32) COMMENT '「sigma」- 统一标识',
