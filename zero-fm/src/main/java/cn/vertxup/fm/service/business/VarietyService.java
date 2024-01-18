@@ -5,7 +5,6 @@ import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FBook;
-import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
@@ -27,14 +26,12 @@ public class VarietyService implements VarietyStub {
     @Inject
     private transient IndentStub indentStub;
     @Inject
-    private transient FillStub fillStub;
-    @Inject
     private transient AccountStub accountStub;
 
     @Override
     public Future<JsonObject> splitAsync(final FBillItem item, final List<FBillItem> items) {
         // UCA
-        IkWayObj.bis().transfer(item, items);
+        IkWayObj.ofBIS().transfer(item, items);
 
         final UxJooq jooq = Ux.Jooq.on(FBillItemDao.class);
         return jooq.updateAsync(item)
@@ -45,7 +42,7 @@ public class VarietyService implements VarietyStub {
     @Override
     public Future<JsonObject> revertAsync(final FBillItem item, final FBillItem to) {
         // UCA
-        IkWayObj.bir().transfer(item, to);
+        IkWayObj.ofBIR().transfer(item, to);
 
         final UxJooq jooq = Ux.Jooq.on(FBillItemDao.class);
         return jooq.updateAsync(item)
@@ -66,7 +63,7 @@ public class VarietyService implements VarietyStub {
         final String comment = params.getString(KName.COMMENT);
         return this.indentStub.initAsync(params).compose(preBill -> {
             // UCA
-            IkWayObj.bkt().transfer(book, preBill);
+            IkWayObj.ofBKT().transfer(book, preBill);
 
             preBill.setComment(comment);
             return Ux.Jooq.on(FBillDao.class).insertAsync(preBill).compose(bill -> {

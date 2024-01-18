@@ -5,7 +5,6 @@ import cn.vertxup.fm.domain.tables.daos.FTransDao;
 import cn.vertxup.fm.domain.tables.daos.FTransItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
 import com.google.inject.Inject;
 import io.horizon.eon.em.typed.ChangeFlag;
@@ -13,6 +12,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
@@ -32,9 +32,6 @@ public class TransService implements TransStub {
     @Inject
     private IndentStub indentStub;
 
-    @Inject
-    private FillStub fillStub;
-
     @Override
     public Future<JsonObject> createAsync(final JsonObject data) {
         /*
@@ -50,7 +47,9 @@ public class TransService implements TransStub {
             .compose(payment -> {
                 final JsonArray paymentArr = data.getJsonArray(FmCv.ID.PAYMENT, new JsonArray());
                 final List<FTransItem> payments = Ux.fromJson(paymentArr, FTransItem.class);
-                this.fillStub.payment(payment, payments);
+
+                // UCA
+                IkWayObj.ofT2TI().transfer(payment, payments);
                 return this.savePayment(endKeys, payments);
             })
             .compose(payments -> this.forwardDebt(payments, Ut.toSet(endKeys)));

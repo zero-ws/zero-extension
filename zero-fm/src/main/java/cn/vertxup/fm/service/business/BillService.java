@@ -6,7 +6,6 @@ import cn.vertxup.fm.domain.tables.daos.FPreAuthorizeDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
-import cn.vertxup.fm.service.pre.FillStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.uca.replica.IkWayObj;
@@ -25,8 +24,6 @@ import java.util.Objects;
  */
 public class BillService implements BillStub {
     @Inject
-    private transient FillStub fillStub;
-    @Inject
     private transient AccountStub accountStub;
 
     @Override
@@ -37,13 +34,13 @@ public class BillService implements BillStub {
         }
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
             // UCA
-            IkWayObj.b2bi().transfer(bill, billItem);
+            IkWayObj.ofB2BI().transfer(bill, billItem);
 
             final List<Future<JsonObject>> futures = new ArrayList<>();
             futures.add(Ux.Jooq.on(FBillItemDao.class).insertJAsync(billItem));
             if (Objects.nonNull(authorize)) {
                 // UCA
-                IkWayObj.b2a().transfer(bill, authorize);
+                IkWayObj.ofB2A().transfer(bill, authorize);
                 futures.add(Ux.Jooq.on(FPreAuthorizeDao.class).insertJAsync(authorize));
             }
             final List<FBillItem> itemList = new ArrayList<>();
@@ -65,7 +62,7 @@ public class BillService implements BillStub {
 
         return Ux.Jooq.on(FBillDao.class).insertAsync(bill).compose(inserted -> {
             // UCA
-            IkWayObj.b2bi().transfer(bill, items);
+            IkWayObj.ofB2BI().transfer(bill, items);
 
             return Ux.Jooq.on(FBillItemDao.class).insertJAsync(items)
                 .compose(nil -> this.accountStub.inBook(bill, items))

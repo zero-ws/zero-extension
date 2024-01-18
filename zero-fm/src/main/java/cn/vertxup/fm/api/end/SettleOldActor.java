@@ -6,7 +6,6 @@ import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
 import cn.vertxup.fm.service.business.AccountStub;
-import cn.vertxup.fm.service.pre.FillStub;
 import cn.vertxup.fm.service.pre.IndentStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
@@ -15,6 +14,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.replica.IkWayObj;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -40,9 +40,6 @@ public class SettleOldActor {
 
     @Inject
     private transient AccountStub accountStub;
-
-    @Inject
-    private transient FillStub fillStub;
 
     @Me
     @Address(Addr.Settle.UP_PAYMENT)
@@ -94,7 +91,8 @@ public class SettleOldActor {
                  * - settlementId：账单子项中结算单主键
                  * - updatedAt / updatedBy：更新人、更新时间（Auditor相关信息）
                  */
-                this.fillStub.settle(settleRef.get(), items);
+                IkWayObj.ofST2BI().transfer(settleRef.get(), items);
+
                 return Ux.Jooq.on(FBillItemDao.class).updateAsync(items).compose(itemsUpdated -> {
 
 
@@ -195,7 +193,10 @@ public class SettleOldActor {
     private Future<Boolean> createPayment(final JsonObject data, final FSettlement settlement) {
         final JsonArray paymentJ = Ut.valueJArray(data, FmCv.ID.PAYMENT);
         final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
-        this.fillStub.payment(settlement, payments);
+
+        // UCA
+        IkWayObj.ofST2TI().transfer(settlement, payments);
+
         return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments)
             .compose(nil -> Ux.futureT());
     }
@@ -205,7 +206,9 @@ public class SettleOldActor {
         final KRef ref = new KRef();
         // 构造应收 / 退款
         final FDebt debt = Ux.fromJson(data, FDebt.class);
-        this.fillStub.settle(settlement, debt);
+        // UCA
+        IkWayObj.ofST2D().transfer(settlement, debt);
+
         return Ux.Jooq.on(FDebtDao.class).insertAsync(debt)
             .compose(ref::future)
             // 更新 items 对应信息

@@ -18,8 +18,8 @@ import java.util.concurrent.ConcurrentMap;
  *     3. （批量）初始化结算项
  *     4. （批量）初始化付款单
  * </code></pre>
- * 和 {@link FillStub} 接口不同的点在于，这个接口所有的内容是带有返回值的
- * - {@link FillStub} 是表达式级别的，接口中所有方法返回值都是 void，表示不带返回值（全是副作用方法）
+ * 和接口不同的点在于，这个接口所有的内容是带有返回值的
+ * - 是表达式级别的，接口中所有方法返回值都是 void，表示不带返回值（全是副作用方法）
  * - {@link IndentStub} 是带返回值的，多为第一步构造对象专用，且由于流程的位置，所以所有方法都返回 {@link Future}
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>

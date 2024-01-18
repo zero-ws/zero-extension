@@ -11,7 +11,6 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import jakarta.inject.Inject;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -24,9 +23,6 @@ import java.util.concurrent.ConcurrentMap;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class IndentService implements IndentStub {
-
-    @Inject
-    private transient FillStub fillStub;
 
     @Override
     public Future<FTrans> payAsync(final JsonObject data) {
@@ -81,7 +77,7 @@ public class IndentService implements IndentStub {
             itemTo.add(itemN);
         });
         // UCA
-        IkWayObj.bit().transfer(itemFrom, itemTo);
+        IkWayObj.ofBIT().transfer(itemFrom, itemTo);
 
         final ConcurrentMap<Boolean, List<FBillItem>> map = new ConcurrentHashMap<>();
         map.put(Boolean.FALSE, itemFrom);
