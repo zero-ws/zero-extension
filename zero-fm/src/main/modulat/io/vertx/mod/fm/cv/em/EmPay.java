@@ -14,5 +14,7 @@ public class EmPay {
     public enum Type {
         DELAY,      // 延迟支付（对应 DEBT 付款/退款）
         AT,         // 现结
+
+        DEBT,       // 直接转应收
     }
 }
