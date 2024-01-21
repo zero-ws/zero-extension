@@ -36,16 +36,7 @@ public interface Trade<IN, OUT> {
         return this.execute(data, null);
     }
 
-    default Future<List<OUT>> execute(final JsonArray data, final List<IN> assist) {
-        throw new _501NotImplementException(this.getClass());
-    }
-
-    // 第三种形态：JsonArray + IN，不带纯数据模式
-    default Future<OUT> refresh(final JsonObject data, final IN assist) {
-        throw new _501NotImplementException(this.getClass());
-    }
-
-    default Future<List<OUT>> refresh(final JsonArray data, final IN assist) {
+    default Future<List<OUT>> execute(final JsonArray data, final IN assist) {
         throw new _501NotImplementException(this.getClass());
     }
 }

@@ -3,15 +3,19 @@ package io.vertx.mod.fm.uca.trans;
 import cn.vertxup.fm.domain.tables.daos.FSettlementDao;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.em.EmPay;
 import io.vertx.mod.fm.uca.enter.Maker;
+import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
- * 单结算单处理流程（原始流程），完整步骤：
+ * 步骤一：结算单处理流程（原始流程），完整步骤：
  * <pre><code>
  *     1. 生成单号
  *     2. 根据是否延迟设定延迟相关信息
@@ -37,12 +41,7 @@ class TradeST implements Trade<EmPay.Type, FSettlement> {
              * 流程
              */
             .compose(generated -> {
-                if (EmPay.Type.DELAY == type) {
-                    generated.setFinished(Boolean.FALSE);
-                } else {
-                    generated.setFinished(Boolean.TRUE);
-                    generated.setFinishedAt(LocalDateTime.now());
-                }
+                this.executeFinished(generated, type);
                 return Ux.future(generated);
             })
 
@@ -51,6 +50,42 @@ class TradeST implements Trade<EmPay.Type, FSettlement> {
              * 将构造好的 FSettlement 对象直接插入到数据库中，并且以
              * FSettlement 的方式返回上层
              */
+            .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync);
+    }
+
+    /**
+     * 不论批量还是单量，都要根据 {@link EmPay.Type} 来判断是否完成结算单
+     * <pre><code>
+     *     1. {@link EmPay.Type#AT} 为即时结算，所以这种情况是完成的
+     *     3. {@link EmPay.Type#DEBT} 为转应收，所以这种情况是完成的
+     *     2. {@link EmPay.Type#DELAY} 为延迟结算，所以这种情况是未完成的
+     * </code></pre>
+     *
+     * @param settlement 结算单
+     * @param type       结算类型
+     */
+    private void executeFinished(final FSettlement settlement, final EmPay.Type type) {
+        if (EmPay.Type.DELAY == type) {
+            settlement.setFinished(Boolean.FALSE);
+        } else {
+            // AT, DEBT 都是已完成的结算单
+            settlement.setFinished(Boolean.TRUE);
+            settlement.setFinishedAt(LocalDateTime.now());
+        }
+    }
+
+    @Override
+    public Future<List<FSettlement>> execute(final JsonArray data, final EmPay.Type assist) {
+        /*
+         * 批量结算单模式，先提取 number 的定义，直接从 data 中的 "indent" 中提取唯一
+         * 的序号定义，然后执行批量生成结算单，最终返回生成的结算单列表
+         */
+        final String indent = Ut.valueString(data, KName.INDENT);
+        return Maker.ofST().buildAsync(data, indent)
+            .compose(generatedList -> {
+                generatedList.forEach(generated -> this.executeFinished(generated, assist));
+                return Ux.future(generatedList);
+            })
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync);
     }
 }
