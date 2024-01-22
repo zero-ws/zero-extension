@@ -111,6 +111,11 @@ public interface IkWay<INPUT, OUTPUT> {
         return (IkWay<FSettlement, FDebt>) POOL.CCT_IKWAY.pick(IkWayST2D::new, IkWayST2D.class.getName());
     }
 
+    static IkWay<List<FSettlementItem>, FDebt> ofSI2D() {
+        // List<FSettlementItem> -> Debt
+        return (IkWay<List<FSettlementItem>, FDebt>) POOL.CCT_IKWAY.pick(IkWaySI2D::new, IkWaySI2D.class.getName());
+    }
+
     static IkWay<FSettlement, FTransItem> ofST2TI() {
         // Settlement -> TransItem
         return (IkWay<FSettlement, FTransItem>) POOL.CCT_IKWAY.pick(IkWayST2TI::new, IkWayST2TI.class.getName());

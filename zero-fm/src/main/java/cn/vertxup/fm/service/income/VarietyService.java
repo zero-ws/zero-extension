@@ -5,17 +5,16 @@ import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FBook;
-import cn.vertxup.fm.service.AccountStub;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.uca.account.Book;
 import io.vertx.mod.fm.uca.enter.Maker;
 import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import jakarta.inject.Inject;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentMap;
@@ -24,8 +23,6 @@ import java.util.concurrent.ConcurrentMap;
  * @author lang : 2024-01-11
  */
 public class VarietyService implements VarietyStub {
-    @Inject
-    private transient AccountStub accountStub;
 
     @Override
     public Future<JsonObject> splitAsync(final FBillItem item, final List<FBillItem> items) {
@@ -47,7 +44,7 @@ public class VarietyService implements VarietyStub {
         return jooq.updateAsync(item)
             .compose(nil -> jooq.insertAsync(to))
             .compose(nil -> Ux.Jooq.on(FBillDao.class).<FBill>fetchByIdAsync(to.getBillId()))
-            .compose(bill -> this.accountStub.inBook(bill, to))
+            .compose(bill -> Book.of().income(bill, to))
             .compose(nil -> Ux.futureJ(item));
     }
 
@@ -74,7 +71,7 @@ public class VarietyService implements VarietyStub {
                         each.setComment(VString.ARROW_RIGHT + comment);
                     });
                     return Ux.Jooq.on(FBillItemDao.class).insertAsync(newItem)
-                        .compose(items -> this.accountStub.inBook(bill, items));
+                        .compose(items -> Book.of().income(bill, items));
                 }).compose(added -> {
                     // FBillItem Previous Updating
                     final List<FBillItem> oldItem = fromTo.get(Boolean.FALSE);
@@ -88,7 +85,7 @@ public class VarietyService implements VarietyStub {
                         }
                     });
                     return Ux.Jooq.on(FBillItemDao.class).updateAsync(oldItem);
-                }).compose(this.accountStub::inBook)
+                }).compose(Book.of()::income)
                 .compose(nil -> Ux.futureJ(preBill));
         });
 

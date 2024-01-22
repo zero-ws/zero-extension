@@ -6,14 +6,13 @@ import cn.vertxup.fm.domain.tables.daos.FPreAuthorizeDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
-import cn.vertxup.fm.service.AccountStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.uca.account.Book;
 import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import jakarta.inject.Inject;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -24,8 +23,6 @@ import java.util.Objects;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class BillService implements BillStub {
-    @Inject
-    private transient AccountStub accountStub;
 
     @Override
     public Future<JsonObject> singleAsync(final FBill bill, final FBillItem billItem, final FPreAuthorize authorize) {
@@ -47,7 +44,7 @@ public class BillService implements BillStub {
             final List<FBillItem> itemList = new ArrayList<>();
             itemList.add(billItem);
             return Fn.combineA(futures)
-                .compose(nil -> this.accountStub.inBook(bill, itemList))
+                .compose(nil -> Book.of().income(bill, itemList))
                 .compose(nil -> this.billAsync(bill, itemList));
         });
     }
@@ -66,7 +63,7 @@ public class BillService implements BillStub {
             IkWay.ofB2BI().transfer(bill, items);
 
             return Ux.Jooq.on(FBillItemDao.class).insertJAsync(items)
-                .compose(nil -> this.accountStub.inBook(bill, items))
+                .compose(nil -> Book.of().income(bill, items))
                 .compose(nil -> this.billAsync(bill, items));
         });
     }

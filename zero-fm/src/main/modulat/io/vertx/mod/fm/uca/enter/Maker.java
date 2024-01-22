@@ -5,7 +5,6 @@ import io.horizon.annotations.Memory;
 import io.horizon.exception.web._501NotImplementException;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 import java.util.List;
@@ -20,7 +19,7 @@ import java.util.List;
  * @author lang : 2024-01-18
  */
 @SuppressWarnings("all")
-public interface Maker<H, T> {
+public interface Maker<H, T> extends MakerOn<H, T> {
 
 
     // --------------- 创建新的 -------------------
@@ -36,8 +35,12 @@ public interface Maker<H, T> {
         return (Maker<List<FBillItem>, FBillItem>) POOL.CCT_MAKER.pick(MakerBIT::new, MakerBIT.class.getName());
     }
 
-    public static Maker<JsonObject, FBillItem> ofBI() {
-        return (Maker<JsonObject, FBillItem>) POOL.CCT_MAKER.pick(MakerBI::new, MakerBI.class.getName());
+    public static Maker<FSettlement, FBillItem> ofBI() {
+        return (Maker<FSettlement, FBillItem>) POOL.CCT_MAKER.pick(MakerBI::new, MakerBI.class.getName());
+    }
+
+    public static Maker<List<FSettlementItem>, FDebt> ofD() {
+        return (Maker<List<FSettlementItem>, FDebt>) POOL.CCT_MAKER.pick(MakerD::new, MakerD.class.getName());
     }
 
     static Maker<String, FTrans> ofT() {
@@ -55,14 +58,6 @@ public interface Maker<H, T> {
 
     // --------------- 实例方法 -------------------
     default Future<T> buildFastAsync(final JsonObject data) {
-        throw new _501NotImplementException(this.getClass());
-    }
-
-    default Future<T> buildAsync(final JsonObject data, final H assist) {
-        throw new _501NotImplementException(this.getClass());
-    }
-
-    default Future<List<T>> buildAsync(final JsonArray data, final H assist) {
         throw new _501NotImplementException(this.getClass());
     }
 }

@@ -2,12 +2,14 @@ package io.vertx.mod.fm.uca.enter;
 
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -48,6 +50,22 @@ class MakerST implements Maker<String, FSettlement> {
                 generated.setCode(generated.getSerial());
             }
             return Ux.future(generated);
+        });
+    }
+
+    // 追加批量模式
+    @Override
+    public Future<List<FSettlement>> buildAsync(final JsonArray data, final String indent) {
+        final List<FSettlement> settlements = Ux.fromJson(data, FSettlement.class);
+
+        final String sigma = Ut.valueString(data, KName.SIGMA);
+        return Ke.umIndent(settlements, sigma, indent, FSettlement::setSerial).compose(generatedList -> {
+            generatedList.forEach(generated -> {
+                if (Objects.isNull(generated.getCode())) {
+                    generated.setCode(generated.getSerial());
+                }
+            });
+            return Ux.future(generatedList);
         });
     }
 

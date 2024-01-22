@@ -5,7 +5,6 @@ import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import cn.vertxup.fm.service.AccountStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -13,6 +12,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.uca.account.Book;
 import io.vertx.mod.fm.uca.enter.Maker;
 import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.up.annotations.Address;
@@ -21,7 +21,6 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import jakarta.inject.Inject;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -34,9 +33,6 @@ import java.util.Set;
 @Queue
 @Deprecated
 public class SettleOldActor {
-
-    @Inject
-    private transient AccountStub accountStub;
 
     @Me
     @Address(Addr.Settle.UP_PAYMENT)
@@ -88,7 +84,7 @@ public class SettleOldActor {
              * 所有的账单子项状态都会是 Finished，简单说流程走到这里账单子项以及账单本身就已经完
              * 成了。
              */
-            .compose(inserted -> Maker.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), data))
+            .compose(inserted -> Maker.ofBI().buildAsync(data.getJsonArray(KName.ITEMS), inserted))
             .compose(items -> {
 
 
@@ -110,7 +106,7 @@ public class SettleOldActor {
                      * 上述状态是系统自动计算，所以不用担心账本的同步问题。
                      */
                     final Set<String> bookKeys = Ut.toSet(data.getJsonArray("book"));
-                    return this.accountStub.inBook(itemsUpdated, bookKeys)
+                    return Book.of().income(itemsUpdated, bookKeys)
                         .compose(nil -> Ux.futureA(items));
                 });
             })
