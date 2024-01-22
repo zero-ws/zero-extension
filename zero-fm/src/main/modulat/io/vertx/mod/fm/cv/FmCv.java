@@ -26,4 +26,9 @@ public interface FmCv {
         String PAYMENT_ID = "paymentId";
         String PAYMENT = "payment";
     }
+
+    interface NUM {
+        String DEBT = "NUM.DEBT";
+        String REFUND = "NUM.REFUND";
+    }
 }

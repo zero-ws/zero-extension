@@ -39,6 +39,10 @@ public interface Maker<H, T> extends MakerOn<H, T> {
         return (Maker<FSettlement, FBillItem>) POOL.CCT_MAKER.pick(MakerBI::new, MakerBI.class.getName());
     }
 
+    public static Maker<List<FSettlementItem>, FDebt> ofD() {
+        return (Maker<List<FSettlementItem>, FDebt>) POOL.CCT_MAKER.pick(MakerD::new, MakerD.class.getName());
+    }
+
     static Maker<String, FTrans> ofT() {
         return (Maker<String, FTrans>) POOL.CCT_MAKER.pick(MakerT::new, MakerT.class.getName());
     }

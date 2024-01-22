@@ -7,7 +7,7 @@ import cn.vertxup.fm.domain.tables.pojos.FBillItem;
 import cn.vertxup.fm.domain.tables.pojos.FBook;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.fm.refine.Fm;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
@@ -30,23 +30,7 @@ class BookAction {
             BigDecimal bookDecimal = Objects.requireNonNull(book.getAmount());
             // Bill for `income` checking
             final BigDecimal adjust = Objects.requireNonNull(item.getAmount());
-            if (bill.getIncome()) {
-                if (FmCv.Status.INVALID.equals(item.getStatus()) || FmCv.Status.FINISHED.equals(item.getStatus())) {
-                    // Move out, Consume, -
-                    bookDecimal = bookDecimal.subtract(adjust);
-                } else {
-                    // Move in, Consume, +
-                    bookDecimal = bookDecimal.add(adjust);
-                }
-            } else {
-                if (FmCv.Status.INVALID.equals(item.getStatus()) || FmCv.Status.FINISHED.equals(item.getStatus())) {
-                    // Move out, Pay, +
-                    bookDecimal = bookDecimal.add(adjust);
-                } else {
-                    // Move in, Pay, -
-                    bookDecimal = bookDecimal.subtract(adjust);
-                }
-            }
+            bookDecimal = Fm.calcAmount(bookDecimal, adjust, bill.getIncome(), item.getStatus());
             book.setUpdatedAt(LocalDateTime.now());
             book.setUpdatedBy(item.getUpdatedBy());
             book.setAmount(bookDecimal);
