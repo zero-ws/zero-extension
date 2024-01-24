@@ -48,9 +48,15 @@ public interface Maker<H, T> extends MakerOn<H, T> {
     }
 
     @SuppressWarnings("unchecked")
-    static Maker<List<FSettlement>, FTrans> ofT() {
-        return (Maker<List<FSettlement>, FTrans>) POOL.CCT_MAKER.pick(MakerTrans::new, MakerTrans.class.getName());
+    static Maker<String, FTrans> ofT() {
+        return (Maker<String, FTrans>) POOL.CCT_MAKER.pick(MakerTrans::new, MakerTrans.class.getName());
     }
+
+    @SuppressWarnings("unchecked")
+    static Maker<FTrans, List<FTransOf>> ofTO() {
+        return (Maker<FTrans, List<FTransOf>>) POOL.CCT_MAKER.pick(MakerTransOf::new, MakerTransOf.class.getName());
+    }
+
 
     // --------------- 更新专用 -------------------
     @SuppressWarnings("unchecked")

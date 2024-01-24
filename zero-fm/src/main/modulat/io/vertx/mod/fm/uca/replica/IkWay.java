@@ -112,6 +112,13 @@ public interface IkWay<INPUT, OUTPUT> {
         return (IkWay<FSettlement, FBillItem>) POOL.CCT_IKWAY.pick(Settlement2BillItem::new, Settlement2BillItem.class.getName());
     }
 
+
+    @SuppressWarnings("unchecked")
+    static IkWay<List<FSettlement>, FTrans> ofST2T() {
+        // List<FSettlement> -> FTrans
+        return (IkWay<List<FSettlement>, FTrans>) POOL.CCT_IKWAY.pick(Settlement2Trans::new, Settlement2Trans.class.getName());
+    }
+
     @SuppressWarnings("unchecked")
     static IkWay<List<FSettlementItem>, FDebt> ofSI2D() {
         // List<FSettlementItem> -> Debt

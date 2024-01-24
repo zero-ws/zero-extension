@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * @author lang : 2024-01-24
  */
-public class Settlement2Trans implements IkWay<List<FSettlement>, FTrans> {
+class Settlement2Trans implements IkWay<List<FSettlement>, FTrans> {
     @Override
     public void transfer(final List<FSettlement> settlements, final FTrans trans) {
         /*

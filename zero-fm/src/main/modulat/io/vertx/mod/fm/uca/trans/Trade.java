@@ -1,9 +1,6 @@
 package io.vertx.mod.fm.uca.trans;
 
-import cn.vertxup.fm.domain.tables.pojos.FBillItem;
-import cn.vertxup.fm.domain.tables.pojos.FDebt;
-import cn.vertxup.fm.domain.tables.pojos.FSettlement;
-import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
+import cn.vertxup.fm.domain.tables.pojos.*;
 import io.horizon.annotations.Memory;
 import io.horizon.exception.web._501NotImplementException;
 import io.horizon.uca.cache.Cc;
@@ -53,6 +50,16 @@ public interface Trade<IN, OUT> {
     @SuppressWarnings("unchecked")
     static Trade<List<FSettlement>, FDebt> step05D() {
         return (Trade<List<FSettlement>, FDebt>) POOL.CCT_TRADE.pick(Step05Debt::new, Step05Debt.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<List<FSettlement>, FTrans> step06T() {
+        return (Trade<List<FSettlement>, FTrans>) POOL.CCT_TRADE.pick(Step06TransSettle::new, Step06TransSettle.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<FTrans, FTransOf> step06TO() {
+        return (Trade<FTrans, FTransOf>) POOL.CCT_TRADE.pick(Step06TransOf::new, Step06TransOf.class.getName());
     }
 
     /*
