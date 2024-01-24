@@ -42,9 +42,9 @@ import java.util.stream.Collectors;
  *
  * @author lang : 2024-01-22
  */
-class SyncBID implements Trade<List<FSettlement>, FDebt> {
+class Step05D implements Trade<List<FSettlement>, FDebt> {
     @Override
-    public Future<FDebt> execute(final JsonObject data, final List<FSettlement> settlements) {
+    public Future<FDebt> flatter(final JsonObject data, final List<FSettlement> settlements) {
         /*
          * 先构造应收 / 退款单据
          * 新版这种类型的单据的单号会有变化，原始

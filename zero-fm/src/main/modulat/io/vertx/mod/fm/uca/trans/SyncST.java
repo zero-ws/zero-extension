@@ -33,7 +33,7 @@ import java.util.Objects;
  */
 class SyncST implements Trade<User, FSettlement> {
     @Override
-    public Future<FSettlement> execute(final JsonObject data, final User user) {
+    public Future<FSettlement> flatter(final JsonObject data, final User user) {
         final String key = Ut.valueString(data, KName.KEY);
         Objects.requireNonNull(key);
         final UxJooq jq = Ux.Jooq.on(FSettlementDao.class);
@@ -46,7 +46,7 @@ class SyncST implements Trade<User, FSettlement> {
     }
 
     @Override
-    public Future<List<FSettlement>> execute(final JsonArray data, final User assist) {
+    public Future<List<FSettlement>> scatter(final JsonArray data, final User assist) {
         final UxJooq jq = Ux.Jooq.on(FSettlementDao.class);
         return jq.<FSettlement>fetchInAsync(KName.KEY, Ut.toJArray(data))
             // 更新 Settlement

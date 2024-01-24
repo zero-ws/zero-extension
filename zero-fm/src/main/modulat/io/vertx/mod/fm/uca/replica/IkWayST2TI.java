@@ -15,6 +15,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
+@Deprecated
 class IkWayST2TI implements IkWay<FSettlement, FTransItem> {
     /**
      * 「付款」结算单的付款处理

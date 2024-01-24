@@ -18,40 +18,42 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
-@SuppressWarnings("all")
 public interface Maker<H, T> extends MakerOn<H, T> {
 
 
     // --------------- 创建新的 -------------------
+    @SuppressWarnings("unchecked")
     static Maker<String, FBill> ofB() {
         return (Maker<String, FBill>) POOL.CCT_MAKER.pick(MakerB::new, MakerB.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static Maker<String, FSettlement> ofST() {
         return (Maker<String, FSettlement>) POOL.CCT_MAKER.pick(MakerST::new, MakerST.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static Maker<List<FBillItem>, FBillItem> ofBIT() {
         return (Maker<List<FBillItem>, FBillItem>) POOL.CCT_MAKER.pick(MakerBIT::new, MakerBIT.class.getName());
     }
 
-    public static Maker<FSettlement, FBillItem> ofBI() {
+    @SuppressWarnings("unchecked")
+    static Maker<FSettlement, FBillItem> ofBI() {
         return (Maker<FSettlement, FBillItem>) POOL.CCT_MAKER.pick(MakerBI::new, MakerBI.class.getName());
     }
 
-    public static Maker<List<FSettlementItem>, FDebt> ofD() {
+    @SuppressWarnings("unchecked")
+    static Maker<List<FSettlementItem>, FDebt> ofD() {
         return (Maker<List<FSettlementItem>, FDebt>) POOL.CCT_MAKER.pick(MakerD::new, MakerD.class.getName());
     }
 
-    static Maker<String, FTrans> ofT() {
-        return (Maker<String, FTrans>) POOL.CCT_MAKER.pick(MakerT::new, MakerT.class.getName());
-    }
-
     // --------------- 更新专用 -------------------
+    @SuppressWarnings("unchecked")
     static Maker<String, FBillItem> upBI() {
         return (Maker<String, FBillItem>) POOL.CCT_MAKER.pick(UpdaterBI::new, UpdaterBI.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static Maker<FSettlement, FSettlementItem> upSTI() {
         return (Maker<FSettlement, FSettlementItem>) POOL.CCT_MAKER.pick(UpdaterSTI::new, UpdaterSTI.class.getName());
     }

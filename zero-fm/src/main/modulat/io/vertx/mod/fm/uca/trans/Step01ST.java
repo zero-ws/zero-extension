@@ -24,9 +24,10 @@ import java.util.List;
  *
  * @author lang : 2024-01-19
  */
-class TradeST implements Trade<EmPay.Type, FSettlement> {
+class Step01ST implements Trade<EmPay.Type, FSettlement> {
+    // type -> FSettlement
     @Override
-    public Future<FSettlement> execute(final JsonObject data, final EmPay.Type type) {
+    public Future<FSettlement> flatter(final JsonObject data, final EmPay.Type type) {
         /*
          * 结算单创建时会生成单号，编号规则存储在模型的赔账 `numbers` 中，且支持多字段配置
          * Zero Extension 模块会直接根据 `X_NUMBER` 中的定义来生成相关编号，执行完成后
@@ -53,6 +54,24 @@ class TradeST implements Trade<EmPay.Type, FSettlement> {
             .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync);
     }
 
+    // type -> List<FSettlement>
+    @Override
+    public Future<List<FSettlement>> scatter(final JsonArray data, final EmPay.Type assist) {
+        /*
+         * 批量结算单模式，先提取 number 的定义，直接从 data 中的 "indent" 中提取唯一
+         * 的序号定义，然后执行批量生成结算单，最终返回生成的结算单列表
+         */
+        final String indent = Ut.valueString(data, KName.INDENT);
+        return Maker.ofST().buildAsync(data, indent)
+            .compose(generatedList -> {
+                generatedList.forEach(generated -> this.executeFinished(generated, assist));
+                return Ux.future(generatedList);
+            })
+            .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync);
+    }
+
+    // ---------------- 私有方法 -----------------
+
     /**
      * 不论批量还是单量，都要根据 {@link EmPay.Type} 来判断是否完成结算单
      * <pre><code>
@@ -72,20 +91,5 @@ class TradeST implements Trade<EmPay.Type, FSettlement> {
             settlement.setFinished(Boolean.TRUE);
             settlement.setFinishedAt(LocalDateTime.now());
         }
-    }
-
-    @Override
-    public Future<List<FSettlement>> execute(final JsonArray data, final EmPay.Type assist) {
-        /*
-         * 批量结算单模式，先提取 number 的定义，直接从 data 中的 "indent" 中提取唯一
-         * 的序号定义，然后执行批量生成结算单，最终返回生成的结算单列表
-         */
-        final String indent = Ut.valueString(data, KName.INDENT);
-        return Maker.ofST().buildAsync(data, indent)
-            .compose(generatedList -> {
-                generatedList.forEach(generated -> this.executeFinished(generated, assist));
-                return Ux.future(generatedList);
-            })
-            .compose(Ux.Jooq.on(FSettlementDao.class)::insertAsync);
     }
 }

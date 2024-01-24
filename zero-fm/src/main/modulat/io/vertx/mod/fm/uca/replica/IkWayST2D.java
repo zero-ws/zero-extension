@@ -15,6 +15,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
+@Deprecated
 class IkWayST2D implements IkWay<FSettlement, FDebt> {
     /**
      * 「结算」延迟结算模式的处理
