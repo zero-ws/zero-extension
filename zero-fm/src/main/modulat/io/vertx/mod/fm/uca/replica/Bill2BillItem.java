@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
-class IkWayB2BI implements IkWay<FBill, FBillItem> {
+class Bill2BillItem implements IkWay<FBill, FBillItem> {
     /**
      * 「入账」单项账单设置，一个账单只有一个子项，基础规则
      * <pre><code>

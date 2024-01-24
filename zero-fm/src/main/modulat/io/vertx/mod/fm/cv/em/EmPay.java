@@ -5,7 +5,10 @@ package io.vertx.mod.fm.cv.em;
  *
  * @author lang : 2023-11-27
  */
-public class EmPay {
+public final class EmPay {
+    private EmPay() {
+    }
+
     /*
      * 支付模式，对应 OBJECT_TYPE
      * - DELAY：延迟支付

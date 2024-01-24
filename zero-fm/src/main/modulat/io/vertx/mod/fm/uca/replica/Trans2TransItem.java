@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * @author lang : 2024-01-18
  */
-class IkWayT2TI implements IkWay<FTrans, FTransItem> {
+class Trans2TransItem implements IkWay<FTrans, FTransItem> {
     /**
      * 「付款」付款单
      * <pre><code>

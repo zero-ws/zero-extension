@@ -11,7 +11,7 @@ import io.vertx.up.unity.Ux;
  *
  * @author lang : 2024-01-18
  */
-class UpdaterBI implements Maker<String, FBillItem> {
+class UpdaterBillItem implements Maker<String, FBillItem> {
     /**
      * 「更新账单子项」
      * 此方法为处理账单子项的更新专用方法，将新的数据写入到账单子项中

@@ -19,7 +19,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
-class MakerB implements Maker<String, FBill> {
+class MakerBill implements Maker<String, FBill> {
 
     /**
      * 「账单」

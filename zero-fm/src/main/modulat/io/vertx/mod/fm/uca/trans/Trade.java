@@ -32,27 +32,27 @@ public interface Trade<IN, OUT> {
 
     @SuppressWarnings("unchecked")
     static Trade<EmPay.Type, FSettlement> step01ST() {
-        return (Trade<EmPay.Type, FSettlement>) POOL.CCT_TRADE.pick(Step01ST::new, Step01ST.class.getName());
+        return (Trade<EmPay.Type, FSettlement>) POOL.CCT_TRADE.pick(Step01Settlement::new, Step01Settlement.class.getName());
     }
 
     @SuppressWarnings("unchecked")
     static Trade<FSettlement, FBillItem> step02BI() {
-        return (Trade<FSettlement, FBillItem>) POOL.CCT_TRADE.pick(Step02BI::new, Step02BI.class.getName());
+        return (Trade<FSettlement, FBillItem>) POOL.CCT_TRADE.pick(Step02BillItem::new, Step02BillItem.class.getName());
     }
 
     @SuppressWarnings("unchecked")
     static Trade<List<FBillItem>, FBillItem> step03B() {
-        return (Trade<List<FBillItem>, FBillItem>) POOL.CCT_TRADE.pick(Step03B::new, Step03B.class.getName());
+        return (Trade<List<FBillItem>, FBillItem>) POOL.CCT_TRADE.pick(Step03Book::new, Step03Book.class.getName());
     }
 
     @SuppressWarnings("unchecked")
     static Trade<FSettlement, FSettlementItem> step04SI() {
-        return (Trade<FSettlement, FSettlementItem>) POOL.CCT_TRADE.pick(Step04SI::new, Step04SI.class.getName());
+        return (Trade<FSettlement, FSettlementItem>) POOL.CCT_TRADE.pick(Step04SettlementItem::new, Step04SettlementItem.class.getName());
     }
 
     @SuppressWarnings("unchecked")
     static Trade<List<FSettlement>, FDebt> step05D() {
-        return (Trade<List<FSettlement>, FDebt>) POOL.CCT_TRADE.pick(Step05D::new, Step05D.class.getName());
+        return (Trade<List<FSettlement>, FDebt>) POOL.CCT_TRADE.pick(Step05Debt::new, Step05Debt.class.getName());
     }
 
     /*

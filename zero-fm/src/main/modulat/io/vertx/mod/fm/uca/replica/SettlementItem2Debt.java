@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * @author lang : 2024-01-22
  */
-class IkWaySI2D implements IkWay<List<FSettlementItem>, FDebt> {
+class SettlementItem2Debt implements IkWay<List<FSettlementItem>, FDebt> {
     @Override
     public void transfer(final List<FSettlementItem> items, final FDebt debt) {
         if (Objects.isNull(items) || items.isEmpty()) {

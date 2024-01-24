@@ -18,7 +18,7 @@ import java.util.Set;
  *
  * @author lang : 2024-01-22
  */
-class Step03B implements Trade<List<FBillItem>, FBillItem> {
+class Step03Book implements Trade<List<FBillItem>, FBillItem> {
     @Override
     public Future<List<FBillItem>> scatter(final JsonObject body, final List<FBillItem> upItems) {
         /*

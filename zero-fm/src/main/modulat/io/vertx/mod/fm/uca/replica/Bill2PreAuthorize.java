@@ -15,7 +15,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
-class IkWayB2A implements IkWay<FBill, FPreAuthorize> {
+class Bill2PreAuthorize implements IkWay<FBill, FPreAuthorize> {
     /**
      * 「入账」设置账单的预授权信息，每一个账单只能有一个预授权信息与之关联，简单说预授权和账单的
      * 关系是 1:1 的基本关系，基础规则如：

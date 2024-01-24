@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  *
  * @author lang : 2024-01-18
  */
-class IkWayBIC implements IkWay<FBillItem, JsonObject> {
+class BillItemCancel implements IkWay<FBillItem, JsonObject> {
     /**
      * 「撤销」撤销操作，直接变更当前账单的基础信息
      * <pre><code>

@@ -14,7 +14,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
-class IkWayBIR implements IkWay<FBillItem, FBillItem> {
+class BillItemRevert implements IkWay<FBillItem, FBillItem> {
     /**
      * 「冲账」冲账操作，将一个账单冲掉（目前是对冲模式）：
      * <pre><code>

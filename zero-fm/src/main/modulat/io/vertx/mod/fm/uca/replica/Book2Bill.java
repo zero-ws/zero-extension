@@ -11,7 +11,7 @@ import cn.vertxup.fm.domain.tables.pojos.FBook;
  *
  * @author lang : 2024-01-18
  */
-class IkWayBkT implements IkWay<FBook, FBill> {
+class Book2Bill implements IkWay<FBook, FBill> {
 
     /**
      * 「转账」转账过程中填充账单信息专用，直接将账本信息复制到账单

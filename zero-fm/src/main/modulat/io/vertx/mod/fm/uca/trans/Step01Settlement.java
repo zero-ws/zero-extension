@@ -24,7 +24,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-19
  */
-class Step01ST implements Trade<EmPay.Type, FSettlement> {
+class Step01Settlement implements Trade<EmPay.Type, FSettlement> {
     // type -> FSettlement
     @Override
     public Future<FSettlement> flatter(final JsonObject data, final EmPay.Type type) {

@@ -15,7 +15,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
-class IkWayBIS implements IkWay<FBillItem, FBillItem> {
+class BillItemSplit implements IkWay<FBillItem, FBillItem> {
     /**
      * 「拆账」拆账操作，将一个账单拆分成多个账单，基础规则如：
      * <pre><code>

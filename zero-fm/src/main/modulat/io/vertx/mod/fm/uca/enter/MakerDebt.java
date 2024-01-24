@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-22
  */
-class MakerD implements Maker<List<FSettlementItem>, FDebt> {
+class MakerDebt implements Maker<List<FSettlementItem>, FDebt> {
     @Override
     public Future<FDebt> buildAsync(final JsonObject data, final List<FSettlementItem> items) {
 

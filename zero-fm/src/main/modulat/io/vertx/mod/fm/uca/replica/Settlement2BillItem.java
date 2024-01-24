@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
-class IkWayST2BI implements IkWay<FSettlement, FBillItem> {
+class Settlement2BillItem implements IkWay<FSettlement, FBillItem> {
     /**
      * 「结算」现结模式的结算处理
      * <pre><code>

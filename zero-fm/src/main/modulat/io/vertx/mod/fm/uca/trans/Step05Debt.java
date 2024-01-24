@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
  *
  * @author lang : 2024-01-22
  */
-class Step05D implements Trade<List<FSettlement>, FDebt> {
+class Step05Debt implements Trade<List<FSettlement>, FDebt> {
     @Override
     public Future<FDebt> flatter(final JsonObject data, final List<FSettlement> settlements) {
         /*

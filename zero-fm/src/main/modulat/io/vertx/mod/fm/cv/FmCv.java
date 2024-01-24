@@ -30,5 +30,6 @@ public interface FmCv {
     interface NUM {
         String DEBT = "NUM.DEBT";
         String REFUND = "NUM.REFUND";
+        String TRANS = "NUM.TRANS";
     }
 }

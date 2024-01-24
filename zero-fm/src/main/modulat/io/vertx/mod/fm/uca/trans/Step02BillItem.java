@@ -38,7 +38,7 @@ import java.util.concurrent.ConcurrentMap;
  *
  * @author lang : 2024-01-19
  */
-class Step02BI implements Trade<FSettlement, FBillItem> {
+class Step02BillItem implements Trade<FSettlement, FBillItem> {
     // FSettlement -> List<FBillItem>
     @Override
     public Future<List<FBillItem>> scatter(final JsonObject data, final FSettlement inserted) {

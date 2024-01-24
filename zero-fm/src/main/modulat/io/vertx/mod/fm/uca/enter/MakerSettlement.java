@@ -21,7 +21,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-18
  */
-class MakerST implements Maker<String, FSettlement> {
+class MakerSettlement implements Maker<String, FSettlement> {
     /**
      * 「结算」
      * 初始化结算单，序号配置直接从 indent 中提取，此处的 data 数据结构如：

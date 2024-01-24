@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-18
  */
-class UpdaterSTI implements Maker<FSettlement, FSettlementItem> {
+class UpdaterSettlementItem implements Maker<FSettlement, FSettlementItem> {
     /**
      * 「生成结算项」
      * 根据结算单以及各个账单子项生成结算子项，此处是从账单跨越到结算单的过程

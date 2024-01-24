@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-18
  */
-class MakerBI implements Maker<FSettlement, FBillItem> {
+class MakerBillItem implements Maker<FSettlement, FBillItem> {
     /**
      * 「账单结算」
      * 结算过程中的账单子项的处理流程，此处只设置更新数据环节
@@ -22,8 +22,8 @@ class MakerBI implements Maker<FSettlement, FBillItem> {
      *     2. status = Finished
      * </code></pre>
      *
-     * @param items 账单子项列表数据
-     * @param data  输入数据
+     * @param items      账单子项列表数据
+     * @param settlement 输入数据
      */
     @Override
     public Future<List<FBillItem>> buildAsync(final JsonArray items, final FSettlement settlement) {

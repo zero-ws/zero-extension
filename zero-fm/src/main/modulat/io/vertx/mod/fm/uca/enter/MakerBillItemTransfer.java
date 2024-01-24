@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-18
  */
-class MakerBIT implements Maker<List<FBillItem>, FBillItem> {
+class MakerBillItemTransfer implements Maker<List<FBillItem>, FBillItem> {
 
     /**
      * 「更新账单子项」（批量版）

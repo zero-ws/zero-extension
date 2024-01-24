@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
-class IkWayBIT implements IkWay<List<FBillItem>, FBillItem> {
+class BillItemTransfer implements IkWay<List<FBillItem>, FBillItem> {
 
 
     /**

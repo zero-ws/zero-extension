@@ -31,7 +31,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-22
  */
-class SyncST implements Trade<User, FSettlement> {
+class Sync01Settlement implements Trade<User, FSettlement> {
     @Override
     public Future<FSettlement> flatter(final JsonObject data, final User user) {
         final String key = Ut.valueString(data, KName.KEY);

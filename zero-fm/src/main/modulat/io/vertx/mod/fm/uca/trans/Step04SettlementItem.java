@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentMap;
  *
  * @author lang : 2024-01-22
  */
-class Step04SI implements Trade<FSettlement, FSettlementItem> {
+class Step04SettlementItem implements Trade<FSettlement, FSettlementItem> {
     @Override
     public Future<List<FSettlementItem>> scatter(final JsonArray data, final FSettlement inserted) {
         /*
