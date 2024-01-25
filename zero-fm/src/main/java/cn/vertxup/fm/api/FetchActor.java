@@ -8,6 +8,7 @@ import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.service.BookStub;
 import cn.vertxup.fm.service.FetchStub;
 import cn.vertxup.fm.service.end.QrStub;
+import cn.vertxup.fm.service.end.TransStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -39,6 +40,9 @@ public class FetchActor {
     private transient BookStub bookStub;
     @Inject
     private transient QrStub qrStub;
+
+    @Inject
+    private transient TransStub transStub;
 
     @Address(Addr.BillItem.FETCH_AGGR)
     public Future<JsonObject> fetchAggr(final String orderId) {
@@ -109,20 +113,10 @@ public class FetchActor {
             return this.fetchStub.fetchByBills(bills).compose(items -> {
                 response.put(KName.ITEMS, Ux.toJson(items));
                 return this.fetchStub.fetchSettlements(items);
-            }).compose(settlements -> this.fetchStub.fetchTransItems(settlements).compose(payments -> {
+            }).compose(settlements -> this.transStub.fetchBySettle(settlements).compose(transItems -> {
                 // Append `payment` into settlement list ( JsonArray )
-                final JsonArray paymentJ = Ux.toJson(payments);
-                final ConcurrentMap<String, JsonArray> paymentMap =
-                    Ut.elementGroup(paymentJ, "settlementId");
+                // TODO:
                 final JsonArray settlementJ = Ux.toJson(settlements);
-                Ut.itJArray(settlementJ).forEach(settlement -> {
-                    final String settleKey = settlement.getString(KName.KEY);
-                    if (paymentMap.containsKey(settleKey)) {
-                        settlement.put("payment", paymentMap.getOrDefault(settleKey, new JsonArray()));
-                    } else {
-                        settlement.put("payment", new JsonArray());
-                    }
-                });
                 response.put("settlements", settlementJ);
                 return Ux.future(response);
             })).otherwise(Ux.otherwise(new JsonObject()));

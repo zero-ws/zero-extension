@@ -1,6 +1,9 @@
 package cn.vertxup.fm.service;
 
-import cn.vertxup.fm.domain.tables.pojos.*;
+import cn.vertxup.fm.domain.tables.pojos.FBill;
+import cn.vertxup.fm.domain.tables.pojos.FBillItem;
+import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import io.vertx.core.Future;
 
 import java.util.List;
@@ -87,15 +90,4 @@ public interface FetchStub {
      * @return {@link io.vertx.core.Future}
      */
     Future<List<FSettlementItem>> fetchBySettlements(List<FSettlement> settlements);
-
-
-    /**
-     * 根据 ER 模型图，结算单查询交易明细信息，此处在旧版本基础中会有所变化
-     *
-     * @param settlements 结算单列表
-     *
-     * @return {@link io.vertx.core.Future}
-     */
-    @Deprecated
-    Future<List<FTransItem>> fetchTransItems(List<FSettlement> settlements);
 }

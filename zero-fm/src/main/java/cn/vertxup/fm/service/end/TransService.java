@@ -1,9 +1,11 @@
 package cn.vertxup.fm.service.end;
 
 import cn.vertxup.fm.domain.tables.daos.FTransItemDao;
+import cn.vertxup.fm.domain.tables.daos.FTransOfDao;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FTrans;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
+import cn.vertxup.fm.domain.tables.pojos.FTransOf;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -16,6 +18,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author lang : 2024-01-24
@@ -47,5 +50,24 @@ public class TransService implements TransStub {
                 return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments);
             })
             .compose(nil -> Ux.future(trans));
+    }
+
+    @Override
+    public Future<List<FTransItem>> fetchBySettle(final List<FSettlement> settlements) {
+        // List<FSettlement> -> Trans -> List<FTransItem>
+        final Set<String> settleIds = Ut.valueSetString(settlements, FSettlement::getKey);
+        final JsonObject condition = Ux.whereAnd();
+        condition.put("objectType", EmTran.Type.SETTLEMENT.name());
+        condition.put("objectId,i", Ut.toJArray(settleIds));
+        return Ux.Jooq.on(FTransOfDao.class).<FTransOf>fetchAsync(condition)
+            .compose(transOf -> {
+                final Set<String> transIds = Ut.valueSetString(transOf, FTransOf::getTransId);
+
+
+                // 跳过选择，直接查询 FTransItem
+                final JsonObject condTrans = Ux.whereAnd();
+                condTrans.put("transactionId,i", Ut.toJArray(transIds));
+                return Ux.Jooq.on(FTransItemDao.class).fetchAsync(condTrans);
+            });
     }
 }
