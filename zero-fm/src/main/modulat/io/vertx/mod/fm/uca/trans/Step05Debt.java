@@ -1,6 +1,7 @@
 package io.vertx.mod.fm.uca.trans;
 
 import cn.vertxup.fm.domain.tables.daos.FDebtDao;
+import cn.vertxup.fm.domain.tables.daos.FSettlementItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
@@ -69,7 +70,7 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
                 // 更新 items
                 final List<FSettlementItem> items = ref.get();
                 items.forEach(item -> item.setDebtId(inserted.getKey()));
-                return Ux.Jooq.on(FSettlementItem.class).updateAsync(items)
+                return Ux.Jooq.on(FSettlementItemDao.class).updateAsync(items)
                     .compose(nil -> Ux.future(inserted));
             });
     }
@@ -88,7 +89,7 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
         final JsonObject condition = Ux.whereAnd();
         condition.put(KName.SIGMA, sigma);
         condition.put(KName.Finance.SETTLEMENT_ID + ",i", Ut.toJArray(ids));
-        return Ux.Jooq.on(FSettlementItem.class).<FSettlementItem>fetchAndAsync(condition).compose(items -> {
+        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchAndAsync(condition).compose(items -> {
             // 如果没有选择模式，则直接返回所有的结算单明细，否则返回选择的结算单明细
             if (Objects.isNull(keySelected) || keySelected.isEmpty()) {
                 return Ux.future(items);
