@@ -42,6 +42,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
     private String nameBilling;
     private String nameSelling;
     private String orderId;
+    private String modelId;
+    private String modelKey;
     private String sigma;
     private String language;
     private Boolean active;
@@ -75,6 +77,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         this.nameBilling = value.getNameBilling();
         this.nameSelling = value.getNameSelling();
         this.orderId = value.getOrderId();
+        this.modelId = value.getModelId();
+        this.modelKey = value.getModelKey();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -107,6 +111,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         String nameBilling,
         String nameSelling,
         String orderId,
+        String modelId,
+        String modelKey,
         String sigma,
         String language,
         Boolean active,
@@ -137,6 +143,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         this.nameBilling = nameBilling;
         this.nameSelling = nameSelling;
         this.orderId = orderId;
+        this.modelId = modelId;
+        this.modelKey = modelKey;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -514,6 +522,44 @@ public class FInvoice implements VertxPojo, IFInvoice {
     }
 
     /**
+     * Getter for <code>ZDB.F_INVOICE.MODEL_ID</code>. 「modelId」-
+     * 关联的模型identifier，用于描述
+     */
+    @Override
+    public String getModelId() {
+        return this.modelId;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_INVOICE.MODEL_ID</code>. 「modelId」-
+     * 关联的模型identifier，用于描述
+     */
+    @Override
+    public FInvoice setModelId(String modelId) {
+        this.modelId = modelId;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_INVOICE.MODEL_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述哪一个Model中的记录
+     */
+    @Override
+    public String getModelKey() {
+        return this.modelKey;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_INVOICE.MODEL_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述哪一个Model中的记录
+     */
+    @Override
+    public FInvoice setModelKey(String modelKey) {
+        this.modelKey = modelKey;
+        return this;
+    }
+
+    /**
      * Getter for <code>ZDB.F_INVOICE.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
@@ -784,6 +830,18 @@ public class FInvoice implements VertxPojo, IFInvoice {
         }
         else if (!this.orderId.equals(other.orderId))
             return false;
+        if (this.modelId == null) {
+            if (other.modelId != null)
+                return false;
+        }
+        else if (!this.modelId.equals(other.modelId))
+            return false;
+        if (this.modelKey == null) {
+            if (other.modelKey != null)
+                return false;
+        }
+        else if (!this.modelKey.equals(other.modelKey))
+            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -860,6 +918,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         result = prime * result + ((this.nameBilling == null) ? 0 : this.nameBilling.hashCode());
         result = prime * result + ((this.nameSelling == null) ? 0 : this.nameSelling.hashCode());
         result = prime * result + ((this.orderId == null) ? 0 : this.orderId.hashCode());
+        result = prime * result + ((this.modelId == null) ? 0 : this.modelId.hashCode());
+        result = prime * result + ((this.modelKey == null) ? 0 : this.modelKey.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -896,6 +956,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         sb.append(", ").append(nameBilling);
         sb.append(", ").append(nameSelling);
         sb.append(", ").append(orderId);
+        sb.append(", ").append(modelId);
+        sb.append(", ").append(modelKey);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -936,6 +998,8 @@ public class FInvoice implements VertxPojo, IFInvoice {
         setNameBilling(from.getNameBilling());
         setNameSelling(from.getNameSelling());
         setOrderId(from.getOrderId());
+        setModelId(from.getModelId());
+        setModelKey(from.getModelKey());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());

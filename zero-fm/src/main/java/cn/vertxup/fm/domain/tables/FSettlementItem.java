@@ -17,12 +17,12 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function22;
+import org.jooq.Function21;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row22;
+import org.jooq.Row21;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -125,12 +125,6 @@ public class FSettlementItem extends TableImpl<FSettlementItemRecord> {
      * The column <code>ZDB.F_SETTLEMENT_ITEM.DEBT_ID</code>. 「debtId」- 应收账单ID
      */
     public final TableField<FSettlementItemRecord, String> DEBT_ID = createField(DSL.name("DEBT_ID"), SQLDataType.VARCHAR(36), this, "「debtId」- 应收账单ID");
-
-    /**
-     * The column <code>ZDB.F_SETTLEMENT_ITEM.INVOICE_ID</code>. 「invoiceId」-
-     * 开票ID
-     */
-    public final TableField<FSettlementItemRecord, String> INVOICE_ID = createField(DSL.name("INVOICE_ID"), SQLDataType.VARCHAR(36), this, "「invoiceId」- 开票ID");
 
     /**
      * The column <code>ZDB.F_SETTLEMENT_ITEM.SIGMA</code>. 「sigma」- 统一标识
@@ -270,18 +264,18 @@ public class FSettlementItem extends TableImpl<FSettlementItemRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row22 type methods
+    // Row21 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row22<String, String, String, String, Boolean, String, BigDecimal, String, String, String, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row22) super.fieldsRow();
+    public Row21<String, String, String, String, Boolean, String, BigDecimal, String, String, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row21) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function22<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function21<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -289,7 +283,7 @@ public class FSettlementItem extends TableImpl<FSettlementItemRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function22<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function21<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

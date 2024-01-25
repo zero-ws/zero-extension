@@ -1,5 +1,6 @@
 package cn.vertxup.fm.api.end;
 
+import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.service.end.DebtStub;
 import cn.vertxup.fm.service.end.SettleStub;
 import cn.vertxup.fm.service.end.TransStub;
@@ -68,7 +69,7 @@ public class SettleActor {
 
             // 2. 创建交易单和交易明细
             .compose(settlement -> this.transStub.createAsync(body, settlement))
-            .compose(nil -> Ux.future(settleRef.get()));
+            .compose(nil -> Ux.futureJ((FSettlement) settleRef.get()));
     }
 
     /**
@@ -120,6 +121,6 @@ public class SettleActor {
 
             // 2. 创建应收单，更新结算明细中的 debtId
             .compose(settlement -> this.debtStub.createAsync(body, settlement))
-            .compose(nil -> Ux.future(settleRef.get()));
+            .compose(nil -> Ux.futureJ((FSettlement) settleRef.get()));
     }
 }
