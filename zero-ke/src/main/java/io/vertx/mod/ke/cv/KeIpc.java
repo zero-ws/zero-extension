@@ -75,8 +75,9 @@ public interface KeIpc {
             .add("/api/my/menu/save")                   // zero-ambient
             .add("/api/up/flow")                        // zero-wf
             .add("/api/linkage/sync")                   // zero-wf, zero-ambient
-            .add("/api/income/")                          // zero-fm
-            .add("/api/income-item/")                     // zero-fm
+            .add("/api/bill/")                          // zero-fm
+            .add("/api/bill-item/")                     // zero-fm
+            .add("/api/trans/")                         // zero-fm
             .add("/api/settle/")                        // zero-fm
             .add("/api/payment");                       // zero-fm
 
