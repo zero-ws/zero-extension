@@ -1,9 +1,13 @@
 package io.vertx.mod.fm.uca.trans;
 
+import cn.vertxup.fm.domain.tables.pojos.*;
+import io.horizon.annotations.Memory;
 import io.horizon.exception.web._501NotImplementException;
+import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.cv.em.EmPay;
 
 import java.util.List;
 
@@ -22,21 +26,70 @@ import java.util.List;
  * @author lang : 2024-01-19
  */
 public interface Trade<IN, OUT> {
-    // 第一种形态：JsonObject + IN
-    default Future<OUT> begin(final JsonObject data) {
-        return this.execute(data, null);
+
+    @SuppressWarnings("unchecked")
+    static Trade<EmPay.Type, FSettlement> step01ST() {
+        return (Trade<EmPay.Type, FSettlement>) POOL.CCT_TRADE.pick(Step01Settlement::new, Step01Settlement.class.getName());
     }
 
-    default Future<OUT> execute(final JsonObject data, final IN assist) {
+    @SuppressWarnings("unchecked")
+    static Trade<FSettlement, FBillItem> step02BI() {
+        return (Trade<FSettlement, FBillItem>) POOL.CCT_TRADE.pick(Step02BillItem::new, Step02BillItem.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<List<FBillItem>, FBillItem> step03B() {
+        return (Trade<List<FBillItem>, FBillItem>) POOL.CCT_TRADE.pick(Step03Book::new, Step03Book.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<FSettlement, FSettlementItem> step04SI() {
+        return (Trade<FSettlement, FSettlementItem>) POOL.CCT_TRADE.pick(Step04SettlementItem::new, Step04SettlementItem.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<List<FSettlement>, FDebt> step05D() {
+        return (Trade<List<FSettlement>, FDebt>) POOL.CCT_TRADE.pick(Step05Debt::new, Step05Debt.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<List<FSettlement>, FTrans> step06T() {
+        return (Trade<List<FSettlement>, FTrans>) POOL.CCT_TRADE.pick(Step06TransSettle::new, Step06TransSettle.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<FTrans, FTransOf> step06TO() {
+        return (Trade<FTrans, FTransOf>) POOL.CCT_TRADE.pick(Step06TransOf::new, Step06TransOf.class.getName());
+    }
+
+    /*
+     * 标准接口
+     * - IN -> OUT               单到单
+     * - List<IN> -> List<OUT>   多到多    （多到多会包含散开的情况）
+     */
+    default Future<OUT> flatter(final JsonObject data, final IN assist) {
         throw new _501NotImplementException(this.getClass());
     }
 
-    // 第二种形态：JsonArray + List<IN>
-    default Future<List<OUT>> begin(final JsonArray data) {
-        return this.execute(data, null);
-    }
-
-    default Future<List<OUT>> execute(final JsonArray data, final IN assist) {
+    default Future<List<OUT>> flatter(final JsonArray data, final List<IN> assist) {
         throw new _501NotImplementException(this.getClass());
     }
+
+    /*
+     * 散开接口
+     * - IN -> List<OUT>         单到多的散开接口
+     */
+    default Future<List<OUT>> scatter(final JsonObject data, final IN assist) {
+        throw new _501NotImplementException(this.getClass());
+    }
+
+    default Future<List<OUT>> scatter(final JsonArray data, final IN assist) {
+        throw new _501NotImplementException(this.getClass());
+    }
+}
+
+@SuppressWarnings("all")
+interface POOL {
+    @Memory(Trade.class)
+    Cc<String, Trade> CCT_TRADE = Cc.openThread();
 }

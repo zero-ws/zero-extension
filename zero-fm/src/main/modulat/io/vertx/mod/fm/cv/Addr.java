@@ -57,6 +57,8 @@ public interface Addr {
 
     interface Trans {
 
+        String START_BATCH_DIRECT = Prefix._EVENT + "TRANS/BATCH/DIRECT";
+
         String START_DIRECT = Prefix._EVENT + "TRANS/DIRECT";
 
         String START_DEBT = Prefix._EVENT + "TRANS/DEBT";

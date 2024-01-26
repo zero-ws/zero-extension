@@ -233,6 +233,30 @@ public interface IFInvoice extends VertxPojo, Serializable {
     public String getOrderId();
 
     /**
+     * Setter for <code>ZDB.F_INVOICE.MODEL_ID</code>. 「modelId」-
+     * 关联的模型identifier，用于描述
+     */
+    public IFInvoice setModelId(String value);
+
+    /**
+     * Getter for <code>ZDB.F_INVOICE.MODEL_ID</code>. 「modelId」-
+     * 关联的模型identifier，用于描述
+     */
+    public String getModelId();
+
+    /**
+     * Setter for <code>ZDB.F_INVOICE.MODEL_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述哪一个Model中的记录
+     */
+    public IFInvoice setModelKey(String value);
+
+    /**
+     * Getter for <code>ZDB.F_INVOICE.MODEL_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述哪一个Model中的记录
+     */
+    public String getModelKey();
+
+    /**
      * Setter for <code>ZDB.F_INVOICE.SIGMA</code>. 「sigma」- 统一标识
      */
     public IFInvoice setSigma(String value);
@@ -351,6 +375,8 @@ public interface IFInvoice extends VertxPojo, Serializable {
                 setOrThrow(this::setNameBilling,json::getString,"NAME_BILLING","java.lang.String");
                 setOrThrow(this::setNameSelling,json::getString,"NAME_SELLING","java.lang.String");
                 setOrThrow(this::setOrderId,json::getString,"ORDER_ID","java.lang.String");
+                setOrThrow(this::setModelId,json::getString,"MODEL_ID","java.lang.String");
+                setOrThrow(this::setModelKey,json::getString,"MODEL_KEY","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
@@ -387,6 +413,8 @@ public interface IFInvoice extends VertxPojo, Serializable {
                 json.put("NAME_BILLING",getNameBilling());
                 json.put("NAME_SELLING",getNameSelling());
                 json.put("ORDER_ID",getOrderId());
+                json.put("MODEL_ID",getModelId());
+                json.put("MODEL_KEY",getModelKey());
                 json.put("SIGMA",getSigma());
                 json.put("LANGUAGE",getLanguage());
                 json.put("ACTIVE",getActive());

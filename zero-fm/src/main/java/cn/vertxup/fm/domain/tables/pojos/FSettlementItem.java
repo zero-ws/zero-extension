@@ -34,7 +34,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     private String relatedId;
     private String settlementId;
     private String debtId;
-    private String invoiceId;
     private String sigma;
     private String language;
     private Boolean active;
@@ -60,7 +59,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.relatedId = value.getRelatedId();
         this.settlementId = value.getSettlementId();
         this.debtId = value.getDebtId();
-        this.invoiceId = value.getInvoiceId();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -85,7 +83,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         String relatedId,
         String settlementId,
         String debtId,
-        String invoiceId,
         String sigma,
         String language,
         Boolean active,
@@ -108,7 +105,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.relatedId = relatedId;
         this.settlementId = settlementId;
         this.debtId = debtId;
-        this.invoiceId = invoiceId;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -358,25 +354,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     }
 
     /**
-     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.INVOICE_ID</code>. 「invoiceId」-
-     * 开票ID
-     */
-    @Override
-    public String getInvoiceId() {
-        return this.invoiceId;
-    }
-
-    /**
-     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.INVOICE_ID</code>. 「invoiceId」-
-     * 开票ID
-     */
-    @Override
-    public FSettlementItem setInvoiceId(String invoiceId) {
-        this.invoiceId = invoiceId;
-        return this;
-    }
-
-    /**
      * Getter for <code>ZDB.F_SETTLEMENT_ITEM.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
@@ -609,12 +586,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         }
         else if (!this.debtId.equals(other.debtId))
             return false;
-        if (this.invoiceId == null) {
-            if (other.invoiceId != null)
-                return false;
-        }
-        else if (!this.invoiceId.equals(other.invoiceId))
-            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -683,7 +654,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         result = prime * result + ((this.relatedId == null) ? 0 : this.relatedId.hashCode());
         result = prime * result + ((this.settlementId == null) ? 0 : this.settlementId.hashCode());
         result = prime * result + ((this.debtId == null) ? 0 : this.debtId.hashCode());
-        result = prime * result + ((this.invoiceId == null) ? 0 : this.invoiceId.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -712,7 +682,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         sb.append(", ").append(relatedId);
         sb.append(", ").append(settlementId);
         sb.append(", ").append(debtId);
-        sb.append(", ").append(invoiceId);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -745,7 +714,6 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         setRelatedId(from.getRelatedId());
         setSettlementId(from.getSettlementId());
         setDebtId(from.getDebtId());
-        setInvoiceId(from.getInvoiceId());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());

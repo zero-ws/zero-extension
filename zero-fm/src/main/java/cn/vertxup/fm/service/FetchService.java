@@ -1,13 +1,18 @@
 package cn.vertxup.fm.service;
 
-import cn.vertxup.fm.domain.tables.daos.*;
-import cn.vertxup.fm.domain.tables.pojos.*;
+import cn.vertxup.fm.domain.tables.daos.FBillDao;
+import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
+import cn.vertxup.fm.domain.tables.daos.FSettlementDao;
+import cn.vertxup.fm.domain.tables.daos.FSettlementItemDao;
+import cn.vertxup.fm.domain.tables.pojos.FBill;
+import cn.vertxup.fm.domain.tables.pojos.FBillItem;
+import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import jakarta.inject.Inject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +24,6 @@ import java.util.stream.Collectors;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class FetchService implements FetchStub {
-    @Inject
-    private transient BookStub bookStub;
-
-    @Override
-    public Future<List<FTransItem>> fetchTransItems(final List<FSettlement> settlements) {
-        final Set<String> settlementIds = Ut.valueSetString(settlements, FSettlement::getKey);
-        final JsonObject condition = Ux.whereAnd();
-        condition.put(KName.Finance.SETTLEMENT_ID + ",i", Ut.toJArray(settlementIds));
-        return Ux.Jooq.on(FTransItemDao.class).fetchAsync(condition);
-    }
 
     @Override
     public Future<List<FBill>> fetchByOrder(final String orderId) {

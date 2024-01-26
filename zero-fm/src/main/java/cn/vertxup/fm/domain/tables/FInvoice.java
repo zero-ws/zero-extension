@@ -158,6 +158,18 @@ public class FInvoice extends TableImpl<FInvoiceRecord> {
     public final TableField<FInvoiceRecord, String> ORDER_ID = createField(DSL.name("ORDER_ID"), SQLDataType.VARCHAR(36), this, "「orderId」- 订单对应的订单ID");
 
     /**
+     * The column <code>ZDB.F_INVOICE.MODEL_ID</code>. 「modelId」-
+     * 关联的模型identifier，用于描述
+     */
+    public final TableField<FInvoiceRecord, String> MODEL_ID = createField(DSL.name("MODEL_ID"), SQLDataType.VARCHAR(255), this, "「modelId」- 关联的模型identifier，用于描述");
+
+    /**
+     * The column <code>ZDB.F_INVOICE.MODEL_KEY</code>. 「modelKey」-
+     * 关联的模型记录ID，用于描述哪一个Model中的记录
+     */
+    public final TableField<FInvoiceRecord, String> MODEL_KEY = createField(DSL.name("MODEL_KEY"), SQLDataType.VARCHAR(36), this, "「modelKey」- 关联的模型记录ID，用于描述哪一个Model中的记录");
+
+    /**
      * The column <code>ZDB.F_INVOICE.SIGMA</code>. 「sigma」- 统一标识
      */
     public final TableField<FInvoiceRecord, String> SIGMA = createField(DSL.name("SIGMA"), SQLDataType.VARCHAR(32), this, "「sigma」- 统一标识");

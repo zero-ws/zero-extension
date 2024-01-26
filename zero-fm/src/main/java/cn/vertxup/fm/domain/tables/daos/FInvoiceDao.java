@@ -349,6 +349,36 @@ public class FInvoiceDao extends AbstractVertxDAO<FInvoiceRecord, cn.vertxup.fm.
         }
 
         /**
+     * Find records that have <code>MODEL_ID IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FInvoice>> findManyByModelId(Collection<String> values) {
+                return findManyByCondition(FInvoice.F_INVOICE.MODEL_ID.in(values));
+        }
+
+        /**
+     * Find records that have <code>MODEL_ID IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FInvoice>> findManyByModelId(Collection<String> values, int limit) {
+                return findManyByCondition(FInvoice.F_INVOICE.MODEL_ID.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>MODEL_KEY IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FInvoice>> findManyByModelKey(Collection<String> values) {
+                return findManyByCondition(FInvoice.F_INVOICE.MODEL_KEY.in(values));
+        }
+
+        /**
+     * Find records that have <code>MODEL_KEY IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FInvoice>> findManyByModelKey(Collection<String> values, int limit) {
+                return findManyByCondition(FInvoice.F_INVOICE.MODEL_KEY.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>SIGMA IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FInvoice>> findManyBySigma(Collection<String> values) {

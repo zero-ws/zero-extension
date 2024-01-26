@@ -13,7 +13,7 @@ import java.util.List;
  * 中的设置程序，将服务逻辑抽象并且压入底层执行处理，以更加细粒度的方式来
  * 完成数据的拷贝动作。编号规则如：
  * <pre><code>
- *        {@link IkWayB2BI}
+ *        {@link Bill2BillItem}
  *        账单编号:              CODE
  *        账单明细编号:           - CODE-01
  *                              - CODE-02
@@ -62,68 +62,73 @@ import java.util.List;
  *
  * @author lang : 2024-01-18
  */
-@SuppressWarnings("all")
 public interface IkWay<INPUT, OUTPUT> {
 
+    @SuppressWarnings("unchecked")
     static IkWay<FBill, FBillItem> ofB2BI() {
         // Bill -> BillItem, Bill -> List<BillItem>
-        return (IkWay<FBill, FBillItem>) POOL.CCT_IKWAY.pick(IkWayB2BI::new, IkWayB2BI.class.getName());
+        return (IkWay<FBill, FBillItem>) POOL.CCT_IKWAY.pick(Bill2BillItem::new, Bill2BillItem.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<FBill, FPreAuthorize> ofB2A() {
         // Bill -> PreAuthorize
-        return (IkWay<FBill, FPreAuthorize>) POOL.CCT_IKWAY.pick(IkWayB2A::new, IkWayB2A.class.getName());
+        return (IkWay<FBill, FPreAuthorize>) POOL.CCT_IKWAY.pick(Bill2PreAuthorize::new, Bill2PreAuthorize.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<FBillItem, FBillItem> ofBIS() {
         // BillItem -> BillItem
-        return (IkWay<FBillItem, FBillItem>) POOL.CCT_IKWAY.pick(IkWayBIS::new, IkWayBIS.class.getName());
+        return (IkWay<FBillItem, FBillItem>) POOL.CCT_IKWAY.pick(BillItemSplit::new, BillItemSplit.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<FBillItem, FBillItem> ofBIR() {
         // BillItem -> BillItem
-        return (IkWay<FBillItem, FBillItem>) POOL.CCT_IKWAY.pick(IkWayBIR::new, IkWayBIR.class.getName());
+        return (IkWay<FBillItem, FBillItem>) POOL.CCT_IKWAY.pick(BillItemRevert::new, BillItemRevert.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<List<FBillItem>, FBillItem> ofBIT() {
         // BillItem -> BillItem
-        return (IkWay<List<FBillItem>, FBillItem>) POOL.CCT_IKWAY.pick(IkWayBIT::new, IkWayBIT.class.getName());
+        return (IkWay<List<FBillItem>, FBillItem>) POOL.CCT_IKWAY.pick(BillItemTransfer::new, BillItemTransfer.class.getName());
     }
 
-    @SuppressWarnings("all")
+    @SuppressWarnings("unchecked")
     static IkWay<FBook, FBill> ofBKT() {
         // Book -> Bill
-        return (IkWay<FBook, FBill>) POOL.CCT_IKWAY.pick(IkWayBkT::new, IkWayBkT.class.getName());
+        return (IkWay<FBook, FBill>) POOL.CCT_IKWAY.pick(Book2Bill::new, Book2Bill.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<FBillItem, JsonObject> ofBIC() {
         // BillItem -> JsonObject
-        return (IkWay<FBillItem, JsonObject>) POOL.CCT_IKWAY.pick(IkWayBIC::new, IkWayBIC.class.getName());
+        return (IkWay<FBillItem, JsonObject>) POOL.CCT_IKWAY.pick(BillItemCancel::new, BillItemCancel.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<FSettlement, FBillItem> ofST2BI() {
         // Settlement -> BillItem
-        return (IkWay<FSettlement, FBillItem>) POOL.CCT_IKWAY.pick(IkWayST2BI::new, IkWayST2BI.class.getName());
+        return (IkWay<FSettlement, FBillItem>) POOL.CCT_IKWAY.pick(Settlement2BillItem::new, Settlement2BillItem.class.getName());
     }
 
-    static IkWay<FSettlement, FDebt> ofST2D() {
-        // Settlement -> Debt
-        return (IkWay<FSettlement, FDebt>) POOL.CCT_IKWAY.pick(IkWayST2D::new, IkWayST2D.class.getName());
+
+    @SuppressWarnings("unchecked")
+    static IkWay<List<FSettlement>, FTrans> ofST2T() {
+        // List<FSettlement> -> FTrans
+        return (IkWay<List<FSettlement>, FTrans>) POOL.CCT_IKWAY.pick(Settlement2Trans::new, Settlement2Trans.class.getName());
     }
 
+    @SuppressWarnings("unchecked")
     static IkWay<List<FSettlementItem>, FDebt> ofSI2D() {
         // List<FSettlementItem> -> Debt
-        return (IkWay<List<FSettlementItem>, FDebt>) POOL.CCT_IKWAY.pick(IkWaySI2D::new, IkWaySI2D.class.getName());
+        return (IkWay<List<FSettlementItem>, FDebt>) POOL.CCT_IKWAY.pick(SettlementItem2Debt::new, SettlementItem2Debt.class.getName());
     }
 
-    static IkWay<FSettlement, FTransItem> ofST2TI() {
-        // Settlement -> TransItem
-        return (IkWay<FSettlement, FTransItem>) POOL.CCT_IKWAY.pick(IkWayST2TI::new, IkWayST2TI.class.getName());
-    }
-
+    @SuppressWarnings("unchecked")
     static IkWay<FTrans, FTransItem> ofT2TI() {
         // Trans -> TransItem
-        return (IkWay<FTrans, FTransItem>) POOL.CCT_IKWAY.pick(IkWayT2TI::new, IkWayT2TI.class.getName());
+        return (IkWay<FTrans, FTransItem>) POOL.CCT_IKWAY.pick(Trans2TransItem::new, Trans2TransItem.class.getName());
     }
 
     default void transfer(final INPUT input, final OUTPUT output) {

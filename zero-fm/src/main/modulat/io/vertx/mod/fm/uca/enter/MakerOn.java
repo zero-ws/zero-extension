@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-19
  */
-public interface MakerOn<H, T> {
+interface MakerOn<H, T> {
 
     default Future<T> buildAsync(final JsonObject data, final H assist) {
         throw new _501NotImplementException(this.getClass());
