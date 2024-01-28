@@ -1,6 +1,5 @@
 package cn.vertxup.fm.service.end;
 
-import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -14,13 +13,10 @@ import java.util.concurrent.ConcurrentMap;
 public interface QrStub {
 
     // Fetch Book with income and items
-    Future<JsonObject> fetchSettlement(String key);
+    Future<JsonObject> fetchSettlement(JsonArray keys);
 
     // Fetch Debt
-    Future<JsonObject> fetchDebt(String key);
+    Future<JsonObject> fetchDebt(JsonArray keys);
 
-    Future<ConcurrentMap<String, FDebt>> fetchDebtMap(Set<String> settlementId);
-
-    // Fetch Payment Related
-    Future<JsonArray> fetchPayment(String settlementId, boolean tree);
+    Future<ConcurrentMap<String, String>> statusSettlement(Set<String> keys);
 }

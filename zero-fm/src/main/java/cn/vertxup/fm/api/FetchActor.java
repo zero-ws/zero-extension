@@ -2,9 +2,7 @@ package cn.vertxup.fm.api;
 
 import cn.vertxup.fm.domain.tables.daos.FBillDao;
 import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
-import cn.vertxup.fm.domain.tables.daos.FSettlementDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
-import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.service.BookStub;
 import cn.vertxup.fm.service.FetchStub;
 import cn.vertxup.fm.service.end.QrStub;
@@ -14,7 +12,6 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.atom.BillData;
 import io.vertx.mod.fm.cv.Addr;
-import io.vertx.mod.fm.cv.em.EmDebt;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
@@ -113,13 +110,11 @@ public class FetchActor {
             return this.fetchStub.fetchByBills(bills).compose(items -> {
                 response.put(KName.ITEMS, Ux.toJson(items));
                 return this.fetchStub.fetchSettlements(items);
-            }).compose(settlements -> this.transStub.fetchBySettle(settlements).compose(transItems -> {
-                // Append `payment` into settlement list ( JsonArray )
-                // TODO:
+            }).compose(settlements -> {
                 final JsonArray settlementJ = Ux.toJson(settlements);
                 response.put("settlements", settlementJ);
                 return Ux.future(response);
-            })).otherwise(Ux.otherwise(new JsonObject()));
+            }).otherwise(Ux.otherwise(new JsonObject()));
         });
     }
 
@@ -145,59 +140,5 @@ public class FetchActor {
     public Future<JsonObject> fetchBook(final String bookId) {
         // Null Prevent
         return Fn.ofJObject(this.bookStub::fetchByKey).apply(bookId);
-    }
-
-    @Address(Addr.Settle.FETCH_BY_KEY)
-    public Future<JsonObject> fetchSettlement(final String key) {
-        return Fn.ofJObject(this.qrStub::fetchSettlement).apply(key);
-    }
-
-
-    @Address(Addr.Settle.FETCH_BY_QR)
-    public Future<JsonObject> searchSettle(final JsonObject qr) {
-        return Ux.Jooq.on(FSettlementDao.class).searchAsync(qr).compose(pageData -> {
-            final JsonArray settlementData = Ut.valueJArray(pageData, "list");
-            final Set<String> keys = Ut.valueSetString(settlementData, KName.KEY);
-            return this.qrStub.fetchDebtMap(keys).compose(debt -> {
-                Ut.itJArray(settlementData).forEach(settleJ -> {
-                    /*
-                     * 计算 linked 属性，此处 linked 属性要从原来的三属性转换成新的属性
-                     * - DONE: 正常结算
-                     * - DEBT：应收
-                     * - REFUND：应退
-                     * - PENDING：待结算
-                     */
-                    final boolean finished = settleJ.getBoolean(KName.FINISHED, Boolean.FALSE);
-                    if (finished) {
-                        // 已结算完成
-                        final String key = Ut.valueString(settleJ, KName.KEY);
-                        if (debt.containsKey(key)) {
-                            // linked
-                            final FDebt found = debt.get(key);
-                            if (0 < found.getAmount().doubleValue()) {
-                                // 应收
-                                settleJ.put(KName.LINKED, EmDebt.Linked.DEBT.name());
-                            } else {
-                                // 应退
-                                settleJ.put(KName.LINKED, EmDebt.Linked.REFUND.name());
-                            }
-                        } else {
-                            // 正常结算
-                            settleJ.put(KName.LINKED, EmDebt.Linked.DONE.name());
-                        }
-                    } else {
-                        // 未结算
-                        settleJ.put(KName.LINKED, EmDebt.Linked.PENDING.name());
-                    }
-                });
-                pageData.put("list", settlementData);
-                return Ux.future(pageData);
-            });
-        });
-    }
-
-    @Address(Addr.Settle.FETCH_DEBT)
-    public Future<JsonObject> fetchDebt(final String key) {
-        return Fn.ofJObject(this.qrStub::fetchDebt).apply(key);
     }
 }

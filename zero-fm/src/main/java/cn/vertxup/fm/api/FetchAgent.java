@@ -60,30 +60,4 @@ public interface FetchAgent {
     @Path("/fm-book/:key")
     @Address(Addr.BillItem.FETCH_BOOK_BY_KEY)
     JsonObject fetchBook(@PathParam(KName.KEY) String key);
-
-    /*
-     * Overwrite the api
-     * /api/settlement/:key
-     * instead of CRUD normalized api here
-     */
-    @GET
-    @Path("/settlement/:key")
-    @Address(Addr.Settle.FETCH_BY_KEY)
-    JsonObject fetchSettlement(@PathParam(KName.KEY) String key);
-
-    @POST
-    @Path("/settlement/search")
-    @Address(Addr.Settle.FETCH_BY_QR)
-    JsonObject searchSettles(@BodyParam JsonObject qr);
-
-
-    /*
-     * Overwrite the api
-     * /api/debt/:key
-     * instead of CRUD normalized api
-     */
-    @GET
-    @Path("/debt/:key")
-    @Address(Addr.Settle.FETCH_DEBT)
-    JsonObject fetchDebt(@PathParam(KName.KEY) String key);
 }
