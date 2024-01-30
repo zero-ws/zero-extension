@@ -2,11 +2,13 @@ package cn.vertxup.fm.service.end;
 
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FTrans;
-import cn.vertxup.fm.domain.tables.pojos.FTransItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.atom.TranData;
+import io.vertx.mod.fm.cv.em.EmTran;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 交易步骤
@@ -17,5 +19,5 @@ public interface TransStub {
 
     Future<FTrans> createAsync(JsonObject data, FSettlement settlement);
 
-    Future<List<FTransItem>> fetchBySettle(List<FSettlement> settlements);
+    Future<List<TranData>> fetchAsync(Set<String> keys, Set<EmTran.Type> typeSet);
 }
