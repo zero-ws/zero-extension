@@ -1,6 +1,7 @@
 package cn.vertxup.fm.api.end;
 
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.service.end.AdjustStub;
 import cn.vertxup.fm.service.end.DebtStub;
 import cn.vertxup.fm.service.end.SettleWStub;
 import cn.vertxup.fm.service.end.TransStub;
@@ -43,6 +44,9 @@ public class SettleActor {
     @Inject
     private transient DebtStub debtStub;
 
+    @Inject
+    private transient AdjustStub adjustStub;
+
     /**
      * 直接结算专用接口 / 数据格式：
      * <pre><code>
@@ -69,6 +73,12 @@ public class SettleActor {
 
             // 2. 创建交易单和交易明细
             .compose(settlement -> this.transStub.createAsync(body, settlement))
+
+
+            // 3. 修正 finishedId
+            .compose(trans -> this.adjustStub.adjustAsync(trans, settleRef.get()))
+
+            
             .compose(nil -> Ux.futureJ((FSettlement) settleRef.get()));
     }
 
