@@ -2,7 +2,7 @@ package cn.vertxup.fm.api.end;
 
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.service.end.DebtStub;
-import cn.vertxup.fm.service.end.SettleStub;
+import cn.vertxup.fm.service.end.SettleWStub;
 import cn.vertxup.fm.service.end.TransStub;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
@@ -35,7 +35,7 @@ import jakarta.inject.Inject;
 public class SettleActor {
 
     @Inject
-    private transient SettleStub settleStub;
+    private transient SettleWStub settleStub;
 
     @Inject
     private transient TransStub transStub;

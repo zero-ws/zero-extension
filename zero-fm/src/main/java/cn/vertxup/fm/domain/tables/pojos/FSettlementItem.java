@@ -34,6 +34,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     private String relatedId;
     private String settlementId;
     private String debtId;
+    private String finishedId;
     private String sigma;
     private String language;
     private Boolean active;
@@ -59,6 +60,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.relatedId = value.getRelatedId();
         this.settlementId = value.getSettlementId();
         this.debtId = value.getDebtId();
+        this.finishedId = value.getFinishedId();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -83,6 +85,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         String relatedId,
         String settlementId,
         String debtId,
+        String finishedId,
         String sigma,
         String language,
         Boolean active,
@@ -105,6 +108,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.relatedId = relatedId;
         this.settlementId = settlementId;
         this.debtId = debtId;
+        this.finishedId = finishedId;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -354,6 +358,25 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     }
 
     /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.FINISHED_ID</code>. 「finishedId」-
+     * 关联交易ID
+     */
+    @Override
+    public String getFinishedId() {
+        return this.finishedId;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.FINISHED_ID</code>. 「finishedId」-
+     * 关联交易ID
+     */
+    @Override
+    public FSettlementItem setFinishedId(String finishedId) {
+        this.finishedId = finishedId;
+        return this;
+    }
+
+    /**
      * Getter for <code>ZDB.F_SETTLEMENT_ITEM.SIGMA</code>. 「sigma」- 统一标识
      */
     @Override
@@ -586,6 +609,12 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         }
         else if (!this.debtId.equals(other.debtId))
             return false;
+        if (this.finishedId == null) {
+            if (other.finishedId != null)
+                return false;
+        }
+        else if (!this.finishedId.equals(other.finishedId))
+            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -654,6 +683,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         result = prime * result + ((this.relatedId == null) ? 0 : this.relatedId.hashCode());
         result = prime * result + ((this.settlementId == null) ? 0 : this.settlementId.hashCode());
         result = prime * result + ((this.debtId == null) ? 0 : this.debtId.hashCode());
+        result = prime * result + ((this.finishedId == null) ? 0 : this.finishedId.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -682,6 +712,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         sb.append(", ").append(relatedId);
         sb.append(", ").append(settlementId);
         sb.append(", ").append(debtId);
+        sb.append(", ").append(finishedId);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -714,6 +745,7 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         setRelatedId(from.getRelatedId());
         setSettlementId(from.getSettlementId());
         setDebtId(from.getDebtId());
+        setFinishedId(from.getFinishedId());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());

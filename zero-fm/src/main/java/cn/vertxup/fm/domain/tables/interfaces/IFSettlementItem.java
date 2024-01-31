@@ -161,6 +161,18 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
     public String getDebtId();
 
     /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.FINISHED_ID</code>. 「finishedId」-
+     * 关联交易ID
+     */
+    public IFSettlementItem setFinishedId(String value);
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.FINISHED_ID</code>. 「finishedId」-
+     * 关联交易ID
+     */
+    public String getFinishedId();
+
+    /**
      * Setter for <code>ZDB.F_SETTLEMENT_ITEM.SIGMA</code>. 「sigma」- 统一标识
      */
     public IFSettlementItem setSigma(String value);
@@ -281,6 +293,7 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
                 setOrThrow(this::setRelatedId,json::getString,"RELATED_ID","java.lang.String");
                 setOrThrow(this::setSettlementId,json::getString,"SETTLEMENT_ID","java.lang.String");
                 setOrThrow(this::setDebtId,json::getString,"DEBT_ID","java.lang.String");
+                setOrThrow(this::setFinishedId,json::getString,"FINISHED_ID","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
@@ -309,6 +322,7 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
                 json.put("RELATED_ID",getRelatedId());
                 json.put("SETTLEMENT_ID",getSettlementId());
                 json.put("DEBT_ID",getDebtId());
+                json.put("FINISHED_ID",getFinishedId());
                 json.put("SIGMA",getSigma());
                 json.put("LANGUAGE",getLanguage());
                 json.put("ACTIVE",getActive());

@@ -21,6 +21,7 @@ CREATE TABLE `F_SETTLEMENT_ITEM`
     `RELATED_ID`    VARCHAR(36) COMMENT '「relatedId」- 关联BillItem ID（保留，原系统存在）',
     `SETTLEMENT_ID` VARCHAR(36) COMMENT '「settlementId」- 结算单ID，该字段有值标识已经结算',
     `DEBT_ID`       VARCHAR(36) COMMENT '「debtId」- 应收账单ID',
+    `FINISHED_ID`   VARCHAR(36) COMMENT '「finishedId」- 关联交易ID',
 
     -- 特殊字段
     `SIGMA`         VARCHAR(32) COMMENT '「sigma」- 统一标识',

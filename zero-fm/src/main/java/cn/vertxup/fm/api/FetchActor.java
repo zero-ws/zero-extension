@@ -5,7 +5,7 @@ import cn.vertxup.fm.domain.tables.daos.FBillItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FBill;
 import cn.vertxup.fm.service.BookStub;
 import cn.vertxup.fm.service.FetchStub;
-import cn.vertxup.fm.service.end.QrStub;
+import cn.vertxup.fm.service.end.SettleRStub;
 import cn.vertxup.fm.service.end.TransStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -36,7 +36,7 @@ public class FetchActor {
     @Inject
     private transient BookStub bookStub;
     @Inject
-    private transient QrStub qrStub;
+    private transient SettleRStub qrStub;
 
     @Inject
     private transient TransStub transStub;

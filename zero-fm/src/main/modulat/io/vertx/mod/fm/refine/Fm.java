@@ -5,6 +5,7 @@ import cn.vertxup.fm.domain.tables.pojos.FPreAuthorize;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.atom.TranData;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.up.atom.extension.KNaming;
 
@@ -23,7 +24,11 @@ public final class Fm {
      * {@link FPreAuthorize}
      */
     public static FPreAuthorize toAuthorize(final JsonObject data) {
-        return FmPre.toAuthorize(data);
+        return FmCombine.toAuthorize(data);
+    }
+
+    public static JsonObject toTransaction(final JsonObject response, final List<TranData> tranData) {
+        return FmCombine.toTransaction(response, tranData);
     }
 
     public static BigDecimal calcAmount(final BigDecimal start, final BigDecimal adjust,

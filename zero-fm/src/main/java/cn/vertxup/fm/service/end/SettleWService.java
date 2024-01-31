@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author lang : 2024-01-23
  */
-public class SettleService implements SettleStub {
+public class SettleWService implements SettleWStub {
     /**
      * 结算步骤
      * <pre><code>
