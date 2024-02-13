@@ -21,11 +21,12 @@ public final class EmDebt {
      */
     public enum Linked {
         // 已结算3种
-        DEBT,       // 应收
-        REFUND,     // 退款
-        DONE,       // 已结算
+        DEBT,       // 有应收
+        REFUND,     // 有退款
+        DONE,       // 结算完成
 
         // 未结算
-        PENDING,    // 待结算
+        PENDING,    // 未结算
+        PART,       // 部分结算
     }
 }

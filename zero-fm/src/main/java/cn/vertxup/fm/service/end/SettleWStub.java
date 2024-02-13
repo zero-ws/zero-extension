@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author lang : 2024-01-23
  */
-public interface SettleStub {
+public interface SettleWStub {
     Future<FSettlement> createAsync(JsonObject body, EmPay.Type type);
 
     /**
