@@ -60,9 +60,10 @@ public class SettleRService implements SettleRStub {
     public Future<JsonObject> fetchSettlement(final JsonArray keys) {
         final JsonObject response = new JsonObject();
         return Ux.Jooq.on(FSettlementDao.class).<FSettlement>fetchInAsync(KName.KEY, keys)
-            .compose(settlements -> {
+            .compose(this::statusSettlement)
+            .compose(settlementA -> {
                 /* settlements */
-                response.put(KName.Finance.SETTLEMENTS, Ux.toJson(settlements));
+                response.put(KName.Finance.SETTLEMENTS, settlementA);
                 return this.fetchInternalItems(keys);
             })
             .compose(items -> {
@@ -77,6 +78,31 @@ public class SettleRService implements SettleRStub {
                 return this.transStub.fetchAsync(Ut.toSet(keys), Set.of(EmTran.Type.SETTLEMENT));
             })
             .compose(tranData -> Ux.future(Fm.toTransaction(response, tranData)));
+    }
+
+    @Override
+    public Future<JsonArray> statusSettlement(final JsonArray settlements) {
+        final JsonArray keys = Ut.valueJArray(settlements, KName.KEY);
+        return this.fetchStatus(keys).compose(statusMap -> {
+            /*
+             * statusMap 中的数据结构如：
+             * - settlementId = JsonArray
+             * 其中 JsonArray 中的状态值会有多个，如果为空，则表示没有处理过
+             * 那么状态中的数据应该是 PENDING（单元素）
+             */
+            Ut.itJArray(settlements).forEach(settleJ -> {
+                final String key = settleJ.getString(KName.KEY);
+                final JsonArray status = statusMap.getOrDefault(key, new JsonArray());
+                settleJ.put(KName.LINKED, status);
+            });
+            return Ux.future(settlements);
+        });
+    }
+
+    @Override
+    public Future<JsonArray> statusSettlement(final List<FSettlement> settlements) {
+        final JsonArray keys = Ut.toJArray(Ut.elementSet(settlements, FSettlement::getKey));
+        return this.statusSettlement(keys);
     }
 
     /**
@@ -113,7 +139,6 @@ public class SettleRService implements SettleRStub {
      *
      * @return 返回“结算单”对应的状态信息
      */
-    @Override
     public Future<ConcurrentMap<String, JsonArray>> fetchStatus(final JsonArray keys) {
         final JsonArray settlementIds = Ut.toJArray(keys);
         final ConcurrentMap<String, JsonArray> statusMap = new ConcurrentHashMap<>();

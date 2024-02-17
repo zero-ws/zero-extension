@@ -35,21 +35,9 @@ public class BatchActor {
     @Address(Addr.Settle.FETCH_BY_QR)
     public Future<JsonObject> searchSettle(final JsonObject qr) {
         return Ux.Jooq.on(FSettlementDao.class).searchAsync(qr).compose(pageData -> {
-            final JsonArray settlementData = Ut.valueJArray(pageData, "list");
-            final JsonArray keys = Ut.valueJArray(settlementData, KName.KEY);
-            return this.settleRStub.fetchStatus(keys).compose(statusMap -> {
-                /*
-                 * statusMap 中的数据结构如：
-                 * - settlementId = JsonArray
-                 * 其中 JsonArray 中的状态值会有多个，如果为空，则表示没有处理过
-                 * 那么状态中的数据应该是 PENDING（单元素）
-                 */
-                Ut.itJArray(settlementData).forEach(settleJ -> {
-                    final String key = settleJ.getString(KName.KEY);
-                    final JsonArray status = statusMap.getOrDefault(key, new JsonArray());
-                    settleJ.put(KName.LINKED, status);
-                });
-                pageData.put("list", settlementData);
+            final JsonArray settlementData = Ut.valueJArray(pageData, KName.LIST);
+            return this.settleRStub.statusSettlement(settlementData).compose(settlementA -> {
+                pageData.put(KName.LIST, settlementA);
                 return Ux.future(pageData);
             });
         });
