@@ -3,7 +3,7 @@
     "amount,结算金额,CURRENCY",
     "comment,结算备注,TEXT",
     {
-        "metadata": "linked,关联单据",
+        "metadata": "linked,关联单据,MAPPING",
         "$mapping": {
             "DONE": "直接结算,check-circle,16,#268941",
             "DEBT": "含应收,link,16,#0e8be6",
