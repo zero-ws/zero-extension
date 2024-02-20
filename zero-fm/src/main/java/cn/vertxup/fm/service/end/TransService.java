@@ -46,6 +46,21 @@ public class TransService implements TransStub {
             .compose(trans -> this.createAsync(trans, data, params));
     }
 
+    @Override
+    public Future<FTrans> createAsync(final JsonObject data, final List<FSettlement> settlements) {
+        final JsonObject params = new JsonObject();
+        {
+            params.put(KName.COMMENT, Ut.valueString(data, KName.COMMENT));
+            params.put(KName.TYPE, EmTran.Type.SETTLEMENT.name());
+            final JsonArray keys = Ut.toJArray(Ut.valueSetString(settlements, FSettlement::getKey));
+            params.put(KName.KEYS, keys);
+        }
+        // 1. 构造 FTrans
+        return Trade.step06T().flatter(data, settlements)
+            // 2. 构造 FTransOf
+            .compose(trans -> this.createAsync(trans, data, params));
+    }
+
     private Future<FTrans> createAsync(
         final FTrans trans, final JsonObject data, final JsonObject params) {
         return Trade.step06TO().scatter(params, trans)

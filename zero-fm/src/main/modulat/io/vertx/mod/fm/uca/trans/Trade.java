@@ -7,6 +7,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.em.EmPay;
 
 import java.util.List;
@@ -60,6 +61,11 @@ public interface Trade<IN, OUT> {
     @SuppressWarnings("unchecked")
     static Trade<FTrans, FTransOf> step06TO() {
         return (Trade<FTrans, FTransOf>) POOL.CCT_TRADE.pick(Step06TransOf::new, Step06TransOf.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<User, FSettlement> sync01ST() {
+        return (Trade<User, FSettlement>) POOL.CCT_TRADE.pick(Sync01Settlement::new, Sync01Settlement.class.getName());
     }
 
     /*

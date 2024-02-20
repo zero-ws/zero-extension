@@ -4,6 +4,7 @@ import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import cn.vertxup.fm.domain.tables.pojos.FTrans;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 
 /**
  * 修正专用服务
@@ -24,6 +25,9 @@ public interface AdjustStub {
      *     finished = true 的情况，此种修正提取所有的 {@link FSettlementItem} 并设置
      *     对应的 finishedId = trans {@link FTrans} 的主键。
      * </code></pre>
+     * 注意此处修正的是结算明细的 finishedId，而且结算明细来自于 {@link FSettlement} 表
+     * 的读取：WHERE SETTLEMENT_ID = settlement.getKey() 的方式查询底层数据对象，并且
+     * 给出对应的明细提取。
      *
      * @param trans      交易记录
      * @param settlement 结算单
@@ -31,4 +35,6 @@ public interface AdjustStub {
      * @return 修正后的交易记录
      */
     Future<FTrans> adjustAsync(FTrans trans, FSettlement settlement);
+    
+    Future<FTrans> adjustAsync(FTrans trans, JsonArray items);
 }

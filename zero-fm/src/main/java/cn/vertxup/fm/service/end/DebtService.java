@@ -32,6 +32,18 @@ public class DebtService implements DebtStub {
     }
 
     @Override
+    public Future<FDebt> createAsync(final JsonObject data, final List<FSettlement> settlements) {
+        /*
+         * 此处的逻辑有一个关键点，就是在 data 中提取底层所需的 keySelected，有了
+         * 此操作之后，转应收才能够成功，否则转应收会变成一个伪命题。
+         */
+        final JsonArray items = Ut.valueJArray(data, KName.ITEMS);
+        final JsonArray keys = Ut.toJArray(Ut.valueSetString(items, KName.KEY));
+        final JsonObject params = data.copy().put("selected", keys);
+        return Trade.step05D().flatter(data, settlements);
+    }
+
+    @Override
     public Future<JsonObject> fetchDebt(final JsonArray keys) {
         final JsonObject response = new JsonObject();
         return Ux.Jooq.on(FDebtDao.class).fetchInAsync(KName.KEY, keys)
