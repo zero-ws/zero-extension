@@ -145,6 +145,36 @@ public class FTransDao extends AbstractVertxDAO<FTransRecord, cn.vertxup.fm.doma
         }
 
         /**
+     * Find records that have <code>AMOUNT_GAP IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FTrans>> findManyByAmountGap(Collection<BigDecimal> values) {
+                return findManyByCondition(FTrans.F_TRANS.AMOUNT_GAP.in(values));
+        }
+
+        /**
+     * Find records that have <code>AMOUNT_GAP IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FTrans>> findManyByAmountGap(Collection<BigDecimal> values, int limit) {
+                return findManyByCondition(FTrans.F_TRANS.AMOUNT_GAP.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>ROUNDED IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FTrans>> findManyByRounded(Collection<String> values) {
+                return findManyByCondition(FTrans.F_TRANS.ROUNDED.in(values));
+        }
+
+        /**
+     * Find records that have <code>ROUNDED IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FTrans>> findManyByRounded(Collection<String> values, int limit) {
+                return findManyByCondition(FTrans.F_TRANS.ROUNDED.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>PREPAY IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FTrans>> findManyByPrepay(Collection<Boolean> values) {

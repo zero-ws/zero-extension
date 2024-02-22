@@ -29,6 +29,8 @@ public class FTrans implements VertxPojo, IFTrans {
     private String status;
     private BigDecimal amount;
     private BigDecimal amountPre;
+    private BigDecimal amountGap;
+    private String rounded;
     private Boolean prepay;
     private String comment;
     private String sigma;
@@ -51,6 +53,8 @@ public class FTrans implements VertxPojo, IFTrans {
         this.status = value.getStatus();
         this.amount = value.getAmount();
         this.amountPre = value.getAmountPre();
+        this.amountGap = value.getAmountGap();
+        this.rounded = value.getRounded();
         this.prepay = value.getPrepay();
         this.comment = value.getComment();
         this.sigma = value.getSigma();
@@ -72,6 +76,8 @@ public class FTrans implements VertxPojo, IFTrans {
         String status,
         BigDecimal amount,
         BigDecimal amountPre,
+        BigDecimal amountGap,
+        String rounded,
         Boolean prepay,
         String comment,
         String sigma,
@@ -91,6 +97,8 @@ public class FTrans implements VertxPojo, IFTrans {
         this.status = status;
         this.amount = amount;
         this.amountPre = amountPre;
+        this.amountGap = amountGap;
+        this.rounded = rounded;
         this.prepay = prepay;
         this.comment = comment;
         this.sigma = sigma;
@@ -241,6 +249,42 @@ public class FTrans implements VertxPojo, IFTrans {
     @Override
     public FTrans setAmountPre(BigDecimal amountPre) {
         this.amountPre = amountPre;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_TRANS.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    @Override
+    public BigDecimal getAmountGap() {
+        return this.amountGap;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_TRANS.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    @Override
+    public FTrans setAmountGap(BigDecimal amountGap) {
+        this.amountGap = amountGap;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_TRANS.ROUNDED</code>. 「rounded」抹零方式，不同抹零方式会影响验证规则
+     */
+    @Override
+    public String getRounded() {
+        return this.rounded;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_TRANS.ROUNDED</code>. 「rounded」抹零方式，不同抹零方式会影响验证规则
+     */
+    @Override
+    public FTrans setRounded(String rounded) {
+        this.rounded = rounded;
         return this;
     }
 
@@ -471,6 +515,18 @@ public class FTrans implements VertxPojo, IFTrans {
         }
         else if (!this.amountPre.equals(other.amountPre))
             return false;
+        if (this.amountGap == null) {
+            if (other.amountGap != null)
+                return false;
+        }
+        else if (!this.amountGap.equals(other.amountGap))
+            return false;
+        if (this.rounded == null) {
+            if (other.rounded != null)
+                return false;
+        }
+        else if (!this.rounded.equals(other.rounded))
+            return false;
         if (this.prepay == null) {
             if (other.prepay != null)
                 return false;
@@ -546,6 +602,8 @@ public class FTrans implements VertxPojo, IFTrans {
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
         result = prime * result + ((this.amountPre == null) ? 0 : this.amountPre.hashCode());
+        result = prime * result + ((this.amountGap == null) ? 0 : this.amountGap.hashCode());
+        result = prime * result + ((this.rounded == null) ? 0 : this.rounded.hashCode());
         result = prime * result + ((this.prepay == null) ? 0 : this.prepay.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
@@ -571,6 +629,8 @@ public class FTrans implements VertxPojo, IFTrans {
         sb.append(", ").append(status);
         sb.append(", ").append(amount);
         sb.append(", ").append(amountPre);
+        sb.append(", ").append(amountGap);
+        sb.append(", ").append(rounded);
         sb.append(", ").append(prepay);
         sb.append(", ").append(comment);
         sb.append(", ").append(sigma);
@@ -600,6 +660,8 @@ public class FTrans implements VertxPojo, IFTrans {
         setStatus(from.getStatus());
         setAmount(from.getAmount());
         setAmountPre(from.getAmountPre());
+        setAmountGap(from.getAmountGap());
+        setRounded(from.getRounded());
         setPrepay(from.getPrepay());
         setComment(from.getComment());
         setSigma(from.getSigma());

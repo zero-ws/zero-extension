@@ -16,11 +16,11 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function18;
+import org.jooq.Function20;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row18;
+import org.jooq.Row20;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -92,6 +92,17 @@ public class FTrans extends TableImpl<FTransRecord> {
      * The column <code>ZDB.F_TRANS.AMOUNT_PRE</code>. 「amountPre」预付金额
      */
     public final TableField<FTransRecord, BigDecimal> AMOUNT_PRE = createField(DSL.name("AMOUNT_PRE"), SQLDataType.DECIMAL(18, 2), this, "「amountPre」预付金额");
+
+    /**
+     * The column <code>ZDB.F_TRANS.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    public final TableField<FTransRecord, BigDecimal> AMOUNT_GAP = createField(DSL.name("AMOUNT_GAP"), SQLDataType.DECIMAL(18, 2), this, "「amountGap」——差价，根据 rounded 计算差价");
+
+    /**
+     * The column <code>ZDB.F_TRANS.ROUNDED</code>. 「rounded」抹零方式，不同抹零方式会影响验证规则
+     */
+    public final TableField<FTransRecord, String> ROUNDED = createField(DSL.name("ROUNDED"), SQLDataType.VARCHAR(12), this, "「rounded」抹零方式，不同抹零方式会影响验证规则");
 
     /**
      * The column <code>ZDB.F_TRANS.PREPAY</code>. 「prepay」- 是否预付
@@ -231,18 +242,18 @@ public class FTrans extends TableImpl<FTransRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row18 type methods
+    // Row20 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row18<String, String, String, String, String, String, BigDecimal, BigDecimal, Boolean, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row18) super.fieldsRow();
+    public Row20<String, String, String, String, String, String, BigDecimal, BigDecimal, BigDecimal, String, Boolean, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row20) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function18<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super Boolean, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super BigDecimal, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -250,7 +261,7 @@ public class FTrans extends TableImpl<FTransRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function18<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super Boolean, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super BigDecimal, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }
