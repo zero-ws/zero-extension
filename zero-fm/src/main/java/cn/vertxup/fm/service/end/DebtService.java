@@ -40,7 +40,7 @@ public class DebtService implements DebtStub {
         final JsonArray items = Ut.valueJArray(data, KName.ITEMS);
         final JsonArray keys = Ut.toJArray(Ut.valueSetString(items, KName.KEY));
         final JsonObject params = data.copy().put("selected", keys);
-        return Trade.step05D().flatter(data, settlements);
+        return Trade.step05D().flatter(params, settlements);
     }
 
     @Override
