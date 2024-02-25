@@ -85,21 +85,6 @@ public class FSettlementDao extends AbstractVertxDAO<FSettlementRecord, cn.vertx
         }
 
         /**
-     * Find records that have <code>AMOUNT_GAP IN (values)</code> asynchronously
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByAmountGap(Collection<BigDecimal> values) {
-                return findManyByCondition(FSettlement.F_SETTLEMENT.AMOUNT_GAP.in(values));
-        }
-
-        /**
-     * Find records that have <code>AMOUNT_GAP IN (values)</code> asynchronously
-     * limited by the given limit
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByAmountGap(Collection<BigDecimal> values, int limit) {
-                return findManyByCondition(FSettlement.F_SETTLEMENT.AMOUNT_GAP.in(values),limit);
-        }
-
-        /**
      * Find records that have <code>COMMENT IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByComment(Collection<String> values) {
@@ -112,21 +97,6 @@ public class FSettlementDao extends AbstractVertxDAO<FSettlementRecord, cn.vertx
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByComment(Collection<String> values, int limit) {
                 return findManyByCondition(FSettlement.F_SETTLEMENT.COMMENT.in(values),limit);
-        }
-
-        /**
-     * Find records that have <code>ROUNDED IN (values)</code> asynchronously
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByRounded(Collection<String> values) {
-                return findManyByCondition(FSettlement.F_SETTLEMENT.ROUNDED.in(values));
-        }
-
-        /**
-     * Find records that have <code>ROUNDED IN (values)</code> asynchronously
-     * limited by the given limit
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FSettlement>> findManyByRounded(Collection<String> values, int limit) {
-                return findManyByCondition(FSettlement.F_SETTLEMENT.ROUNDED.in(values),limit);
         }
 
         /**

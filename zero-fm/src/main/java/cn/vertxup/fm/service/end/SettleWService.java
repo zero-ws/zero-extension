@@ -1,15 +1,23 @@
 package cn.vertxup.fm.service.end;
 
+import cn.vertxup.fm.domain.tables.daos.FSettlementItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
+import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.fm.cv.em.EmPay;
 import io.vertx.mod.fm.uca.trans.Trade;
+import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author lang : 2024-01-23
@@ -91,5 +99,57 @@ public class SettleWService implements SettleWStub {
 
 
             .compose(nil -> Ux.future(settleRef.get()));
+    }
+
+    @Override
+    public Future<List<FSettlement>> updateAsync(final JsonObject body, final User user) {
+        /*
+         * 提取结算单基础数据，结算单在前端因为选择的关系，此处提供的结算单和结算明细会包含如下关系
+         * 1. 选择的结算明细一定会包含在结算单中
+         * 2. 结算明细可能出现不完全选择（半选模式）
+         */
+        final JsonArray settlementData = Ut.valueJArray(body, KName.Finance.SETTLEMENTS);
+        final JsonArray settlementIds = Ut.valueJArray(settlementData, KName.KEY);
+
+
+        /* 读取系统中对应的所有结算明细执行计算 */
+        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmCv.ID.SETTLEMENT_ID, settlementIds)
+            .compose(items -> {
+                /* 输入的结算明细ID合集 */
+                final JsonArray itemsIn = Ut.valueJArray(body, KName.ITEMS);
+                final Set<String> itemsKeys = Ut.valueSetString(itemsIn, KName.KEY);
+
+                /*
+                 * 根据未处理的结算明细计算待更新的结算单
+                 * itemsKeys: 输入的结算明细ID合集
+                 * items：系统中对应的所有结算明细
+                 * 计算方法如下：
+                 *     遍历 items，若 items 中的记录没有出现在 itemsKeys 中则代表此结算单未完结，则不做更新处理
+                 * 步骤：
+                 *     settlementSet - ignoredSet = updatedIds
+                 **/
+                final Set<String> ignoreSet = new HashSet<>();
+                items.stream()
+                    .filter(item -> !itemsKeys.contains(item.getKey()))
+                    .forEach(item -> ignoreSet.add(item.getSettlementId()));
+                final Set<String> settlementSet = Ut.toSet(settlementIds);
+                return Ux.future(Ut.elementDiff(settlementSet, ignoreSet));
+            })
+            .compose(keys -> {
+
+                /*
+                 * 从 settlementData 中执行过滤，只保留 keys 中的结算单数据
+                 * 这些结算单数据执行更新操作
+                 * - finished           = true
+                 * - finishedAt         = 当前时间
+                 * - updatedBy          = 当前用户
+                 * - updatedAt          = 当前时间
+                 */
+                final JsonArray updatedData = new JsonArray();
+                Ut.itJArray(settlementData)
+                    .filter(settlementJ -> keys.contains(Ut.valueString(settlementJ, KName.KEY)))
+                    .forEach(updatedData::add);
+                return Trade.sync01ST().scatter(updatedData, user);
+            });
     }
 }

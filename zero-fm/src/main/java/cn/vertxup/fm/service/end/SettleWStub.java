@@ -4,6 +4,7 @@ import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.em.EmPay;
 
 import java.util.List;
@@ -25,4 +26,24 @@ public interface SettleWStub {
      * </code></pre>
      */
     Future<List<FSettlement>> createAsync(JsonArray body, EmPay.Type type);
+
+    /**
+     * 更新结算单，核心逻辑如下
+     * <pre><code>
+     *     输入数据结构：
+     *     {
+     *         "settlements": [ 结算单 ],
+     *         "items": [ 结算明细 ]
+     *     }
+     *     返回数据结构中以结算单为主，执行结算单本身的更新操作，主要用于计算
+     *     结算单是否完结，如果完结则 finished = true，且提供最终结算完成
+     *     时间 finishedAt，以及最终的 updatedBy 来执行结算完成步骤。
+     * </code></pre>
+     * 此方法只返回最新的结算单信息，不包含结算明细的更新信息。
+     *
+     * @param body 结算数据
+     *
+     * @return 结算结果
+     */
+    Future<List<FSettlement>> updateAsync(JsonObject body, User user);
 }

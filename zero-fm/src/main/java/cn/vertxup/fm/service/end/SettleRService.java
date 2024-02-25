@@ -101,8 +101,9 @@ public class SettleRService implements SettleRStub {
 
     @Override
     public Future<JsonArray> statusSettlement(final List<FSettlement> settlements) {
-        final JsonArray keys = Ut.toJArray(Ut.elementSet(settlements, FSettlement::getKey));
-        return this.statusSettlement(keys);
+        final JsonArray settlementA = Ux.toJson(settlements);
+        //  旧版：final JsonArray keys = Ut.toJArray(Ut.elementSet(settlements, FSettlement::getKey));
+        return this.statusSettlement(settlementA);
     }
 
     /**

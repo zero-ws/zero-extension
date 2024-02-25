@@ -20,6 +20,16 @@ CREATE TABLE `F_TRANS`
     -- 交易总金额
     `AMOUNT`     DECIMAL(18, 2) NOT NULL COMMENT '「amount」——价税合计，所有明细对应的实际结算金额',
     `AMOUNT_PRE` DECIMAL(18, 2) COMMENT '「amountPre」预付金额',
+    `AMOUNT_GAP` DECIMAL(18, 2) COMMENT '「amountGap」——差价，根据 rounded 计算差价', -- 可以为空，如果没有此值则表示没有差价
+    /*
+     * 此处在原始基础上拓展了五个值
+     * - NONE：不处理
+     * - HALF：四舍五入
+     * - FLOOR：零头舍弃
+     * - CEIL：零头入进
+     * - INPUT：自定义
+     */
+    `ROUNDED`    VARCHAR(12) COMMENT '「rounded」抹零方式，不同抹零方式会影响验证规则',
     -- 预付信息
     `PREPAY`     BIT COMMENT '「prepay」- 是否预付',
     `COMMENT`    LONGTEXT COMMENT '「comment」 - 备注',

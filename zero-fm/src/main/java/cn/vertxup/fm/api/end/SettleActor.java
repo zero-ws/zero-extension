@@ -76,9 +76,9 @@ public class SettleActor {
 
 
             // 3. 修正 finishedId
-            .compose(trans -> this.adjustStub.adjustAsync(trans, settleRef.get()))
+            .compose(trans -> this.adjustStub.adjustAsync(trans, (FSettlement) settleRef.get()))
 
-            
+
             .compose(nil -> Ux.futureJ((FSettlement) settleRef.get()));
     }
 

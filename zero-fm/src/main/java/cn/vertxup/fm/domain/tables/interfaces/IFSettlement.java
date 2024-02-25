@@ -61,18 +61,6 @@ public interface IFSettlement extends VertxPojo, Serializable {
     public BigDecimal getAmount();
 
     /**
-     * Setter for <code>ZDB.F_SETTLEMENT.AMOUNT_GAP</code>. 「amountGap」——差价，根据
-     * rounded 计算差价
-     */
-    public IFSettlement setAmountGap(BigDecimal value);
-
-    /**
-     * Getter for <code>ZDB.F_SETTLEMENT.AMOUNT_GAP</code>. 「amountGap」——差价，根据
-     * rounded 计算差价
-     */
-    public BigDecimal getAmountGap();
-
-    /**
      * Setter for <code>ZDB.F_SETTLEMENT.COMMENT</code>. 「comment」 - 结算单备注
      */
     public IFSettlement setComment(String value);
@@ -81,18 +69,6 @@ public interface IFSettlement extends VertxPojo, Serializable {
      * Getter for <code>ZDB.F_SETTLEMENT.COMMENT</code>. 「comment」 - 结算单备注
      */
     public String getComment();
-
-    /**
-     * Setter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
-     * 「rounded」抹零方式，不同抹零方式会影响验证规则
-     */
-    public IFSettlement setRounded(String value);
-
-    /**
-     * Getter for <code>ZDB.F_SETTLEMENT.ROUNDED</code>.
-     * 「rounded」抹零方式，不同抹零方式会影响验证规则
-     */
-    public String getRounded();
 
     /**
      * Setter for <code>ZDB.F_SETTLEMENT.FINISHED</code>. 「finished」- 是否完成
@@ -260,9 +236,7 @@ public interface IFSettlement extends VertxPojo, Serializable {
                 setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
                 setOrThrow(this::setSerial,json::getString,"SERIAL","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
-                setOrThrow(this::setAmountGap,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT_GAP","java.math.BigDecimal");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
-                setOrThrow(this::setRounded,json::getString,"ROUNDED","java.lang.String");
                 setOrThrow(this::setFinished,json::getBoolean,"FINISHED","java.lang.Boolean");
                 setOrThrow(this::setFinishedAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"FINISHED_AT","java.time.LocalDateTime");
                 setOrThrow(this::setSignName,json::getString,"SIGN_NAME","java.lang.String");
@@ -288,9 +262,7 @@ public interface IFSettlement extends VertxPojo, Serializable {
                 json.put("CODE",getCode());
                 json.put("SERIAL",getSerial());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
-                json.put("AMOUNT_GAP",getAmountGap()==null?null:getAmountGap().toString());
                 json.put("COMMENT",getComment());
-                json.put("ROUNDED",getRounded());
                 json.put("FINISHED",getFinished());
                 json.put("FINISHED_AT",getFinishedAt()==null?null:getFinishedAt().toString());
                 json.put("SIGN_NAME",getSignName());

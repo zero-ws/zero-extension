@@ -99,6 +99,28 @@ public interface IFTrans extends VertxPojo, Serializable {
     public BigDecimal getAmountPre();
 
     /**
+     * Setter for <code>ZDB.F_TRANS.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    public IFTrans setAmountGap(BigDecimal value);
+
+    /**
+     * Getter for <code>ZDB.F_TRANS.AMOUNT_GAP</code>. 「amountGap」——差价，根据
+     * rounded 计算差价
+     */
+    public BigDecimal getAmountGap();
+
+    /**
+     * Setter for <code>ZDB.F_TRANS.ROUNDED</code>. 「rounded」抹零方式，不同抹零方式会影响验证规则
+     */
+    public IFTrans setRounded(String value);
+
+    /**
+     * Getter for <code>ZDB.F_TRANS.ROUNDED</code>. 「rounded」抹零方式，不同抹零方式会影响验证规则
+     */
+    public String getRounded();
+
+    /**
      * Setter for <code>ZDB.F_TRANS.PREPAY</code>. 「prepay」- 是否预付
      */
     public IFTrans setPrepay(Boolean value);
@@ -224,6 +246,8 @@ public interface IFTrans extends VertxPojo, Serializable {
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
                 setOrThrow(this::setAmountPre,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT_PRE","java.math.BigDecimal");
+                setOrThrow(this::setAmountGap,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT_GAP","java.math.BigDecimal");
+                setOrThrow(this::setRounded,json::getString,"ROUNDED","java.lang.String");
                 setOrThrow(this::setPrepay,json::getBoolean,"PREPAY","java.lang.Boolean");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
@@ -249,6 +273,8 @@ public interface IFTrans extends VertxPojo, Serializable {
                 json.put("STATUS",getStatus());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
                 json.put("AMOUNT_PRE",getAmountPre()==null?null:getAmountPre().toString());
+                json.put("AMOUNT_GAP",getAmountGap()==null?null:getAmountGap().toString());
+                json.put("ROUNDED",getRounded());
                 json.put("PREPAY",getPrepay());
                 json.put("COMMENT",getComment());
                 json.put("SIGMA",getSigma());
