@@ -1,0 +1,12 @@
+{
+    "name": "trans",
+    "daoCls": "cn.vertxup.fm.domain.tables.daos.FTransDao",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}
