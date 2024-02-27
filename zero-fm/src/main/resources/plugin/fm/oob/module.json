@@ -5,5 +5,6 @@
     "fm.bank",
     "fm.currency",
     "fm.settlement",
-    "fm.debt"
+    "fm.debt",
+    "fm.trans"
 ]
