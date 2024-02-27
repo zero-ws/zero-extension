@@ -2,7 +2,7 @@
     "serial,交易单号,,true",
     "amount,交易金额,CURRENCY",
     {
-        "metadata": "amount,交易类型,MAPPING",
+        "metadata": "type,交易类型,MAPPING",
         "$mapping": {
             "SETTLEMENT": "直接结算,check-circle,16,#268941",
             "DEBT": "应收,link,16,#0e8be6",
