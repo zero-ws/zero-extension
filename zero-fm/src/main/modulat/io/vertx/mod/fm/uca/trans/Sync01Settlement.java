@@ -14,6 +14,7 @@ import io.vertx.up.util.Ut;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * 这是更新步骤，可以直接根据主键更新 {@link FSettlement} 来完成字段更新和执行。
@@ -48,7 +49,8 @@ class Sync01Settlement implements Trade<User, FSettlement> {
     @Override
     public Future<List<FSettlement>> scatter(final JsonArray data, final User assist) {
         final UxJooq jq = Ux.Jooq.on(FSettlementDao.class);
-        return jq.<FSettlement>fetchInAsync(KName.KEY, Ut.toJArray(data))
+        final Set<String> keys = Ut.valueSetString(data, KName.KEY);
+        return jq.<FSettlement>fetchInAsync(KName.KEY, Ut.toJArray(keys))
             // 更新 Settlement
             .compose(settlements -> {
                 settlements.forEach(settlement -> this.executeFinished(settlement, assist));

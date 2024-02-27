@@ -18,6 +18,8 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;
 
+import java.time.Instant;
+
 /**
  * @author lang : 2024-02-20
  */
@@ -55,6 +57,12 @@ public class TransActor {
     @Address(Addr.Trans.END_TRANS)
     @Me
     public Future<JsonObject> finishAsync(final JsonObject body, final User user) {
+        {
+            // PUT 方法，所以要设置创建人信息（交易创建），特殊请求属性
+            final String key = Ux.keyUser(user);
+            body.put(KName.CREATED_BY, key);
+            body.put(KName.CREATED_AT, Instant.now());
+        }
         // 1. 更新结算单
         return this.settleStub.updateAsync(body, user).compose(settlements -> {
             final JsonArray payment = Ut.valueJArray(body, FmCv.ID.PAYMENT);

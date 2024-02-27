@@ -150,6 +150,13 @@ public class SettleWService implements SettleWStub {
                     .filter(settlementJ -> keys.contains(Ut.valueString(settlementJ, KName.KEY)))
                     .forEach(updatedData::add);
                 return Trade.sync01ST().scatter(updatedData, user);
+            })
+            .compose(settlements -> {
+                /*
+                 * 还原过滤的最终结果，此处可以不关心完成
+                 */
+                final List<FSettlement> settlementList = Ux.fromJson(settlementData, FSettlement.class);
+                return Ux.future(settlementList);
             });
     }
 }
