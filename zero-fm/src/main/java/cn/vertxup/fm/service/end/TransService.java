@@ -1,12 +1,7 @@
 package cn.vertxup.fm.service.end;
 
-import cn.vertxup.fm.domain.tables.daos.FTransDao;
-import cn.vertxup.fm.domain.tables.daos.FTransItemDao;
-import cn.vertxup.fm.domain.tables.daos.FTransOfDao;
-import cn.vertxup.fm.domain.tables.pojos.FSettlement;
-import cn.vertxup.fm.domain.tables.pojos.FTrans;
-import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import cn.vertxup.fm.domain.tables.pojos.FTransOf;
+import cn.vertxup.fm.domain.tables.daos.*;
+import cn.vertxup.fm.domain.tables.pojos.*;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -17,13 +12,11 @@ import io.vertx.mod.fm.cv.em.EmTran;
 import io.vertx.mod.fm.uca.replica.IkWay;
 import io.vertx.mod.fm.uca.trans.Trade;
 import io.vertx.up.eon.KName;
+import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
@@ -132,5 +125,68 @@ public class TransService implements TransStub {
                 });
                 return Ux.future(response);
             });
+    }
+
+    @Override
+    public Future<JsonObject> fetchAsync(final String key) {
+        // 单条交易记录
+        final JsonObject response = new JsonObject();
+        return Ux.Jooq.on(FTransDao.class).<FTrans>fetchByIdAsync(key)
+            .compose(trans -> {
+                response.mergeIn(Ux.toJson(trans));
+                return this.fetchRelated(key);
+            })
+            .compose(relatedMap -> {
+                relatedMap.forEach(response::put);                  // debts, settlements
+                return Ux.Jooq.on(FSettlementItemDao.class)
+                    .<FSettlementItem>fetchAsync("finishedId", key);
+            })
+            .compose(items -> {
+                response.put(KName.ITEMS, Ux.toJson(items));        // items
+                return Ux.Jooq.on(FTransItemDao.class)
+                    .<FTransItem>fetchAsync("transactionId", key);
+            })
+            .compose(payment -> {
+                response.put(FmCv.ID.PAYMENT, Ux.toJson(payment));  // payment
+                return Ux.future(response);
+            });
+    }
+
+    /*
+     * 抓取 debts, settlements
+     */
+    private Future<ConcurrentMap<String, JsonArray>> fetchRelated(final String key) {
+        return Ux.Jooq.on(FTransOfDao.class).<FTransOf>fetchAsync("transId", key).compose(transOfs -> {
+            final ConcurrentMap<String, Future<JsonArray>> futureMap = new ConcurrentHashMap<>();
+            final Set<String> keySettle = new HashSet<>();
+            final Set<String> keyDebt = new HashSet<>();
+            transOfs.stream()
+                // 防止 null 过滤
+                .filter(Objects::nonNull)
+                .filter(transOf -> Ut.isNotNil(transOf.getObjectType()))
+                .filter(transOf -> Ut.isNotNil(transOf.getObjectId()))
+                .forEach(transOf -> {
+                    final String type = transOf.getObjectType();
+                    if (EmTran.Type.SETTLEMENT.name().equals(type)) {
+                        keySettle.add(transOf.getObjectId());
+                    } else {
+                        // DEBT / REFUND
+                        keyDebt.add(transOf.getObjectId());
+                    }
+                });
+
+
+            /*
+             * debts = JsonArray
+             * settlements = JsonArray
+             */
+            futureMap.put(KName.Finance.SETTLEMENTS, Ux.Jooq.on(FSettlementDao.class)
+                .fetchJInAsync(KName.KEY, Ut.toJArray(keySettle))
+            );
+            futureMap.put(KName.Finance.DEBTS, Ux.Jooq.on(FDebtDao.class)
+                .fetchJInAsync(KName.KEY, Ut.toJArray(keyDebt))
+            );
+            return Fn.combineM(futureMap);
+        });
     }
 }

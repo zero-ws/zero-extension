@@ -80,6 +80,22 @@ public class SettleRService implements SettleRStub {
             .compose(tranData -> Ux.future(Fm.toTransaction(response, tranData)));
     }
 
+    /**
+     * 根据交易ID读取结算单列表，结算单列表中会包含 items 属性用来存储结算单相关的结算明细信息
+     * <pre><code>
+     *     type = SETTLEMENT
+     * </code></pre>
+     *
+     * @param transId 交易ID
+     *
+     * @return 结算单列表
+     */
+    @Override
+    public Future<JsonArray> fetchByTran(final String transId) {
+        final JsonObject cond = Ux.whereAnd();
+        return null;
+    }
+
     @Override
     public Future<JsonArray> statusSettlement(final JsonArray settlements) {
         final JsonArray keys = Ut.valueJArray(settlements, KName.KEY);

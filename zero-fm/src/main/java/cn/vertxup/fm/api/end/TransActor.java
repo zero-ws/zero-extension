@@ -88,4 +88,10 @@ public class TransActor {
     public Future<JsonObject> debtAsync(final JsonObject body) {
         return null;
     }
+
+    @Address(Addr.Trans.FETCH_BY_KEY)
+    @Me
+    public Future<JsonObject> fetchAsync(final String key) {
+        return this.transStub.fetchAsync(key);
+    }
 }
