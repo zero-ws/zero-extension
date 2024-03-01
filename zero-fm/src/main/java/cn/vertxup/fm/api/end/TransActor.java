@@ -90,7 +90,6 @@ public class TransActor {
     }
 
     @Address(Addr.Trans.FETCH_BY_KEY)
-    @Me
     public Future<JsonObject> fetchAsync(final String key) {
         return this.transStub.fetchAsync(key);
     }
