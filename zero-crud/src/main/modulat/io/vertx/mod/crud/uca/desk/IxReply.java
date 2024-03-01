@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.util.List;
 
@@ -33,6 +34,9 @@ public final class IxReply {
     }
 
     public static HttpStatusCode getStatus(final JsonObject input) {
+        if (Ut.isNil(input)) {
+            return HttpStatusCode.NO_CONTENT;
+        }
         final HttpStatusCode statusCode;
         if (input.containsKey(STATUS)) {
             final int status = input.getInteger(STATUS);
