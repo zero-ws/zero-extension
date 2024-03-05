@@ -22,4 +22,6 @@ public interface TransStub {
     Future<FTrans> createAsync(JsonObject data, List<FSettlement> settlements);
 
     Future<List<TranData>> fetchAsync(Set<String> keys, Set<EmTran.Type> typeSet);
+
+    Future<JsonObject> fetchAsync(String key);
 }

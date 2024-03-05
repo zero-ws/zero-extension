@@ -54,5 +54,7 @@ public interface Addr {
         String START_DELAY = Prefix._EVENT + "TRANS/DELAY";
         String END_TRANS = Prefix._EVENT + "TRANS-END/FINISH";
         String END_DEBT = Prefix._EVENT + "TRANS-END/DEBT";
+
+        String FETCH_BY_KEY = Prefix._EVENT + "TRANS-BY/KEY";
     }
 }

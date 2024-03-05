@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.commune.Envelop;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.util.List;
 
@@ -22,17 +23,26 @@ public final class IxReply {
 
     /* STATUS Code */
     public static Future<Envelop> successPost(final JsonObject input) {
-        final HttpStatusCode statusCode = getStatus(input);
+        final HttpStatusCode statusCode = getStatus(input, true);
         return Ux.future(Envelop.success(input, statusCode));
     }
 
     public static Future<Envelop> successPostB(final JsonObject input) {
-        final HttpStatusCode statusCode = getStatus(input);
+        final HttpStatusCode statusCode = getStatus(input, true);
         final Boolean result = input.getBoolean(RESULT, Boolean.FALSE);
         return Ux.future(Envelop.success(result, statusCode));
     }
 
-    public static HttpStatusCode getStatus(final JsonObject input) {
+    public static HttpStatusCode getStatus(final JsonObject input, final boolean isEnd) {
+        if (Ut.isNil(input)) {
+            /*
+             * isEnd = true
+             * 证明此处是 404 的情况，无法在系统中找到记录信息
+             * isEnd = false
+             * 证明此处可能是第二子记录无法找到，这种情况直接返回 204 即可
+             */
+            return isEnd ? HttpStatusCode.NOT_FOUND : HttpStatusCode.NO_CONTENT;
+        }
         final HttpStatusCode statusCode;
         if (input.containsKey(STATUS)) {
             final int status = input.getInteger(STATUS);

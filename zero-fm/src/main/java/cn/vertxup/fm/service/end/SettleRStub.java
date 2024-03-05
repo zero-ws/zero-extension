@@ -15,6 +15,9 @@ public interface SettleRStub {
     // Fetch Book with income and items
     Future<JsonObject> fetchSettlement(JsonArray keys);
 
+    // Fetch Settlements by transaction id
+    Future<JsonArray> fetchByTran(String transId);
+
     // Mount Status to settlements
     Future<JsonArray> statusSettlement(JsonArray settlements);
 

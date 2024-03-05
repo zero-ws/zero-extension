@@ -92,7 +92,7 @@ class NtJData implements Co<JsonObject, JsonObject, JsonObject, JsonObject> {
 
     @Override
     public Future<JsonObject> ok(final JsonObject active, final JsonObject standBy) {
-        final HttpStatusCode status = IxReply.getStatus(standBy);
+        final HttpStatusCode status = IxReply.getStatus(standBy, false);
         if (HttpStatusCode.NO_CONTENT == status) {
             return Ux.future(active);
         }
