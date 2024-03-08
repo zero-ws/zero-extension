@@ -1,11 +1,14 @@
 package cn.vertxup.fm.service.end;
 
 import cn.vertxup.fm.domain.tables.daos.FDebtDao;
+import cn.vertxup.fm.domain.tables.daos.FSettlementItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
+import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.fm.cv.em.EmTran;
 import io.vertx.mod.fm.refine.Fm;
 import io.vertx.mod.fm.uca.trans.Trade;
@@ -43,10 +46,40 @@ public class DebtService implements DebtStub {
         return Trade.step05D().flatter(params, settlements);
     }
 
+    /**
+     * 此处注意响应格式，格式在原始基础上会有所变化
+     * <pre><code>
+     *     1. 原来单应收处理转换成了多应收处理，那么此处会出现多张应收单的情况
+     *        应收限制：应收单位必须是同一个，非同一个单位的应收单不允许合并。
+     *     2. 响应数据格式如：
+     *        {
+     *            "debts": [],
+     *            "transactions": [],
+     *            "settlements": [],
+     *            "items": []
+     *        }
+     *        前端自行针对数据结构做运算，所以后端不做任何处理。
+     * </code></pre>
+     *
+     * @param keys 传入的应收/退款单集合
+     *
+     * @return JsonObject
+     */
     @Override
     public Future<JsonObject> fetchDebt(final JsonArray keys) {
         final JsonObject response = new JsonObject();
-        return Ux.Jooq.on(FDebtDao.class).fetchInAsync(KName.KEY, keys)
+        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmCv.ID.DEBT_ID, keys)
+            .compose(items -> {
+                /* items */
+                response.put(KName.ITEMS, Ux.toJson(items));
+                final Set<String> settlementIds = Ut.valueSetString(items, FSettlementItem::getSettlementId);
+                return Ux.Jooq.on(FSettlement.class).fetchJInAsync(KName.KEY, settlementIds);
+            })
+            .compose(settlementA -> {
+                /* settlements */
+                response.put(KName.Finance.SETTLEMENTS, settlementA);
+                return Ux.Jooq.on(FDebtDao.class).fetchInAsync(KName.KEY, keys);
+            })
             .compose(debts -> {
                 /* debts */
                 response.put(KName.Finance.DEBTS, Ux.toJson(debts));
