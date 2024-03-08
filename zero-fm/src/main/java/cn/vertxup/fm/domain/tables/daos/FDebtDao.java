@@ -115,34 +115,19 @@ public class FDebtDao extends AbstractVertxDAO<FDebtRecord, cn.vertxup.fm.domain
         }
 
         /**
-     * Find records that have <code>SIGN_NAME IN (values)</code> asynchronously
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignName(Collection<String> values) {
-                return findManyByCondition(FDebt.F_DEBT.SIGN_NAME.in(values));
-        }
-
-        /**
-     * Find records that have <code>SIGN_NAME IN (values)</code> asynchronously
-     * limited by the given limit
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignName(Collection<String> values, int limit) {
-                return findManyByCondition(FDebt.F_DEBT.SIGN_NAME.in(values),limit);
-        }
-
-        /**
-     * Find records that have <code>SIGN_MOBILE IN (values)</code>
+     * Find records that have <code>AMOUNT_BALANCE IN (values)</code>
      * asynchronously
      */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignMobile(Collection<String> values) {
-                return findManyByCondition(FDebt.F_DEBT.SIGN_MOBILE.in(values));
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByAmountBalance(Collection<BigDecimal> values) {
+                return findManyByCondition(FDebt.F_DEBT.AMOUNT_BALANCE.in(values));
         }
 
         /**
-     * Find records that have <code>SIGN_MOBILE IN (values)</code>
+     * Find records that have <code>AMOUNT_BALANCE IN (values)</code>
      * asynchronously limited by the given limit
      */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignMobile(Collection<String> values, int limit) {
-                return findManyByCondition(FDebt.F_DEBT.SIGN_MOBILE.in(values),limit);
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByAmountBalance(Collection<BigDecimal> values, int limit) {
+                return findManyByCondition(FDebt.F_DEBT.AMOUNT_BALANCE.in(values),limit);
         }
 
         /**
@@ -174,6 +159,37 @@ public class FDebtDao extends AbstractVertxDAO<FDebtRecord, cn.vertxup.fm.domain
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyByFinishedAt(Collection<LocalDateTime> values, int limit) {
                 return findManyByCondition(FDebt.F_DEBT.FINISHED_AT.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>SIGN_NAME IN (values)</code> asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignName(Collection<String> values) {
+                return findManyByCondition(FDebt.F_DEBT.SIGN_NAME.in(values));
+        }
+
+        /**
+     * Find records that have <code>SIGN_NAME IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignName(Collection<String> values, int limit) {
+                return findManyByCondition(FDebt.F_DEBT.SIGN_NAME.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>SIGN_MOBILE IN (values)</code>
+     * asynchronously
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignMobile(Collection<String> values) {
+                return findManyByCondition(FDebt.F_DEBT.SIGN_MOBILE.in(values));
+        }
+
+        /**
+     * Find records that have <code>SIGN_MOBILE IN (values)</code>
+     * asynchronously limited by the given limit
+     */
+        public Future<List<cn.vertxup.fm.domain.tables.pojos.FDebt>> findManyBySignMobile(Collection<String> values, int limit) {
+                return findManyByCondition(FDebt.F_DEBT.SIGN_MOBILE.in(values),limit);
         }
 
         /**

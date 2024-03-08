@@ -34,11 +34,13 @@ class SettlementItem2Debt implements IkWay<List<FSettlementItem>, FDebt> {
             final BigDecimal amount = item.getAmount();
             decimal = Fm.calcAmount(decimal, amount, item.getIncome());
         }
+        
+        debt.setAmount(decimal);
+        debt.setAmountBalance(decimal);             // 创建应收时：剩余金额 = 总金额
+
         if (decimal.doubleValue() < 0) {
-            debt.setAmount(decimal);
             debt.setType(EmDebt.Type.REFUND.name());
         } else {
-            debt.setAmount(decimal);
             debt.setType(EmDebt.Type.DEBT.name());
         }
     }

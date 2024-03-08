@@ -79,24 +79,14 @@ public interface IFDebt extends VertxPojo, Serializable {
     public BigDecimal getAmount();
 
     /**
-     * Setter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     * Setter for <code>ZDB.F_DEBT.AMOUNT_BALANCE</code>. 「amountBalance」——剩余金额
      */
-    public IFDebt setSignName(String value);
+    public IFDebt setAmountBalance(BigDecimal value);
 
     /**
-     * Getter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     * Getter for <code>ZDB.F_DEBT.AMOUNT_BALANCE</code>. 「amountBalance」——剩余金额
      */
-    public String getSignName();
-
-    /**
-     * Setter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
-     */
-    public IFDebt setSignMobile(String value);
-
-    /**
-     * Getter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
-     */
-    public String getSignMobile();
+    public BigDecimal getAmountBalance();
 
     /**
      * Setter for <code>ZDB.F_DEBT.FINISHED</code>. 「finished」- 是否完成
@@ -117,6 +107,26 @@ public interface IFDebt extends VertxPojo, Serializable {
      * Getter for <code>ZDB.F_DEBT.FINISHED_AT</code>. 「createdAt」- 完成时间
      */
     public LocalDateTime getFinishedAt();
+
+    /**
+     * Setter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     */
+    public IFDebt setSignName(String value);
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     */
+    public String getSignName();
+
+    /**
+     * Setter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
+     */
+    public IFDebt setSignMobile(String value);
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
+     */
+    public String getSignMobile();
 
     /**
      * Setter for <code>ZDB.F_DEBT.COMMENT</code>. 「comment」 - 备注
@@ -242,10 +252,11 @@ public interface IFDebt extends VertxPojo, Serializable {
                 setOrThrow(this::setSerial,json::getString,"SERIAL","java.lang.String");
                 setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
-                setOrThrow(this::setSignName,json::getString,"SIGN_NAME","java.lang.String");
-                setOrThrow(this::setSignMobile,json::getString,"SIGN_MOBILE","java.lang.String");
+                setOrThrow(this::setAmountBalance,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT_BALANCE","java.math.BigDecimal");
                 setOrThrow(this::setFinished,json::getBoolean,"FINISHED","java.lang.Boolean");
                 setOrThrow(this::setFinishedAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"FINISHED_AT","java.time.LocalDateTime");
+                setOrThrow(this::setSignName,json::getString,"SIGN_NAME","java.lang.String");
+                setOrThrow(this::setSignMobile,json::getString,"SIGN_MOBILE","java.lang.String");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
                 setOrThrow(this::setCustomerId,json::getString,"CUSTOMER_ID","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
@@ -269,10 +280,11 @@ public interface IFDebt extends VertxPojo, Serializable {
                 json.put("SERIAL",getSerial());
                 json.put("TYPE",getType());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
-                json.put("SIGN_NAME",getSignName());
-                json.put("SIGN_MOBILE",getSignMobile());
+                json.put("AMOUNT_BALANCE",getAmountBalance()==null?null:getAmountBalance().toString());
                 json.put("FINISHED",getFinished());
                 json.put("FINISHED_AT",getFinishedAt()==null?null:getFinishedAt().toString());
+                json.put("SIGN_NAME",getSignName());
+                json.put("SIGN_MOBILE",getSignMobile());
                 json.put("COMMENT",getComment());
                 json.put("CUSTOMER_ID",getCustomerId());
                 json.put("SIGMA",getSigma());

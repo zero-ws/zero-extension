@@ -16,11 +16,11 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function20;
+import org.jooq.Function21;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row20;
+import org.jooq.Row21;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -84,14 +84,9 @@ public class FDebt extends TableImpl<FDebtRecord> {
     public final TableField<FDebtRecord, BigDecimal> AMOUNT = createField(DSL.name("AMOUNT"), SQLDataType.DECIMAL(18, 2).nullable(false), this, "「amount」——价税合计，所有明细对应的实际结算金额");
 
     /**
-     * The column <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     * The column <code>ZDB.F_DEBT.AMOUNT_BALANCE</code>. 「amountBalance」——剩余金额
      */
-    public final TableField<FDebtRecord, String> SIGN_NAME = createField(DSL.name("SIGN_NAME"), SQLDataType.VARCHAR(128), this, "「signName」签单人姓名");
-
-    /**
-     * The column <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
-     */
-    public final TableField<FDebtRecord, String> SIGN_MOBILE = createField(DSL.name("SIGN_MOBILE"), SQLDataType.VARCHAR(128), this, "「signMobile」签单人电话");
+    public final TableField<FDebtRecord, BigDecimal> AMOUNT_BALANCE = createField(DSL.name("AMOUNT_BALANCE"), SQLDataType.DECIMAL(18, 2).nullable(false), this, "「amountBalance」——剩余金额");
 
     /**
      * The column <code>ZDB.F_DEBT.FINISHED</code>. 「finished」- 是否完成
@@ -102,6 +97,16 @@ public class FDebt extends TableImpl<FDebtRecord> {
      * The column <code>ZDB.F_DEBT.FINISHED_AT</code>. 「createdAt」- 完成时间
      */
     public final TableField<FDebtRecord, LocalDateTime> FINISHED_AT = createField(DSL.name("FINISHED_AT"), SQLDataType.LOCALDATETIME(0), this, "「createdAt」- 完成时间");
+
+    /**
+     * The column <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     */
+    public final TableField<FDebtRecord, String> SIGN_NAME = createField(DSL.name("SIGN_NAME"), SQLDataType.VARCHAR(128), this, "「signName」签单人姓名");
+
+    /**
+     * The column <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
+     */
+    public final TableField<FDebtRecord, String> SIGN_MOBILE = createField(DSL.name("SIGN_MOBILE"), SQLDataType.VARCHAR(128), this, "「signMobile」签单人电话");
 
     /**
      * The column <code>ZDB.F_DEBT.COMMENT</code>. 「comment」 - 备注
@@ -241,18 +246,18 @@ public class FDebt extends TableImpl<FDebtRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row20 type methods
+    // Row21 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row20<String, String, String, String, String, BigDecimal, String, String, Boolean, LocalDateTime, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row20) super.fieldsRow();
+    public Row21<String, String, String, String, String, BigDecimal, BigDecimal, Boolean, LocalDateTime, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row21) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function21<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -260,7 +265,7 @@ public class FDebt extends TableImpl<FDebtRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function21<? super String, ? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super BigDecimal, ? super Boolean, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

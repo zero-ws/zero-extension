@@ -1,6 +1,7 @@
 package cn.vertxup.fm.service.end;
 
 import cn.vertxup.fm.domain.tables.daos.FDebtDao;
+import cn.vertxup.fm.domain.tables.daos.FSettlementDao;
 import cn.vertxup.fm.domain.tables.daos.FSettlementItemDao;
 import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
@@ -73,7 +74,7 @@ public class DebtService implements DebtStub {
                 /* items */
                 response.put(KName.ITEMS, Ux.toJson(items));
                 final Set<String> settlementIds = Ut.valueSetString(items, FSettlementItem::getSettlementId);
-                return Ux.Jooq.on(FSettlement.class).fetchJInAsync(KName.KEY, settlementIds);
+                return Ux.Jooq.on(FSettlementDao.class).fetchJInAsync(KName.KEY, settlementIds);
             })
             .compose(settlementA -> {
                 /* settlements */
