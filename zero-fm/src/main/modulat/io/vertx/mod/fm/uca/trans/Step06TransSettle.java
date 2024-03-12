@@ -10,7 +10,6 @@ import io.vertx.mod.fm.uca.enter.Maker;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -28,15 +27,12 @@ class Step06TransSettle implements Trade<List<FSettlement>, FTrans> {
                 /*
                  * 金额计算
                  */
-                BigDecimal sum = new BigDecimal(0);
                 final List<String> nameList = new ArrayList<>();
                 for (final FSettlement settlement : settlements) {
                     if (Objects.nonNull(settlement.getAmount())) {
-                        sum = sum.add(settlement.getAmount());
                         nameList.add(settlement.getCode());
                     }
                 }
-                trans.setAmount(sum);
                 trans.setType(EmTran.Type.SETTLEMENT.name());
                 trans.setName("ST:" + Ut.fromJoin(nameList));
                 // 此处构造完成
