@@ -10,6 +10,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.mod.fm.cv.FmCv;
+import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
@@ -17,8 +18,6 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;
-
-import java.time.Instant;
 
 /**
  * @author lang : 2024-02-20
@@ -57,12 +56,10 @@ public class TransActor {
     @Address(Addr.Trans.END_TRANS)
     @Me
     public Future<JsonObject> finishAsync(final JsonObject body, final User user) {
-        {
-            // PUT 方法，所以要设置创建人信息（交易创建），特殊请求属性
-            final String key = Ux.keyUser(user);
-            body.put(KName.CREATED_BY, key);
-            body.put(KName.CREATED_AT, Instant.now());
-        }
+
+        // PUT 方法，所以要设置创建人信息（交易创建），特殊请求属性
+        Ke.umCreatedJ(body, user);
+
         // 1. 更新结算单
         return this.settleStub.updateAsync(body, user).compose(settlements -> {
             final JsonArray payment = Ut.valueJArray(body, FmCv.ID.PAYMENT);
@@ -74,7 +71,7 @@ public class TransActor {
             } else {
                 // 直接结算
                 // 2. 创建交易信息
-                return this.transStub.createAsync(body, settlements)
+                return this.transStub.createBySettlement(body, settlements)
 
                     // 3. 修正 finishedId
                     .compose(trans -> this.adjustStub.adjustAsync(trans, Ut.valueJArray(body, KName.ITEMS)))
@@ -85,8 +82,19 @@ public class TransActor {
 
     @Address(Addr.Trans.END_DEBT)
     @Me
-    public Future<JsonObject> debtAsync(final JsonObject body) {
-        return null;
+    public Future<JsonObject> debtAsync(final JsonObject body, final User user) {
+
+        // PUT 方法，所以要设置创建人信息（交易创建），特殊请求属性
+        Ke.umCreatedJ(body, user);
+
+        // 1. 更新应收单
+        return this.debtStub.updateAsync(body, user).compose(debts -> {
+            // 2. 应/退款已经无后续流程，直接创建交易数据
+            return this.transStub.createByDebt(body, debts)
+                // 3. 修正 finishedId
+                .compose(trans -> this.adjustStub.adjustAsync(trans, Ut.valueJArray(body, KName.ITEMS)))
+                .compose(Ux::futureJ);
+        });
     }
 
     @Address(Addr.Trans.FETCH_BY_KEY)

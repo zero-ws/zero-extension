@@ -5,6 +5,7 @@ import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.up.atom.typed.UArray;
 import io.vertx.up.commune.pojo.Mirror;
 import io.vertx.up.commune.pojo.Mojo;
@@ -38,6 +39,16 @@ class KeEnv {
             this.add(KName.UPDATED_BY);
         }
     };
+
+    static void auditJ(final JsonObject body, final User user) {
+        if (Ut.isNotNil(body) && Objects.nonNull(user)) {
+            final String key = Ux.keyUser(user);
+            if (Ut.isNotNil(key)) {
+                body.put(KName.CREATED_BY, key);
+                body.put(KName.CREATED_AT, Instant.now());
+            }
+        }
+    }
 
     static <T, I> void audit(final I output, final String outPojo, final T input, final String inPojo, final boolean isUpdated) {
         // If contains pojo, must be deserialized for auditor information

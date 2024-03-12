@@ -1,5 +1,6 @@
 package cn.vertxup.fm.service.end;
 
+import cn.vertxup.fm.domain.tables.pojos.FDebt;
 import cn.vertxup.fm.domain.tables.pojos.FSettlement;
 import cn.vertxup.fm.domain.tables.pojos.FTrans;
 import io.vertx.core.Future;
@@ -17,9 +18,11 @@ import java.util.Set;
  */
 public interface TransStub {
 
-    Future<FTrans> createAsync(JsonObject data, FSettlement settlement);
+    Future<FTrans> createBySettlement(JsonObject data, FSettlement settlement);
 
-    Future<FTrans> createAsync(JsonObject data, List<FSettlement> settlements);
+    Future<FTrans> createBySettlement(JsonObject data, List<FSettlement> settlements);
+
+    Future<FTrans> createByDebt(JsonObject data, List<FDebt> debts);
 
     Future<List<TranData>> fetchAsync(Set<String> keys, Set<EmTran.Type> typeSet);
 

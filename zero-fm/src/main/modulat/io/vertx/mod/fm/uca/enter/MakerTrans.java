@@ -32,7 +32,9 @@ class MakerTrans implements Maker<String, FTrans> {
          * active, sigma, language
          * createdAt, createdBy
          * updatedAt, updatedBy
-         * comment
+         * comment,
+         *
+         * amount
          */
         final FTrans trans = Ux.fromJson(data, FTrans.class);
 
@@ -44,9 +46,6 @@ class MakerTrans implements Maker<String, FTrans> {
          */
         trans.setAmountPre(BigDecimal.ZERO);
         trans.setPrepay(Boolean.FALSE);
-
-
-        trans.setType(EmTran.Type.SETTLEMENT.name());
         trans.setStatus(EmTran.Status.FINISHED.name());
 
         return Ke.umIndent(trans, trans.getSigma(), indent, FTrans::setSerial).compose(generated -> {

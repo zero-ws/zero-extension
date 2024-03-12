@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  */
 public class TransService implements TransStub {
     @Override
-    public Future<FTrans> createAsync(final JsonObject data, final FSettlement settlement) {
+    public Future<FTrans> createBySettlement(final JsonObject data, final FSettlement settlement) {
         final JsonObject params = new JsonObject();
         {
             params.put(KName.COMMENT, settlement.getComment());
@@ -36,11 +36,11 @@ public class TransService implements TransStub {
         // 1. 构造 FTrans
         return Trade.step06T().flatter(data, List.of(settlement))
             // 2. 构造 FTransOf
-            .compose(trans -> this.createAsync(trans, data, params));
+            .compose(trans -> this.createTransItem(trans, data, params));
     }
 
     @Override
-    public Future<FTrans> createAsync(final JsonObject data, final List<FSettlement> settlements) {
+    public Future<FTrans> createBySettlement(final JsonObject data, final List<FSettlement> settlements) {
         final JsonObject params = new JsonObject();
         {
             params.put(KName.COMMENT, Ut.valueString(data, KName.COMMENT));
@@ -51,10 +51,26 @@ public class TransService implements TransStub {
         // 1. 构造 FTrans
         return Trade.step06T().flatter(data, settlements)
             // 2. 构造 FTransOf
-            .compose(trans -> this.createAsync(trans, data, params));
+            .compose(trans -> this.createTransItem(trans, data, params));
     }
 
-    private Future<FTrans> createAsync(
+    @Override
+    public Future<FTrans> createByDebt(final JsonObject data, final List<FDebt> debts) {
+        final JsonObject params = new JsonObject();
+        {
+            // 这种模式下前端已经传入了 type 信息
+            params.put(KName.COMMENT, Ut.valueString(data, KName.COMMENT));
+            params.put(KName.TYPE, Ut.valueString(data, KName.TYPE));
+            final JsonArray keys = Ut.toJArray(Ut.valueSetString(debts, FDebt::getKey));
+            params.put(KName.KEYS, keys);
+        }
+        // 1. 构造 FTrans
+        return Trade.step07T().flatter(data, debts)
+            // 2. 构造 FTransOf
+            .compose(trans -> this.createTransItem(trans, data, params));
+    }
+
+    private Future<FTrans> createTransItem(
         final FTrans trans, final JsonObject data, final JsonObject params) {
         return Trade.step06TO().scatter(params, trans)
             .compose(nil -> {
@@ -62,6 +78,8 @@ public class TransService implements TransStub {
                 final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
 
                 IkWay.ofT2TI().transfer(trans, payments);
+                // 防重复创建：Duplicate entry 'Cash' for key 'name_UNIQUE'
+                payments.forEach(payment -> payment.setKey(null));
 
                 return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments);
             })

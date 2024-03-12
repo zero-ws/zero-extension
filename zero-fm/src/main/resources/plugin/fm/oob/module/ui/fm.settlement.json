@@ -8,7 +8,8 @@
             "DONE": "直接结算,check-circle,16,#268941",
             "DEBT": "含应收,link,16,#0e8be6",
             "REFUND": "含退款,link,16,#ff686b",
-            "PENDING": "未结算,exclamation-circle,16,#0a7bed"
+            "PENDING": "未结算,exclamation-circle,16,#FA8072",
+            "PART": "部分结算,check-circle,16,#0e8be6"
         }
     },
     {
