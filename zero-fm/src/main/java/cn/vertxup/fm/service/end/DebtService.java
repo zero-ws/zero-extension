@@ -9,6 +9,7 @@ import cn.vertxup.fm.domain.tables.pojos.FSettlementItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.fm.cv.em.EmTran;
 import io.vertx.mod.fm.refine.Fm;
@@ -87,5 +88,19 @@ public class DebtService implements DebtStub {
                 return this.transStub.fetchAsync(Ut.toSet(keys), Set.of(EmTran.Type.DEBT, EmTran.Type.REFUND));
             })
             .compose(tranData -> Ux.future(Fm.toTransaction(response, tranData)));
+    }
+
+    @Override
+    public Future<List<FDebt>> updateAsync(final JsonObject body, final User user) {
+        /*
+         * 提取应收中的基础数据，此处无选择，直接针对 debts 中的应收单下手
+         * 应收会被更新
+         *    - updatedBy / finishedAt
+         *    - finished / finishedAt
+         *    - amountBalance
+         */
+        final JsonArray debtData = Ut.valueJArray(body, KName.Finance.DEBTS);
+
+        return Trade.sync01DT().scatter(debtData, user);
     }
 }

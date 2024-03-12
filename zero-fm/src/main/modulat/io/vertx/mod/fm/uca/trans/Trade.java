@@ -64,8 +64,18 @@ public interface Trade<IN, OUT> {
     }
 
     @SuppressWarnings("unchecked")
+    static Trade<List<FDebt>, FTrans> step07T() {
+        return (Trade<List<FDebt>, FTrans>) POOL.CCT_TRADE.pick(Step07TransDebt::new, Step07TransDebt.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
     static Trade<User, FSettlement> sync01ST() {
         return (Trade<User, FSettlement>) POOL.CCT_TRADE.pick(Sync01Settlement::new, Sync01Settlement.class.getName());
+    }
+
+    @SuppressWarnings("unchecked")
+    static Trade<User, FDebt> sync01DT() {
+        return (Trade<User, FDebt>) POOL.CCT_TRADE.pick(Sync01Debt::new, Sync01Debt.class.getName());
     }
 
     /*

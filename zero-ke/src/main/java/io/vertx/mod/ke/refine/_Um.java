@@ -3,6 +3,7 @@ package io.vertx.mod.ke.refine;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 
@@ -105,6 +106,10 @@ class _Um extends _Key {
      */
     public static <T, I> void umCreated(final I output, final String outPojo, final T input, final String inPojo) {
         KeEnv.audit(output, outPojo, input, inPojo, false);
+    }
+
+    public static void umCreatedJ(final JsonObject body, final User user) {
+        KeEnv.auditJ(body, user);
     }
 
     public static <T, I> void umUpdated(final I output, final T input) {

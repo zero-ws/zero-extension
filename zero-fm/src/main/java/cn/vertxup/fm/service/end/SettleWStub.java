@@ -42,6 +42,7 @@ public interface SettleWStub {
      * 此方法只返回最新的结算单信息，不包含结算明细的更新信息。
      *
      * @param body 结算数据
+     * @param user 用户信息
      *
      * @return 结算结果
      */

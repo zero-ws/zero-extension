@@ -19,6 +19,82 @@ public interface TransAgent {
     @Address(Addr.Trans.END_TRANS)
     JsonObject finishAsync(@BodyParam JsonObject body);
 
+    /**
+     * 请求数据
+     * <pre><code>
+     * {
+     *     "debts": [
+     *         {
+     *             "amountBalance": 120.5,
+     *             "sigma": "ENhwBAJPZuSgIAE5EDakR6yrIQbOoOPq",
+     *             "active": true,
+     *             "signName": "吕红军",
+     *             "finishedAmount": 120.5,
+     *             "code": "D24031112200003",
+     *             "updatedAt": "2024-03-11T12:20:33",
+     *             "finished": true,
+     *             "updatedBy": "f7fbfaf9-8319-4eb0-9ee7-1948b8b56a67",
+     *             "serial": "D24031112200003",
+     *             "amount": 120.5,
+     *             "language": "cn",
+     *             "customerId": "6aaaef77-46d2-4faf-bdc6-2e2988b7f6bd",
+     *             "type": "DEBT",
+     *             "createdAt": "2024-03-11T12:20:33",
+     *             "signMobile": "15922611449",
+     *             "createdBy": "f7fbfaf9-8319-4eb0-9ee7-1948b8b56a67",
+     *             "key": "08fc84d2-b9b6-40ce-9984-dc0165f72b90"
+     *         }
+     *     ],
+     *     "amountActual": 121,
+     *     "payment": [
+     *         {
+     *             "key": "Cash",
+     *             "name": "Cash",
+     *             "amount": 121,
+     *             "language": "cn"
+     *         }
+     *     ],
+     *     "customerName": "协议单位1",
+     *     "settlements": [
+     *         {
+     *             "finishedAt": "2024-03-11T12:20:33",
+     *             "sigma": "ENhwBAJPZuSgIAE5EDakR6yrIQbOoOPq",
+     *             "relatedId": "2b5ebaf1-5553-4cba-9f3b-2ed4f69f4e4a",
+     *             "active": true,
+     *             "signName": "吕红军",
+     *             "code": "E24031112200006",
+     *             "updatedAt": "2024-03-11T12:20:33",
+     *             "finished": true,
+     *             "updatedBy": "f7fbfaf9-8319-4eb0-9ee7-1948b8b56a67",
+     *             "serial": "E24031112200006",
+     *             "amount": 121,
+     *             "language": "cn",
+     *             "customerId": "6aaaef77-46d2-4faf-bdc6-2e2988b7f6bd",
+     *             "createdAt": "2024-03-11T12:20:33",
+     *             "signMobile": "15922611449",
+     *             "createdBy": "f7fbfaf9-8319-4eb0-9ee7-1948b8b56a67",
+     *             "key": "38544ab8-5336-4164-9d20-1d7b2c78c52a"
+     *         }
+     *     ],
+     *     "amountTotal": 120.5,
+     *     "rounded": "HALF",
+     *     "amount": 120.5,
+     *     "customerId": "6aaaef77-46d2-4faf-bdc6-2e2988b7f6bd",
+     *     "amountGap": "-0.50",
+     *     "key": "08fc84d2-b9b6-40ce-9984-dc0165f72b90",
+     *     "type": "DEBT",
+     *     "language": "cn",
+     *     "updatedBy": "f7fbfaf9-8319-4eb0-9ee7-1948b8b56a67",
+     *     "updatedAt": "2024-03-12T02:31:37.775332Z",
+     *     "sigma": "ENhwBAJPZuSgIAE5EDakR6yrIQbOoOPq",
+     *     "active": true
+     * }
+     * </code></pre>
+     *
+     * @param body 请求数据
+     *
+     * @return 交易结果
+     */
     @Path("/trans-proc/debt")
     @PUT
     @Address(Addr.Trans.END_DEBT)

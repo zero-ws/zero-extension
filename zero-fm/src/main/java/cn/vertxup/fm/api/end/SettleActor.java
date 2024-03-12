@@ -72,7 +72,7 @@ public class SettleActor {
 
 
             // 2. 创建交易单和交易明细
-            .compose(settlement -> this.transStub.createAsync(body, settlement))
+            .compose(settlement -> this.transStub.createBySettlement(body, settlement))
 
 
             // 3. 修正 finishedId
