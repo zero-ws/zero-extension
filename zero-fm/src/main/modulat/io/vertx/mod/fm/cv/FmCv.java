@@ -23,7 +23,7 @@ public interface FmCv {
 
     interface ID {
         String SETTLEMENT_ID = "settlementId";
-        String PAYMENT_ID = "paymentId";
+        String DEBT_ID = "debtId";
         String PAYMENT = "payment";
     }
 

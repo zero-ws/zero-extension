@@ -27,10 +27,11 @@ public class FDebt implements VertxPojo, IFDebt {
     private String serial;
     private String type;
     private BigDecimal amount;
-    private String signName;
-    private String signMobile;
+    private BigDecimal amountBalance;
     private Boolean finished;
     private LocalDateTime finishedAt;
+    private String signName;
+    private String signMobile;
     private String comment;
     private String customerId;
     private String sigma;
@@ -51,10 +52,11 @@ public class FDebt implements VertxPojo, IFDebt {
         this.serial = value.getSerial();
         this.type = value.getType();
         this.amount = value.getAmount();
-        this.signName = value.getSignName();
-        this.signMobile = value.getSignMobile();
+        this.amountBalance = value.getAmountBalance();
         this.finished = value.getFinished();
         this.finishedAt = value.getFinishedAt();
+        this.signName = value.getSignName();
+        this.signMobile = value.getSignMobile();
         this.comment = value.getComment();
         this.customerId = value.getCustomerId();
         this.sigma = value.getSigma();
@@ -74,10 +76,11 @@ public class FDebt implements VertxPojo, IFDebt {
         String serial,
         String type,
         BigDecimal amount,
-        String signName,
-        String signMobile,
+        BigDecimal amountBalance,
         Boolean finished,
         LocalDateTime finishedAt,
+        String signName,
+        String signMobile,
         String comment,
         String customerId,
         String sigma,
@@ -95,10 +98,11 @@ public class FDebt implements VertxPojo, IFDebt {
         this.serial = serial;
         this.type = type;
         this.amount = amount;
-        this.signName = signName;
-        this.signMobile = signMobile;
+        this.amountBalance = amountBalance;
         this.finished = finished;
         this.finishedAt = finishedAt;
+        this.signName = signName;
+        this.signMobile = signMobile;
         this.comment = comment;
         this.customerId = customerId;
         this.sigma = sigma;
@@ -219,36 +223,19 @@ public class FDebt implements VertxPojo, IFDebt {
     }
 
     /**
-     * Getter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     * Getter for <code>ZDB.F_DEBT.AMOUNT_BALANCE</code>. 「amountBalance」——剩余金额
      */
     @Override
-    public String getSignName() {
-        return this.signName;
+    public BigDecimal getAmountBalance() {
+        return this.amountBalance;
     }
 
     /**
-     * Setter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     * Setter for <code>ZDB.F_DEBT.AMOUNT_BALANCE</code>. 「amountBalance」——剩余金额
      */
     @Override
-    public FDebt setSignName(String signName) {
-        this.signName = signName;
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
-     */
-    @Override
-    public String getSignMobile() {
-        return this.signMobile;
-    }
-
-    /**
-     * Setter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
-     */
-    @Override
-    public FDebt setSignMobile(String signMobile) {
-        this.signMobile = signMobile;
+    public FDebt setAmountBalance(BigDecimal amountBalance) {
+        this.amountBalance = amountBalance;
         return this;
     }
 
@@ -283,6 +270,40 @@ public class FDebt implements VertxPojo, IFDebt {
     @Override
     public FDebt setFinishedAt(LocalDateTime finishedAt) {
         this.finishedAt = finishedAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     */
+    @Override
+    public String getSignName() {
+        return this.signName;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_DEBT.SIGN_NAME</code>. 「signName」签单人姓名
+     */
+    @Override
+    public FDebt setSignName(String signName) {
+        this.signName = signName;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
+     */
+    @Override
+    public String getSignMobile() {
+        return this.signMobile;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_DEBT.SIGN_MOBILE</code>. 「signMobile」签单人电话
+     */
+    @Override
+    public FDebt setSignMobile(String signMobile) {
+        this.signMobile = signMobile;
         return this;
     }
 
@@ -501,17 +522,11 @@ public class FDebt implements VertxPojo, IFDebt {
         }
         else if (!this.amount.equals(other.amount))
             return false;
-        if (this.signName == null) {
-            if (other.signName != null)
+        if (this.amountBalance == null) {
+            if (other.amountBalance != null)
                 return false;
         }
-        else if (!this.signName.equals(other.signName))
-            return false;
-        if (this.signMobile == null) {
-            if (other.signMobile != null)
-                return false;
-        }
-        else if (!this.signMobile.equals(other.signMobile))
+        else if (!this.amountBalance.equals(other.amountBalance))
             return false;
         if (this.finished == null) {
             if (other.finished != null)
@@ -524,6 +539,18 @@ public class FDebt implements VertxPojo, IFDebt {
                 return false;
         }
         else if (!this.finishedAt.equals(other.finishedAt))
+            return false;
+        if (this.signName == null) {
+            if (other.signName != null)
+                return false;
+        }
+        else if (!this.signName.equals(other.signName))
+            return false;
+        if (this.signMobile == null) {
+            if (other.signMobile != null)
+                return false;
+        }
+        else if (!this.signMobile.equals(other.signMobile))
             return false;
         if (this.comment == null) {
             if (other.comment != null)
@@ -598,10 +625,11 @@ public class FDebt implements VertxPojo, IFDebt {
         result = prime * result + ((this.serial == null) ? 0 : this.serial.hashCode());
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
-        result = prime * result + ((this.signName == null) ? 0 : this.signName.hashCode());
-        result = prime * result + ((this.signMobile == null) ? 0 : this.signMobile.hashCode());
+        result = prime * result + ((this.amountBalance == null) ? 0 : this.amountBalance.hashCode());
         result = prime * result + ((this.finished == null) ? 0 : this.finished.hashCode());
         result = prime * result + ((this.finishedAt == null) ? 0 : this.finishedAt.hashCode());
+        result = prime * result + ((this.signName == null) ? 0 : this.signName.hashCode());
+        result = prime * result + ((this.signMobile == null) ? 0 : this.signMobile.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
         result = prime * result + ((this.customerId == null) ? 0 : this.customerId.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
@@ -625,10 +653,11 @@ public class FDebt implements VertxPojo, IFDebt {
         sb.append(", ").append(serial);
         sb.append(", ").append(type);
         sb.append(", ").append(amount);
-        sb.append(", ").append(signName);
-        sb.append(", ").append(signMobile);
+        sb.append(", ").append(amountBalance);
         sb.append(", ").append(finished);
         sb.append(", ").append(finishedAt);
+        sb.append(", ").append(signName);
+        sb.append(", ").append(signMobile);
         sb.append(", ").append(comment);
         sb.append(", ").append(customerId);
         sb.append(", ").append(sigma);
@@ -656,10 +685,11 @@ public class FDebt implements VertxPojo, IFDebt {
         setSerial(from.getSerial());
         setType(from.getType());
         setAmount(from.getAmount());
-        setSignName(from.getSignName());
-        setSignMobile(from.getSignMobile());
+        setAmountBalance(from.getAmountBalance());
         setFinished(from.getFinished());
         setFinishedAt(from.getFinishedAt());
+        setSignName(from.getSignName());
+        setSignMobile(from.getSignMobile());
         setComment(from.getComment());
         setCustomerId(from.getCustomerId());
         setSigma(from.getSigma());
