@@ -220,22 +220,6 @@ public class FBillDao extends AbstractVertxDAO<FBillRecord, cn.vertxup.fm.domain
         }
 
         /**
-     * Find records that have <code>MODEL_NEW_KEY IN (values)</code>
-     * asynchronously
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FBill>> findManyByModelNewKey(Collection<String> values) {
-                return findManyByCondition(FBill.F_BILL.MODEL_NEW_KEY.in(values));
-        }
-
-        /**
-     * Find records that have <code>MODEL_NEW_KEY IN (values)</code>
-     * asynchronously limited by the given limit
-     */
-        public Future<List<cn.vertxup.fm.domain.tables.pojos.FBill>> findManyByModelNewKey(Collection<String> values, int limit) {
-                return findManyByCondition(FBill.F_BILL.MODEL_NEW_KEY.in(values),limit);
-        }
-
-        /**
      * Find records that have <code>SIGMA IN (values)</code> asynchronously
      */
         public Future<List<cn.vertxup.fm.domain.tables.pojos.FBill>> findManyBySigma(Collection<String> values) {

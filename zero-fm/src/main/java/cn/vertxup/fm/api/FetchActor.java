@@ -46,7 +46,7 @@ public class FetchActor {
         final BillData data = new BillData();
         /* 按照 orderId 查询账单集合信息 */
         return this.fetchStub.fetchByOrder(orderId)
-            .compose(data::bill)
+            .compose(bills1 -> data.bill(bills1))
 
 
             /* 根据账单查询 账单明细 信息 */
@@ -55,14 +55,14 @@ public class FetchActor {
 
 
             /* 根据账单明细查询 结算单 信息 */
-            .compose(this.fetchStub::fetchSettlements)
-            .compose(data::settlement)
+            .compose(items -> this.fetchStub.fetchSettlements(items))
+            .compose(settlements -> data.settlement(settlements))
 
             /*
              * 旧版本多查询了一步，但实际这个步骤查询下来没有任何用
              * 根据结算单查询 交易明细 信息
              */
-            .compose(nil -> data.response(true));
+            .compose(nil -> data.response(false));
     }
 
 
