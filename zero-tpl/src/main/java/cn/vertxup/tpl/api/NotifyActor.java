@@ -32,4 +32,10 @@ public class NotifyActor {
         return this.notifyStub.saveNotify(OwnerType.USER, userKey, data)
             .compose(Ux::futureJ);
     }
+
+    @Address(Addr.Notify.MY_SAVE)
+    public Future<JsonObject> fetchNotify(final String user) {
+        return this.notifyStub.fetchNotify(OwnerType.USER, user)
+            .compose(Ux::futureJ);
+    }
 }
