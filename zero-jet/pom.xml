@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-jet</artifactId>
-    <name>Ext Dynamic / I_ / Api Job</name>
+    <name>Zero.Plugins.Modules.MBSE.Service</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

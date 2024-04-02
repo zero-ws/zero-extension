@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>zero-doc</artifactId>
-    <name>Ext Configuration / D_ / Document</name>
+    <name>Zero.Plugins.Modules.RTE.Documentation</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-battery</artifactId>
-    <name>Ext Dynamic / B_ / Modulat System</name>
+    <name>Zero.Plugins.Modules.MBSE.Configuration</name>
     <dependencies>
         <!-- Kern -->
         <dependency>
