@@ -55,6 +55,16 @@ public class ExUserEpic implements ExUser {
     }
 
     @Override
+    public Future<JsonArray> userRole(final String key) {
+        return Junc.role().identAsync(key).compose(relations -> {
+            final JsonArray roleKeys = new JsonArray();
+            Ut.itJArray(relations).forEach(item -> roleKeys.add(item.getValue(AuthKey.F_ROLE_ID)));
+            return Ux.future(roleKeys);
+        });
+    }
+
+
+    @Override
     public Future<ConcurrentMap<String, JsonObject>> mapUser(final Set<String> keys, final boolean extension) {
         final KRef userRef = new KRef();
         return this.fetchList(keys)

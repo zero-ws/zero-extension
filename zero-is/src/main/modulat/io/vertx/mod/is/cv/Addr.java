@@ -20,4 +20,11 @@ public interface Addr {
 
         String DELETE_TRASH = Prefix._EVENT + "I-DIRECTORY/DELETE-TRASH";
     }
+
+    interface Message {
+
+        String UPDATE_STATUS = Prefix._EVENT + "I-MESSAGE/UPDATE/STATUS";
+
+        String FETCH_TYPED = Prefix._EVENT + "I-MESSAGE/FETCH/BY/TYPED";
+    }
 }

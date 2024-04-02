@@ -26,3 +26,6 @@ databaseChangeLog:
   - include:
       file: plugin/tpl/sql/MY_DESKTOP.sql  # 我的工作台
       relativeToChangelogFile: false
+  - include:
+      file: plugin/tpl/sql/MY_NOTIFY.sql  # 我的提醒
+      relativeToChangelogFile: false

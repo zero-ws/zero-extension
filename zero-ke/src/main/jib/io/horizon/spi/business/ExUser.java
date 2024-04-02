@@ -79,5 +79,7 @@ public interface ExUser {
 
     Future<JsonArray> userGroup(String key);
 
+    Future<JsonArray> userRole(String key);
+
     Future<JsonArray> searchUser(String keyword);
 }

@@ -16,6 +16,10 @@ CREATE TABLE IF NOT EXISTS I_MESSAGE
      *    PENDING -> SENT ( FAILED )
      * 1) Email, Sms etc. ( Reflect to field type )
      * 2) Capture the tpl based on `type` at the same time
+     * -- status
+     * - PENDING    等待发送
+     * - SENT       已发送
+     * - HISTORY    已读
      */
     `STATUS`     VARCHAR(255) COMMENT '「status」- 消息状态',
     `SUBJECT`    VARCHAR(255) COMMENT '「subject」- 消息标题',

@@ -8,6 +8,7 @@ import cn.vertxup.tpl.domain.tables.MyBag;
 import cn.vertxup.tpl.domain.tables.MyDesktop;
 import cn.vertxup.tpl.domain.tables.MyFavor;
 import cn.vertxup.tpl.domain.tables.MyMenu;
+import cn.vertxup.tpl.domain.tables.MyNotify;
 import cn.vertxup.tpl.domain.tables.MySetting;
 import cn.vertxup.tpl.domain.tables.MyTpl;
 import cn.vertxup.tpl.domain.tables.TplMessage;
@@ -40,6 +41,11 @@ public class Tables {
      * The table <code>ZDB.MY_MENU</code>.
      */
     public static final MyMenu MY_MENU = MyMenu.MY_MENU;
+
+    /**
+     * The table <code>ZDB.MY_NOTIFY</code>.
+     */
+    public static final MyNotify MY_NOTIFY = MyNotify.MY_NOTIFY;
 
     /**
      * The table <code>ZDB.MY_SETTING</code>.
