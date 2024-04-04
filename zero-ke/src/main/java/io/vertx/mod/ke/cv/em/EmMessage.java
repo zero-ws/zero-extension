@@ -1,4 +1,4 @@
-package io.vertx.mod.is.cv.em;
+package io.vertx.mod.ke.cv.em;
 
 /**
  * @author lang : 2024-04-02
@@ -14,6 +14,6 @@ public final class EmMessage {
     public enum Type {
         EMAIL,
         SMS,
-        SITE,
+        MESSAGE,
     }
 }

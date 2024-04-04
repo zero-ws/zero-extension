@@ -5,7 +5,7 @@ import cn.vertxup.integration.domain.tables.pojos.IMessage;
 import io.horizon.uca.qr.Sorter;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.is.cv.em.EmMessage;
+import io.vertx.mod.ke.cv.em.EmMessage;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
