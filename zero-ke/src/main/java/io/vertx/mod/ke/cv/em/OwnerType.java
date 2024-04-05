@@ -1,4 +1,4 @@
-package io.vertx.mod.rbac.cv.em;
+package io.vertx.mod.ke.cv.em;
 
 public enum OwnerType {
     ROLE,       // Role Mode

@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-ke</artifactId>
-    <name>Zero Extension Zone</name>
+    <name>Zero.Plugins.Modules.RTE.Zone</name>
     <dependencies>
         <!-- 模块化改造 -->
         <dependency>

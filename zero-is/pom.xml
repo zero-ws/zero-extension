@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-is</artifactId>
-    <name>Ext Configuration / I_ / Integration</name>
+    <name>Zero.Plugins.Modules.RTE.Integration</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-tpl</artifactId>
-    <name>Ext Configuration / TPL_ / Template Definition</name>
+    <name>Zero.Plugins.Modules.Business.Personal</name>
     <dependencies>
         <!-- Kern -->
         <dependency>

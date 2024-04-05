@@ -11,7 +11,7 @@
 
     <artifactId>zero-extension</artifactId>
     <packaging>pom</packaging>
-    <name>Zero Extension</name>
+    <name>Zero.Plugins.Modules.POM.${zero.version}</name>
     <modules>
         <module>zero-crud</module>              <!-- CRUD -->
         <module>zero-ke</module>                <!-- Kernel Engine -->

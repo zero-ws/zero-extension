@@ -2,7 +2,7 @@ package io.vertx.mod.is.uca.command;
 
 import cn.vertxup.integration.domain.tables.pojos.IDirectory;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.is.cv.em.TypeDirectory;
+import io.vertx.mod.is.cv.em.EmDirectory;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
@@ -25,6 +25,6 @@ public class FsReadOnly extends FsDefault {
         metadata.put("deletion", Boolean.FALSE);
         metadata.put("edition", Boolean.FALSE);
         directory.setMetadata(metadata.encode());
-        return directory.setType(TypeDirectory.STORE.name());
+        return directory.setType(EmDirectory.Type.STORE.name());
     }
 }

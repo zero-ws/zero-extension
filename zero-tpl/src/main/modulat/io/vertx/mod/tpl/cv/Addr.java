@@ -15,4 +15,10 @@ public interface Addr {
 
         String MY_SAVE = Prefix._EVENT + "X-MENU/MY/SAVE";
     }
+
+    interface Notify {
+        String MY_FETCH = Prefix._EVENT + "I-MESSAGE/MY/FETCH";
+
+        String MY_SAVE = Prefix._EVENT + "I-MESSAGE/MY/SAVE";
+    }
 }

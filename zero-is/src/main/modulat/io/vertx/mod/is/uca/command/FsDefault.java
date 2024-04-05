@@ -9,7 +9,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.is.atom.IsConfig;
 import io.vertx.mod.is.cv.IsFolder;
-import io.vertx.mod.is.cv.em.TypeDirectory;
+import io.vertx.mod.is.cv.em.EmDirectory;
 import io.vertx.mod.is.init.IsPin;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
@@ -35,7 +35,7 @@ public class FsDefault extends AbstractFs {
          */
         final IDirectory directory = Ux.fromJson(directoryJ, IDirectory.class);
         directory.setCode(Ut.encryptMD5(directory.getStorePath()));
-        return directory.setType(TypeDirectory.STORE.name());
+        return directory.setType(EmDirectory.Type.STORE.name());
     }
 
     @Override

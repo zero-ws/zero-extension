@@ -46,6 +46,11 @@ public class Zdb extends SchemaImpl {
     public final MyMenu MY_MENU = MyMenu.MY_MENU;
 
     /**
+     * The table <code>ZDB.MY_NOTIFY</code>.
+     */
+    public final MyNotify MY_NOTIFY = MyNotify.MY_NOTIFY;
+
+    /**
      * The table <code>ZDB.MY_SETTING</code>.
      */
     public final MySetting MY_SETTING = MySetting.MY_SETTING;
@@ -90,6 +95,7 @@ public class Zdb extends SchemaImpl {
             MyDesktop.MY_DESKTOP,
             MyFavor.MY_FAVOR,
             MyMenu.MY_MENU,
+            MyNotify.MY_NOTIFY,
             MySetting.MY_SETTING,
             MyTpl.MY_TPL,
             TplMessage.TPL_MESSAGE,
