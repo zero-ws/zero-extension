@@ -3,7 +3,7 @@ package cn.vertxup.integration.service;
 import cn.vertxup.integration.domain.tables.pojos.IMessage;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.is.cv.em.EmMessage;
+import io.vertx.mod.ke.cv.em.EmMessage;
 
 import java.util.List;
 
