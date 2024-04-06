@@ -4,14 +4,17 @@ import cn.vertxup.integration.domain.tables.daos.IMessageDao;
 import cn.vertxup.integration.domain.tables.pojos.IMessage;
 import io.horizon.uca.qr.Sorter;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.cv.em.EmMessage;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author lang : 2024-04-02
@@ -26,13 +29,49 @@ public class MessageService implements MessageStub {
     }
 
     @Override
-    public Future<IMessage> updateStatus(final String key, final EmMessage.Status status, final String user) {
+    public Future<List<IMessage>> updateStatus(final JsonArray keys, final EmMessage.Status status, final String user) {
         final UxJooq jq = Ux.Jooq.on(IMessageDao.class);
-        return jq.<IMessage>fetchByIdAsync(key).compose(message -> {
-            message.setStatus(status.name());
-            message.setUpdatedBy(user);
-            message.setUpdatedAt(LocalDateTime.now());
-            return jq.updateAsync(message);
+        return jq.<IMessage>fetchInAsync(KName.KEY, keys).compose(messageList -> {
+            messageList.forEach(message -> {
+                message.setStatus(status.name());
+                message.setUpdatedBy(user);
+                message.setUpdatedAt(LocalDateTime.now());
+            });
+            return jq.updateAsync(messageList);
         });
+    }
+
+    @Override
+    public Future<IMessage> addMessage(final JsonObject body, final String user) {
+        // Query
+        final JsonObject condition = Ux.whereAnd();
+        {
+            condition.put("to", Ut.valueString(body, "to"));
+            condition.put(KName.SUBJECT, Ut.valueString(body, KName.SUBJECT));
+            condition.put(KName.APP_ID, Ut.valueString(body, KName.APP_ID));
+        }
+        final UxJooq jq = Ux.Jooq.on(IMessageDao.class);
+        return jq.<IMessage>fetchOneAsync(condition).compose(message -> {
+            if (Objects.nonNull(message)) {
+                return Ux.future(message);
+            }
+
+            final IMessage inserted = Ux.fromJson(body, IMessage.class);
+            {
+                final LocalDateTime at = LocalDateTime.now();
+                inserted.setCreatedAt(at);
+                inserted.setCreatedBy(user);
+                inserted.setUpdatedAt(at);
+                inserted.setUpdatedBy(user);
+            }
+            return jq.insertAsync(inserted);
+        });
+    }
+
+    @Override
+    public Future<Boolean> deleteMessage(final JsonArray keys) {
+        final JsonObject condition = Ux.whereAnd();
+        condition.put(KName.KEY + ",i", keys);
+        return Ux.Jooq.on(IMessageDao.class).deleteByAsync(condition);
     }
 }

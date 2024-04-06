@@ -8,6 +8,7 @@ import io.vertx.ext.auth.User;
 import io.vertx.mod.is.cv.Addr;
 import io.vertx.mod.ke.cv.em.EmMessage;
 import io.vertx.up.annotations.Address;
+import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.commune.config.XHeader;
 import io.vertx.up.eon.KName;
@@ -39,11 +40,27 @@ public class MessageActor {
 
 
     @Address(Addr.Message.UPDATE_STATUS)
-    public Future<JsonObject> updateStatus(final String key,
-                                           final String statusStr,
+    public Future<JsonObject> updateStatus(final String statusStr,
+                                           final JsonArray keys,
                                            final User user) {
         final EmMessage.Status status = Ut.toEnum(statusStr, EmMessage.Status.class);
-        return this.messageStub.updateStatus(key, status, Ux.keyUser(user))
+        return this.messageStub.updateStatus(keys, status, Ux.keyUser(user))
             .compose(Ux::futureJ);
+    }
+
+    @Address(Addr.Message.ADD)
+    @Me
+    public Future<JsonObject> addMessage(final JsonObject data,
+                                         final User user) {
+        final String messageId = Ut.valueString(data, "messageId");
+        data.put(KName.NAME, messageId);
+        data.put(KName.CODE, messageId);
+        return this.messageStub.addMessage(data, Ux.keyUser(user))
+            .compose(Ux::futureJ);
+    }
+
+    @Address(Addr.Message.DELETE_BATCH)
+    public Future<Boolean> deleteMessage(final JsonArray keys) {
+        return this.messageStub.deleteMessage(keys);
     }
 }
