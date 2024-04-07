@@ -30,7 +30,7 @@ public class MessageActor {
                                         final XHeader header,
                                         final User user) {
         final JsonObject condition = Ux.whereAnd();
-        condition.put("to", Ux.keyUser(user));
+        condition.put("sendTo", Ux.keyUser(user));
         condition.put(KName.APP_ID, header.getAppId());
 
         final EmMessage.Type type = Ut.toEnum(typeStr, EmMessage.Type.class);
@@ -40,12 +40,12 @@ public class MessageActor {
 
 
     @Address(Addr.Message.UPDATE_STATUS)
-    public Future<JsonObject> updateStatus(final String statusStr,
-                                           final JsonArray keys,
-                                           final User user) {
+    public Future<JsonArray> updateStatus(final String statusStr,
+                                          final JsonArray keys,
+                                          final User user) {
         final EmMessage.Status status = Ut.toEnum(statusStr, EmMessage.Status.class);
         return this.messageStub.updateStatus(keys, status, Ux.keyUser(user))
-            .compose(Ux::futureJ);
+            .compose(Ux::futureA);
     }
 
     @Address(Addr.Message.ADD)

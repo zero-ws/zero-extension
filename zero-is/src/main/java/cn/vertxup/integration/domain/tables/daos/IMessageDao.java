@@ -129,33 +129,33 @@ public class IMessageDao extends AbstractVertxDAO<IMessageRecord, cn.vertxup.int
         }
 
         /**
-     * Find records that have <code>FROM IN (values)</code> asynchronously
+     * Find records that have <code>SEND_FROM IN (values)</code> asynchronously
      */
-        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyByFrom(Collection<String> values) {
-                return findManyByCondition(IMessage.I_MESSAGE.FROM.in(values));
+        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyBySendFrom(Collection<String> values) {
+                return findManyByCondition(IMessage.I_MESSAGE.SEND_FROM.in(values));
         }
 
         /**
-     * Find records that have <code>FROM IN (values)</code> asynchronously
+     * Find records that have <code>SEND_FROM IN (values)</code> asynchronously
      * limited by the given limit
      */
-        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyByFrom(Collection<String> values, int limit) {
-                return findManyByCondition(IMessage.I_MESSAGE.FROM.in(values),limit);
+        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyBySendFrom(Collection<String> values, int limit) {
+                return findManyByCondition(IMessage.I_MESSAGE.SEND_FROM.in(values),limit);
         }
 
         /**
-     * Find records that have <code>TO IN (values)</code> asynchronously
+     * Find records that have <code>SEND_TO IN (values)</code> asynchronously
      */
-        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyByTo(Collection<String> values) {
-                return findManyByCondition(IMessage.I_MESSAGE.TO.in(values));
+        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyBySendTo(Collection<String> values) {
+                return findManyByCondition(IMessage.I_MESSAGE.SEND_TO.in(values));
         }
 
         /**
-     * Find records that have <code>TO IN (values)</code> asynchronously limited
-     * by the given limit
+     * Find records that have <code>SEND_TO IN (values)</code> asynchronously
+     * limited by the given limit
      */
-        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyByTo(Collection<String> values, int limit) {
-                return findManyByCondition(IMessage.I_MESSAGE.TO.in(values),limit);
+        public Future<List<cn.vertxup.integration.domain.tables.pojos.IMessage>> findManyBySendTo(Collection<String> values, int limit) {
+                return findManyByCondition(IMessage.I_MESSAGE.SEND_TO.in(values),limit);
         }
 
         /**

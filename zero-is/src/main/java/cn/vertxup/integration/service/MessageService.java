@@ -46,7 +46,7 @@ public class MessageService implements MessageStub {
         // Query
         final JsonObject condition = Ux.whereAnd();
         {
-            condition.put("to", Ut.valueString(body, "to"));
+            condition.put("sendTo", Ut.valueString(body, "sendTo"));
             condition.put(KName.SUBJECT, Ut.valueString(body, KName.SUBJECT));
             condition.put(KName.APP_ID, Ut.valueString(body, KName.APP_ID));
         }

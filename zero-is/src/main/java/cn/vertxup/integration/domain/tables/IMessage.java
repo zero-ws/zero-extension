@@ -88,14 +88,14 @@ public class IMessage extends TableImpl<IMessageRecord> {
     public final TableField<IMessageRecord, String> CONTENT = createField(DSL.name("CONTENT"), SQLDataType.CLOB, this, "「content」- 消息内容");
 
     /**
-     * The column <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * The column <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
-    public final TableField<IMessageRecord, String> FROM = createField(DSL.name("FROM"), SQLDataType.VARCHAR(255), this, "「from」- 消息发送方");
+    public final TableField<IMessageRecord, String> SEND_FROM = createField(DSL.name("SEND_FROM"), SQLDataType.VARCHAR(255), this, "「from」- 消息发送方");
 
     /**
-     * The column <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * The column <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
-    public final TableField<IMessageRecord, String> TO = createField(DSL.name("TO"), SQLDataType.VARCHAR(255), this, "「to」- 消息接收方");
+    public final TableField<IMessageRecord, String> SEND_TO = createField(DSL.name("SEND_TO"), SQLDataType.VARCHAR(255), this, "「to」- 消息接收方");
 
     /**
      * The column <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
@@ -197,7 +197,7 @@ public class IMessage extends TableImpl<IMessageRecord> {
 
     @Override
     public List<UniqueKey<IMessageRecord>> getUniqueKeys() {
-        return Arrays.asList(Keys.KEY_I_MESSAGE_APP_ID_2, Keys.KEY_I_MESSAGE_APP_ID);
+        return Arrays.asList(Keys.KEY_I_MESSAGE_APP_ID_2, Keys.KEY_I_MESSAGE_APP_ID, Keys.KEY_I_MESSAGE_APP_ID_3);
     }
 
     @Override

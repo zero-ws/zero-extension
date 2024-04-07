@@ -27,8 +27,8 @@ public class IMessage implements VertxPojo, IIMessage {
     private String status;
     private String subject;
     private String content;
-    private String from;
-    private String to;
+    private String sendFrom;
+    private String sendTo;
     private String sendBy;
     private String sendAt;
     private String appId;
@@ -51,8 +51,8 @@ public class IMessage implements VertxPojo, IIMessage {
         this.status = value.getStatus();
         this.subject = value.getSubject();
         this.content = value.getContent();
-        this.from = value.getFrom();
-        this.to = value.getTo();
+        this.sendFrom = value.getSendFrom();
+        this.sendTo = value.getSendTo();
         this.sendBy = value.getSendBy();
         this.sendAt = value.getSendAt();
         this.appId = value.getAppId();
@@ -74,8 +74,8 @@ public class IMessage implements VertxPojo, IIMessage {
         String status,
         String subject,
         String content,
-        String from,
-        String to,
+        String sendFrom,
+        String sendTo,
         String sendBy,
         String sendAt,
         String appId,
@@ -95,8 +95,8 @@ public class IMessage implements VertxPojo, IIMessage {
         this.status = status;
         this.subject = subject;
         this.content = content;
-        this.from = from;
-        this.to = to;
+        this.sendFrom = sendFrom;
+        this.sendTo = sendTo;
         this.sendBy = sendBy;
         this.sendAt = sendAt;
         this.appId = appId;
@@ -235,36 +235,36 @@ public class IMessage implements VertxPojo, IIMessage {
     }
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
     @Override
-    public String getFrom() {
-        return this.from;
+    public String getSendFrom() {
+        return this.sendFrom;
     }
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
     @Override
-    public IMessage setFrom(String from) {
-        this.from = from;
+    public IMessage setSendFrom(String sendFrom) {
+        this.sendFrom = sendFrom;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
     @Override
-    public String getTo() {
-        return this.to;
+    public String getSendTo() {
+        return this.sendTo;
     }
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
     @Override
-    public IMessage setTo(String to) {
-        this.to = to;
+    public IMessage setSendTo(String sendTo) {
+        this.sendTo = sendTo;
         return this;
     }
 
@@ -506,17 +506,17 @@ public class IMessage implements VertxPojo, IIMessage {
         }
         else if (!this.content.equals(other.content))
             return false;
-        if (this.from == null) {
-            if (other.from != null)
+        if (this.sendFrom == null) {
+            if (other.sendFrom != null)
                 return false;
         }
-        else if (!this.from.equals(other.from))
+        else if (!this.sendFrom.equals(other.sendFrom))
             return false;
-        if (this.to == null) {
-            if (other.to != null)
+        if (this.sendTo == null) {
+            if (other.sendTo != null)
                 return false;
         }
-        else if (!this.to.equals(other.to))
+        else if (!this.sendTo.equals(other.sendTo))
             return false;
         if (this.sendBy == null) {
             if (other.sendBy != null)
@@ -598,8 +598,8 @@ public class IMessage implements VertxPojo, IIMessage {
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.subject == null) ? 0 : this.subject.hashCode());
         result = prime * result + ((this.content == null) ? 0 : this.content.hashCode());
-        result = prime * result + ((this.from == null) ? 0 : this.from.hashCode());
-        result = prime * result + ((this.to == null) ? 0 : this.to.hashCode());
+        result = prime * result + ((this.sendFrom == null) ? 0 : this.sendFrom.hashCode());
+        result = prime * result + ((this.sendTo == null) ? 0 : this.sendTo.hashCode());
         result = prime * result + ((this.sendBy == null) ? 0 : this.sendBy.hashCode());
         result = prime * result + ((this.sendAt == null) ? 0 : this.sendAt.hashCode());
         result = prime * result + ((this.appId == null) ? 0 : this.appId.hashCode());
@@ -625,8 +625,8 @@ public class IMessage implements VertxPojo, IIMessage {
         sb.append(", ").append(status);
         sb.append(", ").append(subject);
         sb.append(", ").append(content);
-        sb.append(", ").append(from);
-        sb.append(", ").append(to);
+        sb.append(", ").append(sendFrom);
+        sb.append(", ").append(sendTo);
         sb.append(", ").append(sendBy);
         sb.append(", ").append(sendAt);
         sb.append(", ").append(appId);
@@ -656,8 +656,8 @@ public class IMessage implements VertxPojo, IIMessage {
         setStatus(from.getStatus());
         setSubject(from.getSubject());
         setContent(from.getContent());
-        setFrom(from.getFrom());
-        setTo(from.getTo());
+        setSendFrom(from.getSendFrom());
+        setSendTo(from.getSendTo());
         setSendBy(from.getSendBy());
         setSendAt(from.getSendAt());
         setAppId(from.getAppId());

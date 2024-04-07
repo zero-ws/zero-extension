@@ -26,8 +26,8 @@ public interface MessageAgent {
     @Path("/message/batch/:status")
     @PUT
     @Address(Addr.Message.UPDATE_STATUS)
-    JsonObject readMessage(@PathParam(KName.STATUS) String status,
-                           @BodyParam JsonArray keys);
+    JsonArray readMessage(@PathParam(KName.STATUS) String status,
+                          @BodyParam JsonArray keys);
 
     /**
      * 添加站内信，站内信存储在 I_MESSAGE 表中，数据结构如下
@@ -40,8 +40,8 @@ public interface MessageAgent {
      *         "status": "SENT -> 状态后续更改成 History",
      *         "subject": "Input, 前端传入",
      *         "content": "Input, 前端传入",
-     *         "from": "Input, 前端传入",
-     *         "to": "用户ID，前端传入",
+     *         "sendFrom": "Input, 前端传入",
+     *         "sendTo": "用户ID，前端传入",
      *         "sendBy": "应用ID",
      *         "sendAt": "发送时间",
      *         "appId": "应用ID"

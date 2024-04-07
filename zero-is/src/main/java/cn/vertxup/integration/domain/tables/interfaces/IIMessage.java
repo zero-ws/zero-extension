@@ -88,24 +88,24 @@ public interface IIMessage extends VertxPojo, Serializable {
     public String getContent();
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
-    public IIMessage setFrom(String value);
+    public IIMessage setSendFrom(String value);
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
-    public String getFrom();
+    public String getSendFrom();
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
-    public IIMessage setTo(String value);
+    public IIMessage setSendTo(String value);
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
-    public String getTo();
+    public String getSendTo();
 
     /**
      * Setter for <code>ZDB.I_MESSAGE.SEND_BY</code>. 「sendBy」- 发送者
@@ -242,8 +242,8 @@ public interface IIMessage extends VertxPojo, Serializable {
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
                 setOrThrow(this::setSubject,json::getString,"SUBJECT","java.lang.String");
                 setOrThrow(this::setContent,json::getString,"CONTENT","java.lang.String");
-                setOrThrow(this::setFrom,json::getString,"FROM","java.lang.String");
-                setOrThrow(this::setTo,json::getString,"TO","java.lang.String");
+                setOrThrow(this::setSendFrom,json::getString,"SEND_FROM","java.lang.String");
+                setOrThrow(this::setSendTo,json::getString,"SEND_TO","java.lang.String");
                 setOrThrow(this::setSendBy,json::getString,"SEND_BY","java.lang.String");
                 setOrThrow(this::setSendAt,json::getString,"SEND_AT","java.lang.String");
                 setOrThrow(this::setAppId,json::getString,"APP_ID","java.lang.String");
@@ -269,8 +269,8 @@ public interface IIMessage extends VertxPojo, Serializable {
                 json.put("STATUS",getStatus());
                 json.put("SUBJECT",getSubject());
                 json.put("CONTENT",getContent());
-                json.put("FROM",getFrom());
-                json.put("TO",getTo());
+                json.put("SEND_FROM",getSendFrom());
+                json.put("SEND_TO",getSendTo());
                 json.put("SEND_BY",getSendBy());
                 json.put("SEND_AT",getSendAt());
                 json.put("APP_ID",getAppId());

@@ -147,36 +147,36 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     }
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
     @Override
-    public IMessageRecord setFrom(String value) {
+    public IMessageRecord setSendFrom(String value) {
         set(7, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.FROM</code>. 「from」- 消息发送方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_FROM</code>. 「from」- 消息发送方
      */
     @Override
-    public String getFrom() {
+    public String getSendFrom() {
         return (String) get(7);
     }
 
     /**
-     * Setter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Setter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
     @Override
-    public IMessageRecord setTo(String value) {
+    public IMessageRecord setSendTo(String value) {
         set(8, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.I_MESSAGE.TO</code>. 「to」- 消息接收方
+     * Getter for <code>ZDB.I_MESSAGE.SEND_TO</code>. 「to」- 消息接收方
      */
     @Override
-    public String getTo() {
+    public String getSendTo() {
         return (String) get(8);
     }
 
@@ -427,12 +427,12 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
 
     @Override
     public Field<String> field8() {
-        return IMessage.I_MESSAGE.FROM;
+        return IMessage.I_MESSAGE.SEND_FROM;
     }
 
     @Override
     public Field<String> field9() {
-        return IMessage.I_MESSAGE.TO;
+        return IMessage.I_MESSAGE.SEND_TO;
     }
 
     @Override
@@ -527,12 +527,12 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
 
     @Override
     public String component8() {
-        return getFrom();
+        return getSendFrom();
     }
 
     @Override
     public String component9() {
-        return getTo();
+        return getSendTo();
     }
 
     @Override
@@ -627,12 +627,12 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
 
     @Override
     public String value8() {
-        return getFrom();
+        return getSendFrom();
     }
 
     @Override
     public String value9() {
-        return getTo();
+        return getSendTo();
     }
 
     @Override
@@ -734,13 +734,13 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
 
     @Override
     public IMessageRecord value8(String value) {
-        setFrom(value);
+        setSendFrom(value);
         return this;
     }
 
     @Override
     public IMessageRecord value9(String value) {
-        setTo(value);
+        setSendTo(value);
         return this;
     }
 
@@ -848,8 +848,8 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
         setStatus(from.getStatus());
         setSubject(from.getSubject());
         setContent(from.getContent());
-        setFrom(from.getFrom());
-        setTo(from.getTo());
+        setSendFrom(from.getSendFrom());
+        setSendTo(from.getSendTo());
         setSendBy(from.getSendBy());
         setSendAt(from.getSendAt());
         setAppId(from.getAppId());
@@ -884,7 +884,7 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
     /**
      * Create a detached, initialised IMessageRecord
      */
-    public IMessageRecord(String key, String name, String code, String type, String status, String subject, String content, String from, String to, String sendBy, String sendAt, String appId, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
+    public IMessageRecord(String key, String name, String code, String type, String status, String subject, String content, String sendFrom, String sendTo, String sendBy, String sendAt, String appId, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
         super(IMessage.I_MESSAGE);
 
         setKey(key);
@@ -894,8 +894,8 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
         setStatus(status);
         setSubject(subject);
         setContent(content);
-        setFrom(from);
-        setTo(to);
+        setSendFrom(sendFrom);
+        setSendTo(sendTo);
         setSendBy(sendBy);
         setSendAt(sendAt);
         setAppId(appId);
@@ -924,8 +924,8 @@ public class IMessageRecord extends UpdatableRecordImpl<IMessageRecord> implemen
             setStatus(value.getStatus());
             setSubject(value.getSubject());
             setContent(value.getContent());
-            setFrom(value.getFrom());
-            setTo(value.getTo());
+            setSendFrom(value.getSendFrom());
+            setSendTo(value.getSendTo());
             setSendBy(value.getSendBy());
             setSendAt(value.getSendAt());
             setAppId(value.getAppId());
