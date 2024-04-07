@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS I_MESSAGE
     `SUBJECT`    VARCHAR(255) COMMENT '「subject」- 消息标题',
     `CONTENT`    LONGTEXT COMMENT '「content」- 消息内容',
 
-    `FROM`       VARCHAR(255) COMMENT '「from」- 消息发送方',
-    `TO`         VARCHAR(255) COMMENT '「to」- 消息接收方',
+    `SEND_FROM`  VARCHAR(255) COMMENT '「from」- 消息发送方',
+    `SEND_TO`    VARCHAR(255) COMMENT '「to」- 消息接收方',
 
     `SEND_BY`    VARCHAR(36) COMMENT '「sendBy」- 发送者',
     `SEND_AT`    VARCHAR(36) COMMENT '「sendAt」- 发送时间',
@@ -53,3 +53,5 @@ ALTER TABLE I_MESSAGE
     ADD UNIQUE (`APP_ID`, `CODE`); -- 模板名称/编码
 ALTER TABLE I_MESSAGE
     ADD UNIQUE (`APP_ID`, `NAME`);
+ALTER TABLE I_MESSAGE
+    ADD UNIQUE (`APP_ID`, `SEND_TO`, `SUBJECT`);

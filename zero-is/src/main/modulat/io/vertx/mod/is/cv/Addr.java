@@ -26,5 +26,9 @@ public interface Addr {
         String UPDATE_STATUS = Prefix._EVENT + "I-MESSAGE/UPDATE/STATUS";
 
         String FETCH_TYPED = Prefix._EVENT + "I-MESSAGE/FETCH/BY/TYPED";
+
+        String ADD = Prefix._EVENT + "I-MESSAGE/ADD";
+
+        String DELETE_BATCH = Prefix._EVENT + "I-MESSAGE/BATCH/DELETE";
     }
 }
