@@ -18,7 +18,7 @@ import jakarta.ws.rs.*;
 public interface MessageAgent {
 
 
-    @Path("/message/by/:type")
+    @Path("/message/type/:type")
     @GET
     @Address(Addr.Message.FETCH_TYPED)
     JsonArray fetchTyped(@PathParam(KName.TYPE) String type);
