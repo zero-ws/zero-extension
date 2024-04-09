@@ -4,6 +4,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.battery.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
+import io.vertx.up.annotations.Off;
 import io.vertx.up.eon.KName;
 import jakarta.ws.rs.*;
 
@@ -35,6 +36,7 @@ public interface BagArgAgent {
     @PUT
     @Path("/bag/config/:key")
     @Address(Addr.Argument.BAG_CONFIGURE)
+    @Off(address = Addr.Notify.BLOCK_CONFIGURE_UP)
     JsonObject saveBag(@PathParam(KName.KEY) String bagId,
                        @BodyParam JsonObject data);
 }
