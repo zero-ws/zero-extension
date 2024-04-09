@@ -43,4 +43,8 @@ public class Junc {
     public static Tie<String, JsonArray> group() {
         return (Tie<String, JsonArray>) CC_TIE.pick(TieGroup::new, TieGroup.class.getName());
     }
+
+    public static Twine<SUser> refSetting() {
+        return (Twine<SUser>) CC_TWINE.pick(TwineSetting::new, TwineSetting.class.getName());
+    }
 }

@@ -46,6 +46,9 @@ class KeEnv {
             if (Ut.isNotNil(key)) {
                 body.put(KName.CREATED_BY, key);
                 body.put(KName.CREATED_AT, Instant.now());
+
+                body.put(KName.UPDATED_BY, key);
+                body.put(KName.UPDATED_AT, Instant.now());
             }
         }
     }
