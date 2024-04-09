@@ -35,4 +35,8 @@ public interface Addr {
 
         String BLOCK_CONFIGURE = Prefix._EVENT + "X-BLOCK/CONFIGURE/SYNC";
     }
+
+    interface Notify {
+        String BLOCK_CONFIGURE_UP = Prefix._EVENT + "NOTIFY/X-BLOCK/CONFIGURE/UP";
+    }
 }

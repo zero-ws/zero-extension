@@ -41,7 +41,9 @@ public class UserService implements UserStub {
             /* Employee Information */
             .compose(Junc.refExtension()::identAsync)
             /* Relation for roles / groups */
-            .compose(Junc.refRights()::identAsync);
+            .compose(Junc.refRights()::identAsync)
+            /* Setting for user */
+            .compose(Junc.refSetting()::identAsync);
     }
 
     // ================== Basic Part of S_User ================
