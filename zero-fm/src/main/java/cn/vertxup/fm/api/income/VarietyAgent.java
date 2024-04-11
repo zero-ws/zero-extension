@@ -4,6 +4,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
+import io.vertx.up.annotations.Off;
 import io.vertx.up.eon.KName;
 import jakarta.ws.rs.BodyParam;
 import jakarta.ws.rs.PUT;
@@ -42,6 +43,7 @@ public interface VarietyAgent {
     @PUT
     @Path("/bill-item/revert/:key")
     @Address(Addr.BillItem.UP_REVERT)
+    @Off(address = Addr.Notify.REVERSAL_ORDER)
     JsonObject upRevert(@PathParam(KName.KEY) String key, @BodyParam JsonObject data);
 
     /**

@@ -46,7 +46,10 @@ public class VarietyActor {
     public Future<JsonObject> upRevert(final String key, final JsonObject data) {
         return Maker.upBI().buildAsync(data, key).compose(item -> {
             final FBillItem to = Ux.fromJson(data.getJsonObject("item"), FBillItem.class);
-            return this.varietyStub.revertAsync(item, to);
+            return this.varietyStub.revertAsync(item, to).compose(json->{
+                json.put("realname",data.getString("realname"));
+                return Ux.future(json);
+            });
         });
     }
 
