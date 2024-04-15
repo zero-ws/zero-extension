@@ -990,8 +990,8 @@ public class FBillRecord extends UpdatableRecordImpl<FBillRecord> implements Ver
         }
     }
 
-        public FBillRecord(io.vertx.core.json.JsonObject json) {
-                this();
-                fromJson(json);
-        }
+    public FBillRecord(io.vertx.core.json.JsonObject json) {
+        this();
+        fromJson(json);
+    }
 }

@@ -57,4 +57,7 @@ public interface Addr {
 
         String FETCH_BY_KEY = Prefix._EVENT + "TRANS-BY/KEY";
     }
+    interface Notify {
+        String REVERSAL_ORDER = Prefix._EVENT + "NOTIFY/REVERSAL/ORDER";
+    }
 }

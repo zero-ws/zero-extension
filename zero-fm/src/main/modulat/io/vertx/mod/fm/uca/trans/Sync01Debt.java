@@ -70,7 +70,7 @@ class Sync01Debt implements Trade<User, FDebt> {
 
         debt.setAmountBalance(amountBalance);
 
-        if (0 >= amountBalance.doubleValue()) {
+        if (0 == amountBalance.doubleValue()) {
             debt.setFinished(Boolean.TRUE);
             debt.setFinishedAt(nowAt);
         }

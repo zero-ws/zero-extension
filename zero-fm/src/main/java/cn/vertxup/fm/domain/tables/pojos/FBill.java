@@ -70,27 +70,27 @@ public class FBill implements VertxPojo, IFBill {
     }
 
     public FBill(
-        String key,
-        String name,
-        String code,
-        String serial,
-        String type,
-        String category,
-        BigDecimal amount,
-        Boolean income,
-        String comment,
-        String orderId,
-        String bookId,
-        String modelId,
-        String modelKey,
-        String sigma,
-        String language,
-        Boolean active,
-        String metadata,
-        LocalDateTime createdAt,
-        String createdBy,
-        LocalDateTime updatedAt,
-        String updatedBy
+            String key,
+            String name,
+            String code,
+            String serial,
+            String type,
+            String category,
+            BigDecimal amount,
+            Boolean income,
+            String comment,
+            String orderId,
+            String bookId,
+            String modelId,
+            String modelKey,
+            String sigma,
+            String language,
+            Boolean active,
+            String metadata,
+            LocalDateTime createdAt,
+            String createdBy,
+            LocalDateTime updatedAt,
+            String updatedBy
     ) {
         this.key = key;
         this.name = name;
@@ -115,10 +115,10 @@ public class FBill implements VertxPojo, IFBill {
         this.updatedBy = updatedBy;
     }
 
-        public FBill(io.vertx.core.json.JsonObject json) {
-                this();
-                fromJson(json);
-        }
+    public FBill(io.vertx.core.json.JsonObject json) {
+        this();
+        fromJson(json);
+    }
 
     /**
      * Getter for <code>ZDB.F_BILL.KEY</code>. 「key」- 账单主键

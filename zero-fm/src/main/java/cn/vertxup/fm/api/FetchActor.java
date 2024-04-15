@@ -62,7 +62,7 @@ public class FetchActor {
              * 旧版本多查询了一步，但实际这个步骤查询下来没有任何用
              * 根据结算单查询 交易明细 信息
              */
-            .compose(nil -> data.response(true));
+            .compose(nil -> data.response(false));
     }
 
 
