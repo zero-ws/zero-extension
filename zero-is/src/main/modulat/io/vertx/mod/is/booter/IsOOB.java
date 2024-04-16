@@ -1,7 +1,7 @@
 package io.vertx.mod.is.booter;
 
 import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.up.plugin.booting.AbstractBoot;
+import io.zerows.macro.plugin.booting.AbstractBoot;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

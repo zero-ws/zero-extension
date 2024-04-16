@@ -13,7 +13,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.ui.atom.UiConfig;
 import io.vertx.mod.ui.cv.UiCv;
 import io.vertx.up.eon.KName;
-import io.vertx.up.plugin.booting.HExtension;
+import io.zerows.macro.plugin.booting.HExtension;
 import io.vertx.up.util.Ut;
 
 import java.util.List;

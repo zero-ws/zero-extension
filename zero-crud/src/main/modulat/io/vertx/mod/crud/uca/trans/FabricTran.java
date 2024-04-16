@@ -6,7 +6,6 @@ import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KDictSource;
 import io.horizon.atom.datamation.KDictUse;
 import io.horizon.atom.datamation.KFabric;
-import io.horizon.spi.component.Dictionary;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
@@ -17,6 +16,7 @@ import io.vertx.up.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.zerows.macro.sdk.spi.component.Dictionary;
 
 import java.util.List;
 import java.util.Objects;

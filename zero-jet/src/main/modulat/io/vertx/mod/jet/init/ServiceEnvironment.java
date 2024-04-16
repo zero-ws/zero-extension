@@ -19,7 +19,7 @@ import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.plugin.database.DataPool;
+import io.zerows.macro.plugin.database.DataPool;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 

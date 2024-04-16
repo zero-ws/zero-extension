@@ -2,13 +2,13 @@ package io.horizon.spi.dict;
 
 import cn.vertxup.erp.domain.tables.daos.EBrandDao;
 import io.horizon.atom.datamation.KDictSource;
-import io.horizon.spi.component.DictionaryPlugin;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.macro.sdk.spi.component.DictionaryPlugin;
 
 /*
  * Dict for `resource.brands` here

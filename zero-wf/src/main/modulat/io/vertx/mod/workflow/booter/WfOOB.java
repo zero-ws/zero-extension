@@ -2,7 +2,7 @@ package io.vertx.mod.workflow.booter;
 
 import io.vertx.mod.ke.cv.KeIpc;
 import io.vertx.mod.workflow.init.WfPin;
-import io.vertx.up.plugin.booting.AbstractBoot;
+import io.zerows.macro.plugin.booting.AbstractBoot;
 
 import java.util.Set;
 

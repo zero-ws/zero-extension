@@ -1,7 +1,6 @@
 package io.vertx.mod.ambient.uca.dict;
 
 import io.horizon.atom.datamation.KDictSource;
-import io.horizon.spi.component.DictionaryPlugin;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
@@ -11,6 +10,7 @@ import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.macro.sdk.spi.component.DictionaryPlugin;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

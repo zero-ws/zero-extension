@@ -21,8 +21,8 @@ import io.vertx.mod.atom.modeling.data.DataRecord;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.eon.KName;
-import io.vertx.up.plugin.database.DS;
-import io.vertx.up.plugin.database.DataPool;
+import io.zerows.macro.plugin.database.DS;
+import io.zerows.macro.plugin.database.DataPool;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 

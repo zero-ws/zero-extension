@@ -4,8 +4,8 @@ import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.plugin.excel.ExcelInfix;
-import io.vertx.up.plugin.jooq.JooqInfix;
-import io.vertx.up.plugin.shared.MapInfix;
+import io.zerows.macro.plugin.jooq.JooqInfix;
+import io.zerows.macro.plugin.shared.MapInfix;
 
 /**
  * @author lang : 2023-06-10

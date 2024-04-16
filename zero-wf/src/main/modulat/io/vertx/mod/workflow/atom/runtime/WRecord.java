@@ -8,7 +8,6 @@ import cn.vertxup.workflow.domain.tables.pojos.WTodo;
 import io.horizon.eon.VValue;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.horizon.spi.business.ExActivity;
-import io.horizon.spi.component.Dictionary;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -21,6 +20,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.macro.sdk.spi.component.Dictionary;
 import org.camunda.bpm.engine.history.HistoricProcessInstance;
 import org.camunda.bpm.engine.task.Task;
 

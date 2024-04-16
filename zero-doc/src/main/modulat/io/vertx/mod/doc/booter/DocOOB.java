@@ -1,7 +1,7 @@
 package io.vertx.mod.doc.booter;
 
 import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.up.plugin.booting.AbstractBoot;
+import io.zerows.macro.plugin.booting.AbstractBoot;
 
 /**
  * @author lang : 2023-08-17

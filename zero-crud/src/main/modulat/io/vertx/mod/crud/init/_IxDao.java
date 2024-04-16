@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.IxFolder;
 import io.vertx.mod.crud.cv.IxMsg;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.plugin.booting.HExtension;
+import io.zerows.macro.plugin.booting.HExtension;
 import io.vertx.up.uca.log.DevEnv;
 import io.vertx.up.util.Ut;
 

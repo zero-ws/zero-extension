@@ -7,8 +7,8 @@ import io.vertx.mod.jet.error._501DataSourceException;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.plugin.database.DS;
-import io.vertx.up.plugin.database.DataPool;
+import io.zerows.macro.plugin.database.DS;
+import io.zerows.macro.plugin.database.DataPool;
 
 import java.util.Objects;
 

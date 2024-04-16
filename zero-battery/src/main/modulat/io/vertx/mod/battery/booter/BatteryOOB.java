@@ -2,7 +2,7 @@ package io.vertx.mod.battery.booter;
 
 import io.vertx.mod.battery.init.BkPin;
 import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.up.plugin.booting.AbstractBoot;
+import io.zerows.macro.plugin.booting.AbstractBoot;
 
 import java.util.Set;
 
