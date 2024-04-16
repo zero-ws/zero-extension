@@ -1,8 +1,8 @@
 package io.horizon.spi.jet;
 
 import io.vertx.core.Future;
-import io.vertx.up.commune.ActIn;
-import io.vertx.up.commune.ActOut;
+import io.zerows.mbse.commune.ActIn;
+import io.zerows.mbse.commune.ActOut;
 
 /*
  * Business component, connect to dao, basic condition:

@@ -3,7 +3,7 @@ package io.vertx.mod.jet.uca.micro;
 import io.vertx.mod.jet.atom.JtJob;
 import io.vertx.mod.jet.init.JtPin;
 import io.vertx.mod.jet.init.ServiceEnvironment;
-import io.vertx.up.atom.worker.Mission;
+import io.zerows.mbse.atom.worker.Mission;
 import io.vertx.up.uca.job.store.JobStore;
 
 import java.util.Objects;

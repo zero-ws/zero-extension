@@ -9,7 +9,12 @@ import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.BodyParam;
+import io.zerows.annotations.jakarta.PointParam;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.QueryParam;
 
 /*
  * HTTP Method: Put

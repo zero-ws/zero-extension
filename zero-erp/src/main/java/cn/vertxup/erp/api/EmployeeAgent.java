@@ -4,6 +4,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.erp.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
+import io.zerows.annotations.jakarta.BodyParam;
 import jakarta.ws.rs.*;
 
 /*

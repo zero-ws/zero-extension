@@ -9,10 +9,10 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.refine.Ao;
-import io.vertx.up.exception.web._404ModelNotFoundException;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.exception.web._404ModelNotFoundException;
 
 import java.util.ArrayList;
 import java.util.HashSet;

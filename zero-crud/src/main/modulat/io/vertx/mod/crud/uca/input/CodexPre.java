@@ -1,17 +1,17 @@
 package io.vertx.mod.crud.uca.input;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.VString;
 import io.horizon.exception.WebException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.Rule;
-import io.vertx.up.backbone.announce.Rigor;
-import io.vertx.up.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.launcher.backbone.announce.Rigor;
+import io.zerows.mbse.atom.Rule;
+import io.zerows.mbse.commune.Envelop;
 
 import java.util.List;
 import java.util.Locale;

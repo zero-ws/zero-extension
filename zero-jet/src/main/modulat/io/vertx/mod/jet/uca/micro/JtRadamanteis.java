@@ -3,7 +3,7 @@ package io.vertx.mod.jet.uca.micro;
 import io.horizon.spi.jet.JtIngest;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /**
  * 「Ingest」

@@ -2,7 +2,7 @@ package io.vertx.mod.jet.uca.valve;
 
 import io.horizon.uca.cache.Cc;
 import io.vertx.mod.jet.atom.JtUri;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /*
  * IN_RULE

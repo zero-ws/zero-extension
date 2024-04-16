@@ -3,7 +3,7 @@ package io.vertx.mod.crud.uca.input;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 

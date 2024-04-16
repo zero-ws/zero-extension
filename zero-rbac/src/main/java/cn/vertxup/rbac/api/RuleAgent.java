@@ -8,7 +8,12 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.BodyParam;
+import io.zerows.annotations.jakarta.PointParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

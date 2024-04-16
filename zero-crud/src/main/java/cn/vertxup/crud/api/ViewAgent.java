@@ -8,7 +8,11 @@ import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.PointParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.QueryParam;
 
 /*
  * Http Method: Get

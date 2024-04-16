@@ -9,7 +9,7 @@ import io.vertx.mod.rbac.acl.rapid.Dwarf;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.cv.em.RegionType;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.specification.secure.Acl;
 import io.vertx.up.util.Ut;
 

@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.trans;
 
-import io.aeon.experiment.specification.KModule;
 import io.aeon.runtime.channel.Pocket;
 import io.horizon.atom.datamation.KDictConfig;
 import io.horizon.atom.datamation.KDictSource;
@@ -12,10 +11,11 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.extension.KTransform;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.macro.sdk.spi.component.Dictionary;
 
 import java.util.List;

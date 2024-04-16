@@ -1,7 +1,5 @@
 package io.vertx.mod.crud.init;
 
-import io.aeon.experiment.specification.KColumn;
-import io.aeon.experiment.specification.KModule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.atom.shape.KField;
@@ -9,6 +7,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KColumn;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 
@@ -31,10 +31,10 @@ class IxInitializer {
      *       所以只能通过编程的方式对 identifier 进行设置
      *
      *     - 1）优先提取规则，模型标识符直接绑定文件名，此处传入的 identifier
-     *       2）然后构造提取列所需的 {@link io.aeon.experiment.specification.KColumn}
+     *       2）然后构造提取列所需的 {@link KColumn}
      *
      *     - 二者有了之后，提取 identifier 的时优先提取 identifier，其次根据 column 计算
-     *       和原始流程不同的点在于，原始流程中是以 {@link io.aeon.experiment.specification.KColumn}
+     *       和原始流程不同的点在于，原始流程中是以 {@link KColumn}
      *       为主，这是当时设计上的缺陷，新版切换到主 identifier（有很多地方都会使用）
      * </code></pre>
      *

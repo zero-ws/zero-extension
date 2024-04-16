@@ -5,7 +5,11 @@ import io.vertx.mod.tpl.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.BodyParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 /**
  * 保存当前设置，包括个人设置 / 以及角色设置

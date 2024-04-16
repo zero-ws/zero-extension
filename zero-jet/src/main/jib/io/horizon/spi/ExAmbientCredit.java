@@ -1,6 +1,5 @@
 package io.horizon.spi;
 
-import io.aeon.experiment.specification.KCredential;
 import io.horizon.spi.web.Credential;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
@@ -9,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.zerows.aeon.experiment.specification.KCredential;
 
 import java.util.Objects;
 

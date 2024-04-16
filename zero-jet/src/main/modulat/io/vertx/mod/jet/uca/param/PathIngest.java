@@ -7,7 +7,7 @@ import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 import java.util.Map;
 

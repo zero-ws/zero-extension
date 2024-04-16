@@ -2,8 +2,8 @@ package io.vertx.mod.jet.uca.tunnel;
 
 import io.horizon.spi.jet.JtComponent;
 import io.vertx.core.Future;
-import io.vertx.up.atom.worker.Mission;
-import io.vertx.up.commune.ActIn;
+import io.zerows.mbse.atom.worker.Mission;
+import io.zerows.mbse.commune.ActIn;
 import io.vertx.up.commune.config.Database;
 import io.modello.atom.app.KIntegration;
 import io.vertx.up.unity.Ux;

@@ -6,7 +6,7 @@ import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.error._501IngestMissingException;
 import io.vertx.mod.jet.error._501IngestSpecException;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.util.Ut;
 

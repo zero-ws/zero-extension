@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.cv.KeIpc;
 import io.vertx.up.annotations.Ipc;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /*
  * Ipc Server for current

@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.desk;
 
-import io.aeon.experiment.specification.KModule;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
@@ -10,6 +9,7 @@ import io.vertx.up.atom.shape.KPoint;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.uca.destine.Hymn;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 

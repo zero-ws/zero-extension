@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.refine;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.atom.program.Kv;
 import io.modello.specification.meta.HMetaAtom;
 import io.modello.specification.meta.HMetaField;
@@ -10,12 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.shape.KField;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.uca.jooq.JqAnalyzer;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;

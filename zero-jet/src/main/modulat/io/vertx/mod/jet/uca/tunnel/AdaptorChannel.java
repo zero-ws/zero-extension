@@ -2,7 +2,7 @@ package io.vertx.mod.jet.uca.tunnel;
 
 import io.horizon.spi.jet.JtComponent;
 import io.vertx.core.Future;
-import io.vertx.up.commune.ActIn;
+import io.zerows.mbse.commune.ActIn;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

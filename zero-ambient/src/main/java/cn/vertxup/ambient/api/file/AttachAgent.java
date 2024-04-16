@@ -11,6 +11,7 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
+import io.zerows.annotations.jakarta.StreamParam;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 

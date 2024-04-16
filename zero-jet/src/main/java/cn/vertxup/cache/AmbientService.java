@@ -13,7 +13,7 @@ import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.init.JtPin;
 import io.vertx.mod.jet.init.ServiceEnvironment;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.worker.Mission;
+import io.zerows.mbse.atom.worker.Mission;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmJob;
 import io.vertx.up.uca.job.plugin.JobClient;

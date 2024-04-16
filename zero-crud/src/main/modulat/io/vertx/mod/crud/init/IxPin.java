@@ -1,16 +1,16 @@
 package io.vertx.mod.crud.init;
 
-import io.aeon.experiment.mixture.HOne;
-import io.aeon.experiment.specification.KModule;
 import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.Rule;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.atom.Rule;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.uca.jooq.UxJoin;
 import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.aeon.experiment.mixture.HOne;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.List;
 import java.util.Set;

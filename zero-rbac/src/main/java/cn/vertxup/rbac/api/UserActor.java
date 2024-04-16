@@ -11,7 +11,7 @@ import io.vertx.mod.rbac.acl.relation.Junc;
 import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import jakarta.inject.Inject;
 

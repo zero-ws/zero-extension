@@ -11,10 +11,10 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.atom.AtConfig;
 import io.vertx.mod.ambient.init.AtPin;
 import io.vertx.mod.ke.cv.em.BizInternal;
-import io.vertx.up.boot.di.DiPlugin;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.launcher.boot.di.DiPlugin;
 
 import java.util.List;
 
@@ -121,7 +121,7 @@ class AtFsDir {
             return io.verifyIn(directoryA, input);
         })).compose(directoryJ -> {
 
-            
+
             /*
              * 步骤五：
              * 响应替换流程，替换掉对应的属性信息（输入源为验证后的结果）

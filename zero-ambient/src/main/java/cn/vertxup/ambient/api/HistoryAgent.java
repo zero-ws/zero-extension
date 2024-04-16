@@ -6,7 +6,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.BodyParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 /**
  * # Zero History Api Definition

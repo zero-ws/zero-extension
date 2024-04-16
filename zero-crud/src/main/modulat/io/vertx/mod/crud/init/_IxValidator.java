@@ -5,7 +5,7 @@ import io.horizon.eon.VString;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.IxFolder;
-import io.vertx.up.atom.Rule;
+import io.zerows.mbse.atom.Rule;
 import io.vertx.up.util.Ut;
 
 import java.util.ArrayList;

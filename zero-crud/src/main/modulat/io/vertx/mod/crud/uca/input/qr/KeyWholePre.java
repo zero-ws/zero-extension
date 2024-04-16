@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.input.qr;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
@@ -9,6 +8,7 @@ import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.zerows.aeon.experiment.specification.KModule;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

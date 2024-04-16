@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.em.ApiSpec;
 import io.vertx.up.atom.shape.KJoin;
 import io.vertx.up.atom.shape.KPoint;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmPRI;

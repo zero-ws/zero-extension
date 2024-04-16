@@ -3,7 +3,7 @@ package io.vertx.mod.jet;
 import io.horizon.uca.cache.Cc;
 import io.vertx.mod.jet.error._400RequiredParamException;
 import io.vertx.mod.jet.error._500DefinitionErrorException;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /*
  * Uniform Error throw out and build Envelop ( Failure )

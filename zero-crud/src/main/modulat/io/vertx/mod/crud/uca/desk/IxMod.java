@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.desk;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.eon.VString;
 import io.horizon.exception.WebException;
 import io.horizon.exception.web._500InternalServerException;
@@ -9,9 +8,10 @@ import io.vertx.mod.crud.error._404ModuleMissingException;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.atom.shape.KJoin;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 

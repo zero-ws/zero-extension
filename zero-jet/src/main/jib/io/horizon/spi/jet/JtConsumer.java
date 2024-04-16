@@ -1,7 +1,7 @@
 package io.horizon.spi.jet;
 
 import io.vertx.core.Future;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.specification.action.Commercial;
 
 /*

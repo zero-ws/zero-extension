@@ -3,7 +3,7 @@ package io.vertx.mod.jet.uca.micro;
 import io.horizon.spi.jet.JtConsumer;
 import io.vertx.core.Future;
 import io.vertx.mod.jet.monitor.JtMonitor;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.specification.action.Commercial;
 
 /**

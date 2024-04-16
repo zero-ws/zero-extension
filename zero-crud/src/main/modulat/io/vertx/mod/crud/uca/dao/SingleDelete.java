@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.dao;
 
-import io.aeon.experiment.specification.KModule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -12,6 +11,7 @@ import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.uca.destine.Hymn;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 import java.util.function.Function;

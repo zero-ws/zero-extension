@@ -9,7 +9,7 @@ import io.vertx.mod.jet.JetThanatos;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.refine.Jt;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;

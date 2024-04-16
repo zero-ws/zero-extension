@@ -4,7 +4,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.uca.param.DataIngest;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /*
  * 「Extension」

@@ -7,7 +7,7 @@ import io.vertx.up.annotations.Adjust;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
-import jakarta.ws.rs.BodyParam;
+import io.zerows.annotations.jakarta.BodyParam;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;

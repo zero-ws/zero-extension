@@ -2,7 +2,6 @@ package io.vertx.mod.rbac.acl.relation;
 
 import cn.vertxup.rbac.domain.tables.daos.SUserDao;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
-import io.aeon.experiment.specification.KQr;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -18,6 +17,7 @@ import io.vertx.up.uca.jooq.UxJoin;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KQr;
 
 import java.util.Collection;
 import java.util.List;

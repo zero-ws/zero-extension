@@ -4,7 +4,7 @@ import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.em.EmSecure;
 import io.vertx.up.specification.secure.Acl;
 

@@ -1,6 +1,5 @@
 package io.vertx.mod.crud.uca.trans;
 
-import io.aeon.experiment.specification.KModule;
 import io.horizon.atom.program.Kv;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
@@ -13,6 +12,7 @@ import io.vertx.up.atom.extension.KTree;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

@@ -10,7 +10,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.lbs.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 

@@ -7,7 +7,7 @@ import io.horizon.spi.cloud.query.HQBE;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.uca.qbe.QBECache;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.commune.config.XHeader;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;

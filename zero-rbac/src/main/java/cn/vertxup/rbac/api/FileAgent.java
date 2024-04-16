@@ -7,9 +7,9 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Codex;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.unity.Ux;
+import io.zerows.annotations.jakarta.StreamParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.StreamParam;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;
 

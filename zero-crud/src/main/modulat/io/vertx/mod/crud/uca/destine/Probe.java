@@ -3,6 +3,7 @@ package io.vertx.mod.crud.uca.destine;
 import io.modello.eon.em.EmModel;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.atom.shape.KPoint;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 import java.util.function.Supplier;
@@ -19,10 +20,10 @@ import java.util.function.Supplier;
  * <pre><code>
  *     module 变量
  *       {@link IxMod#module()}
- *         -> {@link io.aeon.experiment.specification.KModule}
+ *         -> {@link KModule}
  *     connect 变量
  *       {@link IxMod#connected()}
- *         -> {@link io.aeon.experiment.specification.KModule}
+ *         -> {@link KModule}
  * </code></pre>
  *
  * @author lang : 2023-08-18

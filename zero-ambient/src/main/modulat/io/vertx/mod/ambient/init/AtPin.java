@@ -12,9 +12,9 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.mod.ambient.atom.AtConfig;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.boot.di.DiPlugin;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.launcher.boot.di.DiPlugin;
 
 import static io.vertx.mod.ambient.refine.At.LOG;
 

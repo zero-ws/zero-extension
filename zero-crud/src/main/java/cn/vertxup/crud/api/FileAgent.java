@@ -12,6 +12,9 @@ import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
+import io.zerows.annotations.jakarta.BodyParam;
+import io.zerows.annotations.jakarta.PointParam;
+import io.zerows.annotations.jakarta.StreamParam;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 

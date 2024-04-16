@@ -8,7 +8,7 @@ import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.element.DataKey;
 import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.annotations.Contract;
-import io.vertx.up.commune.ActiveRecord;
+import io.zerows.mbse.commune.ActiveRecord;
 
 import java.util.Objects;
 import java.util.Set;

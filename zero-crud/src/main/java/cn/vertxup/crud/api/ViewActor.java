@@ -11,7 +11,7 @@ import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 /*
  * 「新版定制完成」

@@ -8,6 +8,8 @@ import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
+import io.zerows.annotations.jakarta.BodyParam;
+import io.zerows.annotations.jakarta.PointParam;
 import jakarta.ws.rs.*;
 
 @EndPoint

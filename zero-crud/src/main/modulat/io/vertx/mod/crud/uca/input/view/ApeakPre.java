@@ -1,7 +1,5 @@
 package io.vertx.mod.crud.uca.input.view;
 
-import io.aeon.experiment.specification.KColumn;
-import io.aeon.experiment.specification.KModule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
@@ -10,6 +8,8 @@ import io.vertx.up.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.zerows.aeon.experiment.specification.KColumn;
+import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;
 

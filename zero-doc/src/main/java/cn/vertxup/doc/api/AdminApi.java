@@ -6,7 +6,11 @@ import io.vertx.mod.doc.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
-import jakarta.ws.rs.*;
+import io.zerows.annotations.jakarta.BodyParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 /**
  * 法规管理界面专用接口

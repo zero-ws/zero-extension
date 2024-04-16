@@ -7,7 +7,7 @@ import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.commune.config.XHeader;
 import io.vertx.up.specification.action.Commercial;

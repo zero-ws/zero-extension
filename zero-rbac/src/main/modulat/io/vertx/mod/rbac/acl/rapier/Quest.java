@@ -5,7 +5,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.atom.ScOwner;
-import io.vertx.up.commune.Envelop;
+import io.zerows.mbse.commune.Envelop;
 
 import java.util.List;
 
