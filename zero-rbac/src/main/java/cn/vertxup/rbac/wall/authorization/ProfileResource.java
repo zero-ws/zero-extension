@@ -10,8 +10,8 @@ import io.vertx.ext.auth.authorization.Authorization;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.up.commune.secure.Aegis;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.secure.authorization.AuthorizationResource;
 import io.vertx.up.util.Ut;
+import io.zerows.infix.secure.authorization.AuthorizationResource;
 
 import java.lang.reflect.Method;
 import java.util.Objects;

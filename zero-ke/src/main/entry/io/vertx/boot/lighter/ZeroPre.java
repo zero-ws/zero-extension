@@ -3,7 +3,7 @@ package io.vertx.boot.lighter;
 import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.plugin.excel.ExcelInfix;
+import io.zerows.infix.excel.ExcelInfix;
 import io.zerows.macro.plugin.jooq.JooqInfix;
 import io.zerows.macro.plugin.shared.MapInfix;
 

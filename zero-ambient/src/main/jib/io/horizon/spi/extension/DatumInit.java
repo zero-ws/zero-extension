@@ -9,10 +9,10 @@ import io.vertx.mod.ambient.init.AtPin;
 import io.vertx.up.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.plugin.excel.ExcelClient;
-import io.vertx.up.plugin.excel.ExcelInfix;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.infix.excel.ExcelClient;
+import io.zerows.infix.excel.ExcelInfix;
 
 import java.util.List;
 import java.util.Objects;

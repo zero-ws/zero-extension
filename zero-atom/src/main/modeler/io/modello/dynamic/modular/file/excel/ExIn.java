@@ -1,9 +1,9 @@
 package io.modello.dynamic.modular.file.excel;
 
 import io.vertx.up.eon.KName;
-import io.vertx.up.plugin.excel.atom.ExRecord;
-import io.vertx.up.plugin.excel.atom.ExTable;
 import io.vertx.up.util.Ut;
+import io.zerows.infix.excel.atom.ExRecord;
+import io.zerows.infix.excel.atom.ExTable;
 
 import java.util.HashSet;
 import java.util.Objects;

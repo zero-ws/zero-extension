@@ -11,10 +11,10 @@ import io.vertx.ext.web.handler.AuthorizationHandler;
 import io.vertx.up.commune.secure.Aegis;
 import io.vertx.up.commune.secure.AegisItem;
 import io.vertx.up.eon.em.EmSecure;
-import io.vertx.up.secure.authorization.AuthorizationBuiltInHandler;
-import io.vertx.up.secure.authorization.AuthorizationResource;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.infix.secure.authorization.AuthorizationBuiltInHandler;
+import io.zerows.infix.secure.authorization.AuthorizationResource;
 import io.zerows.macro.sdk.secure.LeeBuiltIn;
 import io.zerows.macro.sdk.secure.LeeExtension;
 

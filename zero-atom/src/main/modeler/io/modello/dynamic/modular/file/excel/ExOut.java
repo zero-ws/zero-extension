@@ -3,7 +3,7 @@ package io.modello.dynamic.modular.file.excel;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
-import io.vertx.up.plugin.excel.atom.ExRecord;
+import io.zerows.infix.excel.atom.ExRecord;
 
 import java.util.Objects;
 import java.util.Set;
