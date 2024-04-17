@@ -9,7 +9,7 @@ import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.mod.ambient.cv.AtMsg;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.commune.config.XHeader;
+import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

@@ -9,8 +9,8 @@ import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import io.vertx.up.commune.record.Apt;
 import io.vertx.up.eon.KName;
+import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import org.jooq.Configuration;
 
 import java.util.List;

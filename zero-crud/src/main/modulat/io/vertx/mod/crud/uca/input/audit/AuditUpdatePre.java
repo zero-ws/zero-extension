@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.shape.KField;
+import io.zerows.core.domain.atom.specification.KField;
 import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

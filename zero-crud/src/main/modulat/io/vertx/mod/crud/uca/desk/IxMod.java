@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.error._404ModuleMissingException;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.up.atom.shape.KJoin;
+import io.zerows.core.domain.atom.specification.KJoin;
 import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;

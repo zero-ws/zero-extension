@@ -11,7 +11,7 @@ import io.vertx.mod.ke.cv.KeIpc;
 import io.vertx.mod.ke.cv.KeMsg;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.workflow.atom.configuration.MetaWorkflow;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.unity.Ux;

@@ -2,7 +2,7 @@ package io.horizon.spi.ui;
 
 import cn.vertxup.ui.domain.tables.pojos.UiVisitor;
 import io.vertx.core.Future;
-import io.vertx.up.atom.typed.UData;
+import io.zerows.core.domain.atom.typed.UData;
 
 /**
  * This interface is for UIVisitor when

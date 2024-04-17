@@ -14,7 +14,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtKey;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.specification.action.Commercial;
 import io.vertx.up.util.Ut;

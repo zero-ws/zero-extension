@@ -9,7 +9,7 @@ import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.error._404ActionMissingException;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 

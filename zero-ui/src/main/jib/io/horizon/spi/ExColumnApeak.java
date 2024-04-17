@@ -7,7 +7,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.cv.UiMsg;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 
 import static io.vertx.mod.ui.refine.Ui.LOG;
 

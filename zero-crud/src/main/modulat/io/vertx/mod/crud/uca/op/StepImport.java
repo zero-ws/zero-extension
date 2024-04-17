@@ -8,7 +8,7 @@ import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
-import io.vertx.up.atom.shape.KField;
+import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;

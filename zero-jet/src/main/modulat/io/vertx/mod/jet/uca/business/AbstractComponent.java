@@ -14,7 +14,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.annotations.Contract;
 import io.zerows.mbse.commune.ActIn;
 import io.zerows.mbse.commune.ActOut;
-import io.vertx.up.commune.config.XHeader;
+import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.exception.web._400SigmaMissingException;
 import io.vertx.up.specification.action.Service;
 import io.vertx.up.unity.Ux;

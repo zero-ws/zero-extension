@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;

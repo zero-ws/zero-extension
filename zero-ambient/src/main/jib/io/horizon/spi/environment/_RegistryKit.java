@@ -18,7 +18,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.AtMsg;
 import io.vertx.mod.ambient.refine.At;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

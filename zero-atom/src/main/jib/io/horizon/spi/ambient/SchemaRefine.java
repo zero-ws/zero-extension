@@ -16,7 +16,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.refine.Ao;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJooq;

@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.zerows.annotations.jakarta.BodyParam;
 import io.zerows.annotations.jakarta.PointParam;

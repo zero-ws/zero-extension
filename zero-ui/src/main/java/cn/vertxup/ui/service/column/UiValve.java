@@ -3,7 +3,7 @@ package cn.vertxup.ui.service.column;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 
 /*
  * Apeak choice for different usage,

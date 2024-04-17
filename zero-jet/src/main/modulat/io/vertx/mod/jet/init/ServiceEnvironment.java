@@ -16,7 +16,7 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.mod.jet.atom.JtJob;
 import io.vertx.mod.jet.atom.JtUri;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.zerows.macro.plugin.database.DataPool;

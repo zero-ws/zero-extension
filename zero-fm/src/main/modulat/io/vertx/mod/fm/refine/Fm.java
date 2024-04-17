@@ -7,7 +7,7 @@ import io.horizon.uca.log.LogModule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.atom.TranData;
 import io.vertx.mod.fm.cv.FmCv;
-import io.vertx.up.atom.extension.KNaming;
+import io.zerows.core.domain.atom.specification.KNaming;
 
 import java.math.BigDecimal;
 import java.util.List;

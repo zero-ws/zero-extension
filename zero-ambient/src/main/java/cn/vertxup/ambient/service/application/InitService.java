@@ -8,7 +8,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.init.AtPin;
 import io.vertx.mod.ambient.refine.At;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

@@ -5,7 +5,7 @@ import io.horizon.eon.VString;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.atom.extension.KNaming;
+import io.zerows.core.domain.atom.specification.KNaming;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 

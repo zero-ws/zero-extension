@@ -10,7 +10,7 @@ import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.init.ScPin;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.jooq.UxJoin;

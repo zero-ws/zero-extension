@@ -19,7 +19,7 @@ import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.data.DataRecord;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.zerows.macro.plugin.database.DS;
 import io.zerows.macro.plugin.database.DataPool;

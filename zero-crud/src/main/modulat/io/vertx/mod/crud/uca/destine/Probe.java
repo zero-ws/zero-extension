@@ -2,7 +2,7 @@ package io.vertx.mod.crud.uca.destine;
 
 import io.modello.eon.em.EmModel;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.shape.KPoint;
+import io.zerows.core.domain.atom.specification.KPoint;
 import io.zerows.aeon.experiment.specification.KModule;
 
 import java.util.Objects;

@@ -7,7 +7,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.cv.em.OwnerType;
 import io.vertx.mod.rbac.atom.ScOwner;
-import io.vertx.up.commune.secure.DataBound;
+import io.zerows.core.domain.atom.commune.secure.DataBound;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

@@ -5,8 +5,8 @@ import io.horizon.uca.cache.Cc;
 import io.modello.specification.HRecord;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.atom.element.JAmb;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.element.JAmb;
 
 import java.util.List;
 import java.util.Objects;

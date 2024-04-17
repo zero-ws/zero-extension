@@ -1,7 +1,7 @@
 package io.vertx.mod.crud.uca.destine;
 
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.shape.KPoint;
+import io.zerows.core.domain.atom.specification.KPoint;
 import io.zerows.mbse.commune.Envelop;
 
 /**

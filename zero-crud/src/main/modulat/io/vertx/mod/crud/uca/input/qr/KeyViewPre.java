@@ -9,7 +9,7 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 

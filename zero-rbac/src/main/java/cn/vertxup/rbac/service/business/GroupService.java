@@ -10,7 +10,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.cv.AuthMsg;
-import io.vertx.up.atom.typed.UArray;
+import io.zerows.core.domain.atom.typed.UArray;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;

@@ -13,7 +13,7 @@ import io.vertx.mod.rbac.error._401TokenCounterException;
 import io.vertx.mod.rbac.error._401TokenExpiredException;
 import io.vertx.mod.rbac.error._401TokenInvalidException;
 import io.vertx.mod.rbac.init.ScPin;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.unity.Ux;
 
 import java.time.LocalDateTime;

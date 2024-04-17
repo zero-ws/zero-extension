@@ -10,9 +10,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.element.DataTpl;
-import io.vertx.up.atom.element.JComponent;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.element.JComponent;
 
 import java.util.Arrays;
 import java.util.Objects;

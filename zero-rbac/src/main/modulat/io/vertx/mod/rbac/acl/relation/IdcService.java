@@ -9,11 +9,11 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.commune.record.Apt;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.dynamic.Apt;
 
 import java.util.HashSet;
 import java.util.List;

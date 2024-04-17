@@ -7,7 +7,7 @@ import io.vertx.mod.workflow.atom.runtime.WTransition;
 import io.vertx.mod.workflow.error._409InValidInstanceException;
 import io.vertx.mod.workflow.uca.camunda.RunOn;
 import io.vertx.mod.workflow.uca.central.AbstractMoveOn;
-import io.vertx.up.atom.extension.KFlow;
+import io.zerows.core.domain.atom.specification.KFlow;
 import io.vertx.up.fn.Fn;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 

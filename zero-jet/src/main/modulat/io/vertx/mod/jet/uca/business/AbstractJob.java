@@ -13,7 +13,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.refine.Jt;
 import io.zerows.mbse.atom.worker.Mission;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.specification.action.Service;
 import io.vertx.up.uca.cache.RapidKey;

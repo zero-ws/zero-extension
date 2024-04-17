@@ -6,7 +6,7 @@ import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.error._401CodeExpiredException;
 import io.vertx.mod.rbac.error._401CodeWrongException;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 

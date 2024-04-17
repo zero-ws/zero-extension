@@ -11,7 +11,7 @@ import io.vertx.mod.workflow.error._409InValidInstanceException;
 import io.vertx.mod.workflow.refine.Wf;
 import io.vertx.mod.workflow.uca.camunda.Io;
 import io.vertx.mod.workflow.uca.conformity.Gear;
-import io.vertx.up.atom.extension.KFlow;
+import io.zerows.core.domain.atom.specification.KFlow;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

@@ -19,7 +19,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.atom.JtConfig;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.atom.JtWorker;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.Set;

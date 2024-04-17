@@ -7,8 +7,8 @@ import io.modello.eon.em.EmValue;
 import io.modello.specification.HRecord;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.atom.element.JAmb;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.element.JAmb;
 
 import java.util.Arrays;
 import java.util.List;

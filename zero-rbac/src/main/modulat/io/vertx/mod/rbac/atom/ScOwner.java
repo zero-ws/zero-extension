@@ -2,7 +2,7 @@ package io.vertx.mod.rbac.atom;
 
 import io.horizon.eon.VValue;
 import io.vertx.mod.ke.cv.em.OwnerType;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.util.Ut;
 
 import java.io.Serializable;

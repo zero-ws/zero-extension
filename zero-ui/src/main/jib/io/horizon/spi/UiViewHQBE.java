@@ -8,7 +8,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.uca.qbe.QBECache;
 import io.zerows.mbse.commune.Envelop;
-import io.vertx.up.commune.config.XHeader;
+import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

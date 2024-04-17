@@ -12,7 +12,7 @@ import io.vertx.mod.workflow.uca.coadjutor.StayCancel;
 import io.vertx.mod.workflow.uca.coadjutor.StayClose;
 import io.vertx.mod.workflow.uca.coadjutor.StaySave;
 import io.vertx.mod.workflow.uca.component.*;
-import io.vertx.up.atom.extension.KFlow;
+import io.zerows.core.domain.atom.specification.KFlow;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 

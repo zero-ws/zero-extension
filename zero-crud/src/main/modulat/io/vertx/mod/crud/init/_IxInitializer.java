@@ -2,7 +2,7 @@ package io.vertx.mod.crud.init;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.refine.Ix;
-import io.vertx.up.atom.shape.KField;
+import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;

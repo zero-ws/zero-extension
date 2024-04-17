@@ -6,7 +6,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.init.ScPin;
-import io.vertx.up.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 

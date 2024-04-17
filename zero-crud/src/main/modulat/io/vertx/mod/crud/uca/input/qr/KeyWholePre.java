@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
-import io.vertx.up.atom.shape.KJoin;
+import io.zerows.core.domain.atom.specification.KJoin;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.KModule;

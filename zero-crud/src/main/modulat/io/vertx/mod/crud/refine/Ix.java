@@ -10,7 +10,7 @@ import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.atom.shape.KField;
+import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.KModule;
 

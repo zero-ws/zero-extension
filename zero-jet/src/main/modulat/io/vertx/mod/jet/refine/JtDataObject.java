@@ -13,7 +13,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.cv.em.WorkerType;
 import io.vertx.mod.ke.refine.Ke;
-import io.vertx.up.commune.config.Database;
+import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;

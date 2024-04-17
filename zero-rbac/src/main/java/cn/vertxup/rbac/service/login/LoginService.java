@@ -14,7 +14,7 @@ import io.vertx.mod.rbac.error._423UserDisabledException;
 import io.vertx.mod.rbac.error._449UserNotFoundException;
 import io.vertx.mod.rbac.logged.ScUser;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.atom.typed.UObject;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

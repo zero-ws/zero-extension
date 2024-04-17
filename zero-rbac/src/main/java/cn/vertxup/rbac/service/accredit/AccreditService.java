@@ -21,7 +21,7 @@ import io.vertx.mod.rbac.init.ScPin;
 import io.vertx.mod.rbac.logged.ScResource;
 import io.vertx.mod.rbac.logged.ScUser;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.commune.secure.DataBound;
+import io.zerows.core.domain.atom.commune.secure.DataBound;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.unity.Ux;
