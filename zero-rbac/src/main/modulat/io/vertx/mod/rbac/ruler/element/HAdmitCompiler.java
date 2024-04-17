@@ -1,6 +1,5 @@
 package io.vertx.mod.rbac.ruler.element;
 
-import io.aeon.atom.secure.KPermit;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -8,6 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.error._404AdmitCompilerNullException;
 import io.vertx.up.eon.em.EmSecure;
 import io.vertx.up.fn.Fn;
+import io.zerows.core.cloud.atom.secure.KPermit;
 
 import java.util.Objects;
 import java.util.function.Supplier;

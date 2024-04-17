@@ -10,7 +10,7 @@ import io.vertx.mod.jet.cv.em.WorkerType;
 import io.vertx.mod.jet.init.JtPin;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.refine.Jt;
-import io.vertx.up.uca.log.DevOps;
+import io.zerows.core.metadata.uca.environment.DevOps;
 
 import java.util.Objects;
 import java.util.Set;

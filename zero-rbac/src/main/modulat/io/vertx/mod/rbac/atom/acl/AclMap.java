@@ -1,8 +1,8 @@
 package io.vertx.mod.rbac.atom.acl;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.specification.secure.AclView;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.AclView;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

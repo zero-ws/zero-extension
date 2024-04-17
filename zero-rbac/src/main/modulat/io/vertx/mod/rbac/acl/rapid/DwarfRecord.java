@@ -3,7 +3,7 @@ package io.vertx.mod.rbac.acl.rapid;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.specification.secure.Acl;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 /*
  * Here are the record filter `Dwarf`

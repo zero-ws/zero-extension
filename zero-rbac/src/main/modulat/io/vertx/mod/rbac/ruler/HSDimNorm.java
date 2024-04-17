@@ -1,6 +1,5 @@
 package io.vertx.mod.rbac.ruler;
 
-import io.aeon.atom.secure.KPermit;
 import io.horizon.eon.VString;
 import io.horizon.eon.VValue;
 import io.vertx.core.Future;
@@ -10,6 +9,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.aeon.experiment.specification.secure.AbstractAdmit;
+import io.zerows.core.cloud.atom.secure.KPermit;
 
 import java.util.Objects;
 

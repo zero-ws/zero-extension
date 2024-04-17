@@ -5,8 +5,8 @@ import io.vertx.mod.rbac.acl.rapid.addon.DwarfAddOn;
 import io.vertx.mod.rbac.cv.em.RegionType;
 import io.vertx.mod.rbac.error._500DwarfInstanceNullException;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.specification.secure.Acl;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 /*
  * Dwarf

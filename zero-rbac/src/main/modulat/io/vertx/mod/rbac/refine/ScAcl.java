@@ -3,8 +3,8 @@ package io.vertx.mod.rbac.refine;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.em.EmSecure;
-import io.vertx.up.specification.secure.Acl;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 import java.util.HashSet;
 import java.util.Objects;

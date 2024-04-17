@@ -8,9 +8,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.log.DevEnv;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.uca.environment.DevEnv;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

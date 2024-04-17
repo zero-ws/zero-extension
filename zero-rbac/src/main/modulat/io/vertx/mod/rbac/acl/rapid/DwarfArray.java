@@ -4,8 +4,8 @@ import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.refine.Sc;
-import io.vertx.up.specification.secure.Acl;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 import java.util.Objects;
 

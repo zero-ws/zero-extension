@@ -2,7 +2,7 @@ package io.vertx.mod.rbac.acl.rapid.addon;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.acl.rapid.Dwarf;
-import io.vertx.up.specification.secure.Acl;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 public class DwarfAddOn implements Dwarf {
     @Override

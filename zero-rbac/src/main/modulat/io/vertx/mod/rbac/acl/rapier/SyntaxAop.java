@@ -15,9 +15,9 @@ import io.vertx.mod.rbac.acl.rapid.DmxRow;
 import io.vertx.mod.rbac.atom.acl.AclData;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmSecure;
-import io.vertx.up.specification.secure.Acl;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.Acl;
 
 import java.util.Objects;
 

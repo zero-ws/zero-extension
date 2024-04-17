@@ -15,9 +15,9 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.uca.cache.RapidKey;
-import io.vertx.up.uca.log.DevEnv;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.uca.environment.DevEnv;
 
 import java.util.ArrayList;
 import java.util.List;

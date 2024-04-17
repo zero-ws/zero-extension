@@ -5,9 +5,9 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.em.AclType;
 import io.vertx.up.eon.em.EmSecure;
-import io.vertx.up.specification.secure.Acl;
-import io.vertx.up.specification.secure.AclView;
 import io.vertx.up.util.Ut;
+import io.zerows.core.cloud.zdk.secure.Acl;
+import io.zerows.core.cloud.zdk.secure.AclView;
 
 import java.util.Objects;
 import java.util.Set;

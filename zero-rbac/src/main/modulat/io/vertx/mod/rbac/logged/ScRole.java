@@ -10,9 +10,9 @@ import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.init.ScPin;
 import io.vertx.up.uca.cache.Rapid;
-import io.vertx.up.uca.log.DevEnv;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.uca.environment.DevEnv;
 
 import java.util.HashSet;
 import java.util.List;
