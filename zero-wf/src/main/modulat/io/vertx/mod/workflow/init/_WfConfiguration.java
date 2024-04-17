@@ -14,9 +14,9 @@ import io.vertx.mod.workflow.atom.configuration.MetaWorkflow;
 import io.vertx.up.commune.config.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
 import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.ProcessEngineConfiguration;
 import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
@@ -46,15 +46,15 @@ final class WfConfiguration {
     }
 
     private static MetaWorkflow configure() {
-        if (Objects.isNull(CONFIG) && ZeroStore.is(YmlCore.workflow.__KEY)) {
-            CONFIG = ZeroStore.option(YmlCore.workflow.__KEY, MetaWorkflow.class, null);
+        if (Objects.isNull(CONFIG) && OZeroStore.is(YmlCore.workflow.__KEY)) {
+            CONFIG = OZeroStore.option(YmlCore.workflow.__KEY, MetaWorkflow.class, null);
             LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_T, CONFIG.toString());
         }
         return CONFIG;
     }
 
     static Future<Boolean> registry(final HAmbient ambient, final Vertx vertx) {
-        final JsonObject configJ = ZeroStore.option(YmlCore.workflow.__KEY);
+        final JsonObject configJ = OZeroStore.option(YmlCore.workflow.__KEY);
         final String module = Ke.getExtension(KeIpc.Module.WF);
         LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_J,
             module, configJ.encode());

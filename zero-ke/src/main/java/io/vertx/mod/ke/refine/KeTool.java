@@ -8,10 +8,10 @@ import io.vertx.up.commune.config.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
-import io.zerows.macro.plugin.database.DataPool;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.macro.plugin.database.DataPool;
 import org.jooq.Configuration;
 
 import java.util.Objects;
@@ -27,7 +27,7 @@ class KeTool {
 
     static String getCatalog() {
         if (Ut.isNil(DATABASE)) {
-            final JsonObject config = ZeroStore.option(YmlCore.jooq.__KEY);
+            final JsonObject config = OZeroStore.option(YmlCore.jooq.__KEY);
             DATABASE = Ut.visitString(config, "provider", "catalog");
         }
         return DATABASE;

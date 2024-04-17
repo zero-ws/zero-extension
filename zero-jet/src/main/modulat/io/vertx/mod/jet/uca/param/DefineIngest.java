@@ -6,16 +6,16 @@ import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.error._501IngestMissingException;
 import io.vertx.mod.jet.error._501IngestSpecException;
-import io.zerows.mbse.commune.Envelop;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.mbse.commune.Envelop;
 
 import java.util.Objects;
 
 class DefineIngest implements JtIngest {
     @Override
     public Envelop in(final RoutingContext context, final JtUri uri) {
-        final Class<?> clazz = ZeroStore.injection(JtConstant.COMPONENT_INGEST_KEY);
+        final Class<?> clazz = OZeroStore.injection(JtConstant.COMPONENT_INGEST_KEY);
         if (Objects.isNull(clazz)) {
             return Envelop.failure(new _501IngestMissingException(this.getClass()));
         } else if (!Ut.isImplement(clazz, JtIngest.class)) {

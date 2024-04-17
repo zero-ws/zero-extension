@@ -7,8 +7,8 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.atom.JtConfig;
 import io.vertx.up.eon.KName;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.HashSet;
@@ -32,7 +32,7 @@ class JtRoute {
 
     static String toPath(final HArk ark, final Supplier<String> uriSupplier,
                          final boolean secure) {
-        final JsonObject configRouter = ZeroStore.option(KName.ROUTER);
+        final JsonObject configRouter = OZeroStore.option(KName.ROUTER);
         final JtConfig configuration = Ut.deserialize(configRouter, JtConfig.class);
         return toPath(ark, uriSupplier, secure, configuration);
     }

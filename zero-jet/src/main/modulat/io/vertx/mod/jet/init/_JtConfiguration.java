@@ -12,9 +12,9 @@ import io.vertx.mod.ke.cv.KeMsg;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,8 +29,8 @@ class JtConfiguration {
     private static JtConfig CONFIG = null;
 
     static void registry(final HAmbient ambient) {
-        if (Objects.isNull(CONFIG) && ZeroStore.is(YmlCore.router.__KEY)) {
-            final JsonObject routerData = ZeroStore.option(YmlCore.router.__KEY);
+        if (Objects.isNull(CONFIG) && OZeroStore.is(YmlCore.router.__KEY)) {
+            final JsonObject routerData = OZeroStore.option(YmlCore.router.__KEY);
             final String module = Ke.getExtension(KeIpc.Module.JET);
             Jt.LOG.Init.info(JtConfiguration.class, KeMsg.Configuration.DATA_J,
                 module, routerData.encode());

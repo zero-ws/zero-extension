@@ -3,8 +3,8 @@ package io.vertx.mod.battery.init;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.battery.atom.PowerConfig;
 import io.vertx.up.eon.configure.YmlCore;
-import io.vertx.up.runtime.ZeroStore;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.store.config.OZeroStore;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -22,8 +22,8 @@ class BkConfiguration {
     }
 
     static void init() {
-        if (ZeroStore.is(YmlCore.module.__KEY)) {
-            final JsonObject configuration = ZeroStore.option(YmlCore.module.__KEY);
+        if (OZeroStore.is(YmlCore.module.__KEY)) {
+            final JsonObject configuration = OZeroStore.option(YmlCore.module.__KEY);
             LOG.Init.info(BkConfiguration.class, "The Modulat Engine will be initialized!! `{0}`",
                 configuration.encode());
             CONFIG = Ut.deserialize(configuration, PowerConfig.class);

@@ -11,7 +11,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.workflow.uca.deployment.DeployOn;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.runtime.ZeroStore;
+import io.zerows.core.metadata.store.config.OZeroStore;
 import org.camunda.bpm.engine.*;
 import org.camunda.bpm.engine.impl.history.handler.HistoryEventHandler;
 
@@ -69,7 +69,7 @@ public class WfPin implements HRegistry.Mod<Vertx> {
     @Override
     public Future<Boolean> configureAsync(final Vertx container, final HAmbient ambient) {
         // 1. 检查是否启用
-        if (!ZeroStore.is(YmlCore.workflow.__KEY)) {
+        if (!OZeroStore.is(YmlCore.workflow.__KEY)) {
             return Future.succeededFuture(Boolean.TRUE);
         }
         // 2. 遗留系统待办模块初始化
