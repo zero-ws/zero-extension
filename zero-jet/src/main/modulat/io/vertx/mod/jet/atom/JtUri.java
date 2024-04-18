@@ -8,8 +8,8 @@ import io.vertx.mod.jet.cv.JtKey;
 import io.vertx.mod.jet.cv.em.ParamMode;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.eon.KWeb;
-import io.vertx.up.specification.action.Api;
 import io.vertx.up.util.Ut;
+import io.zerows.core.facade.zdk.Api;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.Objects;
