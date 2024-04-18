@@ -4,7 +4,7 @@ import io.horizon.eon.VValue;
 import io.horizon.uca.qr.syntax.*;
 import io.modello.dynamic.modular.jooq.internal.Jq;
 import io.vertx.mod.atom.modeling.element.DataMatrix;
-import io.zerows.macro.plugin.jooq.condition.Clause;
+import io.zerows.core.feature.database.jooq.condition.Clause;
 import org.jooq.Condition;
 import org.jooq.Field;
 import org.jooq.impl.DSL;

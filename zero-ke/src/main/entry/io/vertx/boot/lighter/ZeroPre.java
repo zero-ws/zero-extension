@@ -3,9 +3,9 @@ package io.vertx.boot.lighter;
 import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.feature.database.jooq.JooqInfix;
 import io.zerows.core.feature.web.shared.MapInfix;
 import io.zerows.infix.excel.ExcelInfix;
-import io.zerows.macro.plugin.jooq.JooqInfix;
 
 /**
  * @author lang : 2023-06-10
