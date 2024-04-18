@@ -11,9 +11,9 @@ import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Database;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.facade.zdk.Commercial;
+import io.zerows.core.feature.database.atom.Database;
 import io.zerows.mbse.commune.Envelop;
 
 import java.util.Objects;

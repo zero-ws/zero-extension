@@ -5,8 +5,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
-import io.zerows.core.domain.atom.commune.Database;
 import io.zerows.core.domain.atom.commune.dynamic.Apt;
+import io.zerows.core.feature.database.atom.Database;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

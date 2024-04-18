@@ -16,8 +16,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Database;
 import io.zerows.core.facade.zdk.Service;
+import io.zerows.core.feature.database.atom.Database;
 import io.zerows.mbse.atom.worker.Mission;
 
 import java.util.Objects;

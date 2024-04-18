@@ -16,12 +16,12 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.mod.jet.atom.JtJob;
 import io.vertx.mod.jet.atom.JtUri;
-import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.zerows.macro.plugin.database.DataPool;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.feature.database.cp.zdk.DataPool;
 
 import java.sql.Connection;
 import java.util.*;

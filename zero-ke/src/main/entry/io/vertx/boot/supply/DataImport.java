@@ -11,11 +11,11 @@ import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.shared.MapInfix;
+import io.zerows.core.feature.web.shared.SharedClient;
 import io.zerows.infix.excel.ExcelClient;
 import io.zerows.infix.excel.ExcelInfix;
 import io.zerows.macro.plugin.jooq.JooqInfix;
-import io.zerows.macro.plugin.shared.MapInfix;
-import io.zerows.macro.plugin.shared.SharedClient;
 import org.jooq.Configuration;
 
 import java.util.ArrayList;

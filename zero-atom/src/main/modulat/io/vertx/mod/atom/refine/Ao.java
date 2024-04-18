@@ -15,9 +15,9 @@ import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.element.DataMatrix;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Database;
 import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import io.zerows.core.domain.atom.element.JBag;
+import io.zerows.core.feature.database.atom.Database;
 import io.zerows.infix.excel.atom.ExTable;
 import org.jooq.Converter;
 

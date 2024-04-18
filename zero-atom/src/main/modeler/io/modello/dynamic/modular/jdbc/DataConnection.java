@@ -7,8 +7,8 @@ import io.modello.atom.app.KDatabase;
 import io.modello.dynamic.modular.sql.SqlOutput;
 import io.vertx.mod.atom.error._500EmptySQLException;
 import io.vertx.up.fn.Fn;
-import io.zerows.macro.plugin.database.DataPool;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.cp.zdk.DataPool;
 import org.jooq.Record;
 import org.jooq.*;
 

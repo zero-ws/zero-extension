@@ -47,7 +47,7 @@ public class DirActor {
     /*
      * Hard Delete for directory.
      * 1. Delete `I_DIRECTORY` records
-     * 2. Remove folder from `admin`
+     * 2. Remove folder from `manager`
      */
     @Address(Addr.Directory.DELETE)
     public Future<Boolean> remove(final String key) {

@@ -10,11 +10,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.domain.atom.commune.Database;
-import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.eon.KName;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.core.feature.database.atom.Database;
 import jakarta.inject.Inject;
 
 import java.time.Instant;

@@ -1,13 +1,13 @@
 package io.vertx.mod.jet.uca.tunnel;
 
 import io.horizon.spi.jet.JtComponent;
-import io.vertx.core.Future;
-import io.zerows.mbse.atom.worker.Mission;
-import io.zerows.mbse.commune.ActIn;
-import io.zerows.core.domain.atom.commune.Database;
 import io.modello.atom.app.KIntegration;
+import io.vertx.core.Future;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.atom.Database;
+import io.zerows.mbse.atom.worker.Mission;
+import io.zerows.mbse.commune.ActIn;
 
 public class ActorChannel extends AbstractChannel {
     /*

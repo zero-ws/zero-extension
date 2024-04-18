@@ -19,12 +19,12 @@ import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.data.DataRecord;
 import io.vertx.mod.ke.refine.Ke;
-import io.zerows.core.domain.atom.commune.Database;
 import io.vertx.up.eon.KName;
-import io.zerows.macro.plugin.database.DS;
-import io.zerows.macro.plugin.database.DataPool;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.feature.database.cp.zdk.DS;
+import io.zerows.core.feature.database.cp.zdk.DataPool;
 
 import java.util.Objects;
 import java.util.function.Supplier;

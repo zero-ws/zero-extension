@@ -6,8 +6,8 @@ import io.vertx.mod.rbac.ruler.element.HAdmitCompiler;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.secure.AbstractAdmit;
 import io.zerows.core.security.atom.KPermit;
+import io.zerows.core.security.zdk.manager.AbstractAdmit;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
