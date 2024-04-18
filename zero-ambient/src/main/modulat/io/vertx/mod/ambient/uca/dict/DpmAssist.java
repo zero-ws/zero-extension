@@ -10,7 +10,7 @@ import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.macro.sdk.spi.component.DictionaryPlugin;
+import io.zerows.core.cloud.zdk.spi.DictionaryPlugin;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

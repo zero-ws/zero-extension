@@ -4,7 +4,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.em.EmSecure;
 import io.vertx.up.util.Ut;
-import io.zerows.core.security.zdk.Acl;
+import io.zerows.core.security.zdk.authority.Acl;
 
 import java.util.HashSet;
 import java.util.Objects;

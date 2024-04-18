@@ -6,7 +6,7 @@ import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.secure.AbstractValve;
 import io.zerows.core.security.atom.KCatena;
 import io.zerows.core.security.atom.KPermit;
-import io.zerows.core.security.zdk.HValve;
+import io.zerows.core.security.zdk.authority.HValve;
 
 /**
  * Dim  =  FLAT

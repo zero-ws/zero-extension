@@ -8,7 +8,7 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import io.zerows.core.security.zdk.Acl;
+import io.zerows.core.security.zdk.authority.Acl;
 
 import java.util.List;
 import java.util.function.Function;

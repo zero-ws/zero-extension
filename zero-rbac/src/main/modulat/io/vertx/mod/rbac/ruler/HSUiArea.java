@@ -10,7 +10,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.security.atom.KCatena;
 import io.zerows.core.security.atom.KPermit;
 import io.zerows.core.security.atom.KSemi;
-import io.zerows.core.security.zdk.HValve;
+import io.zerows.core.security.zdk.authority.HValve;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

@@ -13,9 +13,9 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.cloud.zdk.spi.Dictionary;
 import io.zerows.core.domain.atom.specification.KTransform;
 import io.zerows.core.metadata.osgi.channel.Pocket;
-import io.zerows.macro.sdk.spi.component.Dictionary;
 import io.zerows.mbse.commune.Envelop;
 
 import java.util.List;

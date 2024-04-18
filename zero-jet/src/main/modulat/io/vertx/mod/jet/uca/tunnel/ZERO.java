@@ -1,6 +1,6 @@
 package io.vertx.mod.jet.uca.tunnel;
 
-import io.zerows.macro.sdk.spi.component.Dictionary;
+import io.zerows.core.cloud.zdk.spi.Dictionary;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

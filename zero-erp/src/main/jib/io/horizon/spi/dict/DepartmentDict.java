@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.macro.sdk.spi.component.DictionaryPlugin;
+import io.zerows.core.cloud.zdk.spi.DictionaryPlugin;
 
 /*
  * Dict for `resource.departments` here

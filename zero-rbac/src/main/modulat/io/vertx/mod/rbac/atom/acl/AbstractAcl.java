@@ -1,6 +1,6 @@
 package io.vertx.mod.rbac.atom.acl;
 
-import io.zerows.core.security.zdk.AclView;
+import io.zerows.core.security.zdk.authority.AclView;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

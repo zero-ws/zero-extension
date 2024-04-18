@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.acl.rapid.Dwarf;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.core.security.zdk.Acl;
+import io.zerows.core.security.zdk.authority.Acl;
 
 public class DwarfQr implements Dwarf {
     /*

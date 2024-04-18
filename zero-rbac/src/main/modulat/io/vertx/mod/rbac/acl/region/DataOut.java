@@ -10,7 +10,7 @@ import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.cv.em.RegionType;
 import io.vertx.mod.rbac.refine.Sc;
 import io.vertx.up.util.Ut;
-import io.zerows.core.security.zdk.Acl;
+import io.zerows.core.security.zdk.authority.Acl;
 import io.zerows.mbse.commune.Envelop;
 
 import java.util.HashSet;

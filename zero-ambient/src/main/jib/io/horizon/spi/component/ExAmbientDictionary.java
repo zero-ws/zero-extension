@@ -11,7 +11,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.mod.ambient.uca.dict.Dpm;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import io.zerows.macro.sdk.spi.component.Dictionary;
+import io.zerows.core.cloud.zdk.spi.Dictionary;
 
 import java.util.ArrayList;
 import java.util.List;
