@@ -3,7 +3,7 @@ package io.vertx.mod.rbac.acl.rapid;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.cloud.zdk.secure.Acl;
+import io.zerows.core.security.zdk.Acl;
 
 /*
  * Here are the pagination list filter `Dwarf`

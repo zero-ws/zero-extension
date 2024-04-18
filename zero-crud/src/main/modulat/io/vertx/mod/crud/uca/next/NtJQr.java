@@ -4,8 +4,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.domain.uca.destine.Conflate;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

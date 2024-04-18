@@ -3,9 +3,9 @@ package io.vertx.mod.crud.uca.next;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.uca.destine.Conflate;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.uca.destine.Conflate;
 
 import static io.vertx.mod.crud.refine.Ix.LOG;
 

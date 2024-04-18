@@ -17,7 +17,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmSecure;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.cloud.zdk.secure.Acl;
+import io.zerows.core.security.zdk.Acl;
 
 import java.util.Objects;
 
