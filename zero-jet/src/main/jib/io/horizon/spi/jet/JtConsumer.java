@@ -2,7 +2,7 @@ package io.horizon.spi.jet;
 
 import io.vertx.core.Future;
 import io.zerows.mbse.commune.Envelop;
-import io.zerows.web.metadata.zdk.Commercial;
+import io.zerows.core.web.metadata.zdk.Commercial;
 
 /*
  * Consumer interface

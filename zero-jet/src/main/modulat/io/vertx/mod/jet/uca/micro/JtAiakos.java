@@ -4,7 +4,7 @@ import io.horizon.spi.jet.JtConsumer;
 import io.vertx.core.Future;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.zerows.mbse.commune.Envelop;
-import io.zerows.web.metadata.zdk.Commercial;
+import io.zerows.core.web.metadata.zdk.Commercial;
 
 /**
  * 「Consumer」

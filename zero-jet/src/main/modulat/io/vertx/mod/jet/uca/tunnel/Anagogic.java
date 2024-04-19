@@ -14,7 +14,7 @@ import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.feature.web.cache.Rapid;
 import io.zerows.mbse.commune.Envelop;
-import io.zerows.web.metadata.zdk.Commercial;
+import io.zerows.core.web.metadata.zdk.Commercial;
 
 import java.util.Objects;
 import java.util.function.Supplier;

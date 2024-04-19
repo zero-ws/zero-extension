@@ -18,7 +18,7 @@ import io.vertx.up.eon.em.EmJob;
 import io.vertx.up.uca.job.plugin.JobClient;
 import io.vertx.up.uca.job.plugin.JobInfix;
 import io.vertx.up.unity.Ux;
-import io.zerows.web.metadata.atom.worker.Mission;
+import io.zerows.core.web.scheduler.atom.Mission;
 
 import java.util.Objects;
 

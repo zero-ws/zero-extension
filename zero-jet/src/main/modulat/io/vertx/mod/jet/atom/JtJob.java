@@ -9,8 +9,8 @@ import io.vertx.mod.jet.refine.Jt;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.em.EmJob;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.scheduler.KScheduler;
-import io.zerows.web.metadata.atom.worker.Mission;
+import io.zerows.core.web.scheduler.atom.Mission;
+import io.zerows.core.web.scheduler.atom.specification.KScheduler;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;

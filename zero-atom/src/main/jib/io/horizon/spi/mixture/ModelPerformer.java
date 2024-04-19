@@ -12,7 +12,7 @@ import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.web.metadata.exception._404ModelNotFoundException;
+import io.zerows.core.web.metadata.exception._404ModelNotFoundException;
 
 import java.util.ArrayList;
 import java.util.HashSet;
