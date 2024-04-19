@@ -21,11 +21,11 @@ public interface AuthMsg {
     String TOKEN_CACHED = "Verify data = {1} from cache token = {0}";
     String TOKEN_JWT = "Jwt token data stored: {0}.";
 
-    String TOKEN_SIZE_NULL = "Token size invalid ( null ): {0}, user: {1}.";
-    String TOKEN_SIZE_EMPTY = "Token size invalid ( empty ): {0}, user: {1}.";
-    String TOKEN_SIZE_MULTI = "Token size invalid ( multi ): {0}, user: {1}.";
-    String TOKEN_INVALID = "Token invalid {0}";
-    String TOKEN_EXPIRED = "Token you provided {0} is expired at: {1}.";
+    String TOKEN_SIZE_NULL = "WebToken size invalid ( null ): {0}, user: {1}.";
+    String TOKEN_SIZE_EMPTY = "WebToken size invalid ( empty ): {0}, user: {1}.";
+    String TOKEN_SIZE_MULTI = "WebToken size invalid ( multi ): {0}, user: {1}.";
+    String TOKEN_INVALID = "WebToken invalid {0}";
+    String TOKEN_EXPIRED = "WebToken you provided {0} is expired at: {1}.";
 
     String CREDIT_ACTION = "1. Accredit action ( uri = `{0}`, method = `{1}`, normalizedUri = `{2}` ).";
     String CREDIT_RESOURCE = "2. Accredit resource ( resource = `{0}` ).";

@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.ruler.element.HAdmitCompiler;
-import io.zerows.core.security.atom.KPermit;
+import io.zerows.core.security.atom.manage.KPermit;
 
 public class HSDimDao extends HSDimNorm {
     @Override

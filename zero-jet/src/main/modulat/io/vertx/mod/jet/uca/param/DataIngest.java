@@ -6,7 +6,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.cv.em.ParamMode;
 import io.vertx.mod.jet.monitor.JtMonitor;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;
 import java.util.function.Supplier;

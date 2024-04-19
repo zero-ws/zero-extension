@@ -12,6 +12,7 @@ import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import jakarta.inject.Inject;
 
 import static io.vertx.mod.workflow.refine.Wf.LOG;
@@ -80,7 +81,7 @@ public class ReportActor {
         // -- ACCEPTED
         final JsonObject qrStatus = Ux.whereAnd();
         qrStatus.put(KName.STATUS + ",i", Vm.Status.QUEUE);
-        final JsonObject qrCombine = Ux.irAndQH(qr, "$Q$", qrStatus);
+        final JsonObject qrCombine = Ut.irAndQH(qr, "$Q$", qrStatus);
         LOG.Queue.info(this.getClass(), "Qr Report Combined: {0}", qrCombine.encode());
         return this.taskStub.fetchQueue(qrCombine); // this.condStub.qrQueue(qr, userId)
     }

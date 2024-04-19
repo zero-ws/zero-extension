@@ -2,7 +2,7 @@ package io.vertx.mod.crud.uca.destine;
 
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.zerows.core.domain.atom.specification.KPoint;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 /**
  * @author lang : 2023-08-18

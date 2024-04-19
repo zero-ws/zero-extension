@@ -10,6 +10,7 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
@@ -26,7 +27,7 @@ public class FileActor {
         qrDefault.put(KName.STATUS, FileStatus.DONE.name());
         qrDefault.put(KName.ACTIVE, Boolean.TRUE);
         qrDefault.put(KName.CREATED_BY, Ux.keyUser(user));
-        final JsonObject qrCombine = Ux.irAndQH(query, "$DFT$", qrDefault);
+        final JsonObject qrCombine = Ut.irAndQH(query, "$DFT$", qrDefault);
         return Ux.Jooq.on(XAttachmentDao.class).searchAsync(qrCombine);
     }
 

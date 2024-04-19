@@ -11,11 +11,11 @@ import io.vertx.mod.rbac.acl.rapier.Quinn;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.logged.ScUser;
-import io.zerows.core.domain.atom.commune.secure.DataBound;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.core.security.atom.DataBound;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;
 

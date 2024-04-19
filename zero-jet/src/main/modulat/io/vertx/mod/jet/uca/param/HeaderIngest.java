@@ -5,7 +5,7 @@ import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 import io.vertx.up.eon.KWeb;
 
 @Deprecated

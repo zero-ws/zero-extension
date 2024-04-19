@@ -7,9 +7,9 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.security.atom.KCatena;
-import io.zerows.core.security.atom.KPermit;
-import io.zerows.core.security.atom.KSemi;
+import io.zerows.core.security.atom.manage.KCatena;
+import io.zerows.core.security.atom.manage.KPermit;
+import io.zerows.core.security.atom.manage.KSemi;
 import io.zerows.core.security.zdk.authority.HValve;
 
 import java.util.concurrent.ConcurrentHashMap;

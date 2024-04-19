@@ -17,7 +17,7 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 @Queue
 @SuppressWarnings("all")

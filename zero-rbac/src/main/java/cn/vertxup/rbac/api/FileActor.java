@@ -8,7 +8,7 @@ import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Infusion;
 import io.vertx.up.annotations.Queue;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;

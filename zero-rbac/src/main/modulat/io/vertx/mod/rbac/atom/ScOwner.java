@@ -2,8 +2,8 @@ package io.vertx.mod.rbac.atom;
 
 import io.horizon.eon.VValue;
 import io.vertx.mod.ke.cv.em.OwnerType;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.Vis;
 
 import java.io.Serializable;
 import java.util.HashSet;

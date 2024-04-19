@@ -5,11 +5,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.zerows.annotations.jakarta.BodyParam;
 import io.zerows.annotations.jakarta.PointParam;
+import io.zerows.core.domain.atom.commune.Vis;
 import jakarta.ws.rs.*;
 
 @EndPoint

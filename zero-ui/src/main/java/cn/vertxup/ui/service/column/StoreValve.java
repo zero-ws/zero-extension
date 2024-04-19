@@ -6,11 +6,11 @@ import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.Vis;
 
 import java.util.Comparator;
 import java.util.stream.Collectors;

@@ -8,9 +8,9 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.authorization.Authorization;
 import io.vertx.ext.web.RoutingContext;
-import io.zerows.core.domain.atom.commune.secure.Aegis;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
+import io.zerows.core.security.atom.Aegis;
 import io.zerows.infix.secure.authorization.AuthorizationResource;
 
 import java.lang.reflect.Method;
@@ -33,6 +33,7 @@ public class ProfileResource implements AuthorizationResource {
         return new ProfileResource(aegis);
     }
 
+    @Override
     @SuppressWarnings("all")
     public void requestResource(final RoutingContext context, final Handler<AsyncResult<Authorization>> handler) {
         final JsonObject params = AuthorizationResource.parameters(context);

@@ -49,11 +49,11 @@ public class ScConfig implements Serializable {
      */
     private String poolCode = AuthKey.Pool.CODE;
     /*
-     * Token expired time: ( ms )
+     * WebToken expired time: ( ms )
      */
     private Long tokenExpired = 30L;
     /*
-     * Token session pool
+     * WebToken session pool
      */
     private String poolToken = AuthKey.Pool.TOKEN;
     /*

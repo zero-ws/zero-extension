@@ -4,12 +4,12 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.KColumn;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.commune.Vis;
 
 import java.util.Objects;
 

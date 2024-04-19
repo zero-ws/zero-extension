@@ -2,7 +2,7 @@ package io.vertx.mod.rbac.acl.region;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

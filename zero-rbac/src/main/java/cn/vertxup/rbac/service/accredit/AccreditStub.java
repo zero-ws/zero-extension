@@ -8,7 +8,7 @@ import io.vertx.ext.auth.User;
  * Uniform interface for authorization workflow on restful api.
  * Json Data:
  * {
- *      "access_token" : "<Token Value>",
+ *      "access_token" : "<WebToken Value>",
  *      "options":{
  *      },
  *      "metadata":{

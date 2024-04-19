@@ -14,7 +14,7 @@
  *
  * POST   /oauth/login          Login
  * POST   /oauth/authorize      Authorization Code
- * POST   /oauth/token          Token Exchange
+ * POST   /oauth/token          WebToken Exchange
  *
  * Here are some plugin:
  * 1) Apeak Infusion

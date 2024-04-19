@@ -9,7 +9,7 @@ import io.zerows.aeon.experiment.mixture.HOne;
 import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.core.feature.database.jooq.operation.UxJoin;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 import io.zerows.core.web.metadata.atom.Rule;
 
 import java.util.List;

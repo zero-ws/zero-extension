@@ -13,7 +13,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 import io.zerows.core.web.metadata.zdk.Commercial;
 
 import java.util.Objects;

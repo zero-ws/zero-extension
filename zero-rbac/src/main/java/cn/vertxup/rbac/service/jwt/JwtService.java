@@ -10,7 +10,7 @@ import io.vertx.mod.rbac.refine.Sc;
 import io.vertx.up.unity.Ux;
 
 /*
- * Jwt Token Service for:
+ * Jwt WebToken Service for:
  * 1) Stored token information into jwt token
  * 2) Verify token based on stored access_token in database.
  */
@@ -18,7 +18,7 @@ public class JwtService implements JwtStub {
     @Override
     public Future<JsonObject> store(final String userKey, final JsonObject data) {
         /*
-         * Jwt Token response building
+         * Jwt WebToken response building
          */
         final JsonObject response = Sc.jwtToken(data);
         /*

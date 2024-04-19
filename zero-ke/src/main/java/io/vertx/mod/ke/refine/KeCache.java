@@ -8,7 +8,7 @@ import io.vertx.core.http.HttpServerRequest;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.domain.atom.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.Vis;
 import io.zerows.core.metadata.osgi.channel.KIncome;
 import io.zerows.core.metadata.osgi.channel.Pocket;
 

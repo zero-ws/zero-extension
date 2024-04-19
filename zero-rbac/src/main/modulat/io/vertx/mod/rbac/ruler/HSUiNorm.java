@@ -6,7 +6,7 @@ import io.vertx.mod.rbac.ruler.element.HAdmitCompiler;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.core.security.atom.KPermit;
+import io.zerows.core.security.atom.manage.KPermit;
 import io.zerows.core.security.zdk.manager.AbstractAdmit;
 
 /**

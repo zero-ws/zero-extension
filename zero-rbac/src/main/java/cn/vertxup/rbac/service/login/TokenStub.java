@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Session;
 
 /*
- * Token exchange interface
+ * WebToken exchange interface
  * 1. exchange token by authorization code
  */
 public interface TokenStub {

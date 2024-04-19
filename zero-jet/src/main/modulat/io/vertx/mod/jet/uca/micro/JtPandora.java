@@ -17,7 +17,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.web.metadata.zdk.Commercial;
 import io.zerows.core.web.scheduler.atom.Mission;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

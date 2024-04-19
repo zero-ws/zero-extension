@@ -12,8 +12,9 @@ import io.vertx.mod.workflow.atom.runtime.WRecord;
 import io.vertx.mod.workflow.uca.toolkit.ULinkage;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
@@ -29,7 +30,7 @@ public class TaskService implements TaskStub {
 
     @Override
     public Future<JsonObject> fetchQueue(final JsonObject condition) {
-        final JsonObject combine = Ux.irAndQH(condition, KName.Flow.FLOW_END, Boolean.FALSE);
+        final JsonObject combine = Ut.irAndQH(condition, KName.Flow.FLOW_END, Boolean.FALSE);
         return Ux.Join.on()
 
             // Join WTodo Here
@@ -47,7 +48,7 @@ public class TaskService implements TaskStub {
 
     @Override
     public Future<JsonObject> fetchHistory(final JsonObject condition) {
-        final JsonObject combine = Ux.irAndQH(condition, KName.Flow.FLOW_END, Boolean.TRUE);
+        final JsonObject combine = Ut.irAndQH(condition, KName.Flow.FLOW_END, Boolean.TRUE);
         return Ux.Jooq.on(WTicketDao.class).searchAsync(combine);
     }
 

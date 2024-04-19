@@ -14,11 +14,11 @@ import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.domain.atom.commune.XHeader;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.core.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 
 /**

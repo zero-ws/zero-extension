@@ -24,7 +24,7 @@ import io.vertx.mod.rbac.refine.Sc;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.secure.DataBound;
+import io.zerows.core.security.atom.DataBound;
 import io.zerows.feature.web.cache.Rapid;
 import jakarta.inject.Inject;
 

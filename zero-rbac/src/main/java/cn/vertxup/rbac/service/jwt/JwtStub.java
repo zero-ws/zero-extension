@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 
 /*
- * Wall processing of Jwt Token
+ * Wall processing of Jwt WebToken
  * This component will be used by @Wall class
  * 1) @Wall store code logical
  *    - After login, stored critical information of current user

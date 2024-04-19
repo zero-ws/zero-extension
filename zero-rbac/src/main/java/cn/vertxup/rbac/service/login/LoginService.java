@@ -14,11 +14,11 @@ import io.vertx.mod.rbac.error._423UserDisabledException;
 import io.vertx.mod.rbac.error._449UserNotFoundException;
 import io.vertx.mod.rbac.logged.ScUser;
 import io.vertx.mod.rbac.refine.Sc;
-import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.typed.UObject;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
@@ -84,7 +84,7 @@ public class LoginService implements LoginStub {
     @Override
     public Future<Boolean> logout(final String token, final String habitus) {
         /*
-         * Delete Token from `ACCESS_TOKEN`
+         * Delete WebToken from `ACCESS_TOKEN`
          */
         return Ux.Jooq.on(OAccessTokenDao.class)
             .deleteByAsync(new JsonObject().put("token", token))

@@ -3,14 +3,14 @@ package io.vertx.mod.crud.uca.desk;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.em.ApiSpec;
-import io.zerows.core.domain.atom.specification.KJoin;
-import io.zerows.core.domain.atom.specification.KPoint;
-import io.zerows.mbse.commune.Envelop;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmPRI;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.core.domain.atom.specification.KJoin;
+import io.zerows.core.domain.atom.specification.KPoint;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;
 

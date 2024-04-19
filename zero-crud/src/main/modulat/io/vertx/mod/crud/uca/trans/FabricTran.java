@@ -16,7 +16,7 @@ import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.core.cloud.zdk.spi.Dictionary;
 import io.zerows.core.domain.atom.specification.KTransform;
 import io.zerows.core.metadata.osgi.channel.Pocket;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.List;
 import java.util.Objects;

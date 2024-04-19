@@ -4,8 +4,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.mod.ui.cv.UiMsg;
 import io.vertx.mod.ui.init.UiPin;
-import io.zerows.core.domain.atom.commune.secure.Vis;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.domain.atom.commune.Vis;
 
 import static io.vertx.mod.ui.refine.Ui.LOG;
 

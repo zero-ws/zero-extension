@@ -7,7 +7,7 @@ import io.vertx.up.annotations.On;
 import io.vertx.up.uca.job.AbstractMission;
 import io.zerows.core.web.metadata.zdk.Commercial;
 import io.zerows.core.web.scheduler.atom.Mission;
-import io.zerows.mbse.commune.Envelop;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 /**
  * 「Job Instance」

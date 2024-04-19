@@ -12,10 +12,11 @@ import io.vertx.mod.workflow.uca.camunda.Io;
 import io.vertx.mod.workflow.uca.transition.Vm;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 import org.camunda.bpm.engine.history.HistoricProcessInstance;
 import org.camunda.bpm.engine.repository.ProcessDefinition;
@@ -116,7 +117,7 @@ public class QueueActor {
         // -- ACCEPTED
         final JsonObject qrStatus = Ux.whereAnd();
         qrStatus.put(KName.STATUS + ",i", Vm.Status.QUEUE);
-        final JsonObject qrCombine = Ux.irAndQH(qr, "$Q$", qrStatus);
+        final JsonObject qrCombine = Ut.irAndQH(qr, "$Q$", qrStatus);
         LOG.Queue.info(this.getClass(), "Qr Queue Combined: {0}", qrCombine.encode());
         return this.taskStub.fetchQueue(qrCombine); // this.condStub.qrQueue(qr, userId)
     }

@@ -1,7 +1,7 @@
 package io.vertx.mod.ke.refine;
 
 import io.vertx.ext.web.RoutingContext;
-import io.zerows.core.domain.atom.commune.secure.Vis;
+import io.zerows.core.domain.atom.commune.Vis;
 
 /**
  * @author lang : 2023-06-07
