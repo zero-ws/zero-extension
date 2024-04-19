@@ -14,7 +14,7 @@ import io.vertx.mod.ke.cv.em.BizInternal;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.launcher.boot.di.DiPlugin;
+import io.zerows.core.assembly.uca.di.DiPlugin;
 
 import java.util.List;
 

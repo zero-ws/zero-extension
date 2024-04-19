@@ -14,7 +14,7 @@ import io.vertx.mod.ambient.atom.AtConfig;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.launcher.boot.di.DiPlugin;
+import io.zerows.core.assembly.uca.di.DiPlugin;
 
 import static io.vertx.mod.ambient.refine.At.LOG;
 
