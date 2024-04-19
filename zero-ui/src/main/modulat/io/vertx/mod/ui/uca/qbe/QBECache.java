@@ -9,8 +9,8 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.cv.UiCv;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.cache.Rapid;
 import io.vertx.up.unity.Ux;
+import io.zerows.feature.web.cache.Rapid;
 
 import java.util.ArrayList;
 import java.util.List;

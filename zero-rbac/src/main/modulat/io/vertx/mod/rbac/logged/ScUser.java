@@ -13,11 +13,11 @@ import io.vertx.mod.rbac.authorization.ScDetent;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.cache.Rapid;
-import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.uca.environment.DevEnv;
+import io.zerows.feature.web.cache.Rapid;
+import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.ArrayList;
 import java.util.List;

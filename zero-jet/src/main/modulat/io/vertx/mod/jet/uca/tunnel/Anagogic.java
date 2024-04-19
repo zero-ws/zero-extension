@@ -7,13 +7,13 @@ import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.uca.cache.Rapid;
-import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.facade.zdk.Commercial;
 import io.zerows.core.feature.database.atom.Database;
+import io.zerows.feature.web.cache.Rapid;
+import io.zerows.feature.web.cache.RapidKey;
 import io.zerows.mbse.commune.Envelop;
 
 import java.util.Objects;

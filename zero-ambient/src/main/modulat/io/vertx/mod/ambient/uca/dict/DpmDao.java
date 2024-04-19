@@ -7,11 +7,11 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
-import io.vertx.up.uca.cache.Rapid;
-import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.feature.web.cache.Rapid;
+import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

@@ -7,10 +7,10 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.op.Agonic;
-import io.vertx.up.uca.cache.Rapid;
-import io.vertx.up.uca.cache.RapidKey;
 import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.feature.web.cache.Rapid;
+import io.zerows.feature.web.cache.RapidKey;
 
 /**
  * 「全列读取」
