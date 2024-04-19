@@ -16,9 +16,9 @@ import io.vertx.up.exception.web._400SigmaMissingException;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
-import io.zerows.core.facade.zdk.Service;
 import io.zerows.mbse.commune.ActIn;
 import io.zerows.mbse.commune.ActOut;
+import io.zerows.web.metadata.zdk.Service;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;

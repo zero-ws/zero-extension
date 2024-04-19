@@ -1,7 +1,7 @@
 package io.vertx.boot.supply;
 
+import io.vertx.boot.extension.HExtension;
 import io.vertx.mod.ke.refine.Ke;
-import io.zerows.macro.plugin.booting.HExtension;
 import io.vertx.up.util.Ut;
 
 import java.util.List;

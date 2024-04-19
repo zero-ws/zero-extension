@@ -5,6 +5,7 @@ import io.horizon.eon.VString;
 import io.horizon.eon.VValue;
 import io.horizon.uca.log.Annal;
 import io.macrocosm.specification.app.HAmbient;
+import io.vertx.boot.extension.HExtension;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.cv.KeIpc;
@@ -13,7 +14,6 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.ui.atom.UiConfig;
 import io.vertx.mod.ui.cv.UiCv;
 import io.vertx.up.eon.KName;
-import io.zerows.macro.plugin.booting.HExtension;
 import io.vertx.up.util.Ut;
 
 import java.util.List;
