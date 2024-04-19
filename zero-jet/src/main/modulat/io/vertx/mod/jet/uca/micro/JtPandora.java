@@ -15,8 +15,8 @@ import io.vertx.mod.jet.uca.tunnel.ConnectorChannel;
 import io.vertx.mod.jet.uca.tunnel.DirectorChannel;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.mbse.atom.worker.Mission;
 import io.zerows.mbse.commune.Envelop;
+import io.zerows.web.metadata.atom.worker.Mission;
 import io.zerows.web.metadata.zdk.Commercial;
 
 import java.util.Objects;

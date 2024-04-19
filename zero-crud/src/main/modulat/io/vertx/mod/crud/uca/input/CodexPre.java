@@ -10,8 +10,8 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.launcher.backbone.announce.Rigor;
-import io.zerows.mbse.atom.Rule;
 import io.zerows.mbse.commune.Envelop;
+import io.zerows.web.metadata.atom.Rule;
 
 import java.util.List;
 import java.util.Locale;

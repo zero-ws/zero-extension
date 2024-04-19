@@ -7,10 +7,10 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.op.Agonic;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 /**
  * 「全列读取」
@@ -33,7 +33,7 @@ class ViewFull implements Agonic {
     @Override
     public Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
         final String cacheKey = in.cached();
-        return Rapid.<String, JsonArray>t(RapidKey.VIEW_FULL, Agonic.EXPIRED).cached(cacheKey, () -> {
+        return Rapid.<String, JsonArray>t(KWeb.CACHE.VIEW_FULL, Agonic.EXPIRED).cached(cacheKey, () -> {
 
 
             final UxJooq jooq = IxPin.jooq(in);

@@ -10,7 +10,6 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -23,7 +22,7 @@ public class DpmTabular implements Dpm {
 
     @Override
     public Future<ConcurrentMap<String, JsonArray>> fetchAsync(final KDictSource source, final MultiMap params) {
-        return Rapid.map(RapidKey.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED).cached(source.getTypes(),
+        return Rapid.map(KWeb.CACHE.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED).cached(source.getTypes(),
             types -> Ux.Jooq.on(XTabularDao.class).fetchAndAsync(DpmTool.condition(params, types))
                 .compose(Ux::futureG));
     }

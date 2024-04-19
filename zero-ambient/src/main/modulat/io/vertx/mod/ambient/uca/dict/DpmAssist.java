@@ -10,7 +10,6 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.cloud.zdk.spi.DictionaryPlugin;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +28,7 @@ public class DpmAssist implements Dpm {
         if (Objects.isNull(plugin) || Ut.isNil(source.getKey())) {
             return Ux.future(uniqueMap);
         } else {
-            return Rapid.<String, JsonArray>t(Ut.isNil(params.get(KName.CACHE_KEY)) ? RapidKey.DIRECTORY : params.get(KName.CACHE_KEY), KWeb.ARGS.V_DATA_EXPIRED)
+            return Rapid.<String, JsonArray>t(Ut.isNil(params.get(KName.CACHE_KEY)) ? KWeb.CACHE.DIRECTORY : params.get(KName.CACHE_KEY), KWeb.ARGS.V_DATA_EXPIRED)
                 .cached(source.getKey(), () -> {
                     plugin.configuration(source.getPluginConfig());
                     return plugin.fetchAsync(source, params);

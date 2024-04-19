@@ -9,10 +9,10 @@ import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 /**
  * 「我的列」
@@ -76,7 +76,7 @@ class ViewMy implements Agonic {
      */
     private Future<JsonObject> fetchResources(final JsonObject input, final UxJooq jooq, final IxMod in) {
         final String key = in.cached() + ":" + input.hashCode();
-        return Rapid.<String, JsonObject>t(RapidKey.RESOURCE, Agonic.EXPIRED).cached(key,
+        return Rapid.<String, JsonObject>t(KWeb.CACHE.RESOURCE, Agonic.EXPIRED).cached(key,
             () -> Ux.channel(Seeker.class, JsonObject::new, seeker -> seeker.on(jooq).fetchImpact(input)));
     }
 
@@ -95,7 +95,7 @@ class ViewMy implements Agonic {
          * 旧代码：
              final String key = in.cacheKey() + ":" + params.hashCode();
              final User user = in.envelop().user();
-             return Rapid.<JsonArray>user(user, RapidKey.User.MY_VIEW).cached(key,
+             return Rapid.<JsonArray>user(user, CACHE.User.MY_VIEW).cached(key,
                     () -> Ux.channel(ApeakMy.class, JsonArray::new, stub -> stub.on(jooq).fetchMy(params)));
          */
         return Ux.channel(ApeakMy.class, JsonArray::new, stub -> stub.on(jooq).fetchMy(params));

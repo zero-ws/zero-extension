@@ -12,13 +12,13 @@ import io.vertx.mod.jet.error._501ChannelErrorException;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.annotations.Contract;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.feature.web.cache.RapidKey;
-import io.zerows.mbse.atom.worker.Mission;
 import io.zerows.mbse.commune.ActIn;
 import io.zerows.mbse.commune.ActOut;
 import io.zerows.mbse.commune.Envelop;
+import io.zerows.web.metadata.atom.worker.Mission;
 import io.zerows.web.metadata.zdk.Commercial;
 
 import java.util.Objects;
@@ -157,7 +157,7 @@ public abstract class AbstractChannel implements JtChannel {
         if (Objects.isNull(this.dictionary)) {
             final String appKey = this.commercial.app();
             final String identifier = this.commercial.identifier();
-            return Jt.toDictionary(appKey, RapidKey.DIRECTORY, identifier, dict).compose(dictionary -> {
+            return Jt.toDictionary(appKey, KWeb.CACHE.DIRECTORY, identifier, dict).compose(dictionary -> {
                 /*
                  * Bind dictionary to current dictionary reference
                  */

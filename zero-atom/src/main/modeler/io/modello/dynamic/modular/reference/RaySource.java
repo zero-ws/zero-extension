@@ -12,7 +12,6 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -70,7 +69,7 @@ class RaySource {
                 final JsonObject condition = kv.key();
                 final RDao dao = kv.value();
                 futureMap.put(hashCode,
-                    Rapid.<String, JsonArray>t(RapidKey.REFERENCE, KWeb.ARGS.V_DATA_EXPIRED)
+                    Rapid.<String, JsonArray>t(KWeb.CACHE.REFERENCE, KWeb.ARGS.V_DATA_EXPIRED)
                         .cached(String.valueOf(hashCode), () -> {
                             LOG.Uca.info(this.getClass(), "Async Batch condition building: {0}", condition.encode());
                             return dao.fetchByAsync(condition);

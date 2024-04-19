@@ -13,11 +13,11 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.eon.KName;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.feature.web.cache.RapidKey;
-import io.zerows.mbse.atom.worker.Mission;
+import io.zerows.web.metadata.atom.worker.Mission;
 import io.zerows.web.metadata.zdk.Service;
 
 import java.util.Objects;
@@ -120,7 +120,7 @@ public abstract class AbstractJob implements Service {
          * Parameters
          */
         final String key = this.service().getSigma();
-        return Jt.toDictionary(key, RapidKey.JOB_DIRECTORY, identifier, this.dict()).compose(dictionary -> {
+        return Jt.toDictionary(key, KWeb.CACHE.JOB_DIRECTORY, identifier, this.dict()).compose(dictionary -> {
             this.fabric.dictionary(dictionary);
             /*
              * Chain 引用

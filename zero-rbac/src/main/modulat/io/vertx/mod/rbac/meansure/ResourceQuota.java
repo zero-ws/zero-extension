@@ -5,7 +5,7 @@ import io.vertx.core.Vertx;
 import io.vertx.ext.healthchecks.Status;
 import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.init.ScPin;
-import io.vertx.up.uca.monitor.meansure.AbstractQuota;
+import io.zerows.core.web.monitor.meansure.AbstractQuota;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

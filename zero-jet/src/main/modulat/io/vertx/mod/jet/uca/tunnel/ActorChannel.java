@@ -6,8 +6,8 @@ import io.vertx.core.Future;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.mbse.atom.worker.Mission;
 import io.zerows.mbse.commune.ActIn;
+import io.zerows.web.metadata.atom.worker.Mission;
 
 public class ActorChannel extends AbstractChannel {
     /*

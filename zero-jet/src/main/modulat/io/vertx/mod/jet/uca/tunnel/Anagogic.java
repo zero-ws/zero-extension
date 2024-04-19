@@ -7,12 +7,12 @@ import io.modello.atom.normalize.KIdentity;
 import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 import io.zerows.mbse.commune.Envelop;
 import io.zerows.web.metadata.zdk.Commercial;
 
@@ -36,7 +36,7 @@ class Anagogic {
      * Database processing
      */
     static Future<Database> databaseAsync(final Commercial commercial) {
-        return Rapid.<String, Database>t(RapidKey.DATABASE_MULTI)
+        return Rapid.<String, Database>t(KWeb.CACHE.DATABASE_MULTI)
             .cached(commercial.app(), () -> Ux.future(commercial.database()));
     }
 

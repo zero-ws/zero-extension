@@ -11,7 +11,6 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,7 +26,7 @@ public class DpmDao implements Dpm {
         if (Objects.isNull(jooq) || Ut.isNil(source.getKey())) {
             return Ux.future(new ConcurrentHashMap<>());
         } else {
-            return Rapid.<String, JsonArray>t(RapidKey.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED)
+            return Rapid.<String, JsonArray>t(KWeb.CACHE.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED)
                 .cached(source.getKey(), () -> jooq.fetchJAsync(this.condition(params)))
                 .compose(result -> {
                     final ConcurrentMap<String, JsonArray> uniqueMap = new ConcurrentHashMap<>();

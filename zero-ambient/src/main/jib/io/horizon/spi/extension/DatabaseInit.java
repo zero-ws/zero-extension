@@ -5,10 +5,10 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.AtMsg;
 import io.vertx.up.eon.KName;
+import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.feature.web.cache.Rapid;
-import io.zerows.feature.web.cache.RapidKey;
 
 import java.util.function.Function;
 
@@ -29,7 +29,7 @@ public class DatabaseInit implements Init {
             /*
              * Init third step: X_SOURCE stored into pool
              */
-            return Rapid.<String, Database>t(RapidKey.DATABASE)
+            return Rapid.<String, Database>t(KWeb.CACHE.DATABASE)
                 .write(appJson.getString(KName.KEY), database)
                 .compose(item -> Ux.future(item.toJson()))
                 .compose(item -> Ux.future(this.result(appJson, item)));

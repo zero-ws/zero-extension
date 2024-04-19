@@ -8,7 +8,7 @@ import io.modello.specification.atom.HAtom;
 import io.vertx.mod.atom.cv.AoCache;
 import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
-import io.zerows.exception.web._404ModelNotFoundException;
+import io.zerows.web.metadata.exception._404ModelNotFoundException;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
