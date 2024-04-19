@@ -18,7 +18,7 @@ import static io.vertx.mod.crud.refine.Ix.LOG;
  *        - 打印查询条件
  *        - （调用下层）
  *        - 格式化返回数据结构
- *     2. 下层原子操作：{@see io.vertx.mod.crud.uca.dao.OperateCount}
+ *     2. 下层原子操作：{@see io.vertx.mod.crud.operation.dao.OperateCount}
  *        - 直接根据查询条件返回 COUNT 聚集结果
  * </code></pre>
  *

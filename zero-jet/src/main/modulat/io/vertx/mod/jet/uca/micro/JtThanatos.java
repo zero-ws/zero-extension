@@ -52,7 +52,7 @@ public class JtThanatos extends AbstractMission {
      *          "code" : "bastion.sync",
      *          "type" : "PLAN",
      *          "duration" : 5000,
-     *          "proxy" : "io.vertx.mod.micro.uca.jet.JtThanatos",
+     *          "proxy" : "io.vertx.mod.micro.operation.jet.JtThanatos",
      *          "serviceId" : "c77b751b-5b71-418d-abcc-6ed328f8e900",
      *          "sigma" : "HGyhDZ5p96jaNFbpZMl6s6SJWD4PNzAm"
      *     }

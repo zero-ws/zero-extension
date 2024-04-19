@@ -9,7 +9,7 @@ import io.vertx.mod.psi.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.uca.jooq.UxJoin;
+import io.zerows.core.feature.database.jooq.operation.UxJoin;
 import io.vertx.up.unity.Ux;
 
 /**

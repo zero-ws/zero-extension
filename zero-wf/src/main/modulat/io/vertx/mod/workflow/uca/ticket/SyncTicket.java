@@ -9,8 +9,8 @@ import io.vertx.mod.workflow.atom.runtime.WRecord;
 import io.vertx.mod.workflow.uca.toolkit.URequest;
 import io.vertx.mod.workflow.uca.toolkit.UTL;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 class SyncTicket extends AbstractSync {
 

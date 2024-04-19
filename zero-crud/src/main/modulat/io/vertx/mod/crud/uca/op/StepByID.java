@@ -9,9 +9,9 @@ import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.next.Co;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.Objects;
 import java.util.function.Function;

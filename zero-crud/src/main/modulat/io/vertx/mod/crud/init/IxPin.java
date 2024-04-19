@@ -5,12 +5,12 @@ import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.ke.refine.Ke;
-import io.zerows.mbse.atom.Rule;
-import io.zerows.mbse.commune.Envelop;
-import io.vertx.up.uca.jooq.UxJoin;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.zerows.aeon.experiment.mixture.HOne;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.database.jooq.operation.UxJoin;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.mbse.atom.Rule;
+import io.zerows.mbse.commune.Envelop;
 
 import java.util.List;
 import java.util.Set;

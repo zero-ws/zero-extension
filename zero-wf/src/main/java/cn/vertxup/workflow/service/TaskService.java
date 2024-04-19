@@ -12,7 +12,7 @@ import io.vertx.mod.workflow.atom.runtime.WRecord;
 import io.vertx.mod.workflow.uca.toolkit.ULinkage;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import jakarta.inject.Inject;
 

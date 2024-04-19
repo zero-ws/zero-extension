@@ -18,7 +18,7 @@ import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;

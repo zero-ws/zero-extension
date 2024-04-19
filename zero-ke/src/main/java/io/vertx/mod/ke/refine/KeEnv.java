@@ -7,12 +7,12 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.mapping.Mirror;
-import io.zerows.core.domain.atom.commune.mapping.Mojo;
 import io.zerows.core.domain.atom.typed.UArray;
+import io.zerows.core.metadata.atom.mapping.Mirror;
+import io.zerows.core.metadata.atom.mapping.Mojo;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

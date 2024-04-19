@@ -12,11 +12,11 @@ import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
-import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import static io.vertx.mod.crud.refine.Ix.LOG;
 

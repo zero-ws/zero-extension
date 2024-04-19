@@ -9,9 +9,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.secure.Twine;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.Collection;
 import java.util.Objects;
@@ -36,30 +36,30 @@ public class TwineRights implements Twine<String> {
     @Override
     public Future<JsonObject> identAsync(final String key) {
         return Ux.Jooq.on(SUserDao.class).fetchJByIdAsync(key)
-                .compose(userJ -> {
-                    /* delete attribute: password from user information */
-                    userJ.remove(KName.PASSWORD);
-                    return Ux.future(userJ);
-                })
-                .compose(userJ -> Junc.role().identAsync(userJ)
-                        // roles -> JsonArray
-                        .compose(roles -> Ux.future(userJ.put(KName.ROLES, roles))))
-                .compose(userJ -> Junc.group().identAsync(userJ)
-                        // groups -> JsonArray
-                        .compose(groups -> Ux.future(userJ.put(KName.GROUPS, groups)))
-                );
+            .compose(userJ -> {
+                /* delete attribute: password from user information */
+                userJ.remove(KName.PASSWORD);
+                return Ux.future(userJ);
+            })
+            .compose(userJ -> Junc.role().identAsync(userJ)
+                // roles -> JsonArray
+                .compose(roles -> Ux.future(userJ.put(KName.ROLES, roles))))
+            .compose(userJ -> Junc.group().identAsync(userJ)
+                // groups -> JsonArray
+                .compose(groups -> Ux.future(userJ.put(KName.GROUPS, groups)))
+            );
     }
 
     @Override
     public Future<JsonObject> identAsync(final String key, final JsonObject updatedData) {
         return this.updateAsync(key, updatedData)
-                .compose(userJ -> Junc.role().identAsync(key, userJ)
-                        // roles -> JsonArray
-                        .compose(roles -> Ux.future(userJ.put(KName.ROLES, roles))))
-                .compose(userJ -> Junc.group().identAsync(key, userJ)
-                        // groups -> JsonArray
-                        .compose(groups -> Ux.future(userJ.put(KName.GROUPS, groups)))
-                );
+            .compose(userJ -> Junc.role().identAsync(key, userJ)
+                // roles -> JsonArray
+                .compose(roles -> Ux.future(userJ.put(KName.ROLES, roles))))
+            .compose(userJ -> Junc.group().identAsync(key, userJ)
+                // groups -> JsonArray
+                .compose(groups -> Ux.future(userJ.put(KName.GROUPS, groups)))
+            );
     }
 
     // ----------------------- Extract Data -----------------------

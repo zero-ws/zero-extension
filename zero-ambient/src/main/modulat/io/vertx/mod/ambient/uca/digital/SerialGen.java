@@ -6,8 +6,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.refine.At;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.Objects;
 

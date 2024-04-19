@@ -8,14 +8,14 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
-import io.vertx.up.uca.jooq.JqAnalyzer;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.util.Ut;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.feature.database.jooq.util.JqAnalyzer;
+import io.zerows.mbse.commune.Envelop;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;

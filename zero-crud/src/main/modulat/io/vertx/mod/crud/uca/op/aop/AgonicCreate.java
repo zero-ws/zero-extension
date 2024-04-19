@@ -11,9 +11,9 @@ import io.vertx.mod.crud.uca.desk.IxReply;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.mod.crud.uca.trans.Tran;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.util.Ut;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

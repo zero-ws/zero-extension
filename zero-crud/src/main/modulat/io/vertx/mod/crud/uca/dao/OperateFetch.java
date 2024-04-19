@@ -5,9 +5,9 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.up.uca.jooq.UxJoin;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.database.jooq.operation.UxJoin;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.function.Function;
 

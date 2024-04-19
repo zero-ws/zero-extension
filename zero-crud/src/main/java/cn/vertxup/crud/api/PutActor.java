@@ -14,10 +14,10 @@ import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.mbse.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.mbse.commune.Envelop;
 
 @Queue
 @SuppressWarnings("all")
@@ -32,8 +32,8 @@ public class PutActor {
 
             /*
              * 1. Input = JsonObject
-             * -- io.vertx.mod.crud.uca.input.HeadPre
-             * -- io.vertx.mod.crud.uca.input.CodexPre ( Validation )
+             * -- io.vertx.mod.crud.operation.input.HeadPre
+             * -- io.vertx.mod.crud.operation.input.CodexPre ( Validation )
              */
             .input(
                 Pre.head()::inJAsync,                       /* Header */
@@ -42,7 +42,7 @@ public class PutActor {
 
 
             /*
-             * 2. io.vertx.mod.crud.uca.next.NtJData
+             * 2. io.vertx.mod.crud.operation.next.NtJData
              * JsonObject ( active ) -> JsonObject ( standBy )
              */
             .next(in -> co::next)
@@ -102,8 +102,8 @@ public class PutActor {
 
                 /*
                  * 1. Input = JsonArray
-                 * -- io.vertx.mod.crud.uca.input.HeadPre
-                 * -- io.vertx.mod.crud.uca.input.CodexPre ( Validation )
+                 * -- io.vertx.mod.crud.operation.input.HeadPre
+                 * -- io.vertx.mod.crud.operation.input.CodexPre ( Validation )
                  */
                 .input(
                     Pre.head()::inAAsync                       /* Header */
@@ -154,8 +154,8 @@ public class PutActor {
 
             /*
              * 1. Input = JsonObject
-             * -- io.vertx.mod.crud.uca.input.ApeakMyPre
-             * -- io.vertx.mod.crud.uca.input.CodexPre ( Validation )
+             * -- io.vertx.mod.crud.operation.input.ApeakMyPre
+             * -- io.vertx.mod.crud.operation.input.CodexPre ( Validation )
              */
             .input(
                 Pre.apeak(true)::inJAsync,              /* Apeak */

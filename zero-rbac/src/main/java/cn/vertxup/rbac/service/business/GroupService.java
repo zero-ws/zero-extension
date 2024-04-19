@@ -12,7 +12,7 @@ import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.zerows.core.domain.atom.typed.UArray;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 
 import java.util.ArrayList;

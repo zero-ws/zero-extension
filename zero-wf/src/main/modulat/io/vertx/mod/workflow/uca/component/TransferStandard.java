@@ -60,7 +60,7 @@ public class TransferStandard extends AbstractMovement implements Transfer {
                      * Add new bind on MetaInstance to fix following issue:
                      * java.lang.NullPointerException
                      *      at java.base/java.util.Objects.requireNonNull(Objects.java:221)
-                     *      at io.vertx.mod.workflow.uca.component.MoveOnUser.transferAsync(MoveOnUser.java:37)
+                     *      at io.vertx.mod.workflow.operation.component.MoveOnUser.transferAsync(MoveOnUser.java:37)
                      * Here means the `to` attribute is not null, it should generate many `todo`
                      * Also the record in request should contain values.
                      */

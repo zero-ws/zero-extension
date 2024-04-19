@@ -13,6 +13,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.util.Objects;
 
@@ -357,7 +358,7 @@ public abstract class AbstractDao implements HDao {
 
     @Override
     public JsonObject search(final JsonObject query) {
-        return Fn.runOr(Ux.pageData(), () -> this.search.search(query), query);
+        return Fn.runOr(Ut.valueToPage(), () -> this.search.search(query), query);
     }
 
     @Override

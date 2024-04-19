@@ -12,9 +12,9 @@ import io.vertx.mod.is.uca.command.FsDefault;
 import io.vertx.mod.is.uca.command.FsReadOnly;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.time.LocalDateTime;
 import java.util.List;

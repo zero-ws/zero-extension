@@ -9,8 +9,8 @@ import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.feature.web.cache.Rapid;
 import io.zerows.feature.web.cache.RapidKey;
 

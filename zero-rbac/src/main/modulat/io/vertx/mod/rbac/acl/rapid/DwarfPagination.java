@@ -2,7 +2,7 @@ package io.vertx.mod.rbac.acl.rapid;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.core.security.zdk.authority.Acl;
 
 /*
@@ -43,7 +43,7 @@ class DwarfPagination implements Dwarf {
         /* inputArray */
         final JsonObject pagination = dataReference.getJsonObject(KName.DATA);
         /* rows */
-        Ux.pageData(pagination, inputArray -> SiftRow.onRows(inputArray, matrix.getJsonObject("rows")));
+        Ut.valueToPage(pagination, inputArray -> SiftRow.onRows(inputArray, matrix.getJsonObject("rows")));
         /* criteria mount appened to
          * {
          *     "count": x,

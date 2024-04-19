@@ -20,17 +20,17 @@ public interface WfPool {
     Cc<String, ProcessDefinition> CC_DEFINITION = Cc.open();
     Cc<String, RunOn> CC_RUN = Cc.openThread();
 
-    // uca.modeling POOL
+    // operation.modeling POOL
     Cc<String, ActionOn> CC_ACTION = Cc.openThread();
 
-    // uca.deployment POOL
+    // operation.deployment POOL
     Cc<String, DeployOn> CC_DEPLOY = Cc.open();
     Cc<String, EngineOn> CC_ENGINE = Cc.openThread();
 
-    // uca.component POOL -> Transfer / Movement
+    // operation.component POOL -> Transfer / Movement
 
     Cc<String, Behaviour> CC_COMPONENT = Cc.openThread();
 
-    // uca.component POOL -> MoveOn
+    // operation.component POOL -> MoveOn
     Cc<String, MoveOn> CC_MOVE_ON = Cc.openThread();
 }

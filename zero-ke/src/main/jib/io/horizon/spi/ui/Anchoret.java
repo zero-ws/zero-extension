@@ -1,7 +1,7 @@
 package io.horizon.spi.ui;
 
 import io.horizon.uca.log.Annal;
-import io.vertx.up.uca.jooq.UxJooq;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 /*
  * All sub-class for extension of Jooq type

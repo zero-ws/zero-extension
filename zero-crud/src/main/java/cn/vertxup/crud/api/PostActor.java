@@ -41,8 +41,8 @@ public class PostActor {
 
             /*
              * 1. Input = JsonObject
-             * -- io.vertx.mod.crud.uca.input.HeadPre
-             * -- io.vertx.mod.crud.uca.input.CodexPre ( Validation )
+             * -- io.vertx.mod.crud.operation.input.HeadPre
+             * -- io.vertx.mod.crud.operation.input.CodexPre ( Validation )
              */
             .input(
                 Pre.head()::inJAsync,                       /* Header */
@@ -51,7 +51,7 @@ public class PostActor {
 
 
             /*
-             * 2. io.vertx.mod.crud.uca.next.NtJData
+             * 2. io.vertx.mod.crud.operation.next.NtJData
              * JsonObject ( active ) -> JsonObject ( standBy )
              */
             .next(in -> coJ::next)

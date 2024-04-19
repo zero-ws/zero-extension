@@ -12,8 +12,8 @@ import io.vertx.mod.workflow.atom.runtime.WRecord;
 import io.vertx.mod.workflow.atom.runtime.WTransition;
 import io.vertx.mod.workflow.uca.ticket.Sync;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 
 import java.util.Objects;

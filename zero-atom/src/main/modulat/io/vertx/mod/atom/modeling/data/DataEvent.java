@@ -23,10 +23,10 @@ import io.vertx.mod.atom.modeling.element.DataTpl;
 import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 import java.io.Serializable;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class DataEvent implements Serializable {
 
@@ -294,14 +294,14 @@ public class DataEvent implements Serializable {
         return rows.stream()
             .map(DataRow::getRecord)
             .filter(Objects::nonNull)
-            .collect(Collectors.toList())
+            .toList()
             .toArray(new HRecord[]{});
     }
 
     private JsonObject dataP(final HRecord[] records) {
         final JsonArray list = new JsonArray();
         Arrays.stream(records).map(HRecord::toJson).forEach(list::add);
-        return Ux.pageData(list, this.counter);
+        return Ut.valueToPage(list, this.counter);
     }
     // ------------ 事件执行结果处理 --------------
 

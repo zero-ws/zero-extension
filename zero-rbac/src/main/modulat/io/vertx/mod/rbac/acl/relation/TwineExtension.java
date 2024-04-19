@@ -10,14 +10,14 @@ import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.vertx.mod.rbac.init.ScPin;
-import io.zerows.core.domain.atom.typed.UObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.jooq.UxJoin;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.aeon.experiment.specification.KQr;
+import io.zerows.core.domain.atom.typed.UObject;
+import io.zerows.core.feature.database.jooq.operation.UxJoin;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.Collection;
 import java.util.List;

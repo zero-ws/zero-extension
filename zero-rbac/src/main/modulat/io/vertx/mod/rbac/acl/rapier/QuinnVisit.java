@@ -11,9 +11,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

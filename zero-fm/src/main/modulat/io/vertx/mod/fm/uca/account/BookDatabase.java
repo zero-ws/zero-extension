@@ -9,9 +9,9 @@ import io.vertx.core.Future;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.jooq.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.util.ArrayList;
 import java.util.HashSet;
