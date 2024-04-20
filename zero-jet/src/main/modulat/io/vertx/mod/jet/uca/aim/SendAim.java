@@ -1,18 +1,20 @@
 package io.vertx.mod.jet.uca.aim;
 
-import io.vertx.boot.supply.Electy;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
+import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.monitor.JtMonitor;
+import io.zerows.core.configuration.atom.NodeNetwork;
+import io.zerows.core.configuration.store.ONodeCache;
+import io.zerows.core.web.metadata.commune.Envelop;
 import io.zerows.extension.dot.PluginExtension;
 import io.zerows.launcher.backbone.hunt.Answer;
-import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;
 
@@ -52,7 +54,9 @@ public class SendAim implements JtAim {
                     final Vertx vertx = context.vertx();
                     final EventBus event = vertx.eventBus();
 
-                    event.<Envelop>request(address, normalized, Electy.optionDelivery(), handler -> {
+                    final NodeNetwork network = ONodeCache.of().network();
+                    final DeliveryOptions deliveryOptions = network.get().optionDelivery();
+                    event.<Envelop>request(address, normalized, deliveryOptions, handler -> {
                         if (handler.succeeded()) {
                             /*
                              * 「Success」
