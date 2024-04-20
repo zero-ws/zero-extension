@@ -15,7 +15,7 @@ import java.util.Objects;
 class DefineIngest implements JtIngest {
     @Override
     public Envelop in(final RoutingContext context, final JtUri uri) {
-        final Class<?> clazz = OZeroStore.injection(JtConstant.COMPONENT_INGEST_KEY);
+        final Class<?> clazz = OZeroStore.classInject(JtConstant.COMPONENT_INGEST_KEY);
         if (Objects.isNull(clazz)) {
             return Envelop.failure(new _501IngestMissingException(this.getClass()));
         } else if (!Ut.isImplement(clazz, JtIngest.class)) {
