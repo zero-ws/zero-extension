@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-ifx-auth</artifactId>
+            <artifactId>zero-plugins-common-security</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

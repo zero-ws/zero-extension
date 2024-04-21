@@ -20,7 +20,7 @@
         <!-- 插件 -->
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-ifx-excel</artifactId>
+            <artifactId>zero-plugins-office-excel</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -2,7 +2,6 @@ package io.vertx.mod.crud.init;
 
 import io.horizon.eon.VPath;
 import io.horizon.eon.VString;
-import io.vertx.boot.extension.HExtension;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.cv.IxFolder;
 import io.vertx.mod.crud.cv.IxMsg;
@@ -10,6 +9,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.uca.environment.DevEnv;
+import io.zerows.core.web.metadata.extension.HExtension;
 
 import java.util.List;
 import java.util.Objects;

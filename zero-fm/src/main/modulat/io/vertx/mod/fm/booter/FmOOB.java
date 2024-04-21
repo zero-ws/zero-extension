@@ -1,7 +1,7 @@
 package io.vertx.mod.fm.booter;
 
-import io.vertx.boot.extension.AbstractBoot;
 import io.vertx.mod.ke.cv.KeIpc;
+import io.zerows.core.web.metadata.extension.AbstractBoot;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
