@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtAddr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.vertx.up.uca.soul.UriAeon;
+import io.zerows.core.web.container.store.uri.UriAeon;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

@@ -1,7 +1,7 @@
 package io.horizon.spi.web;
 
 import io.vertx.core.Future;
-import io.vertx.up.uca.soul.UriMeta;
+import io.zerows.core.web.container.store.uri.UriMeta;
 
 import java.util.List;
 

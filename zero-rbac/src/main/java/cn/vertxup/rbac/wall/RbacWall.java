@@ -7,11 +7,11 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.rbac.cv.AuthMsg;
-import io.vertx.up.annotations.Authenticate;
-import io.vertx.up.annotations.Authorized;
-import io.vertx.up.annotations.AuthorizedResource;
-import io.vertx.up.annotations.Wall;
 import io.vertx.up.eon.KName;
+import io.zerows.core.security.annotations.Authenticate;
+import io.zerows.core.security.annotations.Authorized;
+import io.zerows.core.security.annotations.AuthorizedResource;
+import io.zerows.core.security.annotations.Wall;
 import jakarta.inject.Inject;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;

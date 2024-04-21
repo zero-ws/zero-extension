@@ -6,7 +6,7 @@ import cn.vertxup.rbac.domain.tables.pojos.SResource;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.uca.soul.UriMeta;
+import io.zerows.core.web.container.store.uri.UriMeta;
 
 import java.util.List;
 

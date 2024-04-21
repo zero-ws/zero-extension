@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.battery.cv.Addr;
 import io.vertx.up.annotations.Address;
-import io.zerows.core.feature.websocket.annotations.Subscribe;
+import io.zerows.core.feature.web.websocket.annotations.Subscribe;
 
 /**
  * @author lang : 2024-04-09

@@ -9,9 +9,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
-import io.vertx.up.uca.soul.UriMeta;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.container.store.uri.UriMeta;
 
 import java.util.ArrayList;
 import java.util.List;
