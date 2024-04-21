@@ -1,7 +1,7 @@
 package io.vertx.mod.crud.extension;
 
 import io.vertx.mod.crud.init.IxPin;
-import io.zerows.extension.PlugRegistry;
+import io.zerows.core.web.io.plugins.PlugRegistry;
 
 import java.util.Set;
 import java.util.stream.Collectors;
