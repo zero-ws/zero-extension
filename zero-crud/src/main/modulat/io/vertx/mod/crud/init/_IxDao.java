@@ -8,7 +8,7 @@ import io.vertx.mod.crud.cv.IxFolder;
 import io.vertx.mod.crud.cv.IxMsg;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.uca.environment.DevEnv;
 
 import java.util.List;

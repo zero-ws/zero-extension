@@ -6,7 +6,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KQr;
+import io.zerows.core.feature.web.mbse.atom.specification.KQr;
 import io.zerows.jackson.databind.JsonObjectDeserializer;
 import io.zerows.jackson.databind.JsonObjectSerializer;
 

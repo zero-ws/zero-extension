@@ -6,10 +6,10 @@ import io.vertx.mod.crud.cv.Pooled;
 import io.vertx.mod.crud.uca.destine.Probe;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmPRI;
-import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.core.domain.atom.specification.KJoin;
 import io.zerows.core.domain.atom.specification.KPoint;
 import io.zerows.core.domain.uca.destine.Hymn;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 

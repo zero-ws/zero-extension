@@ -14,10 +14,10 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KQr;
 import io.zerows.core.domain.atom.typed.UObject;
 import io.zerows.core.feature.database.jooq.operation.UxJoin;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.feature.web.mbse.atom.specification.KQr;
 
 import java.util.Collection;
 import java.util.List;

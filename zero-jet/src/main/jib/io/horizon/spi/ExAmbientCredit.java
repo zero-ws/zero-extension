@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.aeon.experiment.specification.KCredential;
+import io.zerows.core.feature.web.mbse.atom.specification.KCredential;
 
 import java.util.Objects;
 

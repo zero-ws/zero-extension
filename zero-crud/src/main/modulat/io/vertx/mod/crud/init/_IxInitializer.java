@@ -2,13 +2,13 @@ package io.vertx.mod.crud.init;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.refine.Ix;
-import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KColumn;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.feature.web.mbse.atom.specification.KColumn;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 

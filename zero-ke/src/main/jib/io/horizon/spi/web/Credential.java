@@ -1,7 +1,7 @@
 package io.horizon.spi.web;
 
 import io.vertx.core.Future;
-import io.zerows.aeon.experiment.specification.KCredential;
+import io.zerows.core.feature.web.mbse.atom.specification.KCredential;
 
 /*
  * It's for account to do `O_USER` data creation

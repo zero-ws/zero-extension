@@ -8,8 +8,8 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.aeon.experiment.specification.KColumn;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.web.mbse.atom.specification.KColumn;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

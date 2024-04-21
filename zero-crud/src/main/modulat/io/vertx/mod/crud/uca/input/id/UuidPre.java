@@ -5,10 +5,10 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.mod.crud.uca.input.Pre;
-import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.UUID;
 

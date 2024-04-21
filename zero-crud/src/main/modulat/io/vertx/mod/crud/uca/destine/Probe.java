@@ -3,7 +3,7 @@ package io.vertx.mod.crud.uca.destine;
 import io.modello.eon.em.EmModel;
 import io.vertx.mod.crud.uca.desk.IxMod;
 import io.zerows.core.domain.atom.specification.KPoint;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 import java.util.function.Supplier;

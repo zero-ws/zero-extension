@@ -7,9 +7,9 @@ import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import io.zerows.aeon.experiment.specification.KColumn;
-import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.core.feature.web.mbse.atom.specification.KColumn;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 

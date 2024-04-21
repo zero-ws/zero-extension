@@ -11,10 +11,10 @@ import io.vertx.mod.crud.uca.desk.IxMod;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KModule;
 import io.zerows.core.domain.atom.specification.KField;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.core.feature.database.jooq.util.JqAnalyzer;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.text.MessageFormat;

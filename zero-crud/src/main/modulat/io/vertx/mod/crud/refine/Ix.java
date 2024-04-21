@@ -10,9 +10,9 @@ import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.zerows.core.domain.atom.specification.KField;
 import io.vertx.up.unity.Ux;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.List;
 import java.util.function.BiFunction;

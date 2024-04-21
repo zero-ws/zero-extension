@@ -13,7 +13,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KQr;
+import io.zerows.core.feature.web.mbse.atom.specification.KQr;
 
 import java.util.Arrays;
 import java.util.Set;

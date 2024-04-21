@@ -4,10 +4,10 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.zerows.core.domain.atom.specification.KTransform;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KTransform;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

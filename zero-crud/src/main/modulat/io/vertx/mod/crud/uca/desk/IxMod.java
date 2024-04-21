@@ -7,11 +7,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.error._404ModuleMissingException;
 import io.vertx.mod.crud.init.IxPin;
 import io.vertx.mod.crud.refine.Ix;
-import io.zerows.core.domain.atom.specification.KJoin;
-import io.zerows.core.web.metadata.commune.Envelop;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.specification.KModule;
+import io.zerows.core.domain.atom.specification.KJoin;
+import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;
 
