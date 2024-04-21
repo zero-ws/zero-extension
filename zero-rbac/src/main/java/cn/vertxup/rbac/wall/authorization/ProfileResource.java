@@ -11,7 +11,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.security.atom.Aegis;
-import io.zerows.infix.secure.authorization.AuthorizationResource;
+import io.zerows.plugins.common.security.authorization.AuthorizationResource;
 
 import java.lang.reflect.Method;
 import java.util.Objects;

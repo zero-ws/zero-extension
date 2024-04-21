@@ -15,8 +15,8 @@ import io.zerows.core.security.atom.Aegis;
 import io.zerows.core.security.atom.AegisItem;
 import io.zerows.core.security.zdk.LeeBuiltIn;
 import io.zerows.core.security.zdk.LeeExtension;
-import io.zerows.infix.secure.authorization.AuthorizationBuiltInHandler;
-import io.zerows.infix.secure.authorization.AuthorizationResource;
+import io.zerows.plugins.common.security.authorization.AuthorizationBuiltInHandler;
+import io.zerows.plugins.common.security.authorization.AuthorizationResource;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
