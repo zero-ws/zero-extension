@@ -12,8 +12,8 @@ import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.zerows.core.configuration.atom.NodeNetwork;
 import io.zerows.core.configuration.store.OCacheNode;
+import io.zerows.core.web.container.extension.PluginExtension;
 import io.zerows.core.web.metadata.commune.Envelop;
-import io.zerows.extension.dot.PluginExtension;
 import io.zerows.launcher.backbone.hunt.Answer;
 
 import java.util.Objects;
