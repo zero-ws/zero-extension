@@ -3,7 +3,7 @@ package io.horizon.spi.mixture;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.mod.atom.modeling.Model;
-import io.zerows.aeon.experiment.mixture.HPerformer;
+import io.zerows.core.feature.web.mbse.uca.mixture.HPerformer;
 
 import java.util.Set;
 

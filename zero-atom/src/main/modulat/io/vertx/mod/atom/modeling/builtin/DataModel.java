@@ -18,7 +18,7 @@ import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.modeling.element.DataKey;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.shape.AbstractHModel;
+import io.zerows.core.feature.web.mbse.atom.shape.AbstractHModel;
 
 import java.util.HashSet;
 import java.util.Objects;

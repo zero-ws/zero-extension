@@ -11,7 +11,7 @@ import io.modello.specification.atom.HAttribute;
 import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.util.Ut;
-import io.zerows.aeon.experiment.shape.HAtomReference;
+import io.zerows.core.feature.web.mbse.atom.shape.HAtomReference;
 
 import java.util.Objects;
 import java.util.Set;

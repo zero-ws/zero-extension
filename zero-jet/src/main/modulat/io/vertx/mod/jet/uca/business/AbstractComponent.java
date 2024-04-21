@@ -16,8 +16,8 @@ import io.vertx.up.exception.web._400SigmaMissingException;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
-import io.zerows.mbse.commune.ActIn;
-import io.zerows.mbse.commune.ActOut;
+import io.zerows.core.feature.web.mbse.atom.runner.ActIn;
+import io.zerows.core.feature.web.mbse.atom.runner.ActOut;
 import io.zerows.core.web.metadata.zdk.Service;
 
 import java.util.Objects;
