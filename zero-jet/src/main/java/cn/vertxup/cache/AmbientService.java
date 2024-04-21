@@ -15,10 +15,10 @@ import io.vertx.mod.jet.init.ServiceEnvironment;
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.em.EmJob;
-import io.vertx.up.uca.job.plugin.JobClient;
-import io.vertx.up.uca.job.plugin.JobInfix;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.web.scheduler.atom.Mission;
+import io.zerows.core.web.scheduler.plugins.JobClient;
+import io.zerows.core.web.scheduler.plugins.JobInfix;
 
 import java.util.Objects;
 
