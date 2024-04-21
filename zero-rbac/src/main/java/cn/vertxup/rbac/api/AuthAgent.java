@@ -5,7 +5,7 @@ import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Codex;
 import io.vertx.up.annotations.EndPoint;
-import io.zerows.annotations.jakarta.BodyParam;
+import io.zerows.core.web.request.annotations.BodyParam;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
