@@ -4,7 +4,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtAddr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
-import io.zerows.core.web.request.annotations.BodyParam;
+import io.zerows.core.web.io.annotations.BodyParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 

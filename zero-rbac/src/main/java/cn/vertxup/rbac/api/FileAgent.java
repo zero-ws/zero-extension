@@ -7,7 +7,7 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Codex;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.web.request.annotations.StreamParam;
+import io.zerows.core.web.io.annotations.StreamParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 

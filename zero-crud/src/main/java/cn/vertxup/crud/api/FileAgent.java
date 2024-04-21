@@ -12,9 +12,9 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.commune.Vis;
-import io.zerows.core.web.request.annotations.BodyParam;
-import io.zerows.core.web.request.annotations.PointParam;
-import io.zerows.core.web.request.annotations.StreamParam;
+import io.zerows.core.web.io.annotations.BodyParam;
+import io.zerows.core.web.io.annotations.PointParam;
+import io.zerows.core.web.io.annotations.StreamParam;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 

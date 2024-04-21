@@ -5,7 +5,7 @@ import io.vertx.mod.is.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
-import io.zerows.core.web.request.annotations.BodyParam;
+import io.zerows.core.web.io.annotations.BodyParam;
 import jakarta.ws.rs.*;
 
 /**
