@@ -2,7 +2,6 @@ package io.vertx.mod.ambient.uca.validator;
 
 import cn.vertxup.ambient.domain.tables.daos.XCategoryDao;
 import cn.vertxup.ambient.domain.tables.pojos.XCategory;
-import io.horizon.hoc.checker.HocTrue;
 import io.horizon.specification.uca.HTrue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -10,6 +9,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.ClusterSerializable;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.zerows.core.web.io.zdk.qbe.HocTrue;
 
 /**
  * 树型删除检查
