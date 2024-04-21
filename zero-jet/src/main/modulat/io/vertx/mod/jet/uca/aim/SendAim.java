@@ -11,7 +11,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.monitor.JtMonitor;
 import io.zerows.core.configuration.atom.NodeNetwork;
-import io.zerows.core.configuration.store.ONodeCache;
+import io.zerows.core.configuration.store.OCacheNode;
 import io.zerows.core.web.metadata.commune.Envelop;
 import io.zerows.extension.dot.PluginExtension;
 import io.zerows.launcher.backbone.hunt.Answer;
@@ -54,7 +54,7 @@ public class SendAim implements JtAim {
                     final Vertx vertx = context.vertx();
                     final EventBus event = vertx.eventBus();
 
-                    final NodeNetwork network = ONodeCache.of().network();
+                    final NodeNetwork network = OCacheNode.of().network();
                     final DeliveryOptions deliveryOptions = network.get().optionDelivery();
                     event.<Envelop>request(address, normalized, deliveryOptions, handler -> {
                         if (handler.succeeded()) {

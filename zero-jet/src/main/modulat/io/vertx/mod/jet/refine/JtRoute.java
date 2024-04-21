@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.atom.JtConfig;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.core.metadata.store.OZeroStore;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.HashSet;

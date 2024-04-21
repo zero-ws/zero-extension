@@ -7,7 +7,7 @@ import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.error._501IngestMissingException;
 import io.vertx.mod.jet.error._501IngestSpecException;
 import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.core.metadata.store.OZeroStore;
 import io.zerows.core.web.metadata.commune.Envelop;
 
 import java.util.Objects;

@@ -14,7 +14,7 @@ import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.core.metadata.store.OZeroStore;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

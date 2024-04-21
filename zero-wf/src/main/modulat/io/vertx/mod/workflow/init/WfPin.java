@@ -11,7 +11,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.mod.workflow.uca.deployment.DeployOn;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
-import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.core.metadata.store.OZeroStore;
 import org.camunda.bpm.engine.*;
 import org.camunda.bpm.engine.impl.history.handler.HistoryEventHandler;
 

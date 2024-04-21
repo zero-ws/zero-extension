@@ -4,7 +4,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.battery.atom.PowerConfig;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.store.config.OZeroStore;
+import io.zerows.core.metadata.store.OZeroStore;
 
 import java.util.HashSet;
 import java.util.Objects;
