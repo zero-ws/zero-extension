@@ -1,13 +1,13 @@
 package io.vertx.mod.jet.uca.param;
 
 import io.horizon.spi.jet.JtIngest;
-import io.vertx.boot.supply.Electy;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.metadata.store.OCacheUri;
 
 import java.util.Map;
 
@@ -36,7 +36,7 @@ class PathIngest implements JtIngest {
          *
          * Additional `key` parameter will be passed `pathParams()` but it's invalid.
          */
-        if (Electy.uriMatch(requestUri, method)) {
+        if (OCacheUri.T.isMatch(requestUri, method)) {
             final Map<String, String> params = context.pathParams();
             params.forEach(data::put);
         }

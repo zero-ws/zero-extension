@@ -14,7 +14,7 @@ public interface AuthMsg {
     String LOGIN_LOCKED = "[ Ακριβώς ] username = {0} has been locked / disabled";
     String LOGIN_PWD = "[ Ακριβώς ] username = {0}, the password ( {1} ) you provided is wrong.";
     // String LOGIN_INIT = "[ Ακριβώς ] username = {0}, the password ( {1} ) is default and contains risk";
-    String LOGIN_INPUT = "Login processing execute ( username = {0} )";
+    String LOGIN_INPUT = "Login processing action ( username = {0} )";
 
     String TOKEN_STORE = "The system will singleton user''s principle information. user key: {0}.";
     String TOKEN_INPUT = "Verify data = {1} from token = {0}";

@@ -4,18 +4,18 @@ import io.vertx.core.Handler;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.uca.valve.JtIn;
-import io.zerows.launcher.backbone.hunt.Answer;
 import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.launcher.backbone.hunt.Answer;
 
 /**
  * The handler chain contains 4 rules in sequence, it's for complex routing design
  * ------
- * 1. 「Optional」This rule will execute IN_RULE for validation, there should be some
+ * 1. 「Optional」This rule will action IN_RULE for validation, there should be some
  * components that could be defined, now it support VALIDATOR / CONVERTER instead. These
  * components will provide response message to client and it will process in priority such
  * as 400 bad request / 400 parameter required exception here.
  * ------
- * 2. 「Optional」The second step to execute IN_MAPPING, it's for field mapping and the
+ * 2. 「Optional」The second step to action IN_MAPPING, it's for field mapping and the
  * first time convert the field data in request. The output will be input data that will
  * be used in next step.
  * ------

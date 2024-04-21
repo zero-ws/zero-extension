@@ -12,9 +12,9 @@ import io.vertx.mod.is.uca.updater.StoreMigration;
 import io.vertx.mod.is.uca.updater.StoreRename;
 import io.vertx.mod.is.uca.updater.StoreUp;
 import io.vertx.up.eon.KName;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class DirService implements DirStub {
             }))
             // Delete Records
             .compose(Ux.Jooq.on(IDirectoryDao.class)::deleteJAsync)
-            // Helper execute `rm` command to remove folders
+            // Helper action `rm` command to remove folders
             .compose(removed -> Is.fsRun(removed, Fs::rm))
             .compose(nil -> Ux.futureT());
     }

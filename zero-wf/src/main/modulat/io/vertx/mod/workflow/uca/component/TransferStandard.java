@@ -88,7 +88,7 @@ public class TransferStandard extends AbstractMovement implements Transfer {
              */
             /*
              * Double check for `insert record`
-             * Here will execute twice on entity record instead of one
+             * Here will action twice on entity record instead of one
              * 1. Insert -> Move Update
              * 2. Update -> Move Update
              * The `status` should be previous status

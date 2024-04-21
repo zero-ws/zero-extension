@@ -2,7 +2,6 @@ package io.vertx.mod.ke.refine;
 
 import io.horizon.spi.web.Orbit;
 import io.horizon.uca.log.Annal;
-import io.vertx.boot.supply.Electy;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.ext.web.RoutingContext;
@@ -11,6 +10,7 @@ import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.commune.Vis;
 import io.zerows.core.metadata.osgi.channel.KIncome;
 import io.zerows.core.metadata.osgi.channel.Pocket;
+import io.zerows.core.web.metadata.store.OCacheUri;
 
 import static io.vertx.mod.ke.refine.Ke.LOG;
 
@@ -48,7 +48,7 @@ class KeCache {
     static String uri(final RoutingContext context) {
         final HttpServerRequest request = context.request();
         final HttpMethod method = request.method();
-        final String requestUri = Electy.uriRecovery(request.path(), method);
+        final String requestUri = OCacheUri.T.recovery(request.path(), method);
         return uri(requestUri, request.path());
     }
 

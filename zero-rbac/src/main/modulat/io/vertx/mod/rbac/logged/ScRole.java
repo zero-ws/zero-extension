@@ -69,7 +69,7 @@ public class ScRole {
      */
     public Future<JsonArray> fetchWithCache() {
         /*
-         * This workflow will execute when each user login
+         * This workflow will action when each user login
          * It means that the cache pool could be refreshed when role
          * permissions
          */

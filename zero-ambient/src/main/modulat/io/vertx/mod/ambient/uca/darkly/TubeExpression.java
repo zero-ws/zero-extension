@@ -15,7 +15,7 @@ public class TubeExpression extends AbstractTube {
     @Override
     public Future<JsonObject> traceAsync(final JsonObject data, final XActivityRule rule) {
         /*
-         * No default condition checking here, execute workflow
+         * No default condition checking here, action workflow
          * activity generation directly, it's different from TubeAtom
          */
         return this.newActivity(data, rule).compose(activity -> {

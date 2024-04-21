@@ -1,6 +1,5 @@
 package io.vertx.mod.jet;
 
-import io.vertx.boot.supply.Electy;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;
@@ -14,6 +13,7 @@ import io.vertx.mod.jet.monitor.JtMonitor;
 import io.vertx.mod.jet.uca.aim.*;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.metadata.store.OCacheUri;
 import io.zerows.extension.AbstractAres;
 import io.zerows.launcher.boot.handler.CommonEndurer;
 
@@ -90,9 +90,9 @@ public class JetPollux extends AbstractAres {
                 /*
                  * Worker deployment
                  * Here caused `block thread issue`, if we deploy agent x 32 and set `instances` of worker to 64
-                 * It means that the code below will execute 32 times, and then the system will
+                 * It means that the code below will action 32 times, and then the system will
                  * deploy 32 x 64 worker instances, it may take long time to do deployment and casued `block thread`
-                 * issue. Instead we set UNREADY flag to mean execute worker deployment one time.
+                 * issue. Instead we set UNREADY flag to mean action worker deployment one time.
                  * Each time the `vert.x` insteance will set worker threads here.
                  */
                 if (UNREADY.getAndSet(Boolean.FALSE)) {
@@ -106,7 +106,7 @@ public class JetPollux extends AbstractAres {
     private void resolveUri(final HttpMethod method, final String uri) {
         if (Objects.nonNull(uri) && 0 < uri.indexOf(":")) {
             if (0 < uri.indexOf(":")) {
-                Electy.uriResolve(uri, method);
+                OCacheUri.T.resolve(uri, method);
             }
         }
     }

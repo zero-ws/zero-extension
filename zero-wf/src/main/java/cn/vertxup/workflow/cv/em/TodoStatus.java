@@ -65,7 +65,7 @@ package cn.vertxup.workflow.cv.em;
 public enum TodoStatus {
     // Draft before starting
     DRAFT,
-    // Wait for execute todo task
+    // Wait for action todo task
     PENDING,
     // Finished by user
     FINISHED,

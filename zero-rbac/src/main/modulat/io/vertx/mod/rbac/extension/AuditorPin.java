@@ -1,7 +1,6 @@
 package io.vertx.mod.rbac.extension;
 
 import io.horizon.uca.log.Annal;
-import io.vertx.boot.supply.Electy;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
@@ -12,8 +11,9 @@ import io.vertx.mod.ke.cv.KeIpc;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.unity.Ux;
-import io.zerows.extension.PlugAuditor;
 import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.metadata.store.OCacheUri;
+import io.zerows.extension.PlugAuditor;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -111,7 +111,7 @@ public class AuditorPin implements PlugAuditor {
             .filter(path::startsWith)
             .count();
         final JsonArray exclude = this.config.getJsonArray("exclude");
-        final String recovery = Electy.uriRecovery(request.path(), request.method());
+        final String recovery = OCacheUri.T.recovery(request.path(), request.method());
         if (Objects.isNull(exclude) || exclude.isEmpty()) {
             /*
              * Exclude counter = 0, only include valid
