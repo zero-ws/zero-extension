@@ -56,8 +56,8 @@ public interface UiApi {
 
     /*
      * Condition should be:
-     * 1. Path Parameter: page, identifier
-     * 2. Body Parameter:
+     * 1. Path store: page, identifier
+     * 2. Body store:
      * {
      *      "view": "DEFAULT",
      *      "position": "DEFAULT",

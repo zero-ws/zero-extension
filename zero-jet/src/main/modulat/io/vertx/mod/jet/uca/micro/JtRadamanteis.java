@@ -7,7 +7,7 @@ import io.zerows.core.web.metadata.commune.Envelop;
 
 /**
  * 「Ingest」
- * Parameter extraction when paramMode = DEFINE, it's valid
+ * store extraction when paramMode = DEFINE, it's valid
  */
 public class JtRadamanteis implements JtIngest {
     @Override
