@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-ifx-neo4j</artifactId>
+            <artifactId>zero-plugins-store-neo4j</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
