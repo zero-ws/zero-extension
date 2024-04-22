@@ -17,7 +17,7 @@ public class AoConfig {
      * - Model 实现类
      * - Record 实现类
      * - Pin 实现类
-     * - Switcher 实现类
+     * - OnOff 实现类
      */
     @JsonSerialize(using = ClassSerializer.class)
     @JsonDeserialize(using = ClassDeserializer.class)

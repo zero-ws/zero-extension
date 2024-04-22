@@ -128,7 +128,7 @@ public abstract class AbstractChannel implements JtChannel {
     }
 
     /*
-     * Switcher `dictionary` here for usage
+     * OnOff `dictionary` here for usage
      * 1) When `Job`, assist data may be initialized before.
      * 2) When `Api`, here will initialize assist data.
      * 3) Finally the data will bind to request

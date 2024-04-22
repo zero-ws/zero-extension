@@ -52,7 +52,7 @@ class AoImpl {
      *   toModel(String, JsonObject)
      *   toModel(String, String)
      *
-     * - Switcher
+     * - OnOff
      *   toSwitcher(KIdentity, JsonObject)
      */
     static Schema toSchema(final String appName, final JsonObject schemaJson) {

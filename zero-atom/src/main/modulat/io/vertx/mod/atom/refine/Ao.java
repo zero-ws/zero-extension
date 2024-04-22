@@ -108,7 +108,7 @@ public class Ao {
      *   toModel(String, JsonObject)
      *   toModel(String, String)
      *
-     * - Switcher
+     * - OnOff
      *   toSwitcher(KIdentity, JsonObject)
      */
     public static Schema toSchema(final String appName, final JsonObject schemaJson) {

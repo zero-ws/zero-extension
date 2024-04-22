@@ -9,7 +9,7 @@ import io.vertx.mod.atom.modeling.data.DataGroup;
 import java.util.Set;
 
 /*
- * Switcher for DataAtom
+ * OnOff for DataAtom
  */
 public interface Switcher {
     /*
