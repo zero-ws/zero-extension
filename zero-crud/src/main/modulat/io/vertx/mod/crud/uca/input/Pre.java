@@ -12,7 +12,7 @@ import io.vertx.mod.crud.uca.input.file.PreFile;
 import io.vertx.mod.crud.uca.input.id.PreId;
 import io.vertx.mod.crud.uca.input.qr.PreQr;
 import io.vertx.mod.crud.uca.input.view.PreView;
-import io.zerows.infix.excel.ExcelClient;
+import io.zerows.plugins.office.excel.ExcelClient;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

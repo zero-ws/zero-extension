@@ -18,7 +18,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import io.zerows.core.domain.atom.element.JBag;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.infix.excel.atom.ExTable;
+import io.zerows.plugins.office.excel.atom.ExTable;
 import org.jooq.Converter;
 
 import java.util.ArrayList;

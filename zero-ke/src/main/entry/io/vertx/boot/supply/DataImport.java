@@ -14,8 +14,8 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.JooqInfix;
 import io.zerows.core.feature.web.shared.MapInfix;
 import io.zerows.core.feature.web.shared.SharedClient;
-import io.zerows.infix.excel.ExcelClient;
-import io.zerows.infix.excel.ExcelInfix;
+import io.zerows.plugins.office.excel.ExcelClient;
+import io.zerows.plugins.office.excel.ExcelInfix;
 import org.jooq.Configuration;
 
 import java.util.ArrayList;

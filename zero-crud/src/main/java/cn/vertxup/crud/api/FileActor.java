@@ -25,7 +25,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.metadata.commune.Envelop;
-import io.zerows.infix.excel.ExcelClient;
+import io.zerows.plugins.office.excel.ExcelClient;
 
 import java.util.List;
 

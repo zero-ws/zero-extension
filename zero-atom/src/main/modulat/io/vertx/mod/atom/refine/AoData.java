@@ -10,8 +10,8 @@ import io.vertx.mod.atom.modeling.data.DataRecord;
 import io.vertx.mod.atom.modeling.element.DataMatrix;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.element.JBag;
-import io.zerows.infix.excel.atom.ExRecord;
-import io.zerows.infix.excel.atom.ExTable;
+import io.zerows.plugins.office.excel.atom.ExRecord;
+import io.zerows.plugins.office.excel.atom.ExTable;
 import org.jooq.Converter;
 
 import java.util.ArrayList;

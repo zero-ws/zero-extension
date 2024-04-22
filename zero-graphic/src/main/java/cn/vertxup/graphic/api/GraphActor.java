@@ -11,8 +11,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.infix.neo4j.Neo4jClient;
-import io.zerows.infix.neo4j.Neo4jInfix;
+import io.zerows.plugins.store.neo4j.Neo4jClient;
+import io.zerows.plugins.store.neo4j.Neo4jInfix;
 
 /*
  *

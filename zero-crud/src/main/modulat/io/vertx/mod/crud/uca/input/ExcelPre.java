@@ -12,8 +12,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
-import io.zerows.infix.excel.ExcelClient;
-import io.zerows.infix.excel.atom.ExTable;
+import io.zerows.plugins.office.excel.ExcelClient;
+import io.zerows.plugins.office.excel.atom.ExTable;
 
 import java.io.File;
 import java.io.FileInputStream;

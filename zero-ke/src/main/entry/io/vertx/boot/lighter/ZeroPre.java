@@ -5,7 +5,7 @@ import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.feature.database.jooq.JooqInfix;
 import io.zerows.core.feature.web.shared.MapInfix;
-import io.zerows.infix.excel.ExcelInfix;
+import io.zerows.plugins.office.excel.ExcelInfix;
 
 /**
  * @author lang : 2023-06-10
