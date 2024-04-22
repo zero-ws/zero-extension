@@ -9,15 +9,15 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ui.cv.Addr;
 import io.vertx.mod.ui.cv.em.ControlType;
 import io.vertx.mod.ui.cv.em.OpType;
+import io.vertx.mod.ui.cv.em.ViewType;
 import io.vertx.mod.ui.refine.Ui;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.domain.atom.commune.XHeader;
 import io.vertx.up.eon.KName;
-import io.vertx.up.eon.em.container.ViewType;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
