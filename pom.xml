@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zero-extension</artifactId>
+    <artifactId>zero-plugins-extension</artifactId>
     <packaging>pom</packaging>
     <name>Zero.Plugins.Modules.POM.${zero.version}</name>
     <modules>
