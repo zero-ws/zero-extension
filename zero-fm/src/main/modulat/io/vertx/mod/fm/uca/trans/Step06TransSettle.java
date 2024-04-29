@@ -13,6 +13,7 @@ import io.vertx.up.util.Ut;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * @author lang : 2024-01-24
@@ -35,6 +36,7 @@ class Step06TransSettle implements Trade<List<FSettlement>, FTrans> {
                 }
                 trans.setType(EmTran.Type.SETTLEMENT.name());
                 trans.setName("ST:" + Ut.fromJoin(nameList));
+                trans.setKey(UUID.randomUUID().toString());
                 // 此处构造完成
                 return Ux.future(trans);
             })
