@@ -79,7 +79,7 @@ public class TransService implements TransStub {
 
                 IkWay.ofT2TI().transfer(trans, payments);
                 // 防重复创建：Duplicate entry 'Cash' for key 'name_UNIQUE'
-                payments.forEach(payment -> payment.setKey(UUID.randomUUID().toString()));
+                payments.forEach(payment -> payment.setKey(null));
 
                 return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments);
             })
