@@ -26,7 +26,7 @@ class DataIo {
         final Set<HExtension> boots = HExtension.initialize();
         if (!boots.isEmpty() && oob) {
             boots.forEach(boot -> files.addAll(boot.oob(prefix)));
-            // boots.forEach(scanned -> files.addAll(scanned.oob(prefix)));
+            // boots.forEach(boot -> files.addAll(boot.oob(prefix)));
         }
         Ke.LOG.Ke.info(DataIo.class, "After Extension Files = {0}", String.valueOf(files.size()));
         // 并行
