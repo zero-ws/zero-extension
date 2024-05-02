@@ -4,7 +4,7 @@ import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.feature.database.jooq.JooqInfix;
-import io.zerows.core.feature.web.shared.MapInfix;
+import io.zerows.feature.web.cache.shared.MapInfix;
 import io.zerows.plugins.office.excel.ExcelInfix;
 
 /**
