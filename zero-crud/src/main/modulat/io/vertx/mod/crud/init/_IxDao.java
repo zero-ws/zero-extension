@@ -9,7 +9,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.uca.environment.DevEnv;
-import io.zerows.core.web.metadata.extension.HExtension;
+import io.zerows.core.web.model.extension.HExtension;
 
 import java.util.List;
 import java.util.Objects;

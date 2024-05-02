@@ -15,7 +15,7 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
 import io.zerows.core.web.container.handler.CommonEndurer;
 import io.zerows.core.web.io.plugins.extension.AbstractAres;
-import io.zerows.core.web.metadata.store.OCacheUri;
+import io.zerows.core.web.model.store.OCacheUri;
 
 import java.util.Objects;
 import java.util.Set;

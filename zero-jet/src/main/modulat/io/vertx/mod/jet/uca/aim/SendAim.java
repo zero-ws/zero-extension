@@ -14,7 +14,7 @@ import io.zerows.core.configuration.atom.NodeNetwork;
 import io.zerows.core.configuration.store.OCacheNode;
 import io.zerows.core.web.container.extension.PluginExtension;
 import io.zerows.core.web.container.uca.mode.Answer;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.Objects;
 

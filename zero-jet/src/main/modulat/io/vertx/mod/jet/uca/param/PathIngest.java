@@ -6,8 +6,8 @@ import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
-import io.zerows.core.web.metadata.commune.Envelop;
-import io.zerows.core.web.metadata.store.OCacheUri;
+import io.zerows.core.web.model.commune.Envelop;
+import io.zerows.core.web.model.store.OCacheUri;
 
 import java.util.Map;
 

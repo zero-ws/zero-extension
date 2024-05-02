@@ -3,7 +3,7 @@ package io.vertx.mod.jet.uca.param;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.JetThanatos;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
 

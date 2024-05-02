@@ -13,7 +13,7 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.plugins.office.excel.ExcelClient;
 import io.zerows.plugins.office.excel.atom.ExRecord;
 import io.zerows.plugins.office.excel.atom.ExTable;

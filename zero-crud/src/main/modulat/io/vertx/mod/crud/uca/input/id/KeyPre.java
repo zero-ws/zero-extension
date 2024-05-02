@@ -8,7 +8,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KField;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

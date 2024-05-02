@@ -2,7 +2,7 @@ package io.vertx.boot.supply;
 
 import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.metadata.extension.HExtension;
+import io.zerows.core.web.model.extension.HExtension;
 
 import java.util.List;
 import java.util.Set;

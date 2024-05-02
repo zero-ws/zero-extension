@@ -12,8 +12,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.web.io.plugins.extension.PlugAuditor;
-import io.zerows.core.web.metadata.commune.Envelop;
-import io.zerows.core.web.metadata.store.OCacheUri;
+import io.zerows.core.web.model.commune.Envelop;
+import io.zerows.core.web.model.store.OCacheUri;
 
 import java.time.Instant;
 import java.util.Objects;

@@ -5,7 +5,7 @@ import io.vertx.core.MultiMap;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.mod.jet.atom.JtUri;
 import io.vertx.mod.jet.cv.em.ParamMode;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.function.Supplier;
 

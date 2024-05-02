@@ -10,7 +10,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.Vis;
 import io.zerows.core.domain.atom.specification.KJoin;
 import io.zerows.core.domain.atom.specification.KPoint;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.Objects;
 

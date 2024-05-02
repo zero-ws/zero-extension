@@ -10,7 +10,7 @@ import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.commune.Vis;
 import io.zerows.core.metadata.osgi.channel.KIncome;
 import io.zerows.core.metadata.osgi.channel.Pocket;
-import io.zerows.core.web.metadata.store.OCacheUri;
+import io.zerows.core.web.model.store.OCacheUri;
 
 import static io.vertx.mod.ke.refine.Ke.LOG;
 

@@ -17,7 +17,7 @@ import io.vertx.mod.ke.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.core.web.metadata.zdk.Commercial;
+import io.zerows.core.web.model.zdk.Commercial;
 
 import java.util.Objects;
 

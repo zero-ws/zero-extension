@@ -1,7 +1,7 @@
 package io.vertx.mod.erp.booter;
 
 import io.vertx.mod.ke.cv.KeIpc;
-import io.zerows.core.web.metadata.extension.AbstractBoot;
+import io.zerows.core.web.model.extension.AbstractBoot;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

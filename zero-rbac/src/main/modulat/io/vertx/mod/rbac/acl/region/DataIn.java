@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.refine.Sc;
 import io.vertx.up.eon.em.EmSecure;
 import io.zerows.core.security.zdk.authority.Acl;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.Objects;
 

@@ -13,7 +13,7 @@ import io.vertx.mod.ke.cv.em.OwnerType;
 import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

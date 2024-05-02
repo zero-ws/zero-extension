@@ -13,7 +13,7 @@ import io.vertx.mod.crud.uca.input.Pre;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 @Queue
 public class DeleteActor {
