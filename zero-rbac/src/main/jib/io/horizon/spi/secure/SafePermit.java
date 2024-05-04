@@ -3,7 +3,7 @@ package io.horizon.spi.secure;
 import cn.vertxup.rbac.domain.tables.daos.OAccessTokenDao;
 import cn.vertxup.rbac.domain.tables.pojos.OAccessToken;
 import io.horizon.eon.VValue;
-import io.zerows.extension.runtime.osgi.spi.environment.Permit;
+import io.zerows.extension.runtime.skeleton.osgi.spi.environment.Permit;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.rbac.refine.Sc;

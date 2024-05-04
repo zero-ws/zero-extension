@@ -10,7 +10,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.runtime.osgi.spi.feature.Linkage;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Linkage;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

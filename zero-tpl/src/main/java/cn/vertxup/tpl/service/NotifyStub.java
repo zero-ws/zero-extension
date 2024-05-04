@@ -3,7 +3,7 @@ package cn.vertxup.tpl.service;
 import cn.vertxup.tpl.domain.tables.pojos.MyNotify;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 
 /**
  * @author lang : 2024-04-02

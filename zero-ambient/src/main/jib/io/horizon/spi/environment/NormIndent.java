@@ -8,7 +8,7 @@ import io.vertx.core.Future;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.runtime.exception._400SigmaMissingException;
+import io.zerows.extension.runtime.skeleton.exception._400SigmaMissingException;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;

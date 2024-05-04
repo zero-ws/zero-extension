@@ -2,7 +2,7 @@ package io.vertx.mod.rbac.logged;
 
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.init.ScPin;

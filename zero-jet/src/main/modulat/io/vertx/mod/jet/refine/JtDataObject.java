@@ -12,7 +12,7 @@ import io.modello.specification.atom.HRule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.jet.cv.JtConstant;
 import io.vertx.mod.jet.cv.em.WorkerType;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;

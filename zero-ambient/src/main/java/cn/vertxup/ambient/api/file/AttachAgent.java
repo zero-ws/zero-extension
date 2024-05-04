@@ -6,7 +6,7 @@ import io.vertx.mod.ambient.atom.AtConfig;
 import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.mod.ambient.cv.AtConstant;
 import io.vertx.mod.ambient.init.AtPin;
-import io.zerows.extension.runtime.eon.em.FileStatus;
+import io.zerows.extension.runtime.skeleton.eon.em.FileStatus;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;

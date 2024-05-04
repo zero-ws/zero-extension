@@ -3,7 +3,7 @@ package io.vertx.mod.rbac.acl.rapier;
 import cn.vertxup.rbac.domain.tables.daos.SVisitantDao;
 import cn.vertxup.rbac.domain.tables.pojos.SVisitant;
 import io.horizon.eon.VValue;
-import io.zerows.extension.runtime.osgi.spi.modeler.Confine;
+import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Confine;
 import io.horizon.spi.secure.ConfineBuiltIn;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;

@@ -5,7 +5,7 @@ import cn.vertxup.workflow.cv.em.TodoStatus;
 import cn.vertxup.workflow.domain.tables.daos.WTodoDao;
 import cn.vertxup.workflow.domain.tables.pojos.WTodo;
 import com.fasterxml.jackson.core.type.TypeReference;
-import io.zerows.extension.runtime.osgi.spi.feature.Todo;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Todo;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

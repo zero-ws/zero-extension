@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.ambient.cv.Addr;
-import io.zerows.extension.runtime.eon.em.FileStatus;
+import io.zerows.extension.runtime.skeleton.eon.em.FileStatus;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;

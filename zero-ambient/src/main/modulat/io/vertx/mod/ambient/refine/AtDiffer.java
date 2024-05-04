@@ -11,7 +11,7 @@ import io.modello.specification.atom.HAttribute;
 import io.modello.specification.meta.HMetaField;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.em.ActivityStatus;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.util.Ut;
 
 import java.util.*;

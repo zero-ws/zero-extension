@@ -1,7 +1,7 @@
 package io.horizon.spi.feature;
 
 import cn.vertxup.erp.domain.tables.daos.EDeptDao;
-import io.zerows.extension.runtime.osgi.spi.phantom.AbstractArbor;
+import io.zerows.extension.runtime.skeleton.osgi.spi.phantom.AbstractArbor;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

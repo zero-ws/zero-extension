@@ -1,7 +1,7 @@
 package io.vertx.mod.battery.booter;
 
 import io.vertx.mod.battery.init.BkPin;
-import io.zerows.extension.runtime.eon.KeIpc;
+import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 import io.zerows.core.web.model.extension.AbstractBoot;
 
 import java.util.Set;

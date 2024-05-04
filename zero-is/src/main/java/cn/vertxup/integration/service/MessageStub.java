@@ -4,7 +4,7 @@ import cn.vertxup.integration.domain.tables.pojos.IMessage;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.em.EmMessage;
+import io.zerows.extension.runtime.skeleton.eon.em.EmMessage;
 
 import java.util.List;
 

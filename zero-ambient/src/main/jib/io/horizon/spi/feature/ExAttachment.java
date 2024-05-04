@@ -3,7 +3,7 @@ package io.horizon.spi.feature;
 import cn.vertxup.ambient.domain.tables.daos.XAttachmentDao;
 import cn.vertxup.ambient.domain.tables.pojos.XAttachment;
 import io.horizon.eon.em.typed.ChangeFlag;
-import io.zerows.extension.runtime.osgi.spi.business.ExIo;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExIo;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
@@ -15,7 +15,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
-import io.zerows.extension.runtime.osgi.spi.feature.Attachment;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Attachment;
 
 import java.time.Instant;
 import java.util.List;

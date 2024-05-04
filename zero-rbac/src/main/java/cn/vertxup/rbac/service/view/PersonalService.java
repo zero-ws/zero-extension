@@ -6,7 +6,7 @@ import io.horizon.eon.VValue;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

@@ -1,8 +1,8 @@
 package cn.vertxup.ambient.service.application;
 
 import cn.vertxup.ambient.domain.tables.daos.XAppDao;
-import io.zerows.extension.runtime.osgi.spi.extension.Init;
-import io.zerows.extension.runtime.osgi.spi.extension.Prerequisite;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Prerequisite;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

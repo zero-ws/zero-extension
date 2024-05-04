@@ -1,12 +1,12 @@
 package io.horizon.spi;
 
-import io.zerows.extension.runtime.osgi.spi.ui.Anchoret;
-import io.zerows.extension.runtime.osgi.spi.ui.ApeakMy;
+import io.zerows.extension.runtime.skeleton.osgi.spi.ui.Anchoret;
+import io.zerows.extension.runtime.skeleton.osgi.spi.ui.ApeakMy;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.vertx.mod.rbac.acl.rapier.Quinn;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.mod.rbac.cv.AuthMsg;

@@ -1,6 +1,6 @@
 package io.vertx.mod.crud.uca.input.audit;
 
-import io.zerows.extension.runtime.osgi.spi.business.ExUser;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.mod.crud.uca.desk.IxMod;

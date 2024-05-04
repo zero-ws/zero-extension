@@ -6,7 +6,7 @@ import cn.vertxup.rbac.domain.tables.pojos.SAction;
 import cn.vertxup.rbac.domain.tables.pojos.SPermission;
 import cn.vertxup.rbac.domain.tables.pojos.SResource;
 import io.horizon.eon.VString;
-import io.zerows.extension.runtime.osgi.spi.web.Routine;
+import io.zerows.extension.runtime.skeleton.osgi.spi.web.Routine;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;

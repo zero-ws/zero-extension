@@ -3,7 +3,7 @@ package io.vertx.mod.battery.uca.configure;
 import cn.vertxup.battery.domain.tables.pojos.BBag;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

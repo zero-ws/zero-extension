@@ -2,11 +2,11 @@ package cn.vertxup.tpl.service;
 
 import cn.vertxup.tpl.domain.tables.daos.MyNotifyDao;
 import cn.vertxup.tpl.domain.tables.pojos.MyNotify;
-import io.zerows.extension.runtime.osgi.spi.business.ExUser;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 

@@ -2,10 +2,10 @@ package io.vertx.mod.rbac.acl.relation;
 
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
 import io.horizon.exception.web._501NotSupportException;
-import io.zerows.extension.runtime.osgi.spi.business.ExSetting;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExSetting;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.secure.Twine;
+import io.zerows.extension.runtime.skeleton.secure.Twine;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

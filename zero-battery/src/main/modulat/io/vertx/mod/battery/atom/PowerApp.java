@@ -1,7 +1,7 @@
 package io.vertx.mod.battery.atom;
 
 import io.horizon.annotations.Memory;
-import io.zerows.extension.runtime.osgi.spi.modeler.Modulat;
+import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

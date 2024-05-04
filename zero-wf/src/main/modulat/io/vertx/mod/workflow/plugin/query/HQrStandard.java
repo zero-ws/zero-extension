@@ -2,7 +2,7 @@ package io.vertx.mod.workflow.plugin.query;
 
 import io.horizon.eon.VString;
 import io.horizon.specification.action.HQR;
-import io.zerows.extension.runtime.osgi.spi.business.ExUser;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;

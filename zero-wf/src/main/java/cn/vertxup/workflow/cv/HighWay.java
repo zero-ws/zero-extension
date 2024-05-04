@@ -1,6 +1,6 @@
 package cn.vertxup.workflow.cv;
 
-import io.zerows.extension.runtime.eon.KeIpc;
+import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 
 /**
  * To avoid duplicated with Addr class, here provide new class named 'HighWay'

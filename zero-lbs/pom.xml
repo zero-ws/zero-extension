@@ -15,7 +15,7 @@
         <!-- Kern -->
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-extension-module-runtime</artifactId>
+            <artifactId>zero-extension-runtime-skeleton</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -24,7 +24,7 @@
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <configuration>
-                    <propertyProviderClass>io.zerows.extension.runtime.secure.ZeroLiquibaseEncryption</propertyProviderClass>
+                    <propertyProviderClass>io.zerows.extension.runtime.skeleton.secure.ZeroLiquibaseEncryption</propertyProviderClass>
                     <!-- 配置文件路径 -->
                     <propertyFile>plugin/lbs/db.properties</propertyFile>
                     <changeLogFile>plugin/lbs/db.yml</changeLogFile>

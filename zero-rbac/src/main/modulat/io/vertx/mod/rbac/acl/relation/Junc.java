@@ -3,8 +3,8 @@ package io.vertx.mod.rbac.acl.relation;
 import cn.vertxup.rbac.domain.tables.pojos.SUser;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonArray;
-import io.zerows.extension.runtime.secure.Tie;
-import io.zerows.extension.runtime.secure.Twine;
+import io.zerows.extension.runtime.skeleton.secure.Tie;
+import io.zerows.extension.runtime.skeleton.secure.Twine;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

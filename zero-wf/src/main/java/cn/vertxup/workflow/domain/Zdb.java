@@ -7,7 +7,7 @@ package cn.vertxup.workflow.domain;
 import cn.vertxup.workflow.domain.tables.WFlow;
 import cn.vertxup.workflow.domain.tables.WTicket;
 import cn.vertxup.workflow.domain.tables.WTodo;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

@@ -9,7 +9,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.extension.runtime.eon.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.vertx.mod.rbac.acl.rapier.Quinn;
 import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.atom.ScOwner;

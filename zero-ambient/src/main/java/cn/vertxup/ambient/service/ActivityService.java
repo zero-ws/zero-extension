@@ -2,7 +2,7 @@ package cn.vertxup.ambient.service;
 
 import cn.vertxup.ambient.domain.tables.daos.XActivityChangeDao;
 import cn.vertxup.ambient.domain.tables.pojos.XActivityChange;
-import io.zerows.extension.runtime.osgi.spi.business.ExActivity;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExActivity;
 import io.horizon.spi.business.ExActivityTracker;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;

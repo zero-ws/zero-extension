@@ -1,7 +1,7 @@
 package io.vertx.mod.ambient.refine;
 
 import io.horizon.specification.storage.HFS;
-import io.zerows.extension.runtime.osgi.spi.business.ExIo;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExIo;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;

@@ -2,8 +2,8 @@ package io.vertx.mod.ambient.atom;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.zerows.extension.runtime.osgi.spi.extension.Init;
-import io.zerows.extension.runtime.osgi.spi.extension.Prerequisite;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Prerequisite;
 import io.zerows.jackson.databind.ClassDeserializer;
 import io.zerows.jackson.databind.ClassSerializer;
 

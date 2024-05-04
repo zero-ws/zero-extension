@@ -5,7 +5,7 @@ package cn.vertxup.ambient.domain;
 
 
 import cn.vertxup.ambient.domain.tables.*;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

@@ -2,7 +2,7 @@ package cn.vertxup.rbac.ipc;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.eon.KeIpc;
+import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 import io.vertx.up.annotations.Ipc;
 import io.zerows.core.web.model.commune.Envelop;
 

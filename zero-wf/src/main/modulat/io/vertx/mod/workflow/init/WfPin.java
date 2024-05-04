@@ -7,7 +7,7 @@ import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.mod.workflow.uca.deployment.DeployOn;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
