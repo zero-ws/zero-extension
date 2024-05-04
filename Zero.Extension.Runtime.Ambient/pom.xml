@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zero-ambient</artifactId>
-    <name>Zero.Plugins.Modules.RTE.Configuration</name>
+    <artifactId>zero-extension-runtime-ambient</artifactId>
+    <name>Zero.Extension.Runtime.Ambient</name>
     <dependencies>
         <!-- Kern -->
         <dependency>
