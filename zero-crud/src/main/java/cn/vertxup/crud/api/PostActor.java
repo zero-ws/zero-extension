@@ -13,7 +13,7 @@ import io.vertx.mod.crud.uca.next.Co;
 import io.vertx.mod.crud.uca.op.Agonic;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 /*
  * Create new Record that defined in zero system.

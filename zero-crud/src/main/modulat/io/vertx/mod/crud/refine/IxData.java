@@ -15,7 +15,7 @@ import io.zerows.core.domain.atom.specification.KField;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.core.feature.database.jooq.util.JqAnalyzer;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package io.vertx.mod.rbac.atom;
 
 import io.horizon.eon.VValue;
-import io.vertx.mod.ke.cv.em.OwnerType;
+import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.Vis;
 

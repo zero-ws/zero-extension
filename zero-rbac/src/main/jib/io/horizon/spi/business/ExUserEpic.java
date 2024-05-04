@@ -11,6 +11,7 @@ import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
 
 import java.util.List;
 import java.util.Set;

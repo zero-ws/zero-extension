@@ -6,7 +6,7 @@ import io.modello.eon.em.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.ClusterSerializable;
-import io.vertx.mod.ke.cv.em.TypeBag;
+import io.zerows.extension.runtime.skeleton.eon.em.TypeBag;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

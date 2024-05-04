@@ -18,7 +18,7 @@ import io.vertx.mod.atom.modeling.Model;
 import io.vertx.mod.atom.modeling.Schema;
 import io.vertx.mod.atom.modeling.builtin.DataAtom;
 import io.vertx.mod.atom.modeling.data.DataRecord;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;

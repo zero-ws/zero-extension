@@ -4,13 +4,13 @@ import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.vertx.mod.crud.uca.desk.IxMod;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.zerows.core.feature.database.jooq.operation.UxJoin;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.feature.web.mbse.uca.mixture.HOne;
-import io.zerows.core.web.metadata.atom.Rule;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.atom.Rule;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.List;
 import java.util.Set;

@@ -11,7 +11,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.web.io.zdk.qbe.HQBE;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.Objects;
 

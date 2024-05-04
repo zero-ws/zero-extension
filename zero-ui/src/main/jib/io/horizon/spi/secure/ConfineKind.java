@@ -1,6 +1,6 @@
 package io.horizon.spi.secure;
 
-import io.horizon.spi.modeler.Confine;
+import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Confine;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;

@@ -4,6 +4,7 @@ import cn.vertxup.erp.domain.tables.daos.ECompanyDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExCompany;
 
 /*
  * Get user information from database

@@ -15,9 +15,9 @@ import io.vertx.mod.jet.uca.tunnel.ConnectorChannel;
 import io.vertx.mod.jet.uca.tunnel.DirectorChannel;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.metadata.zdk.Commercial;
+import io.zerows.core.web.model.zdk.Commercial;
 import io.zerows.core.web.scheduler.atom.Mission;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

@@ -3,7 +3,7 @@ package io.vertx.mod.workflow.uca.modeling;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.mod.workflow.atom.configuration.MetaInstance;
 import io.vertx.up.eon.KName;
 

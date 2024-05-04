@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.fm.cv.FmCv;
 import io.vertx.mod.fm.cv.em.EmDebt;
 import io.vertx.mod.fm.uca.replica.IkWay;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.unity.Ux;
 
 import java.util.List;

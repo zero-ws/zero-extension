@@ -8,7 +8,7 @@ import io.vertx.mod.crud.refine.Ix;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 
 import java.util.List;
 

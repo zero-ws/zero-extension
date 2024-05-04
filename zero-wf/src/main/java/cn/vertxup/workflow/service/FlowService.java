@@ -1,7 +1,7 @@
 package cn.vertxup.workflow.service;
 
 import cn.vertxup.workflow.domain.tables.daos.WFlowDao;
-import io.horizon.spi.ui.Form;
+import io.zerows.extension.runtime.skeleton.osgi.spi.ui.Form;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.workflow.refine.Wf;

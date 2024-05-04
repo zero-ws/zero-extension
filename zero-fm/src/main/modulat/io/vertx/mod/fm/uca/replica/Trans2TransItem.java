@@ -2,7 +2,7 @@ package io.vertx.mod.fm.uca.replica;
 
 import cn.vertxup.fm.domain.tables.pojos.FTrans;
 import cn.vertxup.fm.domain.tables.pojos.FTransItem;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.util.Ut;
 
 import java.util.List;

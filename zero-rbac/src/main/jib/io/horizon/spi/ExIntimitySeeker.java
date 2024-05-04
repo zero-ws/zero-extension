@@ -2,8 +2,8 @@ package io.horizon.spi;
 
 import cn.vertxup.rbac.service.accredit.ActionService;
 import cn.vertxup.rbac.service.accredit.ActionStub;
-import io.horizon.spi.ui.Anchoret;
-import io.horizon.spi.web.Seeker;
+import io.zerows.extension.runtime.skeleton.osgi.spi.ui.Anchoret;
+import io.zerows.extension.runtime.skeleton.osgi.spi.web.Seeker;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonObject;

@@ -17,7 +17,7 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.core.web.metadata.zdk.Service;
+import io.zerows.core.web.model.zdk.Service;
 import io.zerows.core.web.scheduler.atom.Mission;
 
 import java.util.Objects;

@@ -1,6 +1,6 @@
 package cn.vertxup.workflow.service;
 
-import io.horizon.spi.business.ExActivity;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExActivity;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

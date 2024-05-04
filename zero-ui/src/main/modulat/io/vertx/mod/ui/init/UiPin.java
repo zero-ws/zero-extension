@@ -4,7 +4,7 @@ import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import static io.vertx.mod.ui.refine.Ui.LOG;
 

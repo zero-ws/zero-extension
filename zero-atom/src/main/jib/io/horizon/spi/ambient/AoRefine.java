@@ -1,6 +1,6 @@
 package io.horizon.spi.ambient;
 
-import io.horizon.spi.extension.Init;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 import io.horizon.uca.cache.Cc;
 
 /*

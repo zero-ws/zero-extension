@@ -5,9 +5,9 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.is.atom.IsConfig;
 import io.vertx.mod.is.cv.IsFolder;
-import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.mod.ke.cv.KeMsg;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.runtime.skeleton.eon.KeMsg;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.util.Ut;
 
 import java.util.Objects;

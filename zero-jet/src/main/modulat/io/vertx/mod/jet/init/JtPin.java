@@ -5,7 +5,7 @@ import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.mod.jet.atom.JtConfig;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.concurrent.ConcurrentMap;
 

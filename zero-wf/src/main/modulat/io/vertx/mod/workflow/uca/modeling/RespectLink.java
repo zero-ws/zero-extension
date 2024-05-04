@@ -1,7 +1,7 @@
 package io.vertx.mod.workflow.uca.modeling;
 
 import cn.vertxup.workflow.domain.tables.pojos.WTicket;
-import io.horizon.spi.feature.Linkage;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Linkage;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

@@ -3,7 +3,7 @@ package io.horizon.spi;
 import cn.vertxup.ui.service.FieldService;
 import cn.vertxup.ui.service.FormService;
 import cn.vertxup.ui.service.FormStub;
-import io.horizon.spi.ui.Form;
+import io.zerows.extension.runtime.skeleton.osgi.spi.ui.Form;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

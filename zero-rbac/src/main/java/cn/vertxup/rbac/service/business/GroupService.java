@@ -7,7 +7,7 @@ import cn.vertxup.rbac.domain.tables.pojos.SGroup;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.mod.rbac.cv.AuthKey;
 import io.vertx.mod.rbac.cv.AuthMsg;
 import io.zerows.core.domain.atom.typed.UArray;

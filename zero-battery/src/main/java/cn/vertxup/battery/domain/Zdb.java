@@ -5,7 +5,7 @@ package cn.vertxup.battery.domain;
 
 
 import cn.vertxup.battery.domain.tables.*;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

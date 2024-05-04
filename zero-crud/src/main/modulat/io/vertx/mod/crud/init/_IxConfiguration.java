@@ -5,9 +5,9 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.crud.atom.IxConfig;
 import io.vertx.mod.crud.cv.IxFolder;
-import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.mod.ke.cv.KeMsg;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.runtime.skeleton.eon.KeMsg;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.util.Ut;
 
 import java.text.MessageFormat;

@@ -2,7 +2,7 @@ package cn.vertxup.rbac.api;
 
 import cn.vertxup.rbac.service.business.UserStub;
 import cn.vertxup.rbac.service.login.LoginStub;
-import io.horizon.spi.feature.Trash;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Trash;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -11,7 +11,7 @@ import io.vertx.mod.rbac.acl.relation.Junc;
 import io.vertx.mod.rbac.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
-import io.zerows.core.web.metadata.commune.Envelop;
+import io.zerows.core.web.model.commune.Envelop;
 import io.vertx.up.unity.Ux;
 import jakarta.inject.Inject;
 

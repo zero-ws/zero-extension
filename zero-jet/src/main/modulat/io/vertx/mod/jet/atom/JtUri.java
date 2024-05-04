@@ -9,7 +9,7 @@ import io.vertx.mod.jet.cv.em.ParamMode;
 import io.vertx.mod.jet.refine.Jt;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.metadata.zdk.Api;
+import io.zerows.core.web.model.zdk.Api;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.Objects;

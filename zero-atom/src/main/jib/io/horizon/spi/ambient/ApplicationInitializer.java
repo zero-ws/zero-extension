@@ -1,6 +1,6 @@
 package io.horizon.spi.ambient;
 
-import io.horizon.spi.extension.Init;
+import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;

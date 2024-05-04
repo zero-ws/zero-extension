@@ -8,7 +8,7 @@ import cn.vertxup.graphic.domain.tables.GCluster;
 import cn.vertxup.graphic.domain.tables.GEdge;
 import cn.vertxup.graphic.domain.tables.GGraphic;
 import cn.vertxup.graphic.domain.tables.GNode;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

@@ -7,6 +7,7 @@ import io.vertx.mod.battery.atom.PowerApp;
 import io.vertx.mod.battery.uca.dock.Ark;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
 
 import java.util.Objects;
 

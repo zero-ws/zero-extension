@@ -4,11 +4,12 @@ import cn.vertxup.tpl.domain.tables.daos.TplMessageDao;
 import cn.vertxup.tpl.domain.tables.pojos.TplMessage;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.em.EmMessage;
+import io.zerows.extension.runtime.skeleton.eon.em.EmMessage;
 import io.vertx.mod.tpl.refine.Tl;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Transit;
 
 import java.util.Objects;
 
