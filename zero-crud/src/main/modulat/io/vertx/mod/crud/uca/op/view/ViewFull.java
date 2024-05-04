@@ -1,6 +1,6 @@
 package io.vertx.mod.crud.uca.op.view;
 
-import io.horizon.spi.ui.Apeak;
+import io.zerows.extension.runtime.osgi.spi.ui.Apeak;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

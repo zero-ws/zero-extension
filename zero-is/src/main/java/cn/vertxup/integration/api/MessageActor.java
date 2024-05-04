@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.mod.is.cv.Addr;
-import io.vertx.mod.ke.cv.em.EmMessage;
+import io.zerows.extension.runtime.eon.em.EmMessage;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;

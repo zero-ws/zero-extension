@@ -5,7 +5,7 @@ package cn.vertxup.psi.domain;
 
 
 import cn.vertxup.psi.domain.tables.*;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

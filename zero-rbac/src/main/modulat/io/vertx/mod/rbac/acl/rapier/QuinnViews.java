@@ -4,7 +4,7 @@ import cn.vertxup.rbac.domain.tables.daos.SViewDao;
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.em.OwnerType;
+import io.zerows.extension.runtime.eon.em.OwnerType;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;

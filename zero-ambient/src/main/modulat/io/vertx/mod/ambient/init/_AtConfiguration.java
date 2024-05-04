@@ -1,16 +1,16 @@
 package io.vertx.mod.ambient.init;
 
-import io.horizon.spi.extension.Init;
-import io.horizon.spi.extension.Prerequisite;
+import io.zerows.extension.runtime.osgi.spi.extension.Init;
+import io.zerows.extension.runtime.osgi.spi.extension.Prerequisite;
 import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.atom.AtConfig;
 import io.vertx.mod.ambient.cv.AtFolder;
 import io.vertx.mod.ambient.error._500InitSpecificationException;
 import io.vertx.mod.ambient.error._500PrerequisiteSpecException;
-import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.mod.ke.cv.KeMsg;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.eon.KeIpc;
+import io.zerows.extension.runtime.eon.KeMsg;
+import io.zerows.extension.runtime.refine.Ke;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 

@@ -2,7 +2,7 @@ package cn.vertxup.rbac.api;
 
 import cn.vertxup.rbac.service.business.UserStub;
 import cn.vertxup.rbac.service.login.LoginStub;
-import io.horizon.spi.feature.Trash;
+import io.zerows.extension.runtime.osgi.spi.feature.Trash;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;

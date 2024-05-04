@@ -1,6 +1,6 @@
 package io.vertx.mod.workflow.uca.modeling;
 
-import io.horizon.spi.modeler.Atom;
+import io.zerows.extension.runtime.osgi.spi.modeler.Atom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

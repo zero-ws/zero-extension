@@ -1,8 +1,8 @@
 package io.horizon.spi;
 
 import cn.vertxup.ui.service.column.UiValve;
-import io.horizon.spi.ui.Anchoret;
-import io.horizon.spi.ui.Apeak;
+import io.zerows.extension.runtime.osgi.spi.ui.Anchoret;
+import io.zerows.extension.runtime.osgi.spi.ui.Apeak;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

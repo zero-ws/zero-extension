@@ -3,7 +3,7 @@ package io.vertx.mod.rbac.init;
 import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.refine.Ke;
 import io.vertx.mod.rbac.atom.ScConfig;
 
 import static io.vertx.mod.rbac.refine.Sc.LOG;

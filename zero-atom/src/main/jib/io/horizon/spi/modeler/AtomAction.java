@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.atom.refine.Ao;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.osgi.spi.modeler.Atom;
 
 import java.util.Objects;
 import java.util.Set;

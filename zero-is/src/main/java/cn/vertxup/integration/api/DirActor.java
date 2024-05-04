@@ -4,7 +4,7 @@ import cn.vertxup.integration.service.DirStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.is.cv.Addr;
-import io.vertx.mod.ke.error._400FileNameInValidException;
+import io.zerows.extension.runtime.exception._400FileNameInValidException;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;

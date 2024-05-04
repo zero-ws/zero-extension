@@ -1,7 +1,7 @@
 package io.vertx.mod.workflow.plugin.activity;
 
 import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.spi.feature.Valve;
+import io.zerows.extension.runtime.osgi.spi.feature.Valve;
 import io.horizon.uca.aop.After;
 import io.horizon.uca.aop.Around;
 import io.horizon.uca.qr.syntax.Ir;

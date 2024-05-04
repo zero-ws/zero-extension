@@ -9,6 +9,7 @@ import io.vertx.mod.ambient.cv.AtMsg;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.osgi.spi.extension.Init;
 
 import java.util.Objects;
 import java.util.UUID;

@@ -2,7 +2,7 @@ package io.horizon.spi.feature;
 
 import cn.vertxup.ambient.domain.tables.daos.XCategoryDao;
 import cn.vertxup.ambient.domain.tables.pojos.XCategory;
-import io.horizon.spi.phantom.AbstractArbor;
+import io.zerows.extension.runtime.osgi.spi.phantom.AbstractArbor;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

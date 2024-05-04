@@ -1,7 +1,7 @@
 package io.vertx.mod.crud.uca.op.view;
 
-import io.horizon.spi.ui.ApeakMy;
-import io.horizon.spi.web.Seeker;
+import io.zerows.extension.runtime.osgi.spi.ui.ApeakMy;
+import io.zerows.extension.runtime.osgi.spi.web.Seeker;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

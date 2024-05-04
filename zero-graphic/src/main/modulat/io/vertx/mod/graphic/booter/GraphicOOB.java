@@ -1,6 +1,6 @@
 package io.vertx.mod.graphic.booter;
 
-import io.vertx.mod.ke.cv.KeIpc;
+import io.zerows.extension.runtime.eon.KeIpc;
 import io.zerows.core.web.model.extension.AbstractBoot;
 
 /**

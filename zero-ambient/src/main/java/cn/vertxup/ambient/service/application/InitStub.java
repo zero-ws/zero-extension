@@ -1,7 +1,7 @@
 package cn.vertxup.ambient.service.application;
 
-import io.horizon.spi.extension.Init;
-import io.horizon.spi.extension.Prerequisite;
+import io.zerows.extension.runtime.osgi.spi.extension.Init;
+import io.zerows.extension.runtime.osgi.spi.extension.Prerequisite;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 

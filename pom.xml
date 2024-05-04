@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
     <name>Zero.Plugins.Modules.POM.${zero.version}</name>
     <modules>
+        <module>Zero.Extension.Module.Runtime</module>                <!-- Kernel Engine -->
         <module>zero-crud</module>              <!-- CRUD -->
-        <module>zero-ke</module>                <!-- Kernel Engine -->
 
 
         <!-- 系统配置模块 -->

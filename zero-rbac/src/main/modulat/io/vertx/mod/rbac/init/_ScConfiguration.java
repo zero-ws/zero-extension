@@ -2,9 +2,9 @@ package io.vertx.mod.rbac.init;
 
 import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.KeIpc;
-import io.vertx.mod.ke.cv.KeMsg;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.eon.KeIpc;
+import io.zerows.extension.runtime.eon.KeMsg;
+import io.zerows.extension.runtime.refine.Ke;
 import io.vertx.mod.rbac.atom.ScConfig;
 import io.vertx.mod.rbac.cv.ScFolder;
 import io.vertx.up.util.Ut;

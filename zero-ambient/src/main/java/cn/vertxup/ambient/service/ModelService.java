@@ -1,7 +1,7 @@
 package cn.vertxup.ambient.service;
 
 import cn.vertxup.ambient.domain.tables.daos.XModuleDao;
-import io.horizon.spi.environment.Modeling;
+import io.zerows.extension.runtime.osgi.spi.environment.Modeling;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

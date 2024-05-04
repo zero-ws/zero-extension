@@ -1,7 +1,7 @@
 package cn.vertxup.doc.api;
 
-import io.horizon.spi.environment.Permit;
-import io.horizon.spi.feature.Attachment;
+import io.zerows.extension.runtime.osgi.spi.environment.Permit;
+import io.zerows.extension.runtime.osgi.spi.feature.Attachment;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonObject;

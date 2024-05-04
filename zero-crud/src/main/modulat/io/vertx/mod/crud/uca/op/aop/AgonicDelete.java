@@ -1,6 +1,6 @@
 package io.vertx.mod.crud.uca.op.aop;
 
-import io.horizon.spi.feature.Trash;
+import io.zerows.extension.runtime.osgi.spi.feature.Trash;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

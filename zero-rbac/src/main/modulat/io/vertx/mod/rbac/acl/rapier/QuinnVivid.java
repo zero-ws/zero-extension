@@ -5,7 +5,7 @@ import cn.vertxup.rbac.domain.tables.pojos.SView;
 import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.em.OwnerType;
+import io.zerows.extension.runtime.eon.em.OwnerType;
 import io.vertx.mod.rbac.atom.ScOwner;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;

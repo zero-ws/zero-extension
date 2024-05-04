@@ -13,6 +13,7 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.osgi.spi.extension.Init;
 
 import java.util.List;
 

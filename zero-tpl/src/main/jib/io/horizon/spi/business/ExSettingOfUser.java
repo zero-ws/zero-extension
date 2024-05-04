@@ -3,9 +3,10 @@ package io.horizon.spi.business;
 import cn.vertxup.tpl.domain.tables.daos.MyNotifyDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.em.OwnerType;
+import io.zerows.extension.runtime.eon.em.OwnerType;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.osgi.spi.business.ExSetting;
 
 /**
  * @author lang : 2024-04-09

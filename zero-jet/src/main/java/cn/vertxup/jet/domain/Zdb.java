@@ -7,7 +7,7 @@ package cn.vertxup.jet.domain;
 import cn.vertxup.jet.domain.tables.IApi;
 import cn.vertxup.jet.domain.tables.IJob;
 import cn.vertxup.jet.domain.tables.IService;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

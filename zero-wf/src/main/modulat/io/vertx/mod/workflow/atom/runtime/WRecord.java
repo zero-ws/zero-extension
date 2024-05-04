@@ -7,7 +7,7 @@ import cn.vertxup.workflow.domain.tables.pojos.WTicket;
 import cn.vertxup.workflow.domain.tables.pojos.WTodo;
 import io.horizon.eon.VValue;
 import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.spi.business.ExActivity;
+import io.zerows.extension.runtime.osgi.spi.business.ExActivity;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

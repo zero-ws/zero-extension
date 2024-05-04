@@ -2,13 +2,13 @@ package cn.vertxup.erp.service;
 
 import cn.vertxup.erp.domain.tables.daos.EEmployeeDao;
 import cn.vertxup.erp.domain.tables.pojos.EEmployee;
-import io.horizon.spi.business.ExUser;
-import io.horizon.spi.feature.Trash;
+import io.zerows.extension.runtime.osgi.spi.business.ExUser;
+import io.zerows.extension.runtime.osgi.spi.feature.Trash;
 import io.horizon.spi.modeler.Indent;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.ke.cv.em.BizInternal;
+import io.zerows.extension.runtime.eon.em.BizInternal;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;

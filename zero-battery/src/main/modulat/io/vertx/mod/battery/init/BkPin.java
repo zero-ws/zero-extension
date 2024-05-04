@@ -1,7 +1,7 @@
 package io.vertx.mod.battery.init;
 
 import io.horizon.spi.modeler.ExModulat;
-import io.horizon.spi.modeler.Modulat;
+import io.zerows.extension.runtime.osgi.spi.modeler.Modulat;
 import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.app.HRegistry;
 import io.macrocosm.specification.program.HArk;

@@ -1,8 +1,8 @@
 package cn.vertxup.ambient.service.file;
 
-import io.horizon.spi.business.ExIo;
-import io.horizon.spi.business.ExUser;
-import io.horizon.spi.feature.Attachment;
+import io.zerows.extension.runtime.osgi.spi.business.ExIo;
+import io.zerows.extension.runtime.osgi.spi.business.ExUser;
+import io.zerows.extension.runtime.osgi.spi.feature.Attachment;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;

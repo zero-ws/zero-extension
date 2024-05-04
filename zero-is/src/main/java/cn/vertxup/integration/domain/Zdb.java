@@ -8,7 +8,7 @@ import cn.vertxup.integration.domain.tables.IDirectory;
 import cn.vertxup.integration.domain.tables.IIntegration;
 import cn.vertxup.integration.domain.tables.IMessage;
 import cn.vertxup.integration.domain.tables.IPortfolio;
-import io.vertx.mod.ke.refine.Ke;
+import io.zerows.extension.runtime.refine.Ke;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;

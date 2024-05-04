@@ -15,7 +15,12 @@
         <!-- Kern -->
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-ke</artifactId>
+            <artifactId>zero-extension-module-runtime</artifactId>
+        </dependency>
+        <!-- Plugin -->
+        <dependency>
+            <groupId>io.zerows</groupId>
+            <artifactId>zero-core-feature-toolkit-expression</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -24,7 +29,8 @@
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <configuration>
-                    <propertyProviderClass>io.vertx.mod.ke.secure.ZeroLiquibaseEncryption</propertyProviderClass>
+                    <propertyProviderClass>io.zerows.extension.runtime.secure.ZeroLiquibaseEncryption
+                    </propertyProviderClass>
                     <!-- 配置文件路径 -->
                     <propertyFile>plugin/ambient/db.properties</propertyFile>
                     <changeLogFile>plugin/ambient/db.yml</changeLogFile>

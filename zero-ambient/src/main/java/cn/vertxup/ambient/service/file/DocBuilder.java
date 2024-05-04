@@ -1,7 +1,7 @@
 package cn.vertxup.ambient.service.file;
 
 import cn.vertxup.ambient.domain.tables.daos.XCategoryDao;
-import io.horizon.spi.feature.Arbor;
+import io.zerows.extension.runtime.osgi.spi.feature.Arbor;
 import io.horizon.uca.cache.Cc;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
