@@ -1,10 +1,10 @@
 package io.vertx.mod.ambient.uca.darkly;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivityRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.em.TubeType;
 import io.vertx.up.eon.KName;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityRule;
 
 public class TubeApprove extends AbstractTube {
     @Override

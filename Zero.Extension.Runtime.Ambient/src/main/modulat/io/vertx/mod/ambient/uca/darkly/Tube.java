@@ -1,12 +1,12 @@
 package io.vertx.mod.ambient.uca.darkly;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivityRule;
 import io.horizon.exception.web._501NotSupportException;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.em.TubeType;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityRule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

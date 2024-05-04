@@ -1,6 +1,5 @@
 package io.vertx.mod.ambient.aop;
 
-import cn.vertxup.ambient.domain.tables.pojos.XCategory;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.horizon.specification.uca.HTrue;
 import io.horizon.uca.aop.Before;
@@ -10,6 +9,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.uca.validator.TreeChecker;
 import io.vertx.up.fn.Fn;
 import io.zerows.core.web.io.zdk.qbe.HocTrue;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XCategory;
 
 import java.util.Set;
 

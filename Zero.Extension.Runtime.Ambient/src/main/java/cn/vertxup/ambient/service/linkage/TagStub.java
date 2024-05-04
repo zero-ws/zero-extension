@@ -1,8 +1,8 @@
 package cn.vertxup.ambient.service.linkage;
 
-import cn.vertxup.ambient.domain.tables.pojos.RTagObject;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.RTagObject;
 
 import java.util.List;
 

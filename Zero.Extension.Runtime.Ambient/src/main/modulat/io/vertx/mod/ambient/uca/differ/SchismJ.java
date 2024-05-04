@@ -1,10 +1,10 @@
 package io.vertx.mod.ambient.uca.differ;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivity;
-import cn.vertxup.ambient.domain.tables.pojos.XActivityChange;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.refine.At;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
 
 import java.util.List;
 import java.util.Objects;

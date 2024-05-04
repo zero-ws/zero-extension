@@ -1,6 +1,5 @@
 package io.vertx.mod.ambient.uca.darkly;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivityRule;
 import io.horizon.eon.VString;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.vertx.core.Future;
@@ -10,6 +9,7 @@ import io.vertx.mod.ambient.cv.em.TubeType;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityRule;
 
 import java.util.HashSet;
 import java.util.Set;

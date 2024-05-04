@@ -1,6 +1,5 @@
 package io.vertx.mod.ambient.uca.dict;
 
-import cn.vertxup.ambient.domain.tables.daos.XCategoryDao;
 import io.horizon.atom.datamation.KDictSource;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
@@ -9,6 +8,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.ambient.domain.tables.daos.XCategoryDao;
 import io.zerows.feature.web.cache.Rapid;
 
 import java.util.concurrent.ConcurrentMap;

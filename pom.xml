@@ -19,7 +19,7 @@
 
 
         <!-- 系统配置模块 -->
-        <module>zero-ambient</module>           <!-- Environment -->
+        <module>Zero.Extension.Runtime.Ambient</module>           <!-- Environment -->
         <module>zero-is</module>                <!-- Integration Service -->
         <module>zero-graphic</module>           <!-- Graphic -->
         <module>zero-wf</module>                <!-- Workflow -->

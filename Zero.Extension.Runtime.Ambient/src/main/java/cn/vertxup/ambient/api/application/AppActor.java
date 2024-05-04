@@ -1,7 +1,5 @@
 package cn.vertxup.ambient.api.application;
 
-import cn.vertxup.ambient.domain.tables.daos.XNoticeDao;
-import cn.vertxup.ambient.domain.tables.pojos.XNotice;
 import cn.vertxup.ambient.service.application.AppStub;
 import cn.vertxup.ambient.service.application.MenuStub;
 import io.vertx.core.Future;
@@ -11,10 +9,12 @@ import io.vertx.mod.ambient.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.extension.runtime.ambient.domain.tables.daos.XNoticeDao;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XNotice;
 import jakarta.inject.Inject;
 
 import java.time.Instant;

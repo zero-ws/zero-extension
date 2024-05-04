@@ -1,9 +1,9 @@
 package io.vertx.mod.ambient.refine;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivity;
-import cn.vertxup.ambient.domain.tables.pojos.XActivityChange;
-import cn.vertxup.ambient.domain.tables.pojos.XNumber;
-import io.horizon.spi.extension.*;
+import io.horizon.spi.extension.AppInit;
+import io.horizon.spi.extension.DatabaseInit;
+import io.horizon.spi.extension.DatumInit;
+import io.horizon.spi.extension.SourceInit;
 import io.horizon.uca.cache.Cc;
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
@@ -13,6 +13,9 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XNumber;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 
 import java.util.List;

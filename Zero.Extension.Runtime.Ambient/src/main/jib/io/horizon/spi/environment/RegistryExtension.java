@@ -1,7 +1,5 @@
 package io.horizon.spi.environment;
 
-import cn.vertxup.ambient.domain.tables.pojos.XApp;
-import cn.vertxup.ambient.domain.tables.pojos.XSource;
 import io.horizon.exception.web._501NotSupportException;
 import io.horizon.fn.HFn;
 import io.macrocosm.specification.app.HRegistry;
@@ -10,6 +8,8 @@ import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XSource;
 
 import java.util.*;
 

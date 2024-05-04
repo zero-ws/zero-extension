@@ -1,7 +1,5 @@
 package io.vertx.mod.ambient.refine;
 
-import cn.vertxup.ambient.domain.tables.pojos.XActivity;
-import cn.vertxup.ambient.domain.tables.pojos.XActivityChange;
 import io.horizon.eon.em.typed.ChangeFlag;
 import io.horizon.uca.compare.Vs;
 import io.modello.atom.normalize.KMarkAtom;
@@ -11,8 +9,10 @@ import io.modello.specification.atom.HAttribute;
 import io.modello.specification.meta.HMetaField;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mod.ambient.cv.em.ActivityStatus;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.*;
 

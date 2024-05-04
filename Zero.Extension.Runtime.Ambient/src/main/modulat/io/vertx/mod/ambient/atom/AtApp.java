@@ -1,7 +1,5 @@
 package io.vertx.mod.ambient.atom;
 
-import cn.vertxup.ambient.domain.tables.daos.XAppDao;
-import cn.vertxup.ambient.domain.tables.pojos.XApp;
 import io.horizon.uca.cache.Cc;
 import io.vertx.mod.ambient.error._500AmbientErrorException;
 import io.vertx.mod.ambient.error._500ApplicationInitException;
@@ -9,6 +7,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import org.jooq.DSLContext;
 
 @SuppressWarnings("all")

@@ -1,8 +1,8 @@
 package io.vertx.mod.ambient.refine;
 
-import cn.vertxup.ambient.domain.tables.pojos.XNumber;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.ambient.domain.tables.pojos.XNumber;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
