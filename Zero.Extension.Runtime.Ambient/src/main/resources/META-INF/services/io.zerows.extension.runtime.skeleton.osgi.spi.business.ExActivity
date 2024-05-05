@@ -1,1 +1,1 @@
-io.horizon.spi.business.ExActivityTracker
+io.zerows.extension.runtime.ambient.osgi.spi.business.ExActivityTracker
