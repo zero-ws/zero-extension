@@ -35,10 +35,10 @@
 
         <!-- 业务相关模块 -->
         <module>Zero.Extension.Commerce.ERP.DB</module>              <!-- Commerce：企业资源管理 -->
-        <module>Zero.Extension.Commerce.Finance.DB</module>                <!-- Finance -->
-        <module>Zero.Extension.Commerce.LBS.DB</module>               <!-- Location Service -->
+        <module>Zero.Extension.Commerce.Finance.DB</module>          <!-- Commerce：Finance -->
+        <module>Zero.Extension.Commerce.LBS.DB</module>              <!-- Commerce：Location Service -->
         <module>Zero.Extension.Commerce.RBAC.DB</module>             <!-- Commerce：RBAC -->
-        <module>Zero.Extension.Commerce.PSI.DB</module>
+        <module>Zero.Extension.Commerce.PSI.DB</module>              <!-- Commerce：PSI -->
         <module>Zero.Extension.Commerce.Documentation.DB</module>    <!-- Commerce：文档管理器/办公协同 -->
     </modules>
     <build>
