@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zero-extension-mbse-modulat</artifactId>
-    <name>Zero.Extension.MBSE.Modulat</name>
+    <name>Zero.Extension.MBSE.Modulat.DB</name>
     <packaging>bundle</packaging>
     <dependencies>
         <!-- Kern -->

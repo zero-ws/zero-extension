@@ -30,16 +30,16 @@
         <module>Zero.Extension.MBSE.Modulat.DB</module>              <!-- 模块化管理 -->
         <module>Zero.Extension.MBSE.Basement.DB</module>             <!-- 动态建模基础 -->
         <module>Zero.Extension.MBSE.Action.DB</module>               <!-- 接口API / 任务Job / 服务组件Service -->
-        <module>Zero.Extension.MBSE.UI.DB</module>                      <!-- 界面管理 -->
+        <module>Zero.Extension.MBSE.UI.DB</module>                   <!-- 界面管理 -->
 
 
         <!-- 业务相关模块 -->
-        <module>zero-erp</module>               <!-- ERP -->
-        <module>zero-fm</module>                <!-- Finance -->
-        <module>zero-lbs</module>               <!-- Location Service -->
-        <module>zero-rbac</module>              <!-- RBAC -->
-        <module>zero-psi</module>
-        <module>zero-doc</module>               <!-- Purchase, Sale, In Management -->
+        <module>Zero.Extension.Commerce.ERP.DB</module>              <!-- Commerce：企业资源管理 -->
+        <module>Zero.Extension.Commerce.Finance.DB</module>                <!-- Finance -->
+        <module>Zero.Extension.Commerce.LBS.DB</module>               <!-- Location Service -->
+        <module>Zero.Extension.Commerce.RBAC.DB</module>             <!-- Commerce：RBAC -->
+        <module>Zero.Extension.Commerce.PSI.DB</module>
+        <module>Zero.Extension.Commerce.Documentation.DB</module>    <!-- Commerce：文档管理器/办公协同 -->
     </modules>
     <build>
         <plugins>
