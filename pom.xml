@@ -19,9 +19,9 @@
 
 
         <!-- 系统核心模块 -->
-        <module>Zero.Extension.Runtime.Ambient</module>           <!-- 配置管理 -->
-        <module>Zero.Extension.Runtime.Integration</module>       <!-- 集成管理 -->
-        <module>zero-graphic</module>           <!-- Graphic -->
+        <module>Zero.Extension.Runtime.Ambient.DB</module>           <!-- 配置管理 -->
+        <module>Zero.Extension.Runtime.Integration.DB</module>       <!-- 集成管理 -->
+        <module>Zero.Extension.Runtime.Graphic.DB</module>           <!-- 图引擎 -->
         <module>zero-wf</module>                <!-- Workflow -->
         <module>zero-tpl</module>               <!-- Template Definition for New System -->
 
