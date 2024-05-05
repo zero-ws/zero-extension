@@ -22,12 +22,12 @@
         <module>Zero.Extension.Runtime.Ambient.DB</module>           <!-- 配置管理 -->
         <module>Zero.Extension.Runtime.Integration.DB</module>       <!-- 集成管理 -->
         <module>Zero.Extension.Runtime.Graphic.DB</module>           <!-- 图引擎 -->
-        <module>zero-wf</module>                <!-- Workflow -->
-        <module>zero-tpl</module>               <!-- Template Definition for New System -->
+        <module>Zero.Extension.Runtime.Workflow.DB</module>          <!-- 工作流引擎 -->
+        <module>Zero.Extension.Runtime.TPL.DB</module>               <!-- 模板引擎 -->
 
 
         <!-- 动态配置模块 -->
-        <module>zero-battery</module>           <!-- Modulat Block Extension -->
+        <module>Zero.Extension.MBSE.Modulat.DB</module>              <!-- 模块化管理 -->
         <module>zero-atom</module>              <!-- Modeling -->
         <module>zero-jet</module>               <!-- Api / Service / Job definition -->
         <module>zero-ui</module>                <!-- Ui Configuration -->

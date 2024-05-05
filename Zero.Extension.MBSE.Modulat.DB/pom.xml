@@ -9,25 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zero-extension-runtime-graphic</artifactId>
-    <name>Zero.Extension.Runtime.Graphic.DB</name>
+    <artifactId>zero-extension-mbse-modulat</artifactId>
+    <name>Zero.Extension.MBSE.Modulat</name>
     <packaging>bundle</packaging>
     <dependencies>
         <!-- Kern -->
         <dependency>
             <groupId>io.zerows</groupId>
             <artifactId>zero-extension-runtime-skeleton</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.zerows</groupId>
-            <artifactId>zero-plugins-store-neo4j</artifactId>
-            <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.zerows</groupId>
-                    <artifactId>zero-core-entry-facade</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
     <build>
@@ -42,7 +31,7 @@
                             <!-- SPI Required -->
                             io.zerows.core.metadata.osgi.spi.*;-split-package:=merge-first,
 
-                            io.zerows.extension.runtime.graphic.*,
+                            io.zerows.extension.mbse.modulat.*,
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional,
@@ -61,8 +50,8 @@
                     <propertyProviderClass>io.zerows.extension.runtime.skeleton.secure.ZeroLiquibaseEncryption
                     </propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/graphic/db.properties</propertyFile>
-                    <changeLogFile>plugin/graphic/db.yml</changeLogFile>
+                    <propertyFile>plugin/battery/db.properties</propertyFile>
+                    <changeLogFile>plugin/battery/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

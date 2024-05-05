@@ -9,8 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zero-extension-runtime-graphic</artifactId>
-    <name>Zero.Extension.Runtime.Graphic.DB</name>
+    <artifactId>zero-extension-runtime-workflow</artifactId>
+
+    <name>Zero.Extension.Runtime.Workflow.DB</name>
     <packaging>bundle</packaging>
     <dependencies>
         <!-- Kern -->
@@ -18,16 +19,39 @@
             <groupId>io.zerows</groupId>
             <artifactId>zero-extension-runtime-skeleton</artifactId>
         </dependency>
+        <!-- Camunda -->
         <dependency>
-            <groupId>io.zerows</groupId>
-            <artifactId>zero-plugins-store-neo4j</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.camunda.bpm</groupId>
+            <artifactId>camunda-engine</artifactId>
             <exclusions>
                 <exclusion>
-                    <groupId>io.zerows</groupId>
-                    <artifactId>zero-core-entry-facade</artifactId>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.camunda.spin</groupId>
+                    <artifactId>camunda-spin-core</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.camunda.spin</groupId>
+            <artifactId>camunda-spin-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+        </dependency>
+        <!--
+        Joda Caused by: java.lang.ClassNotFoundException: org.joda.time.DateTime
+        -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -42,7 +66,7 @@
                             <!-- SPI Required -->
                             io.zerows.core.metadata.osgi.spi.*;-split-package:=merge-first,
 
-                            io.zerows.extension.runtime.graphic.*,
+                            io.zerows.extension.runtime.workflow.*,
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional,
@@ -61,8 +85,8 @@
                     <propertyProviderClass>io.zerows.extension.runtime.skeleton.secure.ZeroLiquibaseEncryption
                     </propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/graphic/db.properties</propertyFile>
-                    <changeLogFile>plugin/graphic/db.yml</changeLogFile>
+                    <propertyFile>plugin/wf/db.properties</propertyFile>
+                    <changeLogFile>plugin/wf/db.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>
