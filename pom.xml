@@ -30,7 +30,7 @@
         <module>Zero.Extension.MBSE.Modulat.DB</module>              <!-- 模块化管理 -->
         <module>Zero.Extension.MBSE.Basement.DB</module>             <!-- 动态建模基础 -->
         <module>Zero.Extension.MBSE.Action.DB</module>               <!-- 接口API / 任务Job / 服务组件Service -->
-        <module>Zero.Extension.MBSE.UI</module>                      <!-- 界面管理 -->
+        <module>Zero.Extension.MBSE.UI.DB</module>                      <!-- 界面管理 -->
 
 
         <!-- 业务相关模块 -->
