@@ -1,11 +1,11 @@
 package cn.vertxup.integration.api;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.mod.is.cv.Addr;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
 import io.zerows.core.web.io.annotations.BodyParam;
+import io.zerows.extension.runtime.integration.eon.Addr;
 import jakarta.ws.rs.*;
 
 /**

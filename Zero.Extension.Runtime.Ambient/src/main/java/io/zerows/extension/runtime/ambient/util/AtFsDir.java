@@ -12,7 +12,7 @@ import io.zerows.core.assembly.uca.di.DiPlugin;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBStub;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBuilder;
 import io.zerows.extension.runtime.ambient.atom.AtConfig;
-import io.zerows.extension.runtime.ambient.plugins.bootstrap.AtPin;
+import io.zerows.extension.runtime.ambient.bootstrap.AtPin;
 import io.zerows.extension.runtime.skeleton.eon.em.BizInternal;
 import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExIo;
 

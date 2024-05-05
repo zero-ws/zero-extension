@@ -10,8 +10,8 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.ambient.atom.AtConfig;
+import io.zerows.extension.runtime.ambient.bootstrap.AtPin;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XCategoryDao;
-import io.zerows.extension.runtime.ambient.plugins.bootstrap.AtPin;
 import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Arbor;
 
 import java.util.ArrayList;

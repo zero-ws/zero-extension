@@ -1,8 +1,8 @@
 package cn.vertxup.integration.service;
 
-import cn.vertxup.integration.domain.tables.pojos.IDirectory;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.extension.runtime.integration.domain.tables.pojos.IDirectory;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

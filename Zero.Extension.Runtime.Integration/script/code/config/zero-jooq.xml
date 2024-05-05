@@ -28,7 +28,7 @@
             <fluentSetters>true</fluentSetters>
         </generate>
         <target>
-            <packageName>cn.vertxup.integration.domain</packageName>
+            <packageName>io.zerows.extension.integration.domain</packageName>
             <directory>../../src/main/java</directory>
         </target>
         <strategy>
