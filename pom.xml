@@ -15,12 +15,12 @@
     <modules>
         <!-- 扩展模块骨架 -->
         <module>Zero.Extension.Runtime.Skeleton</module>
-        <module>zero-crud</module>              <!-- CRUD -->
+        <module>Zero.Extension.Runtime.CRUD</module>              <!-- CRUD 引擎 -->
 
 
-        <!-- 系统配置模块 -->
-        <module>Zero.Extension.Runtime.Ambient</module>           <!-- Environment -->
-        <module>zero-is</module>                <!-- Integration Service -->
+        <!-- 系统核心模块 -->
+        <module>Zero.Extension.Runtime.Ambient</module>           <!-- 配置管理 -->
+        <module>Zero.Extension.Runtime.Integration</module>       <!-- 集成管理 -->
         <module>zero-graphic</module>           <!-- Graphic -->
         <module>zero-wf</module>                <!-- Workflow -->
         <module>zero-tpl</module>               <!-- Template Definition for New System -->
@@ -49,6 +49,12 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
