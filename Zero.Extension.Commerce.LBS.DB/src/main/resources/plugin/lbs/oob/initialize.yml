@@ -1,0 +1,43 @@
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LCountryDao
+  key: key
+  unique:
+    - code
+    - sigma
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LStateDao
+  key: key
+  unique:
+    - code
+    - sigma
+    - countryId
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LCityDao
+  key: key
+  unique:
+    - name
+    - sigma
+    - stateId
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LRegionDao
+  key: key
+  unique:
+    - name
+    - sigma
+    - cityId
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LFloorDao
+  key: key
+  unique:
+    - code
+    - sigma
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LLocationDao
+  key: key
+  unique:
+    - code
+    - sigma
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LTentDao
+  key: key
+  unique:
+    - code
+    - sigma
+- dao: io.zerows.extension.commerce.lbs.daos.tables.domain.LYardDao
+  key: key
+  unique:
+    - code
+    - sigma

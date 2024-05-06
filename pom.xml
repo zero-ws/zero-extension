@@ -11,35 +11,35 @@
 
     <artifactId>zero-plugins-extension</artifactId>
     <packaging>pom</packaging>
-    <name>Zero.Plugins.Modules.POM.${zero.version}</name>
+    <name>Zero.Plugins.Extension.POM.${zero.version}</name>
     <modules>
         <!-- 扩展模块骨架 -->
         <module>Zero.Extension.Runtime.Skeleton</module>
-        <module>zero-crud</module>              <!-- CRUD -->
+        <module>Zero.Extension.Runtime.CRUD</module>                 <!-- CRUD 引擎 -->
 
 
-        <!-- 系统配置模块 -->
-        <module>Zero.Extension.Runtime.Ambient</module>           <!-- Environment -->
-        <module>zero-is</module>                <!-- Integration Service -->
-        <module>zero-graphic</module>           <!-- Graphic -->
-        <module>zero-wf</module>                <!-- Workflow -->
-        <module>zero-tpl</module>               <!-- Template Definition for New System -->
+        <!-- 系统核心模块 -->
+        <module>Zero.Extension.Runtime.Ambient.DB</module>           <!-- 配置管理 -->
+        <module>Zero.Extension.Runtime.Integration.DB</module>       <!-- 集成管理 -->
+        <module>Zero.Extension.Runtime.Graphic.DB</module>           <!-- 图引擎 -->
+        <module>Zero.Extension.Runtime.Workflow.DB</module>          <!-- 工作流引擎 -->
+        <module>Zero.Extension.Runtime.TPL.DB</module>               <!-- 模板引擎 -->
 
 
         <!-- 动态配置模块 -->
-        <module>zero-battery</module>           <!-- Modulat Block Extension -->
-        <module>zero-atom</module>              <!-- Modeling -->
-        <module>zero-jet</module>               <!-- Api / Service / Job definition -->
-        <module>zero-ui</module>                <!-- Ui Configuration -->
+        <module>Zero.Extension.MBSE.Modulat.DB</module>              <!-- 模块化管理 -->
+        <module>Zero.Extension.MBSE.Basement.DB</module>             <!-- 动态建模基础 -->
+        <module>Zero.Extension.MBSE.Action.DB</module>               <!-- 接口API / 任务Job / 服务组件Service -->
+        <module>Zero.Extension.MBSE.UI.DB</module>                   <!-- 界面管理 -->
 
 
         <!-- 业务相关模块 -->
-        <module>zero-erp</module>               <!-- ERP -->
-        <module>zero-fm</module>                <!-- Finance -->
-        <module>zero-lbs</module>               <!-- Location Service -->
-        <module>zero-rbac</module>              <!-- RBAC -->
-        <module>zero-psi</module>
-        <module>zero-doc</module>               <!-- Purchase, Sale, In Management -->
+        <module>Zero.Extension.Commerce.ERP.DB</module>              <!-- Commerce：企业资源管理 -->
+        <module>Zero.Extension.Commerce.Finance.DB</module>          <!-- Commerce：Finance -->
+        <module>Zero.Extension.Commerce.LBS.DB</module>              <!-- Commerce：Location Service -->
+        <module>Zero.Extension.Commerce.RBAC.DB</module>             <!-- Commerce：RBAC -->
+        <module>Zero.Extension.Commerce.PSI.DB</module>              <!-- Commerce：PSI -->
+        <module>Zero.Extension.Commerce.Documentation.DB</module>    <!-- Commerce：文档管理器/办公协同 -->
     </modules>
     <build>
         <plugins>
@@ -49,6 +49,12 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
