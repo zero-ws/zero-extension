@@ -17,9 +17,9 @@ import io.zerows.extension.mbse.basement.atom.element.DataTpl;
  * 2. REFERENCE : The reference attribute that has been mapped to other dependency attributes.
  * 3. EXTERNAL : The reserved attribute that has been mapped to third-part system.
  *
- * ### 2. Generic T
+ * ### 2. Generic Tool
  *
- * The `T` type should be two common object such as:
+ * The `Tool` type should be two common object such as:
  *
  * - {@link io.vertx.core.json.JsonObject} content of Json Record, the core type is {@link HRecord}.
  * - {@link io.vertx.core.json.JsonArray} content of Json Record[], the core type is {@link HRecord}[].

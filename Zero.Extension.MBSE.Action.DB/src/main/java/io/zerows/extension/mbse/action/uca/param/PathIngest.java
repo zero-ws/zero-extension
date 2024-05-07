@@ -36,7 +36,7 @@ class PathIngest implements JtIngest {
          *
          * Additional `key` parameter will be passed `pathParams()` but it's invalid.
          */
-        if (OCacheUri.T.isMatch(requestUri, method)) {
+        if (OCacheUri.Tool.isMatch(requestUri, method)) {
             final Map<String, String> params = context.pathParams();
             params.forEach(data::put);
         }

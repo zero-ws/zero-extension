@@ -15,20 +15,20 @@ import io.vertx.up.fn.Fn;
  */
 public interface Tie<ID, T> {
     /*
-     * JsonObject -> T
+     * JsonObject -> Tool
      */
     default Future<T> identAsync(final JsonObject condition) {
         return Fn.outWeb(_501NotSupportException.class, this.getClass());
     }
 
     /*
-     * ID -> T
+     * ID -> Tool
      * Fetch the record
      */
     Future<T> identAsync(ID key);
 
     /*
-     * ID -> T
+     * ID -> Tool
      * Update the record
      */
     Future<T> identAsync(ID key, JsonObject updatedJ);

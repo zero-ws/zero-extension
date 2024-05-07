@@ -1,0 +1,8 @@
+# --------------------
+# 模块描述符
+# --------------------
+config:
+  # （Metadata）模块元数据基础配置
+  shape:
+    id: zero-extension-runtime-ambient
+    name: "Zero.Extension.Runtime.Ambient"

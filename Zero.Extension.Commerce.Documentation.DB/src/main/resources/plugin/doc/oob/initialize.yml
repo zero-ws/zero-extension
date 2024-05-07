@@ -1,81 +1,81 @@
 # ------------- 文档部分
-- dao: cn.vertxup.doc.domain.tables.daos.DDocDao                # D_DOC 文档主表，文档批量导入用
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DDocDao                # D_DOC 文档主表，文档批量导入用
   key: key
   unique:
     - name
     - sigma
     - version
-- dao: cn.vertxup.doc.domain.tables.daos.DDocSegmentDao         # D_DOC_SEGMENT 文档章节表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DDocSegmentDao         # D_DOC_SEGMENT 文档章节表
   key: key
   unique:
     - code
     - sigma
-- dao: cn.vertxup.doc.domain.tables.daos.DDocClauseDao          # D_DOC_CLAUSE 条款表相关信息
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DDocClauseDao          # D_DOC_CLAUSE 条款表相关信息
   key: key
   unique:
     - code
     - sigma
-- dao: cn.vertxup.doc.domain.tables.daos.DReferDao              # D_REFER 引用表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DReferDao              # D_REFER 引用表
   key: key
   unique:
     - fromId
     - fromType
     - toId
     - toType
-- dao: cn.vertxup.doc.domain.tables.daos.DCommentDao            # D_COMMENT 备注表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DCommentDao            # D_COMMENT 备注表
   key: key
   unique:
     - code
     - sigma
-- dao: cn.vertxup.doc.domain.tables.daos.DResultDao             # D_RESULT 反馈表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DResultDao             # D_RESULT 反馈表
   key: key
   unique:
     - code
     - sigma
 # ------------- 考试部分
-- dao: cn.vertxup.doc.domain.tables.daos.DExamDao               # D_EXAM 考试（活动表）
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DExamDao               # D_EXAM 考试（活动表）
   unique:
     - code
     - sigma
-- dao: cn.vertxup.doc.domain.tables.daos.DPaperDao              # D_PAPER 试卷表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DPaperDao              # D_PAPER 试卷表
   key: key
   unique:
     - name
     - examId
     - version
-- dao: cn.vertxup.doc.domain.tables.daos.DPaperRefDao           # D_PAPER_REF 试卷实例表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DPaperRefDao           # D_PAPER_REF 试卷实例表
   key: key
   unique:
     - paperId
     - questionId
-- dao: cn.vertxup.doc.domain.tables.daos.DReplyDao              # D_REPLY 答题卡
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DReplyDao              # D_REPLY 答题卡
   key: key
   unique:
     - code
     - sigma
-- dao: cn.vertxup.doc.domain.tables.daos.DReplyItemDao          # D_REPLY_ITEM 答题项
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DReplyItemDao          # D_REPLY_ITEM 答题项
   key: key
   unique:
     - replyId
     - questionCode
 # ------------- 题库部分
-- dao: cn.vertxup.doc.domain.tables.daos.DQstoreDao             # D_QSTORE 题库
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DQstoreDao             # D_QSTORE 题库
   key: key
   unique:
     - name
     - sigma
     - version
-- dao: cn.vertxup.doc.domain.tables.daos.DQuestionDao           # D_QUESTION 题目表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DQuestionDao           # D_QUESTION 题目表
   key: key
   unique:
     - name
     - storeId
-- dao: cn.vertxup.doc.domain.tables.daos.DQanswerDao             # D_QANSWER 答题项表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DQanswerDao             # D_QANSWER 答题项表
   key: key
   unique:
     - name
     - questionId
-- dao: cn.vertxup.doc.domain.tables.daos.DQruleDao               # D_QRULE 逻辑规则表
+- dao: io.zerows.extension.commerce.documentation.domain.tables.daos.DQruleDao               # D_QRULE 逻辑规则表
   key: key
   unique:
     - ruleSet

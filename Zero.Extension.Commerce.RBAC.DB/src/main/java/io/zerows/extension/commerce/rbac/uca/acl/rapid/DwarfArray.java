@@ -79,6 +79,6 @@ class DwarfArray implements Dwarf {
         dataReference.put("data", updated);
 
         Dwarf.create().minimize(dataReference, matrix, acl);
-        // T.qr(dataReference, matrix);
+        // Tool.qr(dataReference, matrix);
     }
 }

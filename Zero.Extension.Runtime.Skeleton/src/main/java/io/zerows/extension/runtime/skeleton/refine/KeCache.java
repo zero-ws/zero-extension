@@ -1,6 +1,5 @@
 package io.zerows.extension.runtime.skeleton.refine;
 
-import io.zerows.extension.runtime.skeleton.osgi.spi.web.Orbit;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerRequest;
@@ -11,6 +10,7 @@ import io.zerows.core.domain.atom.commune.Vis;
 import io.zerows.core.metadata.osgi.channel.KIncome;
 import io.zerows.core.metadata.osgi.channel.Pocket;
 import io.zerows.core.web.model.store.OCacheUri;
+import io.zerows.extension.runtime.skeleton.osgi.spi.web.Orbit;
 
 /*
  * Key generated for uniform platform
@@ -46,7 +46,7 @@ class KeCache {
     static String uri(final RoutingContext context) {
         final HttpServerRequest request = context.request();
         final HttpMethod method = request.method();
-        final String requestUri = OCacheUri.T.recovery(request.path(), method);
+        final String requestUri = OCacheUri.Tool.recovery(request.path(), method);
         return uri(requestUri, request.path());
     }
 

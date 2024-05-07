@@ -4,11 +4,11 @@ import io.horizon.eon.em.web.HttpStatusCode;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.crud.util.Ix;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.model.commune.Envelop;
+import io.zerows.extension.runtime.crud.util.Ix;
 
 import java.util.List;
 
@@ -78,7 +78,7 @@ public final class IxReply {
     }
 
     /*
-     *  T -> JsonObject based by module
+     *  Tool -> JsonObject based by module
      */
     public static <T> Future<JsonObject> successJ(final T input, final KModule module) {
         return Ux.future(Ix.serializeJ(input, module));

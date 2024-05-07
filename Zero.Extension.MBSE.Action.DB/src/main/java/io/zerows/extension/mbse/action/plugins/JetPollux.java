@@ -106,7 +106,7 @@ public class JetPollux extends AbstractAres {
     private void resolveUri(final HttpMethod method, final String uri) {
         if (Objects.nonNull(uri) && 0 < uri.indexOf(":")) {
             if (0 < uri.indexOf(":")) {
-                OCacheUri.T.resolve(uri, method);
+                OCacheUri.Tool.resolve(uri, method);
             }
         }
     }

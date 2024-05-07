@@ -9,10 +9,10 @@ import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.specification.KField;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 
 import java.util.List;
 import java.util.function.BiFunction;
@@ -109,7 +109,7 @@ public class Ix {
     /**
      * 顺序执行，函数流，上一个函数的输出是下一个函数的输入
      * <pre><code>
-     *     T    -> executors[0] -> T0
+     *     Tool    -> executors[0] -> T0
      *     T0   -> executors[1] -> T1
      *     T1   -> ...          -> Tn
      * </code></pre>

@@ -1,6 +1,6 @@
 {
     "name": "doc-clause",
-    "daoCls": "cn.vertxup.doc.domain.tables.daos.DDocClauseDao",
+    "daoCls": "io.zerows.extension.commerce.documentation.domain.tables.daos.DDocClauseDao",
     "field": {
         "unique": [
             [

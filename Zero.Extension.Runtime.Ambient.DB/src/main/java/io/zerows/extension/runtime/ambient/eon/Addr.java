@@ -118,7 +118,7 @@ public interface Addr {
         // Linkage fetch Target / Source
         String FETCH_TARGET = Prefix._EVENT + "X-LINKAGE/TARGET/FETCH";
         String FETCH_SOURCE = Prefix._EVENT + "X-LINKAGE/SOURCE/FETCH";
-        String FETCH_ST = Prefix._EVENT + "X-LINKAGE/T-S/FETCH";
+        String FETCH_ST = Prefix._EVENT + "X-LINKAGE/Tool-S/FETCH";
 
         // Linkage fetch by key
         String FETCH_BY_KEY = Prefix._EVENT + "X-LINKAGE/KEY/FETCH";
