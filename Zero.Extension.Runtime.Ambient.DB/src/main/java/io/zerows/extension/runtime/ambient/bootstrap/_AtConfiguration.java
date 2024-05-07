@@ -4,7 +4,6 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.runtime.ambient.atom.AtConfig;
 import io.zerows.extension.runtime.ambient.eon.AtFolder;
 import io.zerows.extension.runtime.ambient.exception._500InitSpecificationException;
 import io.zerows.extension.runtime.ambient.exception._500PrerequisiteSpecException;

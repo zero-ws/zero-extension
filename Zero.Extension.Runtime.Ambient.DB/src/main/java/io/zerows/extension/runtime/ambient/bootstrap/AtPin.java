@@ -11,7 +11,6 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.assembly.uca.di.DiPlugin;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBStub;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBuilder;
-import io.zerows.extension.runtime.ambient.atom.AtConfig;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Prerequisite;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
