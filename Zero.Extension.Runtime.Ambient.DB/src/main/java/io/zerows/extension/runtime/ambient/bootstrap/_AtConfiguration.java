@@ -28,6 +28,8 @@ final class AtConfiguration {
         if (Objects.nonNull(CONFIG)) {
             return;
         }
+
+        // 调用配置注册服务注册新配置，新配置来转换
         final JsonObject configData = Ut.ioJObject(AtFolder.CONFIG_FILE);
         final String module = Ke.getExtension(KeIpc.Module.AMBIENT);
         LOG.Init.info(AtConfiguration.class, KeMsg.Configuration.DATA_J,
