@@ -111,7 +111,7 @@ public class AuditorPin implements PlugAuditor {
             .filter(path::startsWith)
             .count();
         final JsonArray exclude = this.config.getJsonArray("exclude");
-        final String recovery = OCacheUri.T.recovery(request.path(), request.method());
+        final String recovery = OCacheUri.Tool.recovery(request.path(), request.method());
         if (Objects.isNull(exclude) || exclude.isEmpty()) {
             /*
              * Exclude counter = 0, only include valid

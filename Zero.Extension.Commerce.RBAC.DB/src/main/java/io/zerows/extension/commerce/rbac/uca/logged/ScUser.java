@@ -8,8 +8,6 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.extension.commerce.rbac.uca.authorization.Align;
-import io.zerows.extension.commerce.rbac.uca.authorization.ScDetent;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
@@ -17,6 +15,8 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
+import io.zerows.extension.commerce.rbac.uca.authorization.Align;
+import io.zerows.extension.commerce.rbac.uca.authorization.ScDetent;
 import io.zerows.feature.web.cache.Rapid;
 
 import java.util.ArrayList;
@@ -285,7 +285,7 @@ public class ScUser {
 
     private <T> Future<T> set(final String dataKey, final T value) {
         return this.getStored().compose(stored -> {
-            // dataKey = value, the T must be valid for JsonObject
+            // dataKey = value, the Tool must be valid for JsonObject
             stored.put(dataKey, value);
             return this.rapid.write(this.habitus, stored)
                 .compose(nil -> Ux.future(value));

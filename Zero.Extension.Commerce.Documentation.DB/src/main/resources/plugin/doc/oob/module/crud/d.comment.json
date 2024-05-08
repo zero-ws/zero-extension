@@ -1,6 +1,6 @@
 {
     "name": "comment",
-    "daoCls": "cn.vertxup.doc.domain.tables.daos.DCommentDao",
+    "daoCls": "io.zerows.extension.commerce.documentation.domain.tables.daos.DCommentDao",
     "field": {
         "unique": [
             [

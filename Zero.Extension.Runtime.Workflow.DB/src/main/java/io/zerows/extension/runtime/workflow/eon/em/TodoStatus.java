@@ -46,16 +46,16 @@ package io.zerows.extension.runtime.workflow.eon.em;
  *                  Todo        TodoItem         Record        Instance
  *    1.Single       o              x              o              x
  *    2.Workflow     o              o              o              o
- *    3.T/T          o              o              o              x
+ *    3.Tool/Tool          o              o              o              x
  *
  *     - For single todo, here are choice:
  *           Approval / Reject
  *     - For workflow:
  *           1 Instance + n Todo,  1 Todo + n TodoItem
- *     - For T/T:
+ *     - For Tool/Tool:
  *           1 Todo + n TodoItem
  *
- *    T/T Mode:
+ *    Tool/Tool Mode:
  *    1 - Todo
  *    n - [ ]. TodoItem 1
  *      - [ ]. TodoItem 2

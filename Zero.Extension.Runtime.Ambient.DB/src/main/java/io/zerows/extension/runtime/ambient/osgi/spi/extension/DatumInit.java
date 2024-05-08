@@ -8,7 +8,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.typed.UObject;
-import io.zerows.extension.runtime.ambient.atom.AtConfig;
+import io.zerows.extension.runtime.ambient.bootstrap.AtConfig;
 import io.zerows.extension.runtime.ambient.bootstrap.AtPin;
 import io.zerows.extension.runtime.ambient.eon.AtMsg;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;

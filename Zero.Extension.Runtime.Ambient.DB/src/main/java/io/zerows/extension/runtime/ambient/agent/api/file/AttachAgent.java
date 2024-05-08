@@ -7,7 +7,7 @@ import io.vertx.up.annotations.EndPoint;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 import io.zerows.core.web.io.annotations.StreamParam;
-import io.zerows.extension.runtime.ambient.atom.AtConfig;
+import io.zerows.extension.runtime.ambient.bootstrap.AtConfig;
 import io.zerows.extension.runtime.ambient.bootstrap.AtPin;
 import io.zerows.extension.runtime.ambient.eon.Addr;
 import io.zerows.extension.runtime.ambient.eon.AtConstant;

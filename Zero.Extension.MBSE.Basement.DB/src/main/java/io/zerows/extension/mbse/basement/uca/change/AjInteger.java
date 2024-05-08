@@ -27,7 +27,7 @@ final class AjInteger extends AbstractAdjuster {
 
     private Integer parseUnit(final String literal) {
         /*
-         * 去掉 GB, TB, MB, G, T, M 等单位
+         * 去掉 GB, TB, MB, G, Tool, M 等单位
          */
         if (Ut.isNotNil(literal)) {
             final String normalized = literal.replaceAll(

@@ -4,7 +4,6 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.runtime.ambient.atom.AtConfig;
 import io.zerows.extension.runtime.ambient.eon.AtFolder;
 import io.zerows.extension.runtime.ambient.exception._500InitSpecificationException;
 import io.zerows.extension.runtime.ambient.exception._500PrerequisiteSpecException;
@@ -29,6 +28,8 @@ final class AtConfiguration {
         if (Objects.nonNull(CONFIG)) {
             return;
         }
+
+        // 调用配置注册服务注册新配置，新配置来转换
         final JsonObject configData = Ut.ioJObject(AtFolder.CONFIG_FILE);
         final String module = Ke.getExtension(KeIpc.Module.AMBIENT);
         LOG.Init.info(AtConfiguration.class, KeMsg.Configuration.DATA_J,

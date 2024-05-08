@@ -24,6 +24,7 @@ import java.util.List;
  * Tool class available in current service only
  */
 public class At {
+
     private static final Cc<String, Init> CC_INIT = Cc.open();
 
     public static Init initApp() {

@@ -173,7 +173,7 @@ public abstract class AbstractDao implements HDao {
      *     <VALUE>：数据列待插入的数据
      * 异常信息：
      *     如果出现重复记录：
-     *     ERR-100017：cn.vertxup.tp.error._417DataTransactionException
+     *     ERR-100017：_417DataTransactionException
      *         「DAO」数据访问操作遇到了问题，请联系管理员，检查后台数据，错误详情：...
      */
     @Override
@@ -226,7 +226,7 @@ public abstract class AbstractDao implements HDao {
      *     <COLUMN>：表中的数据列
      *     <VALUE>：数据列待插入的数据
      * 异常信息：
-     *     ERR-100017：cn.vertxup.tp.error._417DataTransactionException
+     *     ERR-100017：_417DataTransactionException
      *         「DAO」数据访问操作遇到了问题，请联系管理员，检查后台数据，错误详情：...
      */
 

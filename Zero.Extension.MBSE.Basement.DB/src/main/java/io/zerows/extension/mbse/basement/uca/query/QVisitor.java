@@ -2,9 +2,9 @@ package io.zerows.extension.mbse.basement.uca.query;
 
 import io.horizon.eon.VValue;
 import io.horizon.uca.qr.syntax.*;
-import io.zerows.extension.mbse.basement.uca.jooq.internal.Jq;
-import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
 import io.zerows.core.feature.database.jooq.condition.Clause;
+import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
+import io.zerows.extension.mbse.basement.uca.jooq.internal.Jq;
 import org.jooq.Condition;
 import org.jooq.Field;
 import org.jooq.impl.DSL;
@@ -63,7 +63,7 @@ class QVisitor {
         if (Objects.isNull(column)) {
             /*
              * Fix: java.lang.NullPointerException
-                    at cn.vertxup.tp.modular.query.QVisitor.analyze(QVisitor.java:63)
+                    at QVisitor.analyze(QVisitor.java:63)
              */
             return null;
         } else {

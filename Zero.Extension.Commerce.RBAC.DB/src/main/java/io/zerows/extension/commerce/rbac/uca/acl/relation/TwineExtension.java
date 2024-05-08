@@ -43,7 +43,7 @@ import static io.zerows.extension.commerce.rbac.util.Sc.LOG;
  *     "....",
  *     "category": {
  *          "employee": {
- *               "classDao": "cn.vertxup.erp.domain.tables.daos.EEmployeeDao",
+ *               "classDao": "io.zerows.extension.commerce.erp.domain.tables.daos.EEmployeeDao",
  *               "condition": {
  *                   "workNumber,!n": ""
  *               },
