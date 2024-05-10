@@ -1,6 +1,7 @@
 package io.zerows.core.web.model.uca.boot;
 
-import io.zerows.core.web.model.atom.module.ExtConfiguration;
+import io.zerows.core.feature.web.mbse.atom.io.MDConfiguration;
+import io.zerows.core.feature.web.mbse.uca.normalize.EngageAt;
 import org.junit.Test;
 
 /**
@@ -10,9 +11,10 @@ public class EngageAtTestCase {
 
     @Test
     public void testExtensionAt() {
-        final ExtConfiguration configuration = EngageFactory.create("zero-extension-runtime-ambient");
-        final EngageAt component = EngageFactory.ofComponent(configuration);
+        final MDConfiguration configuration = new MDConfiguration("zero-extension-runtime-ambient");
+        final EngageAt component = EngageAt.of(configuration.id());
         component.initialize(configuration);
+
         System.out.println(configuration.id());
     }
 }
