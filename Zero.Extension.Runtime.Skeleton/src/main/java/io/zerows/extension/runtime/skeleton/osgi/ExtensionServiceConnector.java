@@ -1,9 +1,8 @@
 package io.zerows.extension.runtime.skeleton.osgi;
 
+import io.zerows.core.feature.web.mbse.atom.io.MDConfiguration;
+import io.zerows.core.feature.web.mbse.uca.normalize.EngageAt;
 import io.zerows.core.metadata.zdk.AbstractServiceConnector;
-import io.zerows.core.web.model.atom.module.ExtConfiguration;
-import io.zerows.core.web.model.uca.boot.EngageAt;
-import io.zerows.core.web.model.uca.boot.EngageFactory;
 import org.apache.felix.dm.Component;
 import org.apache.felix.dm.DependencyManager;
 import org.apache.felix.dm.ServiceDependency;
@@ -15,14 +14,14 @@ import java.util.function.Supplier;
  * @author lang : 2024-05-08
  */
 public abstract class ExtensionServiceConnector extends AbstractServiceConnector {
-    protected final ExtConfiguration configuration;
+    protected final MDConfiguration configuration;
 
     protected ExtensionServiceConnector(final Bundle bundle) {
         super(bundle);
-        this.configuration = EngageFactory.create(bundle.getSymbolicName());
-        final EngageAt engageAt = EngageFactory.ofComponent(this.configuration);
+        this.configuration = new MDConfiguration(bundle);
+        final EngageAt engageAt = EngageAt.of(this.configuration.id());
         // 初始化配置
-        engageAt.initialize(this.configuration, bundle);
+        engageAt.initialize(this.configuration);
     }
 
     @Override
