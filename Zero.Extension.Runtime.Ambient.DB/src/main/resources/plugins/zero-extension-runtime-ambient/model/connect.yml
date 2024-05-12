@@ -1,0 +1,39 @@
+- daoCls: X_SOURCE   # X_SOURCE
+  unique:
+    - appId
+- daoCls: X_APP      # X_APP
+  unique:
+    - name
+- daoCls: X_MODULE   # X_MODULE
+  unique:
+    - entry
+    - appId
+- daoCls: X_MENU     # X_MENU
+  unique:
+    - name
+    - appId
+- daoCls: X_CATEGORY # X_CATEGORY
+  unique:
+    - code
+    - type
+    - appId
+- daoCls: X_TABULAR  # X_TABULAR
+  unique:
+    - code
+    - type
+    - appId
+- daoCls: X_NUMBER   # X_NUMBER
+  unique:
+    - code
+    - appId
+- daoCls: X_TAG     # X_TAG
+  unique:
+    - name
+    - appId
+- daoCls: X_ACTIVITY_RULE     # X_ACTIVITY_RULE
+  unique:
+    - key
+- daoCls: X_ATTACHMENT       # X_ATTACHMENT
+  unique:
+    - fileUrl
+    - sigma
