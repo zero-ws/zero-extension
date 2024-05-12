@@ -1,39 +1,56 @@
-- daoCls: X_SOURCE   # X_SOURCE
+- dao: X_TABULAR          # X_TABULAR
   unique:
+    - code
+    - type
     - appId
-- daoCls: X_APP      # X_APP
+- dao: X_ACTIVITY         # X_ACTIVITY
   unique:
-    - name
-- daoCls: X_MODULE   # X_MODULE
+    - key
+- dao: X_MODULE           # X_MODULE
   unique:
     - entry
     - appId
-- daoCls: X_MENU     # X_MENU
-  unique:
-    - name
-    - appId
-- daoCls: X_CATEGORY # X_CATEGORY
+- dao: X_CATEGORY         # X_CATEGORY
   unique:
     - code
     - type
     - appId
-- daoCls: X_TABULAR  # X_TABULAR
+- dao: X_NOTICE           # X_NOTICE
   unique:
-    - code
-    - type
     - appId
-- daoCls: X_NUMBER   # X_NUMBER
-  unique:
     - code
-    - appId
-- daoCls: X_TAG     # X_TAG
+- dao: X_MENU             # X_MENU
   unique:
     - name
     - appId
-- daoCls: X_ACTIVITY_RULE     # X_ACTIVITY_RULE
+- dao: X_LINKAGE          # X_LINKAGE
+  unique:
+    - name
+    - region
+- dao: X_ACTIVITY_CHANGE  # X_ACTIVITY_CHANGE
   unique:
     - key
-- daoCls: X_ATTACHMENT       # X_ATTACHMENT
+- dao: X_NUMBER           # X_NUMBER
+  unique:
+    - code
+    - appId
+- dao: X_TAG              # X_TAG
+  unique:
+    - name
+    - appId
+- dao: X_SOURCE           # X_SOURCE
+  unique:
+    - appId
+- dao: X_LOG              # X_LOG
+  unique:
+    - key
+- dao: X_ATTACHMENT       # X_ATTACHMENT
   unique:
     - fileUrl
     - sigma
+- dao: X_ACTIVITY_RULE    # X_ACTIVITY_RULE
+  unique:
+    - key
+- dao: X_APP              # X_APP
+  unique:
+    - name
