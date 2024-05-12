@@ -1,6 +1,6 @@
 {
     "name": "x-tabular",
-    "daoCls": "cn.vertxup.ambient.domain.tables.daos.XTabularDao",
+    "daoCls": "X_TABULAR",
     "field": {
         "unique": [
             [

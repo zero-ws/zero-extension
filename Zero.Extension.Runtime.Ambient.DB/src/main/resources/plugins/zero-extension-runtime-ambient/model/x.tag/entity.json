@@ -1,6 +1,6 @@
 {
     "name": "x-tag",
-    "daoCls": "cn.vertxup.ambient.domain.tables.daos.XTagDao",
+    "daoCls": "X_TAG",
     "field": {
         "unique": [
             [

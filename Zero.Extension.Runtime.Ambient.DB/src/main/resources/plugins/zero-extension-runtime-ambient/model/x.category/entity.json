@@ -1,6 +1,6 @@
 {
     "name": "x-category",
-    "daoCls": "cn.vertxup.ambient.domain.tables.daos.XCategoryDao",
+    "daoCls": "X_CATEGORY",
     "field": {
         "unique": [
             [
