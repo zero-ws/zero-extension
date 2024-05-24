@@ -4,7 +4,9 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.runtime.ambient.eon.AtFolder;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.extension.HExtension;
+import io.zerows.extension.runtime.ambient.eon.AtConstant;
 import io.zerows.extension.runtime.ambient.exception._500InitSpecificationException;
 import io.zerows.extension.runtime.ambient.exception._500PrerequisiteSpecException;
 import io.zerows.extension.runtime.skeleton.eon.KeIpc;
@@ -30,7 +32,8 @@ final class AtConfiguration {
         }
 
         // 调用配置注册服务注册新配置，新配置来转换
-        final JsonObject configData = Ut.ioJObject(AtFolder.CONFIG_FILE);
+        final MDConfiguration configuration = HExtension.ofConfiguration(AtConstant.BUNDLE_SYMBOLIC_NAME);
+        final JsonObject configData = configuration.inConfiguration();
         final String module = Ke.getExtension(KeIpc.Module.AMBIENT);
         LOG.Init.info(AtConfiguration.class, KeMsg.Configuration.DATA_J,
             module, configData.encode());
