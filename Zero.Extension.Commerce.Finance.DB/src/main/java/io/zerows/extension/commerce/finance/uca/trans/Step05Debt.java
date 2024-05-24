@@ -12,7 +12,7 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementItemDa
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FDebt;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
 
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  *     过程中有可能会跨越多个结算单来执行，所以此处的数据结构是：{@link List} 类型，每个元素
  *     类型是 {@link FSettlement}
  *     应收和退款是后台生成，所以此处必须有一个常来来处理序号定义相关信息，这个常量就是：
- *     {@link FmCv.NUM#DEBT} 和 {@link FmCv.NUM#REFUND}
+ *     {@link FmConstant.NUM#DEBT} 和 {@link FmConstant.NUM#REFUND}
  * </code></pre>
  * 特殊请求格式
  * <pre><code>

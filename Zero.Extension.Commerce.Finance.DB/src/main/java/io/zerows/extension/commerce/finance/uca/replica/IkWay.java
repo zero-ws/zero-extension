@@ -5,7 +5,7 @@ import io.horizon.exception.web._501NotImplementException;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.util.List;
 
@@ -23,15 +23,15 @@ import java.util.List;
  * 账单数据处理，账单的核心属性信息需要在本接口详细说明，最基础的属性如下：
  * <pre><code>
  *     status
- *     - Pending：{@link FmCv.Status#PENDING}
+ *     - Pending：{@link FmConstant.Status#PENDING}
  *       等待处理的账单，即等待结算的账单处理。
- *     - Finished：{@link FmCv.Status#FINISHED}
+ *     - Finished：{@link FmConstant.Status#FINISHED}
  *       已经处理完成的账单，这种账单已经产生了结算单。
- *     - InValid：{@link FmCv.Status#INVALID}
+ *     - InValid：{@link FmConstant.Status#INVALID}
  *       （无效账单）若出现了转账、拆账、冲账，那么原始的账单的状态就是无效。
- *     - Fixed：{@link FmCv.Status#FIXED}
+ *     - Fixed：{@link FmConstant.Status#FIXED}
  *       固定账单，目前表示哑房账的状态（未来可能直接被拿掉）。
- *     - Valid：{@link FmCv.Status#VALID}
+ *     - Valid：{@link FmConstant.Status#VALID}
  *       （有效账单）结算过程中必须是有效账单被提取。
  * </code></pre>
  * <p>

@@ -1,20 +1,20 @@
 package io.zerows.extension.commerce.finance.agent.service.end;
 
-import io.zerows.extension.commerce.finance.domain.tables.daos.*;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.finance.eon.FmCv;
-import io.zerows.extension.commerce.finance.eon.em.EmTran;
-import io.zerows.extension.commerce.finance.uca.replica.IkWay;
-import io.zerows.extension.commerce.finance.uca.trans.Trade;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.finance.atom.TranData;
+import io.zerows.extension.commerce.finance.domain.tables.daos.*;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
+import io.zerows.extension.commerce.finance.eon.em.EmTran;
+import io.zerows.extension.commerce.finance.uca.replica.IkWay;
+import io.zerows.extension.commerce.finance.uca.trans.Trade;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -74,7 +74,7 @@ public class TransService implements TransStub {
         final FTrans trans, final JsonObject data, final JsonObject params) {
         return Trade.step06TO().scatter(params, trans)
             .compose(nil -> {
-                final JsonArray paymentJ = Ut.valueJArray(data, FmCv.ID.PAYMENT);
+                final JsonArray paymentJ = Ut.valueJArray(data, FmConstant.ID.PAYMENT);
                 final List<FTransItem> payments = Ux.fromJson(paymentJ, FTransItem.class);
 
                 IkWay.ofT2TI().transfer(trans, payments);
@@ -165,7 +165,7 @@ public class TransService implements TransStub {
                     .<FTransItem>fetchAsync("transactionId", key);
             })
             .compose(payment -> {
-                response.put(FmCv.ID.PAYMENT, Ux.toJson(payment));  // payment
+                response.put(FmConstant.ID.PAYMENT, Ux.toJson(payment));  // payment
                 return Ux.future(response);
             });
     }

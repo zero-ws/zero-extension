@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.List;
@@ -34,7 +34,7 @@ class BillItemSplit implements IkWay<FBillItem, FBillItem> {
      *     5. relatedId = 原始项（关联）
      * </code></pre>
      * 目前的版本是一分为二，即拆分成两个账单，本身逻辑是可以支持一个分为多个的，取决于
-     * 您目前的序号系统，目前支持：{@link FmCv#SEQ} 中的基础定义
+     * 您目前的序号系统，目前支持：{@link FmConstant#SEQ} 中的基础定义
      * A - G 的编号。
      *
      * @param item  from = 拆之前账单项
@@ -48,14 +48,14 @@ class BillItemSplit implements IkWay<FBillItem, FBillItem> {
         }
         final int size = items.size();
         item.setActive(Boolean.FALSE);          // Old Disabled
-        item.setStatus(FmCv.Status.INVALID);
+        item.setStatus(FmConstant.Status.INVALID);
         for (int idx = 0; idx < size; idx++) {
             final FBillItem split = items.get(idx);
             split.setKey(null);
             split.setBillId(item.getBillId());
-            split.setSerial(item.getSerial() + FmCv.SEQ[idx]);
-            split.setCode(item.getCode() + FmCv.SEQ[idx]);
-            split.setStatus(FmCv.Status.PENDING);
+            split.setSerial(item.getSerial() + FmConstant.SEQ[idx]);
+            split.setCode(item.getCode() + FmConstant.SEQ[idx]);
+            split.setStatus(FmConstant.Status.PENDING);
             split.setRelatedId(item.getKey());
             split.setIncome(item.getIncome());
             // active, sigma

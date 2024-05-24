@@ -1,22 +1,22 @@
 package io.zerows.extension.commerce.finance.agent.service.end;
 
+import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
+import io.vertx.up.eon.KName;
+import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.finance.domain.tables.daos.FDebtDao;
 import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementDao;
 import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementItemDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FDebt;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.auth.User;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.eon.em.EmTran;
-import io.zerows.extension.commerce.finance.util.Fm;
 import io.zerows.extension.commerce.finance.uca.trans.Trade;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.finance.util.Fm;
 import jakarta.inject.Inject;
 
 import java.util.List;
@@ -70,7 +70,7 @@ public class DebtService implements DebtStub {
     @Override
     public Future<JsonObject> fetchDebt(final JsonArray keys) {
         final JsonObject response = new JsonObject();
-        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmCv.ID.DEBT_ID, keys)
+        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmConstant.ID.DEBT_ID, keys)
             .compose(items -> {
                 /* items */
                 response.put(KName.ITEMS, Ux.toJson(items));

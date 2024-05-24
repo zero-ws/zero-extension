@@ -1,10 +1,10 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
+import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBill;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
-import io.vertx.up.util.Ut;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ class Bill2BillItem implements IkWay<FBill, FBillItem> {
         item.setBillId(bill.getKey());
         item.setSerial(bill.getSerial() + "-01");
         item.setCode(bill.getCode() + "-01");
-        item.setStatus(FmCv.Status.PENDING);
+        item.setStatus(FmConstant.Status.PENDING);
         item.setIncome(bill.getIncome());
         // price, quanlity, total
         item.setPrice(item.getAmount());
@@ -84,7 +84,7 @@ class Bill2BillItem implements IkWay<FBill, FBillItem> {
             item.setSerial(bill.getSerial() + "-" + Ut.fromAdjust(number, 2));
             item.setCode(bill.getCode() + "-" + Ut.fromAdjust(number, 2));
             item.setAmountTotal(item.getAmount());
-            item.setStatus(FmCv.Status.PENDING);
+            item.setStatus(FmConstant.Status.PENDING);
             item.setIncome(bill.getIncome());
             // auditor
             Ke.umCreated(item, bill);

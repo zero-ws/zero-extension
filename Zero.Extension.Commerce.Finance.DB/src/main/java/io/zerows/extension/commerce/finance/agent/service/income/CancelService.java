@@ -1,17 +1,17 @@
 package io.zerows.extension.commerce.finance.agent.service.income;
 
-import io.zerows.extension.commerce.finance.domain.tables.daos.FBillItemDao;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.vertx.up.eon.KName;
+import io.vertx.up.unity.Ux;
+import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.extension.commerce.finance.domain.tables.daos.FBillItemDao;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.uca.account.Book;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
 import io.zerows.extension.commerce.finance.uca.replica.IkWay;
-import io.vertx.up.eon.KName;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
-import io.vertx.up.unity.Ux;
 
 /**
  * @author lang : 2024-01-11
@@ -37,7 +37,7 @@ public class CancelService implements CancelStub {
         updated.put(KName.UPDATED_AT, params.getValue(KName.UPDATED_AT));
         updated.put(KName.UPDATED_BY, params.getValue(KName.UPDATED_BY));
         updated.put(KName.ACTIVE, Boolean.TRUE);
-        updated.put(KName.STATUS, FmCv.Status.PENDING);
+        updated.put(KName.STATUS, FmConstant.Status.PENDING);
         return Ux.Jooq.on(FBillItemDao.class).deleteByAsync(condition)
             .compose(nil -> Maker.upBI().buildAsync(updated, key))
             .compose(Ux.Jooq.on(FBillItemDao.class)::updateAsync)

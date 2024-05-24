@@ -1,7 +1,7 @@
 <included>
     <appender name="ERP" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FOLDER}/zero.extension.commerce.erp.log</fileNamePattern>
+            <fileNamePattern>${LOG_FOLDER}/zero-extension-commerce-erp.log</fileNamePattern>
             <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">

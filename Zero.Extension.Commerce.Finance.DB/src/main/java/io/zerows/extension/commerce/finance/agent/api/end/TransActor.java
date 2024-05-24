@@ -1,22 +1,22 @@
 package io.zerows.extension.commerce.finance.agent.api.end;
 
-import io.zerows.extension.commerce.finance.agent.service.end.AdjustStub;
-import io.zerows.extension.commerce.finance.agent.service.end.DebtStub;
-import io.zerows.extension.commerce.finance.agent.service.end.SettleWStub;
-import io.zerows.extension.commerce.finance.agent.service.end.TransStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.extension.commerce.finance.eon.Addr;
-import io.zerows.extension.commerce.finance.eon.FmCv;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.finance.agent.service.end.AdjustStub;
+import io.zerows.extension.commerce.finance.agent.service.end.DebtStub;
+import io.zerows.extension.commerce.finance.agent.service.end.SettleWStub;
+import io.zerows.extension.commerce.finance.agent.service.end.TransStub;
+import io.zerows.extension.commerce.finance.eon.Addr;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 import jakarta.inject.Inject;
 
 /**
@@ -62,7 +62,7 @@ public class TransActor {
 
         // 1. 更新结算单
         return this.settleStub.updateAsync(body, user).compose(settlements -> {
-            final JsonArray payment = Ut.valueJArray(body, FmCv.ID.PAYMENT);
+            final JsonArray payment = Ut.valueJArray(body, FmConstant.ID.PAYMENT);
             if (Ut.isNil(payment)) {
                 // 转应收
                 // 2. 创建新的应收单

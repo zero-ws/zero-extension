@@ -2,7 +2,7 @@ package io.zerows.extension.commerce.finance.uca.replica;
 
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBill;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FPreAuthorize;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.Objects;
@@ -43,7 +43,7 @@ class Bill2PreAuthorize implements IkWay<FBill, FPreAuthorize> {
         authorize.setBillId(bill.getKey());
         authorize.setSerial(bill.getSerial() + "-A");
         authorize.setCode(bill.getCode() + "-A");
-        authorize.setStatus(FmCv.Status.PENDING);
+        authorize.setStatus(FmConstant.Status.PENDING);
         // active, sigma
         Ke.umCreated(authorize, bill);
     }

@@ -7,7 +7,7 @@ import io.zerows.core.domain.atom.specification.KNaming;
 import io.zerows.extension.commerce.finance.atom.TranData;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBook;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FPreAuthorize;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -38,7 +38,7 @@ public final class Fm {
 
     public static BigDecimal calcAmount(final BigDecimal start, final BigDecimal adjust,
                                         final boolean income) {
-        return FmAmount.calcAmount(start, adjust, income, FmCv.Status.VALID);
+        return FmAmount.calcAmount(start, adjust, income, FmConstant.Status.VALID);
     }
 
     public static JsonObject qrBook(final KNaming spec) {

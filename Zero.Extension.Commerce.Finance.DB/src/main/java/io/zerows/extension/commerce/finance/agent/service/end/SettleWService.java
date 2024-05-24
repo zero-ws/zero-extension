@@ -1,19 +1,19 @@
 package io.zerows.extension.commerce.finance.agent.service.end;
 
-import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementItemDao;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
 import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.extension.commerce.finance.eon.FmCv;
-import io.zerows.extension.commerce.finance.eon.em.EmPay;
-import io.zerows.extension.commerce.finance.uca.trans.Trade;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementItemDao;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
+import io.zerows.extension.commerce.finance.eon.em.EmPay;
+import io.zerows.extension.commerce.finance.uca.trans.Trade;
 
 import java.util.HashSet;
 import java.util.List;
@@ -113,7 +113,7 @@ public class SettleWService implements SettleWStub {
 
 
         /* 读取系统中对应的所有结算明细执行计算 */
-        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmCv.ID.SETTLEMENT_ID, settlementIds)
+        return Ux.Jooq.on(FSettlementItemDao.class).<FSettlementItem>fetchInAsync(FmConstant.ID.SETTLEMENT_ID, settlementIds)
             .compose(items -> {
                 /* 输入的结算明细ID合集 */
                 final JsonArray itemsIn = Ut.valueJArray(body, KName.ITEMS);
