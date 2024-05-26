@@ -10,7 +10,7 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FBookDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBill;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBook;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ class BookDatabase implements Book {
                              * It means that this book has been finished
                              * All finished book couldn't do any other things
                              */
-                            updatedBook.setStatus(FmCv.Status.FINISHED);
+                            updatedBook.setStatus(FmConstant.Status.FINISHED);
                             Ke.umCreated(updatedBook, item);
                             bookKeys.remove(updatedBook.getKey());
                         }
@@ -77,7 +77,7 @@ class BookDatabase implements Book {
                 } else {
                     return bookJq.<FBook>fetchInAsync(KName.KEY, Ut.toJArray(bookKeys)).compose(mBooks -> {
                         mBooks.forEach(book -> {
-                            book.setStatus(FmCv.Status.FINISHED);
+                            book.setStatus(FmConstant.Status.FINISHED);
                             Ke.umCreated(book, item);
                             bookList.add(book);
                         });

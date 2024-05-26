@@ -6,7 +6,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KNaming;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBook;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.math.BigDecimal;
@@ -77,7 +77,7 @@ class FmBook {
         // serial, code
         created.setSerial(serial);
         created.setCode(serial);
-        created.setStatus(FmCv.Status.PENDING);
+        created.setStatus(FmConstant.Status.PENDING);
         return created;
     }
 
@@ -102,7 +102,7 @@ class FmBook {
         created.setCode(spec.getCode());
         created.setAmount(BigDecimal.ZERO);
         created.setMajor(Boolean.TRUE);
-        created.setStatus(FmCv.Status.PENDING);
+        created.setStatus(FmConstant.Status.PENDING);
         return created;
     }
 

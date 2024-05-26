@@ -22,34 +22,18 @@ public interface KeIpc {
         String IS = "is";
         // zero-battery
         String BATTERY = "battery";
-        // zero-ambient
-        String AMBIENT = "ambient";
-        // zero-rbac
-        String RBAC = "rbac";
-        // zero-erp
-        String ERP = "erp";
-        // zero-psi
-        String PSI = "psi";
-        // zero-fm
-        String FM = "fm";
         // zero-ui
         String UI = "ui";
-        // zero-jet
-        String JET = "jet";
         // zero-graphic
         String G = "graphic";
         // zero-argument
         String ATOM = "atom";
-        // zero-lbs
-        String LBS = "lbs";
         // zero-wf
         String WF = "wf";
         // zero-tpl
         String TPL = "tpl";
         // zero-crud
         String CRUD = "crud";
-        // zero-doc
-        String DOC = "doc";
     }
 
     /*

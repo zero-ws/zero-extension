@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.util.List;
 
@@ -42,8 +42,8 @@ class BillItemTransfer implements IkWay<List<FBillItem>, FBillItem> {
     public void transfer(final List<FBillItem> from, final List<FBillItem> to) {
         from.forEach(fromItem -> {
             fromItem.setActive(Boolean.FALSE);
-            fromItem.setStatus(FmCv.Status.INVALID);
-            fromItem.setType(FmCv.Type.TRANSFER_FROM);
+            fromItem.setStatus(FmConstant.Status.INVALID);
+            fromItem.setType(FmConstant.Type.TRANSFER_FROM);
             fromItem.setSerial(fromItem.getSerial() + "F");
             fromItem.setCode(fromItem.getCode() + "F");
         });
@@ -52,7 +52,7 @@ class BillItemTransfer implements IkWay<List<FBillItem>, FBillItem> {
             toItem.setBillId(null);
             toItem.setSerial(toItem.getSerial() + "Tool");
             toItem.setCode(toItem.getCode() + "Tool");
-            toItem.setStatus(FmCv.Status.PENDING);
+            toItem.setStatus(FmConstant.Status.PENDING);
             toItem.setActive(Boolean.TRUE);
         });
     }

@@ -1,14 +1,14 @@
 package io.zerows.extension.commerce.finance.uca.enter;
 
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.finance.eon.FmCv;
-import io.zerows.extension.commerce.finance.eon.em.EmTran;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
+import io.zerows.extension.commerce.finance.eon.em.EmTran;
+import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -21,7 +21,7 @@ class MakerTrans implements Maker<String, FTrans> {
     public Future<FTrans> buildFastAsync(final JsonObject data) {
         String indent = Ut.valueString(data, KName.INDENT);
         if (Ut.isNil(indent)) {
-            indent = FmCv.NUM.TRANS;
+            indent = FmConstant.NUM.TRANS;
         }
         return this.buildAsync(data, indent);
     }

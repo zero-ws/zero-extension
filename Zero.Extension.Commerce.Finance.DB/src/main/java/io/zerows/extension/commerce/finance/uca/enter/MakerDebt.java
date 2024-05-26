@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FDebt;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.eon.em.EmDebt;
 import io.zerows.extension.commerce.finance.uca.replica.IkWay;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
@@ -24,7 +24,7 @@ class MakerDebt implements Maker<List<FSettlementItem>, FDebt> {
         IkWay.ofSI2D().transfer(items, debt);
 
         final String type = debt.getType();
-        final String indent = EmDebt.Type.DEBT.name().equals(type) ? FmCv.NUM.DEBT : FmCv.NUM.REFUND;
+        final String indent = EmDebt.Type.DEBT.name().equals(type) ? FmConstant.NUM.DEBT : FmConstant.NUM.REFUND;
 
         return Ke.umIndent(debt, debt.getSigma(), indent, FDebt::setSerial).compose(generated -> {
             if (null == generated.getCode()) {

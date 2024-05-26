@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.Objects;
@@ -39,13 +39,13 @@ class BillItemRevert implements IkWay<FBillItem, FBillItem> {
     public void transfer(final FBillItem item, final FBillItem to) {
         Objects.requireNonNull(item);
         item.setActive(Boolean.FALSE);
-        item.setStatus(FmCv.Status.INVALID);
+        item.setStatus(FmConstant.Status.INVALID);
         // To
         to.setKey(null);
         to.setBillId(item.getBillId());
         to.setSerial(item.getSerial() + "R");
         to.setCode(item.getCode() + "R");
-        to.setStatus(FmCv.Status.INVALID);
+        to.setStatus(FmConstant.Status.INVALID);
         to.setRelatedId(item.getKey());
         to.setIncome(item.getIncome());
         Ke.umCreated(to, item);

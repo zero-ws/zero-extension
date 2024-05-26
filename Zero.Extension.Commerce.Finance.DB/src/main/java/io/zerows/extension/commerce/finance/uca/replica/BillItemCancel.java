@@ -3,7 +3,7 @@ package io.zerows.extension.commerce.finance.uca.replica;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.time.LocalDateTime;
 
@@ -30,8 +30,8 @@ class BillItemCancel implements IkWay<FBillItem, JsonObject> {
     @Override
     public void transfer(final FBillItem item, final JsonObject params) {
         item.setActive(Boolean.FALSE);
-        item.setStatus(FmCv.Status.INVALID);
-        item.setType(FmCv.Type.CANCEL);
+        item.setStatus(FmConstant.Status.INVALID);
+        item.setType(FmConstant.Type.CANCEL);
         item.setUpdatedAt(LocalDateTime.now());
         item.setUpdatedBy(params.getString(KName.UPDATED_BY));
     }

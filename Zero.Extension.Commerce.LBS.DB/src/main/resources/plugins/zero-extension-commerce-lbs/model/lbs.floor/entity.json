@@ -1,0 +1,12 @@
+{
+    "name": "floor",
+    "daoCls": "L_FLOOR",
+    "field": {
+        "unique": [
+            [
+                "code",
+                "sigma"
+            ]
+        ]
+    }
+}

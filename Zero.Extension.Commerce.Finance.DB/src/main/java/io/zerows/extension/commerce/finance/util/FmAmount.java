@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.finance.util;
 
-import io.zerows.extension.commerce.finance.eon.FmCv;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.math.BigDecimal;
 
@@ -11,7 +11,7 @@ class FmAmount {
 
     static BigDecimal calcAmount(final BigDecimal start, final BigDecimal adjust,
                                  final boolean income, final String status) {
-        final boolean statusInValid = FmCv.Status.INVALID.equals(status) || FmCv.Status.FINISHED.equals(status);
+        final boolean statusInValid = FmConstant.Status.INVALID.equals(status) || FmConstant.Status.FINISHED.equals(status);
         if (income) {
             if (statusInValid) {
                 // Move out, Consume, -

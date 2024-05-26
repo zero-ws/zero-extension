@@ -1,11 +1,11 @@
 package io.zerows.extension.commerce.finance.uca.enter;
 
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.zerows.extension.commerce.finance.eon.FmCv;
 import io.vertx.up.unity.Ux;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
+import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,7 +29,7 @@ class MakerBillItem implements Maker<FSettlement, FBillItem> {
     public Future<List<FBillItem>> buildAsync(final JsonArray items, final FSettlement settlement) {
         final List<FBillItem> itemList = Ux.fromJson(items, FBillItem.class);
         itemList.forEach(item -> {
-            item.setStatus(FmCv.Status.FINISHED);
+            item.setStatus(FmConstant.Status.FINISHED);
             item.setUpdatedAt(LocalDateTime.now());
             // 同样方式处理
             item.setUpdatedBy(settlement.getUpdatedBy());

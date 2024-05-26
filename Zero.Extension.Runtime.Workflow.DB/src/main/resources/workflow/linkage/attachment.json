@@ -1,6 +1,6 @@
 {
     "config": {
-        "respect": "io.vertx.mod.workflow.uca.modeling.RespectFile",
+        "respect": "io.zerows.extension.runtime.workflow.uca.modeling.RespectFile",
         "query": {
             "modelId": "w.ticket",
             "modelCategory": "`${flowDefinitionKey}`"
