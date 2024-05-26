@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.crud.plugins.extension;
 
-import io.zerows.extension.runtime.crud.plugins.bootstrap.IxPin;
 import io.zerows.core.web.io.plugins.extension.PlugRegistry;
+import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 
 import java.util.Set;
 import java.util.stream.Collectors;

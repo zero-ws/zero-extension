@@ -10,7 +10,7 @@ import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiLayoutDao;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiPageDao;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiPage;
-import io.zerows.extension.mbse.ui.eon.UiCv;
+import io.zerows.extension.mbse.ui.eon.UiConstant;
 import io.zerows.feature.web.cache.Rapid;
 import jakarta.inject.Inject;
 
@@ -36,7 +36,7 @@ public class PageService implements PageStub {
                 .compose(Fn.ofJObject(KName.Ui.CONFIG));
         if (DevEnv.cacheUi()) {
             // Ui Cache Enabled
-            return Rapid.<String, JsonObject>t(UiCv.POOL_LAYOUT)
+            return Rapid.<String, JsonObject>t(UiConstant.POOL_LAYOUT)
                 .cached(layoutId, () -> executor.apply(layoutId));
         } else {
             // Ui Cache Disabled ( Development Mode )

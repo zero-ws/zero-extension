@@ -9,7 +9,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiView;
-import io.zerows.extension.mbse.ui.eon.UiCv;
+import io.zerows.extension.mbse.ui.eon.UiConstant;
 import io.zerows.feature.web.cache.Rapid;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.function.Supplier;
  */
 public class QBECache {
     public static final Cc<String, HQR> CCT_H_COND = Cc.openThread();
-    private static final Rapid<String, UiView> RAPID = Rapid.t(UiCv.POOL_LIST_QR, 600); // 10 min
+    private static final Rapid<String, UiView> RAPID = Rapid.t(UiConstant.POOL_LIST_QR, 600); // 10 min
 
     public static Future<List<UiView>> cached(final List<UiView> listQr) {
         final List<Future<Boolean>> futures = new ArrayList<>();
