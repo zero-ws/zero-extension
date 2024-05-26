@@ -20,4 +20,7 @@ public interface JtConstant {
     String COMPONENT_INGEST_KEY = "zero.jet.param.ingest";
 
     String DEFAULT_POOL_DATABASE = "OX_MULTI_APP_DATABASE";
+
+
+    String BUNDLE_SYMBOLIC_NAME = "zero-extension-mbse-action";
 }

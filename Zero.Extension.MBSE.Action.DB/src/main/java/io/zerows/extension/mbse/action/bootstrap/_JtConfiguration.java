@@ -11,10 +11,9 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.store.OZeroStore;
 import io.zerows.extension.mbse.action.atom.JtConfig;
+import io.zerows.extension.mbse.action.eon.JtConstant;
 import io.zerows.extension.mbse.action.util.Jt;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,7 +30,7 @@ class JtConfiguration {
     static void registry(final HAmbient ambient) {
         if (Objects.isNull(CONFIG) && OZeroStore.is(YmlCore.router.__KEY)) {
             final JsonObject routerData = OZeroStore.option(YmlCore.router.__KEY);
-            final String module = Ke.getExtension(KeIpc.Module.JET);
+            final String module = JtConstant.BUNDLE_SYMBOLIC_NAME; // Ke.getExtension(KeIpc.Module.JET);
             Jt.LOG.Init.info(JtConfiguration.class, KeMsg.Configuration.DATA_J,
                 module, routerData.encode());
 

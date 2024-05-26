@@ -22,20 +22,12 @@ public interface KeIpc {
         String IS = "is";
         // zero-battery
         String BATTERY = "battery";
-        // zero-rbac
-        String RBAC = "rbac";
-        // zero-psi
-        String PSI = "psi";
         // zero-ui
         String UI = "ui";
-        // zero-jet
-        String JET = "jet";
         // zero-graphic
         String G = "graphic";
         // zero-argument
         String ATOM = "atom";
-        // zero-lbs
-        String LBS = "lbs";
         // zero-wf
         String WF = "wf";
         // zero-tpl
