@@ -12,7 +12,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.integration.domain.tables.daos.IDirectoryDao;
 import io.zerows.extension.runtime.integration.domain.tables.pojos.IDirectory;
-import io.zerows.extension.runtime.integration.eon.IsFolder;
+import io.zerows.extension.runtime.integration.eon.IsConstant;
 import io.zerows.extension.runtime.integration.uca.command.FsDefault;
 import io.zerows.extension.runtime.integration.uca.command.FsReadOnly;
 
@@ -31,14 +31,14 @@ class IsDir {
 
     static Kv<String, String> trash(final String path) {
         Objects.requireNonNull(path);
-        final String trashTo = Ut.ioPath(IsFolder.TRASH_FOLDER, path);
+        final String trashTo = Ut.ioPath(IsConstant.TRASH_FOLDER, path);
         return Kv.create(path, trashTo);
     }
 
     static ConcurrentMap<String, String> trash(final Set<String> pathSet) {
         final ConcurrentMap<String, String> trashMap = new ConcurrentHashMap<>();
         pathSet.forEach(path -> {
-            final String trashTo = Ut.ioPath(IsFolder.TRASH_FOLDER, path);
+            final String trashTo = Ut.ioPath(IsConstant.TRASH_FOLDER, path);
             trashMap.put(path, trashTo);
         });
         return trashMap;
@@ -46,14 +46,14 @@ class IsDir {
 
     static Kv<String, String> rollback(final String path) {
         Objects.requireNonNull(path);
-        final String trashFrom = Ut.ioPath(IsFolder.TRASH_FOLDER, path);
+        final String trashFrom = Ut.ioPath(IsConstant.TRASH_FOLDER, path);
         return Kv.create(trashFrom, path);
     }
 
     static ConcurrentMap<String, String> rollback(final Set<String> pathSet) {
         final ConcurrentMap<String, String> trashMap = new ConcurrentHashMap<>();
         pathSet.forEach(path -> {
-            final String trashFrom = Ut.ioPath(IsFolder.TRASH_FOLDER, path);
+            final String trashFrom = Ut.ioPath(IsConstant.TRASH_FOLDER, path);
             trashMap.put(trashFrom, path);
         });
         return trashMap;

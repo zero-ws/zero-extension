@@ -17,11 +17,6 @@ public interface KeIpc {
 
     /* Module Crud */
     interface Module {
-
-        // zero-is
-        String IS = "is";
-        // zero-graphic
-        String G = "graphic";
         // zero-wf
         String WF = "wf";
         // zero-tpl

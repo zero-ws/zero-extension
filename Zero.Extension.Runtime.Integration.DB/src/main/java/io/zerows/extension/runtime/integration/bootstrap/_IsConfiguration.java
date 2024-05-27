@@ -4,11 +4,11 @@ import io.horizon.runtime.Macrocosm;
 import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.integration.atom.IsConfig;
-import io.zerows.extension.runtime.integration.eon.IsFolder;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.runtime.integration.eon.IsConstant;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.Objects;
 
@@ -24,7 +24,7 @@ final class IsConfiguration {
     static void registry(final HAmbient ambient) {
         initialize();
 
-        final String module = Ke.getExtension(KeIpc.Module.IS);
+        final String module = IsConstant.BUNDLE_SYMBOLIC_NAME;
         LOG.Init.info(IsConfiguration.class, KeMsg.Configuration.DATA_J,
             module, CONFIG_DATA.encode());
 
@@ -33,7 +33,8 @@ final class IsConfiguration {
 
     private static void initialize() {
         if (Objects.isNull(CONFIG)) {
-            final JsonObject configData = Ut.ioJObject(IsFolder.CONFIG_FILE);
+            final MDConfiguration configuration = HExtension.ofConfiguration(IsConstant.BUNDLE_SYMBOLIC_NAME);
+            final JsonObject configData = configuration.inConfiguration();
             CONFIG_DATA.mergeIn(configData, true);
 
             CONFIG = Ut.deserialize(configData, IsConfig.class);
