@@ -15,7 +15,7 @@ import io.zerows.extension.runtime.workflow.atom.EngineOn;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTicket;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTodo;
-import io.zerows.extension.runtime.workflow.eon.WfCv;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
 import io.zerows.extension.runtime.workflow.eon.em.PassWay;
 import io.zerows.extension.runtime.workflow.eon.em.TodoStatus;
 import io.zerows.extension.runtime.workflow.exception._410TaskStateException;
@@ -343,7 +343,7 @@ public class WRecord implements Serializable {
          * 3) Build `modelId` and `modelKey`
          */
         return Ux.channel(Dictionary.class, JsonArray::new,
-                dict -> dict.fetchTree(this.ticket.getSigma(), WfCv.CODE_CATALOG))
+                dict -> dict.fetchTree(this.ticket.getSigma(), WfConstant.CODE_CATALOG))
             .compose(dict -> {
                 final ConcurrentMap<String, String> mapId = new ConcurrentHashMap<>();
                 Ut.itJArray(dict).forEach(record -> {

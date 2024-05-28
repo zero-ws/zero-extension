@@ -4,11 +4,11 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.crud.atom.IxConfig;
-import io.zerows.extension.runtime.crud.eon.IxFolder;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.runtime.crud.eon.IsConstant;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.text.MessageFormat;
 import java.util.HashSet;
@@ -33,8 +33,9 @@ class IxConfiguration {
          * Read definition of security configuration from RBAC default folder
          */
         if (null == CONFIG) {
-            final JsonObject configData = Ut.ioJObject(IxFolder.CONFIG_FILE);
-            final String module = Ke.getExtension(KeIpc.Module.CRUD);
+            final MDConfiguration configuration = HExtension.ofConfiguration(IsConstant.BUNDLE_SYMBOLIC_NAME);
+            final JsonObject configData = configuration.inConfiguration();
+            final String module = IsConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(IxConfiguration.class, KeMsg.Configuration.DATA_J,
                 module, configData.encode());
 

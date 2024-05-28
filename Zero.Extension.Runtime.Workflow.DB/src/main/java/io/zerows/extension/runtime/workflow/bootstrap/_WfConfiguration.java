@@ -10,13 +10,12 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.core.metadata.store.OZeroStore;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaWorkflow;
 import io.zerows.extension.runtime.workflow.domain.tables.daos.WFlowDao;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WFlow;
-import io.zerows.extension.runtime.workflow.eon.WfCv;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
 import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.ProcessEngineConfiguration;
 import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
@@ -55,7 +54,7 @@ final class WfConfiguration {
 
     static Future<Boolean> registry(final HAmbient ambient, final Vertx vertx) {
         final JsonObject configJ = OZeroStore.option(YmlCore.workflow.__KEY);
-        final String module = Ke.getExtension(KeIpc.Module.WF);
+        final String module = WfConstant.BUNDLE_SYMBOLIC_NAME;
         LOG.Init.info(WfConfiguration.class, KeMsg.Configuration.DATA_J,
             module, configJ.encode());
 
@@ -101,7 +100,7 @@ final class WfConfiguration {
     }
 
     static List<String> camundaResources() {
-        final List<String> folders = Ut.ioDirectories(WfCv.FOLDER_ROOT);
+        final List<String> folders = Ut.ioDirectories(WfConstant.FOLDER_ROOT);
         final List<String> results = new ArrayList<>();
         folders.stream()
             /*
@@ -112,10 +111,10 @@ final class WfConfiguration {
              * 先过滤掉 linkage 目录。
              */
             .filter(each -> !each.equals(KName.LINKAGE))
-            .forEach(each -> results.add(WfCv.FOLDER_ROOT + "/" + each));
+            .forEach(each -> results.add(WfConstant.FOLDER_ROOT + "/" + each));
         final Set<String> internal = CONFIG.camundaResource();
         if (!internal.isEmpty()) {
-            internal.forEach(each -> results.add(WfCv.FOLDER_ROOT + "/" + each));
+            internal.forEach(each -> results.add(WfConstant.FOLDER_ROOT + "/" + each));
         }
         return results;
     }

@@ -1,13 +1,13 @@
 package io.zerows.extension.runtime.workflow.uca.camunda;
 
-import io.zerows.extension.runtime.workflow.eon.WfCv;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
 import org.camunda.bpm.engine.FormService;
 import org.camunda.bpm.engine.form.StartFormData;
 import org.camunda.bpm.engine.history.HistoricProcessInstance;
@@ -63,7 +63,7 @@ class IoForm extends AbstractIo<JsonObject> {
     @Override
     public Future<JsonObject> end(final HistoricProcessInstance instance) {
         final ProcessDefinition definition = this.inProcess(instance.getProcessDefinitionId());
-        return Ux.future(this.formInput(WfCv.CODE_HISTORY, definition));
+        return Ux.future(this.formInput(WfConstant.CODE_HISTORY, definition));
     }
 
     /*
@@ -89,7 +89,7 @@ class IoForm extends AbstractIo<JsonObject> {
      */
     private JsonObject formInput(final String code, final ProcessDefinition definition) {
         final String definitionKey = definition.getKey();
-        final String configFile = WfCv.FOLDER_ROOT + "/" + definitionKey + "/" + code + ".json";
+        final String configFile = WfConstant.FOLDER_ROOT + "/" + definitionKey + "/" + code + ".json";
 
         final JsonObject formParameters = new JsonObject();
         if (Ut.ioExist(configFile)) {

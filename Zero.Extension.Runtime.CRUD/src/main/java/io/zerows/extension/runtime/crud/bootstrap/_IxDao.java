@@ -6,6 +6,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.metadata.atom.MultiKeyMap;
 import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.crud.eon.IxFolder;
@@ -14,7 +15,6 @@ import io.zerows.extension.runtime.crud.eon.IxMsg;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import static io.zerows.extension.runtime.crud.util.Ix.LOG;
@@ -26,13 +26,7 @@ import static io.zerows.extension.runtime.crud.util.Ix.LOG;
  * plugin/crud/module/ folder singleton
  */
 class IxDao {
-    /*
-     * Logger for IxDao
-     */
-    private static final ConcurrentMap<String, KModule> CONFIG_MAP =
-        new ConcurrentHashMap<>();
-    private static final ConcurrentMap<String, String> ALIAS_MAP =
-        new ConcurrentHashMap<>();
+    private static final MultiKeyMap<KModule> MODULE_MAP = new MultiKeyMap<>();
 
     static void init() {
         /*
@@ -56,18 +50,12 @@ class IxDao {
          */
         final Set<HExtension> boots = HExtension.initialize();
         boots.forEach(boot -> {
-            /*
-             *  Crud Module
-             */
+            /* Crud Module */
             final ConcurrentMap<String, JsonObject> modules = boot.module();
-            modules.forEach((moduleKey, json) -> {
-                if (!CONFIG_MAP.containsKey(moduleKey) && !ALIAS_MAP.containsKey(moduleKey)) {
-                    Fn.runAt(() -> addModule(json, moduleKey), json);
-                }
-            });
+            modules.forEach((moduleKey, json) -> Fn.runAt(() -> addModule(json, moduleKey), json));
         });
         LOG.Init.info(IxDao.class, "IxDao Finished ! Size = {0}, Uris = {0}",
-            CONFIG_MAP.size(), IxConfiguration.getUris().size());
+            MODULE_MAP.values().size(), IxConfiguration.getUris().size());
     }
 
     private static void addModule(final JsonObject data, final String identifierDefault) {
@@ -77,8 +65,7 @@ class IxDao {
         final String identifier = IxInitializer.configure(config, identifierDefault);
         /* 4. Url & Map */
         IxConfiguration.addUrs(config.getName());
-        CONFIG_MAP.put(config.getName(), config);
-        ALIAS_MAP.put(identifier, config.getName());
+        MODULE_MAP.put(identifier, config, config.getName());
         /* 5. Logger */
         if (DevEnv.devDaoBind()) {
             LOG.Init.info(IxDao.class, IxMsg.INIT_INFO, identifier, config.getName());
@@ -86,17 +73,12 @@ class IxDao {
     }
 
     static KModule get(final String actor) {
-        final KModule config = CONFIG_MAP.get(actor);
+        final KModule config = MODULE_MAP.getOr(actor);
         if (Objects.isNull(config)) {
-            final String name = ALIAS_MAP.get(actor);
-            if (Ut.isNotNil(name)) {
-                LOG.Rest.info(IxDao.class, "Actor: name = `{0}`, identifier = `{1}`", name, actor);
-                return CONFIG_MAP.get(name);
-            } else {
-                return null;
-            }
+            LOG.Rest.warn(IxDao.class, "Actor: identifier = `{}` configuration is missing!", actor);
+            return null;
         } else {
-            LOG.Rest.info(IxDao.class, "Actor: name = `{0}`", actor);
+            LOG.Rest.info(IxDao.class, "Actor: identifier = `{0}`", actor);
             return config;
         }
     }
