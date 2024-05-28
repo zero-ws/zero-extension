@@ -15,27 +15,6 @@ public interface KeIpc {
         String EVENT = "Ἀτλαντὶς νῆσος://Ροή εργασίας/";
     }
 
-    /* Module Crud */
-    interface Module {
-
-        // zero-is
-        String IS = "is";
-        // zero-battery
-        String BATTERY = "battery";
-        // zero-ui
-        String UI = "ui";
-        // zero-graphic
-        String G = "graphic";
-        // zero-argument
-        String ATOM = "atom";
-        // zero-wf
-        String WF = "wf";
-        // zero-tpl
-        String TPL = "tpl";
-        // zero-crud
-        String CRUD = "crud";
-    }
-
     /*
      * Rbac Ipc
      */

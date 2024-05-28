@@ -9,7 +9,7 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.mbse.modulat.domain.tables.daos.BBlockDao;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBlock;
-import io.zerows.extension.mbse.modulat.eon.BkCv;
+import io.zerows.extension.mbse.modulat.eon.BkConstant;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -66,8 +66,8 @@ public class BlockService implements BlockStub {
         return Ux.Jooq.on(BBlockDao.class).fetchJAsync(condition).compose(Fn.ofJArray(
             KName.Flow.UI_STYLE,
             KName.Flow.UI_CONFIG,
-            BkCv.License.LIC_IDENTIFIER,
-            BkCv.License.LIC_MENU
+            BkConstant.License.LIC_IDENTIFIER,
+            BkConstant.License.LIC_MENU
         ));
     }
 }

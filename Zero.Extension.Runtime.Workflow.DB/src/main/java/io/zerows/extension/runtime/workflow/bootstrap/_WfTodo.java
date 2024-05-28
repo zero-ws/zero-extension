@@ -1,6 +1,5 @@
 package io.zerows.extension.runtime.workflow.bootstrap;
 
-import io.zerows.extension.runtime.workflow.eon.WfCv;
 import io.horizon.eon.VPath;
 import io.horizon.eon.VString;
 import io.vertx.core.json.JsonObject;
@@ -27,12 +26,14 @@ final class WfTodo {
      * 遗留方法，用于读取旧版中：plugin/wf/todo/ 目录下的基本待确认相关配置，作为扩展配置对待
      * 待办信息的生成过程中，也可以根据此处的基础分类待办来处理对应内容
      */
+    @Deprecated
     static void initLegacy() {
+        final String FOLDER_TODO = "plugin/wf/todo/";
         if (TODO_DEF.isEmpty()) {
-            final List<String> files = Ut.ioFiles(WfCv.FOLDER_TODO, VPath.SUFFIX.JSON);
+            final List<String> files = Ut.ioFiles(FOLDER_TODO, VPath.SUFFIX.JSON);
             LOG.Init.info(WfTodo.class, "Wf Todo Files: {0}", files.size());
             files.forEach(file -> {
-                final String path = WfCv.FOLDER_TODO + file;
+                final String path = FOLDER_TODO + file;
                 final JsonObject todoDef = Ut.ioJObject(path);
                 final String key = file.replace(VString.DOT + VPath.SUFFIX.JSON, VString.EMPTY);
                 TODO_DEF.put(key, todoDef);

@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.workflow.bootstrap;
 
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
 import io.zerows.core.web.model.extension.AbstractBoot;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class BootWorkflow extends AbstractBoot {
     public BootWorkflow() {
-        super(KeIpc.Module.WF);
+        super(WfConstant.BUNDLE_SYMBOLIC_NAME);
     }
 
     @Override

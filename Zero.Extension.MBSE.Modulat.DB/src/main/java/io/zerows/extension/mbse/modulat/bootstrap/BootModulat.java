@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.modulat.bootstrap;
 
 import io.zerows.core.web.model.extension.AbstractBoot;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.mbse.modulat.eon.BkConstant;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class BootModulat extends AbstractBoot {
     public BootModulat() {
-        super(KeIpc.Module.BATTERY);
+        super(BkConstant.BUNDLE_SYMBOLIC_NAME);
     }
 
     @Override

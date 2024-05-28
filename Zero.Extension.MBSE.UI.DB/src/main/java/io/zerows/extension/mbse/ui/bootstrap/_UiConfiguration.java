@@ -9,12 +9,11 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.mbse.ui.atom.UiConfig;
-import io.zerows.extension.mbse.ui.eon.UiCv;
-import io.zerows.extension.runtime.skeleton.eon.KeIpc;
+import io.zerows.extension.mbse.ui.eon.UiConstant;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 import java.util.List;
 import java.util.Objects;
@@ -49,8 +48,9 @@ class UiConfiguration {
 
     static void registry(final HAmbient ambient) {
         if (null == CONFIG) {
-            final JsonObject uiData = Ut.ioJObject(UiCv.CONFIG_FILE);
-            final String module = Ke.getExtension(KeIpc.Module.UI);
+            final MDConfiguration configuration = HExtension.ofConfiguration(UiConstant.BUNDLE_SYMBOLIC_NAME);
+            final JsonObject uiData = configuration.inConfiguration();
+            final String module = UiConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(LOGGER, KeMsg.Configuration.DATA_J,
                 module, uiData.encode());
 

@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.workflow.plugins;
 
-import io.zerows.extension.runtime.workflow.eon.WfCv;
 import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.impl.history.event.HistoricActivityInstanceEventEntity;
@@ -29,7 +29,7 @@ public class FlowSequenceListener implements JavaDelegate {
          * activityInstanceId
          */
         instance.setActivityId(execution.getCurrentTransitionId());
-        instance.setActivityType(WfCv.BPMN_FLOW_TYPE);
+        instance.setActivityType(WfConstant.BPMN_FLOW_TYPE);
         instance.setActivityName(execution.getCurrentActivityName());
         instance.setActivityInstanceId(execution.getActivityInstanceId());
         instance.setActivityInstanceState(ActivityInstanceState.DEFAULT.getStateCode());

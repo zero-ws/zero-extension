@@ -38,6 +38,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             <!-- SPI Required -->
                             io.zerows.core.metadata.osgi.spi.*;-split-package:=merge-first,
@@ -61,8 +62,8 @@
                     <propertyProviderClass>io.zerows.extension.runtime.skeleton.secure.ZeroLiquibaseEncryption
                     </propertyProviderClass>
                     <!-- 配置文件路径 -->
-                    <propertyFile>plugin/graphic/db.properties</propertyFile>
-                    <changeLogFile>plugin/graphic/db.yml</changeLogFile>
+                    <propertyFile>plugins/${project.artifactId}/database/MYSQL.properties</propertyFile>
+                    <changeLogFile>plugins/${project.artifactId}/database/MYSQL.yml</changeLogFile>
                     <!-- 配置参数 -->
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <outputFileEncoding>UTF-8</outputFileEncoding>

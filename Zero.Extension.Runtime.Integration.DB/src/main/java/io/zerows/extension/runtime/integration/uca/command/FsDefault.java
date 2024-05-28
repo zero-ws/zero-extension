@@ -12,7 +12,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.integration.atom.IsConfig;
 import io.zerows.extension.runtime.integration.bootstrap.IsPin;
 import io.zerows.extension.runtime.integration.domain.tables.pojos.IDirectory;
-import io.zerows.extension.runtime.integration.eon.IsFolder;
+import io.zerows.extension.runtime.integration.eon.IsConstant;
 import io.zerows.extension.runtime.integration.eon.em.EmDirectory;
 
 import java.util.Collection;
@@ -41,7 +41,7 @@ public class FsDefault extends AbstractFs {
     @Override
     public void initTrash() {
         final String root = this.configRoot();
-        final String rootTrash = Ut.ioPath(root, IsFolder.TRASH_FOLDER);
+        final String rootTrash = Ut.ioPath(root, IsConstant.TRASH_FOLDER);
         HFS.common().mkdir(rootTrash);
     }
 

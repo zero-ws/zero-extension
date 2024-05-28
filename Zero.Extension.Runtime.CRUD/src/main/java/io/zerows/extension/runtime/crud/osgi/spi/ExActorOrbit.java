@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.crud.osgi.spi;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.crud.plugins.bootstrap.IxPin;
+import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 import io.zerows.extension.runtime.skeleton.osgi.spi.web.Orbit;
 
 import java.util.Set;

@@ -4,7 +4,10 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.store.OZeroStore;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.mbse.modulat.atom.PowerConfig;
+import io.zerows.extension.mbse.modulat.eon.BkConstant;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -23,10 +26,11 @@ class BkConfiguration {
 
     static void init() {
         if (OZeroStore.is(YmlCore.module.__KEY)) {
-            final JsonObject configuration = OZeroStore.option(YmlCore.module.__KEY);
+            final MDConfiguration configuration = HExtension.ofConfiguration(BkConstant.BUNDLE_SYMBOLIC_NAME);
+            final JsonObject configData = configuration.inConfiguration();
             LOG.Init.info(BkConfiguration.class, "The Modulat Engine will be initialized!! `{0}`",
-                configuration.encode());
-            CONFIG = Ut.deserialize(configuration, PowerConfig.class);
+                configData.encode());
+            CONFIG = Ut.deserialize(configData, PowerConfig.class);
         }
     }
 
