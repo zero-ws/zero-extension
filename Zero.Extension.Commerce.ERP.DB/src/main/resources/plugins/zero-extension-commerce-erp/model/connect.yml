@@ -30,6 +30,10 @@
   unique:
     - code
     - sigma
+- dao: E_PROJECT              # E_PROJECT 项目信息
+  unique:
+    - code
+    - sigma
 # -------------  工作流相关基础模型
 - dao: T_OA_ASSIGNMENT        # T_OA_ASSIGNMENT
   unique:
