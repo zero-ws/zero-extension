@@ -16,7 +16,7 @@
 - dao: F_SUBJECT          # F_SUBJECT
   unique:
     - code
-- dao: F_TERM             # F_TERM
+- dao: F_PAY_TERM         # F_PAY_TERM
   unique:
     - code
 - dao: F_TRANS            # F_TRANS
