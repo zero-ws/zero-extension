@@ -14,6 +14,7 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
@@ -28,7 +29,6 @@ import io.zerows.extension.commerce.rbac.uca.logged.ScUser;
 import io.zerows.extension.runtime.skeleton.exception._403TokenGenerationException;
 import io.zerows.extension.runtime.skeleton.osgi.spi.web.Credential;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
-import io.zerows.feature.web.cache.Rapid;
 
 import java.util.*;
 import java.util.function.Function;

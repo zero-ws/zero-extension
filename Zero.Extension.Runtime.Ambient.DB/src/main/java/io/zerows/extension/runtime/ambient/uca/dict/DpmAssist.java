@@ -9,7 +9,7 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.cloud.zdk.spi.DictionaryPlugin;
-import io.zerows.feature.web.cache.Rapid;
+import io.zerows.core.feature.web.cache.Rapid;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
