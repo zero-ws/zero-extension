@@ -5,8 +5,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.extension.mbse.ui.bootstrap.UiPin;
-import io.zerows.feature.web.cache.Rapid;
 
 import java.util.function.Supplier;
 

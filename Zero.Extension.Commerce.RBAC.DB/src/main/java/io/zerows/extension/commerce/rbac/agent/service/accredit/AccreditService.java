@@ -10,6 +10,7 @@ import io.vertx.ext.auth.User;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.core.security.atom.DataBound;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
@@ -25,7 +26,6 @@ import io.zerows.extension.commerce.rbac.uca.logged.ScResource;
 import io.zerows.extension.commerce.rbac.uca.logged.ScUser;
 import io.zerows.extension.commerce.rbac.util.Sc;
 import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
-import io.zerows.feature.web.cache.Rapid;
 import jakarta.inject.Inject;
 
 import java.util.Objects;

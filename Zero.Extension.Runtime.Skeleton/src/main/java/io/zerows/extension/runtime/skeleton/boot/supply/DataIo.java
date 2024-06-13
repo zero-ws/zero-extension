@@ -30,7 +30,7 @@ class DataIo {
         }
         Ke.LOG.Ke.info(DataIo.class, "After Extension Files = {0}", String.valueOf(files.size()));
         // 并行
-        return files.parallelStream().filter(DataIo::ensure);
+        return files.stream().filter(DataIo::ensure);
     }
 
     private static boolean ensure(final String filename) {
