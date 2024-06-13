@@ -30,7 +30,7 @@ final class AtConfiguration {
         }
 
         // 调用配置注册服务注册新配置，新配置来转换
-        final MDConfiguration configuration = HExtension.ofConfiguration(AtConstant.BUNDLE_SYMBOLIC_NAME);
+        final MDConfiguration configuration = HExtension.getOrCreate(AtConstant.BUNDLE_SYMBOLIC_NAME);
         final JsonObject configData = configuration.inConfiguration();
         final String module = AtConstant.BUNDLE_SYMBOLIC_NAME;
         LOG.Init.info(AtConfiguration.class, KeMsg.Configuration.DATA_J,

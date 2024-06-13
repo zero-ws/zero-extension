@@ -1,6 +1,6 @@
 {
     "name": "model",
-    "daoCls": "cn.vertxup.atom.domain.tables.daos.MModelDao",
+    "daoCls": "M_MODEL",
     "field": {
         "unique": [
             [

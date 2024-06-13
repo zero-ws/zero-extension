@@ -33,7 +33,7 @@ final class IsConfiguration {
 
     private static void initialize() {
         if (Objects.isNull(CONFIG)) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(IsConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(IsConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             CONFIG_DATA.mergeIn(configData, true);
 

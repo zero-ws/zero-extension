@@ -19,7 +19,7 @@ class AoConfiguration {
 
     static void registry(final HAmbient ambient) {
         if (null == CONFIG) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(AoConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(AoConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             final String module = AoConstant.BUNDLE_SYMBOLIC_NAME; // Ke.getExtension(KeIpc.Module.ATOM);
             LOG.Init.info(AoConfiguration.class, KeMsg.Configuration.DATA_J,

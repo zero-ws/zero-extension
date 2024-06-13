@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.ambient.configuration;
 
 import io.zerows.core.web.model.atom.io.MDConfiguration;
-import io.zerows.core.web.model.uca.normalize.EquipAt;
+import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.ambient.eon.AtConstant;
 import org.junit.Test;
 
@@ -12,9 +12,7 @@ public class EquipAtTestCase {
 
     @Test
     public void testExtensionAt() {
-        final MDConfiguration configuration = new MDConfiguration(AtConstant.BUNDLE_SYMBOLIC_NAME);
-        final EquipAt component = EquipAt.of(configuration.id());
-        component.initialize(configuration);
+        final MDConfiguration configuration = HExtension.getOrCreate(AtConstant.BUNDLE_SYMBOLIC_NAME);
 
         System.out.println(configuration.id());
     }

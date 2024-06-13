@@ -33,7 +33,7 @@ class IxConfiguration {
          * Read definition of security configuration from RBAC default folder
          */
         if (null == CONFIG) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(IsConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(IsConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             final String module = IsConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(IxConfiguration.class, KeMsg.Configuration.DATA_J,
