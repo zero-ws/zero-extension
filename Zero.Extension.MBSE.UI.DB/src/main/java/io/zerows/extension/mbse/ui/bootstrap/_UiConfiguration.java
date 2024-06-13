@@ -48,7 +48,7 @@ class UiConfiguration {
 
     static void registry(final HAmbient ambient) {
         if (null == CONFIG) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(UiConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(UiConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject uiData = configuration.inConfiguration();
             final String module = UiConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(LOGGER, KeMsg.Configuration.DATA_J,

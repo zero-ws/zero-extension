@@ -26,7 +26,7 @@ class BkConfiguration {
 
     static void init() {
         if (OZeroStore.is(YmlCore.module.__KEY)) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(BkConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(BkConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             LOG.Init.info(BkConfiguration.class, "The Modulat Engine will be initialized!! `{0}`",
                 configData.encode());

@@ -26,7 +26,7 @@ class ScConfiguration {
          * Read definition of security configuration from RBAC default folder
          */
         if (null == CONFIG) {
-            final MDConfiguration configuration = HExtension.ofConfiguration(ScConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             final String module = ScConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_J,
