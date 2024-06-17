@@ -32,7 +32,7 @@ class IxDao {
      * 入口配置，此配置中会出现重写，但重写过程中不会更新原始信息，只是在原始信息的基础上进行重写，重写一般位于启动模块，
      * 重写规则如下
      * <pre><code>
-     *     entry-configuration -> MODULE_MAP（高优先级）
+     *     zero-launcher-configuration -> MODULE_MAP（高优先级）
      *     其他 MDConfiguration -> MODULE_MAP（低优先级）
      * </code></pre>
      */
