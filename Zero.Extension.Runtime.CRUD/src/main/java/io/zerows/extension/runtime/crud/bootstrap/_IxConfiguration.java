@@ -7,7 +7,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.web.model.atom.io.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.crud.atom.IxConfig;
-import io.zerows.extension.runtime.crud.eon.IsConstant;
+import io.zerows.extension.runtime.crud.eon.IxConstant;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
 
 import java.text.MessageFormat;
@@ -33,9 +33,9 @@ class IxConfiguration {
          * Read definition of security configuration from RBAC default folder
          */
         if (null == CONFIG) {
-            final MDConfiguration configuration = HExtension.getOrCreate(IsConstant.BUNDLE_SYMBOLIC_NAME);
+            final MDConfiguration configuration = HExtension.getOrCreate(IxConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
-            final String module = IsConstant.BUNDLE_SYMBOLIC_NAME;
+            final String module = IxConstant.BUNDLE_SYMBOLIC_NAME;
             LOG.Init.info(IxConfiguration.class, KeMsg.Configuration.DATA_J,
                 module, configData.encode());
 

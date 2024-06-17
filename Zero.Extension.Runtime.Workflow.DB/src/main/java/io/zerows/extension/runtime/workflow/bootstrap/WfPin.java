@@ -9,6 +9,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
 import io.zerows.core.metadata.store.OZeroStore;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.atom.io.MDWorkflow;
+import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WFlow;
 import io.zerows.extension.runtime.workflow.uca.deployment.DeployOn;
@@ -16,6 +19,7 @@ import org.camunda.bpm.engine.*;
 import org.camunda.bpm.engine.impl.history.handler.HistoryEventHandler;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -83,12 +87,17 @@ public class WfPin implements HRegistry.Mod<Vertx> {
 
         return WfConfiguration.registry(KPivot.running(), container).compose(configured -> {
             LOG.Init.info(WfPin.class, "Workflow Engine Start...");
-            final List<String> resources = WfConfiguration.camundaResources();
+
+            final Set<MDWorkflow> workflows = new HashSet<>();
+            HExtension.keySet().forEach(bundleName -> {
+                final MDConfiguration configuration = HExtension.getOrCreate(bundleName);
+                workflows.addAll(configuration.inWorkflow());
+            });
             LOG.Init.info(WfPin.class, "Here are {0} folder that will be waited for deployment...",
-                String.valueOf(resources.size()));
+                String.valueOf(workflows.size()));
             final List<Future<Boolean>> futures = new ArrayList<>();
             // Deployment for .bpmn files
-            resources.forEach(resource -> DeployOn.get(resource).initialize());
+            workflows.forEach(workflow -> DeployOn.get(workflow).initialize());
             return Fn.combineT(futures).compose(nil -> Future.succeededFuture(Boolean.TRUE));
         });
     }

@@ -1,20 +1,20 @@
 package io.zerows.extension.runtime.crud.bootstrap;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.atom.MultiKeyMap;
 import io.zerows.core.metadata.uca.environment.DevEnv;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.atom.io.modeling.MDEntity;
 import io.zerows.core.web.model.extension.HExtension;
-import io.zerows.extension.runtime.crud.eon.IxFolder;
+import io.zerows.extension.runtime.crud.eon.IxConstant;
 import io.zerows.extension.runtime.crud.eon.IxMsg;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import static io.zerows.extension.runtime.crud.util.Ix.LOG;
@@ -28,48 +28,47 @@ import static io.zerows.extension.runtime.crud.util.Ix.LOG;
 class IxDao {
     private static final MultiKeyMap<KModule> MODULE_MAP = new MultiKeyMap<>();
 
-    static void init() {
-        /*
-         * Read all definition files, wall files must be following:
-         * <name>.json
-         * 1）Each file could define only one module, the filename is module name.
-         * 2）Each file must be json format with .json extension, others will be ignored.
-         * */
-        final List<String> files = Ut.ioFiles(IxFolder.MODULE, VPath.SUFFIX.JSON);
-
-        files.forEach(file -> {
-            /* 1.File absolute path under classpath */
-            final String path = IxFolder.MODULE + file;
-            final JsonObject configDao = Ut.ioJObject(path);
-            final String identifierDefault = file.replace(VString.DOT + VPath.SUFFIX.JSON, VString.EMPTY);
-
-            Fn.runAt(() -> addModule(configDao, identifierDefault), configDao);
-        });
+    /**
+     * 入口配置，此配置中会出现重写，但重写过程中不会更新原始信息，只是在原始信息的基础上进行重写，重写一般位于启动模块，
+     * 重写规则如下
+     * <pre><code>
+     *     entry-configuration -> MODULE_MAP（高优先级）
+     *     其他 MDConfiguration -> MODULE_MAP（低优先级）
+     * </code></pre>
+     */
+    static void initWithOverwrite() {
+        final MDConfiguration entryConfiguration = HExtension.getOrCreate(IxConstant.ENTRY_CONFIGURATION);
         /*
          * Boot: Secondary founding to pick up default configuration
          */
         final Set<HExtension> boots = HExtension.initialize();
-        boots.forEach(boot -> {
-            /* Crud Module */
-            final ConcurrentMap<String, JsonObject> modules = boot.module();
-            modules.forEach((moduleKey, json) -> Fn.runAt(() -> addModule(json, moduleKey), json));
-        });
+        final Set<String> logId = new TreeSet<>();
+        final ConcurrentMap<String, String> logMap = new ConcurrentHashMap<>();
+        boots.forEach(boot -> boot.module().forEach((moduleKey, json) -> {
+            // 构造 KModule
+            final MDEntity entity = entryConfiguration.inEntity(moduleKey);
+            final JsonObject moduleData = json.copy();
+            if (Objects.nonNull(entity)) {
+                final JsonObject moduleJ = entity.inModule();
+                moduleData.mergeIn(moduleJ, true);
+            }
+            final KModule config = Ut.deserialize(moduleData, KModule.class);
+
+
+            // 默认值
+            final String identifier = IxInitializer.configure(config, moduleKey);
+            IxConfiguration.addUrs(config.getName());
+            MODULE_MAP.put(identifier, config, config.getName());
+
+
+            if (DevEnv.devDaoBind()) {
+                logId.add(identifier);
+                logMap.put(identifier, Ut.fromMessage(IxMsg.INIT_INFO, identifier, config.getName()));
+            }
+        }));
+        logId.forEach(identifier -> LOG.Init.info(IxDao.class, logMap.get(identifier)));
         LOG.Init.info(IxDao.class, "IxDao Finished ! Size = {0}, Uris = {0}",
             MODULE_MAP.values().size(), IxConfiguration.getUris().size());
-    }
-
-    private static void addModule(final JsonObject data, final String identifierDefault) {
-        /* 2. Deserialize to IxConfig object */
-        final KModule config = Ut.deserialize(data, KModule.class);
-        /* 3. Default Values */
-        final String identifier = IxInitializer.configure(config, identifierDefault);
-        /* 4. Url & Map */
-        IxConfiguration.addUrs(config.getName());
-        MODULE_MAP.put(identifier, config, config.getName());
-        /* 5. Logger */
-        if (DevEnv.devDaoBind()) {
-            LOG.Init.info(IxDao.class, IxMsg.INIT_INFO, identifier, config.getName());
-        }
     }
 
     static KModule get(final String actor) {

@@ -1,13 +1,12 @@
 package io.zerows.extension.runtime.workflow.uca.deployment;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
 import io.vertx.core.Future;
-import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
-import io.zerows.extension.runtime.workflow.plugins.FlowSequenceListener;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDWorkflow;
+import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
+import io.zerows.extension.runtime.workflow.plugins.FlowSequenceListener;
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.engine.repository.Deployment;
 import org.camunda.bpm.engine.repository.DeploymentBuilder;
@@ -18,10 +17,7 @@ import org.camunda.bpm.model.bpmn.instance.SequenceFlow;
 import org.camunda.bpm.model.bpmn.instance.camunda.CamundaExecutionListener;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static io.zerows.extension.runtime.workflow.util.Wf.LOG;
 
@@ -35,26 +31,21 @@ class DeployBpmnService implements DeployOn {
     private final transient DeployOn formStub;
     private transient String tenantId;
 
-    DeployBpmnService(final String workflow) {
+    DeployBpmnService(final MDWorkflow workflow) {
         // DeploymentBuilder create
         final RepositoryService repository = WfPin.camundaRepository();
         this.builder = repository.createDeployment();
         // Set Deployment Name
-        this.builder.name(workflow);
+        this.builder.name(workflow.name());
         this.builder.source(KWeb.ARGS.V_AUDITOR);
         // Avoid duplicated deployment when container started.
         this.builder.enableDuplicateFiltering(Boolean.TRUE);
-        final List<String> files = Ut.ioFiles(workflow);
-        LOG.Deploy.info(this.getClass(), "Load BPMN file for `{0}`", workflow);
-        final String bpmnFile = files.stream()
-            .filter(item -> item.endsWith(VString.DOT + VPath.SUFFIX.BPMN))
-            .findAny().orElse(null);
-        Objects.requireNonNull(bpmnFile);
 
+        final String bpmnFile = workflow.bpmnEntry();
+        LOG.Deploy.info(this.getClass(), "Load BPMN file for `{}`, bpmn file = `{}`",
+            workflow.name(), bpmnFile);
         // BPMN Model Instance
-        final String modelFile = workflow + "/" + bpmnFile;
-        LOG.Deploy.info(this.getClass(), "Load BPMN model from `{0}`", modelFile);
-        final BpmnModelInstance instance = Bpmn.readModelFromStream(Ut.ioStream(modelFile));
+        final BpmnModelInstance instance = Bpmn.readModelFromStream(Ut.ioStream(bpmnFile));
         Objects.requireNonNull(instance);
 
         // Flow Processing for activity log
@@ -62,10 +53,7 @@ class DeployBpmnService implements DeployOn {
         this.builder.addModelInstance(bpmnFile, instance);
 
         // DeployStub ( Form Service )
-        final Set<String> forms = files.stream()
-            .filter(item -> item.endsWith(VString.DOT + VPath.SUFFIX.BPMN_FORM))
-            .collect(Collectors.toSet());
-        this.formStub = new DeployFormService(workflow, this.builder).forms(forms);
+        this.formStub = new DeployFormService(workflow, this.builder);
     }
 
     /*

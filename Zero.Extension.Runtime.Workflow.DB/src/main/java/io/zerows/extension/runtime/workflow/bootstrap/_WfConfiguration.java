@@ -4,7 +4,6 @@ import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
@@ -26,7 +25,10 @@ import org.camunda.bpm.engine.impl.history.handler.HistoryEventHandler;
 import org.camunda.bpm.engine.impl.persistence.StrongUuidGenerator;
 import org.jooq.Configuration;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -97,26 +99,6 @@ final class WfConfiguration {
             ENGINE = configuration.buildProcessEngine();
         }
         return ENGINE;
-    }
-
-    static List<String> camundaResources() {
-        final List<String> folders = Ut.ioDirectories(WfConstant.FOLDER_ROOT);
-        final List<String> results = new ArrayList<>();
-        folders.stream()
-            /*
-             * 发布过程中的空指针问题
-             * 此处如果不做过滤会引起 Camunda 引擎发布流程的异常，会读取到
-             * workflow/linkage 这个资源目录，如果是模块级不会有问题，若自己
-             * 的系统中存在这个目录则会引起问题，所以此处建议内部化，目前解决方案
-             * 先过滤掉 linkage 目录。
-             */
-            .filter(each -> !each.equals(KName.LINKAGE))
-            .forEach(each -> results.add(WfConstant.FOLDER_ROOT + "/" + each));
-        final Set<String> internal = CONFIG.camundaResource();
-        if (!internal.isEmpty()) {
-            internal.forEach(each -> results.add(WfConstant.FOLDER_ROOT + "/" + each));
-        }
-        return results;
     }
 
     static Set<String> camundaBuiltIn() {
