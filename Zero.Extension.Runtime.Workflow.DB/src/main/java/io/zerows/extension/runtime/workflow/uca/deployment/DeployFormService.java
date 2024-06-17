@@ -3,10 +3,10 @@ package io.zerows.extension.runtime.workflow.uca.deployment;
 import io.vertx.core.Future;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDWorkflow;
 import org.camunda.bpm.engine.repository.DeploymentBuilder;
 
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,34 +17,27 @@ import static io.zerows.extension.runtime.workflow.util.Wf.LOG;
  */
 class DeployFormService implements DeployOn {
     private final transient DeploymentBuilder builderRef;
-    private final transient Set<String> formFiles = new HashSet<>();
-    private final transient String workflow;
+    private final transient MDWorkflow workflow;
 
-    DeployFormService(final String workflow, final DeploymentBuilder builder) {
+    DeployFormService(final MDWorkflow workflow, final DeploymentBuilder builder) {
         this.builderRef = builder;
         this.workflow = workflow;
-    }
-
-    public DeployOn forms(final Set<String> formFiles) {
-        if (Objects.nonNull(formFiles)) {
-            this.formFiles.addAll(formFiles);
-        }
-        return this;
     }
 
     @Override
     public Future<Boolean> initialize() {
         Objects.requireNonNull(this.builderRef);
-        if (this.formFiles.isEmpty()) {
+        final Set<String> formFiles = this.workflow.bpmnForm();
+        if (formFiles.isEmpty()) {
             return Ux.futureT();
         }
-        this.formFiles.forEach(formFile -> {
-            final String filePath = this.workflow + "/" + formFile;
-            final InputStream istream = Ut.ioStream(filePath);
+        formFiles.forEach(formFile -> {
+            final InputStream istream = Ut.ioStream(formFile);
             if (Objects.nonNull(istream)) {
-                this.builderRef.addInputStream(formFile, istream);
+                final String filename = formFile.substring(formFile.lastIndexOf("/") + 1);
+                this.builderRef.addInputStream(filename, istream);
             } else {
-                LOG.Deploy.warn(this.getClass(), "Ignored: `{0}` does not exist.", filePath);
+                LOG.Deploy.warn(this.getClass(), "Ignored: `{0}` does not exist.", formFile);
             }
         });
         return Ux.futureT();
