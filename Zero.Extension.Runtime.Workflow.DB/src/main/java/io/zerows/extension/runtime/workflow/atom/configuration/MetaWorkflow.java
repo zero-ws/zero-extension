@@ -1,20 +1,13 @@
 package io.zerows.extension.runtime.workflow.atom.configuration;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.horizon.eon.em.EmDS;
 import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.core.metadata.uca.environment.MatureOn;
 import io.zerows.jackson.databind.JsonArrayDeserializer;
 import io.zerows.jackson.databind.JsonArraySerializer;
-import io.zerows.jackson.databind.JsonObjectDeserializer;
-import io.zerows.jackson.databind.JsonObjectSerializer;
 
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -25,12 +18,6 @@ import java.util.Set;
  */
 public class MetaWorkflow {
     private transient String name;
-    @JsonSerialize(using = JsonObjectSerializer.class)
-    @JsonDeserialize(using = JsonObjectDeserializer.class)
-    private transient JsonObject database;
-
-    @JsonIgnore
-    private transient Database camundaDatabase;
 
     @JsonSerialize(using = JsonArraySerializer.class)
     @JsonDeserialize(using = JsonArrayDeserializer.class)
@@ -46,14 +33,6 @@ public class MetaWorkflow {
 
     public void setName(final String name) {
         this.name = name;
-    }
-
-    public JsonObject getDatabase() {
-        return this.database;
-    }
-
-    public void setDatabase(final JsonObject database) {
-        this.database = database;
     }
 
     public JsonArray getBuiltIn() {
@@ -81,20 +60,13 @@ public class MetaWorkflow {
     }
 
     public Database camundaDatabase() {
-        if (Ut.isNotNil(this.database) && Objects.isNull(this.camundaDatabase)) {
-            // Database Environment Connected
-            final JsonObject databaseJ = MatureOn.envDatabase(this.database, EmDS.Stored.WORKFLOW);
-            this.camundaDatabase = Database.configure(databaseJ);
-        }
-        return this.camundaDatabase;
+        return Database.getCamunda();
     }
 
     @Override
     public String toString() {
         return "MetaWorkflow{" +
             "name='" + this.name + '\'' +
-            ", database=" + this.database +
-            ", camundaDatabase=" + this.camundaDatabase +
             ", builtIn=" + this.builtIn +
             ", resource=" + this.resource +
             '}';

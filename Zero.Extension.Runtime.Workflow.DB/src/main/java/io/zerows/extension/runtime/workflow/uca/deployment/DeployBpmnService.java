@@ -3,11 +3,14 @@ package io.zerows.extension.runtime.workflow.uca.deployment;
 import io.horizon.eon.VPath;
 import io.horizon.eon.VString;
 import io.vertx.core.Future;
-import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
-import io.zerows.extension.runtime.workflow.plugins.FlowSequenceListener;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.web.model.extension.HExtension;
+import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
+import io.zerows.extension.runtime.workflow.eon.WfConstant;
+import io.zerows.extension.runtime.workflow.plugins.FlowSequenceListener;
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.engine.repository.Deployment;
 import org.camunda.bpm.engine.repository.DeploymentBuilder;
@@ -44,6 +47,9 @@ class DeployBpmnService implements DeployOn {
         this.builder.source(KWeb.ARGS.V_AUDITOR);
         // Avoid duplicated deployment when container started.
         this.builder.enableDuplicateFiltering(Boolean.TRUE);
+
+
+        final MDConfiguration configuration = HExtension.getOrCreate(WfConstant.BUNDLE_SYMBOLIC_NAME);
         final List<String> files = Ut.ioFiles(workflow);
         LOG.Deploy.info(this.getClass(), "Load BPMN file for `{0}`", workflow);
         final String bpmnFile = files.stream()

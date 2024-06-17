@@ -34,7 +34,7 @@ class IxDao {
          * <name>.json
          * 1）Each file could define only one module, the filename is module name.
          * 2）Each file must be json format with .json extension, others will be ignored.
-         * */
+         ***/
         final List<String> files = Ut.ioFiles(IxFolder.MODULE, VPath.SUFFIX.JSON);
 
         files.forEach(file -> {
