@@ -2,7 +2,7 @@ package io.zerows.extension.runtime.crud.eon;
 
 public interface IxMsg {
 
-    String INIT_INFO = "--- identifier = {0} and name = {1}";
+    String INIT_INFO = "--- identifier = `{0}` and actor = `{1}`";
 
     String CACHE_KEY_PROJECTION = " Update projection of cacheKey = {0}";
 

@@ -93,7 +93,7 @@ public class IxPin implements HRegistry.Mod<Vertx> {
 
         LOG.Init.info(IxPin.class, "IxDao...");
         /* Dao Init */
-        IxDao.init();
+        IxDao.initWithOverwrite();
 
         LOG.Init.info(IxPin.class, "IxValidator...");
         /* Validator Init */
