@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.model.atom.io.MDWorkflow;
+import io.zerows.core.web.model.atom.io.children.MDWorkflow;
 import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
 import io.zerows.extension.runtime.workflow.plugins.FlowSequenceListener;
 import org.camunda.bpm.engine.RepositoryService;

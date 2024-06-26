@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.workflow.uca.deployment;
 
 import io.vertx.core.Future;
-import io.zerows.core.web.model.atom.io.MDWorkflow;
+import io.zerows.core.web.model.atom.io.children.MDWorkflow;
 import io.zerows.extension.runtime.workflow.eon.WfPool;
 
 /**
