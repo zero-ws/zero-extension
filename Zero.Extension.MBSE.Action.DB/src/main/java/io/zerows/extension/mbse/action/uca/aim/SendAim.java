@@ -1,6 +1,5 @@
 package io.zerows.extension.mbse.action.uca.aim;
 
-import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.DeliveryOptions;
@@ -10,8 +9,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.zerows.core.configuration.atom.NodeNetwork;
 import io.zerows.core.configuration.store.OCacheNode;
-import io.zerows.core.web.container.extension.PluginExtension;
 import io.zerows.core.web.container.uca.mode.Answer;
+import io.zerows.core.web.container.uca.reply.ActionNext;
+import io.zerows.core.web.container.uca.reply.OAmbit;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.mbse.action.atom.JtUri;
 import io.zerows.extension.mbse.action.uca.monitor.JtMonitor;
@@ -40,8 +40,7 @@ public class SendAim implements JtAim {
             /*
              * Mount the same extension / plug-in in web request
              */
-            final Future<Envelop> future = PluginExtension.Flower.next(context, request);
-            future.onComplete(res -> {
+            OAmbit.of(ActionNext.class).then(context, request).onComplete(res -> {
                 if (res.succeeded()) {
                     final Envelop normalized = res.result();
                     final JsonObject data = normalized.data();

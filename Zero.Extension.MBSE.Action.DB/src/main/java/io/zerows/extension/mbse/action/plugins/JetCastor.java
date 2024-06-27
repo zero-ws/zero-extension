@@ -46,7 +46,7 @@ public class JetCastor {
             uriSet.stream().map(JtUri::worker)
                 .filter(worker -> WorkerType.JS != worker.getWorkerType())
                 .map(JtWorker::getWorkerClass)
-                .forEach(Pool.WORKER_SET::add);
+                .forEach(POOL.WORKER_SET::add);
             /*
              * Configuration preparing
              */
@@ -56,7 +56,7 @@ public class JetCastor {
              * Deployment of workers
              */
             final JtConfig configData = JtPin.getConfig();
-            Pool.WORKER_SET.forEach(workerCls -> {
+            POOL.WORKER_SET.forEach(workerCls -> {
                 /*
                  * Generate DeploymentOptions from JtConfig
                  */

@@ -2,13 +2,13 @@ package io.zerows.extension.mbse.action.plugins;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Route;
 import io.vertx.ext.web.Router;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.util.Ut;
 import io.zerows.core.web.container.handler.CommonEndurer;
-import io.zerows.core.web.io.plugins.extension.AbstractAres;
+import io.zerows.core.web.io.uca.routing.OAxis;
+import io.zerows.core.web.model.atom.running.RunServer;
 import io.zerows.core.web.model.store.OCacheUri;
 import io.zerows.extension.mbse.action.atom.JtConfig;
 import io.zerows.extension.mbse.action.atom.JtUri;
@@ -16,6 +16,7 @@ import io.zerows.extension.mbse.action.bootstrap.JtPin;
 import io.zerows.extension.mbse.action.bootstrap.ServiceEnvironment;
 import io.zerows.extension.mbse.action.uca.aim.*;
 import io.zerows.extension.mbse.action.uca.monitor.JtMonitor;
+import org.osgi.framework.Bundle;
 
 import java.util.Objects;
 import java.util.Set;
@@ -29,89 +30,93 @@ import java.util.stream.Collectors;
  * 2) The dynamic router will call connection pool of configuration, will manage all the routers in current system.
  * 3) The dynamic router will registry the routers information when booting
  */
-public class JetPollux extends AbstractAres {
+public class JetPollux implements OAxis {
     /*
      * Multi EmApp environment here
      */
     private static final ConcurrentMap<String, ServiceEnvironment> AMBIENT = JtPin.serviceEnvironment();
     private static final AtomicBoolean UNREADY = new AtomicBoolean(Boolean.TRUE);
 
-    private final transient JtMonitor monitor = JtMonitor.create(this.getClass());
-    private final transient JetCastor castor;
+    private final transient JtMonitor monitor;
 
-    public JetPollux(final Vertx vertx) {
-        super(vertx);
-        this.castor = JetCastor.create(vertx);
+    public JetPollux() {
+        this.monitor = JtMonitor.create(this.getClass());
     }
+
 
     @Override
     @SuppressWarnings("all")
-    public void mount(final Router router, final JsonObject config) {
-        // MONITOR
-        this.monitor.agentConfig(config);
-        if (Objects.isNull(AMBIENT) || AMBIENT.isEmpty()) {
+    public void mount(final RunServer server, final Bundle owner) {
+        /*
+         * 先提取配置，由于上层会直接调用 JetAxisManager 来对配置部分做启用 / 禁用的拦截，所以代码执行到这里已经是
+         * 整体流程上 configuration 的配置部分过了自检流程，且 ServiceEnvironment 也已经过了检查流程，相关应用
+         * 上下文已经全部通过校验。
+         */
+        final JetPolluxOptions options = JetPolluxOptions.singleton();
+
+        final Router router = server.refRouter();
+        Objects.requireNonNull(router);
+        final Vertx vertx = server.refVertx();
+
+        final JtConfig config = Ut.deserialize(options.inConfiguration(), JtConfig.class);
+        final Set<JtUri> uriSet = options.inUri().stream()
+
+
             /*
-             * 「Failure」Deployment handler
-             */
-            this.monitor.workerFailure();
-        } else {
+             * 1. 路由加载顺序设置 order
+             * 2. 路由配置绑定，此处直接绑定到 JtConfig 中，新版只做一次反序列化
+             * */
+            .map(uri -> uri.bind(KWeb.ORDER.DYNAMIC).<JtUri>bind(config))
+
+
             /*
-             * 「Booting」( Multi application deployment on Router )
+             * 注册路由到 Zero Uri 存储管理器中，用于后期做动态接口发布流程
              */
-            final Set<JtUri> uriSet = AMBIENT.keySet().stream()
-                .flatMap(appId -> AMBIENT.get(appId).routes().stream())
-                /*
-                 * Start up and bind `order` and `config`
-                 */
-                .map(uri -> uri.bind(KWeb.ORDER.DYNAMIC)
-                    .<JtUri>bind(Ut.deserialize(config.copy(), JtConfig.class)))
-                /*
-                 * Routing deployment
-                 */
-                .map(uri -> {
-                    /*
-                     * Mount the uri into Zero Uri
-                     */
-                    this.resolveUri(uri.method(), uri.path());
-                    /*
-                     * 「Route」
-                     */
-                    final Route route = router.route();
-                    /*
-                     * Single route registry
-                     */
-                    this.registryUri(route, uri);
-                    return uri;
-                }).collect(Collectors.toSet());
+            .map(this::resolveUri)
+
+
             /*
-             * 「Starting」
+             * 路由发布 Deployment
              */
-            if (Objects.nonNull(this.castor)) {
-                /*
-                 * Worker deployment
-                 * Here caused `block thread issue`, if we deploy agent x 32 and set `instances` of worker to 64
-                 * It means that the code below will action 32 times, and then the system will
-                 * deploy 32 x 64 worker instances, it may take long time to do deployment and casued `block thread`
-                 * issue. Instead we set UNREADY flag to mean action worker deployment one time.
-                 * Each time the `vert.x` insteance will set worker threads here.
-                 */
-                if (UNREADY.getAndSet(Boolean.FALSE)) {
-                    this.monitor.workerStart();
-                    this.castor.startWorkers(uriSet);
-                }
+            .map(uri -> this.registryUri(uri, router))
+            .collect(Collectors.toSet());
+
+
+        final JetCastor castor = JetCastor.create(vertx);
+        if (Objects.nonNull(castor)) {
+            /*
+             * 启动 Worker 的发布做后期的 Deployment，此处 Worker 的发布会开启一个新的流程，以防止每个线程都去发布 Worker，
+             * 此处执行的 JetPollux 是线程级的，如果
+             * - agent x 32
+             * - worker 的 instances 配置为 64
+             * 不做这种拦截会导致最终发布 worker 数量为 32 x 64，最终引起 block thread 的问题，所以此处设置 UNREADY 标记来
+             * 保证 worker 发布的数量的准确性
+             */
+            if (UNREADY.getAndSet(Boolean.FALSE)) {
+                this.monitor.workerStart();
+                castor.startWorkers(uriSet);
             }
         }
     }
 
-    private void resolveUri(final HttpMethod method, final String uri) {
-        if (Objects.nonNull(uri) && 0 < uri.indexOf(":")) {
-            if (0 < uri.indexOf(":")) {
-                OCacheUri.Tool.resolve(uri, method);
-            }
+    private JtUri resolveUri(final JtUri uri) {
+        final HttpMethod method = uri.method();
+        final String uriPath = uri.path();
+        if (Objects.isNull(uriPath)) {
+            // 直接返回
+            return uri;
         }
+
+        if (uriPath.contains(":")) {
+            // 触发存储操作
+            OCacheUri.Tool.resolve(uriPath, method);
+        }
+        return uri;
     }
 
-    private void registryUri(final Route route, final JtUri uri) {
+    private JtUri registryUri(final JtUri uri, final Router router) {
+        // 构造新路由
+        final Route route = router.route();
         // Uri, Method, Order
         route.path(uri.path()).order(uri.order()).method(uri.method());
         // Consumes / Produces
@@ -130,14 +135,13 @@ public class JetPollux extends AbstractAres {
          *      3.2) Send message to worker
          *      3.3) Let worker consume component
          */
-        final JtAim pre = Pool.CC_AIM.pick(() -> Ut.instance(PreAim.class), PreAim.class.getName());
-        // Fn.po?lThread(Pool.AIM_PRE_HUBS, () -> Ut.instance(PreAim.class));
-        final JtAim in = Pool.CC_AIM.pick(() -> Ut.instance(InAim.class), InAim.class.getName());
-        final JtAim engine = Pool.CC_AIM.pick(() -> Ut.instance(EngineAim.class), EngineAim.class.getName());
-        final JtAim send = Pool.CC_AIM.pick(() -> Ut.instance(SendAim.class), SendAim.class.getName());
-        route
-            /* Basic parameter validation / 400 Bad Request */
-            .handler(pre.attack(uri))
+        final JtAim pre = POOL.CC_AIM.pick(() -> Ut.instance(PreAim.class), PreAim.class.getName());
+        // Fn.po?lThread(POOL.AIM_PRE_HUBS, () -> Ut.instance(PreAim.class));
+        final JtAim in = POOL.CC_AIM.pick(() -> Ut.instance(InAim.class), InAim.class.getName());
+        final JtAim engine = POOL.CC_AIM.pick(() -> Ut.instance(EngineAim.class), EngineAim.class.getName());
+        final JtAim send = POOL.CC_AIM.pick(() -> Ut.instance(SendAim.class), SendAim.class.getName());
+        /* Basic parameter validation / 400 Bad Request */
+        route.handler(pre.attack(uri))
             /*
              * Four rule here
              * IN_RULE , IN_MAPPING, IN_PLUG, IN_SCRIPT
@@ -155,5 +159,6 @@ public class JetPollux extends AbstractAres {
              * Failure Handler when error occurs
              */
             .failureHandler(CommonEndurer.create());
+        return uri;
     }
 }
