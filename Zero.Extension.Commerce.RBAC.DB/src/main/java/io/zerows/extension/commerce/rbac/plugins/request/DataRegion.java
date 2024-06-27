@@ -14,8 +14,6 @@ import io.zerows.extension.commerce.rbac.uca.acl.region.Cosmo;
 import io.zerows.extension.commerce.rbac.uca.acl.region.SeekCosmo;
 import io.zerows.extension.commerce.rbac.util.Sc;
 
-import static io.zerows.extension.commerce.rbac.util.Sc.LOG;
-
 /*
  * Extension in RBAC module
  * 1) Region calculation
@@ -34,8 +32,7 @@ public class DataRegion extends AbstractRegion {
         /* Get Critical parameters */
         return Sc.cacheView(context, envelop.habitus()).compose(matrix -> {
             if (this.isRegion(matrix)) {
-                LOG.Auth.info(this.getLogger(), AuthMsg.REGION_BEFORE,
-                    context.request().path(), matrix.encode());
+                this.logger().info(AuthMsg.REGION_BEFORE, context.request().path(), matrix.encode());
                 /*
                  * Select cosmo by matrix
                  */
@@ -60,7 +57,7 @@ public class DataRegion extends AbstractRegion {
         /* Get Critical parameters */
         return Sc.cacheView(context, response.habitus()).compose(matrix -> {
             if (this.isRegion(matrix)) {
-                LOG.Auth.info(this.getLogger(), AuthMsg.REGION_AFTER, matrix.encode());
+                this.logger().info(AuthMsg.REGION_AFTER, matrix.encode());
                 /*
                  * Select cosmo by matrix
                  */
