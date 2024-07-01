@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.skeleton.osgi;
 
 import io.zerows.core.metadata.atom.configuration.MDConfiguration;
-import io.zerows.core.metadata.zdk.AbstractConnectorFailure;
+import io.zerows.core.metadata.zdk.dependency.AbstractConnectorBase;
 import io.zerows.core.web.model.uca.normalize.EquipAt;
 import org.apache.felix.dm.Component;
 import org.apache.felix.dm.DependencyManager;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 /**
  * @author lang : 2024-05-08
  */
-public abstract class ExtensionServiceConnector extends AbstractConnectorFailure {
+public abstract class ExtensionServiceConnector extends AbstractConnectorBase {
 
     protected ExtensionServiceConnector(final Bundle bundle) {
         super(bundle);
