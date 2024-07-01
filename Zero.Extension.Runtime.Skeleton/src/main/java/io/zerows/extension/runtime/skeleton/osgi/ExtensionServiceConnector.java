@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.skeleton.osgi;
 
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.metadata.zdk.AbstractServiceConnector;
-import io.zerows.core.web.model.atom.io.MDConfiguration;
 import io.zerows.core.web.model.uca.normalize.EquipAt;
 import org.apache.felix.dm.Component;
 import org.apache.felix.dm.DependencyManager;

@@ -9,7 +9,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.mbse.ui.atom.UiConfig;
 import io.zerows.extension.mbse.ui.eon.UiConstant;

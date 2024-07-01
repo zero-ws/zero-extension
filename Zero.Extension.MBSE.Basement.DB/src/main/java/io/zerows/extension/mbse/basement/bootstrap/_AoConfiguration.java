@@ -3,7 +3,7 @@ package io.zerows.extension.mbse.basement.bootstrap;
 import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.mbse.basement.atom.config.AoConfig;
 import io.zerows.extension.mbse.basement.eon.AoConstant;

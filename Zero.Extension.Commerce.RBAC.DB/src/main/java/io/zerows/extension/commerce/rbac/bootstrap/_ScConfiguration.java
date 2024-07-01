@@ -3,7 +3,7 @@ package io.zerows.extension.commerce.rbac.bootstrap;
 import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.eon.ScConstant;

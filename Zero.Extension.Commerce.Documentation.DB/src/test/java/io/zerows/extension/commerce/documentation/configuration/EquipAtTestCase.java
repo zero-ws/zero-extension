@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.documentation.configuration;
 
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.uca.normalize.EquipAt;
 import io.zerows.extension.commerce.documentation.eon.DmConstant;
 import org.junit.Test;

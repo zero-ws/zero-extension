@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.ambient.configuration;
 
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.ambient.eon.AtConstant;
 import org.junit.Test;
