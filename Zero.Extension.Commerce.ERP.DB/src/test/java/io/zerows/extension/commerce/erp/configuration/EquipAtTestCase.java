@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.erp.configuration;
 
-import io.zerows.core.web.model.atom.io.MDConfiguration;
+import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.commerce.erp.eon.ErpConstant;
 import org.junit.Test;
