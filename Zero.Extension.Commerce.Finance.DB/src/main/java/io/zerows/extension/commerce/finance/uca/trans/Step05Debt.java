@@ -66,7 +66,10 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
         return this.executeItems(settlements, keySelected)
             .compose(ref::future)
             .compose(items -> Maker.ofD().buildAsync(data, items))
-            .compose(Ux.Jooq.on(FDebtDao.class)::insertAsync)
+            .compose(entity -> {
+                entity.setKey(null);
+               return Ux.Jooq.on(FDebtDao.class).insertAsync(entity);
+            })
             .compose(inserted -> {
                 // 更新 items
                 final List<FSettlementItem> items = ref.get();

@@ -1,6 +1,8 @@
 [
     "serial,交易单号,,true",
+    "name,应收单号,,true",
     "amount,交易金额,CURRENCY",
+
     {
         "metadata": "type,交易类型,MAPPING",
         "$mapping": {
