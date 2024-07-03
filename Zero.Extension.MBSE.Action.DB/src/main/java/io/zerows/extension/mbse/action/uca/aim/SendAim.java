@@ -25,12 +25,12 @@ public class SendAim implements JtAim {
     @Override
     public Handler<RoutingContext> attack(final JtUri uri) {
         /*
-         * 「Booting Life Cycle」
+         * 「Booting LifeCycle Cycle」
          *  Code Area
          */
         return context -> {
             /*
-             * 「Request Life Cycle」
+             * 「Request LifeCycle Cycle」
              */
             final Envelop request = Answer.previous(context);
             /*

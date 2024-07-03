@@ -29,7 +29,7 @@ public class JtMinos extends AbstractVerticle {
     @Override
     public void start() {
         /*
-         * 「Booting Life Cycle」
+         * 「Booting LifeCycle Cycle」
          */
         final EventBus event = this.vertx.eventBus();
         /*
@@ -38,13 +38,13 @@ public class JtMinos extends AbstractVerticle {
         final ConcurrentMap<String, JtUri> uriMap = Jt.answer(this.config());
 
         /*
-         * 「Booting Life Cycle」
+         * 「Booting LifeCycle Cycle」
          * Deploy consumer that bind to address
          * It means that except worker, consumer also could be configured in each API / Service
          */
         this.consumeAddr(uriMap).forEach((address, executor) -> event.<Envelop>consumer(address, handler -> {
             /*
-             * 「Request Life Cycle」
+             * 「Request LifeCycle Cycle」
              * Get the core data here
              */
             final Envelop message = handler.body();
@@ -65,7 +65,7 @@ public class JtMinos extends AbstractVerticle {
                 future.onComplete(replyHandler -> {
                     if (replyHandler.succeeded()) {
                         /*
-                         * 「Callback Life Cycle」
+                         * 「Callback LifeCycle Cycle」
                          * Replying message from service
                          * It could connect with ACL control data
                          */
