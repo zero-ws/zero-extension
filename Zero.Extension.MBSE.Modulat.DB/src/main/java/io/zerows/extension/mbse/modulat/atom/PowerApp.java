@@ -46,10 +46,9 @@ public class PowerApp {
                 final JsonObject configAppJ = storedJ.copy();
                 configAppJ.remove(KName.KEY);
                 configAppJ.remove(KName.App.BAGS);
-                Ut.<JsonObject>itJObject(storedJ, (modJ, name) -> {
-                    final HMod mod = new PowerMod(name, modJ);
-                    app.add(mod);
-                });
+                Ut.itJObject(configAppJ, JsonObject.class)
+                    .map(entry -> new PowerMod(entry.getKey(), entry.getValue()))
+                    .forEach(app::add);
                 return Ux.future(app);
             }
             return Ux.future(null);
