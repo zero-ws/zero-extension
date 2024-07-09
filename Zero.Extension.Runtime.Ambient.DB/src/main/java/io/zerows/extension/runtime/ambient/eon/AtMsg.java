@@ -20,9 +20,9 @@ public interface AtMsg {
 
     String FILE_DOWNLOAD = "Download: key = {0}";
 
-    String UNITY_APP = "{0} EmApp have been initialized successfully!";
+    String CABINET_APP = "{0} App have been initialized successfully!";
 
-    String UNITY_SOURCE = "{0} Data source have been initialized successfully!";
+    String CABINET_SOURCE = "{0} Data source have been initialized successfully!";
 
     String SYNC_UNITY_APP = "EmApp ( name = {0} ) has been synced successfully!";
 

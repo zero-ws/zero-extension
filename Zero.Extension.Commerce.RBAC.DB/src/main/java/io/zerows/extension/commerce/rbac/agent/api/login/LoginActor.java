@@ -1,4 +1,4 @@
-package io.zerows.extension.commerce.rbac.agent.api;
+package io.zerows.extension.commerce.rbac.agent.api.login;
 
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
@@ -23,7 +23,7 @@ import java.util.Objects;
  * Auth Actor
  */
 @Queue
-public class AuthActor {
+public class LoginActor {
 
     @Inject
     private transient AuthStub stub;

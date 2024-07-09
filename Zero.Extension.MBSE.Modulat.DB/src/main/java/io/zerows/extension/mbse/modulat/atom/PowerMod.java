@@ -1,10 +1,13 @@
 package io.zerows.extension.mbse.modulat.atom;
 
+import io.horizon.eon.VString;
+import io.macrocosm.specification.app.HApp;
+import io.macrocosm.specification.app.HMod;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.mbse.modulat.store.OCacheMod;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,11 +17,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * @author <a href="http://www.origin-x.cn">Lang</a>
+ * 模块能源配置，此能源配置用来构造 BLOCK 中的核心数据，作为 PowerApp 的基础，底层用于构造 {@link OCacheMod} 所需的数据
+ * 结构。
+ *
+ * @author lang : 2024-07-08
  */
-public class PowerBlock implements Serializable {
-
-    private static final ConcurrentMap<String, Class<?>> TYPE_MAP = new ConcurrentHashMap<>() {
+public class PowerMod implements HMod {
+    private static final ConcurrentMap<String, Class<?>> BLOCK_TYPE = new ConcurrentHashMap<>() {
         {
             // Common string configuration here
             this.put("STRING", String.class);
@@ -39,18 +44,19 @@ public class PowerBlock implements Serializable {
         }
     };
 
-    private final transient ConcurrentMap<String, Object> storedData = new ConcurrentHashMap<>();
-    private final transient ConcurrentMap<String, Class<?>> storedType = new ConcurrentHashMap<>();
-    private final transient String name;
+    private final ConcurrentMap<String, Object> storedData = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, Class<?>> storedType = new ConcurrentHashMap<>();
+    private final String name;
+    private HApp app;
 
-    PowerBlock(final String name, final JsonObject normalized) {
+    public PowerMod(final String name, final JsonObject dataJ) {
         this.name = name;
         /*
          * Field `field = value`
          * __metadata captured `field = Class<?>`
          */
-        final JsonObject metadata = Ut.valueJObject(normalized, KName.__.METADATA);
-        normalized.fieldNames().forEach(field -> {
+        final JsonObject metadata = Ut.valueJObject(dataJ, KName.__.METADATA);
+        dataJ.fieldNames().forEach(field -> {
             /*
              * storedType processing
              */
@@ -59,22 +65,43 @@ public class PowerBlock implements Serializable {
                 /*
                  * value processing
                  */
-                final Object value = normalized.getValue(field);
+                final Object value = dataJ.getValue(field);
                 if (Objects.nonNull(value)) {
                     // Fix: java.lang.NullPointerException
                     this.storedData.put(field, value);
                 }
-                final Class<?> clazz = TYPE_MAP.getOrDefault(typeStr, String.class);
+                final Class<?> clazz = BLOCK_TYPE.getOrDefault(typeStr, String.class);
                 this.storedType.put(field, clazz);
             }
         });
     }
 
-    @SuppressWarnings("all")
-    public <T> T value(final String field) {
-        return value(field, null);
+    @Override
+    public HMod app(final HApp appRef) {
+        this.app = appRef;
+        return this;
     }
 
+    @Override
+    public HApp app() {
+        return this.app;
+    }
+
+    @Override
+    public String id() {
+        if (Objects.isNull(this.app)) {
+            return "*" + VString.SLASH + this.name;
+        } else {
+            return this.app.appId() + VString.SLASH + this.name;
+        }
+    }
+
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    @Override
     @SuppressWarnings("all")
     public <T> T value(final String field, final T defaultValue) {
         final Object value = this.storedData.getOrDefault(field, null);
@@ -84,9 +111,5 @@ public class PowerBlock implements Serializable {
         } else {
             return defaultValue;
         }
-    }
-
-    public String name() {
-        return this.name;
     }
 }

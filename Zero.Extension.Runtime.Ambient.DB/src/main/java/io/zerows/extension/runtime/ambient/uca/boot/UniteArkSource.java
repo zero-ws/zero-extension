@@ -1,4 +1,4 @@
-package io.zerows.extension.runtime.ambient.osgi.spi.environment;
+package io.zerows.extension.runtime.ambient.uca.boot;
 
 import io.horizon.eon.VOption;
 import io.horizon.eon.em.EmDS;
@@ -7,59 +7,27 @@ import io.macrocosm.specification.app.HApp;
 import io.macrocosm.specification.program.HArk;
 import io.modello.atom.app.KDS;
 import io.modello.atom.app.KDatabase;
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.ambient.eon.AtMsg;
-import io.zerows.extension.runtime.ambient.util.At;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
-import io.zerows.extension.runtime.ambient.domain.tables.daos.XSourceDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XSource;
-import io.zerows.extension.runtime.skeleton.refine.Ke;
-import org.jooq.Configuration;
 
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
-import java.util.concurrent.ConcurrentMap;
 
 /**
- * 「应用/数据源」
- * <pre><code>
- *     1. 应用初始化
- *     2. 数据源初始化
- * </code></pre>
- *
- * @author lang : 2023-06-07
+ * @author lang : 2024-07-08
  */
-class RegistryKit {
-    static Future<ConcurrentMap<String, XApp>> initApp(final Vertx vertx) {
-        final Configuration configuration = Ke.getConfiguration();
-        final XAppDao appDao = new XAppDao(configuration, vertx);
-        return appDao.findAll().compose(applications -> {
-            At.LOG.App.info(RegistryKit.class, AtMsg.UNITY_APP, applications.size());
-            return Ux.future(Ut.elementMap(applications, XApp::getKey));
-        });
-    }
+public class UniteArkSource implements UniteArk<List<XSource>> {
 
-    static Future<ConcurrentMap<String, List<XSource>>> initSource(final Vertx vertx) {
-        final Configuration configuration = Ke.getConfiguration();
-        final XSourceDao sourceDao = new XSourceDao(configuration, vertx);
-        return sourceDao.findAll().compose(sources -> {
-            At.LOG.App.info(RegistryKit.class, AtMsg.UNITY_SOURCE, sources.size());
-            final ConcurrentMap<String, List<XSource>> grouped = Ut.elementGroup(sources, XSource::getAppId);
-            return Ux.future(grouped);
-        });
-    }
-
-    static HArk combine(final XApp app, final List<XSource> sources) {
+    @Override
+    public HArk compile(final XApp app, final List<XSource> sources) {
         // 1. HArk 创建
         final HArk ark = KArk.of(app.getName());
         final JsonObject normalized = new JsonObject();
@@ -162,7 +130,7 @@ class RegistryKit {
             kds.registry(EmDS.Stored.WORKFLOW, Database.getCamunda());
             kds.registry(EmDS.Stored.HISTORY, Database.getHistory());
         }
-        if (!sources.isEmpty()) {
+        if (Objects.nonNull(sources) && !sources.isEmpty()) {
             final JsonArray sourceArray = new JsonArray();
             final Set<KDatabase> databaseSet = new LinkedHashSet<>();
             sources.forEach(source -> {

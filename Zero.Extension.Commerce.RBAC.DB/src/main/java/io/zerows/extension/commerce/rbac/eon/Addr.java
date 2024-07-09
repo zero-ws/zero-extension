@@ -29,6 +29,7 @@ public interface Addr {
 
         String LOGIN = Prefix._EVENT + "O-LOGIN";
 
+
         String LOGOUT = Prefix._EVENT + "O-LOGOUT";
 
         String AUTHORIZE = Prefix._EVENT + "O-AUTHORIZE";
@@ -39,7 +40,16 @@ public interface Addr {
 
         String CAPTCHA_IMAGE_VERIFY = Prefix._EVENT + "X-CAPTCHA/IMAGE/VERIFY";
 
-        String CAPTCHA_SMS = Prefix._EVENT + "X-CAPTCHA/SMS";
+        interface Extension {
+
+            String WECHAT_QR = Prefix._EVENT + "O-LOGIN-WECHAT-QR";
+
+            String WECHAT_LOGIN = Prefix._EVENT + "O-LOGIN-WECHAT";
+
+            String SMS_LOGIN = Prefix._EVENT + "O-LOGIN-SMS";
+
+            String SMS_CAPTCHA = Prefix._EVENT + "O-LOGIN-SMS-CAPTCHA";
+        }
     }
 
     interface User {

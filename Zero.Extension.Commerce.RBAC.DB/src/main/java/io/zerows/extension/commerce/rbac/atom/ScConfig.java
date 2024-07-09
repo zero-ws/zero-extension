@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KQr;
+import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.jackson.databind.JsonObjectDeserializer;
 import io.zerows.jackson.databind.JsonObjectSerializer;
 
@@ -68,7 +68,6 @@ public class ScConfig implements Serializable {
      * Enable multi application, whether search action with X-Sigma Header
      */
     private Boolean supportMultiApp = Boolean.TRUE;
-
     private Boolean supportIntegration = Boolean.FALSE;
     /*
      * Enable image code here, if enabled, the login component must be
@@ -99,14 +98,26 @@ public class ScConfig implements Serializable {
      * Password Init
      */
     private String initializePassword;
-
     @JsonSerialize(using = JsonObjectSerializer.class)
     @JsonDeserialize(using = JsonObjectDeserializer.class)
     private JsonObject initialize = new JsonObject();
-
     @JsonSerialize(using = JsonObjectSerializer.class)
     @JsonDeserialize(using = JsonObjectDeserializer.class)
     private JsonObject category = new JsonObject();
+
+    // ------ 两种新的认证方式引入
+    /*
+     * 追加短信配置
+     */
+    @JsonSerialize(using = JsonObjectSerializer.class)
+    @JsonDeserialize(using = JsonObjectDeserializer.class)
+    private JsonObject configSms = new JsonObject();
+    /*
+     * 追加微信配置
+     */
+    @JsonSerialize(using = JsonObjectSerializer.class)
+    @JsonDeserialize(using = JsonObjectDeserializer.class)
+    private JsonObject configWechat = new JsonObject();
 
     public String getInitializePassword() {
         return this.initializePassword;
@@ -283,6 +294,22 @@ public class ScConfig implements Serializable {
 
     public void setInitialize(final JsonObject initialize) {
         this.initialize = initialize;
+    }
+
+    public JsonObject getConfigSms() {
+        return this.configSms;
+    }
+
+    public void setConfigSms(final JsonObject configSms) {
+        this.configSms = configSms;
+    }
+
+    public JsonObject getConfigWechat() {
+        return this.configWechat;
+    }
+
+    public void setConfigWechat(final JsonObject configWechat) {
+        this.configWechat = configWechat;
     }
 
     @Override

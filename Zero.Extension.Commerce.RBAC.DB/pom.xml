@@ -23,6 +23,12 @@
             <artifactId>zero-plugins-common-security</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- 短信扩展 -->
+        <dependency>
+            <groupId>io.zerows</groupId>
+            <artifactId>zero-plugins-integration-sms</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

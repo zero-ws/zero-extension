@@ -1,85 +1,72 @@
 package io.zerows.extension.mbse.modulat.atom;
 
-import io.horizon.annotations.Memory;
 import io.horizon.uca.cache.Cc;
+import io.macrocosm.specification.app.HMod;
 import io.vertx.core.Future;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.mbse.modulat.store.OCacheMod;
 import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
 
-import java.io.Serializable;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.Objects;
 
 /**
- * @author <a href="http://www.origin-x.cn">Lang</a>
+ * 新版去掉原来繁琐的流程，构造新流程处理
+ * <pre><code>
+ *     1. 根据 appId 从环境中提取 {@link OCacheMod} 的缓存信息
+ *     2. 每个缓存信息中都会包含 mName = {@link HMod} 的基本信息
+ * </code></pre>
+ *
+ * @author lang : 2024-07-08
  */
-public class PowerApp implements Serializable {
+public class PowerApp {
 
-    /*
-     * 「应用模块集」
-     * 用于存储 BBag + BBlock 等应用模块配置集
-     */
-    @Memory(Future.class)
-    public static final Cc<String, Future<JsonArray>> CCA_BAG_DATA = Cc.openA();
-    @Memory(Future.class)
-    public static final Cc<String, Future<JsonObject>> CCA_BAG_ADMIN = Cc.openA();
+    private static final Cc<String, Future<PowerApp>> CC_APP = Cc.open();
+    private final OCacheMod modReference;
 
-    @Memory(Future.class)
-    private static final Cc<String, Future<PowerApp>> CCA_APP_POWER = Cc.openA();
-
-    private final transient String appId;
-    private final transient ConcurrentMap<String, PowerBlock> blocks = new ConcurrentHashMap<>();
-
-    /*
-     * MetaPower for modulat
-     */
-    private PowerApp(final String appId, final JsonObject storedJson) {
-        final JsonObject normalized = Ut.valueJObject(storedJson).copy();
-        this.appId = appId;
-        // key compared
-        final String key = normalized.getString(KName.KEY);
-        if (appId.equals(key)) {
-            /*
-             * 此处由于后期加入了 `bags` 导致下边遍历会失败，bags 不在 PowerApp 中执行
-             * 所以要将 bags 移除，同时移除 `key`
-             */
-            normalized.remove(KName.KEY);
-            normalized.remove(KName.App.BAGS);
-            Ut.<JsonObject>itJObject(normalized,
-                (value, name) -> this.blocks.put(name, new PowerBlock(name, value)));
-        }
+    public PowerApp(final String appId) {
+        // 抓取应用关键的引用
+        this.modReference = OCacheMod.of(appId);
     }
 
-    public static Future<Boolean> flush(final String appId) {
-        CCA_APP_POWER.remove(appId);
-        return initialize(appId).compose(nil -> Ux.futureT());
-    }
+    public static Future<PowerApp> getOrCreate(final String appId) {
+        Objects.requireNonNull(appId);
+        return CC_APP.pick(() -> Ux.channel(Modulat.class, JsonObject::new, modulat -> modulat.extension(appId)).compose(storedJ -> {
+            final String configApp = Ut.valueString(storedJ, KName.KEY);
+            if (appId.equals(configApp)) {
+                // 抓取应用相关的 HMod 缓存
+                final PowerApp app = new PowerApp(appId);
 
-    /*
-     * static initialize by appId when delay extracing
-     */
-    public static Future<PowerApp> initialize(final String appId) {
-        /*
-         * Ke.channel
-         */
-        return CCA_APP_POWER.pick(() -> Ux.channel(Modulat.class, JsonObject::new,
-            modulat -> modulat.extension(appId)).compose(config -> {
-                final PowerApp power = new PowerApp(appId, config);
-                return Ux.future(power);
+
+                /*
+                 * 移除 bags / key
+                 */
+                final JsonObject configAppJ = storedJ.copy();
+                configAppJ.remove(KName.KEY);
+                configAppJ.remove(KName.App.BAGS);
+                Ut.<JsonObject>itJObject(storedJ, (modJ, name) -> {
+                    final HMod mod = new PowerMod(name, modJ);
+                    app.add(mod);
+                });
+                return Ux.future(app);
             }
-        ), appId);
+            return Ux.future(null);
+        }), appId);
     }
 
-
-    public String appId() {
-        return this.appId;
+    public static Future<PowerApp> getLatest(final String appId) {
+        CC_APP.remove(appId);
+        return getOrCreate(appId);
     }
 
-    public PowerBlock block(final String name) {
-        return this.blocks.getOrDefault(name, null);
+    public PowerApp add(final HMod mod) {
+        this.modReference.add(mod);
+        return this;
+    }
+
+    public HMod block(final String name) {
+        return this.modReference.valueGet(name);
     }
 }

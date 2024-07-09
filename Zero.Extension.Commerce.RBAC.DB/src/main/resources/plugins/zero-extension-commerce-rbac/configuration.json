@@ -28,5 +28,10 @@
     "supportGroup": true,
     "supportSecondary": true,
     "supportMultiApp": true,
-    "supportIntegration": false
+    "supportIntegration": false,
+    "__comment": [
+        "新追加的配置信息，用于处理微信 / 短信的登录流程",
+        "微信流程基础配置，此处提供 JsonObject 基础配置 / 短信流程配置，此处同样提供 JsonObject 基础配置",
+        "如果配置了 configWechat / configSms，则会覆盖默认配置"
+    ]
 }

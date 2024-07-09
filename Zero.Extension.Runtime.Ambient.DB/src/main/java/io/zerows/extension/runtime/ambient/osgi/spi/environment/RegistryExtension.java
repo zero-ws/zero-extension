@@ -10,8 +10,11 @@ import io.vertx.core.Vertx;
 import io.vertx.up.unity.Ux;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XSource;
+import io.zerows.extension.runtime.ambient.store.OCacheArk;
+import io.zerows.extension.runtime.ambient.uca.boot.*;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 扩展容器注册器
@@ -34,20 +37,18 @@ public class RegistryExtension implements HRegistry<Vertx> {
     public Future<Set<HArk>> registryAsync(final Vertx container, final HConfig config) {
         return HFn.combineT(
             // appId = XApp
-            () -> RegistryKit.initApp(container),
+            () -> Cabinet.<XApp>of(CabinetApp::new).loadAsync(container),
             // appId = XSource
-            () -> RegistryKit.initSource(container),
+            () -> Cabinet.<List<XSource>>of(CabinetSource::new).loadAsync(container),
             // 1 XApp + N XSource
-            (app, sources) -> {
-                final Set<HArk> arkSet = new LinkedHashSet<>();
-                app.keySet().forEach(appId -> {
-                    final XApp appItem = app.get(appId);
-                    final List<XSource> sourceList = Optional.ofNullable(sources.get(appId))
-                        .orElse(new ArrayList<>());
-                    arkSet.add(RegistryKit.combine(appItem, sourceList));
-                });
-                return Ux.future(arkSet);
-            }
-        );
+            (app, sources) -> Ux.future(
+                UniteArk.<List<XSource>>of(UniteArkSource::new).compile(app, sources)
+            )
+        ).compose(arkSet -> {
+            // 调用内置存储，新版 OSGI 环境专用
+            final OCacheArk cacheArk = OCacheArk.of();
+            cacheArk.add(arkSet);
+            return Ux.future(arkSet);
+        });
     }
 }

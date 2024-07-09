@@ -1,4 +1,4 @@
-package io.zerows.extension.commerce.rbac.agent.api;
+package io.zerows.extension.commerce.rbac.agent.api.login;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.annotations.Address;
@@ -19,7 +19,7 @@ import jakarta.ws.rs.core.MediaType;
  * 3. Access /oauth/token to get token
  */
 @EndPoint
-public interface AuthAgent {
+public interface LoginAgent {
 
     /*
      * /oauth/login

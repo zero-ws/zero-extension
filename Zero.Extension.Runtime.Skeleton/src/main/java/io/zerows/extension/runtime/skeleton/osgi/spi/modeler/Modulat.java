@@ -4,27 +4,48 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 
 /**
- * Configuration extracting here to get
- *
- * key1 = data
- * key2 = data
- * key3 = data
- *
- * This node will be mount to X_APP record.
+ * 模块化专用的核心配置接口，提取应用配置专用，此处配置主要为扩展配置，即存储在 B_BLOCK 和 B_BAG 中的核心配置，返回数据的配置结构如下
+ * <pre><code>
+ *     app-01 = data
+ *     app-02 = data
+ *     app-03 = data
+ * </code></pre>
+ * 此处的结构会直接挂载到 X_APP 的读取中，此处 extension 的响应数据结构如：
+ * <pre><code>
+ *     {
+ *         "key": "appId，应用程序ID",
+ *         "mHotel": {
+ *             "comment": "模块为 mHotel 的参数集"
+ *         },
+ *         "bags": [
+ *             "子应用清单"
+ *         ]
+ *     }
+ * </code></pre>
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public interface Modulat {
-    /*
-     * Fetch the data by `appId` to get
+    /**
+     * 输入结构
+     * <pre><code>
+     *     {
+     *         "key": "appId"
+     *     }
+     * </code></pre>
      *
-     * key = data
+     * @param appJson 应用 X_APP 表结构
      *
-     * - Here the key is `uiConfig` of each `X_BAG`
-     * --- 1) type = EXTENSION
-     * --- 2) store of uiConfig
+     * @return 返回响应结构数据
      */
     Future<JsonObject> extension(JsonObject appJson);
 
+    /**
+     * 直接输入 appId
+     *
+     * @param appId 应用ID
+     *
+     * @return 返回扩展配置数据
+     */
     Future<JsonObject> extension(String appId);
 }
