@@ -15,24 +15,18 @@ import io.zerows.extension.mbse.modulat.uca.configure.Combiner;
 import io.zerows.extension.runtime.skeleton.eon.em.TypeBag;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public abstract class AbstractArk implements Ark {
-    protected JsonObject buildQr(final String input, final TypeBag typeBag) {
-        return this.buildQr(input, Set.of(typeBag), EmModel.By.BY_ID);
+
+    protected JsonObject buildQr(final String input, final EmModel.By by) {
+        // 除开 K-KERNEL 不读取
+        return this.buildQr(input, by, Set.of(TypeBag.EXTENSION, TypeBag.COMMERCE, TypeBag.FOUNDATION));
     }
 
-    protected JsonObject buildQr(final String input, final TypeBag typeBag, final EmModel.By by) {
-        return this.buildQr(input, Set.of(typeBag), by);
-    }
-
-
-    protected JsonObject buildQr(final String input, final Set<TypeBag> bags) {
-        return this.buildQr(input, bags, EmModel.By.BY_ID);
-    }
-
-    protected JsonObject buildQr(final String input, final Set<TypeBag> bags, final EmModel.By by) {
+    protected JsonObject buildQr(final String input, final EmModel.By by, final Set<TypeBag> bags) {
         final JsonObject conditionJ = Ux.whereAnd();
         switch (by) {
             case BY_KEY -> conditionJ.put(KName.APP_KEY, input);
@@ -40,14 +34,16 @@ public abstract class AbstractArk implements Ark {
             case BY_TENANT -> conditionJ.put(KName.Tenant.ID, input);
             default -> conditionJ.put(KName.APP_ID, input);
         }
-        if (VValue.ONE == bags.size()) {
-            final TypeBag bag = bags.iterator().next();
-            conditionJ.put(KName.TYPE, bag.key());
-        } else {
-            final Set<String> bagNames = bags.stream()
-                .map(TypeBag::key).collect(Collectors.toSet());
-            // type,i = [bag1, bag2, bag3]
-            conditionJ.put(KName.TYPE + ",i", Ut.toJArray(bagNames));
+        if (Objects.nonNull(bags) && !bags.isEmpty()) {
+            if (VValue.ONE == bags.size()) {
+                final TypeBag bag = bags.iterator().next();
+                conditionJ.put(KName.TYPE, bag.key());
+            } else {
+                final Set<String> bagNames = bags.stream()
+                    .map(TypeBag::key).collect(Collectors.toSet());
+                // type,i = [bag1, bag2, bag3]
+                conditionJ.put(KName.TYPE + ",i", Ut.toJArray(bagNames));
+            }
         }
         return conditionJ;
     }

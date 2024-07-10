@@ -37,6 +37,13 @@ class CombinerBag implements Combiner<BBag, ConcurrentMap<String, BBag>> {
         });
 
         // ui replace, here the `Ref` means reference and will be replaced directly
+        /*
+         * 此处构造 uiTo 的时候，一般会根据 BAG 的关系来执行构造，现阶段的版本的基本限制是表单中的 segment 部分的配置必须是 BAG 的名称，
+         * 前缀还必须遵守 subject 的基础规范，也就是说同一个 B_BAG 包中的配置部分子包配置不可以拆分到表单的两段，每个子包必须有一个
+         * 表单的 segment 来存放对应配置，整体配置模型如下
+         * B_BAG ( parentId = null )    uiConfig
+         *   B_BAG 子包                  uiConfig
+         */
         final JsonArray uiTo = new JsonArray();
         ui.forEach(item -> {
             if (item instanceof JsonArray) {

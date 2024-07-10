@@ -33,7 +33,9 @@ public class AppService implements AppStub {
              * 1) - Logo            to Object
              * 2) - storePath       extract from `configuration.json`
              * */
-            .compose(At::fileMeta);
+            .compose(At::fileMeta)
+            /* Modulat Processing */
+            .compose(appJ -> Ux.channel(Modulat.class, () -> appJ, stub -> stub.extension(appJ, true)));
     }
 
     @Override
@@ -52,7 +54,7 @@ public class AppService implements AppStub {
             /* ExApp Processing, options for application */
             .compose(appJ -> Ux.channel(ExApp.class, () -> appJ, stub -> stub.fetchOpts(appJ)))
             /* Modulat Processing */
-            .compose(appJ -> Ux.channel(Modulat.class, () -> appJ, stub -> stub.extension(appJ)));
+            .compose(appJ -> Ux.channel(Modulat.class, () -> appJ, stub -> stub.extension(appJ, false)));
         /* Document Platform Initialized */
         // .compose(appJ -> AtPin.?nitDocument(appId).compose(nil -> Ux.future(appJ)));
     }

@@ -24,9 +24,17 @@ public interface Ark {
      * Fetch data from the system by `appId`
      * instead of other modulat.
      */
-    default Future<ClusterSerializable> modularize(final String appId) {
-        return this.modularize(appId, EmModel.By.BY_ID);
+    default Future<ClusterSerializable> modularize(final String appId, final boolean open) {
+        return this.modularize(appId, open, EmModel.By.BY_ID);
     }
 
-    Future<ClusterSerializable> modularize(String appId, EmModel.By by);
+    default Future<ClusterSerializable> modularize(final String appId) {
+        return this.modularize(appId, false, EmModel.By.BY_ID);
+    }
+
+    default Future<ClusterSerializable> modularize(final String appId, final EmModel.By by) {
+        return this.modularize(appId, false, by);
+    }
+
+    Future<ClusterSerializable> modularize(String appId, boolean open, EmModel.By by);
 }

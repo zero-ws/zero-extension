@@ -10,9 +10,6 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.zerows.extension.mbse.modulat.domain.tables.daos.BBagDao;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;
-import io.zerows.extension.runtime.skeleton.eon.em.TypeBag;
-
-import java.util.Set;
 
 import static io.zerows.extension.mbse.modulat.util.Bk.LOG;
 
@@ -26,10 +23,11 @@ class ArkBag extends AbstractArk {
     private static final Cc<String, Future<JsonArray>> ASYNC_BAG_DATA = Cc.openA();
 
     @Override
-    public Future<ClusterSerializable> modularize(final String appId, final EmModel.By by) {
+    public Future<ClusterSerializable> modularize(final String appId,
+                                                  final boolean open,
+                                                  final EmModel.By by) {
         return ASYNC_BAG_DATA.pick(() -> {
-            final Set<TypeBag> typeSet = Set.of(TypeBag.EXTENSION, TypeBag.COMMERCE, TypeBag.FOUNDATION);
-            final JsonObject condition = this.buildQr(appId, typeSet, by);
+            final JsonObject condition = this.buildQr(appId, by);
             condition.put(KName.ENTRY, Boolean.TRUE);
             LOG.Spi.info(this.getClass(), "Modulat condition = {0}", condition.encode());
             return Ux.Jooq.on(BBagDao.class).<BBag>fetchAsync(condition)

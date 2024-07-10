@@ -38,7 +38,11 @@ public interface Modulat {
      *
      * @return 返回响应结构数据
      */
-    Future<JsonObject> extension(JsonObject appJson);
+    default Future<JsonObject> extension(final JsonObject appJson) {
+        return this.extension(appJson, false);
+    }
+
+    Future<JsonObject> extension(JsonObject appJson, boolean open);
 
     /**
      * 直接输入 appId
@@ -47,5 +51,9 @@ public interface Modulat {
      *
      * @return 返回扩展配置数据
      */
-    Future<JsonObject> extension(String appId);
+    default Future<JsonObject> extension(final String appId) {
+        return this.extension(appId, false);
+    }
+
+    Future<JsonObject> extension(String appId, boolean open);
 }

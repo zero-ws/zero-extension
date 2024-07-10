@@ -15,9 +15,9 @@ import java.util.Objects;
  */
 public class ExModulat implements Modulat {
     @Override
-    public Future<JsonObject> extension(final JsonObject appJson) {
+    public Future<JsonObject> extension(final JsonObject appJson, final boolean open) {
         final String key = appJson.getString(KName.KEY);
-        return this.extension(key).compose(moduleJ -> {
+        return this.extension(key, open).compose(moduleJ -> {
             /*
              * appJ + moduleJ to build response ( Final )
              */
@@ -34,21 +34,24 @@ public class ExModulat implements Modulat {
      * }
      */
     @Override
-    public Future<JsonObject> extension(final String appId) {
+    public Future<JsonObject> extension(final String appId, final boolean open) {
         Objects.requireNonNull(appId);
         final JsonObject appJ = new JsonObject();
         // 解决无法连接导致AppId为空的问题
         appJ.put(KName.KEY, appId);
-        return Ark.configure().modularize(appId)
-            .compose(moduleJ -> {
-                appJ.mergeIn((JsonObject) moduleJ, true);
+        return Ark.configure().modularize(appId, open).compose(moduleJ -> {
+            appJ.mergeIn((JsonObject) moduleJ, true);
+            if (open) {
+                // open = true 可启用“登录参数”
                 return Ux.future(appJ);
-            })
-            .compose(nil -> Ark.bag().modularize(appId))
-            .compose(bagJ -> {
-                final JsonArray bags = (JsonArray) bagJ;
-                appJ.put(KName.App.BAGS, bags);
-                return Ux.future(appJ);
-            });
+            } else {
+                // open = false 的时候才读取 bags 节点的数据，否则不读取
+                return Ark.bag().modularize(appId, false).compose(bagJ -> {
+                    final JsonArray bags = (JsonArray) bagJ;
+                    appJ.put(KName.App.BAGS, bags);
+                    return Ux.future(appJ);
+                });
+            }
+        });
     }
 }
