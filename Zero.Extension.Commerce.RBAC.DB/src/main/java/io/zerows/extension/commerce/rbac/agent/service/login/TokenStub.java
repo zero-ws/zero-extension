@@ -10,5 +10,5 @@ import io.vertx.ext.web.Session;
  */
 public interface TokenStub {
 
-    Future<JsonObject> execute(String clientId, String code, Session session);
+    Future<JsonObject> execute(String clientId, Session session);
 }

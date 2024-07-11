@@ -1,23 +1,33 @@
 package io.zerows.extension.commerce.rbac.util;
 
 import io.horizon.eon.VPath;
+import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
+import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.extension.commerce.rbac.atom.ScConfig;
+import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
+import io.zerows.extension.commerce.rbac.eon.AuthKey;
+import io.zerows.extension.commerce.rbac.eon.ScConstant;
+import io.zerows.extension.commerce.rbac.exception._401ImageCodeWrongException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
+import java.util.Objects;
 import java.util.Random;
-
-;
+import java.util.function.Function;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 class ScImage {
+    private static final ScConfig CONFIG = ScPin.getConfig();
 
     private static final Random RANDOM = new Random();
     // BG /
@@ -74,5 +84,66 @@ class ScImage {
         final int g = fc + RANDOM.nextInt(bc - fc - 14);
         final int b = fc + RANDOM.nextInt(bc - fc - 18);
         return new Color(r, g, b);
+    }
+
+    /*
+     * Image generation for tool
+     */
+    static <T> Future<T> imageVerify(final String sessionId, final JsonObject params, final Function<JsonObject, Future<T>> executor) {
+        final Boolean support = CONFIG.getVerifyCode();
+        if (Objects.nonNull(support) && support) {
+            Fn.out(Objects.isNull(sessionId), _501NotSupportException.class, ScCache.class);
+            final String imageCode = params.getString(AuthKey.CAPTCHA_IMAGE);
+            if (Objects.isNull(imageCode)) {
+                // Not Match
+                return Fn.outWeb(_401ImageCodeWrongException.class, ScCache.class, null);
+            }
+            final Rapid<String, String> rapid = Rapid.t(ScConstant.POOL_CODE_IMAGE);
+            return rapid.read(sessionId).compose(stored -> {
+                if (Objects.isNull(stored)) {
+                    // Not Match
+                    return Fn.outWeb(_401ImageCodeWrongException.class, ScCache.class, imageCode);
+                } else {
+                    // Case Ignored
+                    if (stored.equalsIgnoreCase(imageCode)) {
+                        final JsonObject processed = params.copy();
+                        processed.remove(AuthKey.CAPTCHA_IMAGE);
+                        return rapid.clear(sessionId).compose(nil -> executor.apply(processed));
+                    } else {
+                        // Not Match
+                        return Fn.outWeb(_401ImageCodeWrongException.class, ScCache.class, imageCode);
+                    }
+                }
+            });
+        } else {
+            // Skip because image Verify off
+            return executor.apply(params);
+        }
+    }
+
+    static Future<Buffer> imageOn(final String sessionId, final Integer width, final Integer height) {
+        final Boolean support = CONFIG.getVerifyCode();
+        if (Objects.nonNull(support) && support) {
+            // Username in Pool
+            final String code = Ut.randomCaptcha(5);
+            return Rapid.<String, String>t(ScConstant.POOL_CODE_IMAGE, 300).write(sessionId, code)
+                // Generate Image Buffer to Front-End
+                .compose(codeImage -> imageGenerate(codeImage, width, height));
+        } else {
+            // Skip because image Verify off
+            return Fn.outWeb(_501NotSupportException.class, ScCache.class);
+        }
+    }
+
+    static Future<Boolean> imageKo(final String sessionId) {
+        final Boolean support = CONFIG.getVerifyCode();
+        if (Objects.nonNull(support) && support) {
+            // Username in Pool
+            return Rapid.<String, String>t(ScConstant.POOL_CODE_IMAGE).clear(sessionId)
+                .compose(nil -> Ux.futureT());
+        } else {
+            // Skip because image Verify off
+            return Fn.outWeb(_501NotSupportException.class, ScCache.class);
+        }
     }
 }

@@ -6,7 +6,6 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.mbse.atom.specification.KQr;
-import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.jackson.databind.JsonObjectDeserializer;
 import io.zerows.jackson.databind.JsonObjectSerializer;
 
@@ -18,14 +17,6 @@ import java.io.Serializable;
  */
 public class ScConfig implements Serializable {
     private static final Cc<String, KQr> CC_KQR = Cc.open();
-    /*
-     * Pool for verify the code
-     */
-    private final String poolVerify = AuthKey.Pool.VERIFY;
-    /*
-     * Pool for login limitation here
-     */
-    private final String poolLimitation = AuthKey.Pool.LIMITATION;
     /*
      * Unique condition for Security Entity
      * 1) User
@@ -45,17 +36,9 @@ public class ScConfig implements Serializable {
      */
     private Integer codeLength = 8;
     /*
-     * Authorization Code session pool
-     */
-    private String poolCode = AuthKey.Pool.CODE;
-    /*
      * WebToken expired time: ( ms )
      */
     private Long tokenExpired = 30L;
-    /*
-     * WebToken session pool
-     */
-    private String poolToken = AuthKey.Pool.TOKEN;
     /*
      * Enable user group feature
      */
@@ -88,12 +71,6 @@ public class ScConfig implements Serializable {
      * 3 times / 300 seconds
      */
     private Integer verifyDuration = 300;
-    /* Role Pool when secondary cache enabled. */
-    private String poolPermission = AuthKey.Pool.PERMISSIONS;
-    /* Resource Pool when secondary cache enabled. */
-    private String poolResource = AuthKey.Pool.RESOURCES;
-    /* Resource Pool when admit for RBAC Management */
-    private String poolAdmit = AuthKey.Pool.ADMIT;
     /*
      * Password Init
      */
@@ -104,20 +81,6 @@ public class ScConfig implements Serializable {
     @JsonSerialize(using = JsonObjectSerializer.class)
     @JsonDeserialize(using = JsonObjectDeserializer.class)
     private JsonObject category = new JsonObject();
-
-    // ------ 两种新的认证方式引入
-    /*
-     * 追加短信配置
-     */
-    @JsonSerialize(using = JsonObjectSerializer.class)
-    @JsonDeserialize(using = JsonObjectDeserializer.class)
-    private JsonObject configSms = new JsonObject();
-    /*
-     * 追加微信配置
-     */
-    @JsonSerialize(using = JsonObjectSerializer.class)
-    @JsonDeserialize(using = JsonObjectDeserializer.class)
-    private JsonObject configWechat = new JsonObject();
 
     public String getInitializePassword() {
         return this.initializePassword;
@@ -160,30 +123,6 @@ public class ScConfig implements Serializable {
         this.supportSecondary = supportSecondary;
     }
 
-    public String getPoolCode() {
-        return this.poolCode;
-    }
-
-    public void setPoolCode(final String poolCode) {
-        this.poolCode = poolCode;
-    }
-
-    public String getPoolPermission() {
-        return this.poolPermission;
-    }
-
-    public void setPoolPermission(final String poolPermission) {
-        this.poolPermission = poolPermission;
-    }
-
-    public String getPoolAdmit() {
-        return this.poolAdmit;
-    }
-
-    public void setPoolAdmit(final String poolAdmit) {
-        this.poolAdmit = poolAdmit;
-    }
-
     public Long getTokenExpired() {
         if (null == this.tokenExpired) {
             this.tokenExpired = 0L;
@@ -220,22 +159,6 @@ public class ScConfig implements Serializable {
         this.verifyDuration = verifyDuration;
     }
 
-    public String getPoolVerify() {
-        return this.poolVerify;
-    }
-
-    public String getPoolLimitation() {
-        return this.poolLimitation;
-    }
-
-    public String getPoolToken() {
-        return this.poolToken;
-    }
-
-    public void setPoolToken(final String poolToken) {
-        this.poolToken = poolToken;
-    }
-
     public Boolean getSupportGroup() {
         return this.supportGroup;
     }
@@ -250,14 +173,6 @@ public class ScConfig implements Serializable {
 
     public void setSupportMultiApp(final Boolean supportMultiApp) {
         this.supportMultiApp = supportMultiApp;
-    }
-
-    public String getPoolResource() {
-        return this.poolResource;
-    }
-
-    public void setPoolResource(final String poolResource) {
-        this.poolResource = poolResource;
     }
 
     public JsonObject getCategory() {
@@ -296,33 +211,13 @@ public class ScConfig implements Serializable {
         this.initialize = initialize;
     }
 
-    public JsonObject getConfigSms() {
-        return this.configSms;
-    }
-
-    public void setConfigSms(final JsonObject configSms) {
-        this.configSms = configSms;
-    }
-
-    public JsonObject getConfigWechat() {
-        return this.configWechat;
-    }
-
-    public void setConfigWechat(final JsonObject configWechat) {
-        this.configWechat = configWechat;
-    }
-
     @Override
     public String toString() {
         return "ScConfig{" +
-            "poolVerify='" + this.poolVerify + '\'' +
-            ", poolLimitation='" + this.poolLimitation + '\'' +
             ", condition=" + this.condition +
             ", codeExpired=" + this.codeExpired +
             ", codeLength=" + this.codeLength +
-            ", poolCode='" + this.poolCode + '\'' +
             ", tokenExpired=" + this.tokenExpired +
-            ", poolToken='" + this.poolToken + '\'' +
             ", supportGroup=" + this.supportGroup +
             ", supportSecondary=" + this.supportSecondary +
             ", supportMultiApp=" + this.supportMultiApp +
@@ -330,8 +225,6 @@ public class ScConfig implements Serializable {
             ", verifyCode=" + this.verifyCode +
             ", verifyLimitation=" + this.verifyLimitation +
             ", verifyDuration=" + this.verifyDuration +
-            ", poolPermission='" + this.poolPermission + '\'' +
-            ", poolResource='" + this.poolResource + '\'' +
             ", initializePassword='" + this.initializePassword + '\'' +
             ", initialize=" + this.initialize +
             ", category=" + this.category +

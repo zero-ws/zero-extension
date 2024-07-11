@@ -3,11 +3,8 @@ package io.zerows.extension.commerce.rbac.agent.service.login;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.typed.UObject;
 import io.zerows.extension.commerce.rbac.agent.service.business.UserStub;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.OAccessTokenDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SUserDao;
@@ -61,24 +58,7 @@ public class LoginService implements LoginStub {
             // Lock Off when login successfully
             LOG.Auth.info(LOGGER, AuthMsg.LOGIN_SUCCESS, username);
             return Sc.lockOff(username).compose(nil -> Ux.future(fetched));
-        }).compose(user -> this.userStub.fetchOUser(user.getKey()).compose(Ux::futureJ).compose(ouserJson -> {
-            final JsonObject userJson = Ut.serializeJson(user);
-            final JsonObject merged = Ut.valueAppend(userJson, ouserJson);
-            return UObject.create(merged).pickup(
-                KName.KEY,                /* client_id parameter */
-                AuthKey.SCOPE,              /* scope parameter */
-                AuthKey.STATE,              /* state parameter */
-                AuthKey.F_CLIENT_SECRET,    /* client_secret parameter */
-                AuthKey.F_GRANT_TYPE        /* grant_type parameter */
-            ).denull().toFuture();
-        }).compose(response -> {
-            final String initPwd = Sc.valuePassword();
-            if (initPwd.equals(user.getPassword())) {
-                /* Password Init */
-                response.put(KName.PASSWORD, false);
-            }
-            return Ux.future(response);
-        })));
+        }).compose(user -> this.userStub.fetchAuthorized(user)));
     }
 
     @Override

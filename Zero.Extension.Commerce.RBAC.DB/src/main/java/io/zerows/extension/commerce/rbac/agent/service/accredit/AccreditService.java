@@ -12,12 +12,11 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.core.security.atom.DataBound;
-import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
-import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SAction;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SResource;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;
+import io.zerows.extension.commerce.rbac.eon.ScConstant;
 import io.zerows.extension.commerce.rbac.exception._403ActionDinnedException;
 import io.zerows.extension.commerce.rbac.exception._404ActionMissingException;
 import io.zerows.extension.commerce.rbac.exception._404ResourceMissingException;
@@ -55,8 +54,7 @@ public class AccreditService implements AccreditStub {
     public Future<JsonObject> resource(final JsonObject requestData) {
         final ScResource request = ScResource.create(requestData);
         // First Phase
-        final ScConfig config = ScPin.getConfig();
-        return Rapid.<String, JsonObject>t(config.getPoolResource())
+        return Rapid.<String, JsonObject>t(ScConstant.POOL_RESOURCES)
             .cached(request.key(), () -> {
                 /* Fetch Action */
                 final KRef actionHod = new KRef();
@@ -95,9 +93,8 @@ public class AccreditService implements AccreditStub {
              *
              * 提取RBAC配置信息（资源池的缓存）
              */
-            final ScConfig config = ScPin.getConfig();
             final KRef resourceRef = new KRef();
-            return Rapid.<String, JsonObject>t(config.getPoolResource()).read(resource.key()).compose(data -> {
+            return Rapid.<String, JsonObject>t(ScConstant.POOL_RESOURCES).read(resource.key()).compose(data -> {
                 final SResource resourceT = Ux.fromJson(data.getJsonObject(KName.RECORD), SResource.class);
                 return resourceRef.future(resourceT);
             }).compose(resourceT -> {

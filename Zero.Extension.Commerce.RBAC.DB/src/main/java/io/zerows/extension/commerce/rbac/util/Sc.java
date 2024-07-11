@@ -15,6 +15,14 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Sc {
+    
+    public static <V> Future<V> cacheSms(final String key) {
+        return ScCache.message(key);
+    }
+
+    public static <V> Future<V> cacheSms(final String key, final V value) {
+        return ScCache.message(key, value);
+    }
 
     /*
      * cache information
@@ -50,27 +58,31 @@ public class Sc {
      * - codePool
      */
     public static String valueCode() {
-        return ScCache.valueCode();
+        return ScGenerated.valueCode();
+    }
+
+    public static String valueCodeSms() {
+        return ScGenerated.valueCodeSms();
     }
 
     public static String valuePassword() {
-        return ScCache.valuePassword();
+        return ScGenerated.valuePassword();
     }
 
     public static String valueProfile(final SResource resource) {
-        return ScCache.valueProfile(resource);
+        return ScGenerated.valueProfile(resource);
     }
 
     public static Future<OUser> valueAuth(final SUser user, final JsonObject inputJ) {
-        return ScCache.valueAuth(user, inputJ);
+        return ScGenerated.valueAuth(user, inputJ);
     }
 
     public static Future<List<OUser>> valueAuth(final List<SUser> users) {
-        return ScCache.valueAuth(users);
+        return ScGenerated.valueAuth(users);
     }
 
     public static Future<List<SUser>> valueAuth(final JsonArray userA, final String sigma) {
-        return ScCache.valueAuth(userA, sigma);
+        return ScGenerated.valueAuth(userA, sigma);
     }
 
     /*
@@ -80,33 +92,34 @@ public class Sc {
      * - lockVerify, when before login, verify the specification first
      */
     public static Future<JsonObject> lockVerify(final String username, final Supplier<Future<JsonObject>> executor) {
-        return ScCache.lockVerify(username, executor);
+        return ScLock.lockVerify(username, executor);
     }
 
     public static Future<Integer> lockOn(final String username) {
-        return ScCache.lockOn(username);
+        return ScLock.lockOn(username);
     }
 
     public static Future<Integer> lockOff(final String username) {
-        return ScCache.lockOff(username);
+        return ScLock.lockOff(username);
     }
 
     /*
      * Image Part
      */
     public static Future<Buffer> imageOn(final String sessionId, final int width, final int height) {
-        return ScCache.imageOn(sessionId, width, height);
+        return ScImage.imageOn(sessionId, width, height);
     }
 
     public static <T> Future<T> imageVerify(final String sessionId,
                                             final JsonObject params,
                                             final Function<JsonObject, Future<T>> executor) {
-        return ScCache.imageVerify(sessionId, params, executor);
+        return ScImage.imageVerify(sessionId, params, executor);
     }
 
     public static Future<Boolean> imageOff(final String sessionId) {
-        return ScCache.imageKo(sessionId);
+        return ScImage.imageKo(sessionId);
     }
+
 
     /*
      * Jwt token process

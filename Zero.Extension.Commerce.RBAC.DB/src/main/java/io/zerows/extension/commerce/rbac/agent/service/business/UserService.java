@@ -5,6 +5,8 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
+import io.zerows.core.domain.atom.typed.UObject;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.OUserDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RUserGroupDao;
@@ -49,10 +51,27 @@ public class UserService implements UserStub {
     // ================== Basic Part of S_User ================
 
     @Override
-    public Future<JsonObject> fetchOUser(final String userKey) {
-        return Ux.Jooq.on(OUserDao.class)
-            .fetchOneAsync(AuthKey.F_CLIENT_ID, userKey)
-            .compose(Ux::futureJ);
+    public Future<JsonObject> fetchAuthorized(final SUser query) {
+        return Ux.Jooq.on(OUserDao.class).fetchOneAsync(AuthKey.F_CLIENT_ID, query.getKey())
+            .compose(Ux::futureJ)
+            .compose(ouserJson -> {
+                final JsonObject userJson = Ut.serializeJson(query);
+                final JsonObject merged = Ut.valueAppend(userJson, ouserJson);
+                return UObject.create(merged).pickup(
+                    KName.KEY,                /* client_id parameter */
+                    AuthKey.SCOPE,              /* scope parameter */
+                    AuthKey.STATE,              /* state parameter */
+                    AuthKey.F_CLIENT_SECRET,    /* client_secret parameter */
+                    AuthKey.F_GRANT_TYPE        /* grant_type parameter */
+                ).denull().toFuture();
+            }).compose(response -> {
+                final String initPwd = Sc.valuePassword();
+                if (initPwd.equals(query.getPassword())) {
+                    /* Password Init */
+                    response.put(KName.PASSWORD, false);
+                }
+                return Ux.future(response);
+            });
     }
 
     /*

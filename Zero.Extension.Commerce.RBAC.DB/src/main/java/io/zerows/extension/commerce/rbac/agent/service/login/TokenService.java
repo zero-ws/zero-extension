@@ -8,11 +8,13 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.typed.UObject;
+import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.commerce.rbac.agent.service.business.GroupStub;
-import io.zerows.extension.commerce.rbac.agent.service.business.UserStub;
+import io.zerows.extension.commerce.rbac.agent.service.jwt.JwtStub;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
+import io.zerows.extension.commerce.rbac.eon.AuthMsg;
 import io.zerows.extension.commerce.rbac.uca.acl.relation.Junc;
 import jakarta.inject.Inject;
 
@@ -22,17 +24,15 @@ import java.util.Objects;
 
 public class TokenService implements TokenStub {
     @Inject
-    private transient CodeStub codeStub;
-    @Inject
-    private transient UserStub userStub;
-    @Inject
     private transient GroupStub groupStub;
 
+    @Inject
+    private transient JwtStub jwtStub;
+
     @Override
-    public Future<JsonObject> execute(final String clientId, final String code, final Session session) {
-        return this.codeStub.verify(clientId, code)
-            /* Fetch role keys */
-            .compose(Junc.role()::identAsync)
+    public Future<JsonObject> execute(final String clientId, final Session session) {
+        /* Fetch role keys */
+        return Junc.role().identAsync(clientId)
 
             /* Build Data in WebToken */
             .compose(roles -> UObject.create()
@@ -58,7 +58,17 @@ public class TokenService implements TokenStub {
             )
 
             /* Whether enable group feature */
-            .compose(this::fetchGroup);
+            .compose(this::fetchGroup)
+            .compose(data -> {
+                // Store token information
+                final String userKey = data.getString(KName.USER);
+                this.logger().info(AuthMsg.TOKEN_STORE, userKey);
+                return this.jwtStub.store(userKey, data);
+            });
+    }
+
+    private OLog logger() {
+        return OLog.of(this.getClass(), "Token");
     }
 
     private Future<JsonObject> fetchGroup(final JsonObject response) {

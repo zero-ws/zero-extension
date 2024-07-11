@@ -48,6 +48,8 @@ public interface Addr {
 
             String SMS_LOGIN = Prefix._EVENT + "O-LOGIN-SMS";
 
+            String SMS_LOGIN_PRE = Prefix._EVENT + "O-LOGIN-PRE";
+
             String SMS_CAPTCHA = Prefix._EVENT + "O-LOGIN-SMS-CAPTCHA";
         }
     }

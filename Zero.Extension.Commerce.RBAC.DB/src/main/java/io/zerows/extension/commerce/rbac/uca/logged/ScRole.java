@@ -8,11 +8,10 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.core.metadata.uca.environment.DevEnv;
-import io.zerows.extension.commerce.rbac.atom.ScConfig;
-import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RRolePermDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.RRolePerm;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
+import io.zerows.extension.commerce.rbac.eon.ScConstant;
 
 import java.util.HashSet;
 import java.util.List;
@@ -31,14 +30,13 @@ import static io.zerows.extension.commerce.rbac.util.Sc.LOG;
 public class ScRole {
     private static final Cc<String, ScRole> CC_ROLE = Cc.open();
     private static final Annal LOGGER = Annal.get(ScRole.class);
-    private static final ScConfig CONFIG = ScPin.getConfig();
     private final transient Rapid<String, JsonArray> cache;
     private final transient String roleId;
     private final transient Set<String> authorities = new HashSet<>();
 
     private ScRole(final String roleId) {
         this.roleId = roleId;
-        this.cache = Rapid.t(CONFIG.getPoolPermission());
+        this.cache = Rapid.t(ScConstant.POOL_PERMISSIONS);
     }
 
     public static ScRole login(final String roleId) {

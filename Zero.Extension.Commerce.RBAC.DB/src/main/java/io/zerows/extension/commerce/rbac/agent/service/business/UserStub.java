@@ -2,6 +2,7 @@ package io.zerows.extension.commerce.rbac.agent.service.business;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
 
 /*
  * Basic user interface
@@ -9,11 +10,6 @@ import io.vertx.core.json.JsonObject;
  * 2) Get OAuth user account information by user key ( client_id )
  */
 public interface UserStub {
-
-    /**
-     * Fetch ouser by client_id
-     */
-    Future<JsonObject> fetchOUser(String userKey);
 
     /**
      * create user: SUser and OUser
@@ -25,6 +21,9 @@ public interface UserStub {
      */
     Future<Boolean> deleteUser(String userKey);
 
+    // ====================== Login Information =============================
+
+    Future<JsonObject> fetchAuthorized(SUser query);
 
     // ====================== Information ( By Type ) =======================
 
