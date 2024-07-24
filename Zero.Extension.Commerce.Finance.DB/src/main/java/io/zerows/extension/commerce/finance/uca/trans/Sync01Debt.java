@@ -64,7 +64,7 @@ class Sync01Debt implements Trade<User, FDebt> {
          * finished = true
          * amountBalance = amount - finishedAmount
          */
-        final BigDecimal amount = debt.getAmount();
+        final BigDecimal amount = debt.getAmountBalance();
         final BigDecimal amountFinished = new BigDecimal(Ut.valueString(dataJ, "finishedAmount"));
         final BigDecimal amountBalance = amount.subtract(amountFinished);
 
