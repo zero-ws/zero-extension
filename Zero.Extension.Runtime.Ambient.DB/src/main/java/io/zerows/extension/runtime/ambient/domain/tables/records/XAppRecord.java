@@ -75,192 +75,54 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Setter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
      */
     @Override
-    public XAppRecord setTitle(String value) {
+    public XAppRecord setStatus(String value) {
         set(3, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
+     * Getter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
      */
     @Override
-    public String getTitle() {
+    public String getStatus() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Setter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
      */
     @Override
-    public XAppRecord setLogo(String value) {
+    public XAppRecord setTenantId(String value) {
         set(4, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     * Getter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
      */
     @Override
-    public String getLogo() {
+    public String getTenantId() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Setter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
      */
     @Override
-    public XAppRecord setIcp(String value) {
+    public XAppRecord setAppSecret(String value) {
         set(5, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
+     * Getter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
      */
     @Override
-    public String getIcp() {
+    public String getAppSecret() {
         return (String) get(5);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
-     */
-    @Override
-    public XAppRecord setCopyRight(String value) {
-        set(6, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
-     */
-    @Override
-    public String getCopyRight() {
-        return (String) get(6);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
-     */
-    @Override
-    public XAppRecord setEmail(String value) {
-        set(7, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
-     */
-    @Override
-    public String getEmail() {
-        return (String) get(7);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
-     */
-    @Override
-    public XAppRecord setDomain(String value) {
-        set(8, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
-     */
-    @Override
-    public String getDomain() {
-        return (String) get(8);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
-     */
-    @Override
-    public XAppRecord setAppPort(Integer value) {
-        set(9, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
-     */
-    @Override
-    public Integer getAppPort() {
-        return (Integer) get(9);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
-     */
-    @Override
-    public XAppRecord setUrlEntry(String value) {
-        set(10, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
-     */
-    @Override
-    public String getUrlEntry() {
-        return (String) get(10);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
-     */
-    @Override
-    public XAppRecord setUrlMain(String value) {
-        set(11, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
-     */
-    @Override
-    public String getUrlMain() {
-        return (String) get(11);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
-     */
-    @Override
-    public XAppRecord setPath(String value) {
-        set(12, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
-     */
-    @Override
-    public String getPath() {
-        return (String) get(12);
-    }
-
-    /**
-     * Setter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
-     */
-    @Override
-    public XAppRecord setRoute(String value) {
-        set(13, value);
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
-     */
-    @Override
-    public String getRoute() {
-        return (String) get(13);
     }
 
     /**
@@ -268,7 +130,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setAppKey(String value) {
-        set(14, value);
+        set(6, value);
         return this;
     }
 
@@ -277,7 +139,211 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getAppKey() {
+        return (String) get(6);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
+     */
+    @Override
+    public XAppRecord setTitle(String value) {
+        set(7, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
+     */
+    @Override
+    public String getTitle() {
+        return (String) get(7);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     */
+    @Override
+    public XAppRecord setLogo(String value) {
+        set(8, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.LOGO</code>. 「logo」- 应用程序图标
+     */
+    @Override
+    public String getLogo() {
+        return (String) get(8);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
+     */
+    @Override
+    public XAppRecord setIcp(String value) {
+        set(9, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.ICP</code>. 「icp」- ICP备案号
+     */
+    @Override
+    public String getIcp() {
+        return (String) get(9);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
+     */
+    @Override
+    public XAppRecord setCopyRight(String value) {
+        set(10, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.COPY_RIGHT</code>. 「copyRight」- CopyRight版权信息
+     */
+    @Override
+    public String getCopyRight() {
+        return (String) get(10);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     */
+    @Override
+    public XAppRecord setEmail(String value) {
+        set(11, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.EMAIL</code>. 「email」- 应用Email信息
+     */
+    @Override
+    public String getEmail() {
+        return (String) get(11);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     */
+    @Override
+    public XAppRecord setDomain(String value) {
+        set(12, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.DOMAIN</code>. 「domain」- 应用程序所在域
+     */
+    @Override
+    public String getDomain() {
+        return (String) get(12);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
+     */
+    @Override
+    public XAppRecord setPort(Integer value) {
+        set(13, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
+     */
+    @Override
+    public Integer getPort() {
+        return (Integer) get(13);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
+     */
+    @Override
+    public XAppRecord setContext(String value) {
+        set(14, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
+     */
+    @Override
+    public String getContext() {
         return (String) get(14);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
+     */
+    @Override
+    public XAppRecord setUrlLogin(String value) {
+        set(15, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
+     */
+    @Override
+    public String getUrlLogin() {
+        return (String) get(15);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
+     */
+    @Override
+    public XAppRecord setUrlAdmin(String value) {
+        set(16, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
+     */
+    @Override
+    public String getUrlAdmin() {
+        return (String) get(16);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
+     */
+    @Override
+    public XAppRecord setEndpoint(String value) {
+        set(17, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
+     */
+    @Override
+    public String getEndpoint() {
+        return (String) get(17);
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
+     */
+    @Override
+    public XAppRecord setEntry(String value) {
+        set(18, value);
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
+     */
+    @Override
+    public String getEntry() {
+        return (String) get(18);
     }
 
     /**
@@ -285,7 +351,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setActive(Boolean value) {
-        set(15, value);
+        set(19, value);
         return this;
     }
 
@@ -294,7 +360,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public Boolean getActive() {
-        return (Boolean) get(15);
+        return (Boolean) get(19);
     }
 
     /**
@@ -302,7 +368,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setSigma(String value) {
-        set(16, value);
+        set(20, value);
         return this;
     }
 
@@ -311,7 +377,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getSigma() {
-        return (String) get(16);
+        return (String) get(20);
     }
 
     /**
@@ -319,7 +385,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setMetadata(String value) {
-        set(17, value);
+        set(21, value);
         return this;
     }
 
@@ -328,7 +394,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getMetadata() {
-        return (String) get(17);
+        return (String) get(21);
     }
 
     /**
@@ -336,7 +402,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setLanguage(String value) {
-        set(18, value);
+        set(22, value);
         return this;
     }
 
@@ -345,7 +411,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getLanguage() {
-        return (String) get(18);
+        return (String) get(22);
     }
 
     /**
@@ -353,7 +419,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setCreatedAt(LocalDateTime value) {
-        set(19, value);
+        set(23, value);
         return this;
     }
 
@@ -362,7 +428,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public LocalDateTime getCreatedAt() {
-        return (LocalDateTime) get(19);
+        return (LocalDateTime) get(23);
     }
 
     /**
@@ -370,7 +436,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setCreatedBy(String value) {
-        set(20, value);
+        set(24, value);
         return this;
     }
 
@@ -379,7 +445,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getCreatedBy() {
-        return (String) get(20);
+        return (String) get(24);
     }
 
     /**
@@ -387,7 +453,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setUpdatedAt(LocalDateTime value) {
-        set(21, value);
+        set(25, value);
         return this;
     }
 
@@ -396,7 +462,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public LocalDateTime getUpdatedAt() {
-        return (LocalDateTime) get(21);
+        return (LocalDateTime) get(25);
     }
 
     /**
@@ -404,7 +470,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public XAppRecord setUpdatedBy(String value) {
-        set(22, value);
+        set(26, value);
         return this;
     }
 
@@ -413,7 +479,7 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
      */
     @Override
     public String getUpdatedBy() {
-        return (String) get(22);
+        return (String) get(26);
     }
 
     // -------------------------------------------------------------------------
@@ -434,18 +500,22 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
         setKey(from.getKey());
         setName(from.getName());
         setCode(from.getCode());
+        setStatus(from.getStatus());
+        setTenantId(from.getTenantId());
+        setAppSecret(from.getAppSecret());
+        setAppKey(from.getAppKey());
         setTitle(from.getTitle());
         setLogo(from.getLogo());
         setIcp(from.getIcp());
         setCopyRight(from.getCopyRight());
         setEmail(from.getEmail());
         setDomain(from.getDomain());
-        setAppPort(from.getAppPort());
-        setUrlEntry(from.getUrlEntry());
-        setUrlMain(from.getUrlMain());
-        setPath(from.getPath());
-        setRoute(from.getRoute());
-        setAppKey(from.getAppKey());
+        setPort(from.getPort());
+        setContext(from.getContext());
+        setUrlLogin(from.getUrlLogin());
+        setUrlAdmin(from.getUrlAdmin());
+        setEndpoint(from.getEndpoint());
+        setEntry(from.getEntry());
         setActive(from.getActive());
         setSigma(from.getSigma());
         setMetadata(from.getMetadata());
@@ -477,24 +547,28 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
     /**
      * Create a detached, initialised XAppRecord
      */
-    public XAppRecord(String key, String name, String code, String title, String logo, String icp, String copyRight, String email, String domain, Integer appPort, String urlEntry, String urlMain, String path, String route, String appKey, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
+    public XAppRecord(String key, String name, String code, String status, String tenantId, String appSecret, String appKey, String title, String logo, String icp, String copyRight, String email, String domain, Integer port, String context, String urlLogin, String urlAdmin, String endpoint, String entry, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
         super(XApp.X_APP);
 
         setKey(key);
         setName(name);
         setCode(code);
+        setStatus(status);
+        setTenantId(tenantId);
+        setAppSecret(appSecret);
+        setAppKey(appKey);
         setTitle(title);
         setLogo(logo);
         setIcp(icp);
         setCopyRight(copyRight);
         setEmail(email);
         setDomain(domain);
-        setAppPort(appPort);
-        setUrlEntry(urlEntry);
-        setUrlMain(urlMain);
-        setPath(path);
-        setRoute(route);
-        setAppKey(appKey);
+        setPort(port);
+        setContext(context);
+        setUrlLogin(urlLogin);
+        setUrlAdmin(urlAdmin);
+        setEndpoint(endpoint);
+        setEntry(entry);
         setActive(active);
         setSigma(sigma);
         setMetadata(metadata);
@@ -516,18 +590,22 @@ public class XAppRecord extends UpdatableRecordImpl<XAppRecord> implements Vertx
             setKey(value.getKey());
             setName(value.getName());
             setCode(value.getCode());
+            setStatus(value.getStatus());
+            setTenantId(value.getTenantId());
+            setAppSecret(value.getAppSecret());
+            setAppKey(value.getAppKey());
             setTitle(value.getTitle());
             setLogo(value.getLogo());
             setIcp(value.getIcp());
             setCopyRight(value.getCopyRight());
             setEmail(value.getEmail());
             setDomain(value.getDomain());
-            setAppPort(value.getAppPort());
-            setUrlEntry(value.getUrlEntry());
-            setUrlMain(value.getUrlMain());
-            setPath(value.getPath());
-            setRoute(value.getRoute());
-            setAppKey(value.getAppKey());
+            setPort(value.getPort());
+            setContext(value.getContext());
+            setUrlLogin(value.getUrlLogin());
+            setUrlAdmin(value.getUrlAdmin());
+            setEndpoint(value.getEndpoint());
+            setEntry(value.getEntry());
             setActive(value.getActive());
             setSigma(value.getSigma());
             setMetadata(value.getMetadata());

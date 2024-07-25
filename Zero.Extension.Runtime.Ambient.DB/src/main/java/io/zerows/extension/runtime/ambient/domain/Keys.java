@@ -20,6 +20,7 @@ import io.zerows.extension.runtime.ambient.domain.tables.XNumber;
 import io.zerows.extension.runtime.ambient.domain.tables.XSource;
 import io.zerows.extension.runtime.ambient.domain.tables.XTabular;
 import io.zerows.extension.runtime.ambient.domain.tables.XTag;
+import io.zerows.extension.runtime.ambient.domain.tables.XTenant;
 import io.zerows.extension.runtime.ambient.domain.tables.records.RTagObjectRecord;
 import io.zerows.extension.runtime.ambient.domain.tables.records.XActivityChangeRecord;
 import io.zerows.extension.runtime.ambient.domain.tables.records.XActivityRecord;
@@ -36,6 +37,7 @@ import io.zerows.extension.runtime.ambient.domain.tables.records.XNumberRecord;
 import io.zerows.extension.runtime.ambient.domain.tables.records.XSourceRecord;
 import io.zerows.extension.runtime.ambient.domain.tables.records.XTabularRecord;
 import io.zerows.extension.runtime.ambient.domain.tables.records.XTagRecord;
+import io.zerows.extension.runtime.ambient.domain.tables.records.XTenantRecord;
 
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
@@ -58,9 +60,9 @@ public class Keys {
     public static final UniqueKey<XActivityChangeRecord> KEY_X_ACTIVITY_CHANGE_PRIMARY = Internal.createUniqueKey(XActivityChange.X_ACTIVITY_CHANGE, DSL.name("KEY_X_ACTIVITY_CHANGE_PRIMARY"), new TableField[] { XActivityChange.X_ACTIVITY_CHANGE.KEY }, true);
     public static final UniqueKey<XActivityRuleRecord> KEY_X_ACTIVITY_RULE_PRIMARY = Internal.createUniqueKey(XActivityRule.X_ACTIVITY_RULE, DSL.name("KEY_X_ACTIVITY_RULE_PRIMARY"), new TableField[] { XActivityRule.X_ACTIVITY_RULE.KEY }, true);
     public static final UniqueKey<XAppRecord> KEY_X_APP_CODE = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_CODE"), new TableField[] { XApp.X_APP.CODE }, true);
+    public static final UniqueKey<XAppRecord> KEY_X_APP_CONTEXT = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_CONTEXT"), new TableField[] { XApp.X_APP.CONTEXT, XApp.X_APP.URL_LOGIN }, true);
+    public static final UniqueKey<XAppRecord> KEY_X_APP_CONTEXT_2 = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_CONTEXT_2"), new TableField[] { XApp.X_APP.CONTEXT, XApp.X_APP.URL_ADMIN }, true);
     public static final UniqueKey<XAppRecord> KEY_X_APP_NAME = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_NAME"), new TableField[] { XApp.X_APP.NAME }, true);
-    public static final UniqueKey<XAppRecord> KEY_X_APP_PATH = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_PATH"), new TableField[] { XApp.X_APP.PATH, XApp.X_APP.URL_ENTRY }, true);
-    public static final UniqueKey<XAppRecord> KEY_X_APP_PATH_2 = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_PATH_2"), new TableField[] { XApp.X_APP.PATH, XApp.X_APP.URL_MAIN }, true);
     public static final UniqueKey<XAppRecord> KEY_X_APP_PRIMARY = Internal.createUniqueKey(XApp.X_APP, DSL.name("KEY_X_APP_PRIMARY"), new TableField[] { XApp.X_APP.KEY }, true);
     public static final UniqueKey<XAttachmentRecord> KEY_X_ATTACHMENT_FILE_KEY = Internal.createUniqueKey(XAttachment.X_ATTACHMENT, DSL.name("KEY_X_ATTACHMENT_FILE_KEY"), new TableField[] { XAttachment.X_ATTACHMENT.FILE_KEY }, true);
     public static final UniqueKey<XAttachmentRecord> KEY_X_ATTACHMENT_FILE_PATH = Internal.createUniqueKey(XAttachment.X_ATTACHMENT, DSL.name("KEY_X_ATTACHMENT_FILE_PATH"), new TableField[] { XAttachment.X_ATTACHMENT.FILE_PATH }, true);
@@ -89,4 +91,7 @@ public class Keys {
     public static final UniqueKey<XTabularRecord> KEY_X_TABULAR_SIGMA = Internal.createUniqueKey(XTabular.X_TABULAR, DSL.name("KEY_X_TABULAR_SIGMA"), new TableField[] { XTabular.X_TABULAR.SIGMA, XTabular.X_TABULAR.TYPE, XTabular.X_TABULAR.CODE }, true);
     public static final UniqueKey<XTagRecord> KEY_X_TAG_NAME = Internal.createUniqueKey(XTag.X_TAG, DSL.name("KEY_X_TAG_NAME"), new TableField[] { XTag.X_TAG.NAME, XTag.X_TAG.APP_ID }, true);
     public static final UniqueKey<XTagRecord> KEY_X_TAG_PRIMARY = Internal.createUniqueKey(XTag.X_TAG, DSL.name("KEY_X_TAG_PRIMARY"), new TableField[] { XTag.X_TAG.KEY }, true);
+    public static final UniqueKey<XTenantRecord> KEY_X_TENANT_CODE = Internal.createUniqueKey(XTenant.X_TENANT, DSL.name("KEY_X_TENANT_CODE"), new TableField[] { XTenant.X_TENANT.CODE }, true);
+    public static final UniqueKey<XTenantRecord> KEY_X_TENANT_PRIMARY = Internal.createUniqueKey(XTenant.X_TENANT, DSL.name("KEY_X_TENANT_PRIMARY"), new TableField[] { XTenant.X_TENANT.KEY }, true);
+    public static final UniqueKey<XTenantRecord> KEY_X_TENANT_SIGMA = Internal.createUniqueKey(XTenant.X_TENANT, DSL.name("KEY_X_TENANT_SIGMA"), new TableField[] { XTenant.X_TENANT.SIGMA }, true);
 }

@@ -4,13 +4,29 @@
 package io.zerows.extension.commerce.rbac.domain;
 
 
-import io.zerows.extension.commerce.rbac.domain.tables.*;
+import io.zerows.extension.commerce.rbac.domain.tables.OAccessToken;
+import io.zerows.extension.commerce.rbac.domain.tables.OUser;
+import io.zerows.extension.commerce.rbac.domain.tables.RGroupRole;
+import io.zerows.extension.commerce.rbac.domain.tables.RRolePerm;
+import io.zerows.extension.commerce.rbac.domain.tables.RUserGroup;
+import io.zerows.extension.commerce.rbac.domain.tables.RUserRole;
+import io.zerows.extension.commerce.rbac.domain.tables.SAction;
+import io.zerows.extension.commerce.rbac.domain.tables.SGroup;
+import io.zerows.extension.commerce.rbac.domain.tables.SPacket;
+import io.zerows.extension.commerce.rbac.domain.tables.SPath;
+import io.zerows.extension.commerce.rbac.domain.tables.SPermSet;
+import io.zerows.extension.commerce.rbac.domain.tables.SPermission;
+import io.zerows.extension.commerce.rbac.domain.tables.SResource;
+import io.zerows.extension.commerce.rbac.domain.tables.SRole;
+import io.zerows.extension.commerce.rbac.domain.tables.SUser;
+import io.zerows.extension.commerce.rbac.domain.tables.SView;
+import io.zerows.extension.commerce.rbac.domain.tables.SVisitant;
 
 
 /**
  * Convenience access to all tables in ZDB.
  */
-@SuppressWarnings({"all", "unchecked", "rawtypes"})
+@SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**

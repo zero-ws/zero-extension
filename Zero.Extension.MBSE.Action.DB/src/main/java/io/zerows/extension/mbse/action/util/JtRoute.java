@@ -57,7 +57,7 @@ class JtRoute {
         }
         /* Read root of current route */
         final HApp app = ark.app();
-        final String root = app.option(KName.App.ROUTE);
+        final String root = app.option(KName.App.ENDPOINT);
         if (Ut.isNotNil(root)) {
             uri.append(root).append(root.endsWith("/") ? "" : "/");
         }

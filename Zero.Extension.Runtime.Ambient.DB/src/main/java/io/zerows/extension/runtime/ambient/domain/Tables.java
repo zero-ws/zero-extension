@@ -20,6 +20,7 @@ import io.zerows.extension.runtime.ambient.domain.tables.XNumber;
 import io.zerows.extension.runtime.ambient.domain.tables.XSource;
 import io.zerows.extension.runtime.ambient.domain.tables.XTabular;
 import io.zerows.extension.runtime.ambient.domain.tables.XTag;
+import io.zerows.extension.runtime.ambient.domain.tables.XTenant;
 
 
 /**
@@ -107,4 +108,9 @@ public class Tables {
      * The table <code>ZDB.X_TAG</code>.
      */
     public static final XTag X_TAG = XTag.X_TAG;
+
+    /**
+     * The table <code>ZDB.X_TENANT</code>.
+     */
+    public static final XTenant X_TENANT = XTenant.X_TENANT;
 }

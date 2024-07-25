@@ -65,6 +65,26 @@ public class XApp extends TableImpl<XAppRecord> {
     public final TableField<XAppRecord, String> CODE = createField(DSL.name("CODE"), SQLDataType.VARCHAR(36), this, "「code」- 应用程序编码");
 
     /**
+     * The column <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
+     */
+    public final TableField<XAppRecord, String> STATUS = createField(DSL.name("STATUS"), SQLDataType.VARCHAR(255), this, "「status」- 应用状态");
+
+    /**
+     * The column <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
+     */
+    public final TableField<XAppRecord, String> TENANT_ID = createField(DSL.name("TENANT_ID"), SQLDataType.VARCHAR(36), this, "「tenantId」- 租户ID");
+
+    /**
+     * The column <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
+     */
+    public final TableField<XAppRecord, String> APP_SECRET = createField(DSL.name("APP_SECRET"), SQLDataType.VARCHAR(128), this, "「appSecret」- 专用密钥");
+
+    /**
+     * The column <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     */
+    public final TableField<XAppRecord, String> APP_KEY = createField(DSL.name("APP_KEY"), SQLDataType.VARCHAR(128), this, "「appKey」- 应用程序专用唯一hashKey");
+
+    /**
      * The column <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     public final TableField<XAppRecord, String> TITLE = createField(DSL.name("TITLE"), SQLDataType.VARCHAR(64), this, "「title」- 应用程序标题");
@@ -95,35 +115,34 @@ public class XApp extends TableImpl<XAppRecord> {
     public final TableField<XAppRecord, String> DOMAIN = createField(DSL.name("DOMAIN"), SQLDataType.VARCHAR(255), this, "「domain」- 应用程序所在域");
 
     /**
-     * The column <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
+     * The column <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
      */
-    public final TableField<XAppRecord, Integer> APP_PORT = createField(DSL.name("APP_PORT"), SQLDataType.INTEGER, this, "「appPort」- 应用程序端口号，和SOURCE的端口号区别开");
+    public final TableField<XAppRecord, Integer> PORT = createField(DSL.name("PORT"), SQLDataType.INTEGER, this, "「port」- 应用程序端口号，和SOURCE的端口号区别开");
 
     /**
-     * The column <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
+     * The column <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
      */
-    public final TableField<XAppRecord, String> URL_ENTRY = createField(DSL.name("URL_ENTRY"), SQLDataType.VARCHAR(255), this, "「urlEntry」— 应用程序入口页面（登录页）");
+    public final TableField<XAppRecord, String> CONTEXT = createField(DSL.name("CONTEXT"), SQLDataType.VARCHAR(255), this, "「context」- 应用程序路径");
 
     /**
-     * The column <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
+     * The column <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
      */
-    public final TableField<XAppRecord, String> URL_MAIN = createField(DSL.name("URL_MAIN"), SQLDataType.VARCHAR(255), this, "「urlMain」- 应用程序内置主页（带安全）");
+    public final TableField<XAppRecord, String> URL_LOGIN = createField(DSL.name("URL_LOGIN"), SQLDataType.VARCHAR(255), this, "「urlLogin」— 应用程序入口页面（登录页）");
 
     /**
-     * The column <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
+     * The column <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
      */
-    public final TableField<XAppRecord, String> PATH = createField(DSL.name("PATH"), SQLDataType.VARCHAR(255), this, "「path」- 应用程序路径");
+    public final TableField<XAppRecord, String> URL_ADMIN = createField(DSL.name("URL_ADMIN"), SQLDataType.VARCHAR(255), this, "「urlAdmin」- 应用程序内置主页（带安全）");
 
     /**
-     * The column <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * The column <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
      */
-    public final TableField<XAppRecord, String> ROUTE = createField(DSL.name("ROUTE"), SQLDataType.VARCHAR(255), this, "「route」- 后端API的根路径，启动时需要");
+    public final TableField<XAppRecord, String> ENDPOINT = createField(DSL.name("ENDPOINT"), SQLDataType.VARCHAR(255), this, "「endpoint」- 后端API的根路径，启动时需要");
 
     /**
-     * The column <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     * The column <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
      */
-    public final TableField<XAppRecord, String> APP_KEY = createField(DSL.name("APP_KEY"), SQLDataType.VARCHAR(128), this, "「appKey」- 应用程序专用唯一hashKey");
+    public final TableField<XAppRecord, String> ENTRY = createField(DSL.name("ENTRY"), SQLDataType.VARCHAR(255), this, "「entry」- App 关联的入口菜单");
 
     /**
      * The column <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
@@ -215,7 +234,7 @@ public class XApp extends TableImpl<XAppRecord> {
 
     @Override
     public List<UniqueKey<XAppRecord>> getUniqueKeys() {
-        return Arrays.asList(Keys.KEY_X_APP_NAME, Keys.KEY_X_APP_CODE, Keys.KEY_X_APP_PATH, Keys.KEY_X_APP_PATH_2);
+        return Arrays.asList(Keys.KEY_X_APP_NAME, Keys.KEY_X_APP_CODE, Keys.KEY_X_APP_CONTEXT, Keys.KEY_X_APP_CONTEXT_2);
     }
 
     @Override

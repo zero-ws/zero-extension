@@ -78,7 +78,7 @@ public class ControlService implements ControlStub {
             KName.SIGMA,
             KName.IDENTIFIER,
             KName.Ui.PAGE,
-            KName.App.PATH
+            KName.App.CONTEXT
         );
         LOG.Ui.info(LOGGER, "Control ( type = {0} ) with parameters = `{1}`", controlType, criteria.encode());
         return Ux.Jooq.on(UiVisitorDao.class).<UiVisitor>fetchOneAsync(criteria).compose(visitor -> {

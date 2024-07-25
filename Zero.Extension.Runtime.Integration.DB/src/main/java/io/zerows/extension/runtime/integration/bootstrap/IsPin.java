@@ -20,7 +20,7 @@ public class IsPin implements HRegistry.Mod<Vertx> {
     /* 模块注册器 */
     @Override
     public Boolean configure(final Vertx container, final HAmbient ambient) {
-        Ke.banner("「Ολοκλήρωση」- KIntegration ( Is )");
+        Ke.banner("「Ολοκλήρωση」- Integration ( Is )");
         LOG.Init.info(IsPin.class, "IsConfiguration...");
         IsConfiguration.registry(ambient);
         return true;

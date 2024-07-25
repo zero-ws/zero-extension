@@ -22,18 +22,22 @@ public class XApp implements VertxPojo, IXApp {
     private String key;
     private String name;
     private String code;
+    private String status;
+    private String tenantId;
+    private String appSecret;
+    private String appKey;
     private String title;
     private String logo;
     private String icp;
     private String copyRight;
     private String email;
     private String domain;
-    private Integer appPort;
-    private String urlEntry;
-    private String urlMain;
-    private String path;
-    private String route;
-    private String appKey;
+    private Integer port;
+    private String context;
+    private String urlLogin;
+    private String urlAdmin;
+    private String endpoint;
+    private String entry;
     private Boolean active;
     private String sigma;
     private String metadata;
@@ -49,18 +53,22 @@ public class XApp implements VertxPojo, IXApp {
         this.key = value.getKey();
         this.name = value.getName();
         this.code = value.getCode();
+        this.status = value.getStatus();
+        this.tenantId = value.getTenantId();
+        this.appSecret = value.getAppSecret();
+        this.appKey = value.getAppKey();
         this.title = value.getTitle();
         this.logo = value.getLogo();
         this.icp = value.getIcp();
         this.copyRight = value.getCopyRight();
         this.email = value.getEmail();
         this.domain = value.getDomain();
-        this.appPort = value.getAppPort();
-        this.urlEntry = value.getUrlEntry();
-        this.urlMain = value.getUrlMain();
-        this.path = value.getPath();
-        this.route = value.getRoute();
-        this.appKey = value.getAppKey();
+        this.port = value.getPort();
+        this.context = value.getContext();
+        this.urlLogin = value.getUrlLogin();
+        this.urlAdmin = value.getUrlAdmin();
+        this.endpoint = value.getEndpoint();
+        this.entry = value.getEntry();
         this.active = value.getActive();
         this.sigma = value.getSigma();
         this.metadata = value.getMetadata();
@@ -75,18 +83,22 @@ public class XApp implements VertxPojo, IXApp {
         String key,
         String name,
         String code,
+        String status,
+        String tenantId,
+        String appSecret,
+        String appKey,
         String title,
         String logo,
         String icp,
         String copyRight,
         String email,
         String domain,
-        Integer appPort,
-        String urlEntry,
-        String urlMain,
-        String path,
-        String route,
-        String appKey,
+        Integer port,
+        String context,
+        String urlLogin,
+        String urlAdmin,
+        String endpoint,
+        String entry,
         Boolean active,
         String sigma,
         String metadata,
@@ -99,18 +111,22 @@ public class XApp implements VertxPojo, IXApp {
         this.key = key;
         this.name = name;
         this.code = code;
+        this.status = status;
+        this.tenantId = tenantId;
+        this.appSecret = appSecret;
+        this.appKey = appKey;
         this.title = title;
         this.logo = logo;
         this.icp = icp;
         this.copyRight = copyRight;
         this.email = email;
         this.domain = domain;
-        this.appPort = appPort;
-        this.urlEntry = urlEntry;
-        this.urlMain = urlMain;
-        this.path = path;
-        this.route = route;
-        this.appKey = appKey;
+        this.port = port;
+        this.context = context;
+        this.urlLogin = urlLogin;
+        this.urlAdmin = urlAdmin;
+        this.endpoint = endpoint;
+        this.entry = entry;
         this.active = active;
         this.sigma = sigma;
         this.metadata = metadata;
@@ -174,6 +190,74 @@ public class XApp implements VertxPojo, IXApp {
     @Override
     public XApp setCode(String code) {
         this.code = code;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
+     */
+    @Override
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
+     */
+    @Override
+    public XApp setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
+     */
+    @Override
+    public String getTenantId() {
+        return this.tenantId;
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
+     */
+    @Override
+    public XApp setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
+     */
+    @Override
+    public String getAppSecret() {
+        return this.appSecret;
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
+     */
+    @Override
+    public XApp setAppSecret(String appSecret) {
+        this.appSecret = appSecret;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     */
+    @Override
+    public String getAppKey() {
+        return this.appKey;
+    }
+
+    /**
+     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     */
+    @Override
+    public XApp setAppKey(String appKey) {
+        this.appKey = appKey;
         return this;
     }
 
@@ -280,106 +364,104 @@ public class XApp implements VertxPojo, IXApp {
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
+     * Getter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
      */
     @Override
-    public Integer getAppPort() {
-        return this.appPort;
+    public Integer getPort() {
+        return this.port;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
+     * Setter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
      */
     @Override
-    public XApp setAppPort(Integer appPort) {
-        this.appPort = appPort;
+    public XApp setPort(Integer port) {
+        this.port = port;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
+     * Getter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
      */
     @Override
-    public String getUrlEntry() {
-        return this.urlEntry;
+    public String getContext() {
+        return this.context;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
+     * Setter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
      */
     @Override
-    public XApp setUrlEntry(String urlEntry) {
-        this.urlEntry = urlEntry;
+    public XApp setContext(String context) {
+        this.context = context;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
+     * Getter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
      */
     @Override
-    public String getUrlMain() {
-        return this.urlMain;
+    public String getUrlLogin() {
+        return this.urlLogin;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
+     * Setter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
      */
     @Override
-    public XApp setUrlMain(String urlMain) {
-        this.urlMain = urlMain;
+    public XApp setUrlLogin(String urlLogin) {
+        this.urlLogin = urlLogin;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Getter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
      */
     @Override
-    public String getPath() {
-        return this.path;
+    public String getUrlAdmin() {
+        return this.urlAdmin;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Setter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
      */
     @Override
-    public XApp setPath(String path) {
-        this.path = path;
+    public XApp setUrlAdmin(String urlAdmin) {
+        this.urlAdmin = urlAdmin;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Getter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
      */
     @Override
-    public String getRoute() {
-        return this.route;
+    public String getEndpoint() {
+        return this.endpoint;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Setter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
      */
     @Override
-    public XApp setRoute(String route) {
-        this.route = route;
+    public XApp setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     * Getter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
      */
     @Override
-    public String getAppKey() {
-        return this.appKey;
+    public String getEntry() {
+        return this.entry;
     }
 
     /**
-     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     * Setter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
      */
     @Override
-    public XApp setAppKey(String appKey) {
-        this.appKey = appKey;
+    public XApp setEntry(String entry) {
+        this.entry = entry;
         return this;
     }
 
@@ -546,6 +628,30 @@ public class XApp implements VertxPojo, IXApp {
         }
         else if (!this.code.equals(other.code))
             return false;
+        if (this.status == null) {
+            if (other.status != null)
+                return false;
+        }
+        else if (!this.status.equals(other.status))
+            return false;
+        if (this.tenantId == null) {
+            if (other.tenantId != null)
+                return false;
+        }
+        else if (!this.tenantId.equals(other.tenantId))
+            return false;
+        if (this.appSecret == null) {
+            if (other.appSecret != null)
+                return false;
+        }
+        else if (!this.appSecret.equals(other.appSecret))
+            return false;
+        if (this.appKey == null) {
+            if (other.appKey != null)
+                return false;
+        }
+        else if (!this.appKey.equals(other.appKey))
+            return false;
         if (this.title == null) {
             if (other.title != null)
                 return false;
@@ -582,41 +688,41 @@ public class XApp implements VertxPojo, IXApp {
         }
         else if (!this.domain.equals(other.domain))
             return false;
-        if (this.appPort == null) {
-            if (other.appPort != null)
+        if (this.port == null) {
+            if (other.port != null)
                 return false;
         }
-        else if (!this.appPort.equals(other.appPort))
+        else if (!this.port.equals(other.port))
             return false;
-        if (this.urlEntry == null) {
-            if (other.urlEntry != null)
+        if (this.context == null) {
+            if (other.context != null)
                 return false;
         }
-        else if (!this.urlEntry.equals(other.urlEntry))
+        else if (!this.context.equals(other.context))
             return false;
-        if (this.urlMain == null) {
-            if (other.urlMain != null)
+        if (this.urlLogin == null) {
+            if (other.urlLogin != null)
                 return false;
         }
-        else if (!this.urlMain.equals(other.urlMain))
+        else if (!this.urlLogin.equals(other.urlLogin))
             return false;
-        if (this.path == null) {
-            if (other.path != null)
+        if (this.urlAdmin == null) {
+            if (other.urlAdmin != null)
                 return false;
         }
-        else if (!this.path.equals(other.path))
+        else if (!this.urlAdmin.equals(other.urlAdmin))
             return false;
-        if (this.route == null) {
-            if (other.route != null)
+        if (this.endpoint == null) {
+            if (other.endpoint != null)
                 return false;
         }
-        else if (!this.route.equals(other.route))
+        else if (!this.endpoint.equals(other.endpoint))
             return false;
-        if (this.appKey == null) {
-            if (other.appKey != null)
+        if (this.entry == null) {
+            if (other.entry != null)
                 return false;
         }
-        else if (!this.appKey.equals(other.appKey))
+        else if (!this.entry.equals(other.entry))
             return false;
         if (this.active == null) {
             if (other.active != null)
@@ -676,18 +782,22 @@ public class XApp implements VertxPojo, IXApp {
         result = prime * result + ((this.key == null) ? 0 : this.key.hashCode());
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
+        result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
+        result = prime * result + ((this.tenantId == null) ? 0 : this.tenantId.hashCode());
+        result = prime * result + ((this.appSecret == null) ? 0 : this.appSecret.hashCode());
+        result = prime * result + ((this.appKey == null) ? 0 : this.appKey.hashCode());
         result = prime * result + ((this.title == null) ? 0 : this.title.hashCode());
         result = prime * result + ((this.logo == null) ? 0 : this.logo.hashCode());
         result = prime * result + ((this.icp == null) ? 0 : this.icp.hashCode());
         result = prime * result + ((this.copyRight == null) ? 0 : this.copyRight.hashCode());
         result = prime * result + ((this.email == null) ? 0 : this.email.hashCode());
         result = prime * result + ((this.domain == null) ? 0 : this.domain.hashCode());
-        result = prime * result + ((this.appPort == null) ? 0 : this.appPort.hashCode());
-        result = prime * result + ((this.urlEntry == null) ? 0 : this.urlEntry.hashCode());
-        result = prime * result + ((this.urlMain == null) ? 0 : this.urlMain.hashCode());
-        result = prime * result + ((this.path == null) ? 0 : this.path.hashCode());
-        result = prime * result + ((this.route == null) ? 0 : this.route.hashCode());
-        result = prime * result + ((this.appKey == null) ? 0 : this.appKey.hashCode());
+        result = prime * result + ((this.port == null) ? 0 : this.port.hashCode());
+        result = prime * result + ((this.context == null) ? 0 : this.context.hashCode());
+        result = prime * result + ((this.urlLogin == null) ? 0 : this.urlLogin.hashCode());
+        result = prime * result + ((this.urlAdmin == null) ? 0 : this.urlAdmin.hashCode());
+        result = prime * result + ((this.endpoint == null) ? 0 : this.endpoint.hashCode());
+        result = prime * result + ((this.entry == null) ? 0 : this.entry.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.metadata == null) ? 0 : this.metadata.hashCode());
@@ -706,18 +816,22 @@ public class XApp implements VertxPojo, IXApp {
         sb.append(key);
         sb.append(", ").append(name);
         sb.append(", ").append(code);
+        sb.append(", ").append(status);
+        sb.append(", ").append(tenantId);
+        sb.append(", ").append(appSecret);
+        sb.append(", ").append(appKey);
         sb.append(", ").append(title);
         sb.append(", ").append(logo);
         sb.append(", ").append(icp);
         sb.append(", ").append(copyRight);
         sb.append(", ").append(email);
         sb.append(", ").append(domain);
-        sb.append(", ").append(appPort);
-        sb.append(", ").append(urlEntry);
-        sb.append(", ").append(urlMain);
-        sb.append(", ").append(path);
-        sb.append(", ").append(route);
-        sb.append(", ").append(appKey);
+        sb.append(", ").append(port);
+        sb.append(", ").append(context);
+        sb.append(", ").append(urlLogin);
+        sb.append(", ").append(urlAdmin);
+        sb.append(", ").append(endpoint);
+        sb.append(", ").append(entry);
         sb.append(", ").append(active);
         sb.append(", ").append(sigma);
         sb.append(", ").append(metadata);
@@ -740,18 +854,22 @@ public class XApp implements VertxPojo, IXApp {
         setKey(from.getKey());
         setName(from.getName());
         setCode(from.getCode());
+        setStatus(from.getStatus());
+        setTenantId(from.getTenantId());
+        setAppSecret(from.getAppSecret());
+        setAppKey(from.getAppKey());
         setTitle(from.getTitle());
         setLogo(from.getLogo());
         setIcp(from.getIcp());
         setCopyRight(from.getCopyRight());
         setEmail(from.getEmail());
         setDomain(from.getDomain());
-        setAppPort(from.getAppPort());
-        setUrlEntry(from.getUrlEntry());
-        setUrlMain(from.getUrlMain());
-        setPath(from.getPath());
-        setRoute(from.getRoute());
-        setAppKey(from.getAppKey());
+        setPort(from.getPort());
+        setContext(from.getContext());
+        setUrlLogin(from.getUrlLogin());
+        setUrlAdmin(from.getUrlAdmin());
+        setEndpoint(from.getEndpoint());
+        setEntry(from.getEntry());
         setActive(from.getActive());
         setSigma(from.getSigma());
         setMetadata(from.getMetadata());

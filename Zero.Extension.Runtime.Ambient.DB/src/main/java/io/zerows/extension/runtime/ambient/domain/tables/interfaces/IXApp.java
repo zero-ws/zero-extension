@@ -48,6 +48,46 @@ public interface IXApp extends VertxPojo, Serializable {
     public String getCode();
 
     /**
+     * Setter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
+     */
+    public IXApp setStatus(String value);
+
+    /**
+     * Getter for <code>ZDB.X_APP.STATUS</code>. 「status」- 应用状态
+     */
+    public String getStatus();
+
+    /**
+     * Setter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
+     */
+    public IXApp setTenantId(String value);
+
+    /**
+     * Getter for <code>ZDB.X_APP.TENANT_ID</code>. 「tenantId」- 租户ID
+     */
+    public String getTenantId();
+
+    /**
+     * Setter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
+     */
+    public IXApp setAppSecret(String value);
+
+    /**
+     * Getter for <code>ZDB.X_APP.APP_SECRET</code>. 「appSecret」- 专用密钥
+     */
+    public String getAppSecret();
+
+    /**
+     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     */
+    public IXApp setAppKey(String value);
+
+    /**
+     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     */
+    public String getAppKey();
+
+    /**
      * Setter for <code>ZDB.X_APP.TITLE</code>. 「title」- 应用程序标题
      */
     public IXApp setTitle(String value);
@@ -108,66 +148,64 @@ public interface IXApp extends VertxPojo, Serializable {
     public String getDomain();
 
     /**
-     * Setter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
+     * Setter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
      */
-    public IXApp setAppPort(Integer value);
+    public IXApp setPort(Integer value);
 
     /**
-     * Getter for <code>ZDB.X_APP.APP_PORT</code>. 「appPort」-
-     * 应用程序端口号，和SOURCE的端口号区别开
+     * Getter for <code>ZDB.X_APP.PORT</code>. 「port」- 应用程序端口号，和SOURCE的端口号区别开
      */
-    public Integer getAppPort();
+    public Integer getPort();
 
     /**
-     * Setter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
+     * Setter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
      */
-    public IXApp setUrlEntry(String value);
+    public IXApp setContext(String value);
 
     /**
-     * Getter for <code>ZDB.X_APP.URL_ENTRY</code>. 「urlEntry」— 应用程序入口页面（登录页）
+     * Getter for <code>ZDB.X_APP.CONTEXT</code>. 「context」- 应用程序路径
      */
-    public String getUrlEntry();
+    public String getContext();
 
     /**
-     * Setter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
+     * Setter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
      */
-    public IXApp setUrlMain(String value);
+    public IXApp setUrlLogin(String value);
 
     /**
-     * Getter for <code>ZDB.X_APP.URL_MAIN</code>. 「urlMain」- 应用程序内置主页（带安全）
+     * Getter for <code>ZDB.X_APP.URL_LOGIN</code>. 「urlLogin」— 应用程序入口页面（登录页）
      */
-    public String getUrlMain();
+    public String getUrlLogin();
 
     /**
-     * Setter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Setter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
      */
-    public IXApp setPath(String value);
+    public IXApp setUrlAdmin(String value);
 
     /**
-     * Getter for <code>ZDB.X_APP.PATH</code>. 「path」- 应用程序路径
+     * Getter for <code>ZDB.X_APP.URL_ADMIN</code>. 「urlAdmin」- 应用程序内置主页（带安全）
      */
-    public String getPath();
+    public String getUrlAdmin();
 
     /**
-     * Setter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Setter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
      */
-    public IXApp setRoute(String value);
+    public IXApp setEndpoint(String value);
 
     /**
-     * Getter for <code>ZDB.X_APP.ROUTE</code>. 「route」- 后端API的根路径，启动时需要
+     * Getter for <code>ZDB.X_APP.ENDPOINT</code>. 「endpoint」- 后端API的根路径，启动时需要
      */
-    public String getRoute();
+    public String getEndpoint();
 
     /**
-     * Setter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     * Setter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
      */
-    public IXApp setAppKey(String value);
+    public IXApp setEntry(String value);
 
     /**
-     * Getter for <code>ZDB.X_APP.APP_KEY</code>. 「appKey」- 应用程序专用唯一hashKey
+     * Getter for <code>ZDB.X_APP.ENTRY</code>. 「entry」- App 关联的入口菜单
      */
-    public String getAppKey();
+    public String getEntry();
 
     /**
      * Setter for <code>ZDB.X_APP.ACTIVE</code>. 「active」- 是否启用
@@ -270,18 +308,22 @@ public interface IXApp extends VertxPojo, Serializable {
                 setOrThrow(this::setKey,json::getString,"KEY","java.lang.String");
                 setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
                 setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
+                setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
+                setOrThrow(this::setTenantId,json::getString,"TENANT_ID","java.lang.String");
+                setOrThrow(this::setAppSecret,json::getString,"APP_SECRET","java.lang.String");
+                setOrThrow(this::setAppKey,json::getString,"APP_KEY","java.lang.String");
                 setOrThrow(this::setTitle,json::getString,"TITLE","java.lang.String");
                 setOrThrow(this::setLogo,json::getString,"LOGO","java.lang.String");
                 setOrThrow(this::setIcp,json::getString,"ICP","java.lang.String");
                 setOrThrow(this::setCopyRight,json::getString,"COPY_RIGHT","java.lang.String");
                 setOrThrow(this::setEmail,json::getString,"EMAIL","java.lang.String");
                 setOrThrow(this::setDomain,json::getString,"DOMAIN","java.lang.String");
-                setOrThrow(this::setAppPort,json::getInteger,"APP_PORT","java.lang.Integer");
-                setOrThrow(this::setUrlEntry,json::getString,"URL_ENTRY","java.lang.String");
-                setOrThrow(this::setUrlMain,json::getString,"URL_MAIN","java.lang.String");
-                setOrThrow(this::setPath,json::getString,"PATH","java.lang.String");
-                setOrThrow(this::setRoute,json::getString,"ROUTE","java.lang.String");
-                setOrThrow(this::setAppKey,json::getString,"APP_KEY","java.lang.String");
+                setOrThrow(this::setPort,json::getInteger,"PORT","java.lang.Integer");
+                setOrThrow(this::setContext,json::getString,"CONTEXT","java.lang.String");
+                setOrThrow(this::setUrlLogin,json::getString,"URL_LOGIN","java.lang.String");
+                setOrThrow(this::setUrlAdmin,json::getString,"URL_ADMIN","java.lang.String");
+                setOrThrow(this::setEndpoint,json::getString,"ENDPOINT","java.lang.String");
+                setOrThrow(this::setEntry,json::getString,"ENTRY","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setMetadata,json::getString,"METADATA","java.lang.String");
@@ -300,18 +342,22 @@ public interface IXApp extends VertxPojo, Serializable {
                 json.put("KEY",getKey());
                 json.put("NAME",getName());
                 json.put("CODE",getCode());
+                json.put("STATUS",getStatus());
+                json.put("TENANT_ID",getTenantId());
+                json.put("APP_SECRET",getAppSecret());
+                json.put("APP_KEY",getAppKey());
                 json.put("TITLE",getTitle());
                 json.put("LOGO",getLogo());
                 json.put("ICP",getIcp());
                 json.put("COPY_RIGHT",getCopyRight());
                 json.put("EMAIL",getEmail());
                 json.put("DOMAIN",getDomain());
-                json.put("APP_PORT",getAppPort());
-                json.put("URL_ENTRY",getUrlEntry());
-                json.put("URL_MAIN",getUrlMain());
-                json.put("PATH",getPath());
-                json.put("ROUTE",getRoute());
-                json.put("APP_KEY",getAppKey());
+                json.put("PORT",getPort());
+                json.put("CONTEXT",getContext());
+                json.put("URL_LOGIN",getUrlLogin());
+                json.put("URL_ADMIN",getUrlAdmin());
+                json.put("ENDPOINT",getEndpoint());
+                json.put("ENTRY",getEntry());
                 json.put("ACTIVE",getActive());
                 json.put("SIGMA",getSigma());
                 json.put("METADATA",getMetadata());

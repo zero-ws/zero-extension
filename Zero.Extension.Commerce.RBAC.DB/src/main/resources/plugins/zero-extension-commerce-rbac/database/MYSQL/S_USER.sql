@@ -9,9 +9,14 @@ CREATE TABLE IF NOT EXISTS S_USER
     `USERNAME`   VARCHAR(255) COMMENT '「username」- 用户登录账号',
     `REALNAME`   VARCHAR(255) COMMENT '「realname」- 用户真实姓名',
     `ALIAS`      VARCHAR(255) COMMENT '「alias」- 用户昵称',
+
     `MOBILE`     VARCHAR(255) COMMENT '「mobile」- 用户登录手机',
     `EMAIL`      VARCHAR(255) COMMENT '「email」- 用户登录EMAIL地址',
     `PASSWORD`   VARCHAR(255) COMMENT '「password」- 用户登录密码',
+
+    -- 第三方账号（微信和支付宝先放到账号中）
+    `WECHAT`     VARCHAR(255) COMMENT '「wechat」- 微信号',
+    `ALIPAY`     VARCHAR(255) COMMENT '「alipay」- 支付宝',
 
     -- 模块相关 Join
     `MODEL_ID`   VARCHAR(255) COMMENT '「modelId」- 组所关联的模型identifier，用于描述',
@@ -31,7 +36,6 @@ CREATE TABLE IF NOT EXISTS S_USER
     `UPDATED_BY` VARCHAR(36) COMMENT '「updatedBy」- 更新人',
     PRIMARY KEY (`KEY`) USING BTREE
 );
-
 -- changeset Lang:ox-suser-2
 -- Unique Key: 独立唯一键定义
 ALTER TABLE S_USER

@@ -3,6 +3,10 @@ databaseChangeLog:
   - include:
       file: MYSQL/X_APP.sql
       relativeToChangelogFile: true
+  # 应用信息
+  - include:
+      file: MYSQL/X_TENANT.sql
+      relativeToChangelogFile: true
   # 数据源处理
   - include:
       file: MYSQL/X_SOURCE.sql

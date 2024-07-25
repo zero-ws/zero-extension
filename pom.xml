@@ -24,6 +24,7 @@
         <module>Zero.Extension.Runtime.Graphic.DB</module>           <!-- 图引擎 -->
         <module>Zero.Extension.Runtime.Workflow.DB</module>          <!-- 工作流引擎 -->
         <module>Zero.Extension.Runtime.TPL.DB</module>               <!-- 模板引擎 -->
+        <module>Zero.Extension.Runtime.Report.DB</module>            <!-- 报表管理 -->
 
 
         <!-- 动态配置模块 -->

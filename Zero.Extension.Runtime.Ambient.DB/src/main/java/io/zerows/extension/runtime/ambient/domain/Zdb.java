@@ -106,6 +106,11 @@ public class Zdb extends SchemaImpl {
     public final XTag X_TAG = XTag.X_TAG;
 
     /**
+     * The table <code>ZDB.X_TENANT</code>.
+     */
+    public final XTenant X_TENANT = XTenant.X_TENANT;
+
+    /**
      * No further instances allowed
      */
     private Zdb() {
@@ -136,7 +141,8 @@ public class Zdb extends SchemaImpl {
             XNumber.X_NUMBER,
             XSource.X_SOURCE,
             XTabular.X_TABULAR,
-            XTag.X_TAG
+            XTag.X_TAG,
+            XTenant.X_TENANT
         );
     }
 }

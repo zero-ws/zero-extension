@@ -89,11 +89,12 @@ public class UniteArkSource implements UniteArk<List<XSource>> {
              */
             final JsonObject backend = new JsonObject();
             backend.put(KName.App.DOMAIN, app.getDomain());
-            backend.put(KName.App.APP_PORT, app.getAppPort());
-            backend.put(KName.App.ROUTE, app.getRoute());
+            backend.put(KName.App.PORT, app.getPort());
+            backend.put(KName.App.ENDPOINT, app.getEndpoint());
             normalized.put("backend", backend);
             // Fix Dynamic Route
-            normalized.put(KName.App.ROUTE, app.getRoute());
+            normalized.put(KName.App.ENDPOINT, app.getEndpoint());
+            normalized.put(KName.App.ENTRY, app.getEntry());
             /*
              * Front-End
              * path - front end application information
@@ -102,12 +103,12 @@ public class UniteArkSource implements UniteArk<List<XSource>> {
              *
              */
             final JsonObject frontend = new JsonObject();
-            frontend.put(KName.App.PATH, app.getPath());
-            frontend.put(KName.App.URL_ENTRY, app.getUrlEntry());
-            frontend.put(KName.App.URL_MAIN, app.getUrlMain());
+            frontend.put(KName.App.CONTEXT, app.getContext());
+            frontend.put(KName.App.URL_LOGIN, app.getUrlLogin());
+            frontend.put(KName.App.URL_ADMIN, app.getUrlAdmin());
             normalized.put("frontend", frontend);
             // Fix Dynamic Route
-            normalized.put(KName.App.PATH, app.getPath());
+            normalized.put(KName.App.CONTEXT, app.getContext());
         }
         /* Auditor information */
         {

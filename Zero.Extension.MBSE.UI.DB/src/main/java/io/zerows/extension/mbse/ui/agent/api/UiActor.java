@@ -165,7 +165,7 @@ public class UiActor {
             request.put(KName.IDENTIFIER, identifier);
             request.put(KName.Ui.PAGE, page);
             final String path = view + VString.SLASH + position + VString.SLASH + alias;
-            request.put(KName.App.PATH, path);
+            request.put(KName.App.CONTEXT, path);
             /*
              * data
              * config
