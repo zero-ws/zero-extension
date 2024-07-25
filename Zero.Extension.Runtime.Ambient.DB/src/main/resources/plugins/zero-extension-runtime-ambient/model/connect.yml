@@ -54,3 +54,6 @@
 - dao: X_APP              # X_APP
   unique:
     - name
+- dao: X_TENANT           # X_TENANT
+  unique:
+    - code
