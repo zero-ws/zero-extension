@@ -8,6 +8,14 @@ CREATE TABLE IF NOT EXISTS X_TENANT
     `KEY`        VARCHAR(36) COMMENT '「key」- 租户主键',
     `NAME`       VARCHAR(255) COMMENT '「name」- 租户名称',
     `CODE`       VARCHAR(36) COMMENT '「code」- 租户编码',
+    /*
+     * 租户状态设定
+     * PENDING, active = false，未激活
+     * - 只有这种状态 active = false
+     * ACTIVE, active = true，已激活
+     * EXPIRED, active = true, 过期
+     * LOCKED, active = true, 锁定
+     */
     `STATUS`     VARCHAR(255) COMMENT '「status」- 租户状态',
     `TYPE`       VARCHAR(255) COMMENT '「type」- 租户类型',
 
