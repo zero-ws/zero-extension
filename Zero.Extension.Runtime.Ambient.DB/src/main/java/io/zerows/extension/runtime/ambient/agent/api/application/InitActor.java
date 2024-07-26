@@ -7,7 +7,6 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.atom.Database;
-import io.zerows.extension.runtime.ambient.agent.service.application.AppStub;
 import io.zerows.extension.runtime.ambient.agent.service.application.InitStub;
 import io.zerows.extension.runtime.ambient.eon.Addr;
 import jakarta.inject.Inject;
@@ -17,8 +16,6 @@ public class InitActor {
 
     @Inject
     private transient InitStub stub;
-    @Inject
-    private transient AppStub appStub;
 
     @Address(Addr.Init.INIT)
     public Future<JsonObject> initApp(final String appId, final JsonObject data) {

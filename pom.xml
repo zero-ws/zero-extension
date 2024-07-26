@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <name>Zero.Plugins.Extension.POM.${zero.version}</name>
     <modules>
+
         <!-- 扩展模块骨架 -->
         <module>Zero.Extension.Runtime.Skeleton</module>
         <module>Zero.Extension.Runtime.CRUD</module>                 <!-- CRUD 引擎 -->
@@ -41,6 +42,9 @@
         <module>Zero.Extension.Commerce.RBAC.DB</module>             <!-- Commerce：RBAC -->
         <module>Zero.Extension.Commerce.PSI.DB</module>              <!-- Commerce：PSI -->
         <module>Zero.Extension.Commerce.Documentation.DB</module>    <!-- Commerce：文档管理器/办公协同 -->
+
+        <!-- 上层开发库 -->
+        <module>Zero.Extension.Commerce.Api</module>
     </modules>
     <build>
         <plugins>

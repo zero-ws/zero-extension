@@ -20,6 +20,13 @@ import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
 public class AppService implements AppStub {
 
     @Override
+    public Future<JsonArray> fetchByTenant(final String tenantId) {
+        return Ux.Jooq.on(XAppDao.class)
+            .<XApp>fetchAsync(KName.TENANT_ID, tenantId)
+            .compose(Ux::futureA);
+    }
+
+    @Override
     public Future<JsonObject> fetchByName(final String name) {
         return Ux.Jooq.on(XAppDao.class)
             /* Fetch By Name */
@@ -27,7 +34,11 @@ public class AppService implements AppStub {
             /* Convert to Json */
             .compose(Ux::futureJ)
             /* Before App Initialized ( Public Api ) */
-            .compose(appData -> UObject.create(appData).remove(KName.APP_KEY).toFuture())
+            .compose(appData -> UObject.create(appData)
+                .remove(KName.APP_KEY)              // appKey
+                .remove(KName.APP_SECRET)           // appSecret
+                .toFuture()
+            )
             /*
              * Storage of file definition, here are two parts:
              * 1) - Logo            to Object

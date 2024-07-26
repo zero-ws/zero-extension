@@ -1,6 +1,7 @@
 package io.zerows.extension.runtime.ambient.agent.service.application;
 
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public interface AppStub {
@@ -47,6 +48,8 @@ public interface AppStub {
      * Get application by: appId = {xxx}
      */
     Future<JsonObject> fetchById(String appId);
+
+    Future<JsonArray> fetchByTenant(String tenantId);
 
     /*
      * Get data source by: appId = {xxx}

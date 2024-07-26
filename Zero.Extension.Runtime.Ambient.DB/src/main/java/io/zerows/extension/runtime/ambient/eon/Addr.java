@@ -18,6 +18,8 @@ public interface Addr {
 
         String UP_BY_ID = Prefix._EVENT + "X-APP/UPDATE/BY-ID";
 
+        String ADMIN_USABLE = Prefix._EVENT + "X-APPS/LIST/USABLE";
+
     }
 
     interface Menu {

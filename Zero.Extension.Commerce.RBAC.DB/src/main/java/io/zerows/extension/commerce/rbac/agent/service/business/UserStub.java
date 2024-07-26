@@ -33,8 +33,5 @@ public interface UserStub {
      */
     Future<JsonObject> updateInformation(String userId, JsonObject params);
 
-    /**
-     *
-     */
     Future<JsonObject> fetchInformation(String userId);
 }

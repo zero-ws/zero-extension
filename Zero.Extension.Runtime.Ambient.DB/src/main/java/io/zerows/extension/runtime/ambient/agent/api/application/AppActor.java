@@ -7,11 +7,9 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.domain.atom.commune.XHeader;
 import io.zerows.core.feature.database.atom.Database;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.agent.service.application.AppStub;
-import io.zerows.extension.runtime.ambient.agent.service.application.MenuStub;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XNoticeDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XNotice;
 import io.zerows.extension.runtime.ambient.eon.Addr;
@@ -26,23 +24,6 @@ public class AppActor {
     @Inject
     private transient AppStub appStub;
 
-    @Inject
-    private transient MenuStub menuStub;
-
-    @Address(Addr.App.BY_NAME)
-    public Future<JsonObject> byName(final String name) {
-        return this.appStub.fetchByName(name);
-    }
-
-    @Address(Addr.App.BY_ID)
-    public Future<JsonObject> byId(final String appId, final XHeader header) {
-        return this.appStub.fetchById(appId);
-    }
-
-    @Address(Addr.Menu.BY_APP_ID)
-    public Future<JsonArray> fetchMenus(final String appId) {
-        return this.menuStub.fetchByApp(appId);
-    }
 
     @Address(Addr.App.UP_BY_ID)
     public Future<JsonObject> updateBy(final String appId, final JsonObject data) {
