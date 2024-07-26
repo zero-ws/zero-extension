@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -17,6 +18,7 @@ import io.zerows.extension.commerce.rbac.domain.tables.daos.SUserDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExOwner;
 import io.zerows.extension.runtime.skeleton.secure.Twine;
 
 import java.util.Collection;
@@ -90,13 +92,43 @@ class TwineExtension implements Twine<SUser> {
         });
     }
 
+    /**
+     * 扩展用户信息提取，主要扩展两层
+     * <pre><code>
+     *     1. 根据配置文件中的 category 执行关联查询
+     *        S_USER -> modelId -> category -> classDao
+     *        提取子表信息
+     *     2. 根据 sigma 提取租户信息，调用 {@link ExOwner} 通道信息
+     * </code></pre>
+     *
+     * @param user 读取的用户对象
+     *
+     * @return 返回追加到响应数据中的扩展信息
+     */
     @Override
-    public Future<JsonObject> identAsync(final SUser key) {
-        return this.runSingle(key, qr -> {
-            final UxJooq jq = Ux.Jooq.on(qr.getClassDao());
-            Objects.requireNonNull(jq);
-            return jq.fetchJByIdAsync(key.getModelKey());
-        });
+    public Future<JsonObject> identAsync(final SUser user) {
+        final KRef ref = new KRef();
+        return this.runSingle(user, qr -> {
+                final UxJooq jq = Ux.Jooq.on(qr.getClassDao());
+                Objects.requireNonNull(jq);
+                return jq.fetchJByIdAsync(user.getModelKey());
+            })
+            .compose(ref::future)
+            /*
+             * 追加两个属性到根数据结构中
+             * 1. tenantId -> 租户ID
+             * 2. tenant -> 租户基本信息
+             */
+            .compose(nil -> Ux.channel(ExOwner.class, JsonObject::new, stub -> stub.fetchTenant(user.getSigma())))
+            .compose(tenant -> {
+                final JsonObject response = ref.get();
+                if (Ut.isNotNil(tenant)) {
+                    final String tenantId = Ut.valueString(tenant, KName.KEY);
+                    response.put(KName.TENANT_ID, tenantId);
+                    response.put(KName.Tenant.TENANT, tenant);
+                }
+                return Ux.future(response);
+            });
     }
 
     @Override
