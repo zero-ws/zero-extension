@@ -55,7 +55,7 @@
                             <!-- SPI Required -->
                             io.zerows.core.metadata.osgi.spi.*;-split-package:=merge-first,
 
-                            io.zerows.extension.commerce.api.*,
+                            io.zerows.extension.sdk.cross.api.*,
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional,
