@@ -35,8 +35,10 @@ public class AppService implements AppStub {
             .compose(Ux::futureJ)
             /* Before App Initialized ( Public Api ) */
             .compose(appData -> UObject.create(appData)
-                .remove(KName.APP_KEY)              // appKey
-                .remove(KName.APP_SECRET)           // appSecret
+                .remove(
+                    KName.APP_KEY,                  // appKey
+                    KName.APP_SECRET                // appSecret
+                )
                 .toFuture()
             )
             /*
