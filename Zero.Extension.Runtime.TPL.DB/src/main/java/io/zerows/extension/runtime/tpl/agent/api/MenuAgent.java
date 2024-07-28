@@ -1,5 +1,6 @@
 package io.zerows.extension.runtime.tpl.agent.api;
 
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.EndPoint;
@@ -23,7 +24,7 @@ public interface MenuAgent {
     @POST
     @Path("/my/menu/fetch")
     @Address(Addr.Menu.MY_FETCH)
-    JsonObject fetchMy(@BodyParam JsonObject body);
+    JsonArray fetchMy(@BodyParam JsonObject body);
 
     /*
      * Create new My menu
@@ -54,5 +55,5 @@ public interface MenuAgent {
     @POST
     @Path("/my/menu/save")
     @Address(Addr.Menu.MY_SAVE)
-    JsonObject saveMy(@BodyParam JsonObject body);
+    JsonArray saveMy(@BodyParam JsonObject body);
 }

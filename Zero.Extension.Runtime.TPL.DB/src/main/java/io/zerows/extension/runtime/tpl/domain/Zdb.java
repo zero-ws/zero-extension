@@ -26,9 +26,9 @@ public class Zdb extends SchemaImpl {
     public static final Zdb ZDB = new Zdb();
     private static final long serialVersionUID = 1L;
     /**
-     * The table <code>ZDB.MY_BAG</code>.
+     * The table <code>ZDB.MY_APP</code>.
      */
-    public final MyBag MY_BAG = MyBag.MY_BAG;
+    public final MyApp MY_APP = MyApp.MY_APP;
 
     /**
      * The table <code>ZDB.MY_DESKTOP</code>.
@@ -91,7 +91,7 @@ public class Zdb extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
-            MyBag.MY_BAG,
+            MyApp.MY_APP,
             MyDesktop.MY_DESKTOP,
             MyFavor.MY_FAVOR,
             MyMenu.MY_MENU,

@@ -4,19 +4,28 @@
 package io.zerows.extension.runtime.tpl.domain;
 
 
-import io.zerows.extension.runtime.tpl.domain.tables.*;
+import io.zerows.extension.runtime.tpl.domain.tables.MyApp;
+import io.zerows.extension.runtime.tpl.domain.tables.MyDesktop;
+import io.zerows.extension.runtime.tpl.domain.tables.MyFavor;
+import io.zerows.extension.runtime.tpl.domain.tables.MyMenu;
+import io.zerows.extension.runtime.tpl.domain.tables.MyNotify;
+import io.zerows.extension.runtime.tpl.domain.tables.MySetting;
+import io.zerows.extension.runtime.tpl.domain.tables.MyTpl;
+import io.zerows.extension.runtime.tpl.domain.tables.TplMessage;
+import io.zerows.extension.runtime.tpl.domain.tables.TplModel;
+import io.zerows.extension.runtime.tpl.domain.tables.TplTicket;
 
 
 /**
  * Convenience access to all tables in ZDB.
  */
-@SuppressWarnings({"all", "unchecked", "rawtypes"})
+@SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>ZDB.MY_BAG</code>.
+     * The table <code>ZDB.MY_APP</code>.
      */
-    public static final MyBag MY_BAG = MyBag.MY_BAG;
+    public static final MyApp MY_APP = MyApp.MY_APP;
 
     /**
      * The table <code>ZDB.MY_DESKTOP</code>.

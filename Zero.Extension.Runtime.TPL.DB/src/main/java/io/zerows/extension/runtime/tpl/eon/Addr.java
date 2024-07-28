@@ -21,4 +21,10 @@ public interface Addr {
 
         String MY_SAVE = Prefix._EVENT + "I-MESSAGE/MY/SAVE";
     }
+
+    interface App {
+        String MY_FETCH = Prefix._EVENT + "X-APP/MY/FETCH";
+
+        String MY_SAVE = Prefix._EVENT + "X-APP/MY/SAVE";
+    }
 }

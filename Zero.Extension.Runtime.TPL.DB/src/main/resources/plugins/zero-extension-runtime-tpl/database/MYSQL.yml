@@ -12,7 +12,7 @@ databaseChangeLog:
       file: MYSQL/MY_TPL.sql  # 我的模板
       relativeToChangelogFile: true
   - include:
-      file: MYSQL/MY_BAG.sql  # 我的应用
+      file: MYSQL/MY_APP.sql  # 我的应用
       relativeToChangelogFile: true
   - include:
       file: MYSQL/MY_MENU.sql  # 我的菜单

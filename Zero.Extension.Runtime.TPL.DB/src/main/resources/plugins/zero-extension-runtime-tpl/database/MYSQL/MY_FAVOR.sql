@@ -1,7 +1,7 @@
 -- liquibase formatted sql
 
 -- changeset Lang:my-favor-1
--- 个人应用表：MY_FAVOR
+-- 个人收藏夹：MY_FAVOR
 DROP TABLE IF EXISTS MY_FAVOR;
 CREATE TABLE IF NOT EXISTS MY_FAVOR
 (
