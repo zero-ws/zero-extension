@@ -39,6 +39,6 @@ CREATE TABLE IF NOT EXISTS MY_APP
     PRIMARY KEY (`KEY`)
 );
 
--- changeset Lang:my-bag-2
+-- changeset Lang:my-app-2
 ALTER TABLE MY_APP
     ADD UNIQUE (`OWNER_TYPE`, `OWNER`, `TYPE`, `POSITION`, `APP_ID`);
