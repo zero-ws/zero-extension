@@ -13,7 +13,7 @@ import io.zerows.core.web.model.store.OCacheUri;
 import io.zerows.extension.runtime.skeleton.osgi.spi.web.Orbit;
 
 /*
- * Key generated for uniform platform
+ * Key generated for uniform app.zero.cloud
  */
 class KeCache {
 
