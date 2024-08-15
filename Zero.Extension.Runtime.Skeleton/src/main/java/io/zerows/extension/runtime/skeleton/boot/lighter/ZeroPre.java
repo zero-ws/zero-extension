@@ -1,5 +1,6 @@
 package io.zerows.extension.runtime.skeleton.boot.lighter;
 
+import io.horizon.uca.boot.KEnvironment;
 import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
@@ -39,6 +40,10 @@ public class ZeroPre implements HPre<Vertx> {
          */
         JooqInfix.init(vertx);
         ExcelInfix.init(vertx);
+
+        // 环境变量准备执行
+        KEnvironment.initialize();
+        
         return Boolean.TRUE;
     }
 }
