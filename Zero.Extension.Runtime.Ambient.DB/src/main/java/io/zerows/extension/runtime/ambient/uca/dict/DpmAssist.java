@@ -28,7 +28,7 @@ public class DpmAssist implements Dpm {
         if (Objects.isNull(plugin) || Ut.isNil(source.getKey())) {
             return Ux.future(uniqueMap);
         } else {
-            return Rapid.<String, JsonArray>t(Ut.isNil(params.get(KName.CACHE_KEY)) ? KWeb.CACHE.DIRECTORY : params.get(KName.CACHE_KEY), KWeb.ARGS.V_DATA_EXPIRED)
+            return Rapid.<String, JsonArray>object(Ut.isNil(params.get(KName.CACHE_KEY)) ? KWeb.CACHE.DIRECTORY : params.get(KName.CACHE_KEY), KWeb.ARGS.V_DATA_EXPIRED)
                 .cached(source.getKey(), () -> {
                     plugin.configuration(source.getPluginConfig());
                     return plugin.fetchAsync(source, params);

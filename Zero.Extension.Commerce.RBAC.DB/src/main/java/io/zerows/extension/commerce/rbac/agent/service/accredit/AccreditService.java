@@ -54,7 +54,7 @@ public class AccreditService implements AccreditStub {
     public Future<JsonObject> resource(final JsonObject requestData) {
         final ScResource request = ScResource.create(requestData);
         // First Phase
-        return Rapid.<String, JsonObject>t(ScConstant.POOL_RESOURCES)
+        return Rapid.<String, JsonObject>object(ScConstant.POOL_RESOURCES)
             .cached(request.key(), () -> {
                 /* Fetch Action */
                 final KRef actionHod = new KRef();
@@ -94,7 +94,7 @@ public class AccreditService implements AccreditStub {
              * 提取RBAC配置信息（资源池的缓存）
              */
             final KRef resourceRef = new KRef();
-            return Rapid.<String, JsonObject>t(ScConstant.POOL_RESOURCES).read(resource.key()).compose(data -> {
+            return Rapid.<String, JsonObject>object(ScConstant.POOL_RESOURCES).read(resource.key()).compose(data -> {
                 final SResource resourceT = Ux.fromJson(data.getJsonObject(KName.RECORD), SResource.class);
                 return resourceRef.future(resourceT);
             }).compose(resourceT -> {

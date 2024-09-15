@@ -76,7 +76,7 @@ class ViewMy implements Agonic {
      */
     private Future<JsonObject> fetchResources(final JsonObject input, final UxJooq jooq, final IxMod in) {
         final String key = in.cached() + ":" + input.hashCode();
-        return Rapid.<String, JsonObject>t(KWeb.CACHE.RESOURCE, Agonic.EXPIRED).cached(key,
+        return Rapid.<String, JsonObject>object(KWeb.CACHE.RESOURCE, Agonic.EXPIRED).cached(key,
             () -> Ux.channel(Seeker.class, JsonObject::new, seeker -> seeker.on(jooq).fetchImpact(input)));
     }
 

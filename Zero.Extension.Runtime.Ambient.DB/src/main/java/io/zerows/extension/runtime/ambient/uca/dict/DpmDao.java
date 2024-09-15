@@ -26,7 +26,7 @@ public class DpmDao implements Dpm {
         if (Objects.isNull(jooq) || Ut.isNil(source.getKey())) {
             return Ux.future(new ConcurrentHashMap<>());
         } else {
-            return Rapid.<String, JsonArray>t(KWeb.CACHE.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED)
+            return Rapid.<String, JsonArray>object(KWeb.CACHE.DIRECTORY, KWeb.ARGS.V_DATA_EXPIRED)
                 .cached(source.getKey(), () -> jooq.fetchJAsync(this.condition(params)))
                 .compose(result -> {
                     final ConcurrentMap<String, JsonArray> uniqueMap = new ConcurrentHashMap<>();

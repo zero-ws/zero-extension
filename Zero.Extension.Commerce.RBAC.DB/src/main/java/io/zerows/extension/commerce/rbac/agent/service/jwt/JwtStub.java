@@ -18,7 +18,7 @@ public interface JwtStub {
      * 2) Database
      * 3) Etcd
      * As you want.
-     *
+     * <p>
      * 「Optional」
      * Default for optional, Not Implement Situation:
      * 1. When micro service api gateway use security interface
@@ -29,7 +29,7 @@ public interface JwtStub {
      *
      * @param data Stored token information
      */
-    Future<JsonObject> store(String userKey, JsonObject data);
+    Future<JsonObject> store(JsonObject data);
 
     /*
      *

@@ -30,7 +30,7 @@ public class DatabaseInit implements Init {
             /*
              * Init third step: X_SOURCE stored into pool
              */
-            return Rapid.<String, Database>t(KWeb.CACHE.DATABASE)
+            return Rapid.<String, Database>object(KWeb.CACHE.DATABASE)
                 .write(appJson.getString(KName.KEY), database)
                 .compose(item -> Ux.future(item.toJson()))
                 .compose(item -> Ux.future(this.result(appJson, item)));

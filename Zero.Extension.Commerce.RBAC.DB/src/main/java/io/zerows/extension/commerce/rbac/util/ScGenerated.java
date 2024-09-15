@@ -8,7 +8,6 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.OUser;
@@ -23,32 +22,7 @@ import java.util.*;
  * @author lang : 2024-07-11
  */
 class ScGenerated {
-    private static final OLog LOGGER = Ut.Log.security(ScGenerated.class);
     private static final ScConfig CONFIG = ScPin.getConfig();
-
-    /*
-     * Data Pool ( Pond ) for Cache
-     * There are some pools
-     * 1) name = POOL_CODE ( Default Value )
-     *      Desc: Authorization cache pool for oauth logging workflow.
-     *      1.1. The data existing inner 30s ( configured by `codeExpired` )
-     *      1.2. The name `POOL_CODE` could be configured by `codePool`
-     *      1.3. The authorization code length could be configured by `codeLength`
-     *      1.4. Method: `getCode/putCode`
-     */
-    static String valueCode() {
-        final Integer codeLength = CONFIG.getCodeLength();
-        final String authCode = Ut.randomString(codeLength);
-        LOGGER.info("Generated Authorization Code: {0}", authCode);
-        return authCode;
-    }
-
-    static String valueCodeSms() {
-        final Integer codeLength = CONFIG.getCodeLength();
-        final String smsCode = String.valueOf(Ut.randomNumber(codeLength));
-        LOGGER.info("Generated Mobile SMS Code: {0}", smsCode);
-        return smsCode;
-    }
 
     static String valuePassword() {
         return CONFIG.getInitializePassword();

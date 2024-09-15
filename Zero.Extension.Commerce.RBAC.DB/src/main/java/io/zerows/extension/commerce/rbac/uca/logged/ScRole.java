@@ -36,7 +36,7 @@ public class ScRole {
 
     private ScRole(final String roleId) {
         this.roleId = roleId;
-        this.cache = Rapid.t(ScConstant.POOL_PERMISSIONS);
+        this.cache = Rapid.object(ScConstant.POOL_PERMISSIONS);
     }
 
     public static ScRole login(final String roleId) {

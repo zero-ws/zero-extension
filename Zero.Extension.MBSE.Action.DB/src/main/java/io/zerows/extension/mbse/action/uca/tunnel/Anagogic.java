@@ -36,7 +36,7 @@ class Anagogic {
      * Database processing
      */
     static Future<Database> databaseAsync(final Commercial commercial) {
-        return Rapid.<String, Database>t(KWeb.CACHE.DATABASE_MULTI)
+        return Rapid.<String, Database>object(KWeb.CACHE.DATABASE_MULTI)
             .cached(commercial.app(), () -> Ux.future(commercial.database()));
     }
 

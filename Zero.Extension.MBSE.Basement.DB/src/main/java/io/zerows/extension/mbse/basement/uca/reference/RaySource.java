@@ -69,7 +69,7 @@ class RaySource {
                 final JsonObject condition = kv.key();
                 final RDao dao = kv.value();
                 futureMap.put(hashCode,
-                    Rapid.<String, JsonArray>t(KWeb.CACHE.REFERENCE, KWeb.ARGS.V_DATA_EXPIRED)
+                    Rapid.<String, JsonArray>object(KWeb.CACHE.REFERENCE, KWeb.ARGS.V_DATA_EXPIRED)
                         .cached(String.valueOf(hashCode), () -> {
                             LOG.Uca.info(this.getClass(), "Async Batch condition building: {0}", condition.encode());
                             return dao.fetchByAsync(condition);

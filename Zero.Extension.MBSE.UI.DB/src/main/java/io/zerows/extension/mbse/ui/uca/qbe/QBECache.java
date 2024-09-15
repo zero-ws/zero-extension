@@ -21,7 +21,7 @@ import java.util.function.Supplier;
  */
 public class QBECache {
     public static final Cc<String, HQR> CCT_H_COND = Cc.openThread();
-    private static final Rapid<String, UiView> RAPID = Rapid.t(UiConstant.POOL_LIST_QR, 600); // 10 min
+    private static final Rapid<String, UiView> RAPID = Rapid.object(UiConstant.POOL_LIST_QR, 600); // 10 min
 
     public static Future<List<UiView>> cached(final List<UiView> listQr) {
         final List<Future<Boolean>> futures = new ArrayList<>();

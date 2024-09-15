@@ -10,6 +10,7 @@ import io.zerows.jackson.databind.JsonObjectDeserializer;
 import io.zerows.jackson.databind.JsonObjectSerializer;
 
 import java.io.Serializable;
+import java.util.concurrent.TimeUnit;
 
 /*
  * Security configuration data
@@ -17,6 +18,10 @@ import java.io.Serializable;
  */
 public class ScConfig implements Serializable {
     private static final Cc<String, KQr> CC_KQR = Cc.open();
+    /*
+     * Message Code expired time: ( s )，秒
+     */
+    private final Integer messageExpired = 60;
     /*
      * Unique condition for Security Entity
      * 1) User
@@ -28,7 +33,7 @@ public class ScConfig implements Serializable {
      */
     private ScCondition condition = new ScCondition();
     /*
-     * Authorization Code expired time: ( s )
+     * Authorization Code expired time: ( s )，秒
      */
     private Integer codeExpired = 30;
     /*
@@ -36,7 +41,7 @@ public class ScConfig implements Serializable {
      */
     private Integer codeLength = 8;
     /*
-     * WebToken expired time: ( ms )
+     * WebToken expired time: ( min ), 分钟
      */
     private Long tokenExpired = 30L;
     /*
@@ -98,6 +103,9 @@ public class ScConfig implements Serializable {
         this.condition = condition;
     }
 
+    /*
+     * 默认使用秒，所以此处不转换
+     */
     public Integer getCodeExpired() {
         return this.codeExpired;
     }
@@ -123,16 +131,24 @@ public class ScConfig implements Serializable {
         this.supportSecondary = supportSecondary;
     }
 
-    public Long getTokenExpired() {
+    /**
+     * 默认使用分钟，所以此处分钟转秒
+     *
+     * @return 返回秒
+     */
+    public Integer getTokenExpired() {
         if (null == this.tokenExpired) {
             this.tokenExpired = 0L;
         }
-        /* To ms */
-        return this.tokenExpired * 1000 * 1000;
+        return Math.toIntExact(TimeUnit.MINUTES.toSeconds(this.tokenExpired));
     }
 
     public void setTokenExpired(final Long tokenExpired) {
         this.tokenExpired = tokenExpired;
+    }
+
+    public Integer getMessageExpired() {
+        return this.messageExpired;
     }
 
     public Boolean getVerifyCode() {

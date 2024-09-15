@@ -40,7 +40,7 @@ public class ScUser {
 
     private ScUser(final String habitus) {
         this.habitus = habitus;
-        this.rapid = Rapid.t(KWeb.CACHE.User.MY_HABITUS);
+        this.rapid = Rapid.object(KWeb.CACHE.User.MY_HABITUS);
     }
 
     // ------------------------- Profile Method ------------------------

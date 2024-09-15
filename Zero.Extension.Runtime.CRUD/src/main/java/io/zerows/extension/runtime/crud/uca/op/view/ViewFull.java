@@ -33,7 +33,7 @@ class ViewFull implements Agonic {
     @Override
     public Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
         final String cacheKey = in.cached();
-        return Rapid.<String, JsonArray>t(KWeb.CACHE.VIEW_FULL, Agonic.EXPIRED).cached(cacheKey, () -> {
+        return Rapid.<String, JsonArray>object(KWeb.CACHE.VIEW_FULL, Agonic.EXPIRED).cached(cacheKey, () -> {
 
 
             final UxJooq jooq = IxPin.jooq(in);

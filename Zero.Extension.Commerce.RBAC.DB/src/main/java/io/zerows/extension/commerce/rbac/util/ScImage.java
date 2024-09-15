@@ -98,7 +98,7 @@ class ScImage {
                 // Not Match
                 return Fn.outWeb(_401ImageCodeWrongException.class, ScCache.class, null);
             }
-            final Rapid<String, String> rapid = Rapid.t(ScConstant.POOL_CODE_IMAGE);
+            final Rapid<String, String> rapid = Rapid.object(ScConstant.POOL_CODE_IMAGE);
             return rapid.read(sessionId).compose(stored -> {
                 if (Objects.isNull(stored)) {
                     // Not Match
@@ -126,7 +126,7 @@ class ScImage {
         if (Objects.nonNull(support) && support) {
             // Username in Pool
             final String code = Ut.randomCaptcha(5);
-            return Rapid.<String, String>t(ScConstant.POOL_CODE_IMAGE, 300).write(sessionId, code)
+            return Rapid.<String, String>object(ScConstant.POOL_CODE_IMAGE, 300).write(sessionId, code)
                 // Generate Image Buffer to Front-End
                 .compose(codeImage -> imageGenerate(codeImage, width, height));
         } else {
@@ -139,7 +139,7 @@ class ScImage {
         final Boolean support = CONFIG.getVerifyCode();
         if (Objects.nonNull(support) && support) {
             // Username in Pool
-            return Rapid.<String, String>t(ScConstant.POOL_CODE_IMAGE).clear(sessionId)
+            return Rapid.<String, String>object(ScConstant.POOL_CODE_IMAGE).clear(sessionId)
                 .compose(nil -> Ux.futureT());
         } else {
             // Skip because image Verify off

@@ -36,7 +36,7 @@ public class PageService implements PageStub {
                 .compose(Fn.ofJObject(KName.Ui.CONFIG));
         if (DevEnv.cacheUi()) {
             // Ui Cache Enabled
-            return Rapid.<String, JsonObject>t(UiConstant.POOL_LAYOUT)
+            return Rapid.<String, JsonObject>object(UiConstant.POOL_LAYOUT)
                 .cached(layoutId, () -> executor.apply(layoutId));
         } else {
             // Ui Cache Disabled ( Development Mode )

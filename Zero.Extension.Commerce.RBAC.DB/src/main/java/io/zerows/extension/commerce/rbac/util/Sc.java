@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.zerows.core.security.zdk.authority.Acl;
+import io.zerows.extension.commerce.rbac.atom.ScToken;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.*;
 
 import java.util.List;
@@ -15,28 +16,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Sc {
-    
-    public static <V> Future<V> cacheSms(final String key) {
-        return ScCache.message(key);
-    }
-
-    public static <V> Future<V> cacheSms(final String key, final V value) {
-        return ScCache.message(key, value);
-    }
-
-    /*
-     * cache information
-     * 1. Code: Authorization Code Cache Pool
-     *    - get data from code cache
-     *    - put data into code cache
-     */
-    public static <V> Future<V> cacheCode(final String key) {
-        return ScCache.code(key);
-    }
-
-    public static <V> Future<V> cacheCode(final String key, final V value) {
-        return ScCache.code(key, value);
-    }
 
     public static Future<JsonObject> cachePath(final SPath path, final Function<SPath, Future<JsonObject>> executor) {
         return ScCache.admitPath(path, executor, "PATH");
@@ -48,21 +27,6 @@ public class Sc {
 
     public static Future<JsonObject> cacheView(final RoutingContext context, final String habitus) {
         return ScCache.view(context, habitus);
-    }
-
-    /*
-     * Business logical
-     * Generate authorization code based on `configuration.json` file
-     * - codeExpired
-     * - codeLength
-     * - codePool
-     */
-    public static String valueCode() {
-        return ScGenerated.valueCode();
-    }
-
-    public static String valueCodeSms() {
-        return ScGenerated.valueCodeSms();
     }
 
     public static String valuePassword() {
@@ -120,27 +84,9 @@ public class Sc {
         return ScImage.imageKo(sessionId);
     }
 
-
-    /*
-     * Jwt token process
-     * 1) Build jwt token response
-     * {
-     *     access_token: "xxx",
-     *     refresh_token: "xxx",
-     *     iat: xx
-     * }
-     * 2) Build OAccessToken object, this object will be stored into database.
-     */
-    public static JsonObject jwtToken(final JsonObject data) {
-        return ScToken.jwtToken(data);
-    }
-
-    public static Future<Boolean> jwtToken(final List<OAccessToken> item, final String userId) {
-        return ScToken.jwtToken(item, userId);
-    }
-
-    public static OAccessToken jwtToken(final JsonObject jwt, final String userKey) {
-        return ScToken.jwtToken(jwt, userKey);
+    public static Future<Boolean> tokenVerify(final ScToken scToken, final String userKey,
+                                              final String token, final Class<?> caller) {
+        return ScSession.tokenVerify(scToken, userKey, token, caller);
     }
 
     /*

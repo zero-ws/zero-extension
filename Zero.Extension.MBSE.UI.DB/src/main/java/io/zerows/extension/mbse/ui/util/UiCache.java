@@ -36,7 +36,7 @@ class UiCache {
         final String keyPool = poolFn.get();
         if (Ut.isNotNil(keyPool)) {
             final String uiKey = String.valueOf(body.hashCode());
-            return Rapid.<String, T>t(keyPool).cached(uiKey, executor);
+            return Rapid.<String, T>object(keyPool).cached(uiKey, executor);
         } else {
             LOG.Ui.info(LOGGER, "Ui Cached has been disabled!");
             return executor.get();

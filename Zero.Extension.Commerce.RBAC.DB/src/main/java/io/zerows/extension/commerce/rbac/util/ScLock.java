@@ -32,7 +32,7 @@ class ScLock {
             // Verify Limitation is null, skip limitation code
             return executor.get();
         } else {
-            return Rapid.<String, Integer>t(ScConstant.POOL_LIMITATION).read(username).compose(counter -> {
+            return Rapid.<String, Integer>object(ScConstant.POOL_LIMITATION).read(username).compose(counter -> {
                 if (Objects.isNull(counter)) {
                     // Passed
                     return executor.get();
@@ -58,7 +58,7 @@ class ScLock {
             return Ux.future();
         } else {
             final Integer verifyDuration = CONFIG.getVerifyDuration();
-            final Rapid<String, Integer> rapid = Rapid.t(ScConstant.POOL_LIMITATION, verifyDuration);
+            final Rapid<String, Integer> rapid = Rapid.object(ScConstant.POOL_LIMITATION, verifyDuration);
             return rapid.read(username).compose(counter -> {
                 if (Objects.isNull(counter)) {
                     // First, the limitation counter is 1.
@@ -76,7 +76,7 @@ class ScLock {
             // Verify Limitation is null, skip limitation code
             return Ux.future();
         } else {
-            return Rapid.<String, V>t(ScConstant.POOL_LIMITATION).clear(username);
+            return Rapid.<String, V>object(ScConstant.POOL_LIMITATION).clear(username);
         }
     }
 }
