@@ -27,14 +27,15 @@ class ScConfiguration {
          */
         if (null == CONFIG) {
             CONFIG = getConfig();
-            final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
-            final JsonObject configData = configuration.inConfiguration();
-            final String module = ScConstant.BUNDLE_SYMBOLIC_NAME;
-            LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_J,
-                module, configData.encode());
-
-            ambient.registry(module, configData);
         }
+        
+        final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
+        final JsonObject configData = configuration.inConfiguration();
+        final String module = ScConstant.BUNDLE_SYMBOLIC_NAME;
+        LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_J,
+            module, configData.encode());
+
+        ambient.registry(module, configData);
     }
 
     static ScConfig getConfig() {
