@@ -5,7 +5,7 @@ import io.horizon.exception.web._501NotSupportException;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.runtime.WTask;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTicket;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTodo;
@@ -89,10 +89,10 @@ public interface Gear {
     Future<WTask> taskAsync(ProcessInstance instance, Task from);
 
     default Future<List<WTodo>> todoAsync(final JsonObject parameters, final WTask wTask, final WTicket ticket) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<List<WTodo>> todoAsync(final JsonObject parameters, final WTask wTask, final WTicket ticket, final WTodo todo) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

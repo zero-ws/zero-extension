@@ -6,7 +6,6 @@ import io.vertx.ext.auth.User;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
@@ -142,7 +141,7 @@ public class QueueActor {
         final Io<Task> ioTask = Io.ioTask();
         final ProcessDefinition definition = ioTask.inProcess(definitionId);
         if (Objects.isNull(definition)) {
-            return Fn.outWeb(_404ProcessMissingException.class, this.getClass(), definitionId);
+            return Ut.Bnd.failOut(_404ProcessMissingException.class, this.getClass(), definitionId);
         }
 
 

@@ -1,10 +1,8 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapier;
 
-import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
@@ -18,10 +16,6 @@ import java.util.Set;
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
 public class QuinnViews implements Quinn {
-    @Override
-    public <T> Future<T> saveAsync(final String resourceId, final ScOwner owner, final JsonObject data) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
-    }
 
     @Override
     @SuppressWarnings("unchecked")

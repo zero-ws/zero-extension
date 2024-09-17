@@ -6,7 +6,6 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
@@ -52,7 +51,7 @@ public class DocWriter implements DocWStub {
         // isFileName Checking
         final String name = documentJ.getString(KName.NAME);
         if (!Ut.isFileName(name)) {
-            return Fn.outWeb(_400FileNameInValidException.class, this.getClass());
+            return Ut.Bnd.failOut(_400FileNameInValidException.class, this.getClass());
         }
         final String key = documentJ.getString(KName.KEY);
         final UxJooq jq = Ux.Jooq.on(XAttachmentDao.class);

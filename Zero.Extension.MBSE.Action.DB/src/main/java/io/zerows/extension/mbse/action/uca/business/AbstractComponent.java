@@ -145,8 +145,7 @@ public abstract class AbstractComponent implements JtComponent, Service {
      */
     @Override
     public Future<ActOut> transferAsync(final ActIn actIn) {
-        final WebException error = new _501NotImplementException(this.getClass());
-        return Future.failedFuture(error);
+        return Ut.Bnd.failOut(_501NotImplementException.class, this.getClass());
     }
 
     // ------------ Specific Method that will be used in sub-class ------------

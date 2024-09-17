@@ -1,4 +1,4 @@
-package io.zerows.extension.commerce.rbac.agent.service.jwt;
+package io.zerows.extension.commerce.rbac.agent.service.login.jwt;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

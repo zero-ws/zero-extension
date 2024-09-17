@@ -26,11 +26,6 @@ public class Zdb extends SchemaImpl {
     public static final Zdb ZDB = new Zdb();
     private static final long serialVersionUID = 1L;
     /**
-     * The table <code>ZDB.O_ACCESS_TOKEN</code>.
-     */
-    public final OAccessToken O_ACCESS_TOKEN = OAccessToken.O_ACCESS_TOKEN;
-
-    /**
      * The table <code>ZDB.O_USER</code>.
      */
     public final OUser O_USER = OUser.O_USER;
@@ -126,7 +121,6 @@ public class Zdb extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
-            OAccessToken.O_ACCESS_TOKEN,
             OUser.O_USER,
             RGroupRole.R_GROUP_ROLE,
             RRolePerm.R_ROLE_PERM,

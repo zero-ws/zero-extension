@@ -3,7 +3,7 @@ package io.zerows.extension.runtime.skeleton.secure;
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
+import io.vertx.up.util.Ut;
 
 /**
  * 新接口，连同打结接口
@@ -18,7 +18,7 @@ public interface Tie<ID, T> {
      * JsonObject -> Tool
      */
     default Future<T> identAsync(final JsonObject condition) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     /*

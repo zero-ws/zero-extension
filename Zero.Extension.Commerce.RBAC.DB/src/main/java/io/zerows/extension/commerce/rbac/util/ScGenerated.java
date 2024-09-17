@@ -65,7 +65,7 @@ class ScGenerated {
         // sigma 值聚集
         final Set<String> sigmaSet = Ut.valueSetString(users, SUser::getSigma);
         if (VValue.ONE != sigmaSet.size()) {
-            return Future.failedFuture(new _403TokenGenerationException(ScCache.class, sigmaSet.size()));
+            return Ut.Bnd.failOut(_403TokenGenerationException.class, ScGenerated.class, sigmaSet.size());
         }
         /*
          * Credential 通道读取，主要读取 KCredential 对象，属性如：

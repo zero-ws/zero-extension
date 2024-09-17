@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.timer;
 
+import io.horizon.eon.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
@@ -8,13 +9,14 @@ import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.atom.ScToken;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
+import io.zerows.extension.commerce.rbac.eon.AuthMsg;
 import io.zerows.extension.commerce.rbac.eon.ScConstant;
+import io.zerows.extension.commerce.rbac.exception._401TokenCounterException;
+import io.zerows.extension.commerce.rbac.exception._401TokenExpiredException;
+import io.zerows.extension.commerce.rbac.exception._401TokenInvalidException;
 import org.osgi.framework.Bundle;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
@@ -39,7 +41,7 @@ class ScClockToken extends AbstractClock<ScToken> {
     }
 
     @Override
-    protected int getTtl() {
+    public int configTtl() {
         return CONFIG.getTokenExpired();
     }
 
@@ -138,10 +140,96 @@ class ScClockToken extends AbstractClock<ScToken> {
                 .filter(refreshKey -> !refreshKey.equals(scToken.refreshToken()))
                 .collect(Collectors.toSet())
             );
+            // refreshToken = relatedKeys
             keySet.forEach(related -> POINTER.put(scToken.refreshToken(), related));
             this.logger().info("The refresh token `{}` will store {} relations.",
                 scToken.refreshToken(), keySet.size());
             return Ux.future(scToken);
+        });
+    }
+
+    /**
+     * 异常说明
+     * <pre><code>
+     *     {@link _401TokenCounterException} 无法找到 Token
+     *     {@link _401TokenInvalidException} Token 不匹配
+     *     {@link _401TokenExpiredException} Token 超时
+     * </code></pre>
+     *
+     * @param stored   缓存中存储的值
+     * @param waiting  等待验证的值（字面量）
+     * @param identity 验证标识
+     *
+     * @return 验证结果（异步）
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    public Future<Boolean> verify(final ScToken stored, final String waiting, final String identity) {
+        // 无法找到 Token
+        if (Objects.isNull(stored)) {
+            // WebToken size
+            this.logger().info(AuthMsg.TOKEN_SIZE_NULL, null, identity);
+            return Ut.Bnd.failOut(_401TokenCounterException.class, this.getClass(), 0, identity);
+        }
+
+
+        // Token 不匹配
+        final byte[] authBytes = waiting.getBytes(VValue.DFT.CHARSET);
+        if (!Arrays.equals(authBytes, stored.authToken())) {
+            // WebToken invalid
+            this.logger().info(AuthMsg.TOKEN_INVALID, waiting);
+            return Ut.Bnd.failOut(_401TokenInvalidException.class, this.getClass(), waiting);
+        }
+
+
+        // Token 超时
+        final long currentAt = new Date().getTime();
+        final long expiredAt = stored.expiredAt();
+        if (expiredAt < currentAt) {
+            this.logger().info(AuthMsg.TOKEN_EXPIRED, waiting, expiredAt);
+            return Ut.Bnd.failOut(_401TokenExpiredException.class, this.getClass(), waiting);
+        }
+        return Ux.futureT();
+    }
+
+    /**
+     * 这个方法对 Token 而言要执行重算
+     * <pre><code>
+     *     输入可能包含
+     *     1. userId
+     *     2. refreshToken
+     *     3. accessToken
+     * </code></pre>
+     * {@link ScClockToken#POINTER} 中会包含
+     * <pre><code>
+     *     refreshToken = [userId, accessToken]
+     * </code></pre>
+     * 第一输入是 token
+     *
+     * @param keys 所有键值
+     *
+     * @return 异步删除结果
+     */
+    @Override
+    public Future<Boolean> remove(final String... keys) {
+        final Set<String> rmSuper = new HashSet<>();
+        final Set<String> rmChild = new HashSet<>();
+        Arrays.stream(keys).filter(Objects::nonNull).forEach(keyInput -> POINTER.forEach((key, values) -> {
+            if (keyInput.equals(key) || values.equals(keyInput)) {
+                // 删除父类专用
+                rmSuper.add(key);
+                rmSuper.add(values);
+
+
+                // 删除 POINTER 专用
+                rmChild.add(key);
+            }
+        }));
+        return super.remove(rmSuper.toArray(new String[]{})).compose(removed -> {
+            if (removed) {
+                rmChild.forEach(POINTER::remove);
+            }
+            return Ux.futureF();
         });
     }
 }

@@ -7,8 +7,8 @@ import io.modello.eon.em.EmAttribute;
 import io.modello.specification.atom.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityChangeDao;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
@@ -71,7 +71,7 @@ public abstract class AbstractSchism implements Schism {
     @Override
     public Future<JsonObject> diffAsync(final JsonObject recordO, final JsonObject recordN, final Supplier<Future<XActivity>> activityFn) {
         // Default should be 501
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
 }

@@ -2,8 +2,8 @@ package io.zerows.extension.commerce.rbac.util;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
@@ -44,7 +44,7 @@ class ScLock {
                     } else {
                         // Failure
                         final Integer verifyDuration = CONFIG.getVerifyDuration();
-                        return Fn.outWeb(_401MaximumTimesException.class, ScCache.class, limitation, verifyDuration);
+                        return Ut.Bnd.failOut(_401MaximumTimesException.class, ScCache.class, limitation, verifyDuration);
                     }
                 }
             });

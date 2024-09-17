@@ -1,7 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
 import io.horizon.exception.web._400BadRequestException;
-import io.zerows.extension.runtime.skeleton.osgi.spi.environment.Modeling;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -9,6 +8,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.skeleton.exception._400SigmaMissingException;
+import io.zerows.extension.runtime.skeleton.osgi.spi.environment.Modeling;
 
 import java.util.Objects;
 
@@ -45,10 +45,10 @@ public abstract class AbstractIdc implements IdcStub {
      */
     protected <T> Future<T> runPre(final T user) {
         if (Ut.isNil(this.sigma)) {
-            return Future.failedFuture(new _400SigmaMissingException(this.getClass()));
+            return Ut.Bnd.failOut(_400SigmaMissingException.class, this.getClass());
         }
         if (Objects.isNull(user)) {
-            return Future.failedFuture(new _400BadRequestException(this.getClass()));
+            return Ut.Bnd.failOut(_400BadRequestException.class, this.getClass());
         }
         return Ux.future(user);
     }

@@ -1,22 +1,19 @@
-package io.zerows.extension.commerce.rbac.agent.service.login;
+package io.zerows.extension.commerce.rbac.agent.service.login.pre;
 
 import io.horizon.eon.VValue;
-import io.horizon.exception.WebException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Session;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.rbac.agent.service.login.TokenStub;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SUserDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
-import io.zerows.extension.commerce.rbac.exception._401SmsCodeExpiredException;
-import io.zerows.extension.commerce.rbac.exception._401SmsCodeWrongException;
+import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.extension.commerce.rbac.exception._404MobileNotFoundException;
 import io.zerows.extension.commerce.rbac.uca.timer.ClockFactory;
 import io.zerows.extension.commerce.rbac.uca.timer.ScClock;
-import io.zerows.extension.commerce.rbac.util.Sc;
 import io.zerows.plugins.integration.sms.SmsInfix;
 import jakarta.inject.Inject;
 
@@ -30,9 +27,11 @@ public class SmsService implements SmsStub {
     private final ScClock<String> cache;
     @Inject
     private TokenStub tokenStub;
+    @Inject
+    private transient ImageStub imageStub;
 
     public SmsService() {
-        this.cache = ClockFactory.ofSms();
+        this.cache = ClockFactory.ofSms(this.getClass());
     }
 
     @Override
@@ -40,13 +39,14 @@ public class SmsService implements SmsStub {
         final String mobile = Ut.valueString(params, KName.MOBILE);
         return this.fetchUser(mobile).compose(query -> {
             if (Objects.isNull(query)) {
-                final WebException error = Ut.Bnd.failureWeb(_404MobileNotFoundException.class, this.getClass(), mobile);
-                return Future.failedFuture(error);
+                return Ut.Bnd.failOut(_404MobileNotFoundException.class, this.getClass(), mobile);
             }
-            return Sc.imageVerify(sessionId, params, normalized -> {
-                normalized.put("tpl", "MSG_LOGIN");
-                return this.sendInternal(sessionId, normalized);
-            });
+            final String imageCode = Ut.valueString(params, AuthKey.CAPTCHA_IMAGE);
+            return this.imageStub.verify(sessionId, imageCode);
+        }).compose(verified -> {
+            final JsonObject normalized = params.copy();
+            normalized.put("tpl", "MSG_LOGIN");
+            return this.sendInternal(sessionId, normalized);
         });
     }
 
@@ -79,18 +79,14 @@ public class SmsService implements SmsStub {
         // 此处跳过图片验证码，上一步已经处理过了
         final String code = Ut.valueString(params, "message");
         return this.cache.get(sessionId, true)
-            .compose(item -> {
-                if (Objects.isNull(item)) {
-                    // 401: Authorization Code Expired, The item is null, it means that code is expired
-                    return Fn.outWeb(_401SmsCodeExpiredException.class, this.getClass(), sessionId, code);
-                }
-                if (!code.equals(item)) {
-                    // 401: Wrong code provided ( Api Client )
-                    return Fn.outWeb(_401SmsCodeWrongException.class, this.getClass(), code);
-                }
+            // 验证
+            .compose(item -> this.cache.verify(item, code, sessionId))
+            // 手机查找
+            .compose(verified -> {
                 final String mobile = Ut.valueString(params, KName.MOBILE);
                 return this.fetchUser(mobile);
             })
+            // 令牌执行
             .compose(query -> this.tokenStub.execute(query.getKey(), session).compose(response -> {
                 /*
                  * 追加 key 和 username

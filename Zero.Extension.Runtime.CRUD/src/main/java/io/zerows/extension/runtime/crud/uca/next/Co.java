@@ -2,9 +2,10 @@ package io.zerows.extension.runtime.crud.uca.next;
 
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
+import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.crud.eon.Pooled;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.desk.IxRequest;
-import io.zerows.extension.runtime.crud.eon.Pooled;
 
 import java.util.List;
 
@@ -70,7 +71,7 @@ public interface Co<I, A, S, O> {
      * response - The API final result
      */
     default Future<O> ok(final A active, final S standBy) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     /*
@@ -81,7 +82,7 @@ public interface Co<I, A, S, O> {
      * standBy - The standBy result
      */
     default Future<S> next(final I input, final A active) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Co<I, A, S, O> bind(final IxRequest request) {

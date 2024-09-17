@@ -4,7 +4,6 @@
 package io.zerows.extension.commerce.rbac.domain;
 
 
-import io.zerows.extension.commerce.rbac.domain.tables.OAccessToken;
 import io.zerows.extension.commerce.rbac.domain.tables.OUser;
 import io.zerows.extension.commerce.rbac.domain.tables.RGroupRole;
 import io.zerows.extension.commerce.rbac.domain.tables.RRolePerm;
@@ -21,7 +20,6 @@ import io.zerows.extension.commerce.rbac.domain.tables.SRole;
 import io.zerows.extension.commerce.rbac.domain.tables.SUser;
 import io.zerows.extension.commerce.rbac.domain.tables.SView;
 import io.zerows.extension.commerce.rbac.domain.tables.SVisitant;
-import io.zerows.extension.commerce.rbac.domain.tables.records.OAccessTokenRecord;
 import io.zerows.extension.commerce.rbac.domain.tables.records.OUserRecord;
 import io.zerows.extension.commerce.rbac.domain.tables.records.RGroupRoleRecord;
 import io.zerows.extension.commerce.rbac.domain.tables.records.RRolePermRecord;
@@ -55,7 +53,6 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<OAccessTokenRecord> KEY_O_ACCESS_TOKEN_PRIMARY = Internal.createUniqueKey(OAccessToken.O_ACCESS_TOKEN, DSL.name("KEY_O_ACCESS_TOKEN_PRIMARY"), new TableField[] { OAccessToken.O_ACCESS_TOKEN.KEY }, true);
     public static final UniqueKey<OUserRecord> KEY_O_USER_CLIENT_ID = Internal.createUniqueKey(OUser.O_USER, DSL.name("KEY_O_USER_CLIENT_ID"), new TableField[] { OUser.O_USER.CLIENT_ID }, true);
     public static final UniqueKey<OUserRecord> KEY_O_USER_CLIENT_SECRET = Internal.createUniqueKey(OUser.O_USER, DSL.name("KEY_O_USER_CLIENT_SECRET"), new TableField[] { OUser.O_USER.CLIENT_SECRET }, true);
     public static final UniqueKey<OUserRecord> KEY_O_USER_PRIMARY = Internal.createUniqueKey(OUser.O_USER, DSL.name("KEY_O_USER_PRIMARY"), new TableField[] { OUser.O_USER.KEY }, true);

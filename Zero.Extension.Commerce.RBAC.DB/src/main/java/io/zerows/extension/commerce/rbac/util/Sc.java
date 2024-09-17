@@ -8,7 +8,6 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import io.zerows.core.security.zdk.authority.Acl;
-import io.zerows.extension.commerce.rbac.atom.ScToken;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.*;
 
 import java.util.List;
@@ -31,6 +30,10 @@ public class Sc {
 
     public static String valuePassword() {
         return ScGenerated.valuePassword();
+    }
+
+    public static Buffer valueImage(final String imageCode, final int width, final int height) {
+        return ScImage.valueImage(imageCode, width, height);
     }
 
     public static String valueProfile(final SResource resource) {
@@ -67,26 +70,8 @@ public class Sc {
         return ScLock.lockOff(username);
     }
 
-    /*
-     * Image Part
-     */
-    public static Future<Buffer> imageOn(final String sessionId, final int width, final int height) {
-        return ScImage.imageOn(sessionId, width, height);
-    }
-
-    public static <T> Future<T> imageVerify(final String sessionId,
-                                            final JsonObject params,
-                                            final Function<JsonObject, Future<T>> executor) {
-        return ScImage.imageVerify(sessionId, params, executor);
-    }
-
-    public static Future<Boolean> imageOff(final String sessionId) {
-        return ScImage.imageKo(sessionId);
-    }
-
-    public static Future<Boolean> tokenVerify(final ScToken scToken, final String userKey,
-                                              final String token, final Class<?> caller) {
-        return ScSession.tokenVerify(scToken, userKey, token, caller);
+    public static Future<Buffer> imageGenerated(final String code) {
+        return ScImage.imageGenerated(code);
     }
 
     /*

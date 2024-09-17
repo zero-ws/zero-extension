@@ -43,7 +43,7 @@ public class ProfileResource implements AuthorizationResource {
             future.onComplete(res -> {
                 if (res.succeeded()) {
                     if (Objects.isNull(res.result())) {
-                        handler.handle(Future.failedFuture(new _403ForbiddenException(getClass())));
+                        handler.handle(Ut.Bnd.failOut(_403ForbiddenException.class, this.getClass()));
                     } else {
                         final ConcurrentMap<String, Set<String>> profiles = new ConcurrentHashMap<>();
                         Ut.<JsonArray>itJObject(res.result(), (values, field) -> profiles.put(field, Ut.toSet(values)));

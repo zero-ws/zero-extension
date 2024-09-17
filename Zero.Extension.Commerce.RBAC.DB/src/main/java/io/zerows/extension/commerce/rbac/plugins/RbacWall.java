@@ -10,7 +10,7 @@ import io.zerows.core.security.annotations.Authorized;
 import io.zerows.core.security.annotations.AuthorizedResource;
 import io.zerows.core.security.annotations.Wall;
 import io.zerows.extension.commerce.rbac.agent.service.accredit.AccreditStub;
-import io.zerows.extension.commerce.rbac.agent.service.jwt.JwtStub;
+import io.zerows.extension.commerce.rbac.agent.service.login.jwt.JwtStub;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;
 import jakarta.inject.Inject;
 

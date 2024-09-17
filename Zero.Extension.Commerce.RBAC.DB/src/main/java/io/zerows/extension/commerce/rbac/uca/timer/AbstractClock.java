@@ -1,14 +1,13 @@
 package io.zerows.extension.commerce.rbac.uca.timer;
 
 import io.vertx.core.Future;
+import io.vertx.up.fn.Fn;
+import io.vertx.up.unity.Ux;
 import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.core.metadata.zdk.AbstractAmbiguity;
 import org.osgi.framework.Bundle;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author lang : 2024-09-14
@@ -44,14 +43,14 @@ abstract class AbstractClock<T> extends AbstractAmbiguity implements ScClock<T> 
     }
 
     @Override
-    public Rapid<String, T> ofCache() {
-        return Rapid.object(this.poolName, this.getTtl());
+    public Future<Boolean> remove(final String... keys) {
+        final List<Future<Boolean>> waitingQ = new ArrayList<>();
+        Arrays.asList(keys).forEach(key -> waitingQ.add(this.ofCache().clear(key).compose(nil -> Ux.futureT())));
+        return Fn.combineB(waitingQ);
     }
 
-    /**
-     * 此处返回单位为秒，
-     *
-     * @return 秒
-     */
-    protected abstract int getTtl();
+    @Override
+    public Rapid<String, T> ofCache() {
+        return Rapid.object(this.poolName, this.configTtl());
+    }
 }

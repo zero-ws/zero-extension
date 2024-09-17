@@ -3,13 +3,12 @@ package io.zerows.extension.runtime.workflow.uca.camunda;
 import io.horizon.eon.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.workflow.exception._409EventEndUniqueException;
-import io.zerows.extension.runtime.workflow.exception._501EventEndMissingException;
-import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.workflow.bootstrap.WfPin;
+import io.zerows.extension.runtime.workflow.exception._409EventEndUniqueException;
+import io.zerows.extension.runtime.workflow.exception._501EventEndMissingException;
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.instance.EndEvent;
@@ -33,7 +32,7 @@ class IoEventEnd extends AbstractIo<EndEvent> {
         final BpmnModelInstance instance = service.getBpmnModelInstance(definitionId);
         final Collection<EndEvent> ends = instance.getModelElementsByType(EndEvent.class);
         if (ends.isEmpty()) {
-            return Fn.outWeb(_501EventEndMissingException.class, this.getClass(), definitionId);
+            return Ut.Bnd.failOut(_501EventEndMissingException.class, this.getClass(), definitionId);
         }
         return Ux.future(new ArrayList<>(ends));
     }
@@ -47,7 +46,7 @@ class IoEventEnd extends AbstractIo<EndEvent> {
             if (VValue.ONE == size) {
                 return Ux.future(list.get(VValue.IDX));
             } else {
-                return Fn.outWeb(_409EventEndUniqueException.class, this.getClass(), size, definitionId);
+                return Ut.Bnd.failOut(_409EventEndUniqueException.class, this.getClass(), size, definitionId);
             }
         });
     }

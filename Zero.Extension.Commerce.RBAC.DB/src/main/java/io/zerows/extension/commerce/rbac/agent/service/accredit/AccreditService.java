@@ -1,7 +1,6 @@
 package io.zerows.extension.commerce.rbac.agent.service.accredit;
 
 import io.horizon.atom.program.KRef;
-import io.horizon.exception.WebException;
 import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
@@ -154,8 +153,7 @@ public class AccreditService implements AccreditStub {
         final Integer required = resource.getLevel();
         final Integer actual = action.getLevel();
         if (actual < required) {
-            final WebException error = new _403ActionDinnedException(this.getClass(), required, actual);
-            return Future.failedFuture(error);
+            return Ut.Bnd.failOut(_403ActionDinnedException.class, this.getClass(), required, actual);
         } else {
             LOG.Credit.debug(LOGGER, AuthMsg.CREDIT_LEVEL, action.getLevel(), resource.getLevel());
             return Future.succeededFuture(resource);
@@ -169,8 +167,7 @@ public class AccreditService implements AccreditStub {
     private Future<SAction> inspectAction(final ScResource request, final SAction action) {
         if (Objects.isNull(action)) {
             final String requestUri = request.method() + " " + request.uri();
-            final WebException error = new _404ActionMissingException(this.getClass(), requestUri);
-            return Future.failedFuture(error);
+            return Ut.Bnd.failOut(_404ActionMissingException.class, this.getClass(), requestUri);
         } else {
             LOG.Credit.debug(LOGGER, AuthMsg.CREDIT_ACTION, request.uriRequest(), request.method(), request.uri());
             return Future.succeededFuture(action);
@@ -184,8 +181,7 @@ public class AccreditService implements AccreditStub {
     private Future<SResource> inspectResource(final ScResource request, final SAction action, final SResource resource) {
         if (Objects.isNull(resource)) {
             final String requestUri = request.method() + " " + request.uri();
-            final WebException error = new _404ResourceMissingException(this.getClass(), action.getResourceId(), requestUri);
-            return Future.failedFuture(error);
+            return Ut.Bnd.failOut(_404ResourceMissingException.class, this.getClass(), action.getResourceId(), requestUri);
         } else {
             LOG.Credit.debug(LOGGER, AuthMsg.CREDIT_RESOURCE, resource.getKey());
             return Future.succeededFuture(resource);

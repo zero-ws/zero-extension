@@ -3,8 +3,8 @@ package io.zerows.extension.runtime.workflow.uca.camunda;
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.workflow.eon.WfPool;
 import org.camunda.bpm.engine.history.HistoricProcessInstance;
 import org.camunda.bpm.engine.repository.ProcessDefinition;
@@ -93,25 +93,25 @@ interface IoRuntime<I> {
      */
     // Definition Level
     default Future<I> run(final ProcessInstance instance) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     // Process / Task Level
     default Future<I> run(final Task task) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     // Task Level
     default Future<I> run(final String iKey) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<I> start(final ProcessDefinition definition) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<I> end(final HistoricProcessInstance instance) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     // --------------------- Output Method ------------------
@@ -125,11 +125,11 @@ interface IoRuntime<I> {
 
     // ---------------- Child Fetching -----------------
     default Future<List<I>> children(final String oKey) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<I> child(final String oKey) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }
 

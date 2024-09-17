@@ -34,7 +34,7 @@ public class ExIntimitySeeker extends Anchoret<Seeker> implements Seeker {
         final String sigma = params.getString(ARG2);
         LOG.Resource.info(this.getLogger(), AuthMsg.SEEKER_RESOURCE, uri, method, sigma);
         return this.stub.fetchAction(uri, method, sigma).compose(action -> Objects.isNull(action) ?
-            Future.failedFuture(new _404ActionMissingException(this.getClass(), method + " " + uri)) :
+            Ut.Bnd.failOut(_404ActionMissingException.class, this.getClass(), method + " " + uri) :
             UObject.create(params).append(KName.RESOURCE_ID, action.getResourceId())
                 .toFuture());
     }

@@ -74,7 +74,7 @@ public abstract class AbstractChannel implements JtChannel {
             /*
              * null class of component
              */
-            return Future.failedFuture(new _501ChannelErrorException(this.getClass(), null));
+            return Ut.Bnd.failOut(_501ChannelErrorException.class, this.getClass(), (Object) null);
         } else {
             return this.createRequest(envelop, recordClass).compose(request -> {
                 /*
@@ -117,7 +117,7 @@ public abstract class AbstractChannel implements JtChannel {
                     /*
                      * singleton singleton error
                      */
-                    return Future.failedFuture(new _501ChannelErrorException(this.getClass(), componentClass.getName()));
+                    return Ut.Bnd.failOut(_501ChannelErrorException.class, this.getClass(), componentClass.getName());
                 }
             });
         }

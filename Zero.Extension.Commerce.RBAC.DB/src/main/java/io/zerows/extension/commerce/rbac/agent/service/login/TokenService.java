@@ -9,7 +9,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.typed.UObject;
 import io.zerows.extension.commerce.rbac.agent.service.business.GroupStub;
-import io.zerows.extension.commerce.rbac.agent.service.jwt.JwtStub;
+import io.zerows.extension.commerce.rbac.agent.service.login.jwt.JwtStub;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;

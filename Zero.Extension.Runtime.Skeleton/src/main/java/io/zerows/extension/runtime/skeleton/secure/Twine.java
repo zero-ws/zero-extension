@@ -4,7 +4,7 @@ import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
+import io.vertx.up.util.Ut;
 
 import java.util.Collection;
 
@@ -20,10 +20,10 @@ import java.util.Collection;
 public interface Twine<ID> extends Tie<ID, JsonObject> {
 
     default Future<JsonArray> identAsync(final Collection<ID> keys) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonObject> searchAsync(final String identifier, final JsonObject criteria) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

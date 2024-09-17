@@ -302,7 +302,7 @@ public class WRecord implements Serializable {
             final String taskId = todo.getTaskId();
             return ioTask.run(taskId).compose(task -> {
                 if (Objects.isNull(task)) {
-                    return Fn.outWeb(_410TaskStateException.class, this.getClass(), taskId);
+                    return Ut.Bnd.failOut(_410TaskStateException.class, this.getClass(), taskId);
                 }
                 return ioFlow.run(task);
             });

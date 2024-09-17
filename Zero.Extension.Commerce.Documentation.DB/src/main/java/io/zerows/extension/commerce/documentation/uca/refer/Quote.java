@@ -4,8 +4,8 @@ import io.horizon.exception.web._501NotImplementException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.documentation.eon.em.EmRefer;
 
 import java.util.Objects;
@@ -31,12 +31,12 @@ public interface Quote {
 
     default Future<JsonArray> plugAsync(final JsonObject fromJ, final JsonArray toA,
                                         final EmRefer.Entity toType) {
-        return Fn.outWeb(_501NotImplementException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotImplementException.class, this.getClass());
     }
 
     default Future<JsonArray> plugAsync(final JsonObject fromJ, final JsonObject toJ,
                                         final EmRefer.Entity toType) {
-        return Fn.outWeb(_501NotImplementException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotImplementException.class, this.getClass());
     }
 
     default Future<JsonArray> fetchAsync(final String fromId, final EmRefer.Entity toType) {

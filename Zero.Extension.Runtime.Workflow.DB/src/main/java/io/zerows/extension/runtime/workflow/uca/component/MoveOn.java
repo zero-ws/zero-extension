@@ -1,18 +1,17 @@
 package io.zerows.extension.runtime.workflow.uca.component;
 
-import io.zerows.extension.runtime.workflow.eon.WfPool;
 import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
+import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.runtime.WRecord;
 import io.zerows.extension.runtime.workflow.atom.runtime.WRequest;
 import io.zerows.extension.runtime.workflow.atom.runtime.WTransition;
+import io.zerows.extension.runtime.workflow.eon.WfPool;
 import io.zerows.extension.runtime.workflow.exception._404RunOnSupplierException;
 import io.zerows.extension.runtime.workflow.exception._500EventTypeNullException;
-import io.zerows.extension.runtime.workflow.util.Wf;
 import io.zerows.extension.runtime.workflow.uca.central.Behaviour;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.workflow.util.Wf;
 import org.camunda.bpm.engine.task.Task;
 import org.camunda.bpm.model.bpmn.impl.BpmnModelConstants;
 
@@ -42,13 +41,13 @@ public interface MoveOn extends Behaviour {
         final String eventType = Wf.nameEvent(task);
         if (Objects.isNull(eventType)) {
             // Error-80606: event type could not be parsed and extracted from task
-            return Fn.outWeb(_500EventTypeNullException.class, MoveOn.class, task.getTaskDefinitionKey());
+            return Ut.Bnd.failOut(_500EventTypeNullException.class, MoveOn.class, task.getTaskDefinitionKey());
         }
 
         final Supplier<MoveOn> supplier = Pool.SUPPLIER.getOrDefault(eventType, null);
         if (Objects.isNull(supplier)) {
             // Error-80607: The supplier of event type could not be found.
-            return Fn.outWeb(_404RunOnSupplierException.class, MoveOn.class, eventType);
+            return Ut.Bnd.failOut(_404RunOnSupplierException.class, MoveOn.class, eventType);
         }
         final MoveOn moveOn = supplier.get();
         LOG.Web.info(MoveOn.class, "MoveOn {0} has been selected, type = {0}",
@@ -66,10 +65,10 @@ public interface MoveOn extends Behaviour {
      *  Event Fire by Programming
      */
     default Future<WRecord> transferAsync(final WRequest request, final WTransition process) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<WTransition> moveAsync(final WRequest request, final WTransition process) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

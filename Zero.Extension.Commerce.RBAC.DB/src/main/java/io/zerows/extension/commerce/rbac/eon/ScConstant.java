@@ -17,10 +17,10 @@ public interface ScConstant {
     String POOL_ADMIN = "POOL_ADMIN";
     // 登录限制
     String POOL_LIMITATION = "POOL_LIMITATION";
-    // 图片验证码
-    String POOL_CODE_IMAGE = "POOL_CODE_IMAGE";
 
     // ----------------- 统一归口部分的池
+    // 图片验证码
+    String POOL_CODE_IMAGE = "POOL_CODE_IMAGE";
     // 短信验证码
     String POOL_CODE_SMS = "POOL_CODE_SMS";
     // 授权码池

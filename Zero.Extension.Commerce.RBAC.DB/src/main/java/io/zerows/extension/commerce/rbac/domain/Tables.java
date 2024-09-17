@@ -4,7 +4,6 @@
 package io.zerows.extension.commerce.rbac.domain;
 
 
-import io.zerows.extension.commerce.rbac.domain.tables.OAccessToken;
 import io.zerows.extension.commerce.rbac.domain.tables.OUser;
 import io.zerows.extension.commerce.rbac.domain.tables.RGroupRole;
 import io.zerows.extension.commerce.rbac.domain.tables.RRolePerm;
@@ -28,11 +27,6 @@ import io.zerows.extension.commerce.rbac.domain.tables.SVisitant;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
-
-    /**
-     * The table <code>ZDB.O_ACCESS_TOKEN</code>.
-     */
-    public static final OAccessToken O_ACCESS_TOKEN = OAccessToken.O_ACCESS_TOKEN;
 
     /**
      * The table <code>ZDB.O_USER</code>.

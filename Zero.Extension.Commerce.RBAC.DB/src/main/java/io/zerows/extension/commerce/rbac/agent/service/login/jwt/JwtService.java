@@ -1,4 +1,4 @@
-package io.zerows.extension.commerce.rbac.agent.service.jwt;
+package io.zerows.extension.commerce.rbac.agent.service.login.jwt;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
@@ -7,7 +7,6 @@ import io.zerows.extension.commerce.rbac.atom.ScToken;
 import io.zerows.extension.commerce.rbac.uca.logged.ScUser;
 import io.zerows.extension.commerce.rbac.uca.timer.ClockFactory;
 import io.zerows.extension.commerce.rbac.uca.timer.ScClock;
-import io.zerows.extension.commerce.rbac.util.Sc;
 
 /*
  * Jwt WebToken Service for:
@@ -18,7 +17,7 @@ public class JwtService implements JwtStub {
     private final ScClock<ScToken> cache;
 
     public JwtService() {
-        this.cache = ClockFactory.ofToken();
+        this.cache = ClockFactory.ofToken(this.getClass());
     }
 
     /**
@@ -58,6 +57,7 @@ public class JwtService implements JwtStub {
          * 三合一的方式提取 ScToken
          */
         return this.cache.get(token, false)
-            .compose(scToken -> Sc.tokenVerify(scToken, userKey, token, this.getClass()));
+            // 验证 Token
+            .compose(scToken -> this.cache.verify(scToken, token, userKey));
     }
 }

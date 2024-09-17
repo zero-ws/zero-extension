@@ -7,6 +7,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
 
 /*
  * Uniform `SUser` created
@@ -31,7 +32,7 @@ public interface IdcStub {
      * 2) Update
      */
     default Future<JsonArray> saveAsync(final JsonArray user, final String by) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonObject> saveAsync(final JsonObject user, final String by) {

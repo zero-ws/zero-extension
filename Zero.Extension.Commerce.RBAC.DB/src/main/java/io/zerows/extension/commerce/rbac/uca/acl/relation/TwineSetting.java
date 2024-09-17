@@ -4,7 +4,6 @@ import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
@@ -30,11 +29,11 @@ public class TwineSetting implements Twine<SUser> {
 
     @Override
     public Future<JsonObject> identAsync(final SUser key) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     @Override
     public Future<JsonObject> identAsync(final SUser userJ, final JsonObject updatedJ) {
-        return Fn.outWeb(_501NotSupportException.class, this.getClass());
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

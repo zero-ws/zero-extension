@@ -5,6 +5,7 @@ import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 
 /*
@@ -29,21 +30,21 @@ public interface AspectPlugin extends DataPlugin<AspectPlugin> {
      * 前置函数
      */
     default Future<JsonObject> beforeAsync(final JsonObject record, final JsonObject config) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonArray> beforeAsync(final JsonArray records, final JsonObject config) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     /*
      * 后置函数
      */
     default Future<JsonObject> afterAsync(final JsonObject record, final JsonObject config) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonArray> afterAsync(final JsonArray records, final JsonObject config) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

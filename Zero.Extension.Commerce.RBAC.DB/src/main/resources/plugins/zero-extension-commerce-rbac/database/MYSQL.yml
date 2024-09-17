@@ -1,9 +1,6 @@
 databaseChangeLog:
   # 安全表
   - include:
-      file: MYSQL/O_ACCESS_TOKEN.sql
-      relativeToChangelogFile: true
-  - include:
       file: MYSQL/O_USER.sql
       relativeToChangelogFile: true
   - include:

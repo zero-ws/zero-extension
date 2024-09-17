@@ -3,8 +3,9 @@ package io.zerows.extension.commerce.rbac.agent.service.login;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Session;
-import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
+import io.vertx.up.util.Ut;
+import io.zerows.extension.commerce.rbac.agent.service.login.pre.CodeStub;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.OUserDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.OUser;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
@@ -30,7 +31,7 @@ public class AuthService implements AuthStub {
         return Ux.Jooq.on(OUserDao.class).<OUser>fetchOneAsync(filters).compose(item -> {
             if (Objects.isNull(item)) {
                 // Could not identify OUser record, error throw.
-                return Fn.outWeb(_401CodeGenerationException.class, this.getClass(),
+                return Ut.Bnd.failOut(_401CodeGenerationException.class, this.getClass(),
                     filters.getString(AuthKey.F_CLIENT_ID), filters.getString(AuthKey.F_CLIENT_SECRET));
             } else {
                 // Provide correct parameters, OUser record existing.

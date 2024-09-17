@@ -8,7 +8,6 @@ import io.vertx.up.util.Ut;
 import io.zerows.extension.commerce.rbac.atom.ScToken;
 import io.zerows.extension.commerce.rbac.uca.timer.ClockFactory;
 import io.zerows.extension.commerce.rbac.uca.timer.ScClock;
-import io.zerows.extension.commerce.rbac.util.Sc;
 import io.zerows.extension.runtime.skeleton.osgi.spi.environment.Permit;
 
 /**
@@ -18,7 +17,7 @@ public class SafePermit implements Permit {
     private final ScClock<ScToken> cache;
 
     public SafePermit() {
-        this.cache = ClockFactory.ofToken();
+        this.cache = ClockFactory.ofToken(this.getClass());
     }
 
     @Override
@@ -35,6 +34,8 @@ public class SafePermit implements Permit {
 
         // 验证 accessToken 是否存在
         return this.cache.get(token, false)
-            .compose(scToken -> Sc.tokenVerify(scToken, user, token, this.getClass()));
+
+            // 验证 Token
+            .compose(scToken -> this.cache.verify(scToken, token, user));
     }
 }

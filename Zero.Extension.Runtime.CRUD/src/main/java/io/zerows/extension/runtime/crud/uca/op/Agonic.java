@@ -5,10 +5,11 @@ import io.horizon.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.crud.eon.Pooled;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.op.aop.AgonicAop;
 import io.zerows.extension.runtime.crud.uca.op.view.AgonicView;
-import io.zerows.extension.runtime.crud.eon.Pooled;
 
 /**
  * 此处有一个特殊点需要说明，关于这些组件命名有特殊约定
@@ -60,18 +61,18 @@ public interface Agonic {
     }
 
     default Future<JsonObject> runJAsync(final JsonObject input, final IxMod in) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonArray> runAAsync(final JsonArray input, final IxMod in) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonArray> runJAAsync(final JsonObject input, final IxMod in) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 
     default Future<JsonObject> runAJAsync(final JsonArray input, final IxMod in) {
-        return Future.failedFuture(new _501NotSupportException(this.getClass()));
+        return Ut.Bnd.failOut(_501NotSupportException.class, this.getClass());
     }
 }

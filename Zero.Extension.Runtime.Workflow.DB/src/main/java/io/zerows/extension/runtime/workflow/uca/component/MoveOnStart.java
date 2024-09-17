@@ -2,12 +2,12 @@ package io.zerows.extension.runtime.workflow.uca.component;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.runtime.WRequest;
 import io.zerows.extension.runtime.workflow.atom.runtime.WTransition;
 import io.zerows.extension.runtime.workflow.exception._409InValidStartException;
 import io.zerows.extension.runtime.workflow.uca.camunda.RunOn;
 import io.zerows.extension.runtime.workflow.uca.central.AbstractMoveOn;
-import io.vertx.up.fn.Fn;
 import org.camunda.bpm.engine.repository.ProcessDefinition;
 
 /**
@@ -20,7 +20,7 @@ public class MoveOnStart extends AbstractMoveOn {
 
         if (wTransition.isStarted()) {
             // Error-80604: The wTransition has been started, could not call current divert
-            return Fn.outWeb(_409InValidStartException.class, this.getClass(), definition.getKey());
+            return Ut.Bnd.failOut(_409InValidStartException.class, this.getClass(), definition.getKey());
         }
         return wTransition.start().compose(started -> {
             /*
