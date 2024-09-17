@@ -11,8 +11,6 @@ import io.zerows.extension.runtime.skeleton.eon.KeMsg;
 
 import java.util.Objects;
 
-import static io.zerows.extension.commerce.rbac.util.Sc.LOG;
-
 /*
  * Configuration class initialization
  * plugin/rbac/configuration.json
@@ -28,13 +26,10 @@ class ScConfiguration {
         if (null == CONFIG) {
             CONFIG = getConfig();
         }
-        
+
         final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
         final JsonObject configData = configuration.inConfiguration();
         final String module = ScConstant.BUNDLE_SYMBOLIC_NAME;
-        LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_J,
-            module, configData.encode());
-
         ambient.registry(module, configData);
     }
 
@@ -42,8 +37,10 @@ class ScConfiguration {
         if (Objects.isNull(CONFIG)) {
             final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
+            Ut.Log.configure(ScConfiguration.class).info(KeMsg.Configuration.DATA_J,
+                ScConstant.BUNDLE_SYMBOLIC_NAME, configData.encode());
             CONFIG = Ut.deserialize(configData, ScConfig.class);
-            LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_T,
+            Ut.Log.configure(ScConfiguration.class).info(KeMsg.Configuration.DATA_T,
                 CONFIG.toString());
         }
         return CONFIG;
