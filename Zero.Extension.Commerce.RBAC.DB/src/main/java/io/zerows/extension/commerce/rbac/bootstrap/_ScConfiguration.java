@@ -26,6 +26,7 @@ class ScConfiguration {
          * Read definition of security configuration from RBAC default folder
          */
         if (null == CONFIG) {
+            CONFIG = getConfig();
             final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
             final JsonObject configData = configuration.inConfiguration();
             final String module = ScConstant.BUNDLE_SYMBOLIC_NAME;
@@ -33,15 +34,17 @@ class ScConfiguration {
                 module, configData.encode());
 
             ambient.registry(module, configData);
-
-            CONFIG = Ut.deserialize(configData, ScConfig.class);
-            LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_T,
-                CONFIG.toString());
         }
     }
 
     static ScConfig getConfig() {
-        Objects.requireNonNull(CONFIG);
+        if (Objects.isNull(CONFIG)) {
+            final MDConfiguration configuration = HExtension.getOrCreate(ScConstant.BUNDLE_SYMBOLIC_NAME);
+            final JsonObject configData = configuration.inConfiguration();
+            CONFIG = Ut.deserialize(configData, ScConfig.class);
+            LOG.Init.info(ScConfiguration.class, KeMsg.Configuration.DATA_T,
+                CONFIG.toString());
+        }
         return CONFIG;
     }
 }
