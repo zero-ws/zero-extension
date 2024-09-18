@@ -19,6 +19,7 @@ import org.osgi.framework.Bundle;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -103,7 +104,7 @@ class ScClockToken extends AbstractClock<ScToken> {
          */
         final ScToken token = ScToken.of(userId);
         final long iat = new Date().getTime();
-        final long exp = iat + CONFIG.getTokenExpired();
+        final long exp = iat + TimeUnit.SECONDS.toMillis(CONFIG.getTokenExpired());
         token.duration(iat, exp);
 
         /*
