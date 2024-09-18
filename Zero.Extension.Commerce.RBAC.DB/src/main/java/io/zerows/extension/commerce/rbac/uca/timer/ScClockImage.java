@@ -20,7 +20,7 @@ class ScClockImage extends AbstractClock<String> {
 
     @Override
     public String generate(final JsonObject config) {
-        final int length = CONFIG.getMessageLength();
+        final int length = CONFIG.getImageLength();
         final String imageCode = Ut.randomCaptcha(length);
         this.logger().info("Generated Image Code: {}", imageCode);
         return imageCode;
