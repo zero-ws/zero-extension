@@ -4,7 +4,7 @@ import io.zerows.extension.mbse.action.uca.micro.JtAiakos;
 import io.zerows.extension.mbse.action.uca.micro.JtMinos;
 
 public interface JtConstant {
-    /* Default namespace build by JtApp */
+    /* Default namespace web by JtApp */
     String NAMESPACE_PATTERN = "zero.jet.{0}";
     String EVENT_ADDRESS = "Πίδακας δρομολογητή://EVENT-JET/ZERO/UNIFORM";
     /*

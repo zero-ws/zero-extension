@@ -89,7 +89,7 @@ public class UTicket {
      *          "key": null or has value
      *      }
      * }
-     * We should prepare the whole key related here to build relationship between
+     * We should prepare the whole key related here to web relationship between
      * -- WTicket + Extension Ticket
      * -- WTicket + Extension Entity
      *

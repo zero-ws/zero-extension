@@ -9,7 +9,7 @@ public interface AppStub {
     /**
      * 非安全模式下的应用程序登录，登录过程访问 X_APP 表结构，该API在登录界面中使用
      * 并且不返回 appKey 的敏感数据信息。参数中的 name 信息来自于前端环境变量中的配
-     * 置：.dev.development 文件中的的环境变量 `Z_APP`，请确认该数据已存在于 X_APP
+     * 置：.dev.deployment 文件中的的环境变量 `Z_APP`，请确认该数据已存在于 X_APP
      * 表中，列名为 `NAME`。
      * 此处返回数据格式如：
      * <pre><code class="json">

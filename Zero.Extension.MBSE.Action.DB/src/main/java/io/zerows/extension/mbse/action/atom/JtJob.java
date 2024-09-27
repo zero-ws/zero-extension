@@ -74,7 +74,7 @@ public class JtJob extends JtCommercial {
         /*
          * IJob -> Mission：code
          * 1) Job alias is job name for standalone here
-         * 2) Job code/name must be `namespace + code` to build unique identifier of current job
+         * 2) Job code/name must be `namespace + code` to web unique identifier of current job
          * 3) Default job type is ONCE
          * 4) For job configuration, it's different for
          * - 4.1) All the programming job should be `READONLY` ( hard coding )

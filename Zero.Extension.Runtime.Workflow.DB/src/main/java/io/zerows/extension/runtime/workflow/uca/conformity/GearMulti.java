@@ -115,7 +115,7 @@ public class GearMulti extends AbstractGear {
      * Also this method should remove `accepted` and `toUser` from parameters
      */
     private ConcurrentMap<String, JsonObject> buildAssign(final JsonObject parameters, final List<Task> tasks, final boolean generation) {
-        // 1. Iterator to build the response
+        // 1. Iterator to web the response
         final ConcurrentMap<String, JsonObject> response = new ConcurrentHashMap<>();
         final JsonArray toUser = Ut.valueJArray(parameters, KName.Auditor.TO_USER);
         // 2. Iterate the data structure by List / Index

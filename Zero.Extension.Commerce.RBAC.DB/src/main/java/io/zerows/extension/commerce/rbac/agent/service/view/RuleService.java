@@ -39,7 +39,7 @@ public class RuleService implements RuleStub {
         return Sc.cachePath(input, path -> Ux.Jooq.on(SPathDao.class).fetchJAsync(KName.PARENT_ID, path.getKey())
             .compose(children -> {
                 /*
-                 * Extract `runComponent` to build `HValve` and then run it based on configured
+                 * Extract `runComponent` to web `HValve` and then run it based on configured
                  * Information here.
                  */
                 final Class<?> clazz = Ut.clazz(path.getRunComponent(), AdmitValve.class);

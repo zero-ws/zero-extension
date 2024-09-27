@@ -6,7 +6,7 @@ import io.zerows.extension.mbse.action.exception._400RequiredParamException;
 import io.zerows.extension.mbse.action.exception._500DefinitionErrorException;
 
 /*
- * Uniform Error throw out and build Envelop ( Failure )
+ * Uniform Error throw out and web Envelop ( Failure )
  * Define vertx-readible.yml for ui message.
  */
 public class JetThanatos {

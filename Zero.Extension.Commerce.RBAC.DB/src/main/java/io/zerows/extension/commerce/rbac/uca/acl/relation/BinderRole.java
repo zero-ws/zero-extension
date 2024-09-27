@@ -62,7 +62,7 @@ public class BinderRole extends AbstractBind<SRole> {
                     /*
                      * Building relation ship
                      */
-                    LOG.Web.info(this.getClass(), "Will build username = {1}, role size = {0}",
+                    LOG.Web.info(this.getClass(), "Will web username = {1}, role size = {0}",
                         String.valueOf(roles.size()), user.getUsername());
                 });
                 return Ux.future(relationList);

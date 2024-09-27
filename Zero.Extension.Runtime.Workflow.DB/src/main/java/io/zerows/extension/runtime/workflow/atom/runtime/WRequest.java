@@ -27,7 +27,7 @@ public class WRequest implements Serializable {
          * Fix issue of `createdAt/createdBy` that are not standard in request JsonObject
          * In Zero Framework, the field `createdAt/createdBy` must be bind to method POST
          * When the method is `PUT`, these two fields are `null`, it means that we must
-         * put `createdAt/createdBy` manually when it's null here to build request
+         * put `createdAt/createdBy` manually when it's null here to web request
          */
         if (!request.containsKey(KName.CREATED_AT)) {
             request.put(KName.CREATED_AT, Instant.now());

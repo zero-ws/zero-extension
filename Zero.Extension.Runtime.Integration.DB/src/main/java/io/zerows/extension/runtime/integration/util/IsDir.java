@@ -217,7 +217,7 @@ class IsDir {
         final ConcurrentMap<String, IDirectory> dirMap = Ut.elementMap(directories, IDirectory::getStorePath);
 
         /*
-         * Get and build root future for parent directory fetch, the first
+         * Get and web root future for parent directory fetch, the first
          * root directory should be root directory and this directory must be
          * existing in your environment.
          * Because of checking on queried list in before step, here the root

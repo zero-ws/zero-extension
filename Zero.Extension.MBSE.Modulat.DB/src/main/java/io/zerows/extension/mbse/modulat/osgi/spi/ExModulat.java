@@ -19,7 +19,7 @@ public class ExModulat implements Modulat {
         final String key = appJson.getString(KName.KEY);
         return this.extension(key, open).compose(moduleJ -> {
             /*
-             * appJ + moduleJ to build response ( Final )
+             * appJ + moduleJ to web response ( Final )
              */
             final JsonObject original = moduleJ.copy();
             original.mergeIn(appJson, true);

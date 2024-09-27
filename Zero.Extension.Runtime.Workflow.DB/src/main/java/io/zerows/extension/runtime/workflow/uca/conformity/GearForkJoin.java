@@ -130,7 +130,7 @@ public class GearForkJoin extends AbstractGear {
      * Also this method should remove `accepted` and `toUser` from parameters
      */
     private ConcurrentMap<String, JsonObject> buildAssign(final JsonObject parameters, final ConcurrentMap<String, Task> taskMap, final boolean generation) {
-        // 1. Iterator to build the response
+        // 1. Iterator to web the response
         final ConcurrentMap<String, JsonObject> response = new ConcurrentHashMap<>();
         taskMap.forEach((taskKey, task) -> {
             // 1.1. Path extract from configuration

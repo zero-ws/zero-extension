@@ -82,7 +82,7 @@ public class AmbientService implements AmbientStub {
         final ServiceEnvironment environment = JtPin.serviceEnvironment().get(appId);
         environment.flushUri(instance);
         /*
-         * Response build
+         * Response web
          */
         return Ux.future(instance.toJson());
     }

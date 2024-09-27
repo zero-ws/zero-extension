@@ -3,7 +3,7 @@
  * Extension 1:
  * 1. 「Worker」
  *     Yes, you can define your own worker component and configured in `workerClass` in I_API, but it's complex because
- *     You must finish all above components in the calling chain instead of some small development.
+ *     You must finish all above components in the calling chain instead of some small deployment.
  *
  * Extension 2:
  * 2. 「Ingest」

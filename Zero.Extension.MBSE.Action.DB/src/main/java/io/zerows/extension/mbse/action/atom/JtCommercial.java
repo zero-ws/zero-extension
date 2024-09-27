@@ -124,7 +124,7 @@ public abstract class JtCommercial implements Commercial {
              * environment, in this kind of situation, you can call atom JtJob `mockOn`
              * to turn on `debug` options in integration, but it require the environment
              * to be `Mockito` instead of others.
-             * Involve environment concept to split development/testing/production
+             * Involve environment concept to split deployment/testing/production
              */
             integration.mockOn();
         }

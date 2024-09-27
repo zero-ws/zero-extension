@@ -51,7 +51,7 @@ public class BinderGroup extends AbstractBind<SGroup> {
                     /*
                      * Building relation ship
                      */
-                    LOG.Web.info(this.getClass(), "Will build username = {1}, group size = {0}",
+                    LOG.Web.info(this.getClass(), "Will web username = {1}, group size = {0}",
                         String.valueOf(groups.size()), user.getUsername());
                 });
                 return Ux.future(relationList);

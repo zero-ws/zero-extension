@@ -12,7 +12,7 @@ public interface RuleStub {
     /*
      * Process SPath
      *
-     * 1) Read `runComponent` to build `HValve`
+     * 1) Read `runComponent` to web `HValve`
      * 2) Based on `HValue` to extract `KPermit` object
      * 3) Configure based on `KPermit`
      */

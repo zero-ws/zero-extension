@@ -25,7 +25,7 @@ public class MetaInstance {
     private final transient ConfigChild children;
 
     /*
-     * The format of startJson to build following instances:
+     * The format of startJson to web following instances:
      * - ConfigRecord
      * - ConfigTodo
      * - ConfigLinkage

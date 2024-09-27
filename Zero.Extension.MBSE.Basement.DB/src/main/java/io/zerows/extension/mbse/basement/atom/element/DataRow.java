@@ -133,7 +133,7 @@ public class DataRow implements Serializable {
     /**
      * Response Data Processing
      *
-     * @param table      {@link java.lang.String} Input table name to build record ( include Joined multi tables )
+     * @param table      {@link java.lang.String} Input table name to web record ( include Joined multi tables )
      * @param record     {@link HRecord} Output data record
      * @param projection {@link java.util.Set}
      *

@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonObject;
  * <pre><code>
  *     1. mvn 已编译好 inst 指令程序
  *     2. 环境变量已加载完成
- *        开发环境：.env.development
+ *        开发环境：.env.deployment
  *        生产环境：run-env.sh
  * </code></pre>
  * 上述步骤完成之后就是此流程的执行

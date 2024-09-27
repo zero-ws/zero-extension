@@ -10,7 +10,7 @@ import io.vertx.core.json.JsonObject;
  */
 public interface Valve {
     /*
-     * This method will read the list by `criteria` to build
+     * This method will read the list by `criteria` to web
      * the specification data structure `Regulation`, the Regulation contains following parts:
      * 1 - The parameter definition
      * 2 - The rule configuration
