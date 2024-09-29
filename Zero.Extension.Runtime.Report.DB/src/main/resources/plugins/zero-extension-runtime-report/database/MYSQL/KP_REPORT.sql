@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS KP_REPORT
     `TITLE`         VARCHAR(255) COMMENT '「title」- 报表标题',
 
     `REPORT_EXPR`   LONGTEXT COMMENT '「reportExpr」- 报表表达式配置',
-    `REPORT_BY`     VARCHAR(36) COMMENT '「reportBy」- 报表人',
-    `REPORT_AT`     DATETIME COMMENT '「reportAt」- 报表生成时间',
     `REPORT_CONFIG` LONGTEXT COMMENT '「reportConfig」- 主表基础配置',
+    `REPORT_BY`     VARCHAR(36) COMMENT '「reportBy」- 模板创建人',
+    `REPORT_AT`     DATETIME COMMENT '「reportAt」- 模板创建时间',
 
     -- 关联数据源
     `DATA_SET_ID`   VARCHAR(36) COMMENT '「dataSetId」- 数据源ID',
