@@ -86,6 +86,12 @@ final class WfConfiguration {
                 // org.camunda.bpm.engine.ProcessEngineException: historyLevel mismatch: configuration says HistoryLevelAudit(name=audit, id=2) and database says HistoryLevelFull(name=full, id=3)
                 .setHistory(HistoryLevel.HISTORY_LEVEL_FULL.getName())     // none, audit, full, activity
                 .setHistoryEventHandler(new DbHistoryEventHandler())
+                // Fix Issue:
+                // ENGINE-12019 The transaction isolation level set for the database is 'REPEATABLE_READ' which differs
+                // from the recommended value. Please change the isolation level to 'READ_COMMITTED' or set property
+                // 'skipIsolationLevelCheck' to true. Please keep in mind that some levels are known to cause deadlocks
+                // and other unexpected behaviours.
+                .setSkipIsolationLevelCheck(true)
                 .setIdGenerator(new StrongUuidGenerator())                 // uuid for task
                 .setProcessEngineName(CONFIG.getName())
                 .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_FALSE)
