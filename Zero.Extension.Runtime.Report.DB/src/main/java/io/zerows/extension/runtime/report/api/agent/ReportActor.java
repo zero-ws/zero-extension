@@ -31,6 +31,16 @@ public class ReportActor {
         return this.reportStub.fetchReports(appId);
     }
 
+    @Address(Addr.Report.SINGLE_GENERATE)
+    public Future<JsonObject> instanceGenerate(final String reportId,
+                                               final JsonObject query) {
+        if (Ut.isNil(reportId)) {
+            // ERR-80701
+            return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
+        }
+        return this.reportStub.generateAsync(reportId, query);
+    }
+
     @Address(Addr.Report.QUERY_PAGE)
     public Future<JsonObject> instancePaged(final JsonObject query) {
         final JsonObject criteriaJ = Ut.valueJObject(query, Ir.KEY_CRITERIA);
@@ -39,16 +49,6 @@ public class ReportActor {
             return Ut.Bnd.failOut(_400QueryParameterException.class, this.getClass(), query);
         }
         return this.instanceStub.searchPaged(query);
-    }
-
-    @Address(Addr.Report.SINGLE_GENERATE)
-    public Future<JsonObject> instanceGenerate(final String reportId,
-                                               final JsonObject query) {
-        if (Ut.isNil(reportId)) {
-            // ERR-80701
-            return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass());
-        }
-        return this.instanceStub.generateAsync(query);
     }
 
     @Address(Addr.Report.SINGLE_EXPORT)

@@ -11,7 +11,5 @@ public interface ReportInstanceStub {
 
     Future<JsonObject> searchPaged(JsonObject query);
 
-    Future<JsonObject> generateAsync(JsonObject query);
-
     Future<Buffer> exportAsync(String key);
 }

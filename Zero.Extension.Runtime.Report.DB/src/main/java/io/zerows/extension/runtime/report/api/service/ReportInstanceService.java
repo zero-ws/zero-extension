@@ -11,18 +11,13 @@ import io.zerows.extension.runtime.report.domain.tables.daos.KpReportInstanceDao
  */
 public class ReportInstanceService implements ReportInstanceStub {
     @Override
-    public Future<JsonObject> searchPaged(JsonObject query) {
+    public Future<JsonObject> searchPaged(final JsonObject query) {
         return Ux.Jooq.on(KpReportInstanceDao.class)
             .searchAsync(query);
     }
 
     @Override
-    public Future<JsonObject> generateAsync(JsonObject query) {
-        return null;
-    }
-
-    @Override
-    public Future<Buffer> exportAsync(String key) {
+    public Future<Buffer> exportAsync(final String key) {
         return null;
     }
 }

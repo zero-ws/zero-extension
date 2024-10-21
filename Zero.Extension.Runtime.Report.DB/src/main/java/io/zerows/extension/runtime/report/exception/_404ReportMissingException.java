@@ -7,8 +7,8 @@ import io.horizon.exception.WebException;
  * @author lang : 2024-10-11
  */
 public class _404ReportMissingException extends WebException {
-    public _404ReportMissingException(final Class<?> target) {
-        super(target);
+    public _404ReportMissingException(final Class<?> target, final String reportId) {
+        super(target, reportId);
     }
 
     @Override
