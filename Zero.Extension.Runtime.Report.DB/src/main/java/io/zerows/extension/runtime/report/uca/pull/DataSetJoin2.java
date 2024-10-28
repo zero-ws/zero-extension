@@ -33,7 +33,7 @@ class DataSetJoin2 extends AbstractDataSet {
         this.children.mergeIn(Ut.valueJObject(sourceJ, KName.CHILDREN));
 
         final String activeField = Ut.valueString(sourceJ, "active.field", KName.KEY);
-        final String standbyField = Ut.valueString(sourceJ, "active.standby", KName.KEY);
+        final String standbyField = Ut.valueString(sourceJ, "standby.field", KName.KEY);
         this.kvJoin = Kv.create(activeField, standbyField);
 
         this.aliasJ.mergeIn(Ut.valueJObject(sourceJ, KName.ALIAS));
