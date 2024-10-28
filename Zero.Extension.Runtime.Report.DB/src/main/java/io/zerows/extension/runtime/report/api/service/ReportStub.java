@@ -10,6 +10,6 @@ import io.vertx.core.json.JsonObject;
 public interface ReportStub {
 
     Future<JsonArray> fetchReports(String appId);
-    
-    Future<JsonObject> generateAsync(String reportId, JsonObject query);
+
+    Future<JsonObject> generateAsync(String reportId, JsonObject params);
 }

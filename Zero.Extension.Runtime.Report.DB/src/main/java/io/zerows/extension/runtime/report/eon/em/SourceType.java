@@ -9,13 +9,18 @@ import io.zerows.extension.runtime.report.uca.pull.DataSet;
  *         "sourceType": "???",
  *         "ds.table": "???",
  *         "ds.view": "???",
- *         "ds.extension": "???"
+ *         "ds.extension": "???",
+ *
+ *         "ds.active": "???",
+ *         "ds.standby": "???"
  *     }
  * </pre></code>
+ *
  * @author lang : 2024-10-12
  */
 public enum SourceType {
     TABLE,
     VIEW,
-    EXTENSION
+    EXTENSION,
+    JOIN_2
 }

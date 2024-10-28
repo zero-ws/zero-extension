@@ -1,5 +1,6 @@
 package io.zerows.extension.runtime.report.api.service;
 
+import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -29,28 +30,31 @@ public class ReportService implements ReportStub {
     }
 
     @Override
-    public Future<JsonObject> generateAsync(final String reportId, final JsonObject query) {
-        return Ux.Jooq.on(KpReportDao.class).<KpReport>fetchByIdAsync(reportId).compose(report -> {
-            if (Objects.isNull(report)) {
-                // ERR-80701
-                return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
-            }
-            final String dsId = report.getDataSetId();
-            if (Ut.isNil(dsId)) {
-                // ERR-80702
-                return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
-            }
-            return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet>fetchByIdAsync(dsId);
-        }).compose(dataSet -> {
-            if (Objects.isNull(dataSet)) {
-                // ERR-80702
-                return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
-            }
-            final DataSet executor = DataSet.of(dataSet);
-            return executor.loadAsync(query);
-        }).compose(data -> {
-            
-            return null;
-        });
+    public Future<JsonObject> generateAsync(final String reportId, final JsonObject params) {
+        final KRef refRp = new KRef();
+        return Ux.Jooq.on(KpReportDao.class).<KpReport>fetchByIdAsync(reportId)
+            .compose(refRp::future).compose(report -> {
+                if (Objects.isNull(report)) {
+                    // ERR-80701
+                    return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
+                }
+                final String dsId = report.getDataSetId();
+                if (Ut.isNil(dsId)) {
+                    // ERR-80702
+                    return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
+                }
+                return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet>fetchByIdAsync(dsId);
+            }).compose(dataSet -> {
+                if (Objects.isNull(dataSet)) {
+                    // ERR-80702
+                    return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
+                }
+                final DataSet executor = DataSet.of(dataSet);
+                final JsonObject queryDef = Ut.toJObject(dataSet.getDataQuery());
+                return executor.loadAsync(params, queryDef);
+            }).compose(data -> {
+
+                return null;
+            });
     }
 }

@@ -22,3 +22,11 @@
 - dao: F_TRANS            # F_TRANS
   unique:
     - code
+- dao: F_BILL             # F_BILL
+  unique:
+    - code
+    - orderId
+- dao: F_BILL_ITEM        # F_BILL_ITEM
+  unique:
+    - code
+    - billId
