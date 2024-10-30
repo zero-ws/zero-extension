@@ -13,11 +13,11 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function21;
+import org.jooq.Function22;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row21;
+import org.jooq.Row22;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -61,6 +61,11 @@ public class KpDimension extends TableImpl<KpDimensionRecord> {
     public final TableField<KpDimensionRecord, String> NAME = createField(DSL.name("NAME"), SQLDataType.VARCHAR(255), this, "「name」- 维度名称");
 
     /**
+     * The column <code>ZDB.KP_DIMENSION.CODE</code>. 「code」- 维度代码
+     */
+    public final TableField<KpDimensionRecord, String> CODE = createField(DSL.name("CODE"), SQLDataType.VARCHAR(255), this, "「code」- 维度代码");
+
+    /**
      * The column <code>ZDB.KP_DIMENSION.TYPE</code>. 「type」- 维度类型
      */
     public final TableField<KpDimensionRecord, String> TYPE = createField(DSL.name("TYPE"), SQLDataType.VARCHAR(255), this, "「type」- 维度类型");
@@ -71,14 +76,14 @@ public class KpDimension extends TableImpl<KpDimensionRecord> {
     public final TableField<KpDimensionRecord, String> STATUS = createField(DSL.name("STATUS"), SQLDataType.VARCHAR(255), this, "「status」- 维度状态");
 
     /**
-     * The column <code>ZDB.KP_DIMENSION.START_AT</code>. 「startAt」- 开始时间
+     * The column <code>ZDB.KP_DIMENSION.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
      */
-    public final TableField<KpDimensionRecord, LocalDateTime> START_AT = createField(DSL.name("START_AT"), SQLDataType.LOCALDATETIME(0), this, "「startAt」- 开始时间");
+    public final TableField<KpDimensionRecord, String> DATA_SET_ID = createField(DSL.name("DATA_SET_ID"), SQLDataType.VARCHAR(36), this, "「dataSetId」- 数据源ID");
 
     /**
-     * The column <code>ZDB.KP_DIMENSION.END_AT</code>. 「endAt」- 结束时间
+     * The column <code>ZDB.KP_DIMENSION.DATA_QUERY</code>. 「dataQuery」- 数据查询配置
      */
-    public final TableField<KpDimensionRecord, LocalDateTime> END_AT = createField(DSL.name("END_AT"), SQLDataType.LOCALDATETIME(0), this, "「endAt」- 结束时间");
+    public final TableField<KpDimensionRecord, String> DATA_QUERY = createField(DSL.name("DATA_QUERY"), SQLDataType.CLOB, this, "「dataQuery」- 数据查询配置");
 
     /**
      * The column <code>ZDB.KP_DIMENSION.DATA_SORT</code>. 「dataSort」- 排序维度处理
@@ -241,18 +246,18 @@ public class KpDimension extends TableImpl<KpDimensionRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row21 type methods
+    // Row22 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row21<String, String, String, String, LocalDateTime, LocalDateTime, String, String, String, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row21) super.fieldsRow();
+    public Row22<String, String, String, String, String, String, String, String, String, String, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row22) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function21<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function22<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -260,7 +265,7 @@ public class KpDimension extends TableImpl<KpDimensionRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function21<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function22<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

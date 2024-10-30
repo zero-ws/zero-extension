@@ -21,10 +21,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
 
     private String key;
     private String name;
+    private String code;
     private String type;
     private String status;
-    private LocalDateTime startAt;
-    private LocalDateTime endAt;
+    private String dataSetId;
+    private String dataQuery;
     private String dataSort;
     private String dataGroup;
     private String dataOutput;
@@ -46,10 +47,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
     public KpDimension(IKpDimension value) {
         this.key = value.getKey();
         this.name = value.getName();
+        this.code = value.getCode();
         this.type = value.getType();
         this.status = value.getStatus();
-        this.startAt = value.getStartAt();
-        this.endAt = value.getEndAt();
+        this.dataSetId = value.getDataSetId();
+        this.dataQuery = value.getDataQuery();
         this.dataSort = value.getDataSort();
         this.dataGroup = value.getDataGroup();
         this.dataOutput = value.getDataOutput();
@@ -70,10 +72,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
     public KpDimension(
         String key,
         String name,
+        String code,
         String type,
         String status,
-        LocalDateTime startAt,
-        LocalDateTime endAt,
+        String dataSetId,
+        String dataQuery,
         String dataSort,
         String dataGroup,
         String dataOutput,
@@ -92,10 +95,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
     ) {
         this.key = key;
         this.name = name;
+        this.code = code;
         this.type = type;
         this.status = status;
-        this.startAt = startAt;
-        this.endAt = endAt;
+        this.dataSetId = dataSetId;
+        this.dataQuery = dataQuery;
         this.dataSort = dataSort;
         this.dataGroup = dataGroup;
         this.dataOutput = dataOutput;
@@ -153,6 +157,23 @@ public class KpDimension implements VertxPojo, IKpDimension {
     }
 
     /**
+     * Getter for <code>ZDB.KP_DIMENSION.CODE</code>. 「code」- 维度代码
+     */
+    @Override
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * Setter for <code>ZDB.KP_DIMENSION.CODE</code>. 「code」- 维度代码
+     */
+    @Override
+    public KpDimension setCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
      * Getter for <code>ZDB.KP_DIMENSION.TYPE</code>. 「type」- 维度类型
      */
     @Override
@@ -187,36 +208,36 @@ public class KpDimension implements VertxPojo, IKpDimension {
     }
 
     /**
-     * Getter for <code>ZDB.KP_DIMENSION.START_AT</code>. 「startAt」- 开始时间
+     * Getter for <code>ZDB.KP_DIMENSION.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
      */
     @Override
-    public LocalDateTime getStartAt() {
-        return this.startAt;
+    public String getDataSetId() {
+        return this.dataSetId;
     }
 
     /**
-     * Setter for <code>ZDB.KP_DIMENSION.START_AT</code>. 「startAt」- 开始时间
+     * Setter for <code>ZDB.KP_DIMENSION.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
      */
     @Override
-    public KpDimension setStartAt(LocalDateTime startAt) {
-        this.startAt = startAt;
+    public KpDimension setDataSetId(String dataSetId) {
+        this.dataSetId = dataSetId;
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.KP_DIMENSION.END_AT</code>. 「endAt」- 结束时间
+     * Getter for <code>ZDB.KP_DIMENSION.DATA_QUERY</code>. 「dataQuery」- 数据查询配置
      */
     @Override
-    public LocalDateTime getEndAt() {
-        return this.endAt;
+    public String getDataQuery() {
+        return this.dataQuery;
     }
 
     /**
-     * Setter for <code>ZDB.KP_DIMENSION.END_AT</code>. 「endAt」- 结束时间
+     * Setter for <code>ZDB.KP_DIMENSION.DATA_QUERY</code>. 「dataQuery」- 数据查询配置
      */
     @Override
-    public KpDimension setEndAt(LocalDateTime endAt) {
-        this.endAt = endAt;
+    public KpDimension setDataQuery(String dataQuery) {
+        this.dataQuery = dataQuery;
         return this;
     }
 
@@ -502,6 +523,12 @@ public class KpDimension implements VertxPojo, IKpDimension {
         }
         else if (!this.name.equals(other.name))
             return false;
+        if (this.code == null) {
+            if (other.code != null)
+                return false;
+        }
+        else if (!this.code.equals(other.code))
+            return false;
         if (this.type == null) {
             if (other.type != null)
                 return false;
@@ -514,17 +541,17 @@ public class KpDimension implements VertxPojo, IKpDimension {
         }
         else if (!this.status.equals(other.status))
             return false;
-        if (this.startAt == null) {
-            if (other.startAt != null)
+        if (this.dataSetId == null) {
+            if (other.dataSetId != null)
                 return false;
         }
-        else if (!this.startAt.equals(other.startAt))
+        else if (!this.dataSetId.equals(other.dataSetId))
             return false;
-        if (this.endAt == null) {
-            if (other.endAt != null)
+        if (this.dataQuery == null) {
+            if (other.dataQuery != null)
                 return false;
         }
-        else if (!this.endAt.equals(other.endAt))
+        else if (!this.dataQuery.equals(other.dataQuery))
             return false;
         if (this.dataSort == null) {
             if (other.dataSort != null)
@@ -625,10 +652,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
         int result = 1;
         result = prime * result + ((this.key == null) ? 0 : this.key.hashCode());
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+        result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
-        result = prime * result + ((this.startAt == null) ? 0 : this.startAt.hashCode());
-        result = prime * result + ((this.endAt == null) ? 0 : this.endAt.hashCode());
+        result = prime * result + ((this.dataSetId == null) ? 0 : this.dataSetId.hashCode());
+        result = prime * result + ((this.dataQuery == null) ? 0 : this.dataQuery.hashCode());
         result = prime * result + ((this.dataSort == null) ? 0 : this.dataSort.hashCode());
         result = prime * result + ((this.dataGroup == null) ? 0 : this.dataGroup.hashCode());
         result = prime * result + ((this.dataOutput == null) ? 0 : this.dataOutput.hashCode());
@@ -653,10 +681,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
 
         sb.append(key);
         sb.append(", ").append(name);
+        sb.append(", ").append(code);
         sb.append(", ").append(type);
         sb.append(", ").append(status);
-        sb.append(", ").append(startAt);
-        sb.append(", ").append(endAt);
+        sb.append(", ").append(dataSetId);
+        sb.append(", ").append(dataQuery);
         sb.append(", ").append(dataSort);
         sb.append(", ").append(dataGroup);
         sb.append(", ").append(dataOutput);
@@ -685,10 +714,11 @@ public class KpDimension implements VertxPojo, IKpDimension {
     public void from(IKpDimension from) {
         setKey(from.getKey());
         setName(from.getName());
+        setCode(from.getCode());
         setType(from.getType());
         setStatus(from.getStatus());
-        setStartAt(from.getStartAt());
-        setEndAt(from.getEndAt());
+        setDataSetId(from.getDataSetId());
+        setDataQuery(from.getDataQuery());
         setDataSort(from.getDataSort());
         setDataGroup(from.getDataGroup());
         setDataOutput(from.getDataOutput());

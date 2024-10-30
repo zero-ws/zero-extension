@@ -13,4 +13,10 @@ public interface RpConstant {
         String EXTENSION = "ds.extension";
         String SOURCE = "ds.source";
     }
+
+    interface DimField {
+        String KEY = "dimKey";
+        String DISPLAY = "dimDisplay";
+        String CHILDREN = "dimChildren";
+    }
 }

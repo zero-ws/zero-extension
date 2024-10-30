@@ -78,26 +78,6 @@ public interface IKpReport extends VertxPojo, Serializable {
     public String getReportExpr();
 
     /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 报表人
-     */
-    public IKpReport setReportBy(String value);
-
-    /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 报表人
-     */
-    public String getReportBy();
-
-    /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 报表生成时间
-     */
-    public IKpReport setReportAt(LocalDateTime value);
-
-    /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 报表生成时间
-     */
-    public LocalDateTime getReportAt();
-
-    /**
      * Setter for <code>ZDB.KP_REPORT.REPORT_CONFIG</code>. 「reportConfig」-
      * 主表基础配置
      */
@@ -108,6 +88,26 @@ public interface IKpReport extends VertxPojo, Serializable {
      * 主表基础配置
      */
     public String getReportConfig();
+
+    /**
+     * Setter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 模板创建人
+     */
+    public IKpReport setReportBy(String value);
+
+    /**
+     * Getter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 模板创建人
+     */
+    public String getReportBy();
+
+    /**
+     * Setter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 模板创建时间
+     */
+    public IKpReport setReportAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 模板创建时间
+     */
+    public LocalDateTime getReportAt();
 
     /**
      * Setter for <code>ZDB.KP_REPORT.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
@@ -243,9 +243,9 @@ public interface IKpReport extends VertxPojo, Serializable {
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
                 setOrThrow(this::setTitle,json::getString,"TITLE","java.lang.String");
                 setOrThrow(this::setReportExpr,json::getString,"REPORT_EXPR","java.lang.String");
+                setOrThrow(this::setReportConfig,json::getString,"REPORT_CONFIG","java.lang.String");
                 setOrThrow(this::setReportBy,json::getString,"REPORT_BY","java.lang.String");
                 setOrThrow(this::setReportAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"REPORT_AT","java.time.LocalDateTime");
-                setOrThrow(this::setReportConfig,json::getString,"REPORT_CONFIG","java.lang.String");
                 setOrThrow(this::setDataSetId,json::getString,"DATA_SET_ID","java.lang.String");
                 setOrThrow(this::setDataTplId,json::getString,"DATA_TPL_ID","java.lang.String");
                 setOrThrow(this::setAppId,json::getString,"APP_ID","java.lang.String");
@@ -270,9 +270,9 @@ public interface IKpReport extends VertxPojo, Serializable {
                 json.put("STATUS",getStatus());
                 json.put("TITLE",getTitle());
                 json.put("REPORT_EXPR",getReportExpr());
+                json.put("REPORT_CONFIG",getReportConfig());
                 json.put("REPORT_BY",getReportBy());
                 json.put("REPORT_AT",getReportAt()==null?null:getReportAt().toString());
-                json.put("REPORT_CONFIG",getReportConfig());
                 json.put("DATA_SET_ID",getDataSetId());
                 json.put("DATA_TPL_ID",getDataTplId());
                 json.put("APP_ID",getAppId());

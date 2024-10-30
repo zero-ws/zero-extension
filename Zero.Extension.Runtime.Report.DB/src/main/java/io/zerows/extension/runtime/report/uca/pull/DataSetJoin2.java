@@ -42,7 +42,7 @@ class DataSetJoin2 extends AbstractDataSet {
     @Override
     public Future<JsonArray> loadAsync(final JsonObject params, final JsonObject queryJ) {
         // final JsonObject queryJ = Ut.toJObject(this.dataSet.getDataQuery());
-        final JsonObject parameters = Tool.formatParameter(params, queryJ);
+        final JsonObject parameters = Tool.inputParameter(params, queryJ);
         if (Ut.isNil(parameters)) {
             return Ux.futureA();
         }

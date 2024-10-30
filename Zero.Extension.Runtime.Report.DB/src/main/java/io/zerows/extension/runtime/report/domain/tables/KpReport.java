@@ -83,20 +83,20 @@ public class KpReport extends TableImpl<KpReportRecord> {
     public final TableField<KpReportRecord, String> REPORT_EXPR = createField(DSL.name("REPORT_EXPR"), SQLDataType.CLOB, this, "「reportExpr」- 报表表达式配置");
 
     /**
-     * The column <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 报表人
-     */
-    public final TableField<KpReportRecord, String> REPORT_BY = createField(DSL.name("REPORT_BY"), SQLDataType.VARCHAR(36), this, "「reportBy」- 报表人");
-
-    /**
-     * The column <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 报表生成时间
-     */
-    public final TableField<KpReportRecord, LocalDateTime> REPORT_AT = createField(DSL.name("REPORT_AT"), SQLDataType.LOCALDATETIME(0), this, "「reportAt」- 报表生成时间");
-
-    /**
      * The column <code>ZDB.KP_REPORT.REPORT_CONFIG</code>. 「reportConfig」-
      * 主表基础配置
      */
     public final TableField<KpReportRecord, String> REPORT_CONFIG = createField(DSL.name("REPORT_CONFIG"), SQLDataType.CLOB, this, "「reportConfig」- 主表基础配置");
+
+    /**
+     * The column <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 模板创建人
+     */
+    public final TableField<KpReportRecord, String> REPORT_BY = createField(DSL.name("REPORT_BY"), SQLDataType.VARCHAR(36), this, "「reportBy」- 模板创建人");
+
+    /**
+     * The column <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 模板创建时间
+     */
+    public final TableField<KpReportRecord, LocalDateTime> REPORT_AT = createField(DSL.name("REPORT_AT"), SQLDataType.LOCALDATETIME(0), this, "「reportAt」- 模板创建时间");
 
     /**
      * The column <code>ZDB.KP_REPORT.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
@@ -245,14 +245,14 @@ public class KpReport extends TableImpl<KpReportRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row20<String, String, String, String, String, String, String, LocalDateTime, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+    public Row20<String, String, String, String, String, String, String, String, LocalDateTime, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
         return (Row20) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -260,7 +260,7 @@ public class KpReport extends TableImpl<KpReportRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

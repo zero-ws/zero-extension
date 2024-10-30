@@ -114,6 +114,22 @@ public class KpReportDao extends AbstractVertxDAO<KpReportRecord, io.zerows.exte
         }
 
         /**
+     * Find records that have <code>REPORT_CONFIG IN (values)</code>
+     * asynchronously
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportConfig(Collection<String> values) {
+                return findManyByCondition(KpReport.KP_REPORT.REPORT_CONFIG.in(values));
+        }
+
+        /**
+     * Find records that have <code>REPORT_CONFIG IN (values)</code>
+     * asynchronously limited by the given limit
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportConfig(Collection<String> values, int limit) {
+                return findManyByCondition(KpReport.KP_REPORT.REPORT_CONFIG.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>REPORT_BY IN (values)</code> asynchronously
      */
         public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportBy(Collection<String> values) {
@@ -141,22 +157,6 @@ public class KpReportDao extends AbstractVertxDAO<KpReportRecord, io.zerows.exte
      */
         public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportAt(Collection<LocalDateTime> values, int limit) {
                 return findManyByCondition(KpReport.KP_REPORT.REPORT_AT.in(values),limit);
-        }
-
-        /**
-     * Find records that have <code>REPORT_CONFIG IN (values)</code>
-     * asynchronously
-     */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportConfig(Collection<String> values) {
-                return findManyByCondition(KpReport.KP_REPORT.REPORT_CONFIG.in(values));
-        }
-
-        /**
-     * Find records that have <code>REPORT_CONFIG IN (values)</code>
-     * asynchronously limited by the given limit
-     */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportConfig(Collection<String> values, int limit) {
-                return findManyByCondition(KpReport.KP_REPORT.REPORT_CONFIG.in(values),limit);
         }
 
         /**

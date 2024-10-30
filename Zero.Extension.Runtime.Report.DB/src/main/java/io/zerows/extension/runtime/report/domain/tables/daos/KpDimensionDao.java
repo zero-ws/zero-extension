@@ -53,6 +53,21 @@ public class KpDimensionDao extends AbstractVertxDAO<KpDimensionRecord, io.zerow
         }
 
         /**
+     * Find records that have <code>CODE IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByCode(Collection<String> values) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.CODE.in(values));
+        }
+
+        /**
+     * Find records that have <code>CODE IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByCode(Collection<String> values, int limit) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.CODE.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>TYPE IN (values)</code> asynchronously
      */
         public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByType(Collection<String> values) {
@@ -83,33 +98,34 @@ public class KpDimensionDao extends AbstractVertxDAO<KpDimensionRecord, io.zerow
         }
 
         /**
-     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     * Find records that have <code>DATA_SET_ID IN (values)</code>
+     * asynchronously
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByStartAt(Collection<LocalDateTime> values) {
-                return findManyByCondition(KpDimension.KP_DIMENSION.START_AT.in(values));
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByDataSetId(Collection<String> values) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.DATA_SET_ID.in(values));
         }
 
         /**
-     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     * Find records that have <code>DATA_SET_ID IN (values)</code>
+     * asynchronously limited by the given limit
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByDataSetId(Collection<String> values, int limit) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.DATA_SET_ID.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>DATA_QUERY IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByDataQuery(Collection<String> values) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.DATA_QUERY.in(values));
+        }
+
+        /**
+     * Find records that have <code>DATA_QUERY IN (values)</code> asynchronously
      * limited by the given limit
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByStartAt(Collection<LocalDateTime> values, int limit) {
-                return findManyByCondition(KpDimension.KP_DIMENSION.START_AT.in(values),limit);
-        }
-
-        /**
-     * Find records that have <code>END_AT IN (values)</code> asynchronously
-     */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByEndAt(Collection<LocalDateTime> values) {
-                return findManyByCondition(KpDimension.KP_DIMENSION.END_AT.in(values));
-        }
-
-        /**
-     * Find records that have <code>END_AT IN (values)</code> asynchronously
-     * limited by the given limit
-     */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByEndAt(Collection<LocalDateTime> values, int limit) {
-                return findManyByCondition(KpDimension.KP_DIMENSION.END_AT.in(values),limit);
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpDimension>> findManyByDataQuery(Collection<String> values, int limit) {
+                return findManyByCondition(KpDimension.KP_DIMENSION.DATA_QUERY.in(values),limit);
         }
 
         /**

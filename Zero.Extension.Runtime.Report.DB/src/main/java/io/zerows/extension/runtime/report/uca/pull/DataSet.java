@@ -11,9 +11,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpDataSet;
 import io.zerows.extension.runtime.report.eon.RpConstant;
-import io.zerows.extension.runtime.report.eon.em.SourceType;
-
-import java.util.Objects;
+import io.zerows.extension.runtime.report.eon.em.EmReport;
 
 /**
  * 数据源加载器，用于处理 dataSource 字段定义的数据源的相关信息加载，主要依赖
@@ -29,35 +27,27 @@ public interface DataSet {
 
     Cc<String, DataSet> CC_SKELETON = Cc.openThread();
 
-    static DataSet of(final KpDataSet dataSet) {
-        Objects.requireNonNull(dataSet);
-        final JsonObject sourceJ = Ut.toJObject(dataSet.getDataSource());
-        return of(sourceJ);
-    }
-
     static DataSet of(final JsonObject sourceJ) {
-        final SourceType type = Ut.toEnum(
-            () -> Ut.valueString(sourceJ, "sourceType"), SourceType.class);
+        final EmReport.SourceType type = Ut.toEnum(
+            () -> Ut.valueString(sourceJ, "sourceType"), EmReport.SourceType.class);
         final String dsTarget;
         // TABLE
-        if (SourceType.TABLE == type) {
+        if (EmReport.SourceType.TABLE == type) {
             dsTarget = Ut.valueString(sourceJ, RpConstant.SourceTypeField.TABLE);
             final JsonObject paramConstructor = new JsonObject();
 
             paramConstructor.put(KName.SOURCE, dsTarget);
             paramConstructor.put(KName.CHILDREN, sourceJ.getValue(KName.CHILDREN));
             return CC_SKELETON.pick(
-                () -> new DataSetTable(paramConstructor),
-                type + VString.SLASH + dsTarget
+                () -> new DataSetTable(paramConstructor), type + VString.SLASH + dsTarget
             );
         }
         // JOIN_2
-        if (SourceType.JOIN_2 == type) {
+        if (EmReport.SourceType.JOIN_2 == type) {
             final JsonObject paramConstructor = Ut.valueJObject(sourceJ, RpConstant.SourceTypeField.SOURCE);
             paramConstructor.put(KName.CHILDREN, sourceJ.getValue(KName.CHILDREN));
             return CC_SKELETON.pick(
-                () -> new DataSetJoin2(paramConstructor),
-                type + VString.SLASH + paramConstructor.hashCode()
+                () -> new DataSetJoin2(paramConstructor), type + VString.SLASH + paramConstructor.hashCode()
             );
         }
         // Not Support
@@ -84,13 +74,22 @@ public interface DataSet {
 
     interface Tool {
 
-        static JsonObject formatParameter(final JsonObject params, final JsonObject queryJ) {
+        static JsonObject inputParameter(final JsonObject params, final JsonObject queryJ) {
             if (Ut.isNil(queryJ)) {
                 return params;
             } else {
                 final JsonObject conditionTpl = Ut.valueJObject(queryJ, "condition");
                 return Ut.fromExpression(conditionTpl, params);
             }
+        }
+
+        static Future<JsonArray> outputArray(final JsonObject params, final KpDataSet dataSet) {
+            // 新版只通过 dataSource 来构造数据源，不再使用 dataSet
+            final JsonObject sourceJ = Ut.toJObject(dataSet.getDataSource());
+            final DataSet executor = DataSet.of(sourceJ);
+
+            final JsonObject queryDef = Ut.toJObject(dataSet.getDataQuery());
+            return executor.loadAsync(params, queryDef);
         }
     }
 }

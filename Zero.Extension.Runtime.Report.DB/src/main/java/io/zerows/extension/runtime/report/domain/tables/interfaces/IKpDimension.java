@@ -38,6 +38,16 @@ public interface IKpDimension extends VertxPojo, Serializable {
     public String getName();
 
     /**
+     * Setter for <code>ZDB.KP_DIMENSION.CODE</code>. 「code」- 维度代码
+     */
+    public IKpDimension setCode(String value);
+
+    /**
+     * Getter for <code>ZDB.KP_DIMENSION.CODE</code>. 「code」- 维度代码
+     */
+    public String getCode();
+
+    /**
      * Setter for <code>ZDB.KP_DIMENSION.TYPE</code>. 「type」- 维度类型
      */
     public IKpDimension setType(String value);
@@ -58,24 +68,24 @@ public interface IKpDimension extends VertxPojo, Serializable {
     public String getStatus();
 
     /**
-     * Setter for <code>ZDB.KP_DIMENSION.START_AT</code>. 「startAt」- 开始时间
+     * Setter for <code>ZDB.KP_DIMENSION.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
      */
-    public IKpDimension setStartAt(LocalDateTime value);
+    public IKpDimension setDataSetId(String value);
 
     /**
-     * Getter for <code>ZDB.KP_DIMENSION.START_AT</code>. 「startAt」- 开始时间
+     * Getter for <code>ZDB.KP_DIMENSION.DATA_SET_ID</code>. 「dataSetId」- 数据源ID
      */
-    public LocalDateTime getStartAt();
+    public String getDataSetId();
 
     /**
-     * Setter for <code>ZDB.KP_DIMENSION.END_AT</code>. 「endAt」- 结束时间
+     * Setter for <code>ZDB.KP_DIMENSION.DATA_QUERY</code>. 「dataQuery」- 数据查询配置
      */
-    public IKpDimension setEndAt(LocalDateTime value);
+    public IKpDimension setDataQuery(String value);
 
     /**
-     * Getter for <code>ZDB.KP_DIMENSION.END_AT</code>. 「endAt」- 结束时间
+     * Getter for <code>ZDB.KP_DIMENSION.DATA_QUERY</code>. 「dataQuery」- 数据查询配置
      */
-    public LocalDateTime getEndAt();
+    public String getDataQuery();
 
     /**
      * Setter for <code>ZDB.KP_DIMENSION.DATA_SORT</code>. 「dataSort」- 排序维度处理
@@ -253,10 +263,11 @@ public interface IKpDimension extends VertxPojo, Serializable {
         public default IKpDimension fromJson(io.vertx.core.json.JsonObject json) {
                 setOrThrow(this::setKey,json::getString,"KEY","java.lang.String");
                 setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
+                setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
                 setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
-                setOrThrow(this::setStartAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"START_AT","java.time.LocalDateTime");
-                setOrThrow(this::setEndAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"END_AT","java.time.LocalDateTime");
+                setOrThrow(this::setDataSetId,json::getString,"DATA_SET_ID","java.lang.String");
+                setOrThrow(this::setDataQuery,json::getString,"DATA_QUERY","java.lang.String");
                 setOrThrow(this::setDataSort,json::getString,"DATA_SORT","java.lang.String");
                 setOrThrow(this::setDataGroup,json::getString,"DATA_GROUP","java.lang.String");
                 setOrThrow(this::setDataOutput,json::getString,"DATA_OUTPUT","java.lang.String");
@@ -281,10 +292,11 @@ public interface IKpDimension extends VertxPojo, Serializable {
                 io.vertx.core.json.JsonObject json = new io.vertx.core.json.JsonObject();
                 json.put("KEY",getKey());
                 json.put("NAME",getName());
+                json.put("CODE",getCode());
                 json.put("TYPE",getType());
                 json.put("STATUS",getStatus());
-                json.put("START_AT",getStartAt()==null?null:getStartAt().toString());
-                json.put("END_AT",getEndAt()==null?null:getEndAt().toString());
+                json.put("DATA_SET_ID",getDataSetId());
+                json.put("DATA_QUERY",getDataQuery());
                 json.put("DATA_SORT",getDataSort());
                 json.put("DATA_GROUP",getDataGroup());
                 json.put("DATA_OUTPUT",getDataOutput());

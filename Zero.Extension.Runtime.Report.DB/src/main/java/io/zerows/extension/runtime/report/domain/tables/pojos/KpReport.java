@@ -25,9 +25,9 @@ public class KpReport implements VertxPojo, IKpReport {
     private String status;
     private String title;
     private String reportExpr;
+    private String reportConfig;
     private String reportBy;
     private LocalDateTime reportAt;
-    private String reportConfig;
     private String dataSetId;
     private String dataTplId;
     private String appId;
@@ -49,9 +49,9 @@ public class KpReport implements VertxPojo, IKpReport {
         this.status = value.getStatus();
         this.title = value.getTitle();
         this.reportExpr = value.getReportExpr();
+        this.reportConfig = value.getReportConfig();
         this.reportBy = value.getReportBy();
         this.reportAt = value.getReportAt();
-        this.reportConfig = value.getReportConfig();
         this.dataSetId = value.getDataSetId();
         this.dataTplId = value.getDataTplId();
         this.appId = value.getAppId();
@@ -72,9 +72,9 @@ public class KpReport implements VertxPojo, IKpReport {
         String status,
         String title,
         String reportExpr,
+        String reportConfig,
         String reportBy,
         LocalDateTime reportAt,
-        String reportConfig,
         String dataSetId,
         String dataTplId,
         String appId,
@@ -93,9 +93,9 @@ public class KpReport implements VertxPojo, IKpReport {
         this.status = status;
         this.title = title;
         this.reportExpr = reportExpr;
+        this.reportConfig = reportConfig;
         this.reportBy = reportBy;
         this.reportAt = reportAt;
-        this.reportConfig = reportConfig;
         this.dataSetId = dataSetId;
         this.dataTplId = dataTplId;
         this.appId = appId;
@@ -217,40 +217,6 @@ public class KpReport implements VertxPojo, IKpReport {
     }
 
     /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 报表人
-     */
-    @Override
-    public String getReportBy() {
-        return this.reportBy;
-    }
-
-    /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 报表人
-     */
-    @Override
-    public KpReport setReportBy(String reportBy) {
-        this.reportBy = reportBy;
-        return this;
-    }
-
-    /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 报表生成时间
-     */
-    @Override
-    public LocalDateTime getReportAt() {
-        return this.reportAt;
-    }
-
-    /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 报表生成时间
-     */
-    @Override
-    public KpReport setReportAt(LocalDateTime reportAt) {
-        this.reportAt = reportAt;
-        return this;
-    }
-
-    /**
      * Getter for <code>ZDB.KP_REPORT.REPORT_CONFIG</code>. 「reportConfig」-
      * 主表基础配置
      */
@@ -266,6 +232,40 @@ public class KpReport implements VertxPojo, IKpReport {
     @Override
     public KpReport setReportConfig(String reportConfig) {
         this.reportConfig = reportConfig;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 模板创建人
+     */
+    @Override
+    public String getReportBy() {
+        return this.reportBy;
+    }
+
+    /**
+     * Setter for <code>ZDB.KP_REPORT.REPORT_BY</code>. 「reportBy」- 模板创建人
+     */
+    @Override
+    public KpReport setReportBy(String reportBy) {
+        this.reportBy = reportBy;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 模板创建时间
+     */
+    @Override
+    public LocalDateTime getReportAt() {
+        return this.reportAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.KP_REPORT.REPORT_AT</code>. 「reportAt」- 模板创建时间
+     */
+    @Override
+    public KpReport setReportAt(LocalDateTime reportAt) {
+        this.reportAt = reportAt;
         return this;
     }
 
@@ -501,6 +501,12 @@ public class KpReport implements VertxPojo, IKpReport {
         }
         else if (!this.reportExpr.equals(other.reportExpr))
             return false;
+        if (this.reportConfig == null) {
+            if (other.reportConfig != null)
+                return false;
+        }
+        else if (!this.reportConfig.equals(other.reportConfig))
+            return false;
         if (this.reportBy == null) {
             if (other.reportBy != null)
                 return false;
@@ -512,12 +518,6 @@ public class KpReport implements VertxPojo, IKpReport {
                 return false;
         }
         else if (!this.reportAt.equals(other.reportAt))
-            return false;
-        if (this.reportConfig == null) {
-            if (other.reportConfig != null)
-                return false;
-        }
-        else if (!this.reportConfig.equals(other.reportConfig))
             return false;
         if (this.dataSetId == null) {
             if (other.dataSetId != null)
@@ -598,9 +598,9 @@ public class KpReport implements VertxPojo, IKpReport {
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.title == null) ? 0 : this.title.hashCode());
         result = prime * result + ((this.reportExpr == null) ? 0 : this.reportExpr.hashCode());
+        result = prime * result + ((this.reportConfig == null) ? 0 : this.reportConfig.hashCode());
         result = prime * result + ((this.reportBy == null) ? 0 : this.reportBy.hashCode());
         result = prime * result + ((this.reportAt == null) ? 0 : this.reportAt.hashCode());
-        result = prime * result + ((this.reportConfig == null) ? 0 : this.reportConfig.hashCode());
         result = prime * result + ((this.dataSetId == null) ? 0 : this.dataSetId.hashCode());
         result = prime * result + ((this.dataTplId == null) ? 0 : this.dataTplId.hashCode());
         result = prime * result + ((this.appId == null) ? 0 : this.appId.hashCode());
@@ -625,9 +625,9 @@ public class KpReport implements VertxPojo, IKpReport {
         sb.append(", ").append(status);
         sb.append(", ").append(title);
         sb.append(", ").append(reportExpr);
+        sb.append(", ").append(reportConfig);
         sb.append(", ").append(reportBy);
         sb.append(", ").append(reportAt);
-        sb.append(", ").append(reportConfig);
         sb.append(", ").append(dataSetId);
         sb.append(", ").append(dataTplId);
         sb.append(", ").append(appId);
@@ -656,9 +656,9 @@ public class KpReport implements VertxPojo, IKpReport {
         setStatus(from.getStatus());
         setTitle(from.getTitle());
         setReportExpr(from.getReportExpr());
+        setReportConfig(from.getReportConfig());
         setReportBy(from.getReportBy());
         setReportAt(from.getReportAt());
-        setReportConfig(from.getReportConfig());
         setDataSetId(from.getDataSetId());
         setDataTplId(from.getDataTplId());
         setAppId(from.getAppId());
