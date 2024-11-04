@@ -23,7 +23,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
     private String name;
     private String type;
     private String status;
-    private String fieldName;
+    private String valuePath;
+    private String valueConfig;
+    private String valueDisplay;
     private String inConfig;
     private String inComponent;
     private String outConfig;
@@ -45,7 +47,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         this.name = value.getName();
         this.type = value.getType();
         this.status = value.getStatus();
-        this.fieldName = value.getFieldName();
+        this.valuePath = value.getValuePath();
+        this.valueConfig = value.getValueConfig();
+        this.valueDisplay = value.getValueDisplay();
         this.inConfig = value.getInConfig();
         this.inComponent = value.getInComponent();
         this.outConfig = value.getOutConfig();
@@ -66,7 +70,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         String name,
         String type,
         String status,
-        String fieldName,
+        String valuePath,
+        String valueConfig,
+        String valueDisplay,
         String inConfig,
         String inComponent,
         String outConfig,
@@ -85,7 +91,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         this.name = name;
         this.type = type;
         this.status = status;
-        this.fieldName = fieldName;
+        this.valuePath = valuePath;
+        this.valueConfig = valueConfig;
+        this.valueDisplay = valueDisplay;
         this.inConfig = inConfig;
         this.inComponent = inComponent;
         this.outConfig = outConfig;
@@ -175,19 +183,55 @@ public class KpFeature implements VertxPojo, IKpFeature {
     }
 
     /**
-     * Getter for <code>ZDB.KP_FEATURE.FIELD_NAME</code>. 「fieldName」- 特征名称
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_PATH</code>. 「valuePath」- 特征名称
      */
     @Override
-    public String getFieldName() {
-        return this.fieldName;
+    public String getValuePath() {
+        return this.valuePath;
     }
 
     /**
-     * Setter for <code>ZDB.KP_FEATURE.FIELD_NAME</code>. 「fieldName」- 特征名称
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_PATH</code>. 「valuePath」- 特征名称
      */
     @Override
-    public KpFeature setFieldName(String fieldName) {
-        this.fieldName = fieldName;
+    public KpFeature setValuePath(String valuePath) {
+        this.valuePath = valuePath;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_CONFIG</code>. 「valueConfig」- 特征配置
+     */
+    @Override
+    public String getValueConfig() {
+        return this.valueConfig;
+    }
+
+    /**
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_CONFIG</code>. 「valueConfig」- 特征配置
+     */
+    @Override
+    public KpFeature setValueConfig(String valueConfig) {
+        this.valueConfig = valueConfig;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_DISPLAY</code>. 「valueDisplay」-
+     * 特征显示名称
+     */
+    @Override
+    public String getValueDisplay() {
+        return this.valueDisplay;
+    }
+
+    /**
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_DISPLAY</code>. 「valueDisplay」-
+     * 特征显示名称
+     */
+    @Override
+    public KpFeature setValueDisplay(String valueDisplay) {
+        this.valueDisplay = valueDisplay;
         return this;
     }
 
@@ -449,11 +493,23 @@ public class KpFeature implements VertxPojo, IKpFeature {
         }
         else if (!this.status.equals(other.status))
             return false;
-        if (this.fieldName == null) {
-            if (other.fieldName != null)
+        if (this.valuePath == null) {
+            if (other.valuePath != null)
                 return false;
         }
-        else if (!this.fieldName.equals(other.fieldName))
+        else if (!this.valuePath.equals(other.valuePath))
+            return false;
+        if (this.valueConfig == null) {
+            if (other.valueConfig != null)
+                return false;
+        }
+        else if (!this.valueConfig.equals(other.valueConfig))
+            return false;
+        if (this.valueDisplay == null) {
+            if (other.valueDisplay != null)
+                return false;
+        }
+        else if (!this.valueDisplay.equals(other.valueDisplay))
             return false;
         if (this.inConfig == null) {
             if (other.inConfig != null)
@@ -544,7 +600,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
-        result = prime * result + ((this.fieldName == null) ? 0 : this.fieldName.hashCode());
+        result = prime * result + ((this.valuePath == null) ? 0 : this.valuePath.hashCode());
+        result = prime * result + ((this.valueConfig == null) ? 0 : this.valueConfig.hashCode());
+        result = prime * result + ((this.valueDisplay == null) ? 0 : this.valueDisplay.hashCode());
         result = prime * result + ((this.inConfig == null) ? 0 : this.inConfig.hashCode());
         result = prime * result + ((this.inComponent == null) ? 0 : this.inComponent.hashCode());
         result = prime * result + ((this.outConfig == null) ? 0 : this.outConfig.hashCode());
@@ -569,7 +627,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         sb.append(", ").append(name);
         sb.append(", ").append(type);
         sb.append(", ").append(status);
-        sb.append(", ").append(fieldName);
+        sb.append(", ").append(valuePath);
+        sb.append(", ").append(valueConfig);
+        sb.append(", ").append(valueDisplay);
         sb.append(", ").append(inConfig);
         sb.append(", ").append(inComponent);
         sb.append(", ").append(outConfig);
@@ -598,7 +658,9 @@ public class KpFeature implements VertxPojo, IKpFeature {
         setName(from.getName());
         setType(from.getType());
         setStatus(from.getStatus());
-        setFieldName(from.getFieldName());
+        setValuePath(from.getValuePath());
+        setValueConfig(from.getValueConfig());
+        setValueDisplay(from.getValueDisplay());
         setInConfig(from.getInConfig());
         setInComponent(from.getInComponent());
         setOutConfig(from.getOutConfig());

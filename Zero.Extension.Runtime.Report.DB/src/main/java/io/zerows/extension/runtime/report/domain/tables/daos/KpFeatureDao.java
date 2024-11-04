@@ -83,18 +83,50 @@ public class KpFeatureDao extends AbstractVertxDAO<KpFeatureRecord, io.zerows.ex
         }
 
         /**
-     * Find records that have <code>FIELD_NAME IN (values)</code> asynchronously
+     * Find records that have <code>VALUE_PATH IN (values)</code> asynchronously
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByFieldName(Collection<String> values) {
-                return findManyByCondition(KpFeature.KP_FEATURE.FIELD_NAME.in(values));
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValuePath(Collection<String> values) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_PATH.in(values));
         }
 
         /**
-     * Find records that have <code>FIELD_NAME IN (values)</code> asynchronously
+     * Find records that have <code>VALUE_PATH IN (values)</code> asynchronously
      * limited by the given limit
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByFieldName(Collection<String> values, int limit) {
-                return findManyByCondition(KpFeature.KP_FEATURE.FIELD_NAME.in(values),limit);
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValuePath(Collection<String> values, int limit) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_PATH.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>VALUE_CONFIG IN (values)</code>
+     * asynchronously
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValueConfig(Collection<String> values) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_CONFIG.in(values));
+        }
+
+        /**
+     * Find records that have <code>VALUE_CONFIG IN (values)</code>
+     * asynchronously limited by the given limit
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValueConfig(Collection<String> values, int limit) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_CONFIG.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>VALUE_DISPLAY IN (values)</code>
+     * asynchronously
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValueDisplay(Collection<String> values) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_DISPLAY.in(values));
+        }
+
+        /**
+     * Find records that have <code>VALUE_DISPLAY IN (values)</code>
+     * asynchronously limited by the given limit
+     */
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature>> findManyByValueDisplay(Collection<String> values, int limit) {
+                return findManyByCondition(KpFeature.KP_FEATURE.VALUE_DISPLAY.in(values),limit);
         }
 
         /**

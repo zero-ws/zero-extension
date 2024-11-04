@@ -38,4 +38,8 @@ CREATE TABLE IF NOT EXISTS KP_DIMENSION
     `UPDATED_AT`   DATETIME COMMENT '「updatedAt」- 更新时间',
     `UPDATED_BY`   VARCHAR(36) COMMENT '「updatedBy」- 更新人',
     PRIMARY KEY (`KEY`)
-)
+);
+-- changeset Lang:kp-dimension-2
+-- Unique Key: 独立唯一键定义
+ALTER TABLE KP_DIMENSION
+    ADD UNIQUE (`CODE`, `REPORT_ID`, `SIGMA`) USING BTREE;

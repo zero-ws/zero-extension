@@ -58,14 +58,36 @@ public interface IKpFeature extends VertxPojo, Serializable {
     public String getStatus();
 
     /**
-     * Setter for <code>ZDB.KP_FEATURE.FIELD_NAME</code>. 「fieldName」- 特征名称
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_PATH</code>. 「valuePath」- 特征名称
      */
-    public IKpFeature setFieldName(String value);
+    public IKpFeature setValuePath(String value);
 
     /**
-     * Getter for <code>ZDB.KP_FEATURE.FIELD_NAME</code>. 「fieldName」- 特征名称
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_PATH</code>. 「valuePath」- 特征名称
      */
-    public String getFieldName();
+    public String getValuePath();
+
+    /**
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_CONFIG</code>. 「valueConfig」- 特征配置
+     */
+    public IKpFeature setValueConfig(String value);
+
+    /**
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_CONFIG</code>. 「valueConfig」- 特征配置
+     */
+    public String getValueConfig();
+
+    /**
+     * Setter for <code>ZDB.KP_FEATURE.VALUE_DISPLAY</code>. 「valueDisplay」-
+     * 特征显示名称
+     */
+    public IKpFeature setValueDisplay(String value);
+
+    /**
+     * Getter for <code>ZDB.KP_FEATURE.VALUE_DISPLAY</code>. 「valueDisplay」-
+     * 特征显示名称
+     */
+    public String getValueDisplay();
 
     /**
      * Setter for <code>ZDB.KP_FEATURE.IN_CONFIG</code>. 「inConfig」- 特殊输出配置
@@ -223,7 +245,9 @@ public interface IKpFeature extends VertxPojo, Serializable {
                 setOrThrow(this::setName,json::getString,"NAME","java.lang.String");
                 setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
-                setOrThrow(this::setFieldName,json::getString,"FIELD_NAME","java.lang.String");
+                setOrThrow(this::setValuePath,json::getString,"VALUE_PATH","java.lang.String");
+                setOrThrow(this::setValueConfig,json::getString,"VALUE_CONFIG","java.lang.String");
+                setOrThrow(this::setValueDisplay,json::getString,"VALUE_DISPLAY","java.lang.String");
                 setOrThrow(this::setInConfig,json::getString,"IN_CONFIG","java.lang.String");
                 setOrThrow(this::setInComponent,json::getString,"IN_COMPONENT","java.lang.String");
                 setOrThrow(this::setOutConfig,json::getString,"OUT_CONFIG","java.lang.String");
@@ -248,7 +272,9 @@ public interface IKpFeature extends VertxPojo, Serializable {
                 json.put("NAME",getName());
                 json.put("TYPE",getType());
                 json.put("STATUS",getStatus());
-                json.put("FIELD_NAME",getFieldName());
+                json.put("VALUE_PATH",getValuePath());
+                json.put("VALUE_CONFIG",getValueConfig());
+                json.put("VALUE_DISPLAY",getValueDisplay());
                 json.put("IN_CONFIG",getInConfig());
                 json.put("IN_COMPONENT",getInComponent());
                 json.put("OUT_CONFIG",getOutConfig());

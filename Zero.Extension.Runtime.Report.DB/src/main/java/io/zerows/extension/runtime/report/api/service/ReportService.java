@@ -56,6 +56,14 @@ public class ReportService implements ReportStub {
             });
     }
 
+    /**
+     * 维度处理
+     *
+     * @param report 报表定义
+     * @param params 参
+     *
+     * @return 返回 Map
+     */
     private Future<ConcurrentMap<String, RDimension>> reportOfDim(final KpReport report, final JsonObject params) {
         final JsonObject where = Ux.whereAnd();
         where.put("reportId", report.getKey());

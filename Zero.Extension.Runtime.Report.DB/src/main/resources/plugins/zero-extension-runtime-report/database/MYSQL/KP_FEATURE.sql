@@ -11,7 +11,10 @@ CREATE TABLE IF NOT EXISTS KP_FEATURE
     `STATUS`        VARCHAR(255) COMMENT '「status」- 特征状态',
 
     -- 查询维度配置
-    `FIELD_NAME`    VARCHAR(255) COMMENT '「fieldName」- 特征名称',
+    `VALUE_PATH`    VARCHAR(1024) COMMENT '「valuePath」- 特征名称',
+    `VALUE_CONFIG`  LONGTEXT COMMENT '「valueConfig」- 特征配置',
+    `VALUE_DISPLAY` VARCHAR(255) COMMENT '「valueDisplay」- 特征显示名称',
+
     `IN_CONFIG`     LONGTEXT COMMENT '「inConfig」- 特殊输出配置',
     `IN_COMPONENT`  LONGTEXT COMMENT '「inComponent」- 特殊输出组件',
     `OUT_CONFIG`    LONGTEXT COMMENT '「outConfig」- 特殊输出配置',
@@ -32,4 +35,8 @@ CREATE TABLE IF NOT EXISTS KP_FEATURE
     `UPDATED_AT`    DATETIME COMMENT '「updatedAt」- 更新时间',
     `UPDATED_BY`    VARCHAR(36) COMMENT '「updatedBy」- 更新人',
     PRIMARY KEY (`KEY`)
-)
+);
+-- changeset Lang:kp-feature-2
+-- Unique Key: 独立唯一键定义
+ALTER TABLE KP_FEATURE
+    ADD UNIQUE (`NAME`, `REPORT_ID`, `SIGMA`) USING BTREE;

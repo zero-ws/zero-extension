@@ -37,8 +37,8 @@ class DimProcTree extends AbstractDimProc {
         final RDimension dimNorm = new RDimension(dimension.getCode());
         dimNorm.data(processed);
         {
-            final JsonObject outConfig = Ut.toJObject(dimension.getDataOutput());
-            Ut.<JsonObject>itJObject(outConfig).forEach(entry -> {
+            final JsonObject dimField = Ut.toJObject(dimension.getDataField());
+            Ut.<JsonObject>itJObject(dimField).forEach(entry -> {
                 final RAggregator aggregator = new RAggregator(entry.getValue());
                 dimNorm.rule(entry.getKey(), aggregator);
             });

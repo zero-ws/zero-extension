@@ -13,11 +13,11 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function18;
+import org.jooq.Function20;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row18;
+import org.jooq.Row20;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -71,9 +71,20 @@ public class KpFeature extends TableImpl<KpFeatureRecord> {
     public final TableField<KpFeatureRecord, String> STATUS = createField(DSL.name("STATUS"), SQLDataType.VARCHAR(255), this, "「status」- 特征状态");
 
     /**
-     * The column <code>ZDB.KP_FEATURE.FIELD_NAME</code>. 「fieldName」- 特征名称
+     * The column <code>ZDB.KP_FEATURE.VALUE_PATH</code>. 「valuePath」- 特征名称
      */
-    public final TableField<KpFeatureRecord, String> FIELD_NAME = createField(DSL.name("FIELD_NAME"), SQLDataType.VARCHAR(255), this, "「fieldName」- 特征名称");
+    public final TableField<KpFeatureRecord, String> VALUE_PATH = createField(DSL.name("VALUE_PATH"), SQLDataType.VARCHAR(1024), this, "「valuePath」- 特征名称");
+
+    /**
+     * The column <code>ZDB.KP_FEATURE.VALUE_CONFIG</code>. 「valueConfig」- 特征配置
+     */
+    public final TableField<KpFeatureRecord, String> VALUE_CONFIG = createField(DSL.name("VALUE_CONFIG"), SQLDataType.CLOB, this, "「valueConfig」- 特征配置");
+
+    /**
+     * The column <code>ZDB.KP_FEATURE.VALUE_DISPLAY</code>. 「valueDisplay」-
+     * 特征显示名称
+     */
+    public final TableField<KpFeatureRecord, String> VALUE_DISPLAY = createField(DSL.name("VALUE_DISPLAY"), SQLDataType.VARCHAR(255), this, "「valueDisplay」- 特征显示名称");
 
     /**
      * The column <code>ZDB.KP_FEATURE.IN_CONFIG</code>. 「inConfig」- 特殊输出配置
@@ -225,18 +236,18 @@ public class KpFeature extends TableImpl<KpFeatureRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row18 type methods
+    // Row20 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row18<String, String, String, String, String, String, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row18) super.fieldsRow();
+    public Row20<String, String, String, String, String, String, String, String, String, String, String, String, Boolean, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row20) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function18<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -244,7 +255,7 @@ public class KpFeature extends TableImpl<KpFeatureRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function18<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function20<? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }
