@@ -41,6 +41,7 @@ public final class EmReport {
     public enum FeatureType {
         DIMENSION,              // 来自维度处理
         DATA,                   // 数据直接处理
-        DYNAMIC                 // 动态运算，可能来自输入
+        DYNAMIC,                // 动态运算，可能来自输入
+        GLOBAL,                 // 全局
     }
 }

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS KP_REPORT_INSTANCE;
 CREATE TABLE IF NOT EXISTS KP_REPORT_INSTANCE
 (
     `KEY`            VARCHAR(36) COMMENT '「key」- 报表主键',
-    `NAME`           VARCHAR(255) COMMENT '「name」- 表表名称',
+    `NAME`           VARCHAR(255) COMMENT '「name」- 报表名称',
     `STATUS`         VARCHAR(255) COMMENT '「status」- 报表状态',
     `TYPE`           VARCHAR(255) COMMENT '「type」- 报表类型',
 
