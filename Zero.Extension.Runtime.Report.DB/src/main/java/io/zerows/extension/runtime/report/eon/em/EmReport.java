@@ -43,5 +43,11 @@ public final class EmReport {
         DATA,                   // 数据直接处理
         DYNAMIC,                // 动态运算，可能来自输入
         GLOBAL,                 // 全局
+        NONE,
+    }
+
+    public enum InputSource {
+        INPUT,
+        FEATURE
     }
 }

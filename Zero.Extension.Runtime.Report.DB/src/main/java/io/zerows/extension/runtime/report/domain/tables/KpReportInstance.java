@@ -53,9 +53,9 @@ public class KpReportInstance extends TableImpl<KpReportInstanceRecord> {
     public final TableField<KpReportInstanceRecord, String> KEY = createField(DSL.name("KEY"), SQLDataType.VARCHAR(36).nullable(false), this, "「key」- 报表主键");
 
     /**
-     * The column <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 表表名称
+     * The column <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 报表名称
      */
-    public final TableField<KpReportInstanceRecord, String> NAME = createField(DSL.name("NAME"), SQLDataType.VARCHAR(255), this, "「name」- 表表名称");
+    public final TableField<KpReportInstanceRecord, String> NAME = createField(DSL.name("NAME"), SQLDataType.VARCHAR(255), this, "「name」- 报表名称");
 
     /**
      * The column <code>ZDB.KP_REPORT_INSTANCE.STATUS</code>. 「status」- 报表状态

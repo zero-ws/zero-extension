@@ -112,19 +112,19 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
     }
 
     /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_EXPR</code>. 「reportExpr」- 报表表达式配置
+     * Setter for <code>ZDB.KP_REPORT.REPORT_PARAM</code>. 「reportParam」- 报表参数配置
      */
     @Override
-    public KpReportRecord setReportExpr(String value) {
+    public KpReportRecord setReportParam(String value) {
         set(5, value);
         return this;
     }
 
     /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_EXPR</code>. 「reportExpr」- 报表表达式配置
+     * Getter for <code>ZDB.KP_REPORT.REPORT_PARAM</code>. 「reportParam」- 报表参数配置
      */
     @Override
-    public String getReportExpr() {
+    public String getReportParam() {
         return (String) get(5);
     }
 
@@ -418,7 +418,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
 
     @Override
     public Field<String> field6() {
-        return KpReport.KP_REPORT.REPORT_EXPR;
+        return KpReport.KP_REPORT.REPORT_PARAM;
     }
 
     @Override
@@ -518,7 +518,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
 
     @Override
     public String component6() {
-        return getReportExpr();
+        return getReportParam();
     }
 
     @Override
@@ -618,7 +618,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
 
     @Override
     public String value6() {
-        return getReportExpr();
+        return getReportParam();
     }
 
     @Override
@@ -723,7 +723,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
 
     @Override
     public KpReportRecord value6(String value) {
-        setReportExpr(value);
+        setReportParam(value);
         return this;
     }
 
@@ -847,7 +847,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
         setCode(from.getCode());
         setStatus(from.getStatus());
         setTitle(from.getTitle());
-        setReportExpr(from.getReportExpr());
+        setReportParam(from.getReportParam());
         setReportConfig(from.getReportConfig());
         setReportBy(from.getReportBy());
         setReportAt(from.getReportAt());
@@ -885,7 +885,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
     /**
      * Create a detached, initialised KpReportRecord
      */
-    public KpReportRecord(String key, String name, String code, String status, String title, String reportExpr, String reportConfig, String reportBy, LocalDateTime reportAt, String dataSetId, String dataTplId, String appId, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
+    public KpReportRecord(String key, String name, String code, String status, String title, String reportParam, String reportConfig, String reportBy, LocalDateTime reportAt, String dataSetId, String dataTplId, String appId, Boolean active, String sigma, String metadata, String language, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt, String updatedBy) {
         super(KpReport.KP_REPORT);
 
         setKey(key);
@@ -893,7 +893,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
         setCode(code);
         setStatus(status);
         setTitle(title);
-        setReportExpr(reportExpr);
+        setReportParam(reportParam);
         setReportConfig(reportConfig);
         setReportBy(reportBy);
         setReportAt(reportAt);
@@ -923,7 +923,7 @@ public class KpReportRecord extends UpdatableRecordImpl<KpReportRecord> implemen
             setCode(value.getCode());
             setStatus(value.getStatus());
             setTitle(value.getTitle());
-            setReportExpr(value.getReportExpr());
+            setReportParam(value.getReportParam());
             setReportConfig(value.getReportConfig());
             setReportBy(value.getReportBy());
             setReportAt(value.getReportAt());

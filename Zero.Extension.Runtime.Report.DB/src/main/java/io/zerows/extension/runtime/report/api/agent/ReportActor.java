@@ -38,7 +38,7 @@ public class ReportActor {
             // ERR-80701
             return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
         }
-        return this.reportStub.generateAsync(reportId, query);
+        return this.reportStub.buildInstance(reportId, query);
     }
 
     @Address(Addr.Report.QUERY_PAGE)

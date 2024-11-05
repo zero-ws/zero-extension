@@ -68,14 +68,14 @@ public interface IKpReport extends VertxPojo, Serializable {
     public String getTitle();
 
     /**
-     * Setter for <code>ZDB.KP_REPORT.REPORT_EXPR</code>. 「reportExpr」- 报表表达式配置
+     * Setter for <code>ZDB.KP_REPORT.REPORT_PARAM</code>. 「reportParam」- 报表参数配置
      */
-    public IKpReport setReportExpr(String value);
+    public IKpReport setReportParam(String value);
 
     /**
-     * Getter for <code>ZDB.KP_REPORT.REPORT_EXPR</code>. 「reportExpr」- 报表表达式配置
+     * Getter for <code>ZDB.KP_REPORT.REPORT_PARAM</code>. 「reportParam」- 报表参数配置
      */
-    public String getReportExpr();
+    public String getReportParam();
 
     /**
      * Setter for <code>ZDB.KP_REPORT.REPORT_CONFIG</code>. 「reportConfig」-
@@ -242,7 +242,7 @@ public interface IKpReport extends VertxPojo, Serializable {
                 setOrThrow(this::setCode,json::getString,"CODE","java.lang.String");
                 setOrThrow(this::setStatus,json::getString,"STATUS","java.lang.String");
                 setOrThrow(this::setTitle,json::getString,"TITLE","java.lang.String");
-                setOrThrow(this::setReportExpr,json::getString,"REPORT_EXPR","java.lang.String");
+                setOrThrow(this::setReportParam,json::getString,"REPORT_PARAM","java.lang.String");
                 setOrThrow(this::setReportConfig,json::getString,"REPORT_CONFIG","java.lang.String");
                 setOrThrow(this::setReportBy,json::getString,"REPORT_BY","java.lang.String");
                 setOrThrow(this::setReportAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"REPORT_AT","java.time.LocalDateTime");
@@ -269,7 +269,7 @@ public interface IKpReport extends VertxPojo, Serializable {
                 json.put("CODE",getCode());
                 json.put("STATUS",getStatus());
                 json.put("TITLE",getTitle());
-                json.put("REPORT_EXPR",getReportExpr());
+                json.put("REPORT_PARAM",getReportParam());
                 json.put("REPORT_CONFIG",getReportConfig());
                 json.put("REPORT_BY",getReportBy());
                 json.put("REPORT_AT",getReportAt()==null?null:getReportAt().toString());

@@ -9,6 +9,8 @@ import io.zerows.extension.runtime.report.domain.Zdb;
 import io.zerows.extension.runtime.report.domain.tables.records.KpDimensionRecord;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 import org.jooq.Field;
@@ -204,6 +206,11 @@ public class KpDimension extends TableImpl<KpDimensionRecord> {
     @Override
     public UniqueKey<KpDimensionRecord> getPrimaryKey() {
         return Keys.KEY_KP_DIMENSION_PRIMARY;
+    }
+
+    @Override
+    public List<UniqueKey<KpDimensionRecord>> getUniqueKeys() {
+        return Arrays.asList(Keys.KEY_KP_DIMENSION_CODE);
     }
 
     @Override

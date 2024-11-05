@@ -98,19 +98,19 @@ public class KpReportDao extends AbstractVertxDAO<KpReportRecord, io.zerows.exte
         }
 
         /**
-     * Find records that have <code>REPORT_EXPR IN (values)</code>
+     * Find records that have <code>REPORT_PARAM IN (values)</code>
      * asynchronously
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportExpr(Collection<String> values) {
-                return findManyByCondition(KpReport.KP_REPORT.REPORT_EXPR.in(values));
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportParam(Collection<String> values) {
+                return findManyByCondition(KpReport.KP_REPORT.REPORT_PARAM.in(values));
         }
 
         /**
-     * Find records that have <code>REPORT_EXPR IN (values)</code>
+     * Find records that have <code>REPORT_PARAM IN (values)</code>
      * asynchronously limited by the given limit
      */
-        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportExpr(Collection<String> values, int limit) {
-                return findManyByCondition(KpReport.KP_REPORT.REPORT_EXPR.in(values),limit);
+        public Future<List<io.zerows.extension.runtime.report.domain.tables.pojos.KpReport>> findManyByReportParam(Collection<String> values, int limit) {
+                return findManyByCondition(KpReport.KP_REPORT.REPORT_PARAM.in(values),limit);
         }
 
         /**

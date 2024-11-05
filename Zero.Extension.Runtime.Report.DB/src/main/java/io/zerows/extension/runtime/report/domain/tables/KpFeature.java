@@ -9,6 +9,8 @@ import io.zerows.extension.runtime.report.domain.Zdb;
 import io.zerows.extension.runtime.report.domain.tables.records.KpFeatureRecord;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 import org.jooq.Field;
@@ -194,6 +196,11 @@ public class KpFeature extends TableImpl<KpFeatureRecord> {
     @Override
     public UniqueKey<KpFeatureRecord> getPrimaryKey() {
         return Keys.KEY_KP_FEATURE_PRIMARY;
+    }
+
+    @Override
+    public List<UniqueKey<KpFeatureRecord>> getUniqueKeys() {
+        return Arrays.asList(Keys.KEY_KP_FEATURE_NAME);
     }
 
     @Override

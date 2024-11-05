@@ -78,9 +78,9 @@ public class KpReport extends TableImpl<KpReportRecord> {
     public final TableField<KpReportRecord, String> TITLE = createField(DSL.name("TITLE"), SQLDataType.VARCHAR(255), this, "「title」- 报表标题");
 
     /**
-     * The column <code>ZDB.KP_REPORT.REPORT_EXPR</code>. 「reportExpr」- 报表表达式配置
+     * The column <code>ZDB.KP_REPORT.REPORT_PARAM</code>. 「reportParam」- 报表参数配置
      */
-    public final TableField<KpReportRecord, String> REPORT_EXPR = createField(DSL.name("REPORT_EXPR"), SQLDataType.CLOB, this, "「reportExpr」- 报表表达式配置");
+    public final TableField<KpReportRecord, String> REPORT_PARAM = createField(DSL.name("REPORT_PARAM"), SQLDataType.CLOB, this, "「reportParam」- 报表参数配置");
 
     /**
      * The column <code>ZDB.KP_REPORT.REPORT_CONFIG</code>. 「reportConfig」-

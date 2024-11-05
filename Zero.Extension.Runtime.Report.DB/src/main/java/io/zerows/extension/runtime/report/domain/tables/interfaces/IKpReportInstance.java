@@ -28,12 +28,12 @@ public interface IKpReportInstance extends VertxPojo, Serializable {
     public String getKey();
 
     /**
-     * Setter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 表表名称
+     * Setter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 报表名称
      */
     public IKpReportInstance setName(String value);
 
     /**
-     * Getter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 表表名称
+     * Getter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 报表名称
      */
     public String getName();
 

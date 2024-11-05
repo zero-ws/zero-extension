@@ -16,5 +16,6 @@ public interface ReportInstanceStub {
 
     Future<Buffer> exportAsync(String key);
 
-    Future<KpReportInstance> buildAsync(JsonArray data, RGeneration generation);
+    Future<KpReportInstance> buildAsync(JsonArray data, JsonObject params,
+                                        RGeneration generation);
 }

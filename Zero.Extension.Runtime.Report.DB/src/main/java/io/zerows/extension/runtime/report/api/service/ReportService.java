@@ -45,32 +45,71 @@ public class ReportService implements ReportStub {
     }
 
     @Override
-    public Future<JsonObject> generateAsync(final String reportId, final JsonObject params) {
-        final RGeneration refGen = new RGeneration();
-        final KRef refData = new KRef();
+    public Future<JsonObject> buildInstance(final String reportId, final JsonObject params) {
         return Ux.Jooq.on(KpReportDao.class).<KpReport>fetchByIdAsync(reportId)
-            .compose(refGen::setReport).compose(report -> {
+            .compose(report -> {
                 if (Objects.isNull(report)) {
                     // ERR-80701
                     return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
                 }
-                // 主数据源
-                return this.reportOfData(report, params);
-            }).compose(refData::future).compose(data -> {
+                // 配置构造
+                return this.buildGeneration(report, params);
+            })
+            .compose(generation -> {
                 // 维度数据源
-                final KpReport report = refGen.reportDefinition();
-                return this.reportOfDim(report, params);
-            }).compose(refGen::setDimension).compose(dimensions -> {
-                // 提取特征
-                final KpReport report = refGen.reportDefinition();
-                return this.featureOfDim(report, params);
-            }).compose(refGen::setFeatures)
-            .compose(this::featureOfGlobal).compose(refGen::setGlobalFeatures)
-            .compose(nil -> {
-                final JsonArray data = refData.get();
-                return this.instanceStub.buildAsync(data, refGen);
-            }).compose(Ux::futureJ);
+                final KpReport report = generation.reportMeta();
+                return this.buildData(report, params)
+                    // 实例生成
+                    .compose(data -> this.instanceStub.buildAsync(data, params, generation));
+            })
+            .compose(Ux::futureJ);
     }
+
+    /**
+     * 读取主数据源
+     *
+     * @param report 报表定义
+     * @param params 参数
+     *
+     * @return 数据源
+     */
+    @Override
+    public Future<JsonArray> buildData(final KpReport report, final JsonObject params) {
+        final String reportId = report.getKey();
+        final String dsId = report.getDataSetId();
+        if (Ut.isNil(dsId)) {
+            // ERR-80702
+            return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
+        }
+        return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet>fetchByIdAsync(dsId).compose(dataSet -> {
+            if (Objects.isNull(dataSet)) {
+                // ERR-80702
+                return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
+            }
+            return DataSet.Tool.outputArray(params, dataSet);
+        });
+    }
+
+
+    // -------------- 维度部分 ---------------
+    @Override
+    public Future<RGeneration> buildGeneration(final KpReport report, final JsonObject params) {
+        final RGeneration refGen = new RGeneration();
+        final KRef futureList = new KRef();
+        // 主报表
+        return Ux.future(report).compose(refGen::reportMeta)
+            // 维度处理
+            .compose(processed -> this.reportOfDim(processed, params)).compose(refGen::dimension)
+            // 全特征提取
+            .compose(dimensions -> this.featureOfAll(report)).compose(futureList::future)
+            // 属性特征
+            .compose(nil -> this.featureOfDim(report, futureList.get()).compose(refGen::featureData))
+            // 全局特征
+            .compose(nil -> this.featureOfGlobal(futureList.get())).compose(refGen::featureGlobal)
+            // 返回结果
+            .compose(nil -> Ux.future(refGen));
+    }
+
 
     private Future<ConcurrentMap<String, KpFeature>> featureOfGlobal(final List<KpFeature> featureList) {
         final ConcurrentMap<String, KpFeature> featureGlobal = new ConcurrentHashMap<>();
@@ -88,27 +127,28 @@ public class ReportService implements ReportStub {
      * 特征提取
      *
      * @param report 报表定义
-     * @param params 参数设置
      *
      * @return 返回列表
      */
-    private Future<List<KpFeature>> featureOfDim(final KpReport report, final JsonObject params) {
+    private Future<List<KpFeature>> featureOfAll(final KpReport report) {
         final JsonObject whereJ = Ux.whereAnd();
         whereJ.put("reportId", report.getKey());
-        return Ux.Jooq.on(KpFeatureDao.class).<KpFeature>fetchAsync(whereJ).compose(featureList -> {
-            final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
-            final JsonArray featureA = Ut.valueJArray(reportConfig, "feature");
-            final ConcurrentMap<String, KpFeature> featureMap = Ut.elementMap(featureList, KpFeature::getName);
-            Ut.itJArray(featureA, String.class).forEach(featureName -> {
-                if (!featureMap.containsKey(featureName)) {
-                    final KpFeature feature = featureMap.getOrDefault(featureName, null);
-                    if (Objects.nonNull(feature)) {
-                        featureList.add(feature);
-                    }
+        return Ux.Jooq.on(KpFeatureDao.class).fetchAsync(whereJ);
+    }
+
+    private Future<List<KpFeature>> featureOfDim(final KpReport report, final List<KpFeature> featureList) {
+        final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
+        final JsonArray featureA = Ut.valueJArray(reportConfig, "feature");
+        final ConcurrentMap<String, KpFeature> featureMap = Ut.elementMap(featureList, KpFeature::getName);
+        Ut.itJArray(featureA, String.class).forEach(featureName -> {
+            if (!featureMap.containsKey(featureName)) {
+                final KpFeature feature = featureMap.getOrDefault(featureName, null);
+                if (Objects.nonNull(feature)) {
+                    featureList.add(feature);
                 }
-            });
-            return Ux.future(featureList);
+            }
         });
+        return Ux.future(featureList);
     }
 
 
@@ -129,30 +169,6 @@ public class ReportService implements ReportStub {
         }).compose(dimensions -> {
             final ConcurrentMap<String, RDimension> result = Ut.elementMap(dimensions, RDimension::key);
             return Ux.future(result);
-        });
-    }
-
-    /**
-     * 读取主数据源
-     *
-     * @param report 报表定义
-     * @param params 参数
-     *
-     * @return 数据源
-     */
-    private Future<JsonArray> reportOfData(final KpReport report, final JsonObject params) {
-        final String reportId = report.getKey();
-        final String dsId = report.getDataSetId();
-        if (Ut.isNil(dsId)) {
-            // ERR-80702
-            return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
-        }
-        return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet>fetchByIdAsync(dsId).compose(dataSet -> {
-            if (Objects.isNull(dataSet)) {
-                // ERR-80702
-                return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
-            }
-            return DataSet.Tool.outputArray(params, dataSet);
         });
     }
 }

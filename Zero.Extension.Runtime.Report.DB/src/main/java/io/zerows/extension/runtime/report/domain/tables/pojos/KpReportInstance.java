@@ -148,7 +148,7 @@ public class KpReportInstance implements VertxPojo, IKpReportInstance {
     }
 
     /**
-     * Getter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 表表名称
+     * Getter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 报表名称
      */
     @Override
     public String getName() {
@@ -156,7 +156,7 @@ public class KpReportInstance implements VertxPojo, IKpReportInstance {
     }
 
     /**
-     * Setter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 表表名称
+     * Setter for <code>ZDB.KP_REPORT_INSTANCE.NAME</code>. 「name」- 报表名称
      */
     @Override
     public KpReportInstance setName(String name) {
