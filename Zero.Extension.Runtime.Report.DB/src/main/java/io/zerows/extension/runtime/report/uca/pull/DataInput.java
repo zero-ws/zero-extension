@@ -5,6 +5,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import org.osgi.framework.Bundle;
 
@@ -22,8 +23,7 @@ public interface DataInput {
     Cc<String, DataInput> CC_SKELETON = Cc.openThread();
 
     static DataInput of(final Bundle owner) {
-        final String keyCache = Ut.Bnd.keyCache(owner, DataInputImpl.class);
-        return CC_SKELETON.pick(DataInputImpl::new, keyCache);
+        return DataInputImpl.of(owner, DataInputImpl.class);
     }
 
     static DataInput of() {
@@ -35,4 +35,8 @@ public interface DataInput {
     }
 
     Future<Kv<String, Object>> prepare(JsonObject params, JsonObject configureJ, KpFeature feature);
+
+    default OLog logger() {
+        return Ut.Log.data(this.getClass());
+    }
 }
