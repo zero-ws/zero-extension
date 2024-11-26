@@ -19,4 +19,9 @@ public interface RpConstant {
         String DISPLAY = "dimDisplay";
         String CHILDREN = "dimChildren";
     }
+
+    interface DimValue {
+        String FIELD_GROUP = "field.group";
+        String FIELD_VECTOR = "field.vector";
+    }
 }

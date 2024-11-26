@@ -8,7 +8,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import io.zerows.extension.runtime.report.uca.feature.RInComponent;
-import io.zerows.extension.runtime.report.uca.pull.in.InValueComponent;
+import io.zerows.extension.runtime.report.uca.pull.io.InValueComponent;
 
 import java.util.Objects;
 

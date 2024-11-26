@@ -1,9 +1,13 @@
 package io.zerows.extension.runtime.report.atom;
 
 import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
+import io.zerows.extension.runtime.report.eon.RpConstant;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -43,8 +47,21 @@ public class RDimension implements Serializable {
         return this;
     }
 
-    public Set<String> dimSet() {
-        return Ut.valueSetString(this.data, "dimKey");
+    /**
+     * 有序的维度键集合
+     *
+     * @return 有序的维度键集合
+     */
+    public Set<String> dateKeys() {
+        final Set<String> keySet = new LinkedHashSet<>();
+        Ut.itJArray(this.data).forEach(item -> keySet.add(Ut.valueString(item, "dimKey")));
+        return keySet;
+    }
+
+    public JsonObject data(final String key) {
+        return Objects.requireNonNull(Ut.itJArray(this.data)
+            .filter(item -> key.equals(Ut.valueString(item, RpConstant.DimField.KEY)))
+            .findFirst().orElse(null));
     }
 
     public RDimension rule(final String field, final RAggregator rule) {
