@@ -1,6 +1,9 @@
 package io.zerows.extension.runtime.report.atom;
 
+import io.horizon.eon.VValue;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReport;
@@ -10,6 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -21,9 +25,15 @@ public class RGeneration implements Serializable {
     private final ConcurrentMap<String, RDimension> reportDimensions = new ConcurrentHashMap<>();
     private final List<KpFeature> reportFeatures = new ArrayList<>();
     private final ConcurrentMap<String, KpFeature> reportGlobal = new ConcurrentHashMap<>();
+    private final String key;
     private KpReport reportDefinition;
 
     public RGeneration() {
+        this.key = UUID.randomUUID().toString();
+    }
+
+    public String key() {
+        return this.key;
     }
 
     public Future<KpReport> reportMeta(final KpReport reportDefinition) {
@@ -39,10 +49,11 @@ public class RGeneration implements Serializable {
 
     public Future<List<KpFeature>> featureData(final List<KpFeature> reportFeatures) {
         this.reportFeatures.clear();
-        this.reportFeatures.addAll(reportFeatures.stream().filter(item -> {
-            final EmReport.FeatureType type = Ut.toEnum(item::getType, EmReport.FeatureType.class, EmReport.FeatureType.NONE);
-            return EmReport.FeatureType.GLOBAL != type && EmReport.FeatureType.NONE != type;
-        }).toList());
+        this.reportFeatures.addAll(this.featureCompress(reportFeatures,
+            EmReport.FeatureType.DATA,
+            EmReport.FeatureType.DIMENSION,
+            EmReport.FeatureType.DYNAMIC
+        ));
         return Future.succeededFuture(this.reportFeatures);
     }
 
@@ -52,23 +63,69 @@ public class RGeneration implements Serializable {
         return Future.succeededFuture(this.reportGlobal);
     }
 
+    // ------------- 上边方法是设置专用方法 ----------------
+
+    /**
+     * 获取全局特征
+     *
+     * @param key 特征名
+     *
+     * @return 返回特征
+     */
     public KpFeature featureGlobal(final String key) {
         return this.reportGlobal.getOrDefault(key, null);
     }
 
-    public Set<String> featureGlobalKeys() {
-        return this.reportGlobal.keySet();
-    }
-
+    /**
+     * 获取报表原始数据（定义部分）
+     *
+     * @return 返回报表定义
+     */
     public KpReport reportMeta() {
         return this.reportDefinition;
     }
 
-    public ConcurrentMap<String, RDimension> dimension() {
-        return this.reportDimensions;
+    @Deprecated
+    public Set<String> featureGlobalKeys() {
+        return this.reportGlobal.keySet();
     }
 
+    public RDimension dimension() {
+        if (VValue.ONE == this.reportDimensions.size()) {
+            return this.reportDimensions.values().iterator().next();
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unchecked")
     public List<KpFeature> featureData() {
-        return this.reportFeatures;
+        final JsonObject reportConfig = Ut.toJObject(this.reportDefinition.getReportConfig());
+        final JsonArray features = Ut.valueJArray(reportConfig, "feature");
+        return this.featureCompress(this.reportFeatures, (List<String>) features.getList());
+    }
+
+    public List<KpFeature> featureDim() {
+        return this.featureCompress(this.featureData(), EmReport.FeatureType.DIMENSION);
+    }
+
+    private List<KpFeature> featureCompress(final List<KpFeature> features,
+                                            final List<String> featureNames) {
+        final ConcurrentMap<String, KpFeature> featureMap = Ut.elementMap(features, KpFeature::getName);
+        final List<KpFeature> featureList = new ArrayList<>();
+        featureNames.forEach(featureName -> {
+            if (featureMap.containsKey(featureName)) {
+                featureList.add(featureMap.get(featureName));
+            }
+        });
+        return featureList;
+    }
+
+    private List<KpFeature> featureCompress(final List<KpFeature> features,
+                                            final EmReport.FeatureType... featureArr) {
+        return features.stream().filter(item -> {
+            final EmReport.FeatureType type =
+                Ut.toEnum(item::getType, EmReport.FeatureType.class, EmReport.FeatureType.NONE);
+            return Set.of(featureArr).contains(type);
+        }).toList();
     }
 }

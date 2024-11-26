@@ -14,10 +14,13 @@ import io.zerows.extension.runtime.report.domain.tables.daos.KpReportInstanceDao
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReport;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;
+import io.zerows.extension.runtime.report.uca.combiner.StepGenerator;
 import io.zerows.extension.runtime.report.uca.pull.DataInput;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -73,8 +76,25 @@ public class ReportInstanceService implements ReportInstanceStub {
                                                final RGeneration generation) {
         // 参数准备
         return this.parameterPrepare(params, generation).compose(paramMap -> {
+            // 构造 KpReportInstance
+            final JsonObject paramsMiddle = params.copy();
+            {
+                // 很重要的参数提取
+                paramMap.forEach(paramsMiddle::put);
+                final String time = Ut.fromDate(LocalDateTime.now(), "yyyy-MM-dd");
+                paramsMiddle.put("time", time);
+            }
 
-            return null;
+
+            final StepGenerator generator = StepGenerator.of(generation);
+            final KpReportInstance instance = new KpReportInstance();
+            // 报表原始数据设置（很重要）
+            /*
+             * - key
+             */
+            instance.setKey(UUID.randomUUID().toString());
+
+            return generator.build(instance, paramsMiddle, data);
         });
     }
 
@@ -155,6 +175,8 @@ public class ReportInstanceService implements ReportInstanceStub {
         });
         return normalized;
     }
+
+    // 实例专用构造器
 
     /**
      * <pre><code>

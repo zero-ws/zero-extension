@@ -1,6 +1,7 @@
 package io.zerows.extension.runtime.report.atom;
 
 import io.vertx.core.json.JsonArray;
+import io.vertx.up.util.Ut;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -40,6 +41,10 @@ public class RDimension implements Serializable {
     public RDimension data(final JsonArray data) {
         this.data.addAll(data);
         return this;
+    }
+
+    public Set<String> dimSet() {
+        return Ut.valueSetString(this.data, "dimKey");
     }
 
     public RDimension rule(final String field, final RAggregator rule) {

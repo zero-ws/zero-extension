@@ -34,6 +34,7 @@ public final class EmReport {
 
     public enum UcaStatus {
         ACTIVE,
+        WAITING,
         DISABLED,
         ERROR
     }
