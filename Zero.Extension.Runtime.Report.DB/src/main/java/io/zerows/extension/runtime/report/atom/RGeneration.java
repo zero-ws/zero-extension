@@ -49,11 +49,7 @@ public class RGeneration implements Serializable {
 
     public Future<List<KpFeature>> featureData(final List<KpFeature> reportFeatures) {
         this.reportFeatures.clear();
-        this.reportFeatures.addAll(this.featureCompress(reportFeatures,
-            EmReport.FeatureType.DATA,
-            EmReport.FeatureType.DIMENSION,
-            EmReport.FeatureType.DYNAMIC
-        ));
+        this.reportFeatures.addAll(this.featureCompress(reportFeatures, EmReport.FeatureType.valueOk()));
         return Future.succeededFuture(this.reportFeatures);
     }
 
@@ -102,6 +98,15 @@ public class RGeneration implements Serializable {
         final JsonObject reportConfig = Ut.toJObject(this.reportDefinition.getReportConfig());
         final JsonArray features = Ut.valueJArray(reportConfig, "feature");
         return this.featureCompress(this.reportFeatures, (List<String>) features.getList());
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<KpFeature> featureDetail() {
+        final JsonObject reportConfig = Ut.toJObject(this.reportDefinition.getReportConfig());
+        final JsonArray features = Ut.valueJArray(reportConfig, "feature");
+        return this.featureCompress(this.featureCompress(this.reportFeatures,
+            EmReport.FeatureType.LAZY, EmReport.FeatureType.DATA, EmReport.FeatureType.AGGR
+        ), (List<String>) features.getList());
     }
 
     public List<KpFeature> featureDim() {

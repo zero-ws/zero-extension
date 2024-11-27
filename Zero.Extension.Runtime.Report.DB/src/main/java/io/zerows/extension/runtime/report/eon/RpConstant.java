@@ -24,4 +24,10 @@ public interface RpConstant {
         String FIELD_GROUP = "field.group";
         String FIELD_VECTOR = "field.vector";
     }
+
+    interface ValuePath {
+        String PREFIX_PARAM = "P:";
+        String PREFIX_REFER = "R:";
+        String PREFIX_CLASS = "C:";
+    }
 }

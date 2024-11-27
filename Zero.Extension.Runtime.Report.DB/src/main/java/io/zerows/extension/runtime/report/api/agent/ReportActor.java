@@ -5,8 +5,11 @@ import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.User;
 import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
+import io.vertx.up.eon.KName;
+import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.api.service.ReportInstanceStub;
 import io.zerows.extension.runtime.report.api.service.ReportStub;
@@ -33,11 +36,14 @@ public class ReportActor {
 
     @Address(Addr.Report.SINGLE_GENERATE)
     public Future<JsonObject> instanceGenerate(final String reportId,
-                                               final JsonObject query) {
+                                               final JsonObject query,
+                                               final User user) {
         if (Ut.isNil(reportId)) {
             // ERR-80701
             return Ut.Bnd.failOut(_404ReportMissingException.class, this.getClass(), reportId);
         }
+        final String userKey = Ux.keyUser(user);
+        query.put(KName.USER, userKey);
         return this.reportStub.buildInstance(reportId, query);
     }
 

@@ -4,6 +4,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.eon.RpConstant;
+import io.zerows.extension.runtime.report.eon.em.EmDim;
 
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -11,6 +12,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Stream;
 
 /**
  * 维度定义专用处理
@@ -69,11 +71,37 @@ public class RDimension implements Serializable {
         return this;
     }
 
-    public Set<String> rule() {
-        return this.rule.keySet();
-    }
+    public Object runRule(final String outField, final JsonArray sourceData) {
+        if (sourceData.isEmpty()) {
+            return null;
+        }
+        final RAggregator aggregator = this.rule.get(outField);
+        if (Objects.isNull(aggregator)) {
+            return null;
+        }
 
-    public RAggregator rule(final String field) {
-        return this.rule.getOrDefault(field, null);
+        final EmDim.Aggregator type = aggregator.aggregator();
+        if (EmDim.Aggregator.COUNT == type) {
+            return sourceData.size();
+        }
+        final Stream<Double> waiting = Ut.itJArray(sourceData)
+            .map(item -> item.getValue(aggregator.field()))
+            .filter(Objects::nonNull)
+            .map(Object::toString)
+            .filter(Ut::isDecimal)
+            .map(Double::parseDouble);
+        if (EmDim.Aggregator.SUM == type) {
+            return waiting.reduce(Double::sum).orElse(0.0);
+        }
+        if (EmDim.Aggregator.AVG == type) {
+            return waiting.reduce(Double::sum).orElse(0.0) / sourceData.size();
+        }
+        if (EmDim.Aggregator.MAX == type) {
+            return waiting.reduce(Double::max).orElse(0.0);
+        }
+        if (EmDim.Aggregator.MIN == type) {
+            return waiting.reduce(Double::min).orElse(0.0);
+        }
+        return null;
     }
 }

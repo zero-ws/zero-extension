@@ -5,6 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
+import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.atom.RDimension;
@@ -62,7 +63,11 @@ public class ReportService implements ReportStub {
                     // 实例生成
                     .compose(data -> this.instanceStub.buildAsync(data, params, generation));
             })
-            .compose(Ux::futureJ);
+            .compose(Ux::futureJ)
+            .compose(Fn.ofJObject(
+                "reportData",
+                "reportContent"
+            ));
     }
 
     /**

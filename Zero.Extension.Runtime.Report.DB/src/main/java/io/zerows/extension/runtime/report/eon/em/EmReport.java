@@ -40,11 +40,20 @@ public final class EmReport {
     }
 
     public enum FeatureType {
-        DIMENSION,              // 来自维度处理
-        DATA,                   // 数据直接处理
-        DYNAMIC,                // 动态运算，可能来自输入
+        // DIMENSION 和 AGGR 同为维度属性
+        // ---- 统计类
+        DIMENSION,              // 主维度：来自维度处理
+        AGGR,                   // 基于维度的计算：聚合处理
+        // ---- 明细类
+        DATA,                   // 明细部分：数据直接处理
+        LAZY,                   // 懒加载
+        // ---- 以下为特殊类型 ----
         GLOBAL,                 // 全局
-        NONE,
+        NONE;
+
+        public static FeatureType[] valueOk() {
+            return new FeatureType[]{DIMENSION, AGGR, DATA, LAZY};
+        }
     }
 
     public enum InputSource {
