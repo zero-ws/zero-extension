@@ -17,7 +17,6 @@ import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;
 import io.zerows.extension.runtime.report.uca.combiner.StepGenerator;
 import io.zerows.extension.runtime.report.uca.pull.DataInput;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -37,6 +36,18 @@ public class ReportInstanceService implements ReportInstanceStub {
     @Override
     public Future<Buffer> exportAsync(final String key) {
         return null;
+    }
+
+    @Override
+    public Future<JsonObject> saveInstance(final String key, final JsonObject data) {
+        return Ux.Jooq.on(KpReportInstanceDao.class)
+            .upsertJAsync(key, data);
+    }
+
+    @Override
+    public Future<Boolean> deleteInstance(final String key) {
+        return Ux.Jooq.on(KpReportInstanceDao.class)
+            .deleteByIdAsync(key);
     }
 
     /**
@@ -81,7 +92,8 @@ public class ReportInstanceService implements ReportInstanceStub {
             {
                 // 很重要的参数提取
                 paramMap.forEach(paramsMiddle::put);
-                final String time = Ut.fromDate(LocalDateTime.now(), "yyyy-MM-dd");
+                final String timeStr = Ut.valueString(params, "reportAt");
+                final String time = Ut.fromDate(Ut.parseFull(timeStr), "yyyy-MM-dd");
                 paramsMiddle.put("time", time);
             }
 
@@ -174,26 +186,5 @@ public class ReportInstanceService implements ReportInstanceStub {
             normalized.put(entry.getKey(), configureJ);
         });
         return normalized;
-    }
-
-    // 实例专用构造器
-
-    /**
-     * <pre><code>
-     *     key
-     *     name
-     *     status
-     *     type
-     *     title
-     *     subtitle
-     *     extra
-     *     description
-     * </code></pre>
-     *
-     * @param report   报表定义
-     * @param instance 新报表实例
-     */
-    private void fillBasic(final KpReport report, final KpReportInstance instance, final JsonObject params) {
-        instance.setReportId(report.getKey());
     }
 }

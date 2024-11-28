@@ -18,6 +18,8 @@ import io.zerows.extension.runtime.report.exception._400QueryParameterException;
 import io.zerows.extension.runtime.report.exception._404ReportMissingException;
 import jakarta.inject.Inject;
 
+import java.time.Instant;
+
 /**
  * @author lang : 2024-10-08
  */
@@ -45,6 +47,22 @@ public class ReportActor {
         final String userKey = Ux.keyUser(user);
         query.put(KName.USER, userKey);
         return this.reportStub.buildInstance(reportId, query);
+    }
+
+    @Address(Addr.Report.SINGLE_SAVE)
+    public Future<JsonObject> instanceSave(final String key,
+                                           final JsonObject data,
+                                           final User user) {
+        final JsonObject saveData = data.copy();
+        saveData.put(KName.CREATED_BY, Ux.keyUser(user));
+        saveData.put(KName.CREATED_AT, Instant.now());
+        return this.instanceStub.saveInstance(key, saveData);
+    }
+
+
+    @Address(Addr.Report.SINGLE_DELETE)
+    public Future<Boolean> instanceDelete(final String key) {
+        return this.instanceStub.deleteInstance(key);
     }
 
     @Address(Addr.Report.QUERY_PAGE)

@@ -56,6 +56,18 @@ public interface ReportAgent {
     Future<JsonObject> instanceGenerate(
         @QueryParam("reportId") String reportId, JsonObject query);
 
+    @PUT
+    @Path("/report/single-instance/:key")
+    @Address(Addr.Report.SINGLE_SAVE)
+    Future<JsonObject> instanceSave(
+        @PathParam(KName.KEY) String instanceId, JsonObject data);
+
+    @DELETE
+    @Path("/report/single-instance/:key")
+    @Address(Addr.Report.SINGLE_DELETE)
+    Future<Boolean> instanceDelete(
+        @PathParam(KName.KEY) String instanceId);
+
     @POST
     @Path("/report/single-export/:key")
     @Address(Addr.Report.SINGLE_EXPORT)

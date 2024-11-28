@@ -3,6 +3,7 @@ package io.zerows.extension.runtime.report.uca.combiner;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.atom.RGeneration;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReport;
@@ -51,11 +52,12 @@ class StepGeneratorNorm extends AbstractStepGenerator {
         final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
         // extra / subtitle / description
         {
-            final String fieldExtra = Ut.valueString(reportConfig, "extra");
+            final JsonObject instanceConfig = Ut.valueJObject(reportConfig, KName.INSTANCE);
+            final String fieldExtra = Ut.valueString(instanceConfig, "extra");
             this.parseAndExtract(request, fieldExtra, instance::setExtra);
-            final String fieldSubtitle = Ut.valueString(reportConfig, "subtitle");
+            final String fieldSubtitle = Ut.valueString(instanceConfig, "subtitle");
             this.parseAndExtract(request, fieldSubtitle, instance::setSubtitle);
-            final String fieldDescription = Ut.valueString(reportConfig, "description");
+            final String fieldDescription = Ut.valueString(instanceConfig, "description");
             this.parseAndExtract(request, fieldDescription, instance::setDescription);
         }
         return Ut.future(instance);

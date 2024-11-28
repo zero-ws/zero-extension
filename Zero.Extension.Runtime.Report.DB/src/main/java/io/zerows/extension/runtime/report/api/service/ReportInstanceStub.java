@@ -18,4 +18,8 @@ public interface ReportInstanceStub {
 
     Future<KpReportInstance> buildAsync(JsonArray data, JsonObject params,
                                         RGeneration generation);
+
+    Future<JsonObject> saveInstance(String key, JsonObject data);
+
+    Future<Boolean> deleteInstance(String key);
 }

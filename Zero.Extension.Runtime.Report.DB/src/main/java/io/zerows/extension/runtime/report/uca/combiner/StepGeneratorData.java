@@ -77,7 +77,12 @@ class StepGeneratorData extends AbstractStepGenerator {
             });
             reportContent.put(KName.DATA, dataArray);
             reportContent.put("feature", featureA);
+
+            final KpFeature featureOfDim = this.metadata().featureDim().get(VValue.ZERO);
+            reportContent.put("dimension", featureOfDim.getName());
+            
             instance.setReportContent(reportContent.encode());
+
             return Ux.future(instance);
         });
     }
