@@ -68,6 +68,12 @@ public interface ReportAgent {
     Future<Boolean> instanceDelete(
         @PathParam(KName.KEY) String instanceId);
 
+    @GET
+    @Path("/report/single-instance/:key")
+    @Address(Addr.Report.SINGLE_FETCH)
+    Future<JsonObject> instanceFetch(
+        @PathParam(KName.KEY) String instanceId);
+
     @POST
     @Path("/report/single-export/:key")
     @Address(Addr.Report.SINGLE_EXPORT)

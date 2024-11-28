@@ -22,5 +22,7 @@ public interface Addr {
         String SINGLE_SAVE = Prefix._EVENT + "KP-REPORT/SINGLE-SAVE";
 
         String SINGLE_DELETE = Prefix._EVENT + "KP-REPORT/SINGLE-DELETE";
+
+        String SINGLE_FETCH = Prefix._EVENT + "KP-REPORT/SINGLE_FETCH";
     }
 }

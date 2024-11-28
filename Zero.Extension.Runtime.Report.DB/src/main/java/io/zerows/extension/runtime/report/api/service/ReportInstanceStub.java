@@ -22,4 +22,6 @@ public interface ReportInstanceStub {
     Future<JsonObject> saveInstance(String key, JsonObject data);
 
     Future<Boolean> deleteInstance(String key);
+
+    Future<JsonObject> fetchInstance(String key);
 }

@@ -14,6 +14,7 @@ import io.vertx.up.util.Ut;
 import io.zerows.extension.runtime.report.api.service.ReportInstanceStub;
 import io.zerows.extension.runtime.report.api.service.ReportStub;
 import io.zerows.extension.runtime.report.eon.Addr;
+import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.exception._400QueryParameterException;
 import io.zerows.extension.runtime.report.exception._404ReportMissingException;
 import jakarta.inject.Inject;
@@ -56,6 +57,8 @@ public class ReportActor {
         final JsonObject saveData = data.copy();
         saveData.put(KName.CREATED_BY, Ux.keyUser(user));
         saveData.put(KName.CREATED_AT, Instant.now());
+        saveData.put(KName.ACTIVE, Boolean.TRUE);
+        saveData.put(KName.STATUS, EmReport.UcaStatus.ACTIVE.name());
         return this.instanceStub.saveInstance(key, saveData);
     }
 
@@ -63,6 +66,11 @@ public class ReportActor {
     @Address(Addr.Report.SINGLE_DELETE)
     public Future<Boolean> instanceDelete(final String key) {
         return this.instanceStub.deleteInstance(key);
+    }
+
+    @Address(Addr.Report.SINGLE_FETCH)
+    public Future<JsonObject> instanceFetch(final String key) {
+        return this.instanceStub.fetchInstance(key);
     }
 
     @Address(Addr.Report.QUERY_PAGE)

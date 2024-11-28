@@ -40,14 +40,27 @@ public class ReportInstanceService implements ReportInstanceStub {
 
     @Override
     public Future<JsonObject> saveInstance(final String key, final JsonObject data) {
+        final JsonObject condition = Ux.whereAnd();
+        condition.put(KName.NAME, Ut.valueString(data, KName.NAME));
+        condition.put(KName.SIGMA, Ut.valueString(data, KName.SIGMA));
         return Ux.Jooq.on(KpReportInstanceDao.class)
-            .upsertJAsync(key, data);
+            .upsertJAsync(condition, data);
     }
 
     @Override
     public Future<Boolean> deleteInstance(final String key) {
         return Ux.Jooq.on(KpReportInstanceDao.class)
             .deleteByIdAsync(key);
+    }
+
+    @Override
+    public Future<JsonObject> fetchInstance(final String key) {
+        return Ux.Jooq.on(KpReportInstanceDao.class)
+            .fetchByIdAsync(key)
+            .compose(Ux::futureJ).compose(Fn.ofJObject(
+                "reportContent",
+                "reportData"
+            ));
     }
 
     /**
