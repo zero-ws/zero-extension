@@ -11,6 +11,7 @@ import io.zerows.extension.runtime.crud.eon.Addr;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.QueryParam;
 
 /*
  * Http Method: DELETE
@@ -30,5 +31,6 @@ public interface DeleteAgent {
     @Address(Addr.Delete.BATCH)
     @Adjust(KWeb.ORDER.MODULE)
     Boolean deleteBatch(@PathParam("actor") String actor,
-                        @BodyParam JsonArray data);
+                        @BodyParam JsonArray data,
+                        @QueryParam(KName.MODULE) String module);
 }
