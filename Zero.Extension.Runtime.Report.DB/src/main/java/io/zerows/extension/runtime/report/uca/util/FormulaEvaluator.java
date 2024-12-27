@@ -11,10 +11,10 @@ import java.util.regex.Pattern;
 public class FormulaEvaluator {
 
 
-    public static String calculateFormula(String formula, ConcurrentHashMap<String, String> total) {
+    public static String calculateFormula(String formula, final ConcurrentHashMap<String, String> total) {
         // 匹配公式中的变量（如 sellRoom, roomTotal）
-        Pattern pattern = Pattern.compile("([a-zA-Z]+\\w*)");
-        Matcher matcher = pattern.matcher(formula);
+        final Pattern pattern = Pattern.compile("([a-zA-Z]+\\w*)");
+        final Matcher matcher = pattern.matcher(formula);
         
         // 替换公式中的变量为对应的值
         while (matcher.find()) {
@@ -34,14 +34,14 @@ public class FormulaEvaluator {
         return result.toString();
     }
 
-    public static BigDecimal evaluateFormula(String formula) {
+    public static BigDecimal evaluateFormula(final String formula) {
         try {
-            JexlEngine jexl = new JexlBuilder().create();
-            JexlExpression e = jexl.createExpression(formula);
-            JexlContext context = new MapContext();
+            final JexlEngine jexl = new JexlBuilder().create();
+            final JexlExpression e = jexl.createExpression(formula);
+            final JexlContext context = new MapContext();
 
             // 执行公式计算
-            Object result = e.evaluate(context);
+            final Object result = e.evaluate(context);
             return new BigDecimal(result.toString()).setScale(2, RoundingMode.DOWN);
         } catch (Exception e) {
             e.printStackTrace();
