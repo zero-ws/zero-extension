@@ -7,11 +7,14 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
+import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpDataSet;
 import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
+import io.zerows.extension.runtime.report.uca.feature.OData;
+import io.zerows.extension.runtime.report.uca.feature.OFeature;
 
 /**
  * 数据源加载器，用于处理 dataSource 字段定义的数据源的相关信息加载，主要依赖
@@ -89,7 +92,15 @@ public interface DataSet {
             final DataSet executor = DataSet.of(sourceJ);
 
             final JsonObject queryDef = Ut.toJObject(dataSet.getDataQuery());
-            return executor.loadAsync(params, queryDef);
+
+            return executor.loadAsync(params, queryDef).compose(data->{
+                if(dataSet.getDataComponent()==null){
+                  return  Ux.future(data);
+                }else {
+                    OData of = OData.of("C:");
+                   return of.dataAsync(data,params,dataSet);
+                }
+            });
         }
     }
 }

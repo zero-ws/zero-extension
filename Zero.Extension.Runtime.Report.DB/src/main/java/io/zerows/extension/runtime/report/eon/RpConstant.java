@@ -22,7 +22,7 @@ public interface RpConstant {
 
     interface DimValue {
         String FIELD_GROUP = "field.group";
-        String FIELD_VECTOR = "field.vector";
+        String NEW_GROUP = "newGroup";
     }
 
     interface ValuePath {

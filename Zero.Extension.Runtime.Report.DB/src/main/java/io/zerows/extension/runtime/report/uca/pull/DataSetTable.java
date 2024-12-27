@@ -56,6 +56,15 @@ class DataSetTable extends AbstractDataSet {
             this.connect.getTable(), parameters.encode());
         // 提取 UxJooq
         final UxJooq jq = Ux.Jooq.bridge(this.connect);
-        return jq.fetchJAndAsync(parameters).compose(data -> this.loadChildren(data, this.children));
+        if(parameters.getBoolean("")!=null){
+            if(!parameters.getBoolean("")){
+                return jq.fetchJOrAsync(parameters).compose(data -> this.loadChildren(data, this.children));
+            }else {
+                return jq.fetchJAndAsync(parameters).compose(data -> this.loadChildren(data, this.children));
+            }
+        }else {
+            return jq.fetchJAndAsync(parameters).compose(data -> this.loadChildren(data, this.children));
+
+        }
     }
 }
