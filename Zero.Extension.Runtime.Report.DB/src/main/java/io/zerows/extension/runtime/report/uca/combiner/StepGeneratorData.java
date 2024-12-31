@@ -16,11 +16,7 @@ import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;
 import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.uca.feature.OFeature;
-import io.zerows.extension.runtime.report.uca.feature.OGroup;
-import io.zerows.extension.runtime.report.uca.util.FormulaEvaluator;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -177,10 +173,6 @@ class StepGeneratorData extends AbstractStepGenerator {
 
             // 构造最终报表形态，先按维度分组
             final ConcurrentMap<String, JsonArray> groupMap = Ut.elementGroup(dataProcessed, RpConstant.DimField.KEY);
-            if(newGroup!=null){
-                OGroup of = OGroup.of("C:");
-                of.dataAsync(groupMap,newGroup);
-            }
             final Set<String> dimKeys = dimension.dateKeys();
 
             // combine 节点，追加维度行
@@ -226,53 +218,8 @@ class StepGeneratorData extends AbstractStepGenerator {
                     }
                 });
                 dimRecord.put(KName.CHILDREN, dimSource);
-                JsonArray dimSourceCopy = dimSource.copy();
-                bottomTotal.fieldNames().forEach(dimFeature -> {
-                    // 提取 Feature
-                    final KpFeature feature = Ut.elementFind(features, item -> item.getName().equals(dimFeature));
-                    final EmReport.FeatureType featureType = Ut.toEnum(feature.getType(), EmReport.FeatureType.class, EmReport.FeatureType.NONE);
-                    if (EmReport.FeatureType.AGGR == featureType) {
-                        dimSourceCopy.forEach(item -> {
-                            JsonObject entries = Ux.toJson(item);
-                            String string = entries.getString(feature.getName());
-                            // 使用 BigDecimal.valueOf 保留两位小数
-                            BigDecimal value = (string == null || string.isEmpty())
-                                    ? BigDecimal.ZERO
-                                    : BigDecimal.valueOf(Double.parseDouble(string)).setScale(2, RoundingMode.HALF_UP);
-                            // 转换为字符串，确保两位小数
-                            String valueString = value.toString();
-                            // 使用 compute 方法累加值
-                            total.compute(feature.getName(), (key, current) -> {
-                                if (current == null) {
-                                    return valueString; // 如果该键没有值，直接使用当前值
-                                } else {
-                                    // 将当前值和新值转换为 BigDecimal，进行累加
-                                    BigDecimal currentValue = new BigDecimal(current);
-                                    BigDecimal newValue = new BigDecimal(valueString);
-                                    BigDecimal sum = currentValue.add(newValue).setScale(2, RoundingMode.HALF_UP);
-                                    return sum.toString(); // 返回累加后的值
-                                }
-                            });
-                        });
-                    }
-                });
                 reportData.add(dimRecord);
             });
-
-            TotalCount.fieldNames().forEach(count->{
-                final String formula = TotalCount.getString(count);
-                final String result = FormulaEvaluator.calculateFormula(formula, total);
-                total.put(count, result);
-            });
-            JsonObject entries = Ux.toJson(total);
-            entries.put("key", UUID.randomUUID().toString());
-            bottomTotal.fieldNames().forEach(item->{
-                boolean b = total.containsKey(item);
-                if(!b){
-                    entries.put(item,bottomTotal.getString(item));
-                }
-            });
-            reportData.add(entries);
             return Ux.future(reportData);
         });
     }

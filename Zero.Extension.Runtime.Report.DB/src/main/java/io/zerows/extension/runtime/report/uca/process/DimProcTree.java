@@ -92,6 +92,7 @@ class DimProcTree extends AbstractDimProc {
                 itemFinal.put(RpConstant.DimField.CHILDREN, this.dimChildren(item, data, keyId));
                 // 自身
                 itemFinal.put(RpConstant.DimField.DISPLAY, this.dimDisplay(item, data, labelConfig));       // 注意区别
+                //todo
                 itemFinal.put(RpConstant.DimField.KEY, Ut.valueString(item, labelField));
                 result.add(itemFinal);
             });

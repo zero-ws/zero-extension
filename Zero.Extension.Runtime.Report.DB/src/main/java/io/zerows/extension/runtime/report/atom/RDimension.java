@@ -7,6 +7,8 @@ import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmDim;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -85,22 +87,27 @@ public class RDimension implements Serializable {
             return sourceData.size();
         }
         final Stream<Double> waiting = Ut.itJArray(sourceData)
-            .map(item -> item.getValue(aggregator.field()))
-            .filter(Objects::nonNull)
-            .map(Object::toString)
-            .filter(Ut::isDecimal)
-            .map(Double::parseDouble);
+                .map(item -> item.getValue(aggregator.field()))
+                .filter(Objects::nonNull)
+                .map(Object::toString)
+                .filter(Ut::isDecimal)
+                .map(Double::parseDouble);
+
         if (EmDim.Aggregator.SUM == type) {
-            return waiting.reduce(Double::sum).orElse(0.0);
+            double result = waiting.reduce(Double::sum).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
         }
         if (EmDim.Aggregator.AVG == type) {
-            return waiting.reduce(Double::sum).orElse(0.0) / sourceData.size();
+            double result = waiting.reduce(Double::sum).orElse(0.00) / sourceData.size();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
         }
         if (EmDim.Aggregator.MAX == type) {
-            return waiting.reduce(Double::max).orElse(0.0);
+            double result = waiting.reduce(Double::max).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
         }
         if (EmDim.Aggregator.MIN == type) {
-            return waiting.reduce(Double::min).orElse(0.0);
+            double result = waiting.reduce(Double::min).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
         }
         return null;
     }

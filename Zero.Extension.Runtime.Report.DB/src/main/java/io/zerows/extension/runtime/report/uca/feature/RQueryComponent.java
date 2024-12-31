@@ -6,7 +6,10 @@ import io.vertx.core.json.JsonObject;
 
 import java.util.concurrent.ConcurrentMap;
 
-public interface RGrupComponent {
+/**
+ * @author Yu : 2024-11-27
+ */
+public interface RQueryComponent {
 
-    Future<ConcurrentMap<String, JsonArray>> dataAsync(ConcurrentMap<String, JsonArray> map, String params);
+    Future<JsonArray> dataAsync(JsonArray dataSource, JsonObject parameters);
 }

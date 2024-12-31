@@ -2,6 +2,12 @@ package io.zerows.extension.runtime.report.refine;
 
 import io.vertx.core.json.JsonObject;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author lang : 2024-11-14
  */
@@ -37,5 +43,28 @@ public final class Rp {
             output.put(field, value);
         });
         return output;
+    }
+
+    public static String calculateFormula(String formula, final ConcurrentHashMap<String, String> total) {
+        // 匹配公式中的变量（如 sellRoom, roomTotal）
+        final Pattern pattern = Pattern.compile("([a-zA-Z]+\\w*)");
+        final Matcher matcher = pattern.matcher(formula);
+
+        // 替换公式中的变量为对应的值
+        while (matcher.find()) {
+            String variable = matcher.group(1);
+            if (total.containsKey(variable)) {
+                BigDecimal value = new BigDecimal(total.get(variable));
+                formula = formula.replace(variable, value.toString());
+            }
+        }
+
+        // 执行替换后的公式计算
+        BigDecimal result = RpValue.evaluateFormula(formula);
+
+        // 保留两位小数
+        result = result.setScale(2, RoundingMode.DOWN);
+
+        return result.toString();
     }
 }
