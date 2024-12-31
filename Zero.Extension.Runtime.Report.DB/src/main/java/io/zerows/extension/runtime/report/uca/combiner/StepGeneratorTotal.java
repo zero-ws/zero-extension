@@ -10,6 +10,7 @@ import io.zerows.extension.runtime.report.atom.RGeneration;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReport;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;
+import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.refine.Rp;
 
@@ -40,10 +41,10 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
         final RGeneration metadata = this.metadata();
         final List<KpFeature> features = metadata.featureData();
         final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
-        final JsonObject bottomTotal = Ut.valueJObject(reportConfig, "total");
-        final JsonObject totalCount = Ut.valueJObject(reportConfig, "totalCount");
+        final JsonObject bottomTotal = Ut.valueJObject(reportConfig, RpConstant.ConfigField.TOTAL);
+        final JsonObject totalCount = Ut.valueJObject(reportConfig, RpConstant.ConfigField.TOTAL_COUNT);
         final JsonObject reportContent = new JsonObject(instance.getReportContent());
-        final JsonArray data = reportContent.getJsonArray("data");
+        final JsonArray data = reportContent.getJsonArray(KName.DATA);
         final JsonArray children = new JsonArray();
         data.forEach(item -> {
             final JsonObject entries = Ux.toJson(item);
@@ -86,7 +87,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             });
         }
         final JsonObject entries = Ux.toJson(total);
-        entries.put("key", UUID.randomUUID().toString());
+        entries.put(KName.KEY, UUID.randomUUID().toString());
         bottomTotal.fieldNames().forEach(item -> {
             boolean b = total.containsKey(item);
             if (!b) {
@@ -94,7 +95,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             }
         });
         final JsonArray add = data.add(entries);
-        reportContent.put("data", add);
+        reportContent.put(KName.DATA, add);
         instance.setReportContent(reportContent.toString());
         return Ux.future(instance);
     }

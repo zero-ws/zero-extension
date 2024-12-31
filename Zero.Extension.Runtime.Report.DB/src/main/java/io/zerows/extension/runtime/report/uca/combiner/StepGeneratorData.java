@@ -132,7 +132,6 @@ class StepGeneratorData extends AbstractStepGenerator {
             // 抽取维度配置
             final JsonObject dimConfig = Ut.toJObject(featureOfDim.getValueConfig());
             final String dimField = Ut.valueString(dimConfig, RpConstant.DimValue.FIELD_GROUP);
-            final String newGroup = Ut.valueString(dimConfig, RpConstant.DimValue.NEW_GROUP);
 
             // 先根据特征处理重新提取数据，保留维度字段
             final JsonArray dataProcessed = new JsonArray();
@@ -178,12 +177,9 @@ class StepGeneratorData extends AbstractStepGenerator {
             // combine 节点，追加维度行
             final KpReport report = this.metadata().reportMeta();
             final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
-            final JsonObject combine = Ut.valueJObject(reportConfig, "combine");
-            final JsonObject bottomTotal = Ut.valueJObject(reportConfig,"bottomTotal");
-            final JsonObject TotalCount = Ut.valueJObject(reportConfig,"TotalCount");
+            final JsonObject combine = Ut.valueJObject(reportConfig, RpConstant.ConfigField.COMBINE);
             // 重新构造数据记录
             final JsonArray reportData = new JsonArray();
-            ConcurrentHashMap<String, String> total = new ConcurrentHashMap<>();
             dimKeys.stream().filter(groupMap::containsKey).forEach(dimKey -> {
                 final JsonObject dimRecord = new JsonObject();
                 final JsonArray dimSource = groupMap.get(dimKey);

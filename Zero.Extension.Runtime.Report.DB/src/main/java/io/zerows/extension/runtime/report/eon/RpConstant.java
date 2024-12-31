@@ -13,7 +13,11 @@ public interface RpConstant {
         String EXTENSION = "ds.extension";
         String SOURCE = "ds.source";
     }
-
+    interface ConfigField{
+        String COMBINE = "combine";
+        String TOTAL = "total";
+        String TOTAL_COUNT = "totalCount";
+    }
     interface DimField {
         String KEY = "dimKey";
         String DISPLAY = "dimDisplay";
@@ -22,7 +26,6 @@ public interface RpConstant {
 
     interface DimValue {
         String FIELD_GROUP = "field.group";
-        String NEW_GROUP = "newGroup";
     }
 
     interface ValuePath {
