@@ -19,7 +19,7 @@ public enum ApiSpec {
      *          BODY_STRING
      * POST     /{actor}/export              0           1 ( JCriteria )                  2              3
      *          BODY_JSON
-     * DELETE   /batch/{actor}/delete        0           1 ( JArray )
+     * DELETE   /batch/{actor}/delete        0           1 ( JArray )                     2
      *          BODY_ARRAY
      * PUT      /batch/{actor}/update        0           1 ( JArray )                     2
      *          BODY_ARRAY
