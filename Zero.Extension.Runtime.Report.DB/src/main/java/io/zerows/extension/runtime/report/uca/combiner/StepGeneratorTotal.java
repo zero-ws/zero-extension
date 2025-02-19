@@ -12,7 +12,6 @@ import io.zerows.extension.runtime.report.domain.tables.pojos.KpReport;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;
 import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
-import io.zerows.extension.runtime.report.refine.Rp;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -28,13 +27,6 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
         super(generation);
     }
 
-    /**
-     * 在最底部添加合计行,根据对应的配置进行公式计算
-     * @param instance
-     * @param request
-     * @param sourceData
-     * @return
-     */
     @Override
     public Future<KpReportInstance> build(KpReportInstance instance, JsonObject request, JsonArray sourceData) {
         final KpReport report = this.metadata().reportMeta();
@@ -79,23 +71,30 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
                 });
             }
         });
-        if (totalCount != null) {
+        if (totalCount.fieldNames().size()!=0) {
             totalCount.fieldNames().forEach(count -> {
                 final String formula = totalCount.getString(count);
-                final String result = Rp.calculateFormula(formula, total);
-                total.put(count, result);
+                Object result = Ut.fromExpressionT(formula, Ux.toJson(total));
+                if(result==null){
+                    result= "0.00";
+                }
+               final BigDecimal bigDecimal = new BigDecimal(result.toString());
+               final BigDecimal truncatedValue = bigDecimal.setScale(2, RoundingMode.DOWN);
+                total.put(count, truncatedValue.toString());
             });
+            final JsonObject entries = Ux.toJson(total);
+            entries.put(KName.KEY, UUID.randomUUID().toString());
+            bottomTotal.fieldNames().forEach(item -> {
+                boolean b = total.containsKey(item);
+                if (!b) {
+                    entries.put(item, bottomTotal.getString(item));
+                }
+            });
+            JsonObject entries1 = Ux.cloneT(entries);
+            entries.put(KName.CHILDREN,new JsonArray().add(entries1));
+             data.add(entries);
         }
-        final JsonObject entries = Ux.toJson(total);
-        entries.put(KName.KEY, UUID.randomUUID().toString());
-        bottomTotal.fieldNames().forEach(item -> {
-            boolean b = total.containsKey(item);
-            if (!b) {
-                entries.put(item, bottomTotal.getString(item));
-            }
-        });
-        final JsonArray add = data.add(entries);
-        reportContent.put(KName.DATA, add);
+        reportContent.put(KName.DATA, data);
         instance.setReportContent(reportContent.toString());
         return Ux.future(instance);
     }

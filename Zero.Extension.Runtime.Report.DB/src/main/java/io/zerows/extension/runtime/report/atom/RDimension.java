@@ -90,24 +90,30 @@ public class RDimension implements Serializable {
                 .map(item -> item.getValue(aggregator.field()))
                 .filter(Objects::nonNull)
                 .map(Object::toString)
-                .filter(Ut::isDecimal)
-                .map(Double::parseDouble);
+                .filter(value -> Ut.isDecimal(value) || Ut.isInteger(value)) // 支持整数和小数
+                .map(value -> {
+                    // 将字符串解析为 Double，无论是整数还是小数
+                    if (Ut.isInteger(value)) {
+                        return Double.valueOf(Integer.parseInt(value));
+                    }
+                    return Double.parseDouble(value);
+                });
 
         if (EmDim.Aggregator.SUM == type) {
             double result = waiting.reduce(Double::sum).orElse(0.00);
-            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.AVG == type) {
             double result = waiting.reduce(Double::sum).orElse(0.00) / sourceData.size();
-            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.MAX == type) {
             double result = waiting.reduce(Double::max).orElse(0.00);
-            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.MIN == type) {
             double result = waiting.reduce(Double::min).orElse(0.00);
-            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN).doubleValue();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         return null;
     }

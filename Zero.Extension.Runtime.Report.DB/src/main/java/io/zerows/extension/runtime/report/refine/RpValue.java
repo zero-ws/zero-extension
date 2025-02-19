@@ -3,10 +3,7 @@ package io.zerows.extension.runtime.report.refine;
 import io.horizon.eon.VValue;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import org.apache.commons.jexl3.*;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -78,25 +75,5 @@ class RpValue {
             return value;
         }
         return formatIn(modes, params);
-    }
-
-    /**
-     * 通过公式进行计算
-     * @param formula
-     * @return
-     */
-     static BigDecimal evaluateFormula(final String formula) {
-        try {
-            final JexlEngine jexl = new JexlBuilder().create();
-            final JexlExpression e = jexl.createExpression(formula);
-            final JexlContext context = new MapContext();
-
-            // 执行公式计算
-            final Object result = e.evaluate(context);
-            return new BigDecimal(result.toString()).setScale(2, RoundingMode.DOWN);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return BigDecimal.ZERO;  // 如果计算失败，返回 0
-        }
     }
 }

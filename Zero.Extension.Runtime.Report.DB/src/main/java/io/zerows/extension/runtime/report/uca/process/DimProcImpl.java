@@ -67,31 +67,34 @@ class DimProcImpl extends AbstractDimProc {
         final Set<String> dataSet = dimensions.stream().map(KpDimension::getDataSetId).collect(Collectors.toSet());
         return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet, String>fetchInAsync(KName.KEY, dataSet).compose(dataSets -> {
             final ConcurrentMap<String, Future<JsonArray>> resultMap = new ConcurrentHashMap<>();
-            KpDataSet kpDataSet = dataSets.get(0);
-            final JsonObject sourceJ = Ut.toJObject(kpDataSet.getDataSource());
-            final DataSet executor = DataSet.of(sourceJ);
-            final JsonObject queryDef = Ut.toJObject(kpDataSet.getDataQuery());
-
-            if(kpDataSet.getDataComponent()!=null){
+            if(dataSets.size() > 0){
+                KpDataSet kpDataSet = dataSets.get(0);
+                final JsonObject sourceJ = Ut.toJObject(kpDataSet.getDataSource());
+                final DataSet executor = DataSet.of(sourceJ);
+                final JsonObject queryDef = Ut.toJObject(kpDataSet.getDataQuery());
                return executor.loadAsync(params, queryDef).compose(dataSouce->{
-                   String dataComponent = kpDataSet.getDataComponent();
-                   RQueryComponent queryComponent = CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
-                   final JsonObject parameters = new JsonObject();
-                   parameters.put(KName.INPUT, params);
-                   Future<JsonArray> compose = queryComponent.dataAsync(dataSouce, parameters).compose(result -> {
-                       if (Objects.isNull(result)) {
-                           return Ut.future(dataSouce);
-                       }
-                       return Ut.future(result);
-                   });
-                   resultMap.put(kpDataSet.getKey(), compose);
-                  return Fn.combineM(resultMap);
-                });
+                   if(kpDataSet.getDataComponent()!=null){
+                       String dataComponent =kpDataSet.getDataComponent();
+                       RQueryComponent queryComponent = CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
+                       final JsonObject parameters = new JsonObject();
+                       parameters.put(KName.INPUT, params);
+                       Future<JsonArray> compose = queryComponent.dataAsync(dataSouce, parameters).compose(result -> {
+                           if (Objects.isNull(result)) {
+                               return Ut.future(dataSouce);
+                           }
+                           return Ut.future(result);
+                       });
+                       resultMap.put(kpDataSet.getKey(), compose);
+                   }else {
+                       dataSets.forEach(dataSetItem -> {
+                           final Future<JsonArray> result = DataSet.Tool.outputArray(params, dataSetItem);
+                           resultMap.put(dataSetItem.getKey(), result);
+                       });
+                   }
+                   return Fn.combineM(resultMap);
+
+               });
             }else {
-                dataSets.forEach(dataSetItem -> {
-                    final Future<JsonArray> result = DataSet.Tool.outputArray(params, dataSetItem);
-                    resultMap.put(dataSetItem.getKey(), result);
-                });
                 return Fn.combineM(resultMap);
             }
         });

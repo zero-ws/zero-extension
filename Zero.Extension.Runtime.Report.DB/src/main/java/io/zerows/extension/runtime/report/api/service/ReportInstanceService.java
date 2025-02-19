@@ -105,9 +105,20 @@ public class ReportInstanceService implements ReportInstanceStub {
             {
                 // 很重要的参数提取
                 paramMap.forEach(paramsMiddle::put);
-                final String timeStr = Ut.valueString(params, "reportAt");
-                final String time = Ut.fromDate(Ut.parseFull(timeStr), "yyyy-MM-dd");
-                paramsMiddle.put("time", time);
+                final String reportStartTime = Ut.valueString(params, "reportStartTime");
+                final String reportEndTime = Ut.valueString(params, "reportEndTime");
+                if(reportStartTime==null&&reportEndTime==null){
+                    final String timeStr = Ut.valueString(params, "reportAt");
+                    final String time = Ut.fromDate(Ut.parseFull(timeStr), "yyyy-MM-dd");
+                    paramsMiddle.put("time", time);
+                }else {
+                    final String time = Ut.fromDate(Ut.parseFull(reportStartTime), "yyyy-MM-dd");
+                    final String time2 = Ut.fromDate(Ut.parseFull(reportEndTime), "yyyy-MM-dd");
+                    paramsMiddle.put("time", time);
+                    paramsMiddle.put("time2", time2);
+                }
+
+
             }
 
 
