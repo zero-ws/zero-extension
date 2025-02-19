@@ -17,6 +17,8 @@ class StepGeneratorFacade extends AbstractStepGenerator {
     private final StepGenerator generatorAudit;
     private final StepGenerator generatorData;
 
+    private final StepGenerator generatorTotal;
+
 
     StepGeneratorFacade(final RGeneration generation) {
         super(generation);
@@ -24,6 +26,7 @@ class StepGeneratorFacade extends AbstractStepGenerator {
         this.generatorBelong = of(generation, StepGeneratorBelong.class);
         this.generatorAudit = of(generation, StepGeneratorAudit.class);
         this.generatorData = of(generation, StepGeneratorData.class);
+        this.generatorTotal = of(generation, StepGeneratorTotal.class);
     }
 
     @Override
@@ -59,6 +62,10 @@ class StepGeneratorFacade extends AbstractStepGenerator {
              *     reportData
              *     reportContent
              */
-            .compose(processed -> this.generatorData.build(processed, params, sourceData));
+            .compose(processed -> this.generatorData.build(processed, params, sourceData))
+             /*
+              * 在最底部加上合计
+              */
+            .compose(processed->this.generatorTotal.build(processed,params,sourceData));
     }
 }

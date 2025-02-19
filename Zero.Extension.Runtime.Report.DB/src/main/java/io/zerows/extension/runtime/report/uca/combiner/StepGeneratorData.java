@@ -17,9 +17,7 @@ import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.uca.feature.OFeature;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -71,6 +69,14 @@ class StepGeneratorData extends AbstractStepGenerator {
             final JsonArray featureA = new JsonArray();
             features.forEach(feature -> {
                 final JsonObject featureItem = new JsonObject();
+                String valueConfig = feature.getValueConfig();
+                if(valueConfig!=null){
+                    JsonObject entries = new JsonObject(valueConfig);
+                    if(entries.getJsonObject("css")!=null){
+                        featureItem.mergeIn(entries.getJsonObject("css"));
+                    }
+                }
+
                 featureItem.put("dataIndex", feature.getName());
                 featureItem.put("title", feature.getValueDisplay());
                 featureA.add(featureItem);
@@ -90,7 +96,7 @@ class StepGeneratorData extends AbstractStepGenerator {
     private Future<JsonArray> calculateContent(final JsonArray sourceData, final JsonObject params) {
         final RGeneration generation = this.metadata();
         final List<KpFeature> featureDim = generation.featureDim();
-        if (VValue.ONE != featureDim.size()) {
+        if (VValue.ONE < featureDim.size()) {
             // TODO: 多维度计算
             this.logger().warn("Current Version Does not support. key = {}", generation.key());
             return Ux.futureA();
@@ -171,8 +177,7 @@ class StepGeneratorData extends AbstractStepGenerator {
             // combine 节点，追加维度行
             final KpReport report = this.metadata().reportMeta();
             final JsonObject reportConfig = Ut.toJObject(report.getReportConfig());
-            final JsonObject combine = Ut.valueJObject(reportConfig, "combine");
-
+            final JsonObject combine = Ut.valueJObject(reportConfig, RpConstant.ConfigField.COMBINE);
             // 重新构造数据记录
             final JsonArray reportData = new JsonArray();
             dimKeys.stream().filter(groupMap::containsKey).forEach(dimKey -> {

@@ -53,9 +53,26 @@ public abstract class AbstractDataSet implements DataSet {
 
             final JsonArray ids = Ut.valueJArray(data, whereField);
             final JsonObject condition = Ux.whereAnd();
+            if (refConfig.containsKey("byField")) {
+                Object byFieldValue = refConfig.getValue("byField");
 
-            condition.put(this.loadKey(refConfig) + ",i", ids);
-
+                if (byFieldValue instanceof Boolean) {
+                    // 如果 byField 是布尔类型
+                    if ((Boolean) byFieldValue) {
+                        condition.put(refField + ",i", ids);
+                    }else {
+                        condition.put(this.loadKey(refConfig) + ",i", ids);
+                    }
+                } else if (byFieldValue instanceof String byFieldStr) {
+                    // 如果 byField 是字符串类型list = {ArrayList@32413}  size = 2
+                    condition.put(byFieldStr + ",i", ids);
+                } else {
+                    // 默认处理
+                    condition.put(this.loadKey(refConfig) + ",i", ids);
+                }
+            } else {
+                condition.put(this.loadKey(refConfig) + ",i", ids);
+            }
             final DataSet dataSet = DataSet.of(refConfig);
             dataMap.put(whereField, dataSet.loadAsync(condition));
             // input / refField -> output
@@ -78,9 +95,25 @@ public abstract class AbstractDataSet implements DataSet {
                 final String whereField = this.loadKey(refField, refConfig);
                 final String keyField = this.loadKey(refConfig);
                 // 数据连接
-                final ConcurrentMap<String, JsonObject> whereMap = Ut.elementMap(queryData, keyField);
-                // 开始连接
-                childData.put(whereField, Ut.toJObject(whereMap));
+                if (refConfig.containsKey("byField")) {
+                    Object byFieldValue = refConfig.getValue("byField");
+                    if (byFieldValue instanceof Boolean) {
+                        // 如果 byField 是布尔类型
+                        if ((Boolean) byFieldValue) {
+                            final ConcurrentMap<String, JsonObject> whereMap = Ut.elementMap(queryData, whereField);
+                            // 开始连接
+                            childData.put(whereField, Ut.toJObject(whereMap));
+                        }
+                    }
+                    if(byFieldValue instanceof String byFieldStr){
+                        final ConcurrentMap<String, JsonObject> whereMap = Ut.elementMap(queryData, byFieldStr);
+                        childData.put(whereField, Ut.toJObject(whereMap));
+                    }
+                } else {
+                    final ConcurrentMap<String, JsonObject> whereMap = Ut.elementMap(queryData, keyField);
+                    // 开始连接
+                    childData.put(whereField, Ut.toJObject(whereMap));
+                }
             });
 
             Ut.itJArray(data).forEach(dataEach -> {
@@ -88,7 +121,6 @@ public abstract class AbstractDataSet implements DataSet {
                 final Set<String> fieldSet = childData.fieldNames();
                 fieldSet.forEach(inputField -> {
                     final String inputValue = dataEach.getString(inputField);
-
                     // 原始记录是否包含 field 对应值
                     final JsonObject outData = childData.getJsonObject(inputField);
                     final JsonObject outValue = outData.getJsonObject(inputValue);

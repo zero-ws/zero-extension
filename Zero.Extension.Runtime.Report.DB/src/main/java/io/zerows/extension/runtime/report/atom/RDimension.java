@@ -7,6 +7,8 @@ import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmDim;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -85,22 +87,33 @@ public class RDimension implements Serializable {
             return sourceData.size();
         }
         final Stream<Double> waiting = Ut.itJArray(sourceData)
-            .map(item -> item.getValue(aggregator.field()))
-            .filter(Objects::nonNull)
-            .map(Object::toString)
-            .filter(Ut::isDecimal)
-            .map(Double::parseDouble);
+                .map(item -> item.getValue(aggregator.field()))
+                .filter(Objects::nonNull)
+                .map(Object::toString)
+                .filter(value -> Ut.isDecimal(value) || Ut.isInteger(value)) // 支持整数和小数
+                .map(value -> {
+                    // 将字符串解析为 Double，无论是整数还是小数
+                    if (Ut.isInteger(value)) {
+                        return Double.valueOf(Integer.parseInt(value));
+                    }
+                    return Double.parseDouble(value);
+                });
+
         if (EmDim.Aggregator.SUM == type) {
-            return waiting.reduce(Double::sum).orElse(0.0);
+            double result = waiting.reduce(Double::sum).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.AVG == type) {
-            return waiting.reduce(Double::sum).orElse(0.0) / sourceData.size();
+            double result = waiting.reduce(Double::sum).orElse(0.00) / sourceData.size();
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.MAX == type) {
-            return waiting.reduce(Double::max).orElse(0.0);
+            double result = waiting.reduce(Double::max).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         if (EmDim.Aggregator.MIN == type) {
-            return waiting.reduce(Double::min).orElse(0.0);
+            double result = waiting.reduce(Double::min).orElse(0.00);
+            return BigDecimal.valueOf(result).setScale(2, RoundingMode.DOWN);
         }
         return null;
     }

@@ -91,6 +91,7 @@ public class ReportService implements ReportStub {
                 // ERR-80702
                 return Ut.Bnd.failOut(_400ReportDataSetException.class, this.getClass(), reportId);
             }
+
             return DataSet.Tool.outputArray(params, dataSet);
         });
     }
