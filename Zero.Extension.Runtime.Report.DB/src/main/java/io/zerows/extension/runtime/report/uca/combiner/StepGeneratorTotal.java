@@ -44,33 +44,36 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             jsonArray.forEach(children::add);
         });
         final ConcurrentHashMap<String, String> total = new ConcurrentHashMap<>();
-        bottomTotal.fieldNames().forEach(dimFeature -> {
-            // 提取 Feature
-            final KpFeature feature = Ut.elementFind(features, item -> item.getName().equals(dimFeature));
-            final EmReport.FeatureType featureType = Ut.toEnum(feature.getType(), EmReport.FeatureType.class, EmReport.FeatureType.NONE);
-            if (EmReport.FeatureType.AGGR == featureType) {
-                children.forEach(item -> {
-                    JsonObject entries = Ux.toJson(item);
-                    String string = entries.getString(feature.getName());
-                    // 使用 BigDecimal.valueOf 保留两位小数
-                    BigDecimal value = (string == null || string.isEmpty()) ? BigDecimal.ZERO : BigDecimal.valueOf(Double.parseDouble(string)).setScale(2, RoundingMode.HALF_UP);
-                    // 转换为字符串，确保两位小数
-                    String valueString = value.toString();
-                    // 使用 compute 方法累加值
-                    total.compute(feature.getName(), (key, current) -> {
-                        if (current == null) {
-                            return valueString; // 如果该键没有值，直接使用当前值
-                        } else {
-                            // 将当前值和新值转换为 BigDecimal，进行累加
-                            BigDecimal currentValue = new BigDecimal(current);
-                            BigDecimal newValue = new BigDecimal(valueString);
-                            BigDecimal sum = currentValue.add(newValue).setScale(2, RoundingMode.HALF_UP);
-                            return sum.toString(); // 返回累加后的值
-                        }
+        if(bottomTotal.fieldNames().size()!=0){
+            bottomTotal.fieldNames().forEach(dimFeature -> {
+                // 提取 Feature
+                final KpFeature feature = Ut.elementFind(features, item -> item.getName().equals(dimFeature));
+                final EmReport.FeatureType featureType = Ut.toEnum(feature.getType(), EmReport.FeatureType.class, EmReport.FeatureType.NONE);
+                if (EmReport.FeatureType.AGGR == featureType) {
+                    children.forEach(item -> {
+                        JsonObject entries = Ux.toJson(item);
+                        String string = entries.getString(feature.getName());
+                        // 使用 BigDecimal.valueOf 保留两位小数
+                        BigDecimal value = (string == null || string.isEmpty()) ? BigDecimal.ZERO : BigDecimal.valueOf(Double.parseDouble(string)).setScale(2, RoundingMode.HALF_UP);
+                        // 转换为字符串，确保两位小数
+                        String valueString = value.toString();
+                        // 使用 compute 方法累加值
+                        total.compute(feature.getName(), (key, current) -> {
+                            if (current == null) {
+                                return valueString; // 如果该键没有值，直接使用当前值
+                            } else {
+                                // 将当前值和新值转换为 BigDecimal，进行累加
+                                BigDecimal currentValue = new BigDecimal(current);
+                                BigDecimal newValue = new BigDecimal(valueString);
+                                BigDecimal sum = currentValue.add(newValue).setScale(2, RoundingMode.HALF_UP);
+                                return sum.toString(); // 返回累加后的值
+                            }
+                        });
                     });
-                });
-            }
-        });
+                }
+            });
+        }
+
         if (totalCount.fieldNames().size()!=0) {
             totalCount.fieldNames().forEach(count -> {
                 final String formula = totalCount.getString(count);
@@ -82,6 +85,8 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
                final BigDecimal truncatedValue = bigDecimal.setScale(2, RoundingMode.DOWN);
                 total.put(count, truncatedValue.toString());
             });
+        }
+        if(total.keySet().size()>0){
             final JsonObject entries = Ux.toJson(total);
             entries.put(KName.KEY, UUID.randomUUID().toString());
             bottomTotal.fieldNames().forEach(item -> {
@@ -92,7 +97,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             });
             JsonObject entries1 = Ux.cloneT(entries);
             entries.put(KName.CHILDREN,new JsonArray().add(entries1));
-             data.add(entries);
+            data.add(entries);
         }
         reportContent.put(KName.DATA, data);
         instance.setReportContent(reportContent.toString());
