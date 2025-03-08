@@ -29,13 +29,11 @@ public class ModelService implements ModelStub {
             .put("", Boolean.TRUE)
             .put("entry", entry)
             .put("appId", appId);
-        /*
-         * Cache Module for future usage
-         */
+        /* Cache Module for future usage */
         return this.fetchModule(filters, () -> Ux.Jooq.on(XModuleDao.class)
             .fetchOneAsync(filters)
             .compose(Ux::futureJ)
-            /* Metadata field usage */
+            /* Metadata Field Usage */
             .compose(Fn.ofJObject(KName.METADATA)));
     }
 

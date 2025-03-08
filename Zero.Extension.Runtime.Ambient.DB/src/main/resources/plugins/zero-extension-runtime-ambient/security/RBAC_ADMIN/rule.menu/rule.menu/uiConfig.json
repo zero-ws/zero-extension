@@ -1,5 +1,5 @@
 {
-    "dao": "cn.vertxup.ambient.domain.tables.daos.XMenuDao",
+    "dao": "X_MENU",
     "output": {
         "group": "type"
     }
