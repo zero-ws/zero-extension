@@ -36,6 +36,11 @@ CREATE TABLE `F_DEBT`
 
     `SIGN_NAME`      VARCHAR(128) DEFAULT NULL COMMENT '「signName」签单人姓名',
     `SIGN_MOBILE`    VARCHAR(128) DEFAULT NULL COMMENT '「signMobile」签单人电话',
+
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     `COMMENT`        LONGTEXT COMMENT '「comment」 - 备注',
 
     -- 关联信息

@@ -4,9 +4,8 @@
 package io.zerows.extension.commerce.finance.domain.tables.pojos;
 
 
-import io.zerows.extension.commerce.finance.domain.tables.interfaces.IFInvoice;
-
 import io.github.jklingsporn.vertx.jooq.shared.internal.VertxPojo;
+import io.zerows.extension.commerce.finance.domain.tables.interfaces.IFInvoice;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

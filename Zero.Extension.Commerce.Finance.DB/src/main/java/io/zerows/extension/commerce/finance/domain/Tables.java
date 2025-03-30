@@ -4,13 +4,27 @@
 package io.zerows.extension.commerce.finance.domain;
 
 
-import io.zerows.extension.commerce.finance.domain.tables.*;
+import io.zerows.extension.commerce.finance.domain.tables.FBank;
+import io.zerows.extension.commerce.finance.domain.tables.FBill;
+import io.zerows.extension.commerce.finance.domain.tables.FBillItem;
+import io.zerows.extension.commerce.finance.domain.tables.FBook;
+import io.zerows.extension.commerce.finance.domain.tables.FCurrency;
+import io.zerows.extension.commerce.finance.domain.tables.FDebt;
+import io.zerows.extension.commerce.finance.domain.tables.FInvoice;
+import io.zerows.extension.commerce.finance.domain.tables.FPayTerm;
+import io.zerows.extension.commerce.finance.domain.tables.FPreAuthorize;
+import io.zerows.extension.commerce.finance.domain.tables.FSettlement;
+import io.zerows.extension.commerce.finance.domain.tables.FSettlementItem;
+import io.zerows.extension.commerce.finance.domain.tables.FSubject;
+import io.zerows.extension.commerce.finance.domain.tables.FTrans;
+import io.zerows.extension.commerce.finance.domain.tables.FTransItem;
+import io.zerows.extension.commerce.finance.domain.tables.FTransOf;
 
 
 /**
  * Convenience access to all tables in ZDB.
  */
-@SuppressWarnings({"all", "unchecked", "rawtypes"})
+@SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**

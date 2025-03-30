@@ -18,7 +18,12 @@ CREATE TABLE `F_BILL`
     `INCOME`     BIT COMMENT '「income」- true = 消费类，false = 付款类',
     `COMMENT`    LONGTEXT COMMENT '「comment」 - 账单备注',
 
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     -- 关联信息
+
     `ORDER_ID`   VARCHAR(36) COMMENT '「orderId」- 订单对应的订单ID',
     `BOOK_ID`    VARCHAR(36) COMMENT '「bookId」- 关联账本ID',
     `MODEL_ID`   VARCHAR(255) COMMENT '「modelId」- 关联的模型identifier，用于描述',

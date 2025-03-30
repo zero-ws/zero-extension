@@ -4,10 +4,9 @@
 package io.zerows.extension.commerce.finance.domain.tables.daos;
 
 
+import io.github.jklingsporn.vertx.jooq.shared.internal.AbstractVertxDAO;
 import io.zerows.extension.commerce.finance.domain.tables.FTransItem;
 import io.zerows.extension.commerce.finance.domain.tables.records.FTransItemRecord;
-
-import io.github.jklingsporn.vertx.jooq.shared.internal.AbstractVertxDAO;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
