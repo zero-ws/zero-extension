@@ -34,6 +34,10 @@ CREATE TABLE `F_TRANS`
     `PREPAY`     BIT COMMENT '「prepay」- 是否预付',
     `COMMENT`    LONGTEXT COMMENT '「comment」 - 备注',
 
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     -- 特殊字段
     `SIGMA`      VARCHAR(32) COMMENT '「sigma」- 统一标识',
     `LANGUAGE`   VARCHAR(10) COMMENT '「language」- 使用的语言',
