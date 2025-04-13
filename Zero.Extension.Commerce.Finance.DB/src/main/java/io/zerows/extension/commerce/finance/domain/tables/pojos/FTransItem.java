@@ -30,6 +30,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
     private String payMobile;
     private String payMethod;
     private String payId;
+    private LocalDateTime startAt;
+    private LocalDateTime endAt;
+    private String groupBy;
     private String sigma;
     private String language;
     private Boolean active;
@@ -52,6 +55,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         this.payMobile = value.getPayMobile();
         this.payMethod = value.getPayMethod();
         this.payId = value.getPayId();
+        this.startAt = value.getStartAt();
+        this.endAt = value.getEndAt();
+        this.groupBy = value.getGroupBy();
         this.sigma = value.getSigma();
         this.language = value.getLanguage();
         this.active = value.getActive();
@@ -73,6 +79,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         String payMobile,
         String payMethod,
         String payId,
+        LocalDateTime startAt,
+        LocalDateTime endAt,
+        String groupBy,
         String sigma,
         String language,
         Boolean active,
@@ -92,6 +101,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         this.payMobile = payMobile;
         this.payMethod = payMethod;
         this.payId = payId;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.groupBy = groupBy;
         this.sigma = sigma;
         this.language = language;
         this.active = active;
@@ -278,6 +290,57 @@ public class FTransItem implements VertxPojo, IFTransItem {
     @Override
     public FTransItem setPayId(String payId) {
         this.payId = payId;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public LocalDateTime getStartAt() {
+        return this.startAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public FTransItem setStartAt(LocalDateTime startAt) {
+        this.startAt = startAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public LocalDateTime getEndAt() {
+        return this.endAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public FTransItem setEndAt(LocalDateTime endAt) {
+        this.endAt = endAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public String getGroupBy() {
+        return this.groupBy;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public FTransItem setGroupBy(String groupBy) {
+        this.groupBy = groupBy;
         return this;
     }
 
@@ -486,6 +549,24 @@ public class FTransItem implements VertxPojo, IFTransItem {
         }
         else if (!this.payId.equals(other.payId))
             return false;
+        if (this.startAt == null) {
+            if (other.startAt != null)
+                return false;
+        }
+        else if (!this.startAt.equals(other.startAt))
+            return false;
+        if (this.endAt == null) {
+            if (other.endAt != null)
+                return false;
+        }
+        else if (!this.endAt.equals(other.endAt))
+            return false;
+        if (this.groupBy == null) {
+            if (other.groupBy != null)
+                return false;
+        }
+        else if (!this.groupBy.equals(other.groupBy))
+            return false;
         if (this.sigma == null) {
             if (other.sigma != null)
                 return false;
@@ -551,6 +632,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         result = prime * result + ((this.payMobile == null) ? 0 : this.payMobile.hashCode());
         result = prime * result + ((this.payMethod == null) ? 0 : this.payMethod.hashCode());
         result = prime * result + ((this.payId == null) ? 0 : this.payId.hashCode());
+        result = prime * result + ((this.startAt == null) ? 0 : this.startAt.hashCode());
+        result = prime * result + ((this.endAt == null) ? 0 : this.endAt.hashCode());
+        result = prime * result + ((this.groupBy == null) ? 0 : this.groupBy.hashCode());
         result = prime * result + ((this.sigma == null) ? 0 : this.sigma.hashCode());
         result = prime * result + ((this.language == null) ? 0 : this.language.hashCode());
         result = prime * result + ((this.active == null) ? 0 : this.active.hashCode());
@@ -576,6 +660,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         sb.append(", ").append(payMobile);
         sb.append(", ").append(payMethod);
         sb.append(", ").append(payId);
+        sb.append(", ").append(startAt);
+        sb.append(", ").append(endAt);
+        sb.append(", ").append(groupBy);
         sb.append(", ").append(sigma);
         sb.append(", ").append(language);
         sb.append(", ").append(active);
@@ -605,6 +692,9 @@ public class FTransItem implements VertxPojo, IFTransItem {
         setPayMobile(from.getPayMobile());
         setPayMethod(from.getPayMethod());
         setPayId(from.getPayId());
+        setStartAt(from.getStartAt());
+        setEndAt(from.getEndAt());
+        setGroupBy(from.getGroupBy());
         setSigma(from.getSigma());
         setLanguage(from.getLanguage());
         setActive(from.getActive());

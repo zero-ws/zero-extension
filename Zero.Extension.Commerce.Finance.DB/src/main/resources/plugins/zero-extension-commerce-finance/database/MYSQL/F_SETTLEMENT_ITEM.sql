@@ -17,6 +17,10 @@ CREATE TABLE `F_SETTLEMENT_ITEM`
     `MANUAL_NO`     VARCHAR(255) COMMENT '「manualNo」 - 手工单号（线下单号专用）',
     `PAY_TERM_ID`   VARCHAR(36)    NOT NULL COMMENT '「payTermId」- 账单项ID',
 
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     -- 结算基础信息
     `RELATED_ID`    VARCHAR(36) COMMENT '「relatedId」- 关联BillItem ID（保留，原系统存在）',
     `SETTLEMENT_ID` VARCHAR(36) COMMENT '「settlementId」- 结算单ID，该字段有值标识已经结算',

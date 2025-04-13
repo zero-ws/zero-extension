@@ -14,6 +14,10 @@ CREATE TABLE `F_BILL_ITEM`
     `TYPE`          VARCHAR(36)    NOT NULL COMMENT '「type」- 明细类型',
     `STATUS`        VARCHAR(36)    NOT NULL COMMENT '「status」- 明细状态',
 
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     -- 基本信息
     `AMOUNT`        DECIMAL(18, 2) DEFAULT NULL COMMENT '「amount」——价税合计，实际付款结果，有可能父项',
     `COMMENT`       LONGTEXT COMMENT '「comment」 - 明细备注',

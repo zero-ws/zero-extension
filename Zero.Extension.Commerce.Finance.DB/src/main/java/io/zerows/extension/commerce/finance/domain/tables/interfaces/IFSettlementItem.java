@@ -103,6 +103,36 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
     public String getComment();
 
     /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public IFSettlementItem setStartAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public LocalDateTime getStartAt();
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public IFSettlementItem setEndAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public LocalDateTime getEndAt();
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public IFSettlementItem setGroupBy(String value);
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public String getGroupBy();
+
+    /**
      * Setter for <code>ZDB.F_SETTLEMENT_ITEM.MANUAL_NO</code>. 「manualNo」 -
      * 手工单号（线下单号专用）
      */
@@ -288,6 +318,9 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
                 setOrThrow(this::setType,json::getString,"TYPE","java.lang.String");
                 setOrThrow(this::setAmount,key -> {String s = json.getString(key); return s==null?null:new java.math.BigDecimal(s);},"AMOUNT","java.math.BigDecimal");
                 setOrThrow(this::setComment,json::getString,"COMMENT","java.lang.String");
+                setOrThrow(this::setStartAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"START_AT","java.time.LocalDateTime");
+                setOrThrow(this::setEndAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"END_AT","java.time.LocalDateTime");
+                setOrThrow(this::setGroupBy,json::getString,"GROUP_BY","java.lang.String");
                 setOrThrow(this::setManualNo,json::getString,"MANUAL_NO","java.lang.String");
                 setOrThrow(this::setPayTermId,json::getString,"PAY_TERM_ID","java.lang.String");
                 setOrThrow(this::setRelatedId,json::getString,"RELATED_ID","java.lang.String");
@@ -317,6 +350,9 @@ public interface IFSettlementItem extends VertxPojo, Serializable {
                 json.put("TYPE",getType());
                 json.put("AMOUNT",getAmount()==null?null:getAmount().toString());
                 json.put("COMMENT",getComment());
+                json.put("START_AT",getStartAt()==null?null:getStartAt().toString());
+                json.put("END_AT",getEndAt()==null?null:getEndAt().toString());
+                json.put("GROUP_BY",getGroupBy());
                 json.put("MANUAL_NO",getManualNo());
                 json.put("PAY_TERM_ID",getPayTermId());
                 json.put("RELATED_ID",getRelatedId());

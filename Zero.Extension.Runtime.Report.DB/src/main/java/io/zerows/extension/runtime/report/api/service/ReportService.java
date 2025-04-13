@@ -37,6 +37,10 @@ public class ReportService implements ReportStub {
     @Inject
     private ReportInstanceStub instanceStub;
 
+    public void setInstanceStub(ReportInstanceStub instanceStub) {
+        this.instanceStub = instanceStub;
+    }
+
     @Override
     public Future<JsonArray> fetchReports(final String appId) {
         final JsonObject qr = Ux.whereAnd();

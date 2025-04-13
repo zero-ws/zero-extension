@@ -13,18 +13,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function22;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Records;
-import org.jooq.Row22;
 import org.jooq.Schema;
-import org.jooq.SelectField;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
@@ -96,6 +91,21 @@ public class FSettlementItem extends TableImpl<FSettlementItemRecord> {
      * The column <code>ZDB.F_SETTLEMENT_ITEM.COMMENT</code>. 「comment」 - 明细备注
      */
     public final TableField<FSettlementItemRecord, String> COMMENT = createField(DSL.name("COMMENT"), SQLDataType.CLOB, this, "「comment」 - 明细备注");
+
+    /**
+     * The column <code>ZDB.F_SETTLEMENT_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public final TableField<FSettlementItemRecord, LocalDateTime> START_AT = createField(DSL.name("START_AT"), SQLDataType.LOCALDATETIME(0), this, "「startAt」- 开始时间");
+
+    /**
+     * The column <code>ZDB.F_SETTLEMENT_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public final TableField<FSettlementItemRecord, LocalDateTime> END_AT = createField(DSL.name("END_AT"), SQLDataType.LOCALDATETIME(0), this, "「endAt」- 结束时间");
+
+    /**
+     * The column <code>ZDB.F_SETTLEMENT_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public final TableField<FSettlementItemRecord, String> GROUP_BY = createField(DSL.name("GROUP_BY"), SQLDataType.VARCHAR(64), this, "「groupBy」- 分组");
 
     /**
      * The column <code>ZDB.F_SETTLEMENT_ITEM.MANUAL_NO</code>. 「manualNo」 -
@@ -267,29 +277,5 @@ public class FSettlementItem extends TableImpl<FSettlementItemRecord> {
     @Override
     public FSettlementItem rename(Table<?> name) {
         return new FSettlementItem(name.getQualifiedName(), null);
-    }
-
-    // -------------------------------------------------------------------------
-    // Row22 type methods
-    // -------------------------------------------------------------------------
-
-    @Override
-    public Row22<String, String, String, String, Boolean, String, BigDecimal, String, String, String, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row22) super.fieldsRow();
-    }
-
-    /**
-     * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
-     */
-    public <U> SelectField<U> mapping(Function22<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
-        return convertFrom(Records.mapping(from));
-    }
-
-    /**
-     * Convenience mapping calling {@link SelectField#convertFrom(Class,
-     * Function)}.
-     */
-    public <U> SelectField<U> mapping(Class<U> toType, Function22<? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
-        return convertFrom(toType, Records.mapping(from));
     }
 }

@@ -14,7 +14,9 @@ import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
 import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
+import io.zerows.extension.commerce.finance.util.Fm;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -68,7 +70,9 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
             .compose(items -> Maker.ofD().buildAsync(data, items))
             .compose(entity -> {
                 entity.setKey(null);
-               return Ux.Jooq.on(FDebtDao.class).insertAsync(entity);
+                LocalDateTime localDateTime = Fm.selectTime();
+                entity.setStartAt(localDateTime);
+                return Ux.Jooq.on(FDebtDao.class).insertAsync(entity);
             })
             .compose(inserted -> {
                 // 更新 items

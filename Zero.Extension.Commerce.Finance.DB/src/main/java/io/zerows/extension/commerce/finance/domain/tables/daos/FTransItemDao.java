@@ -175,6 +175,51 @@ public class FTransItemDao extends AbstractVertxDAO<FTransItemRecord, io.zerows.
         }
 
         /**
+     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByStartAt(Collection<LocalDateTime> values) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.START_AT.in(values));
+        }
+
+        /**
+     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByStartAt(Collection<LocalDateTime> values, int limit) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.START_AT.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>END_AT IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByEndAt(Collection<LocalDateTime> values) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.END_AT.in(values));
+        }
+
+        /**
+     * Find records that have <code>END_AT IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByEndAt(Collection<LocalDateTime> values, int limit) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.END_AT.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>GROUP_BY IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByGroupBy(Collection<String> values) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.GROUP_BY.in(values));
+        }
+
+        /**
+     * Find records that have <code>GROUP_BY IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyByGroupBy(Collection<String> values, int limit) {
+                return findManyByCondition(FTransItem.F_TRANS_ITEM.GROUP_BY.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>SIGMA IN (values)</code> asynchronously
      */
         public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem>> findManyBySigma(Collection<String> values) {

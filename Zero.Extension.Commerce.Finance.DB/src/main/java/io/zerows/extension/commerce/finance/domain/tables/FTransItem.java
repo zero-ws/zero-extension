@@ -17,12 +17,12 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function18;
+import org.jooq.Function21;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row18;
+import org.jooq.Row21;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -106,6 +106,21 @@ public class FTransItem extends TableImpl<FTransItemRecord> {
      * The column <code>ZDB.F_TRANS_ITEM.PAY_ID</code>. 「payId」付款账号
      */
     public final TableField<FTransItemRecord, String> PAY_ID = createField(DSL.name("PAY_ID"), SQLDataType.VARCHAR(255), this, "「payId」付款账号");
+
+    /**
+     * The column <code>ZDB.F_TRANS_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public final TableField<FTransItemRecord, LocalDateTime> START_AT = createField(DSL.name("START_AT"), SQLDataType.LOCALDATETIME(0), this, "「startAt」- 开始时间");
+
+    /**
+     * The column <code>ZDB.F_TRANS_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public final TableField<FTransItemRecord, LocalDateTime> END_AT = createField(DSL.name("END_AT"), SQLDataType.LOCALDATETIME(0), this, "「endAt」- 结束时间");
+
+    /**
+     * The column <code>ZDB.F_TRANS_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public final TableField<FTransItemRecord, String> GROUP_BY = createField(DSL.name("GROUP_BY"), SQLDataType.VARCHAR(64), this, "「groupBy」- 分组");
 
     /**
      * The column <code>ZDB.F_TRANS_ITEM.SIGMA</code>. 「sigma」- 统一标识
@@ -240,18 +255,18 @@ public class FTransItem extends TableImpl<FTransItemRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row18 type methods
+    // Row21 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row18<String, String, String, String, BigDecimal, String, String, String, String, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row18) super.fieldsRow();
+    public Row21<String, String, String, String, BigDecimal, String, String, String, String, String, LocalDateTime, LocalDateTime, String, String, String, Boolean, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row21) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function18<? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function21<? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -259,7 +274,7 @@ public class FTransItem extends TableImpl<FTransItemRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function18<? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function21<? super String, ? super String, ? super String, ? super String, ? super BigDecimal, ? super String, ? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super Boolean, ? super String, ? super LocalDateTime, ? super String, ? super LocalDateTime, ? super String, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

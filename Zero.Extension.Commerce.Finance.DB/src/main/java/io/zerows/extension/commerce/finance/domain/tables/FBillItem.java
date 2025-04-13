@@ -145,6 +145,21 @@ public class FBillItem extends TableImpl<FBillItemRecord> {
     public final TableField<FBillItemRecord, LocalDateTime> OP_AT = createField(DSL.name("OP_AT"), SQLDataType.LOCALDATETIME(0), this, "「opAt」- 操作时间");
 
     /**
+     * The column <code>ZDB.F_BILL_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public final TableField<FBillItemRecord, LocalDateTime> START_AT = createField(DSL.name("START_AT"), SQLDataType.LOCALDATETIME(0), this, "「startAt」- 开始时间");
+
+    /**
+     * The column <code>ZDB.F_BILL_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public final TableField<FBillItemRecord, LocalDateTime> END_AT = createField(DSL.name("END_AT"), SQLDataType.LOCALDATETIME(0), this, "「endAt」- 结束时间");
+
+    /**
+     * The column <code>ZDB.F_BILL_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public final TableField<FBillItemRecord, String> GROUP_BY = createField(DSL.name("GROUP_BY"), SQLDataType.VARCHAR(64), this, "「groupBy」- 分组");
+
+    /**
      * The column <code>ZDB.F_BILL_ITEM.RELATED_ID</code>. 「relatedId」-
      * 关联ID（保留，原系统存在）
      */

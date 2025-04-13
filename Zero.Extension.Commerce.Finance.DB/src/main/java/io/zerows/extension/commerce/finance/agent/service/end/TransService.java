@@ -15,7 +15,9 @@ import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.eon.em.EmTran;
 import io.zerows.extension.commerce.finance.uca.replica.IkWay;
 import io.zerows.extension.commerce.finance.uca.trans.Trade;
+import io.zerows.extension.commerce.finance.util.Fm;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -79,8 +81,11 @@ public class TransService implements TransStub {
 
                 IkWay.ofT2TI().transfer(trans, payments);
                 // 防重复创建：Duplicate entry 'Cash' for key 'name_UNIQUE'
-                payments.forEach(payment -> payment.setKey(null));
-
+                LocalDateTime localDateTime = Fm.selectTime();
+                payments.forEach(payment -> {
+                    payment.setStartAt(localDateTime);
+                    payment.setKey(null);
+                });
                 return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments);
             })
             .compose(nil -> Ux.future(trans));

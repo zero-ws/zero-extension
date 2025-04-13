@@ -28,6 +28,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     private String type;
     private BigDecimal amount;
     private String comment;
+    private LocalDateTime startAt;
+    private LocalDateTime endAt;
+    private String groupBy;
     private String manualNo;
     private String payTermId;
     private String relatedId;
@@ -54,6 +57,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.type = value.getType();
         this.amount = value.getAmount();
         this.comment = value.getComment();
+        this.startAt = value.getStartAt();
+        this.endAt = value.getEndAt();
+        this.groupBy = value.getGroupBy();
         this.manualNo = value.getManualNo();
         this.payTermId = value.getPayTermId();
         this.relatedId = value.getRelatedId();
@@ -79,6 +85,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         String type,
         BigDecimal amount,
         String comment,
+        LocalDateTime startAt,
+        LocalDateTime endAt,
+        String groupBy,
         String manualNo,
         String payTermId,
         String relatedId,
@@ -102,6 +111,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         this.type = type;
         this.amount = amount;
         this.comment = comment;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.groupBy = groupBy;
         this.manualNo = manualNo;
         this.payTermId = payTermId;
         this.relatedId = relatedId;
@@ -260,6 +272,57 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
     @Override
     public FSettlementItem setComment(String comment) {
         this.comment = comment;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public LocalDateTime getStartAt() {
+        return this.startAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public FSettlementItem setStartAt(LocalDateTime startAt) {
+        this.startAt = startAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public LocalDateTime getEndAt() {
+        return this.endAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public FSettlementItem setEndAt(LocalDateTime endAt) {
+        this.endAt = endAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_SETTLEMENT_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public String getGroupBy() {
+        return this.groupBy;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_SETTLEMENT_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public FSettlementItem setGroupBy(String groupBy) {
+        this.groupBy = groupBy;
         return this;
     }
 
@@ -578,6 +641,24 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         }
         else if (!this.comment.equals(other.comment))
             return false;
+        if (this.startAt == null) {
+            if (other.startAt != null)
+                return false;
+        }
+        else if (!this.startAt.equals(other.startAt))
+            return false;
+        if (this.endAt == null) {
+            if (other.endAt != null)
+                return false;
+        }
+        else if (!this.endAt.equals(other.endAt))
+            return false;
+        if (this.groupBy == null) {
+            if (other.groupBy != null)
+                return false;
+        }
+        else if (!this.groupBy.equals(other.groupBy))
+            return false;
         if (this.manualNo == null) {
             if (other.manualNo != null)
                 return false;
@@ -677,6 +758,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.amount == null) ? 0 : this.amount.hashCode());
         result = prime * result + ((this.comment == null) ? 0 : this.comment.hashCode());
+        result = prime * result + ((this.startAt == null) ? 0 : this.startAt.hashCode());
+        result = prime * result + ((this.endAt == null) ? 0 : this.endAt.hashCode());
+        result = prime * result + ((this.groupBy == null) ? 0 : this.groupBy.hashCode());
         result = prime * result + ((this.manualNo == null) ? 0 : this.manualNo.hashCode());
         result = prime * result + ((this.payTermId == null) ? 0 : this.payTermId.hashCode());
         result = prime * result + ((this.relatedId == null) ? 0 : this.relatedId.hashCode());
@@ -706,6 +790,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         sb.append(", ").append(type);
         sb.append(", ").append(amount);
         sb.append(", ").append(comment);
+        sb.append(", ").append(startAt);
+        sb.append(", ").append(endAt);
+        sb.append(", ").append(groupBy);
         sb.append(", ").append(manualNo);
         sb.append(", ").append(payTermId);
         sb.append(", ").append(relatedId);
@@ -739,6 +826,9 @@ public class FSettlementItem implements VertxPojo, IFSettlementItem {
         setType(from.getType());
         setAmount(from.getAmount());
         setComment(from.getComment());
+        setStartAt(from.getStartAt());
+        setEndAt(from.getEndAt());
+        setGroupBy(from.getGroupBy());
         setManualNo(from.getManualNo());
         setPayTermId(from.getPayTermId());
         setRelatedId(from.getRelatedId());

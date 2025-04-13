@@ -123,6 +123,36 @@ public interface IFTransItem extends VertxPojo, Serializable {
     public String getPayId();
 
     /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public IFTransItem setStartAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public LocalDateTime getStartAt();
+
+    /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public IFTransItem setEndAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public LocalDateTime getEndAt();
+
+    /**
+     * Setter for <code>ZDB.F_TRANS_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public IFTransItem setGroupBy(String value);
+
+    /**
+     * Getter for <code>ZDB.F_TRANS_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public String getGroupBy();
+
+    /**
      * Setter for <code>ZDB.F_TRANS_ITEM.SIGMA</code>. 「sigma」- 统一标识
      */
     public IFTransItem setSigma(String value);
@@ -230,6 +260,9 @@ public interface IFTransItem extends VertxPojo, Serializable {
                 setOrThrow(this::setPayMobile,json::getString,"PAY_MOBILE","java.lang.String");
                 setOrThrow(this::setPayMethod,json::getString,"PAY_METHOD","java.lang.String");
                 setOrThrow(this::setPayId,json::getString,"PAY_ID","java.lang.String");
+                setOrThrow(this::setStartAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"START_AT","java.time.LocalDateTime");
+                setOrThrow(this::setEndAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"END_AT","java.time.LocalDateTime");
+                setOrThrow(this::setGroupBy,json::getString,"GROUP_BY","java.lang.String");
                 setOrThrow(this::setSigma,json::getString,"SIGMA","java.lang.String");
                 setOrThrow(this::setLanguage,json::getString,"LANGUAGE","java.lang.String");
                 setOrThrow(this::setActive,json::getBoolean,"ACTIVE","java.lang.Boolean");
@@ -255,6 +288,9 @@ public interface IFTransItem extends VertxPojo, Serializable {
                 json.put("PAY_MOBILE",getPayMobile());
                 json.put("PAY_METHOD",getPayMethod());
                 json.put("PAY_ID",getPayId());
+                json.put("START_AT",getStartAt()==null?null:getStartAt().toString());
+                json.put("END_AT",getEndAt()==null?null:getEndAt().toString());
+                json.put("GROUP_BY",getGroupBy());
                 json.put("SIGMA",getSigma());
                 json.put("LANGUAGE",getLanguage());
                 json.put("ACTIVE",getActive());

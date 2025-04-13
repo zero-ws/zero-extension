@@ -10,7 +10,9 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementItemDa
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
+import io.zerows.extension.commerce.finance.util.Fm;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentMap;
@@ -29,7 +31,11 @@ class Step04SettlementItem implements Trade<FSettlement, FSettlementItem> {
          * 保存起来。
          */
         return Maker.upSTI().buildAsync(data, inserted)
-            .compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync);
+            .compose(entities -> {
+                LocalDateTime localDateTime = Fm.selectTime();
+                entities.forEach(fSettlementItem -> fSettlementItem.setStartAt(localDateTime));
+                return Ux.Jooq.on(FSettlementItemDao.class).insertAsync(entities);
+            });
     }
 
     @Override
@@ -47,6 +53,8 @@ class Step04SettlementItem implements Trade<FSettlement, FSettlementItem> {
             .compose(result -> {
                 final List<FSettlementItem> inserted = new ArrayList<>();
                 result.forEach(inserted::addAll);
+                LocalDateTime localDateTime = Fm.selectTime();
+                inserted.forEach(item -> item.setStartAt(localDateTime));
                 return Ux.future(inserted);
             }).compose(Ux.Jooq.on(FSettlementItemDao.class)::insertAsync);
     }

@@ -10,6 +10,7 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.eon.em.EmPay;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
+import io.zerows.extension.commerce.finance.util.Fm;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -42,6 +43,8 @@ class Step01Settlement implements Trade<EmPay.Type, FSettlement> {
              * 流程
              */
             .compose(generated -> {
+                LocalDateTime localDateTime = Fm.selectTime();
+                generated.setStartAt(localDateTime);
                 this.executeFinished(generated, type);
                 return Ux.future(generated);
             })

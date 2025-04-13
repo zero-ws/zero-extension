@@ -8,7 +8,9 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FTransDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FDebt;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
+import io.zerows.extension.commerce.finance.util.Fm;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +33,8 @@ class Step07TransDebt implements Trade<List<FDebt>, FTrans> {
                 }
                 trans.setKey(null);
                 trans.setName("DR: " + Ut.fromJoin(nameList));
+                LocalDateTime localDateTime = Fm.selectTime();
+                trans.setStartAt(localDateTime);
                 // 此处构造完成
                 return Ux.future(trans);
             })

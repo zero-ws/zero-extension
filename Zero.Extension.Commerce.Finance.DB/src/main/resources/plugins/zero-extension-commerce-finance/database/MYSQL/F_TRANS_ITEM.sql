@@ -19,6 +19,10 @@ CREATE TABLE `F_TRANS_ITEM`
     `PAY_METHOD`     VARCHAR(255) DEFAULT NULL COMMENT '「payMethod」付款方式',
     `PAY_ID`         VARCHAR(255) DEFAULT NULL COMMENT '「payId」付款账号',
 
+    `START_AT`   DATETIME COMMENT '「startAt」- 开始时间',
+    `END_AT`     DATETIME COMMENT '「endAt」- 结束时间',
+    `GROUP_BY`   VARCHAR(64) COMMENT '「groupBy」- 分组',
+
     -- 特殊字段
     `SIGMA`          VARCHAR(32) COMMENT '「sigma」- 统一标识',
     `LANGUAGE`       VARCHAR(10) COMMENT '「language」- 使用的语言',

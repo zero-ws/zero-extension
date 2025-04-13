@@ -14,6 +14,8 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.unity.Ux;
 import jakarta.inject.Inject;
 
+import java.time.LocalDateTime;
+
 /**
  * @author lang : 2024-01-11
  */
@@ -27,6 +29,8 @@ public class SingleActor {
     @Me
     @Address(Addr.Bill.IN_PRE)
     public Future<JsonObject> inPre(final JsonObject data) {
+        LocalDateTime localDateTime = Fm.selectTime();
+        data.put("startAt",localDateTime.toString());
         final FBillItem item = Ux.fromJson(data, FBillItem.class);
         final FPreAuthorize authorize = Fm.toAuthorize(data);
         return Maker.ofB().buildFastAsync(data) // 账单序号生成
@@ -43,6 +47,8 @@ public class SingleActor {
     @Me
     @Address(Addr.Bill.IN_COMMON)
     public Future<JsonObject> inCommon(final JsonObject data) {
+        LocalDateTime localDateTime = Fm.selectTime();
+        data.put("startAt",localDateTime.toString());
         final FBillItem item = Ux.fromJson(data, FBillItem.class);
         return Maker.ofB().buildFastAsync(data) // 账单序号生成
             /* 账单：1，账单明细：1 */
