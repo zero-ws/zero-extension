@@ -16,6 +16,7 @@ import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
 import io.zerows.extension.commerce.finance.util.Fm;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -69,6 +70,9 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
             .compose(ref::future)
             .compose(items -> Maker.ofD().buildAsync(data, items))
             .compose(entity -> {
+                String string = data.getString("amount");
+                entity.setAmount(new BigDecimal(string));
+                entity.setAmountBalance(new BigDecimal(string));
                 entity.setKey(null);
                 LocalDateTime localDateTime = Fm.selectTime();
                 entity.setStartAt(localDateTime);
