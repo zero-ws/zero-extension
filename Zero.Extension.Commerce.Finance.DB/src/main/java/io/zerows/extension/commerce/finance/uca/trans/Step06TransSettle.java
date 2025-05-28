@@ -9,9 +9,7 @@ import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.zerows.extension.commerce.finance.eon.em.EmTran;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
-import io.zerows.extension.commerce.finance.util.Fm;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -39,8 +37,6 @@ class Step06TransSettle implements Trade<List<FSettlement>, FTrans> {
                 trans.setType(EmTran.Type.SETTLEMENT.name());
                 trans.setName("ST:" + Ut.fromJoin(nameList));
                 trans.setKey(UUID.randomUUID().toString());
-                LocalDateTime localDateTime = Fm.selectTime();
-                trans.setStartAt(localDateTime);
                 // 此处构造完成
                 return Ux.future(trans);
             })

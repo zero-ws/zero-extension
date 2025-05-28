@@ -82,7 +82,7 @@ class ArkConfigure extends AbstractArk {
             }
         });
         return Fn.combineM(futures).compose(dataMap -> {
-            if (!open) {
+            if (open) {
                 final JsonObject rapidJ = Ut.toJObject(dataMap);
                 return Ux.future(rapidJ);
             }

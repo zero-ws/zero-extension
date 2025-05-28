@@ -12,10 +12,8 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.extension.commerce.finance.util.Fm;
 import jakarta.inject.Inject;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -31,12 +29,7 @@ public class MutliActor {
     @Me
     @Address(Addr.Bill.IN_MULTI)
     public Future<JsonObject> inMulti(final JsonObject data) {
-        LocalDateTime localDateTime = Fm.selectTime();
         final List<FBillItem> items = Ux.fromJson(Ut.valueJArray(data, KName.ITEMS), FBillItem.class);
-        if(localDateTime!=null){
-            data.put("startAt",localDateTime.toString());
-            items.forEach(fBillItem -> fBillItem.setStartAt(localDateTime));
-        }
         return Maker.ofB().buildFastAsync(data)
             /* 账单：1，账单明细：N */
             .compose(bill -> this.billStub.multiAsync(

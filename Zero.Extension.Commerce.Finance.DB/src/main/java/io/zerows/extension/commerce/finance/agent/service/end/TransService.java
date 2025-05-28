@@ -81,11 +81,8 @@ public class TransService implements TransStub {
 
                 IkWay.ofT2TI().transfer(trans, payments);
                 // 防重复创建：Duplicate entry 'Cash' for key 'name_UNIQUE'
-                LocalDateTime localDateTime = Fm.selectTime();
-                payments.forEach(payment -> {
-                    payment.setStartAt(localDateTime);
-                    payment.setKey(null);
-                });
+                payments.forEach(payment -> payment.setKey(null));
+
                 return Ux.Jooq.on(FTransItemDao.class).insertAsync(payments);
             })
             .compose(nil -> Ux.future(trans));

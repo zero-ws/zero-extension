@@ -33,8 +33,6 @@ class Step07TransDebt implements Trade<List<FDebt>, FTrans> {
                 }
                 trans.setKey(null);
                 trans.setName("DR: " + Ut.fromJoin(nameList));
-                LocalDateTime localDateTime = Fm.selectTime();
-                trans.setStartAt(localDateTime);
                 // 此处构造完成
                 return Ux.future(trans);
             })

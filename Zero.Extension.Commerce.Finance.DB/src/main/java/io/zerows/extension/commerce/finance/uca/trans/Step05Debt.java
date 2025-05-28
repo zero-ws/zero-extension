@@ -14,10 +14,8 @@ import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlementItem;
 import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
-import io.zerows.extension.commerce.finance.util.Fm;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -74,9 +72,7 @@ class Step05Debt implements Trade<List<FSettlement>, FDebt> {
                 entity.setAmount(new BigDecimal(string));
                 entity.setAmountBalance(new BigDecimal(string));
                 entity.setKey(null);
-                LocalDateTime localDateTime = Fm.selectTime();
-                entity.setStartAt(localDateTime);
-                return Ux.Jooq.on(FDebtDao.class).insertAsync(entity);
+               return Ux.Jooq.on(FDebtDao.class).insertAsync(entity);
             })
             .compose(inserted -> {
                 // 更新 items
