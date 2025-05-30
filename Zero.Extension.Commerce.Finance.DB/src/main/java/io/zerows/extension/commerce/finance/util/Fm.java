@@ -2,7 +2,6 @@ package io.zerows.extension.commerce.finance.util;
 
 import io.horizon.uca.log.Log;
 import io.horizon.uca.log.LogModule;
-import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.domain.atom.specification.KNaming;
 import io.zerows.extension.commerce.finance.atom.TranData;
@@ -11,9 +10,7 @@ import io.zerows.extension.commerce.finance.domain.tables.pojos.FPreAuthorize;
 import io.zerows.extension.commerce.finance.eon.FmConstant;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.function.Supplier;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
@@ -56,19 +53,7 @@ public final class Fm {
         return FmBook.umBook(spec, books);
     }
 
-    public  static LocalDateTime selectTime(){
-        return FmTime.selectTime();
-    }
-    public  static Future<LocalDateTime> getCachedValue(String key, Supplier<LocalDateTime> supplier){
-        return FmTime.getCachedValue(key,supplier);
-    }
-    public  static void setCachedValue(String key, LocalDateTime value){
-        FmTime.setCachedValue(key, value);
-    }
-    public  static void clearCachedValue(String key) {
-        FmTime.clearCachedValue(key);
-    }
-        public interface LOG {
+    public interface LOG {
         String MODULE = "χρηματοδότηση";
 
         LogModule Book = Log.modulat(MODULE).extension("Book");

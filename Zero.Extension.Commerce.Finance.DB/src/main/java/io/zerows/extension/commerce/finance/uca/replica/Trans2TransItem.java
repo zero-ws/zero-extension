@@ -31,6 +31,7 @@ class Trans2TransItem implements IkWay<FTrans, FTransItem> {
             if (Objects.isNull(item.getCode()) || Objects.isNull(item.getSerial())) {
                 item.setSerial(transaction.getSerial() + "-" + Ut.fromAdjust(idx + 1, 2));
                 item.setCode(transaction.getCode() + "-" + Ut.fromAdjust(idx + 1, 2));
+                item.setStartAt(transaction.getStartAt());
             }
             Ke.umCreated(item, transaction);
         }

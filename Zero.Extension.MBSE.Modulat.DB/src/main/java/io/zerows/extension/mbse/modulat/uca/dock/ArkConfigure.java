@@ -86,8 +86,6 @@ class ArkConfigure extends AbstractArk {
                 final JsonObject rapidJ = Ut.toJObject(dataMap);
                 return Ux.future(rapidJ);
             }
-
-
             // 带过滤的模式
             final JsonObject result = new JsonObject();
             dataMap.forEach((configKey, data) -> {

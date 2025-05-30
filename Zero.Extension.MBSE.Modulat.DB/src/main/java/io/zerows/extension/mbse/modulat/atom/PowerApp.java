@@ -28,8 +28,6 @@ import java.util.Objects;
 public class PowerApp {
 
     private static final Cc<String, Future<PowerApp>> CC_APP = Cc.open();
-    private static final Rapid<String, LocalDateTime> TIME_CACHE = Rapid.object("fmTimeCache");
-
     private final OCacheMod modReference;
 
     public PowerApp(final String appId) {
@@ -64,16 +62,6 @@ public class PowerApp {
     public static Future<PowerApp> getLatest(final String appId,boolean open) {
         CC_APP.remove(appId);
         return getOrCreate(appId,open);
-    }
-
-    public static Future<LocalDateTime> setTimeRunning(JsonObject data) {
-        String pTimeRunning = data.getString("pTimeRunning");
-        LocalDate localDate = LocalDate.parse(pTimeRunning);
-        LocalDateTime localDateTime = localDate.atTime(LocalTime.MIN); // 转换为 LocalDateTime
-
-        return TIME_CACHE.write("pTimeRunning", localDateTime)
-                .onSuccess(result -> System.out.println("缓存设置成功: " + pTimeRunning + " -> " + localDateTime))
-                .onFailure(err -> System.err.println("缓存设置失败: " + err.getMessage()));
     }
 
     public PowerApp add(final HMod mod) {
