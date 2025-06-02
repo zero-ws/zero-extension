@@ -147,5 +147,7 @@ public interface Addr {
         String ROLE_SIGMA = Prefix._EVENT + "S-ROLE/SIGMA";
 
         String ROLE_PERM_UPDATE = Prefix._EVENT + "S-ROLE-PERM/PUT";
+
+        String ROLE_SAVE = Prefix._EVENT + "S-ROLE/SAVE";
     }
 }

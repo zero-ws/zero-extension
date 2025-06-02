@@ -6,6 +6,13 @@ public interface AuthKey {
     /**
      * Default state field
      */
+    String INITIALIZE_ROLE = "initializeRole";
+    String INITIALIZE_PERMISSIONS = "initializePermissions";
+    String DEFAULT_RESOURCE_ID = "91a78ce8-30c7-4894-b235-730eb3e61255";
+    String PERMISSIONS = "permissions";
+
+    String DEFAULT = "DEFAULT";
+    String OWNER_TYPE_ROLE = "ROLE";
     String STATE = "state";
     String SCOPE = "scope";
     String AUTH_CODE = "code";
@@ -29,6 +36,7 @@ public interface AuthKey {
      */
     String F_USER_ID = "userId";
     String F_ROLE_ID = "roleId";
+    String F_PERM_ID = "permId";
     String F_GROUP_ID = "groupId";
     String F_PARENT_ID = "parentId";
 
