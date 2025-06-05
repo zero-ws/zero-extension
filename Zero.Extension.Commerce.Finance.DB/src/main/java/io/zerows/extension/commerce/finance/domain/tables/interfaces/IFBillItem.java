@@ -207,6 +207,36 @@ public interface IFBillItem extends VertxPojo, Serializable {
     public LocalDateTime getOpAt();
 
     /**
+     * Setter for <code>ZDB.F_BILL_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public IFBillItem setStartAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    public LocalDateTime getStartAt();
+
+    /**
+     * Setter for <code>ZDB.F_BILL_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public IFBillItem setEndAt(LocalDateTime value);
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    public LocalDateTime getEndAt();
+
+    /**
+     * Setter for <code>ZDB.F_BILL_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public IFBillItem setGroupBy(String value);
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    public String getGroupBy();
+
+    /**
      * Setter for <code>ZDB.F_BILL_ITEM.RELATED_ID</code>. 「relatedId」-
      * 关联ID（保留，原系统存在）
      */
@@ -378,6 +408,9 @@ public interface IFBillItem extends VertxPojo, Serializable {
                 setOrThrow(this::setOpNumber,json::getString,"OP_NUMBER","java.lang.String");
                 setOrThrow(this::setOpShift,json::getString,"OP_SHIFT","java.lang.String");
                 setOrThrow(this::setOpAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"OP_AT","java.time.LocalDateTime");
+                setOrThrow(this::setStartAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"START_AT","java.time.LocalDateTime");
+                setOrThrow(this::setEndAt,key -> {String s = json.getString(key); return s==null?null:java.time.LocalDateTime.parse(s);},"END_AT","java.time.LocalDateTime");
+                setOrThrow(this::setGroupBy,json::getString,"GROUP_BY","java.lang.String");
                 setOrThrow(this::setRelatedId,json::getString,"RELATED_ID","java.lang.String");
                 setOrThrow(this::setSettlementId,json::getString,"SETTLEMENT_ID","java.lang.String");
                 setOrThrow(this::setBillId,json::getString,"BILL_ID","java.lang.String");
@@ -416,6 +449,9 @@ public interface IFBillItem extends VertxPojo, Serializable {
                 json.put("OP_NUMBER",getOpNumber());
                 json.put("OP_SHIFT",getOpShift());
                 json.put("OP_AT",getOpAt()==null?null:getOpAt().toString());
+                json.put("START_AT",getStartAt()==null?null:getStartAt().toString());
+                json.put("END_AT",getEndAt()==null?null:getEndAt().toString());
+                json.put("GROUP_BY",getGroupBy());
                 json.put("RELATED_ID",getRelatedId());
                 json.put("SETTLEMENT_ID",getSettlementId());
                 json.put("BILL_ID",getBillId());

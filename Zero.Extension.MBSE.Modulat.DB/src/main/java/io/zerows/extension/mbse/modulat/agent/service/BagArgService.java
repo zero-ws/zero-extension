@@ -7,6 +7,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.extension.mbse.modulat.atom.PowerApp;
 import io.zerows.extension.mbse.modulat.domain.tables.daos.BBagDao;
 import io.zerows.extension.mbse.modulat.domain.tables.daos.BBlockDao;
@@ -14,6 +15,7 @@ import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBlock;
 import io.zerows.extension.mbse.modulat.uca.configure.Combiner;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -26,6 +28,8 @@ import java.util.concurrent.ConcurrentMap;
 @SuppressWarnings("all")
 public class BagArgService implements BagArgStub {
     private static final ConcurrentMap<String, Combiner> POOL_COMBINER = new ConcurrentHashMap<>();
+    private static final Rapid<String, LocalDateTime> TIME_CACHE = Rapid.object("fmTimeCache");
+
 
     @Override
     public Future<JsonObject> fetchBagConfig(final String bagAbbr) {
@@ -95,8 +99,8 @@ public class BagArgService implements BagArgStub {
             // Parameters Store Code Logical
             .compose(blocks -> blockStub.saveParameters(blocks, data))
             // Refresh Cache of appId
-            .compose(config -> PowerApp.getLatest(bag.getAppId())
-                .compose(nil -> Ux.future(config)));
+            .compose(config -> PowerApp.getLatest(bag.getAppId(),true)
+            .compose(nil -> Ux.future(config)));
     }
 
     @Override

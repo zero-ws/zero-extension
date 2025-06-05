@@ -174,9 +174,13 @@ public class SettleRService implements SettleRStub {
                     final JsonArray statusQ = new JsonArray();
                     // 计算 PENDING / DONE / PART
                     final int size = groupItems.size();
-                    final Set<String> finishedSet = groupItems
-                        .stream().map(FSettlementItem::getFinishedId)
-                        .filter(Ut::isNotNull).collect(Collectors.toSet());
+                    final ArrayList<String> finishedSet = new ArrayList<>();
+                    for (FSettlementItem groupItem : groupItems) {
+                        String finishedId = groupItem.getFinishedId();
+                        if (Ut.isNotNull(finishedId)) {
+                            finishedSet.add(finishedId);
+                        }
+                    }
                     if (size == finishedSet.size()) {
                         // DONE
                         statusQ.add(EmDebt.Linked.DONE.name());

@@ -52,6 +52,7 @@ class BillItemSplit implements IkWay<FBillItem, FBillItem> {
         for (int idx = 0; idx < size; idx++) {
             final FBillItem split = items.get(idx);
             split.setKey(null);
+            split.setStartAt(item.getStartAt());
             split.setBillId(item.getBillId());
             split.setSerial(item.getSerial() + FmConstant.SEQ[idx]);
             split.setCode(item.getCode() + FmConstant.SEQ[idx]);

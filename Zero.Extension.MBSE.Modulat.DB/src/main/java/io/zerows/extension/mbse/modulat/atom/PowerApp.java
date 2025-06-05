@@ -7,9 +7,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
+import io.zerows.core.feature.web.cache.Rapid;
 import io.zerows.extension.mbse.modulat.store.OCacheMod;
 import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Objects;
 
 /**
@@ -31,9 +35,9 @@ public class PowerApp {
         this.modReference = OCacheMod.of(appId);
     }
 
-    public static Future<PowerApp> getOrCreate(final String appId) {
+    public static Future<PowerApp> getOrCreate(final String appId,boolean open) {
         Objects.requireNonNull(appId);
-        return CC_APP.pick(() -> Ux.channel(Modulat.class, JsonObject::new, modulat -> modulat.extension(appId)).compose(storedJ -> {
+        return CC_APP.pick(() -> Ux.channel(Modulat.class, JsonObject::new, modulat -> modulat.extension(appId,open)).compose(storedJ -> {
             final String configApp = Ut.valueString(storedJ, KName.KEY);
             if (appId.equals(configApp)) {
                 // 抓取应用相关的 HMod 缓存
@@ -55,9 +59,9 @@ public class PowerApp {
         }), appId);
     }
 
-    public static Future<PowerApp> getLatest(final String appId) {
+    public static Future<PowerApp> getLatest(final String appId,boolean open) {
         CC_APP.remove(appId);
-        return getOrCreate(appId);
+        return getOrCreate(appId,open);
     }
 
     public PowerApp add(final HMod mod) {

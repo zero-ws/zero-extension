@@ -130,6 +130,7 @@ public class SettleWService implements SettleWStub {
                  **/
                 final Set<String> ignoreSet = new HashSet<>();
                 items.stream()
+                        .filter(item->item.getDebtId()==null)
                     .filter(item -> !itemsKeys.contains(item.getKey()))
                     .forEach(item -> ignoreSet.add(item.getSettlementId()));
                 final Set<String> settlementSet = Ut.toSet(settlementIds);

@@ -38,6 +38,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
     private String opNumber;
     private String opShift;
     private LocalDateTime opAt;
+    private LocalDateTime startAt;
+    private LocalDateTime endAt;
+    private String groupBy;
     private String relatedId;
     private String settlementId;
     private String billId;
@@ -73,6 +76,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         this.opNumber = value.getOpNumber();
         this.opShift = value.getOpShift();
         this.opAt = value.getOpAt();
+        this.startAt = value.getStartAt();
+        this.endAt = value.getEndAt();
+        this.groupBy = value.getGroupBy();
         this.relatedId = value.getRelatedId();
         this.settlementId = value.getSettlementId();
         this.billId = value.getBillId();
@@ -107,6 +113,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         String opNumber,
         String opShift,
         LocalDateTime opAt,
+        LocalDateTime startAt,
+        LocalDateTime endAt,
+        String groupBy,
         String relatedId,
         String settlementId,
         String billId,
@@ -139,6 +148,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         this.opNumber = opNumber;
         this.opShift = opShift;
         this.opAt = opAt;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.groupBy = groupBy;
         this.relatedId = relatedId;
         this.settlementId = settlementId;
         this.billId = billId;
@@ -470,6 +482,57 @@ public class FBillItem implements VertxPojo, IFBillItem {
     @Override
     public FBillItem setOpAt(LocalDateTime opAt) {
         this.opAt = opAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public LocalDateTime getStartAt() {
+        return this.startAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_BILL_ITEM.START_AT</code>. 「startAt」- 开始时间
+     */
+    @Override
+    public FBillItem setStartAt(LocalDateTime startAt) {
+        this.startAt = startAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public LocalDateTime getEndAt() {
+        return this.endAt;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_BILL_ITEM.END_AT</code>. 「endAt」- 结束时间
+     */
+    @Override
+    public FBillItem setEndAt(LocalDateTime endAt) {
+        this.endAt = endAt;
+        return this;
+    }
+
+    /**
+     * Getter for <code>ZDB.F_BILL_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public String getGroupBy() {
+        return this.groupBy;
+    }
+
+    /**
+     * Setter for <code>ZDB.F_BILL_ITEM.GROUP_BY</code>. 「groupBy」- 分组
+     */
+    @Override
+    public FBillItem setGroupBy(String groupBy) {
+        this.groupBy = groupBy;
         return this;
     }
 
@@ -817,6 +880,24 @@ public class FBillItem implements VertxPojo, IFBillItem {
         }
         else if (!this.opAt.equals(other.opAt))
             return false;
+        if (this.startAt == null) {
+            if (other.startAt != null)
+                return false;
+        }
+        else if (!this.startAt.equals(other.startAt))
+            return false;
+        if (this.endAt == null) {
+            if (other.endAt != null)
+                return false;
+        }
+        else if (!this.endAt.equals(other.endAt))
+            return false;
+        if (this.groupBy == null) {
+            if (other.groupBy != null)
+                return false;
+        }
+        else if (!this.groupBy.equals(other.groupBy))
+            return false;
         if (this.relatedId == null) {
             if (other.relatedId != null)
                 return false;
@@ -920,6 +1001,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         result = prime * result + ((this.opNumber == null) ? 0 : this.opNumber.hashCode());
         result = prime * result + ((this.opShift == null) ? 0 : this.opShift.hashCode());
         result = prime * result + ((this.opAt == null) ? 0 : this.opAt.hashCode());
+        result = prime * result + ((this.startAt == null) ? 0 : this.startAt.hashCode());
+        result = prime * result + ((this.endAt == null) ? 0 : this.endAt.hashCode());
+        result = prime * result + ((this.groupBy == null) ? 0 : this.groupBy.hashCode());
         result = prime * result + ((this.relatedId == null) ? 0 : this.relatedId.hashCode());
         result = prime * result + ((this.settlementId == null) ? 0 : this.settlementId.hashCode());
         result = prime * result + ((this.billId == null) ? 0 : this.billId.hashCode());
@@ -958,6 +1042,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         sb.append(", ").append(opNumber);
         sb.append(", ").append(opShift);
         sb.append(", ").append(opAt);
+        sb.append(", ").append(startAt);
+        sb.append(", ").append(endAt);
+        sb.append(", ").append(groupBy);
         sb.append(", ").append(relatedId);
         sb.append(", ").append(settlementId);
         sb.append(", ").append(billId);
@@ -1000,6 +1087,9 @@ public class FBillItem implements VertxPojo, IFBillItem {
         setOpNumber(from.getOpNumber());
         setOpShift(from.getOpShift());
         setOpAt(from.getOpAt());
+        setStartAt(from.getStartAt());
+        setEndAt(from.getEndAt());
+        setGroupBy(from.getGroupBy());
         setRelatedId(from.getRelatedId());
         setSettlementId(from.getSettlementId());
         setBillId(from.getBillId());

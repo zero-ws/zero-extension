@@ -44,7 +44,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             jsonArray.forEach(children::add);
         });
         final ConcurrentHashMap<String, String> total = new ConcurrentHashMap<>();
-        if(bottomTotal.fieldNames().size()!=0){
+        if(!bottomTotal.fieldNames().isEmpty()){
             bottomTotal.fieldNames().forEach(dimFeature -> {
                 // 提取 Feature
                 final KpFeature feature = Ut.elementFind(features, item -> item.getName().equals(dimFeature));
@@ -74,7 +74,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
             });
         }
 
-        if (totalCount.fieldNames().size()!=0) {
+        if (!totalCount.fieldNames().isEmpty()) {
             totalCount.fieldNames().forEach(count -> {
                 final String formula = totalCount.getString(count);
                 Object result = Ut.fromExpressionT(formula, Ux.toJson(total));
@@ -86,7 +86,7 @@ public class StepGeneratorTotal extends AbstractStepGenerator {
                 total.put(count, truncatedValue.toString());
             });
         }
-        if(total.keySet().size()>0){
+        if(!total.keySet().isEmpty()){
             final JsonObject entries = Ux.toJson(total);
             entries.put(KName.KEY, UUID.randomUUID().toString());
             bottomTotal.fieldNames().forEach(item -> {

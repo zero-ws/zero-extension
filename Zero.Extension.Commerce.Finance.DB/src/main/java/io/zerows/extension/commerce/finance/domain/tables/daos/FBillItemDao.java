@@ -295,6 +295,51 @@ public class FBillItemDao extends AbstractVertxDAO<FBillItemRecord, io.zerows.ex
         }
 
         /**
+     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByStartAt(Collection<LocalDateTime> values) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.START_AT.in(values));
+        }
+
+        /**
+     * Find records that have <code>START_AT IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByStartAt(Collection<LocalDateTime> values, int limit) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.START_AT.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>END_AT IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByEndAt(Collection<LocalDateTime> values) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.END_AT.in(values));
+        }
+
+        /**
+     * Find records that have <code>END_AT IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByEndAt(Collection<LocalDateTime> values, int limit) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.END_AT.in(values),limit);
+        }
+
+        /**
+     * Find records that have <code>GROUP_BY IN (values)</code> asynchronously
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByGroupBy(Collection<String> values) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.GROUP_BY.in(values));
+        }
+
+        /**
+     * Find records that have <code>GROUP_BY IN (values)</code> asynchronously
+     * limited by the given limit
+     */
+        public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByGroupBy(Collection<String> values, int limit) {
+                return findManyByCondition(FBillItem.F_BILL_ITEM.GROUP_BY.in(values),limit);
+        }
+
+        /**
      * Find records that have <code>RELATED_ID IN (values)</code> asynchronously
      */
         public Future<List<io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem>> findManyByRelatedId(Collection<String> values) {
