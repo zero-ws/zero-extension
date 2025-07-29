@@ -14,38 +14,38 @@
     <name>Zero.Plugins.Extension.POM.${zero.version}</name>
     <modules>
         <!-- 入口 -->
-        <module>Zero.Core.Entry.Extension</module>
+        <module>zero-core-entry-extension</module>
         <!-- 扩展模块骨架 -->
-        <module>Zero.Extension.Runtime.Skeleton</module>
-        <module>Zero.Extension.Runtime.CRUD</module>                 <!-- CRUD 引擎 -->
+        <module>zero-extension-runtime-skeleton</module>
+        <module>zero-extension-runtime-crud</module>                 <!-- CRUD 引擎 -->
 
 
         <!-- 系统核心模块 -->
-        <module>Zero.Extension.Runtime.Ambient.DB</module>           <!-- 配置管理 -->
-        <module>Zero.Extension.Runtime.Integration.DB</module>       <!-- 集成管理 -->
-        <module>Zero.Extension.Runtime.Graphic.DB</module>           <!-- 图引擎 -->
-        <module>Zero.Extension.Runtime.Workflow.DB</module>          <!-- 工作流引擎 -->
-        <module>Zero.Extension.Runtime.TPL.DB</module>               <!-- 模板引擎 -->
-        <module>Zero.Extension.Runtime.Report.DB</module>            <!-- 报表管理 -->
+        <module>zero-extension-runtime-ambient</module>           <!-- 配置管理 -->
+        <module>zero-extension-runtime-integration</module>       <!-- 集成管理 -->
+        <module>zero-extension-runtime-graphic</module>           <!-- 图引擎 -->
+        <module>zero-extension-runtime-workflow</module>          <!-- 工作流引擎 -->
+        <module>zero-extension-runtime-tpl</module>               <!-- 模板引擎 -->
+        <module>zero-extension-runtime-report</module>            <!-- 报表管理 -->
 
 
         <!-- 动态配置模块 -->
-        <module>Zero.Extension.MBSE.Modulat.DB</module>              <!-- 模块化管理 -->
-        <module>Zero.Extension.MBSE.Basement.DB</module>             <!-- 动态建模基础 -->
-        <module>Zero.Extension.MBSE.Action.DB</module>               <!-- 接口API / 任务Job / 服务组件Service -->
-        <module>Zero.Extension.MBSE.UI.DB</module>                   <!-- 界面管理 -->
+        <module>zero-extension-mbse-modulat</module>              <!-- 模块化管理 -->
+        <module>zero-extension-mbse-basement</module>             <!-- 动态建模基础 -->
+        <module>zero-extension-mbse-action</module>               <!-- 接口API / 任务Job / 服务组件Service -->
+        <module>zero-extension-mbse-ui</module>                   <!-- 界面管理 -->
 
 
         <!-- 业务相关模块 -->
-        <module>Zero.Extension.Commerce.ERP.DB</module>              <!-- Commerce：企业资源管理 -->
-        <module>Zero.Extension.Commerce.Finance.DB</module>          <!-- Commerce：Finance -->
-        <module>Zero.Extension.Commerce.LBS.DB</module>              <!-- Commerce：Location Service -->
-        <module>Zero.Extension.Commerce.RBAC.DB</module>             <!-- Commerce：RBAC -->
-        <module>Zero.Extension.Commerce.PSI.DB</module>              <!-- Commerce：PSI -->
-        <module>Zero.Extension.Commerce.Documentation.DB</module>    <!-- Commerce：文档管理器/办公协同 -->
+        <module>zero-extension-commerce-erp</module>              <!-- Commerce：企业资源管理 -->
+        <module>zero-extension-commerce-finance</module>          <!-- Commerce：Finance -->
+        <module>zero-extension-commerce-lbs</module>              <!-- Commerce：Location Service -->
+        <module>zero-extension-commerce-rbac</module>             <!-- Commerce：RBAC -->
+        <module>zero-extension-commerce-psi</module>              <!-- Commerce：PSI -->
+        <module>zero-extension-commerce-document</module>    <!-- Commerce：文档管理器/办公协同 -->
 
         <!-- 上层开发库 -->
-        <module>Zero.Extension.Commerce.Api</module>
+        <module>zero-extension-commerce-api</module>
     </modules>
     <build>
         <plugins>
