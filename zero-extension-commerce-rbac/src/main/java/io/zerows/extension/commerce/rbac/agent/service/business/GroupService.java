@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.typed.UArray;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RGroupRoleDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SGroupDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.RGroupRole;

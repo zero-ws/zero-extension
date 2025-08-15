@@ -8,7 +8,7 @@ import io.zerows.extension.runtime.crud.uca.input.Pre;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;

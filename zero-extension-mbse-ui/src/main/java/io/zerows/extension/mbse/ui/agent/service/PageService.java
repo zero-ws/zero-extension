@@ -6,7 +6,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiLayoutDao;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiPageDao;

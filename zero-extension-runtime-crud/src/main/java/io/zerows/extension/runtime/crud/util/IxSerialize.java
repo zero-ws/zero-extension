@@ -7,7 +7,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 
 import java.util.ArrayList;
 import java.util.List;

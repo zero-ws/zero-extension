@@ -12,7 +12,7 @@ import io.zerows.extension.commerce.finance.uca.account.Book;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
 import io.zerows.extension.commerce.finance.uca.replica.IkWay;
 import io.vertx.up.eon.KName;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 

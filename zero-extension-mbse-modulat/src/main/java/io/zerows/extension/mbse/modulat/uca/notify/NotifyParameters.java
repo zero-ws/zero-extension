@@ -3,7 +3,7 @@ package io.zerows.extension.mbse.modulat.uca.notify;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.annotations.Address;
-import io.zerows.core.feature.web.websocket.annotations.Subscribe;
+import io.zerows.core.web.websocket.annotations.Subscribe;
 import io.zerows.extension.mbse.modulat.eon.Addr;
 
 /**

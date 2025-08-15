@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
 import io.zerows.extension.commerce.rbac.eon.ScConstant;

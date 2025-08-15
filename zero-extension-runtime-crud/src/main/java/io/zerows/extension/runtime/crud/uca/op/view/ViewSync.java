@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 import io.zerows.extension.runtime.crud.eon.em.QrType;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;

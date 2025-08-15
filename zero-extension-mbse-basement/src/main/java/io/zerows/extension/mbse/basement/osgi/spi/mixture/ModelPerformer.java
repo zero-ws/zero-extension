@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.exception._404ModelNotFoundException;
+import io.zerows.core.web.mbse.exception._404ModelNotFoundException;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MModelDao;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MModel;

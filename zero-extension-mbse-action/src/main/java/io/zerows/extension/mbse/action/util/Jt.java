@@ -13,7 +13,7 @@ import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.extension.mbse.action.atom.JtConfig;
 import io.zerows.extension.mbse.action.atom.JtUri;
 import io.zerows.extension.mbse.action.atom.JtWorker;

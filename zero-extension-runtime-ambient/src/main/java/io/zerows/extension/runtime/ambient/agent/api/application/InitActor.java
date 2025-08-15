@@ -6,7 +6,7 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.extension.runtime.ambient.agent.service.application.InitStub;
 import io.zerows.extension.runtime.ambient.eon.Addr;
 import jakarta.inject.Inject;

@@ -7,7 +7,7 @@ import io.vertx.up.annotations.Address;
 import io.vertx.up.annotations.Me;
 import io.vertx.up.annotations.Queue;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.database.jooq.operation.UxJoin;
+import io.zerows.core.database.jooq.operation.UxJoin;
 import io.zerows.extension.commerce.psi.domain.tables.daos.PPosDao;
 import io.zerows.extension.commerce.psi.domain.tables.daos.PWhDao;
 import io.zerows.extension.commerce.psi.eon.Addr;

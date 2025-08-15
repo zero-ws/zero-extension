@@ -10,7 +10,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.atom.shape.AbstractHModel;
+import io.zerows.core.web.mbse.atom.shape.AbstractHModel;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.element.DataKey;

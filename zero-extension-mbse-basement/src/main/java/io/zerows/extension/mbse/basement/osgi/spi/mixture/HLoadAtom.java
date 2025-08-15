@@ -5,7 +5,7 @@ import io.macrocosm.specification.app.HAmbient;
 import io.macrocosm.specification.program.HArk;
 import io.modello.specification.action.HLoad;
 import io.modello.specification.atom.HAtom;
-import io.zerows.core.feature.web.mbse.exception._404ModelNotFoundException;
+import io.zerows.core.web.mbse.exception._404ModelNotFoundException;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.eon.AoCache;

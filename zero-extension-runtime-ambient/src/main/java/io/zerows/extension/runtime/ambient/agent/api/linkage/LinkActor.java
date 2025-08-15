@@ -10,7 +10,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.XHeader;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.agent.service.linkage.LinkStub;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XLinkageDao;
 import io.zerows.extension.runtime.ambient.eon.Addr;

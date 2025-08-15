@@ -8,7 +8,7 @@ import io.modello.specification.action.HDao;
 import io.modello.specification.atom.HAtom;
 import io.modello.specification.atom.HAttribute;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.atom.shape.HAtomReference;
+import io.zerows.core.web.mbse.atom.shape.HAtomReference;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAttribute;
 import io.zerows.extension.mbse.basement.util.Ao;

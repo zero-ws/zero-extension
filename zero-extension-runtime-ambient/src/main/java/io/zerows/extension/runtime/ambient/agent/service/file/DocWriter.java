@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAttachmentDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XAttachment;
 import io.zerows.extension.runtime.skeleton.exception._400FileNameInValidException;

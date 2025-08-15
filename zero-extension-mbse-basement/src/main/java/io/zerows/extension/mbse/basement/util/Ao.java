@@ -12,7 +12,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import io.zerows.core.domain.atom.element.JBag;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;

@@ -2,7 +2,7 @@ package io.zerows.extension.runtime.crud.bootstrap;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.atom.MultiKeyMap;
 import io.zerows.core.metadata.atom.configuration.MDConfiguration;
 import io.zerows.core.metadata.atom.configuration.modeling.MDEntity;

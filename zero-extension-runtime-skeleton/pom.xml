@@ -16,7 +16,7 @@
         <!-- 模块化改造 -->
         <dependency>
             <groupId>io.zerows</groupId>
-            <artifactId>zero-core-entry-osgi</artifactId>
+            <artifactId>zero-entry-facade</artifactId>
         </dependency>
         <!-- 插件 -->
         <dependency>

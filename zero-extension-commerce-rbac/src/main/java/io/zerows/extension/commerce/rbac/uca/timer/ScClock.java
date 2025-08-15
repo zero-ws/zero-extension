@@ -5,7 +5,7 @@ import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.core.metadata.uca.logging.OLog;
 import io.zerows.extension.commerce.rbac.atom.ScToken;
 

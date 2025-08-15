@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityChangeDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
 import io.zerows.extension.runtime.ambient.eon.em.ActivityStatus;

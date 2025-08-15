@@ -11,7 +11,7 @@ import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.plugins.office.excel.ExcelClient;
 import io.zerows.plugins.office.excel.atom.ExTable;
 

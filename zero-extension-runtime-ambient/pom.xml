@@ -18,11 +18,6 @@
             <groupId>io.zerows</groupId>
             <artifactId>zero-extension-runtime-skeleton</artifactId>
         </dependency>
-        <!-- Plugin -->
-        <dependency>
-            <groupId>io.zerows</groupId>
-            <artifactId>zero-core-feature-toolkit-expression</artifactId>
-        </dependency>
     </dependencies>
     <build>
         <plugins>

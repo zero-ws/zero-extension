@@ -14,7 +14,7 @@
     <name>Zero.Plugins.Extension.POM.${zero.version}</name>
     <modules>
         <!-- 入口 -->
-        <module>zero-core-entry-extension</module>
+        <module>zero-entry-extension</module>
         <!-- 扩展模块骨架 -->
         <module>zero-extension-runtime-skeleton</module>
         <module>zero-extension-runtime-crud</module>                 <!-- CRUD 引擎 -->

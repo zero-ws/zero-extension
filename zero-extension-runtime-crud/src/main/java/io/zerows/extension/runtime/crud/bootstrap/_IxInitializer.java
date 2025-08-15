@@ -6,8 +6,8 @@ import io.vertx.up.eon.KWeb;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.core.feature.web.mbse.atom.specification.KColumn;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KColumn;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.util.Ix;
 
 import java.util.Objects;

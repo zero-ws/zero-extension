@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiView;
 import io.zerows.extension.mbse.ui.eon.UiConstant;
 

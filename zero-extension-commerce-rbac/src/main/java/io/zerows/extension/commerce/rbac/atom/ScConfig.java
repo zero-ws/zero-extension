@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.horizon.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.atom.specification.KQr;
+import io.zerows.core.web.mbse.atom.specification.KQr;
 import io.zerows.jackson.databind.JsonObjectDeserializer;
 import io.zerows.jackson.databind.JsonObjectSerializer;
 

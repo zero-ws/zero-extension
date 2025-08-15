@@ -7,7 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.core.metadata.store.OZeroStore;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
 import io.zerows.extension.runtime.skeleton.refine.Ke;

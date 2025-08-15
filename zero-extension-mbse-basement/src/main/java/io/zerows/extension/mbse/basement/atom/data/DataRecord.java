@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.atom.data;
 
 import io.modello.specification.HRecord;
 import io.vertx.up.annotations.Contract;
-import io.zerows.core.feature.web.mbse.atom.runner.ActiveRecord;
+import io.zerows.core.web.mbse.atom.runner.ActiveRecord;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.element.DataKey;

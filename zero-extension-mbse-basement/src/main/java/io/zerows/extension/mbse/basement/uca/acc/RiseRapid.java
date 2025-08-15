@@ -13,7 +13,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.commune.dynamic.Apt;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MAccDao;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAcc;
 import io.zerows.extension.mbse.basement.util.Ao;

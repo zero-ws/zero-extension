@@ -11,7 +11,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 
 import java.util.List;

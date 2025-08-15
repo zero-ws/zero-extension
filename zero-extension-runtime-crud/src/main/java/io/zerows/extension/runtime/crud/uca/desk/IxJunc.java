@@ -8,7 +8,7 @@ import io.vertx.up.eon.em.EmPRI;
 import io.zerows.core.domain.atom.specification.KJoin;
 import io.zerows.core.domain.atom.specification.KPoint;
 import io.zerows.core.domain.uca.destine.Hymn;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.eon.Pooled;
 
 import java.util.Objects;

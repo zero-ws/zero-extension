@@ -12,7 +12,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XSource;
 

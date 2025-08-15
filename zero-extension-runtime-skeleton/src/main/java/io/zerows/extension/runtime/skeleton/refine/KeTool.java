@@ -9,8 +9,8 @@ import io.vertx.up.eon.configure.YmlCore;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.atom.Database;
-import io.zerows.core.feature.database.cp.zdk.DataPool;
+import io.zerows.core.database.atom.Database;
+import io.zerows.core.database.cp.zdk.DataPool;
 import io.zerows.core.metadata.store.OZeroStore;
 import org.jooq.Configuration;
 

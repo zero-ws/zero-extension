@@ -9,8 +9,8 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.database.jooq.operation.UxJooq;
+import io.zerows.core.web.cache.Rapid;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

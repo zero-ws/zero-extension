@@ -14,7 +14,7 @@ import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.zerows.core.cloud.zdk.spi.Dictionary;
 import io.zerows.core.domain.atom.specification.KTransform;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.metadata.osgi.channel.Pocket;
 import io.zerows.core.web.model.commune.Envelop;
 

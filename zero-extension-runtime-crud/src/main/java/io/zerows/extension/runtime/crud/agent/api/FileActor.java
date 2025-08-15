@@ -21,7 +21,7 @@ import io.vertx.up.annotations.Queue;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.eon.Addr;
 import io.zerows.extension.runtime.crud.eon.em.ApiSpec;

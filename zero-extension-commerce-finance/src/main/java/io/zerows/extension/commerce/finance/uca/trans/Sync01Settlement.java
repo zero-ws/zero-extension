@@ -7,7 +7,7 @@ import io.vertx.ext.auth.User;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.commerce.finance.domain.tables.daos.FSettlementDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
 

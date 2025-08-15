@@ -7,7 +7,7 @@ import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KTransform;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

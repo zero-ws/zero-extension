@@ -10,7 +10,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.fn.Fn;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RRolePermDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SPermSetDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SPermissionDao;

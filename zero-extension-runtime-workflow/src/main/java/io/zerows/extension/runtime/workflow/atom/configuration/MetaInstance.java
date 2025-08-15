@@ -9,7 +9,7 @@ import io.zerows.extension.runtime.workflow.uca.modeling.Respect;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 
 import java.util.HashSet;
 import java.util.Objects;

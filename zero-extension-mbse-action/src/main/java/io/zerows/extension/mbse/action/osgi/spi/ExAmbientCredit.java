@@ -6,7 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.web.mbse.atom.specification.KCredential;
+import io.zerows.core.web.mbse.atom.specification.KCredential;
 import io.zerows.extension.runtime.skeleton.osgi.spi.web.Credential;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 

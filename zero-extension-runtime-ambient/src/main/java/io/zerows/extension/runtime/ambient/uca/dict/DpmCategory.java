@@ -8,7 +8,7 @@ import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XCategoryDao;
 
 import java.util.concurrent.ConcurrentMap;

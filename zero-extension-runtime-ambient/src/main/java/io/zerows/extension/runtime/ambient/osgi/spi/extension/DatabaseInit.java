@@ -6,8 +6,8 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.eon.KWeb;
 import io.vertx.up.unity.Ux;
-import io.zerows.core.feature.database.atom.Database;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.database.atom.Database;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.runtime.ambient.eon.AtMsg;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 

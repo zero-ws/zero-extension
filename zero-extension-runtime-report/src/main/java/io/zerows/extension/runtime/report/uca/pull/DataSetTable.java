@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
+import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.core.metadata.atom.configuration.modeling.MDConnect;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpDataSet;

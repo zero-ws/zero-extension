@@ -12,7 +12,7 @@ import io.modello.specification.atom.HRule;
 import io.vertx.core.json.JsonObject;
 import io.vertx.up.eon.KName;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.database.atom.Database;
+import io.zerows.core.database.atom.Database;
 import io.zerows.core.web.model.zdk.Commercial;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IService;
 import io.zerows.extension.mbse.action.eon.JtKey;

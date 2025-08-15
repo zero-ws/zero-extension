@@ -9,8 +9,8 @@ import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KTransform;
 import io.zerows.core.domain.atom.specification.KTree;
-import io.zerows.core.feature.database.jooq.operation.UxJooq;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.database.jooq.operation.UxJooq;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 

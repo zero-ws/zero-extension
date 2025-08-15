@@ -9,7 +9,7 @@ import io.vertx.ext.auth.User;
 import io.vertx.up.eon.KName;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
-import io.zerows.core.feature.web.cache.Rapid;
+import io.zerows.core.web.cache.Rapid;
 import io.zerows.core.security.atom.DataBound;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SAction;

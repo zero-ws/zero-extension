@@ -8,7 +8,7 @@ import io.zerows.extension.runtime.crud.uca.input.Pre;
 import io.vertx.up.unity.Ux;
 import io.vertx.up.util.Ut;
 import io.zerows.core.domain.atom.specification.KField;
-import io.zerows.core.feature.web.mbse.atom.specification.KModule;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 
 import java.util.UUID;
 
