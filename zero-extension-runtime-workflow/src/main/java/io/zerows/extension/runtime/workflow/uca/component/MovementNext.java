@@ -23,7 +23,7 @@ public class MovementNext extends AbstractTransfer implements Movement {
                 // MoveOn Start ( Workflow Not Started )
                 moveOn = MoveOn.instance(MoveOnStart.class);
             }
-            // Bind Metadata Instance
+            // Bind KMetadata Instance
             moveOn.bind(this.metadataIn());
             return moveOn.moveAsync(normalized, wTransition);
         });

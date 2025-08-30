@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.sql;
 
-import io.horizon.uca.cache.Cc;
-import io.modello.atom.app.KDatabase;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.common.app.KDatabase;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

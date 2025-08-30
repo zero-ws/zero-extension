@@ -1,24 +1,24 @@
 package io.zerows.extension.mbse.action.uca.business;
 
-import io.horizon.atom.datamation.KDictUse;
-import io.horizon.atom.datamation.KFabric;
-import io.horizon.atom.datamation.KMap;
-import io.horizon.exception.WebException;
-import io.horizon.exception.web._501NotImplementException;
-import io.horizon.uca.log.Annal;
-import io.modello.atom.normalize.KIdentity;
-import io.modello.specification.atom.HRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Contract;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
+import io.zerows.common.datamation.KDictUse;
+import io.zerows.common.datamation.KFabric;
+import io.zerows.common.datamation.KMap;
+import io.zerows.common.normalize.KIdentity;
+import io.zerows.core.annotations.Contract;
+import io.zerows.core.exception.WebException;
+import io.zerows.core.exception.web._501NotImplementException;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.runner.ActIn;
 import io.zerows.core.web.mbse.atom.runner.ActOut;
 import io.zerows.core.web.model.zdk.Service;
 import io.zerows.extension.mbse.action.osgi.spi.jet.JtComponent;
 import io.zerows.extension.runtime.skeleton.exception._400SigmaMissingException;
+import io.zerows.module.domain.atom.commune.XHeader;
+import io.zerows.specification.modeling.HRule;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
@@ -38,7 +38,7 @@ import java.util.function.Function;
  */
 public abstract class AbstractComponent implements JtComponent, Service {
 
-    // -------------- Metadata configuration ------------------
+    // -------------- KMetadata configuration ------------------
     /*
      * Could be used by sub-class directly ( XHeader contains )
      * X-Sigma      -> sigma

@@ -1,6 +1,6 @@
 package io.mature.extension.scaffold.component;
 
-import io.vertx.up.annotations.Contract;
+import io.zerows.core.annotations.Contract;
 import io.zerows.core.web.scheduler.atom.Mission;
 
 /**

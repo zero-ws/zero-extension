@@ -6,5 +6,5 @@ package io.zerows.extension.runtime.integration.eon;
 public interface IsConstant {
 
     String TRASH_FOLDER = "/.Trash";
-    String BUNDLE_SYMBOLIC_NAME = "zero-extension-runtime-integration";
+    String BUNDLE_SYMBOLIC_NAME = "zero-extension-running-integration";
 }

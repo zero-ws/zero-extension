@@ -1,11 +1,11 @@
 package io.mature.extension.uca.plugin;
 
 import io.mature.extension.uca.concrete.Arrow;
-import io.modello.specification.action.HDao;
+import io.zerows.specification.modeling.operation.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.osgi.spi.robin.Switcher;
 

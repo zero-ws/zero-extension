@@ -1,17 +1,17 @@
 package io.zerows.extension.mbse.basement.util;
 
-import io.horizon.atom.program.Kv;
-import io.horizon.eon.VValue;
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.compare.Vs;
-import io.modello.specification.atom.HRule;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.common.program.Kv;
+import io.zerows.core.constant.KName;
+import io.zerows.core.uca.compare.Vs;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
+import io.zerows.specification.modeling.HRule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

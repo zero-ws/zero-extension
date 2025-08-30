@@ -2,8 +2,8 @@ package io.zerows.extension.runtime.workflow.agent.api.legacy;
 
 import io.zerows.extension.runtime.workflow.eon.HighWay;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;

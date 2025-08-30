@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.action.osgi.spi;
 
-import io.macrocosm.specification.program.HArk;
-import io.modello.atom.app.KDS;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.common.app.KDS;
 import io.vertx.core.MultiMap;
-import io.vertx.up.fn.Fn;
+import io.zerows.core.fn.Fn;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.database.cp.zdk.DS;
 import io.zerows.core.database.cp.zdk.DataPool;

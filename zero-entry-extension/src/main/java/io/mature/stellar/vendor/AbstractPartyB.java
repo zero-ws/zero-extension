@@ -1,16 +1,16 @@
 package io.mature.stellar.vendor;
 
-import io.horizon.atom.datamation.KDictConfig;
-import io.horizon.atom.datamation.KFabric;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.common.datamation.KDictConfig;
+import io.zerows.common.datamation.KFabric;
+import io.zerows.specification.access.app.HArk;
 import io.mature.boot.supply.Envoy;
 import io.mature.stellar.owner.OkA;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.KWeb;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.constant.KWeb;
+import io.zerows.unity.Ux;
 import io.zerows.core.database.atom.Database;
 
 /**
@@ -38,7 +38,7 @@ public abstract class AbstractPartyB implements OkB {
      * 获取应用配置对象默认实现
      * > 「RD」桥梁模式扩展
      *
-     * @return {@link io.macrocosm.specification.program.HArk}
+     * @return {@link HArk}
      */
     @Override
     public HArk configArk() {

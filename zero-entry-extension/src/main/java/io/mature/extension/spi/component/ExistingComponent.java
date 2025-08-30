@@ -1,6 +1,6 @@
 package io.mature.extension.spi.component;
 
-import io.horizon.uca.qr.Criteria;
+import io.zerows.core.uca.qr.Criteria;
 import io.mature.extension.scaffold.component.AbstractAdaptor;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

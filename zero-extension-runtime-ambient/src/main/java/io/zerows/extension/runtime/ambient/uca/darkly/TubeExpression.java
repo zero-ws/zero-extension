@@ -1,10 +1,10 @@
 package io.zerows.extension.runtime.ambient.uca.darkly;
 
-import io.modello.specification.atom.HAtom;
+import io.zerows.specification.modeling.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityRule;
 import io.zerows.extension.runtime.ambient.uca.differ.Schism;
 

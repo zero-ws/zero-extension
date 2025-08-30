@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.ambient.uca.differ;
 
-import io.horizon.eon.VString;
-import io.horizon.uca.cache.Cc;
-import io.macrocosm.specification.program.HArk;
-import io.modello.specification.atom.HAtom;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;

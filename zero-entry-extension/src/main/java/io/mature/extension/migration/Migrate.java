@@ -1,7 +1,7 @@
 package io.mature.extension.migration;
 
-import io.horizon.eon.em.Environment;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.specification.access.app.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 

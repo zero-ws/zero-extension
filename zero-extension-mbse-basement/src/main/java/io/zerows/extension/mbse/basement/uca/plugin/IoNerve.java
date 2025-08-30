@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.uca.plugin;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
+import io.vertx.core.Future;
+import io.zerows.extension.mbse.basement.atom.element.DataTpl;
 import io.zerows.extension.mbse.basement.uca.reference.AoRay;
 import io.zerows.extension.mbse.basement.uca.reference.RayBatch;
 import io.zerows.extension.mbse.basement.uca.reference.RaySingle;
-import io.modello.specification.HRecord;
-import io.vertx.core.Future;
-import io.zerows.extension.mbse.basement.atom.element.DataTpl;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Objects;
 

@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.uca.jooq;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
-import io.horizon.uca.cache.Cc;
-import io.horizon.uca.qr.Criteria;
-import io.horizon.uca.qr.syntax.Ir;
-import io.horizon.uca.qr.syntax.IrItem;
-import io.modello.specification.atom.HReference;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.uca.qr.Criteria;
+import io.zerows.core.uca.qr.syntax.Ir;
+import io.zerows.core.uca.qr.syntax.IrItem;
+import io.zerows.specification.modeling.HReference;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;

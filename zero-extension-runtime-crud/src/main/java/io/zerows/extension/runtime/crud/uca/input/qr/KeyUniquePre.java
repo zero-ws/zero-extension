@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.crud.uca.input.qr;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 
 import java.util.Set;
 

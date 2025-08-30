@@ -1,11 +1,11 @@
 package io.zerows.extension.commerce.rbac.atom;
 
-import io.horizon.eon.VValue;
-import io.horizon.specification.typed.TJson;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.zerows.core.metadata.atom.MultiKeyMap;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.constant.KName;
 import io.zerows.extension.commerce.rbac.uca.timer.ScClock;
+import io.zerows.module.metadata.atom.MultiKeyMap;
+import io.zerows.specification.atomic.HJson;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -107,7 +107,7 @@ public class ScToken implements Serializable {
      *         "iat": ???
      *     }
      * </code></pre>
-     * 早期的版本实现了 {@link TJson} 接口，但最新版本不使用此接口，而是直接使用特殊方法来完成响应数据的构造，响应构造过程中不包含 id
+     * 早期的版本实现了 {@link HJson} 接口，但最新版本不使用此接口，而是直接使用特殊方法来完成响应数据的构造，响应构造过程中不包含 id
      * 属性，和序列化以及反序列化有很大的区别。
      *
      * @return 返回Json数据结构

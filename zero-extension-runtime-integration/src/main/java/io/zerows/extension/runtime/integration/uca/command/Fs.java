@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.integration.uca.command;
 
-import io.horizon.atom.program.Kv;
+import io.zerows.common.program.Kv;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;

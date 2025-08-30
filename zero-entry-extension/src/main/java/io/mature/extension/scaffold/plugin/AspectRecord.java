@@ -2,7 +2,7 @@ package io.mature.extension.scaffold.plugin;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 
 /**
  *

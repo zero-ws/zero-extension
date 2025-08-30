@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.skeleton.osgi.spi.extension;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 /*
  * Prerequisite interface.

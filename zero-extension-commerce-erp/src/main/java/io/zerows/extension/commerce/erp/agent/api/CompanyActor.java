@@ -1,10 +1,10 @@
 package io.zerows.extension.commerce.erp.agent.api;
 
-import io.horizon.uca.log.Annal;
+import io.zerows.core.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
 import io.zerows.extension.commerce.erp.agent.service.CompanyStub;
 import io.zerows.extension.commerce.erp.eon.Addr;
 import io.zerows.extension.commerce.erp.eon.ErpMsg;

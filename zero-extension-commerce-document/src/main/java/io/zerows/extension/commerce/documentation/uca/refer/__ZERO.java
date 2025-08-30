@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.documentation.uca.refer;
 
-import io.horizon.annotations.Memory;
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.annotations.Memory;
 import io.zerows.extension.commerce.documentation.eon.em.EmRefer;
 
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,23 +1,20 @@
 package io.mature.extension.refine;
 
-import io.horizon.eon.em.Environment;
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.log.Log;
-import io.horizon.uca.log.LogModule;
 import io.mature.extension.cv.em.TypeLog;
 import io.mature.extension.uca.code.Numeration;
 import io.mature.stellar.ArgoStore;
-import io.modello.atom.app.KIntegration;
-import io.modello.atom.normalize.KIdentity;
-import io.modello.specification.HRecord;
-import io.modello.specification.action.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.cloud.eon.VDBC;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.common.app.KIntegration;
+import io.zerows.common.normalize.KIdentity;
 import io.zerows.core.database.cp.zdk.DataPool;
+import io.zerows.core.uca.log.Log;
+import io.zerows.core.uca.log.LogModule;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.data.DataGroup;
@@ -27,7 +24,10 @@ import io.zerows.extension.runtime.ambient.agent.service.application.AppStub;
 import io.zerows.extension.runtime.ambient.agent.service.application.InitStub;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTodo;
+import io.zerows.module.cloud.eon.VDBC;
 import io.zerows.plugins.store.elasticsearch.ElasticSearchClient;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.operation.HDao;
 
 import java.util.HashSet;
 import java.util.List;
@@ -783,7 +783,7 @@ public final class Ox {
      *
      * ### 1. 基本介绍
      *
-     * 读取配置文件`runtime/configuration.json`构造CMDB基础环境。
+     * 读取配置文件`running/configuration.json`构造CMDB基础环境。
      *
      * @author <a href="http://www.origin-x.cn">Lang</a>
      */

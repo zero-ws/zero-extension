@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapid;
 
-import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.security.zdk.authority.Acl;
+import io.zerows.core.uca.qr.syntax.Ir;
 import io.zerows.extension.commerce.rbac.util.Sc;
+import io.zerows.module.security.zdk.authority.Acl;
 
 /*
  * Here are the record filter `Dwarf`

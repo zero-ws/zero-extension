@@ -26,12 +26,12 @@ import java.util.function.Supplier;
  *
  * - taskName               ( Workflow Provided )           - 「Workflow」,「Atom」
  * - taskSerial             ( Workflow Provided )           - 「Workflow」,「Atom」
- * - recordOld              ( Old Json )
- * - recordNew              ( New Json )
+ * - recordOld              ( Old InJson )
+ * - recordNew              ( New InJson )
  *
- * - sigma                  ( Json Provided )
- * - active                 ( Json Provided )
- * - language               ( Json Provided )
+ * - sigma                  ( InJson Provided )
+ * - active                 ( InJson Provided )
+ * - language               ( InJson Provided )
  * - metadata               ( Empty )
  * - createdAt              ( Outer Now )                   - 「Workflow」,「Atom」
  * - createdBy              ( Outer Current )               - 「Workflow」,「Atom」
@@ -52,9 +52,9 @@ import java.util.function.Supplier;
  * - valueOld               ( Came from Data )
  * - valueNew               ( Came from Data )
  *
- * - sigma                  ( Json Provided )
- * - language               ( Json Provided )
- * - active                 ( Json Provided )
+ * - sigma                  ( InJson Provided )
+ * - language               ( InJson Provided )
+ * - active                 ( InJson Provided )
  * - metadata               ( Empty )
  *
  * - createdBy              ( Outer Current )

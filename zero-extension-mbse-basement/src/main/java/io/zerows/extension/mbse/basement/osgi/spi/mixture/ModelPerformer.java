@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.osgi.spi.mixture;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.exception._404ModelNotFoundException;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MModelDao;

@@ -1,18 +1,18 @@
 package io.zerows.extension.mbse.basement.uca.plugin;
 
-import io.horizon.atom.program.Kv;
-import io.horizon.fn.TiConsumer;
-import io.modello.specification.HRecord;
-import io.modello.specification.atom.HAttribute;
-import io.modello.specification.uca.*;
 import io.vertx.core.json.JsonObject;
+import io.zerows.agreed.fn.TiConsumer;
+import io.zerows.common.program.Kv;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.element.JComponent;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAttribute;
+import io.zerows.module.domain.atom.element.JComponent;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.property.*;
 
 import java.util.Arrays;
 import java.util.Objects;

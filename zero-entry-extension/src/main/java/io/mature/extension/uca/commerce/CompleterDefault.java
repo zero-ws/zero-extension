@@ -1,6 +1,6 @@
 package io.mature.extension.uca.commerce;
 
-import io.modello.specification.action.HDao;
+import io.zerows.specification.modeling.operation.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

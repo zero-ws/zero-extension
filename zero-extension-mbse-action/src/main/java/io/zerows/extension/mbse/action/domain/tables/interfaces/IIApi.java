@@ -243,13 +243,13 @@ public interface IIApi extends VertxPojo, Serializable {
 
     /**
      * Getter for <code>ZDB.I_API.WORKER_JS</code>. 「workerJs」- JS
-     * 专用，JavaScript路径：runtime/workers/&lt;app&gt;/下的执行器
+     * 专用，JavaScript路径：running/workers/&lt;app&gt;/下的执行器
      */
     public String getWorkerJs();
 
     /**
      * Setter for <code>ZDB.I_API.WORKER_JS</code>. 「workerJs」- JS
-     * 专用，JavaScript路径：runtime/workers/&lt;app&gt;/下的执行器
+     * 专用，JavaScript路径：running/workers/&lt;app&gt;/下的执行器
      */
     public IIApi setWorkerJs(String value);
 

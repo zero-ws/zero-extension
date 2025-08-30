@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.jooq;
 
-import io.horizon.eon.VValue;
-import io.horizon.uca.log.Annal;
-import io.modello.eon.em.EmModel;
-import io.vertx.up.fn.Fn;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.data.DataEvent;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;

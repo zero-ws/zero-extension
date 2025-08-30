@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.skeleton.boot.supply;
 
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 

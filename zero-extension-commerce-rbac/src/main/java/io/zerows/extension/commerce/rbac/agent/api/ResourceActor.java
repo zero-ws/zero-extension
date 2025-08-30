@@ -2,9 +2,9 @@ package io.zerows.extension.commerce.rbac.agent.api;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.rbac.agent.service.business.ResourceStub;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SActionDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SResourceDao;

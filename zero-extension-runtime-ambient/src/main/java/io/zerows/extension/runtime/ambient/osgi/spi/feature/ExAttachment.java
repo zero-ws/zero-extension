@@ -1,16 +1,16 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.feature;
 
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.log.Annal;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.core.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.ambient.util.At;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAttachmentDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XAttachment;

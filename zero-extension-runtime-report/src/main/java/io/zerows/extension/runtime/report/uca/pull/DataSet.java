@@ -1,18 +1,18 @@
 package io.zerows.extension.runtime.report.uca.pull;
 
-import io.horizon.eon.VString;
-import io.horizon.exception.web._501NotSupportException;
-import io.horizon.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.uca.logging.OLog;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.constant.KName;
+import io.zerows.core.exception.web._501NotSupportException;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpDataSet;
 import io.zerows.extension.runtime.report.eon.RpConstant;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.uca.feature.RQueryComponent;
+import io.zerows.module.metadata.uca.logging.OLog;
 
 import java.util.Objects;
 
@@ -29,11 +29,11 @@ import java.util.Objects;
 public interface DataSet {
 
     Cc<String, DataSet> CC_SKELETON = Cc.openThread();
-     Cc<String, RQueryComponent> CC_OUT = Cc.openThread();
+    Cc<String, RQueryComponent> CC_OUT = Cc.openThread();
 
     static DataSet of(final JsonObject sourceJ) {
         final EmReport.SourceType type = Ut.toEnum(
-                () -> Ut.valueString(sourceJ, "sourceType"), EmReport.SourceType.class);
+            () -> Ut.valueString(sourceJ, "sourceType"), EmReport.SourceType.class);
         final String dsTarget;
         // TABLE
         if (EmReport.SourceType.TABLE == type) {
@@ -43,7 +43,7 @@ public interface DataSet {
             paramConstructor.put(KName.SOURCE, dsTarget);
             paramConstructor.put(KName.CHILDREN, sourceJ.getValue(KName.CHILDREN));
             return CC_SKELETON.pick(
-                    () -> new DataSetTable(paramConstructor), type + VString.SLASH + dsTarget
+                () -> new DataSetTable(paramConstructor), type + VString.SLASH + dsTarget
             );
         }
         // JOIN_2
@@ -51,7 +51,7 @@ public interface DataSet {
             final JsonObject paramConstructor = Ut.valueJObject(sourceJ, RpConstant.SourceTypeField.SOURCE);
             paramConstructor.put(KName.CHILDREN, sourceJ.getValue(KName.CHILDREN));
             return CC_SKELETON.pick(
-                    () -> new DataSetJoin2(paramConstructor), type + VString.SLASH + paramConstructor.hashCode()
+                () -> new DataSetJoin2(paramConstructor), type + VString.SLASH + paramConstructor.hashCode()
             );
         }
         // Not Support
@@ -63,6 +63,7 @@ public interface DataSet {
      *
      * @param params 读取参数
      * @param queryJ 查询配置
+     *
      * @return 返回读取的数据
      */
     Future<JsonArray> loadAsync(JsonObject params, JsonObject queryJ);
@@ -97,8 +98,8 @@ public interface DataSet {
 
             if (dataSet.getDataComponent() != null) {
                 return executor.loadAsync(params, queryDef).compose(dataSouce -> {
-                    String dataComponent = dataSet.getDataComponent();
-                    RQueryComponent queryComponent = CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
+                    final String dataComponent = dataSet.getDataComponent();
+                    final RQueryComponent queryComponent = DataSet.CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
                     final JsonObject parameters = new JsonObject();
                     parameters.put(KName.INPUT, params);
                     return queryComponent.dataAsync(dataSouce, parameters).compose(result -> {

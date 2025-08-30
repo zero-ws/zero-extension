@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.macrocosm.specification.app.HApp;
-import io.vertx.up.eon.KName;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.core.constant.KName;
 import io.zerows.core.web.mbse.atom.shape.AbstractHAtom;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MModel;

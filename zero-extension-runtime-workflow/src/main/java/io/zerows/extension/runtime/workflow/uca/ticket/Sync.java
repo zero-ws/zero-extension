@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.uca.ticket;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;

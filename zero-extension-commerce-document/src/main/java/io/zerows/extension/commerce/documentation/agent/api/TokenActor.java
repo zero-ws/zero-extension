@@ -1,13 +1,13 @@
 package io.zerows.extension.commerce.documentation.agent.api;
 
-import io.horizon.runtime.Macrocosm;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
+import io.zerows.core.running.HMacrocosm;
 import io.zerows.extension.commerce.documentation.eon.Addr;
 import org.primeframework.jwt.Signer;
 import org.primeframework.jwt.domain.JWT;
@@ -23,7 +23,7 @@ public class TokenActor {
 
     @Address(Addr.TOKEN_REQUEST)
     public Future<JsonObject> tokenRequest(final JsonObject config) {
-        final String secret = Ut.envWith(Macrocosm.DOC_SECRET, null);
+        final String secret = Ut.envWith(HMacrocosm.DOC_SECRET, null);
         if (Ut.isNil(secret)) {
             return Ux.futureJ();
         }

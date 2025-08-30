@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.graphic.agent.api;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
 import io.zerows.extension.runtime.graphic.eon.Addr;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

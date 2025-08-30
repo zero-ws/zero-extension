@@ -9,10 +9,10 @@ import io.zerows.extension.runtime.workflow.atom.runtime.WRequest;
 import io.zerows.extension.runtime.workflow.uca.coadjutor.Stay;
 import io.zerows.extension.runtime.workflow.uca.component.Movement;
 import io.zerows.extension.runtime.workflow.uca.component.Transfer;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Me;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Me;
+import io.zerows.core.annotations.Queue;
+import io.zerows.unity.Ux;
 
 import static io.zerows.extension.runtime.workflow.util.Wf.LOG;
 
@@ -165,7 +165,7 @@ public class RunActor {
             .compose(instance -> stay.keepAsync(request, instance))
             // Callback
             // Fix issue:
-            // No serializer found for class io.vertx.mod.runtime.argument.workflow.WRecord
+            // No serializer found for class io.vertx.mod.running.argument.workflow.WRecord
             // and no properties discovered to create BeanSerializer
             .compose(WRecord::futureJ);
     }
@@ -183,7 +183,7 @@ public class RunActor {
             .compose(instance -> stay.keepAsync(request, instance))
             // Callback
             // Fix issue:
-            // No serializer found for class io.vertx.mod.runtime.argument.workflow.WRecord
+            // No serializer found for class io.vertx.mod.running.argument.workflow.WRecord
             // and no properties discovered to create BeanSerializer
             .compose(WRecord::futureJ);
     }

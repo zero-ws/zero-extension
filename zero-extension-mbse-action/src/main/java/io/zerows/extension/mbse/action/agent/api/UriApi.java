@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.action.agent.api;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
 import io.zerows.core.web.io.annotations.BodyParam;
 import io.zerows.extension.mbse.action.eon.JtAddr;
 import jakarta.ws.rs.POST;
@@ -10,7 +10,7 @@ import jakarta.ws.rs.Path;
 
 /**
  * Critical routing management
- * 1. Metadata Analyzing for zero-framework
+ * 1. KMetadata Analyzing for zero-framework
  * 2. Call service interface of zero to get all routing information
  * 3. Update routing on `RoutingCore` in zero framework
  *

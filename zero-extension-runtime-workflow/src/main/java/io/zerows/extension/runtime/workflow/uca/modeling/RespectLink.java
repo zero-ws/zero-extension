@@ -6,9 +6,9 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.workflow.atom.runtime.WRecord;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>
@@ -58,7 +58,7 @@ public class RespectLink extends AbstractRespect {
          * - sourceKey
          * - sourceData
          *
-         * Metadata Fields
+         * KMetadata Fields
          */
         final WTicket ticket = record.ticket();
         final JsonObject sourceData = Ux.toJson(ticket);

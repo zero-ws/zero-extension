@@ -1,7 +1,6 @@
 package io.zerows.extension.mbse.basement.atom.data;
 
-import io.modello.specification.HRecord;
-import io.vertx.up.annotations.Contract;
+import io.zerows.core.annotations.Contract;
 import io.zerows.core.web.mbse.atom.runner.ActiveRecord;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
@@ -9,6 +8,7 @@ import io.zerows.extension.mbse.basement.atom.element.DataKey;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;
 import io.zerows.extension.mbse.basement.uca.id.AoId;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Objects;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.report.uca.feature;
 
-import io.horizon.atom.program.Kv;
+import io.zerows.common.program.Kv;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 

@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.change;
 
-import io.horizon.eon.VString;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.basement.util.Ao;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 
 import java.util.Date;
 import java.util.Objects;

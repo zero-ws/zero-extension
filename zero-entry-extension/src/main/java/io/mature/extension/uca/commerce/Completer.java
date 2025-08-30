@@ -1,10 +1,10 @@
 package io.mature.extension.uca.commerce;
 
-import io.modello.specification.action.HDao;
+import io.zerows.specification.modeling.operation.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.osgi.spi.robin.Switcher;
 

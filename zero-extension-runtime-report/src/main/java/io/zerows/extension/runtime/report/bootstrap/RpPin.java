@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.report.bootstrap;
 
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.configuration.boot.HRegistry;
 
 /**
  * @author lang : 2024-07-25

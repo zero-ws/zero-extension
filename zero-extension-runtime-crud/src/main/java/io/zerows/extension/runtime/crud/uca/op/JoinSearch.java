@@ -5,9 +5,9 @@ import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.crud.util.Ix;
 import io.zerows.extension.runtime.crud.uca.dao.Operate;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
 
 import static io.zerows.extension.runtime.crud.util.Ix.LOG;
 

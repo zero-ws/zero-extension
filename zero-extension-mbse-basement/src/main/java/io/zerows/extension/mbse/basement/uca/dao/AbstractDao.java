@@ -1,19 +1,19 @@
 package io.zerows.extension.mbse.basement.uca.dao;
 
-import io.horizon.eon.VValue;
-import io.horizon.uca.log.Annal;
-import io.horizon.uca.qr.Criteria;
-import io.modello.specification.HRecord;
-import io.modello.specification.action.HDao;
-import io.modello.specification.atom.HAtom;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.uca.qr.Criteria;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.uca.dao.internal.*;
 import io.zerows.extension.mbse.basement.uca.jdbc.AoConnection;
 import io.zerows.extension.mbse.basement.uca.metadata.AoSentence;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.operation.HDao;
 
 import java.util.Objects;
 

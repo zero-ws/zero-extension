@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.io;
 
-import io.horizon.eon.VValue;
-import io.zerows.extension.mbse.basement.uca.plugin.IoHub;
-import io.modello.specification.HRecord;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.exception._417EventTypeConflictException;
-import io.vertx.up.fn.Fn;
+import io.zerows.extension.mbse.basement.uca.plugin.IoHub;
+import io.zerows.specification.modeling.HRecord;
 
 public class IoSingle extends AbstractIo {
 

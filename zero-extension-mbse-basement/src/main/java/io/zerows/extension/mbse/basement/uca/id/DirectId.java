@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.uca.id;
 
-import io.modello.specification.HRecord;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;
 import io.zerows.extension.mbse.basement.exception._417PrimaryKeyResultException;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;

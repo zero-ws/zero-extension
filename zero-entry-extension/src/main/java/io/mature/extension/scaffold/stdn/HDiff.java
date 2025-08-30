@@ -1,12 +1,12 @@
 package io.mature.extension.scaffold.stdn;
 
-import io.horizon.eon.em.typed.ChangeFlag;
 import io.mature.extension.refine.Ox;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
 
 import java.util.Objects;
 import java.util.Set;

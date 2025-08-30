@@ -3,8 +3,8 @@ package io.zerows.extension.runtime.crud.uca.input.audit;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.crud.util.Ix;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 
 import java.time.Instant;
 import java.util.Objects;

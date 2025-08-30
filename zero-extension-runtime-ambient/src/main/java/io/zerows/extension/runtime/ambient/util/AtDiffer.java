@@ -1,15 +1,15 @@
 package io.zerows.extension.runtime.ambient.util;
 
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.compare.Vs;
-import io.modello.atom.normalize.KMarkAtom;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.atom.HAtom;
-import io.modello.specification.atom.HAttribute;
-import io.modello.specification.meta.HMetaField;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.core.uca.compare.Vs;
+import io.zerows.common.normalize.KMarkAtom;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.specification.modeling.metadata.HMetaField;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.ambient.eon.em.ActivityStatus;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
 import io.zerows.extension.runtime.skeleton.refine.Ke;

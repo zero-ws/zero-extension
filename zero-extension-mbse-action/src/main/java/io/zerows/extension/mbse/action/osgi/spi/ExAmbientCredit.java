@@ -1,11 +1,11 @@
 package io.zerows.extension.mbse.action.osgi.spi;
 
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.core.web.mbse.atom.specification.KCredential;
 import io.zerows.extension.runtime.skeleton.osgi.spi.web.Credential;
 import io.zerows.extension.runtime.skeleton.refine.Ke;

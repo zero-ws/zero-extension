@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.uca.reference;
 
-import io.modello.specification.HRecord;
 import io.vertx.core.Future;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
+import io.zerows.specification.modeling.HRecord;
 
 /**
  * ## Reference Processor ( Ray )
@@ -21,8 +21,8 @@ import io.zerows.extension.mbse.basement.atom.element.DataTpl;
  *
  * The `Tool` type should be two common object such as:
  *
- * - {@link io.vertx.core.json.JsonObject} content of Json Record, the core type is {@link HRecord}.
- * - {@link io.vertx.core.json.JsonArray} content of Json Record[], the core type is {@link HRecord}[].
+ * - {@link io.vertx.core.json.JsonObject} content of InJson Record, the core type is {@link HRecord}.
+ * - {@link io.vertx.core.json.JsonArray} content of InJson Record[], the core type is {@link HRecord}[].
  *
  * ### 3. Standard Mode
  *

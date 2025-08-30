@@ -3,11 +3,11 @@ package io.zerows.extension.runtime.workflow.uca.central;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.runtime.WTransition;
 import io.zerows.extension.runtime.workflow.uca.toolkit.URequest;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
 
 import java.util.Objects;
 
@@ -45,7 +45,7 @@ public abstract class AbstractTransfer extends BehaviourStandard {
                 final JsonObject recordJ = (JsonObject) record;
                 URequest.inputJ(requestJ, recordJ, true);
             } else if (record instanceof JsonArray) {
-                // Record is JsonArray ( Each Json )
+                // Record is JsonArray ( Each InJson )
                 final JsonArray recordA = (JsonArray) record;
                 final JsonArray modelChild = new JsonArray();
                 Ut.itJArray(recordA)

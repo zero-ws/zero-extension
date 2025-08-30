@@ -1,8 +1,8 @@
 package io.zerows.extension.commerce.lbs.agent.api;
 
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.eon.KWeb;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
+import io.zerows.core.constant.KWeb;
 import io.zerows.extension.commerce.lbs.eon.Addr;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.HeaderParam;

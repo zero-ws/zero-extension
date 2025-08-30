@@ -3,7 +3,7 @@ package io.zerows.extension.mbse.basement.uca.file;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.util.Ao;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 import java.util.HashSet;
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * 读取目录 runtime 下的 Model 和 Entity 相关定义文件
- * 1. Model 的信息位于 runtime/model 目录下，每一个模型一个文件
- * 2. Entity 的信息位于 runtime/schema 目录下，每一个实体一个文件
+ * 读取目录 running 下的 Model 和 Entity 相关定义文件
+ * 1. Model 的信息位于 running/model 目录下，每一个模型一个文件
+ * 2. Entity 的信息位于 running/schema 目录下，每一个实体一个文件
  */
 public class FileReader implements AoFile {
 

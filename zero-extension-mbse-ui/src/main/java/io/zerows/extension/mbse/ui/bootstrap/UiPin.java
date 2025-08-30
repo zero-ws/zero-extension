@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.ui.bootstrap;
 
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.configuration.boot.HRegistry;
 
 import static io.zerows.extension.mbse.ui.util.Ui.LOG;
 

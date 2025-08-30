@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.ambient.uca.differ;
 
-import io.horizon.atom.program.KRef;
-import io.horizon.exception.web._501NotSupportException;
-import io.modello.atom.normalize.KMarkAtom;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.atom.HAtom;
+import io.zerows.common.program.KRef;
+import io.zerows.core.exception.web._501NotSupportException;
+import io.zerows.common.normalize.KMarkAtom;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.specification.modeling.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityChangeDao;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;

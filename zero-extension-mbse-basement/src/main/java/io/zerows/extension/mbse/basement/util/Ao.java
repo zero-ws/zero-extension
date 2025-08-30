@@ -1,24 +1,24 @@
 package io.zerows.extension.mbse.basement.util;
 
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.log.Log;
-import io.horizon.uca.log.LogModule;
-import io.modello.atom.normalize.KIdentity;
-import io.modello.specification.HRecord;
-import io.modello.specification.action.HDao;
-import io.modello.specification.atom.HAtom;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
-import io.zerows.core.domain.atom.element.JBag;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.common.normalize.KIdentity;
 import io.zerows.core.database.atom.Database;
+import io.zerows.core.uca.log.Log;
+import io.zerows.core.uca.log.LogModule;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
 import io.zerows.extension.mbse.basement.osgi.spi.robin.Switcher;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
+import io.zerows.module.domain.atom.element.JBag;
 import io.zerows.plugins.office.excel.atom.ExTable;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.operation.HDao;
 import org.jooq.Converter;
 
 import java.util.ArrayList;

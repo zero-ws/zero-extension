@@ -3,7 +3,7 @@
     "selector": "io.horizon.spi.secure.ConfineKind",
     "kind": "type",
     "comment": [
-        "type定义：io.vertx.up.eon.em.ViewType",
+        "type定义：io.zerows.core.constant.em.ViewType",
         "Workflow -- 工作流专用视图",
         "Model -- 动态建模视图"
     ],

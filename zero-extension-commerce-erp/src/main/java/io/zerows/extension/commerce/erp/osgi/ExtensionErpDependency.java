@@ -1,7 +1,8 @@
 package io.zerows.extension.commerce.erp.osgi;
 
-import io.zerows.core.metadata.zdk.service.ServiceConnector;
 import io.zerows.extension.runtime.skeleton.osgi.ExtensionServiceConnector;
+import io.zerows.module.metadata.zdk.dependency.AbstractConnectorBase;
+import io.zerows.module.metadata.zdk.service.ServiceConnector;
 import org.osgi.framework.Bundle;
 
 /**
@@ -14,6 +15,6 @@ class ExtensionErpDependency extends ExtensionServiceConnector {
     }
 
     static ServiceConnector of(final Bundle bundle) {
-        return of(bundle, ExtensionErpDependency::new);
+        return AbstractConnectorBase.of(bundle, ExtensionErpDependency::new);
     }
 }

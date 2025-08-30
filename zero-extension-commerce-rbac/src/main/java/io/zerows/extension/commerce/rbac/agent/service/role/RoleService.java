@@ -1,13 +1,11 @@
-
 package io.zerows.extension.commerce.rbac.agent.service.role;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.atom.configuration.MDConfiguration;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RRolePermDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SPermissionDao;
@@ -18,6 +16,7 @@ import io.zerows.extension.commerce.rbac.domain.tables.pojos.SRole;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SView;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.extension.commerce.rbac.eon.ScConstant;
+import io.zerows.module.metadata.atom.configuration.MDConfiguration;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -40,9 +39,9 @@ public class RoleService implements RoleStub {
         final SRole sRole = Ut.fromJson(data, SRole.class);
 
         return Ux.Jooq.on(SRoleDao.class).insertAsync(sRole)
-                .compose(role -> savePermissions(role.getKey(), queryCondition))
-                .compose(nil -> saveDefaultView(sRole, user,initializePermissions))
-                .map(role -> (Ux.toJson(sRole)));
+            .compose(role -> this.savePermissions(role.getKey(), queryCondition))
+            .compose(nil -> this.saveDefaultView(sRole, user, initializePermissions))
+            .map(role -> (Ux.toJson(sRole)));
     }
 
     /**
@@ -50,21 +49,21 @@ public class RoleService implements RoleStub {
      */
     private Future<JsonObject> savePermissions(final String roleId, final JsonObject queryCondition) {
         return Ux.Jooq.on(SPermissionDao.class).<SPermission>fetchAsync(queryCondition)
-                .compose(permissions -> {
-                    final JsonArray relations = new JsonArray();
-                    for (SPermission permission : permissions) {
-                        relations.add(new JsonObject()
-                                .put(AuthKey.F_ROLE_ID, roleId)
-                                .put(AuthKey.F_PERM_ID, permission.getKey()));
-                    }
-                    return Ux.Jooq.on(RRolePermDao.class).insertAsync(relations);
-                }).compose(niv->Ux.future());
+            .compose(permissions -> {
+                final JsonArray relations = new JsonArray();
+                for (final SPermission permission : permissions) {
+                    relations.add(new JsonObject()
+                        .put(AuthKey.F_ROLE_ID, roleId)
+                        .put(AuthKey.F_PERM_ID, permission.getKey()));
+                }
+                return Ux.Jooq.on(RRolePermDao.class).insertAsync(relations);
+            }).compose(niv -> Ux.future());
     }
 
     /**
      * 构造并保存默认视图
      */
-    private Future<Void> saveDefaultView(final SRole role, final User user,final JsonObject initPermissions) {
+    private Future<Void> saveDefaultView(final SRole role, final User user, final JsonObject initPermissions) {
         final SView view = new SView();
         view.setKey(UUID.randomUUID().toString());
         view.setName(AuthKey.DEFAULT);

@@ -1,22 +1,22 @@
 package io.zerows.extension.mbse.basement.uca.acc;
 
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.macrocosm.specification.program.HArk;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.action.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.core.constant.KName;
 import io.zerows.core.database.atom.Database;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
+import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MAccDao;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAcc;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.operation.HDao;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

@@ -2,8 +2,8 @@ package io.zerows.extension.commerce.rbac.agent.api;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
 import io.zerows.extension.commerce.rbac.agent.service.business.GroupStub;
 import io.zerows.extension.commerce.rbac.agent.service.business.RightsStub;
 import io.zerows.extension.commerce.rbac.eon.Addr;

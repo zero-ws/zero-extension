@@ -1,6 +1,6 @@
 package io.mature.extension.error;
 
-import io.horizon.exception.WebException;
+import io.zerows.core.exception.WebException;
 
 /**
  * ## 「Error-400006」环境异常

@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.crud.uca.destine;
 
-import io.modello.eon.em.EmModel;
-import io.zerows.extension.runtime.crud.uca.desk.IxMod;
-import io.zerows.core.domain.atom.specification.KPoint;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 import io.zerows.core.web.mbse.atom.specification.KModule;
+import io.zerows.extension.runtime.crud.uca.desk.IxMod;
+import io.zerows.module.domain.atom.specification.KPoint;
 
 import java.util.Objects;
 import java.util.function.Supplier;

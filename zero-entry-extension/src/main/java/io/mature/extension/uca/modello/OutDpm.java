@@ -1,10 +1,10 @@
 package io.mature.extension.uca.modello;
 
-import io.horizon.atom.program.Kv;
-import io.modello.specification.HRecord;
-import io.modello.specification.uca.OComponent;
+import io.zerows.common.program.Kv;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.ambient.osgi.spi.component.ExAttributeComponent;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.property.OComponent;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

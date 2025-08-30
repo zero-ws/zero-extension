@@ -3,7 +3,7 @@ package io.zerows.extension.commerce.finance.uca.replica;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 import java.util.List;
 import java.util.Objects;

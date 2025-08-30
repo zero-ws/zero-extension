@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.uca.op.aop;
 
-import io.horizon.eon.em.typed.ChangeFlag;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.op.Agonic;
 import io.zerows.extension.runtime.crud.eon.Pooled;

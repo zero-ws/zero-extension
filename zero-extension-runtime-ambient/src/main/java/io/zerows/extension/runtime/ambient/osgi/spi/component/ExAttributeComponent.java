@@ -1,13 +1,13 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.component;
 
-import io.horizon.atom.datamation.KDictSource;
-import io.horizon.atom.datamation.KDictUse;
-import io.horizon.eon.em.EmDict;
+import io.zerows.common.datamation.KDictSource;
+import io.zerows.common.datamation.KDictUse;
+import io.zerows.agreed.constant.em.EmDict;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.uca.dict.Dpm;
 
 import java.util.Objects;

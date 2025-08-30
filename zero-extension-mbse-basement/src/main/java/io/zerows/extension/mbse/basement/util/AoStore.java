@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.util;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
-import io.horizon.exception.internal.EmptyIoException;
+import io.zerows.agreed.constant.VPath;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.exception.internal.EmptyIoException;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataModel;
 import io.zerows.extension.mbse.basement.atom.builtin.DataSchema;
 import io.zerows.extension.mbse.basement.bootstrap.AoPin;
@@ -14,10 +14,10 @@ import java.util.Objects;
 ;
 
 class AoStore {
-    private static final String PATH_EXCEL = "runtime/excel/";
-    private static final String PATH_JSON = "runtime/json/";
-    private static final String PATH_ADJUSTER = "runtime/adjuster/config.json";
-    private static final String PATH_MODELING = "runtime/adjuster/modeling";
+    private static final String PATH_EXCEL = "running/excel/";
+    private static final String PATH_JSON = "running/json/";
+    private static final String PATH_ADJUSTER = "running/adjuster/config.json";
+    private static final String PATH_MODELING = "running/adjuster/modeling";
 
     static String namespace(final String appName) {
         final String prefix = AoPin.getConfig().getNamespace();

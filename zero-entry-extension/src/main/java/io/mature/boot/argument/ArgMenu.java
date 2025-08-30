@@ -1,6 +1,6 @@
 package io.mature.boot.argument;
 
-import io.vertx.up.eon.KName;
+import io.zerows.core.constant.KName;
 
 import java.util.List;
 import java.util.Objects;

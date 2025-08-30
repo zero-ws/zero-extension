@@ -2,8 +2,8 @@ package io.zerows.extension.runtime.workflow.uca.ticket;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;
 import io.zerows.extension.runtime.workflow.atom.runtime.WRecord;
@@ -37,7 +37,7 @@ class SyncTicket extends AbstractSync {
                     requestJ.put(KName.SERIAL, ticketIn.getSerial());
                 }
 
-                // Compress Json
+                // Compress InJson
                 URequest.reduceJ(ticketJ);
                 final WTicket combine = Ux.updateT(ticketIn, ticketJ);
                 return tJq.updateAsync(combine);

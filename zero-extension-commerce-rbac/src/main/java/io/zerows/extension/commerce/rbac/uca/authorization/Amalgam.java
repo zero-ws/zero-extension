@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.authorization;
 
-import io.horizon.uca.log.Annal;
+import io.zerows.core.uca.log.Annal;
 import io.zerows.extension.commerce.rbac.uca.logged.ProfileGroup;
 import io.zerows.extension.commerce.rbac.uca.logged.ProfileRole;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 import java.util.*;
 import java.util.stream.Collectors;

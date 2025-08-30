@@ -1,23 +1,23 @@
 package io.zerows.extension.mbse.ui.agent.api;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Me;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Me;
+import io.zerows.core.annotations.Queue;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.ui.agent.service.*;
 import io.zerows.extension.mbse.ui.eon.Addr;
 import io.zerows.extension.mbse.ui.eon.em.ControlType;
 import io.zerows.extension.mbse.ui.eon.em.OpType;
 import io.zerows.extension.mbse.ui.eon.em.ViewType;
 import io.zerows.extension.mbse.ui.util.Ui;
+import io.zerows.module.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 
 import java.util.Objects;

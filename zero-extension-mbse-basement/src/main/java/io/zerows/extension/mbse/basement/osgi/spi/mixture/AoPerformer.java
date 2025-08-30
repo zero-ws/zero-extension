@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.osgi.spi.mixture;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.core.web.mbse.uca.mixture.HPerformer;

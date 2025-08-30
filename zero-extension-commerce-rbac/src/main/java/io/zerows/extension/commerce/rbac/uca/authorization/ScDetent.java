@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.authorization;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcCritical;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcHorizon;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcOverlook;

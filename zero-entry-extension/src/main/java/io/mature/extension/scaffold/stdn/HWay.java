@@ -1,10 +1,10 @@
 package io.mature.extension.scaffold.stdn;
 
 import io.vertx.core.Future;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import io.zerows.core.web.mbse.atom.runner.ActIn;
 import io.zerows.core.web.mbse.atom.runner.ActOut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
 
 /**
  * 「内部流程」用于描述内部处理流程

@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapid;
 
-import io.horizon.uca.log.Annal;
+import io.zerows.core.uca.log.Annal;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;

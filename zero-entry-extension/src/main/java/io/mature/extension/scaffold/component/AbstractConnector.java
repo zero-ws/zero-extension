@@ -1,7 +1,7 @@
 package io.mature.extension.scaffold.component;
 
-import io.modello.atom.app.KIntegration;
-import io.vertx.up.annotations.Contract;
+import io.zerows.common.app.KIntegration;
+import io.zerows.core.annotations.Contract;
 
 /**
  * ## 「Connector」顶层连接器

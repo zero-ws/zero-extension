@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.uca.valve;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.mbse.action.atom.JtUri;
 

@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.finance.uca.enter;
 
-import io.horizon.exception.web._501NotImplementException;
+import io.zerows.core.exception.web._501NotImplementException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

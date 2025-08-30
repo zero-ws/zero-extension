@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.atom.element;
 
-import io.horizon.uca.cache.Cc;
-import io.modello.eon.em.EmKey;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.constant.em.modeling.EmKey;
 
 import java.io.Serializable;
 import java.util.concurrent.ConcurrentHashMap;

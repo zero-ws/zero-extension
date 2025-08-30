@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.ambient.util;
 
-import io.horizon.uca.cache.Cc;
-import io.horizon.uca.log.Log;
-import io.horizon.uca.log.LogModule;
-import io.modello.specification.atom.HAtom;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.uca.log.Log;
+import io.zerows.core.uca.log.LogModule;
+import io.zerows.specification.modeling.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityChange;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XNumber;

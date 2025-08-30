@@ -1,16 +1,16 @@
 package io.zerows.extension.runtime.skeleton.refine;
 
-import io.horizon.uca.log.Log;
-import io.horizon.uca.log.LogModule;
-import io.macrocosm.specification.program.HArk;
-import io.modello.specification.meta.HMetaAtom;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import io.vertx.up.eon.KName;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
+import io.zerows.core.constant.KName;
+import io.zerows.core.uca.log.Log;
+import io.zerows.core.uca.log.LogModule;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.metadata.HMetaAtom;
 import org.jooq.Configuration;
 
 import java.util.List;

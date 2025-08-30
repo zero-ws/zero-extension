@@ -1,17 +1,17 @@
 package io.zerows.extension.runtime.crud.uca.desk;
 
-import io.horizon.eon.VString;
-import io.horizon.exception.WebException;
-import io.horizon.exception.web._500InternalServerException;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KJoin;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.exception.WebException;
+import io.zerows.core.exception.web._500InternalServerException;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 import io.zerows.extension.runtime.crud.exception._404ModuleMissingException;
 import io.zerows.extension.runtime.crud.util.Ix;
+import io.zerows.module.domain.atom.specification.KJoin;
 
 import java.util.Objects;
 

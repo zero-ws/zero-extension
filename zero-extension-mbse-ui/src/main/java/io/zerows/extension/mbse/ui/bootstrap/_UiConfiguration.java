@@ -1,19 +1,19 @@
 package io.zerows.extension.mbse.ui.bootstrap;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
-import io.horizon.uca.log.Annal;
-import io.macrocosm.specification.app.HAmbient;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.atom.configuration.MDConfiguration;
+import io.zerows.agreed.constant.VPath;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.constant.KName;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.mbse.ui.atom.UiConfig;
 import io.zerows.extension.mbse.ui.eon.UiConstant;
 import io.zerows.extension.runtime.skeleton.eon.KeMsg;
+import io.zerows.module.metadata.atom.configuration.MDConfiguration;
+import io.zerows.specification.access.app.HAmbient;
 
 import java.util.List;
 import java.util.Objects;

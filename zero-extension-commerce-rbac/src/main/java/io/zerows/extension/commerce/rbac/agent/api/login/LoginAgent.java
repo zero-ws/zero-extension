@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.agent.api.login;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Codex;
-import io.vertx.up.annotations.EndPoint;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Codex;
+import io.zerows.core.annotations.EndPoint;
 import io.zerows.core.web.io.annotations.BodyParam;
 import io.zerows.extension.commerce.rbac.eon.Addr;
 import jakarta.ws.rs.Consumes;

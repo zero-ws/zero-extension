@@ -2,10 +2,10 @@ package io.zerows.extension.commerce.rbac.agent.api;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.FileUpload;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Codex;
-import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Codex;
+import io.zerows.core.annotations.EndPoint;
+import io.zerows.unity.Ux;
 import io.zerows.core.web.io.annotations.StreamParam;
 import io.zerows.extension.commerce.rbac.eon.Addr;
 import jakarta.ws.rs.POST;

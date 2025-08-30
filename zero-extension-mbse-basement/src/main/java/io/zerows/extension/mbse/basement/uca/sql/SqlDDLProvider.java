@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.sql;
 
-import io.horizon.eon.VValue;
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.modello.eon.em.EmKey;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.agreed.constant.em.modeling.EmKey;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MKey;

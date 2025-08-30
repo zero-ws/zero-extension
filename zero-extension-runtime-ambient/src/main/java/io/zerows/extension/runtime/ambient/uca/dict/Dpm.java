@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.ambient.uca.dict;
 
-import io.horizon.atom.datamation.KDictSource;
-import io.horizon.eon.em.EmDict;
+import io.zerows.common.datamation.KDictSource;
+import io.zerows.agreed.constant.em.EmDict;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;

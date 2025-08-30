@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.tpl.util;
 
-import io.horizon.uca.log.Log;
-import io.horizon.uca.log.LogModule;
+import io.zerows.core.uca.log.Log;
+import io.zerows.core.uca.log.LogModule;
 
 /*
  * Tool class available in current service only

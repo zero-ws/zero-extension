@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.agent.api;
 
-import io.horizon.eon.em.typed.ChangeFlag;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.crud.uca.desk.IxPanel;
@@ -8,8 +8,8 @@ import io.zerows.extension.runtime.crud.uca.desk.IxReply;
 import io.zerows.extension.runtime.crud.uca.desk.IxRequest;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
 import io.zerows.extension.runtime.crud.uca.op.Agonic;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.eon.Addr;
 import io.zerows.extension.runtime.crud.eon.em.ApiSpec;

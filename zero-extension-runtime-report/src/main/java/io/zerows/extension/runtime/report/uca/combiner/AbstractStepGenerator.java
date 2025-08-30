@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.report.uca.combiner;
 
-import io.horizon.eon.VString;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.atom.RGeneration;
 
 import java.util.function.Consumer;

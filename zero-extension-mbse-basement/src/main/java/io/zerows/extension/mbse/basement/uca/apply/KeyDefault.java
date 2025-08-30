@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.apply;
 
-import io.modello.eon.em.EmKey;
+import io.zerows.agreed.constant.em.modeling.EmKey;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MEntity;
 
 import java.util.Locale;

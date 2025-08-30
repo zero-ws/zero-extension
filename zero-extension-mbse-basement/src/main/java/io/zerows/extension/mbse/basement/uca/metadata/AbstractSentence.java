@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.uca.metadata;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
-import io.horizon.uca.log.Annal;
-import io.modello.atom.app.KDatabase;
-import io.modello.eon.em.EmKey;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.common.app.KDatabase;
+import io.zerows.agreed.constant.em.modeling.EmKey;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MKey;
 import io.zerows.extension.mbse.basement.eon.em.CheckResult;

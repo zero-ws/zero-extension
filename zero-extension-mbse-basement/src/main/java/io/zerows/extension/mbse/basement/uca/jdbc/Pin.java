@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.jdbc;
 
-import io.horizon.uca.log.Annal;
-import io.modello.atom.app.KDatabase;
-import io.modello.specification.action.HDao;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.common.app.KDatabase;
+import io.zerows.specification.modeling.operation.HDao;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.exception._501PinNotFoundException;
 import io.zerows.extension.mbse.basement.uca.metadata.AoBuilder;
 import io.zerows.extension.mbse.basement.util.Ao;

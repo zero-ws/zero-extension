@@ -2,7 +2,7 @@
 # 模块描述符
 # --------------------
 shape:
-  id: zero-extension-runtime-ambient
+  id: zero-extension-running-ambient
   name: "Zero.Extension.Runtime.Ambient"
   # -------------------------------------------------------
   # 默认配置目录直接走 name 来完成，可解析也可自动化

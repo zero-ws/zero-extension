@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.atom;
 
-import io.horizon.eon.VValue;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
+import io.zerows.module.domain.atom.commune.Vis;
 
 import java.io.Serializable;
 import java.util.HashSet;

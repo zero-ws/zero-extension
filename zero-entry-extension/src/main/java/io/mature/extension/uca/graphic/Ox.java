@@ -1,6 +1,6 @@
 package io.mature.extension.uca.graphic;
 
-import io.horizon.eon.em.typed.ChangeFlag;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

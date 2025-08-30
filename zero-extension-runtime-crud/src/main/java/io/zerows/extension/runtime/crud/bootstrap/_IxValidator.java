@@ -1,10 +1,10 @@
 package io.zerows.extension.runtime.crud.bootstrap;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
+import io.zerows.agreed.constant.VPath;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.atom.Rule;
 import io.zerows.extension.runtime.crud.eon.IxFolder;
 

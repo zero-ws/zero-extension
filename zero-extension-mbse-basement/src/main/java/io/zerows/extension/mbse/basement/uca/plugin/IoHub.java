@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.plugin;
 
-import io.horizon.uca.cache.Cc;
-import io.modello.specification.HRecord;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
+import io.zerows.specification.modeling.HRecord;
 
 /**
  * ## Nerve System

@@ -2,12 +2,12 @@ package io.zerows.extension.commerce.rbac.atom;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KQr;
-import io.zerows.jackson.databind.JsonObjectDeserializer;
-import io.zerows.jackson.databind.JsonObjectSerializer;
+import io.zerows.extend.jackson.databind.JsonObjectDeserializer;
+import io.zerows.extend.jackson.databind.JsonObjectSerializer;
 
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;

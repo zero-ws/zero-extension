@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.id;
 
-import io.modello.specification.HRecord;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;

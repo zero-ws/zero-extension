@@ -1,13 +1,13 @@
 package io.zerows.extension.runtime.workflow.plugins.query;
 
-import io.horizon.eon.VString;
-import io.horizon.specification.action.HQR;
-import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
+import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExUser;
+import io.zerows.specification.vital.HQR;
 
 /**
  * 本组专用查询组件

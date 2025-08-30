@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
-import io.vertx.up.fn.Fn;
+import io.zerows.core.fn.Fn;
 
 import java.io.Serializable;
 import java.util.ArrayList;

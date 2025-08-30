@@ -1,14 +1,14 @@
 package io.zerows.extension.mbse.basement.uca.reference;
 
-import io.horizon.atom.program.Kv;
-import io.horizon.uca.cache.Cc;
-import io.modello.atom.reference.RResult;
-import io.modello.eon.em.EmValue;
-import io.modello.specification.HRecord;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.element.JAmb;
+import io.zerows.agreed.constant.em.modeling.EmValue;
+import io.zerows.common.program.Kv;
+import io.zerows.common.reference.RResult;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.util.Ut;
+import io.zerows.module.domain.atom.element.JAmb;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Arrays;
 import java.util.List;

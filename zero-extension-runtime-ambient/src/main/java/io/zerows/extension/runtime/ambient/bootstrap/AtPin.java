@@ -1,19 +1,19 @@
 package io.zerows.extension.runtime.ambient.bootstrap;
 
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.assembly.uca.di.DiPlugin;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBStub;
 import io.zerows.extension.runtime.ambient.agent.service.file.DocBuilder;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Prerequisite;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.module.assembly.uca.di.DiPlugin;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.configuration.boot.HRegistry;
 
 import static io.zerows.extension.runtime.ambient.util.At.LOG;
 

@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.crud.uca.input.qr;
 
-import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.constant.KName;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.zerows.core.domain.atom.specification.KJoin;
-import io.zerows.core.web.mbse.atom.specification.KModule;
+import io.zerows.module.domain.atom.specification.KJoin;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

@@ -1,15 +1,15 @@
 package io.zerows.extension.runtime.crud.bootstrap;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KModule;
-import io.zerows.core.metadata.atom.MultiKeyMap;
-import io.zerows.core.metadata.atom.configuration.MDConfiguration;
-import io.zerows.core.metadata.atom.configuration.modeling.MDEntity;
-import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.crud.eon.IxConstant;
 import io.zerows.extension.runtime.crud.eon.IxMsg;
+import io.zerows.module.metadata.atom.MultiKeyMap;
+import io.zerows.module.metadata.atom.configuration.MDConfiguration;
+import io.zerows.module.metadata.atom.configuration.modeling.MDEntity;
+import io.zerows.module.metadata.uca.environment.DevEnv;
 
 import java.util.Objects;
 import java.util.Set;

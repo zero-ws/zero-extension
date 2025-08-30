@@ -1,12 +1,12 @@
 package io.mature.extension.refine;
 
-import io.horizon.uca.qr.Criteria;
-import io.modello.specification.HRecord;
+import io.zerows.core.uca.qr.Criteria;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.Arrays;
 import java.util.Objects;

@@ -122,9 +122,9 @@ public class IApi extends TableImpl<IApiRecord> {
     public final TableField<IApiRecord, String> WORKER_CLASS = createField(DSL.name("WORKER_CLASS"), SQLDataType.VARCHAR(255), this, "「workerClass」- OX | PLUG专用，请求执行器对应的JavaClass名称");
     /**
      * The column <code>ZDB.I_API.WORKER_JS</code>. 「workerJs」- JS
-     * 专用，JavaScript路径：runtime/workers/&lt;app&gt;/下的执行器
+     * 专用，JavaScript路径：running/workers/&lt;app&gt;/下的执行器
      */
-    public final TableField<IApiRecord, String> WORKER_JS = createField(DSL.name("WORKER_JS"), SQLDataType.VARCHAR(255), this, "「workerJs」- JS 专用，JavaScript路径：runtime/workers/<app>/下的执行器");
+    public final TableField<IApiRecord, String> WORKER_JS = createField(DSL.name("WORKER_JS"), SQLDataType.VARCHAR(255), this, "「workerJs」- JS 专用，JavaScript路径：running/workers/<app>/下的执行器");
     /**
      * The column <code>ZDB.I_API.SERVICE_ID</code>. 「serviceId」- 关联的服务ID
      */

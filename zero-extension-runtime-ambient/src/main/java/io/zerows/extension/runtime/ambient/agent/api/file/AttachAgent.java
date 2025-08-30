@@ -2,10 +2,10 @@ package io.zerows.extension.runtime.ambient.agent.api.file;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.FileUpload;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.io.annotations.StreamParam;
 import io.zerows.extension.runtime.ambient.bootstrap.AtConfig;
 import io.zerows.extension.runtime.ambient.bootstrap.AtPin;

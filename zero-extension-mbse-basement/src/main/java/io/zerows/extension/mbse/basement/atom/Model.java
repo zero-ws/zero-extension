@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.atom;
 
-import io.modello.specification.action.HLinkage;
-import io.modello.specification.atom.HLife;
-import io.modello.specification.atom.HModel;
+import io.zerows.specification.modeling.operation.HLinkage;
+import io.zerows.specification.modeling.HLife;
+import io.zerows.specification.modeling.HModel;
 import io.zerows.extension.mbse.basement.atom.element.DataKey;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAttribute;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;

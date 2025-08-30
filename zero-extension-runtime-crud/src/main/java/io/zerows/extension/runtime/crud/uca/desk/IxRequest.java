@@ -2,15 +2,15 @@ package io.zerows.extension.runtime.crud.uca.desk;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.em.EmPRI;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Vis;
-import io.zerows.core.domain.atom.specification.KJoin;
-import io.zerows.core.domain.atom.specification.KPoint;
+import io.zerows.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.constant.em.EmPRI;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.eon.em.ApiSpec;
+import io.zerows.module.domain.atom.commune.Vis;
+import io.zerows.module.domain.atom.specification.KJoin;
+import io.zerows.module.domain.atom.specification.KPoint;
 
 import java.util.Objects;
 
@@ -136,7 +136,7 @@ public class IxRequest {
         IxMod standBy = null;
         if (Objects.isNull(connected)) {
             if (Objects.nonNull(this.bodyJ)) {
-                // By Json
+                // By InJson
                 standBy = junc.connect(this.bodyJ);
             } else if (Objects.nonNull(this.bodyA)) {
                 // By Array

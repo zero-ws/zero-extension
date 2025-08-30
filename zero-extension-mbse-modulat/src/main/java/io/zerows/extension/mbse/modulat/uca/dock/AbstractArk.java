@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.modulat.uca.dock;
 
-import io.horizon.eon.VValue;
-import io.modello.eon.em.EmModel;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.modulat.agent.service.BagArgService;
 import io.zerows.extension.mbse.modulat.agent.service.BagArgStub;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;

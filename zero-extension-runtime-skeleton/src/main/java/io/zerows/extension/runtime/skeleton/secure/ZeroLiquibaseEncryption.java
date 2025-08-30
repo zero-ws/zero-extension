@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.skeleton.secure;
 
-import io.horizon.atom.common.KPair;
-import io.horizon.spi.cloud.HED;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.common.program.KPair;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
+import io.zerows.core.spi.cloud.HED;
 
 import java.util.Properties;
 import java.util.regex.Matcher;

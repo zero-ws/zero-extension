@@ -1,16 +1,16 @@
 package io.zerows.extension.mbse.ui.agent.service.column;
 
-import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiColumnDao;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiColumn;
+import io.zerows.module.domain.atom.commune.Vis;
 
 import java.util.Comparator;
 import java.util.stream.Collectors;

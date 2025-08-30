@@ -1,14 +1,14 @@
 package io.zerows.extension.mbse.basement.osgi.spi.mixture;
 
-import io.horizon.uca.boot.KPivot;
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.program.HArk;
-import io.modello.specification.action.HLoad;
-import io.modello.specification.atom.HAtom;
+import io.zerows.core.running.boot.KPivot;
 import io.zerows.core.web.mbse.exception._404ModelNotFoundException;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.eon.AoCache;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.specification.modeling.operation.HLoad;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

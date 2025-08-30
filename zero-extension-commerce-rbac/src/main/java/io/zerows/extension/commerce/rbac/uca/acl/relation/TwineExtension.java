@@ -1,16 +1,15 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
-import io.horizon.atom.program.KRef;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.typed.UObject;
+import io.zerows.unity.Ux;
+import io.zerows.common.program.KRef;
+import io.zerows.core.constant.KName;
 import io.zerows.core.database.jooq.operation.UxJoin;
 import io.zerows.core.database.jooq.operation.UxJooq;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KQr;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
@@ -20,6 +19,7 @@ import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;
 import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExOwner;
 import io.zerows.extension.runtime.skeleton.secure.Twine;
+import io.zerows.module.domain.atom.typed.UObject;
 
 import java.util.Collection;
 import java.util.List;
@@ -237,7 +237,7 @@ class TwineExtension implements Twine<SUser> {
          * Simple situation for extension information processing
          * 1. User Extension `executor` bind to UxJooq running
          * 2. Zero extension provide the configuration part and do executor
-         * 3. Returned data format is Json of Extension
+         * 3. Returned data format is InJson of Extension
          */
         LOG.Web.info(this.getClass(), AuthMsg.EXTENSION_BY_USER, user.getModelKey());
         return executor.apply(qr).compose(extensionJ -> {

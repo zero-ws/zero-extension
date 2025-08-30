@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.crud.uca.destine;
 
-import io.horizon.annotations.Memory;
-import io.horizon.uca.cache.Cc;
-import io.modello.eon.em.EmModel;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.annotations.Memory;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

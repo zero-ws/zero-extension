@@ -1,17 +1,17 @@
 package io.zerows.extension.runtime.crud.uca.input;
 
-import io.horizon.spi.modeler.Indent;
-import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.crud.uca.desk.IxMod;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.spi.modeler.Indent;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KModule;
+import io.zerows.extension.runtime.crud.uca.desk.IxMod;
+import io.zerows.module.domain.atom.specification.KField;
 
 import java.util.Objects;
 import java.util.Queue;

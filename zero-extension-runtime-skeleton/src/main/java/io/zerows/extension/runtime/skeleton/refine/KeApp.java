@@ -1,11 +1,11 @@
 package io.zerows.extension.runtime.skeleton.refine;
 
-import io.horizon.uca.boot.KPivot;
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.program.HArk;
 import io.vertx.core.MultiMap;
-import io.vertx.up.eon.KWeb;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KWeb;
+import io.zerows.core.util.Ut;
+import io.zerows.core.running.boot.KPivot;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.access.app.HArk;
 
 /**
  * @author lang : 2023-06-07
@@ -24,7 +24,7 @@ class KeApp {
         if (Ut.isNotNil(sigma)) {
             return ark(sigma);
         }
-        
+
         /* 3. X-App-Key 检索 */
         final String appKey = headers.get(KWeb.HEADER.X_APP_KEY);
         if (Ut.isNotNil(appKey)) {

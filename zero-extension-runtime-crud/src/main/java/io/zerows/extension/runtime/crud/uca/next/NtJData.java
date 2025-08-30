@@ -1,17 +1,17 @@
 package io.zerows.extension.runtime.crud.uca.next;
 
-import io.horizon.eon.em.web.HttpStatusCode;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.core.constant.em.EmPRI;
+import io.zerows.core.util.Ut;
+import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.desk.IxReply;
-import io.vertx.up.eon.em.EmPRI;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KJoin;
-import io.zerows.core.domain.atom.specification.KPoint;
-import io.zerows.core.domain.uca.destine.Conflate;
-import io.zerows.core.web.mbse.atom.specification.KModule;
+import io.zerows.module.domain.atom.specification.KJoin;
+import io.zerows.module.domain.atom.specification.KPoint;
+import io.zerows.module.domain.uca.destine.Conflate;
 
 import java.util.Objects;
 

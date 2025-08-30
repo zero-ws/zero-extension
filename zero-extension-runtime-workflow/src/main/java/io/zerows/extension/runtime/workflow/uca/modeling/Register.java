@@ -1,12 +1,12 @@
 package io.zerows.extension.runtime.workflow.uca.modeling;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
 
 
 /**
@@ -40,7 +40,7 @@ public interface Register {
         if (params.containsKey(KName.RECORD)) {
             final Object record = params.getValue(KName.RECORD);
             if (record instanceof JsonObject) {
-                // Json Processing
+                // InJson Processing
                 return CC_REGISTER.pick(RegisterJ::new, RegisterJ.class.getName());
             } else if (record instanceof JsonArray) {
                 // Array Processing

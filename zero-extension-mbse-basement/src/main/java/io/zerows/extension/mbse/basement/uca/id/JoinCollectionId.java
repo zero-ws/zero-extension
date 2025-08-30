@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.uca.id;
 
-import io.modello.specification.HRecord;
 import io.zerows.extension.mbse.basement.atom.Model;
+import io.zerows.specification.modeling.HRecord;
 
 class JoinCollectionId extends AbstractId {
 

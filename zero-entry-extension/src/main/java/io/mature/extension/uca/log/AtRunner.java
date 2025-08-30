@@ -1,15 +1,15 @@
 package io.mature.extension.uca.log;
 
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.compare.Vs;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.atom.HAttribute;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.core.uca.compare.Vs;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.specification.modeling.HAttribute;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;

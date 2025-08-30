@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.eon;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.uca.apply.AoDefault;
 import io.zerows.extension.mbse.basement.uca.jdbc.AoConnection;

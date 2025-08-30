@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.uca.apply;
 
-import io.modello.eon.em.EmModel;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
+import io.zerows.core.constant.KName;
 
 import static io.zerows.extension.mbse.basement.util.Ao.LOG;
 

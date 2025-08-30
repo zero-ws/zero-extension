@@ -1,21 +1,22 @@
 package io.mature.stellar;
 
-import io.horizon.eon.em.Environment;
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.eon.spec.VWeb;
-import io.horizon.runtime.Macrocosm;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.element.JSix;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.agreed.constant.spec.VWeb;
+import io.zerows.core.running.HMacrocosm;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.module.domain.atom.element.JSix;
+import io.zerows.specification.access.app.HAmbient;
 
 /**
  * 读取配置文件
  * <pre><code>
- *     runtime/configuration.json
+ *     running/configuration.json
  * </code></pre>
  * 根据配置文件中的信息直接初始化所需的基础信息，并链接 `stellar` （旧版开发）系统为模拟测试系统做支撑
- * 此处加载的内容为上下文信息，虽然和 {@link io.macrocosm.specification.app.HAmbient} 不等价，但此处
+ * 此处加载的内容为上下文信息，虽然和 {@link HAmbient} 不等价，但此处
  * 的系统给开发人员提供了模拟测试环境，方便搭建测试框架，针对任何开发内容进行测试。
  * <pre><code>
  *     1. stellar 和 quiz 的区别
@@ -45,11 +46,11 @@ public class ArgoStore {
     private static final JSix HEX;
 
     static {
-        final String envValue = Ut.env(Macrocosm.ZERO_ENV);
+        final String envValue = Ut.env(HMacrocosm.ZERO_ENV);
         final Environment environment = Ut.toEnum(envValue, Environment.class, Environment.Production);
         final String vPath = Ut.ioPath(VWeb.runtime.CONFIGURATION_JSON, environment);
         Ke.LOG.Ok.info(ArgoStore.class, "Environment On = {0}, Path = {1}", environment, vPath);
-        // 加载基础配置，目录规范中 runtime/configuration.json 路径
+        // 加载基础配置，目录规范中 running/configuration.json 路径
         final JsonObject configuration = Ut.ioJObject(vPath);
         CONFIGURATION.mergeIn(configuration, true);
         // 六维数据专用
@@ -64,7 +65,7 @@ public class ArgoStore {
     }
 
     /**
-     * 此处位于文件 runtime/configuration.json 中的结构是是一个字符串，该字符串描述了
+     * 此处位于文件 running/configuration.json 中的结构是是一个字符串，该字符串描述了
      * stellar 系统的配置文件位置，然后才此位置中直接提取 stellar 的核心配置，构造的才
      * 是最终的核心配置。
      * <pre><code>
@@ -96,7 +97,7 @@ public class ArgoStore {
     }
 
     /**
-     * 原始配置文件，直接读取 runtime/configuration.json 文件的内容
+     * 原始配置文件，直接读取 running/configuration.json 文件的内容
      *
      * @return {@link JsonObject}
      */
@@ -108,7 +109,7 @@ public class ArgoStore {
      * 六维数据专用，核心维度数据结构，通常是 3 x 2 的维度结构
      * <pre><code>
      *     维度分两部分：
-     *     - 维度1：{@link io.horizon.eon.em.typed.ChangeFlag}（增删改）
+     *     - 维度1：{@link ChangeFlag}（增删改）
      *     - 维度2：batch（是否批量）
      *     格式如下：
      *      {

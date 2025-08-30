@@ -1,24 +1,24 @@
 package io.zerows.extension.commerce.rbac.agent.api;
 
-import io.horizon.eon.VString;
-import io.horizon.uca.qr.Sorter;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Me;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.Vis;
-import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Me;
+import io.zerows.core.annotations.Queue;
+import io.zerows.core.constant.KName;
+import io.zerows.core.uca.qr.Sorter;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.agent.service.view.RuleStub;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SPathDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SPath;
 import io.zerows.extension.commerce.rbac.eon.Addr;
+import io.zerows.module.domain.atom.commune.Vis;
+import io.zerows.module.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 
 /**

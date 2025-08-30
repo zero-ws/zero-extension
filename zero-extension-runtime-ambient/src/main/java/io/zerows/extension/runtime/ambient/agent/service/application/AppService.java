@@ -1,14 +1,13 @@
 package io.zerows.extension.runtime.ambient.agent.service.application;
 
-import io.horizon.eon.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.typed.UObject;
+import io.zerows.unity.Ux;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XSourceDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
@@ -16,6 +15,7 @@ import io.zerows.extension.runtime.ambient.util.At;
 import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExApp;
 import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Attachment;
 import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
+import io.zerows.module.domain.atom.typed.UObject;
 
 public class AppService implements AppStub {
 
@@ -31,7 +31,7 @@ public class AppService implements AppStub {
         return Ux.Jooq.on(XAppDao.class)
             /* Fetch By Name */
             .<XApp>fetchOneAsync(KName.NAME, name)
-            /* Convert to Json */
+            /* Convert to InJson */
             .compose(Ux::futureJ)
             /* Before App Initialized ( Public Api ) */
             .compose(appData -> UObject.create(appData)
@@ -56,7 +56,7 @@ public class AppService implements AppStub {
         return Ux.Jooq.on(XAppDao.class)
             /* Fetch By Id */
             .<XApp>fetchByIdAsync(appId)
-            /* Convert to Json */
+            /* Convert to InJson */
             .compose(Ux::futureJ)
             /*
              * Storage of file definition, here are two parts:

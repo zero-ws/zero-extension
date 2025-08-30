@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.uca.dao.internal;
 
-import io.horizon.uca.qr.Criteria;
-import io.modello.specification.HRecord;
+import io.zerows.core.uca.qr.Criteria;
 import io.zerows.extension.mbse.basement.atom.data.DataEvent;
+import io.zerows.specification.modeling.HRecord;
 
 import static io.zerows.extension.mbse.basement.util.Ao.LOG;
 

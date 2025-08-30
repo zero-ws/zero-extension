@@ -1,17 +1,18 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.environment;
 
-import io.horizon.exception.web._501NotSupportException;
-import io.horizon.fn.HFn;
-import io.macrocosm.specification.app.HRegistry;
-import io.macrocosm.specification.config.HConfig;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.core.exception.web._501NotSupportException;
+import io.zerows.agreed.fn.HFn;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XSource;
 import io.zerows.extension.runtime.ambient.store.OCacheArk;
 import io.zerows.extension.runtime.ambient.uca.boot.*;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.configuration.HConfig;
+import io.zerows.specification.configuration.boot.HRegistry;
 
 import java.util.List;
 import java.util.Set;
@@ -23,7 +24,7 @@ import java.util.Set;
  *     2. 此注册器内置会访问 X_APP / X_SOURCE 构造 {@link HArk} 容器数据
  *     3. 由于容器本身使用了 {@link Vertx}，所以只支持异步模式的注册
  * </code></pre>
- * 注册器中不可以访问 {@link io.macrocosm.specification.app.HAmbient} 接口，因为此时该接口还未执行初始化
+ * 注册器中不可以访问 {@link HAmbient} 接口，因为此时该接口还未执行初始化
  *
  * @author lang : 2023-06-06
  */

@@ -2,7 +2,7 @@ package io.zerows.extension.commerce.lbs.agent.service;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.lbs.domain.tables.daos.LLocationDao;
 
 public class LocationService implements LocationStub {

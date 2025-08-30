@@ -1,7 +1,7 @@
 package io.vertx.domain;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
 import org.junit.Test;
 

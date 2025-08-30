@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS I_API
     `WORKER_ADDRESS`  VARCHAR(255) COMMENT '「workerAddress」- 请求发送地址',
     `WORKER_CONSUMER` VARCHAR(255) COMMENT '「workerConsumer」- 请求地址消费专用组件',
     `WORKER_CLASS`    VARCHAR(255) COMMENT '「workerClass」- OX | PLUG专用，请求执行器对应的JavaClass名称',
-    `WORKER_JS`       VARCHAR(255) COMMENT '「workerJs」- JS 专用，JavaScript路径：runtime/workers/<app>/下的执行器',
+    `WORKER_JS`       VARCHAR(255) COMMENT '「workerJs」- JS 专用，JavaScript路径：running/workers/<app>/下的执行器',
 
     -- 响应格式处理
     `SERVICE_ID`      VARCHAR(36) COMMENT '「serviceId」- 关联的服务ID',

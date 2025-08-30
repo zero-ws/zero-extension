@@ -2,7 +2,7 @@ package io.zerows.extension.runtime.workflow.uca.conformity;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTicket;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTodo;
 import org.camunda.bpm.engine.task.Task;
@@ -16,7 +16,7 @@ public class GainStart extends AbstractGain {
     @Override
     public Future<WTodo> buildAsync(final JsonObject params, final Task task, final WTodo wTask) {
         // 0. Keep the same acceptedBy / toUser value and do nothing
-        // 1. Json -> WTodo
+        // 1. InJson -> WTodo
         final WTodo todo = Ux.fromJson(params, WTodo.class);
 
         // 2. Connect Camunda

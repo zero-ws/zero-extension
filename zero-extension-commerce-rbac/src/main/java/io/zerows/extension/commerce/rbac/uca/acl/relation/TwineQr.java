@@ -1,13 +1,13 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
-import io.horizon.uca.qr.syntax.Ir;
+import io.zerows.core.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KQr;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RUserGroupDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RUserRoleDao;
@@ -28,7 +28,7 @@ class TwineQr {
         final JsonObject queryJ = query.copy();
         final JsonObject criteria = Ut.valueJObject(queryJ, Ir.KEY_CRITERIA);
         return normalize(criteria).compose(normalizeJ -> {
-            // Qr Json
+            // Qr InJson
             final JsonObject condition;
             condition = Ux.whereAnd();
             condition.mergeIn(qr.getCondition());

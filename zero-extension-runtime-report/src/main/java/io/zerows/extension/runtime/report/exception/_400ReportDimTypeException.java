@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.report.exception;
 
-import io.horizon.exception.WebException;
+import io.zerows.core.exception.WebException;
 
 /**
  * @author lang : 2024-10-29

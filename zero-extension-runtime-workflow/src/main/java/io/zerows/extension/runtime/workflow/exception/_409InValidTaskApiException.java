@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.workflow.exception;
 
 import io.zerows.extension.runtime.workflow.eon.em.PassWay;
-import io.horizon.eon.em.web.HttpStatusCode;
-import io.horizon.exception.WebException;
+import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.core.exception.WebException;
 
 /**
  * Error = 80604

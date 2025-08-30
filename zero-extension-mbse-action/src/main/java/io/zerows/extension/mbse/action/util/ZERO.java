@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.util;
 
-import io.horizon.eon.em.web.EmTraffic;
+import io.zerows.agreed.constant.em.app.EmTraffic;
 import io.zerows.extension.mbse.action.uca.tunnel.ActorChannel;
 import io.zerows.extension.mbse.action.uca.tunnel.AdaptorChannel;
 import io.zerows.extension.mbse.action.uca.tunnel.ConnectorChannel;

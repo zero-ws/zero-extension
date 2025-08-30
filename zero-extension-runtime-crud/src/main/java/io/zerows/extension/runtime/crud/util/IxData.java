@@ -1,21 +1,21 @@
 package io.zerows.extension.runtime.crud.util;
 
-import io.horizon.atom.program.Kv;
-import io.modello.specification.meta.HMetaAtom;
-import io.modello.specification.meta.HMetaField;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.KWeb;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.common.program.Kv;
+import io.zerows.core.constant.KName;
+import io.zerows.core.constant.KWeb;
 import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.core.database.jooq.util.JqAnalyzer;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.bootstrap.IxPin;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
+import io.zerows.module.domain.atom.specification.KField;
+import io.zerows.specification.modeling.metadata.HMetaAtom;
+import io.zerows.specification.modeling.metadata.HMetaField;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;

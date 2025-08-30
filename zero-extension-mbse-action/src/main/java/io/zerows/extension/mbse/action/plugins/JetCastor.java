@@ -3,7 +3,6 @@ package io.zerows.extension.mbse.action.plugins;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.metadata.uca.environment.DevOps;
 import io.zerows.extension.mbse.action.atom.JtConfig;
 import io.zerows.extension.mbse.action.atom.JtUri;
 import io.zerows.extension.mbse.action.atom.JtWorker;
@@ -11,6 +10,7 @@ import io.zerows.extension.mbse.action.bootstrap.JtPin;
 import io.zerows.extension.mbse.action.eon.em.WorkerType;
 import io.zerows.extension.mbse.action.uca.monitor.JtMonitor;
 import io.zerows.extension.mbse.action.util.Jt;
+import io.zerows.module.metadata.uca.environment.DevOps;
 
 import java.util.Objects;
 import java.util.Set;

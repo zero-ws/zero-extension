@@ -1,9 +1,9 @@
 package io.mature.boot.supply;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
-import io.horizon.eon.spec.VWeb;
-import io.modello.atom.app.KIntegration;
+import io.zerows.agreed.constant.VPath;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.spec.VWeb;
+import io.zerows.common.app.KIntegration;
 
 import java.util.Objects;
 
@@ -16,7 +16,7 @@ class EIo {
         Objects.requireNonNull(key);
         final String hit = key.replace("/", "");
         /*
-         * runtime/{vendor}/{hit}/{vendor}.json
+         * running/{vendor}/{hit}/{vendor}.json
          */
         return VWeb.RUNTIME + VString.SLASH
             + integration.getVendorConfig() + VString.SLASH

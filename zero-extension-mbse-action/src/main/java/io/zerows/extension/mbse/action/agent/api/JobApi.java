@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.action.agent.api;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.eon.KWeb;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.EndPoint;
+import io.zerows.core.constant.KWeb;
 import io.zerows.core.web.io.annotations.BodyParam;
 import io.zerows.extension.mbse.action.eon.JtAddr;
 import jakarta.ws.rs.*;

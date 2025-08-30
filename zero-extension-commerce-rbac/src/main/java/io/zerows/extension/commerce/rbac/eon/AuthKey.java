@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.eon;
 
-import io.vertx.up.eon.KName;
+import io.zerows.core.constant.KName;
 
 public interface AuthKey {
     /**

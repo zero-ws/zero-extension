@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;
-import io.vertx.up.eon.KName;
+import io.zerows.core.constant.KName;
 
 import java.util.Set;
 

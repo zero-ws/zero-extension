@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.crud.bootstrap;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.KWeb;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KField;
+import io.zerows.core.constant.KName;
+import io.zerows.core.constant.KWeb;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KColumn;
 import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.util.Ix;
+import io.zerows.module.domain.atom.specification.KField;
 
 import java.util.Objects;
 

@@ -2,7 +2,7 @@ package io.zerows.extension.commerce.finance.uca.trans;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.finance.domain.tables.daos.FTransOfDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTransOf;

@@ -1,10 +1,10 @@
 package io.mature.stellar.owner;
 
-import io.horizon.eon.em.Environment;
-import io.horizon.eon.spec.VWeb;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.agreed.constant.spec.VWeb;
 import io.mature.stellar.Party;
 import io.mature.stellar.vendor.OkB;
-import io.modello.atom.app.KGlobal;
+import io.zerows.common.app.KGlobal;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

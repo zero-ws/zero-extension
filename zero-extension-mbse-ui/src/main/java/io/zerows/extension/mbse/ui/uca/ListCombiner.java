@@ -2,8 +2,8 @@ package io.zerows.extension.mbse.ui.uca;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.ui.agent.service.ListStub;
 import io.zerows.extension.mbse.ui.osgi.spi.ui.UiControl;
 import io.zerows.extension.mbse.ui.util.Ui;

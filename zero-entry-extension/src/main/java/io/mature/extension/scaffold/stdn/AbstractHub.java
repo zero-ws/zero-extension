@@ -6,14 +6,14 @@ import io.mature.extension.scaffold.component.AbstractActor;
 import io.mature.extension.uca.commerce.Completer;
 import io.mature.extension.uca.commerce.CompleterDefault;
 import io.mature.extension.uca.log.TrackIo;
-import io.modello.atom.app.KIntegration;
-import io.modello.specification.action.HDao;
+import io.zerows.common.app.KIntegration;
+import io.zerows.specification.modeling.operation.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.web.mbse.atom.runner.ActIn;
 import io.zerows.core.web.mbse.atom.runner.ActOut;
@@ -198,8 +198,8 @@ public class AbstractHub extends AbstractActor {
      *      import io.horizon.spi.feature.Trash;
      *      import io.vertx.mod.plugin.history.TrashInfix;
      *      import io.vertx.mod.plugin.history.TrashPlatform;
-     *      import io.vertx.up.unity.Ux;
-     *      import io.vertx.up.util.Ut;
+     *      import io.zerows.unity.Ux;
+     *      import io.zerows.core.util.Ut;
      *
      *      public class TrashTunnel implements Trash {
      *

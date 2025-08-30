@@ -5,7 +5,7 @@ import io.zerows.extension.mbse.basement.uca.file.excel.ExModello;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.util.Ao;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 
 import java.util.HashSet;
 import java.util.List;
@@ -28,7 +28,7 @@ public class ExcelReader implements AoFile {
     public ExcelReader(final String rootPath) {
         final String normalized;
         if (Objects.isNull(rootPath)) {
-            /* runtime/excel */
+            /* running/excel */
             normalized = Ao.PATH.PATH_EXCEL;
         } else {
             /* End with '/' */

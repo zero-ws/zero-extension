@@ -1,7 +1,7 @@
 package io.mature.extension.uca.modello;
 
-import io.horizon.atom.program.Kv;
-import io.modello.specification.uca.OExpression;
+import io.zerows.common.program.Kv;
+import io.zerows.specification.modeling.property.OExpression;
 
 import java.util.Objects;
 

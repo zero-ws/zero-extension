@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.uca.id;
 
-import io.modello.eon.em.EmKey;
-import io.vertx.up.fn.Fn;
+import io.zerows.agreed.constant.em.modeling.EmKey;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;

@@ -1,17 +1,17 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.horizon.eon.VString;
-import io.modello.atom.normalize.KAttribute;
-import io.modello.atom.normalize.KMarkAttribute;
-import io.modello.atom.reference.RRule;
-import io.modello.eon.em.EmAttribute;
-import io.modello.eon.em.EmValue;
-import io.modello.specification.atom.HAttribute;
-import io.modello.specification.meta.HMetaField;
+import io.zerows.agreed.constant.VString;
+import io.zerows.common.normalize.KAttribute;
+import io.zerows.common.normalize.KMarkAttribute;
+import io.zerows.common.reference.RRule;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.agreed.constant.em.modeling.EmValue;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.specification.modeling.metadata.HMetaField;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAttribute;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;
 

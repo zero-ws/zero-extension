@@ -2,10 +2,10 @@ package io.zerows.extension.runtime.ambient.bootstrap;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.zerows.extend.jackson.databind.ClassDeserializer;
+import io.zerows.extend.jackson.databind.ClassSerializer;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Prerequisite;
-import io.zerows.jackson.databind.ClassDeserializer;
-import io.zerows.jackson.databind.ClassSerializer;
 
 import java.io.Serializable;
 

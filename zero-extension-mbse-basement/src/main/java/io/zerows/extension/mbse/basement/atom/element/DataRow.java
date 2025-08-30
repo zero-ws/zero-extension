@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.atom.element;
 
-import io.modello.specification.HRecord;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.util.Ao;
-import io.vertx.up.util.Ut;
+import io.zerows.specification.modeling.HRecord;
 import org.jooq.Converter;
 
 import java.io.Serializable;

@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.report.uca.feature;
 
-import io.horizon.eon.VString;
-import io.vertx.up.util.Ut;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;
 import io.zerows.extension.runtime.report.eon.em.EmReport;
 import org.osgi.framework.Bundle;

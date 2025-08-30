@@ -1,16 +1,16 @@
 package io.zerows.extension.mbse.basement.uca.reference;
 
-import io.modello.atom.reference.RResult;
-import io.modello.atom.reference.RRule;
-import io.modello.specification.HRecord;
-import io.modello.specification.atom.HReference;
+import io.zerows.common.reference.RResult;
+import io.zerows.common.reference.RRule;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
 import io.zerows.extension.mbse.basement.exception._501AnonymousAtomException;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.HReference;
 
 import java.util.List;
 import java.util.Objects;

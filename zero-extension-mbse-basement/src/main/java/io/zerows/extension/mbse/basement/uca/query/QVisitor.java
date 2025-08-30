@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.uca.query;
 
-import io.horizon.eon.VValue;
-import io.horizon.uca.qr.syntax.*;
+import io.zerows.agreed.constant.VValue;
 import io.zerows.core.database.jooq.condition.Clause;
+import io.zerows.core.uca.qr.syntax.*;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
 import io.zerows.extension.mbse.basement.uca.jooq.internal.Jq;
 import org.jooq.Condition;

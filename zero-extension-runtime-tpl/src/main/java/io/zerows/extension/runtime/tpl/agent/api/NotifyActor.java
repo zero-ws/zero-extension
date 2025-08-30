@@ -3,16 +3,16 @@ package io.zerows.extension.runtime.tpl.agent.api;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Me;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Me;
+import io.zerows.core.annotations.Queue;
+import io.zerows.core.constant.KName;
 import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 import io.zerows.extension.runtime.tpl.agent.service.NotifyStub;
 import io.zerows.extension.runtime.tpl.eon.Addr;
+import io.zerows.module.domain.atom.commune.XHeader;
 import jakarta.inject.Inject;
 
 /**

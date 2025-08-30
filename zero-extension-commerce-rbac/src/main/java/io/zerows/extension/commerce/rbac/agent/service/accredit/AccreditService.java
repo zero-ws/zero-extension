@@ -1,16 +1,15 @@
 package io.zerows.extension.commerce.rbac.agent.service.accredit;
 
-import io.horizon.atom.program.KRef;
-import io.horizon.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.common.program.KRef;
+import io.zerows.core.constant.KName;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
-import io.zerows.core.security.atom.DataBound;
 import io.zerows.extension.commerce.rbac.atom.ScOwner;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SAction;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SResource;
@@ -24,6 +23,7 @@ import io.zerows.extension.commerce.rbac.uca.logged.ScResource;
 import io.zerows.extension.commerce.rbac.uca.logged.ScUser;
 import io.zerows.extension.commerce.rbac.util.Sc;
 import io.zerows.extension.runtime.skeleton.eon.em.OwnerType;
+import io.zerows.module.security.atom.DataBound;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
@@ -132,7 +132,7 @@ public class AccreditService implements AccreditStub {
      *          }
      *      },
      *      "record": {
-     *          SResource Data Structure ( Json )
+     *          SResource Data Structure ( InJson )
      *      }
      * }
      */

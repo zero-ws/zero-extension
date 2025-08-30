@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.uca.jooq.internal;
 
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
 import io.zerows.extension.mbse.basement.atom.element.DataRow;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import org.jooq.Field;
 
 import java.util.ArrayList;

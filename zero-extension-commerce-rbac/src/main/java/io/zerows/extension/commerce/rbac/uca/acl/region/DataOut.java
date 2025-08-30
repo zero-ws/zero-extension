@@ -1,17 +1,17 @@
 package io.zerows.extension.commerce.rbac.uca.acl.region;
 
-import io.horizon.eon.VValue;
-import io.horizon.uca.log.Annal;
-import io.horizon.uca.qr.syntax.Ir;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.rbac.uca.acl.rapid.Dwarf;
-import io.vertx.up.util.Ut;
-import io.zerows.core.security.zdk.authority.Acl;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.uca.qr.syntax.Ir;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.commerce.rbac.eon.AuthMsg;
 import io.zerows.extension.commerce.rbac.eon.em.RegionType;
+import io.zerows.extension.commerce.rbac.uca.acl.rapid.Dwarf;
 import io.zerows.extension.commerce.rbac.util.Sc;
+import io.zerows.module.security.zdk.authority.Acl;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -109,7 +109,7 @@ class DataOut {
 
     /*
      * There are three data format that could be enabled for region.
-     * 1. Json Object:
+     * 1. InJson Object:
      * {
      *     "data": {}
      * }
@@ -120,7 +120,7 @@ class DataOut {
      *         "count": xxx
      *     }
      * }
-     * 3. Json Array:
+     * 3. InJson Array:
      * {
      *     "data": []
      * }

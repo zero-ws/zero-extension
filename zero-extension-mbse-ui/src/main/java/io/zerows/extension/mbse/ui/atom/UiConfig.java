@@ -4,12 +4,12 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
-import io.zerows.jackson.databind.JsonArrayDeserializer;
-import io.zerows.jackson.databind.JsonArraySerializer;
-import io.zerows.jackson.databind.JsonObjectDeserializer;
-import io.zerows.jackson.databind.JsonObjectSerializer;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
+import io.zerows.extend.jackson.databind.JsonArrayDeserializer;
+import io.zerows.extend.jackson.databind.JsonArraySerializer;
+import io.zerows.extend.jackson.databind.JsonObjectDeserializer;
+import io.zerows.extend.jackson.databind.JsonObjectSerializer;
 
 import java.io.Serializable;
 import java.util.Objects;

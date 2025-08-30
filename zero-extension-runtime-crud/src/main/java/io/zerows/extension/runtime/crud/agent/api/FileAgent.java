@@ -2,19 +2,19 @@ package io.zerows.extension.runtime.crud.agent.api;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.FileUpload;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Adjust;
-import io.vertx.up.annotations.Codex;
-import io.vertx.up.annotations.EndPoint;
-import io.vertx.up.eon.KName;
-import io.vertx.up.eon.KWeb;
-import io.vertx.up.unity.Ux;
-import io.zerows.core.domain.atom.commune.Vis;
+import io.zerows.unity.Ux;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Adjust;
+import io.zerows.core.annotations.Codex;
+import io.zerows.core.annotations.EndPoint;
+import io.zerows.core.constant.KName;
+import io.zerows.core.constant.KWeb;
 import io.zerows.core.web.io.annotations.BodyParam;
 import io.zerows.core.web.io.annotations.PointParam;
 import io.zerows.core.web.io.annotations.StreamParam;
 import io.zerows.extension.runtime.crud.eon.Addr;
 import io.zerows.extension.runtime.crud.eon.IxMsg;
+import io.zerows.module.domain.atom.commune.Vis;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 

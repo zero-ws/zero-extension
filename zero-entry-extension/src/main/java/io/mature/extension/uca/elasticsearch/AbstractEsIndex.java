@@ -1,6 +1,6 @@
 package io.mature.extension.uca.elasticsearch;
 
-import io.horizon.uca.log.Annal;
+import io.zerows.core.uca.log.Annal;
 import io.mature.extension.refine.Ox;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

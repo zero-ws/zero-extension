@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.exception;
 
-import io.horizon.exception.WebException;
+import io.zerows.core.exception.WebException;
 
 public class _400KeyLengthException extends WebException {
     public _400KeyLengthException(final Class<?> clazz) {

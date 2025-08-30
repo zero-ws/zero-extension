@@ -1,15 +1,15 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.horizon.uca.cache.Cc;
-import io.macrocosm.specification.program.HArk;
-import io.modello.eon.em.EmModel;
-import io.modello.specification.atom.HAttribute;
-import io.modello.specification.atom.HReference;
-import io.modello.specification.atom.HRule;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.specification.modeling.HReference;
+import io.zerows.specification.modeling.HRule;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.shape.AbstractHModel;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;

@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.ambient.bootstrap;
 
-import io.horizon.uca.cache.Cc;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
 import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;

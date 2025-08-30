@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.eon;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.runtime.crud.uca.desk.IxJunc;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
 import io.zerows.extension.runtime.crud.uca.next.Co;

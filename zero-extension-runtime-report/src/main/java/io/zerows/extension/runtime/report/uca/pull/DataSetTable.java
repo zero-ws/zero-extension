@@ -3,13 +3,13 @@ package io.zerows.extension.runtime.report.uca.pull;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.constant.KName;
 import io.zerows.core.database.jooq.operation.UxJooq;
-import io.zerows.core.metadata.atom.configuration.modeling.MDConnect;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.extension.HExtension;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpDataSet;
+import io.zerows.module.metadata.atom.configuration.modeling.MDConnect;
 
 import java.util.Objects;
 
@@ -56,13 +56,13 @@ class DataSetTable extends AbstractDataSet {
             this.connect.getTable(), parameters.encode());
         // 提取 UxJooq
         final UxJooq jq = Ux.Jooq.bridge(this.connect);
-        if(parameters.getBoolean("")!=null){
-            if(!parameters.getBoolean("")){
+        if (parameters.getBoolean("") != null) {
+            if (!parameters.getBoolean("")) {
                 return jq.fetchJOrAsync(parameters).compose(data -> this.loadChildren(data, this.children));
-            }else {
+            } else {
                 return jq.fetchJAndAsync(parameters).compose(data -> this.loadChildren(data, this.children));
             }
-        }else {
+        } else {
             return jq.fetchJAndAsync(parameters).compose(data -> this.loadChildren(data, this.children));
 
         }

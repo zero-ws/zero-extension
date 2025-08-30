@@ -1,17 +1,13 @@
 package io.mature.extension.uca.console;
 
-import io.horizon.atom.program.KRef;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.common.program.KRef;
 import io.mature.extension.refine.Ox;
 import io.mature.extension.scaffold.console.AbstractInstruction;
 import io.mature.stellar.vendor.OkB;
-import io.modello.specification.HRecord;
-import io.modello.specification.action.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.util.Ao;
 import io.zerows.plugins.common.shell.atom.CommandInput;
@@ -19,6 +15,10 @@ import io.zerows.plugins.common.shell.eon.EmCommand;
 import io.zerows.plugins.common.shell.refine.Sl;
 import io.zerows.plugins.store.elasticsearch.ElasticSearchClient;
 import io.zerows.plugins.store.elasticsearch.ElasticSearchInfix;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.operation.HDao;
 
 import java.util.Arrays;
 import java.util.Objects;

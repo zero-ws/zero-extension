@@ -17,13 +17,13 @@ public interface Adjuster {
 
     /*
      * 定义一些特殊的数据转换规则
-     * 绑定配置文件：runtime/
+     * 绑定配置文件：running/
      */
     Object inValue(Object ucmdbInput);
 
     /*
      * 定义一些特殊的数据转换规则
-     * 绑定配置文件：runtime/
+     * 绑定配置文件：running/
      */
     Object outValue(Object input);
 

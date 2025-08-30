@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.jooq;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.mbse.basement.uca.metadata.AoSentence;
 import io.zerows.extension.mbse.basement.atom.data.DataEvent;
 import io.zerows.extension.mbse.basement.util.Ao;

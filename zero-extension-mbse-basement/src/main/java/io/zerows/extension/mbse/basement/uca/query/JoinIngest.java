@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.query;
 
-import io.horizon.uca.log.Annal;
-import io.horizon.uca.qr.Criteria;
-import io.horizon.uca.qr.Sorter;
-import io.horizon.uca.qr.syntax.QTree;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.uca.qr.Criteria;
+import io.zerows.core.uca.qr.Sorter;
+import io.zerows.core.uca.qr.syntax.QTree;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;

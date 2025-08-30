@@ -1,14 +1,14 @@
 package io.zerows.extension.mbse.modulat.store;
 
-import io.horizon.eon.VString;
-import io.horizon.uca.cache.Cc;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.app.HMod;
-import io.macrocosm.specification.program.HArk;
-import io.macrocosm.specification.secure.HoI;
-import io.modello.atom.app.KDS;
-import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.zdk.running.OCache;
+import io.zerows.agreed.constant.VString;
+import io.zerows.common.app.KDS;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.util.Ut;
+import io.zerows.module.metadata.zdk.running.OCache;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.access.app.HMod;
+import io.zerows.specification.vital.HOI;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
@@ -16,7 +16,7 @@ import org.osgi.framework.FrameworkUtil;
  * 新版针对底层配置做出调整，配置接口实现完整的模块化管理流程，以兼容 OSGI 环境，每个 App 会包含一个 Modulat 的相关配置，新版完整架构
  * <pre><code>
  *     {@link HArk} 方舟：应用容器
- *     - {@link HoI} Owner ID，当前应用所属租户信息
+ *     - {@link HOI} Owner ID，当前应用所属租户信息
  *     - {@link KDS} Database Service，当前应用所拥有的数据库清单 x 5
  *     - {@link HApp} 应用：X_APP 对应配置
  *       - 软关联：appId = OCacheMod = modId-01 = {@link HMod}

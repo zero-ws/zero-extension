@@ -1,11 +1,11 @@
 package io.mature.extension.uca.modello;
 
-import io.horizon.atom.program.Kv;
-import io.modello.specification.HRecord;
-import io.modello.specification.uca.OComponent;
+import io.zerows.common.program.Kv;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.property.OComponent;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

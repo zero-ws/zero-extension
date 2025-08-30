@@ -1,8 +1,7 @@
 package io.zerows.extension.mbse.basement.atom.element;
 
-import io.horizon.uca.cache.Cc;
-import io.modello.eon.em.EmModel;
-import io.modello.specification.HRecord;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
@@ -11,6 +10,7 @@ import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;
 import io.zerows.extension.mbse.basement.uca.metadata.AoSentence;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.specification.modeling.HRecord;
 
 import java.io.Serializable;
 import java.util.Comparator;

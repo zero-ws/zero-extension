@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.crud.uca.next;
 
-import io.horizon.exception.web._501NotSupportException;
+import io.zerows.core.exception.web._501NotSupportException;
 import io.vertx.core.Future;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.crud.eon.Pooled;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.desk.IxRequest;
@@ -64,7 +64,7 @@ public interface Co<I, A, S, O> {
 
     /*
      * 「Response」
-     * Json + Json -----> Json
+     * InJson + InJson -----> InJson
      *
      * active - The first executor result
      * standBy - The second executor result
@@ -76,7 +76,7 @@ public interface Co<I, A, S, O> {
 
     /*
      * 「Middle」
-     * Json + Json -----> Json
+     * InJson + InJson -----> InJson
      * input - The input data of the first executor
      * active - The first executor result
      * standBy - The standBy result

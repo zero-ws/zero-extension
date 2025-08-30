@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.modulat.store;
 
-import io.macrocosm.specification.app.HMod;
-import io.vertx.up.util.Ut;
-import io.zerows.core.metadata.atom.MultiKeyMap;
-import io.zerows.core.metadata.zdk.AbstractAmbiguity;
+import io.zerows.core.util.Ut;
+import io.zerows.module.metadata.atom.MultiKeyMap;
+import io.zerows.module.metadata.zdk.AbstractAmbiguity;
+import io.zerows.specification.access.app.HMod;
 import org.osgi.framework.Bundle;
 
 import java.util.Objects;

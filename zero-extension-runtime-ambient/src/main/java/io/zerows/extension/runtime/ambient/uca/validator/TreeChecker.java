@@ -1,15 +1,15 @@
 package io.zerows.extension.runtime.ambient.uca.validator;
 
-import io.horizon.specification.uca.HTrue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.ClusterSerializable;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.core.web.io.zdk.qbe.HocTrue;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XCategoryDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XCategory;
+import io.zerows.specification.atomic.HReturn;
 
 /**
  * 树型删除检查
@@ -23,8 +23,8 @@ import io.zerows.extension.runtime.ambient.domain.tables.pojos.XCategory;
  */
 public class TreeChecker extends HocTrue<XCategory> {
 
-    public static HTrue<XCategory> of() {
-        return of(TreeChecker.class);
+    public static HReturn.HTrue<XCategory> of() {
+        return HocTrue.of(TreeChecker.class);
     }
 
     @Override

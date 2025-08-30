@@ -2,8 +2,8 @@ package io.zerows.extension.sdk.cross.spi.business;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.core.database.jooq.operation.UxJooq;
 import io.zerows.extension.commerce.erp.domain.tables.daos.ECompanyDao;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XTenantDao;

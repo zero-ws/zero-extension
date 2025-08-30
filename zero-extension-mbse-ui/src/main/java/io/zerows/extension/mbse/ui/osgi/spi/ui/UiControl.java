@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.ui.osgi.spi.ui;
 
-import io.horizon.specification.typed.TCombiner;
 import io.vertx.core.json.JsonObject;
+import io.zerows.specification.atomic.HCombiner;
 
 /*
  * Combiner for processing
@@ -12,5 +12,5 @@ import io.vertx.core.json.JsonObject;
  * 3. UI_OP is standalone and it will not be combined by combiner but another api
  *    instead for frontend usage.
  */
-public interface UiControl extends TCombiner<JsonObject> {
+public interface UiControl extends HCombiner<JsonObject> {
 }

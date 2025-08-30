@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.modulat.uca.configure;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;
 
 /**

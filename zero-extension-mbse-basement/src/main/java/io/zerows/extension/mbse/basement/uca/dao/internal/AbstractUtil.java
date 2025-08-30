@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.dao.internal;
 
-import io.horizon.uca.log.Annal;
-import io.horizon.uca.qr.Criteria;
-import io.modello.specification.atom.HAtom;
-import io.vertx.up.fn.Fn;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.uca.qr.Criteria;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.atom.data.DataEvent;
 import io.zerows.extension.mbse.basement.eon.em.EventType;

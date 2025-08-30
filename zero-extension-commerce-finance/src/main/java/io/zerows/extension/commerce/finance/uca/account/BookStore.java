@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.finance.uca.account;
 
-import io.horizon.annotations.Memory;
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.annotations.Memory;
 
 /**
  * @author lang : 2024-01-19

@@ -1,18 +1,19 @@
 package io.mature.stellar.vendor;
 
-import io.horizon.atom.datamation.KDictConfig;
-import io.horizon.atom.datamation.KFabric;
-import io.horizon.atom.datamation.KMap;
-import io.horizon.eon.VString;
-import io.horizon.specification.typed.TCopy;
+import io.zerows.common.datamation.KDictConfig;
+import io.zerows.common.datamation.KFabric;
+import io.zerows.common.datamation.KMap;
+import io.zerows.agreed.constant.VString;
 import io.mature.stellar.Party;
 import io.mature.stellar.owner.OkA;
-import io.modello.atom.app.KIntegration;
+import io.zerows.common.app.KIntegration;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.core.database.atom.Database;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.atomic.HCopier;
 
 /**
  * 「同步」通道组装接口
@@ -33,7 +34,7 @@ import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
  * <title>2. 核心结构</title>
  * 关联配置对象如下：
  * <ul>
- * <li>- 核心应用配置容器对象：{@link io.macrocosm.specification.program.HArk}</li>
+ * <li>- 核心应用配置容器对象：{@link HArk}</li>
  * <li>- 数据库配置对象（动态配置）：{@link Database}，通常绑定到 `X_SOURCE` 表中</li>
  * <li>- 集成配置对象：{@link KIntegration}</li>
  * <li>- 字典相关信息：<br/>
@@ -45,9 +46,9 @@ import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
  * </ul>
  * <pre><code>
  *     通常某个实现类的配置文件如下，一次配置，可用于生产环境的完整静态配置
- *     - runtime/external/once/database.json
- *     - runtime/external/once/application.json
- *     - runtime/external/once/integration.json
+ *     - running/external/once/database.json
+ *     - running/external/once/application.json
+ *     - running/external/once/integration.json
  *     实现类可以在后期使用策略或桥梁模式实现配置反射处理，您可针对 {@link PartyB} 单独初始化
  * </code></pre>
  * </p>
@@ -66,7 +67,7 @@ import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */
-public interface OkB extends Party, TCopy<OkB> {
+public interface OkB extends Party, HCopier<OkB> {
     /**
      * 为 Party A 创建一个 Party B，并带上集成配置
      *

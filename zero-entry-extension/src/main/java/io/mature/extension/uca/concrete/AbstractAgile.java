@@ -1,12 +1,12 @@
 package io.mature.extension.uca.concrete;
 
-import io.modello.specification.HRecord;
-import io.modello.specification.action.HDao;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Contract;
+import io.zerows.core.annotations.Contract;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.util.Ao;
+import io.zerows.specification.modeling.HRecord;
+import io.zerows.specification.modeling.operation.HDao;
 
 import java.util.Objects;
 

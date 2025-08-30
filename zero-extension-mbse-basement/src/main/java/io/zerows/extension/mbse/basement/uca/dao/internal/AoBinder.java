@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.uca.dao.internal;
 
 import io.zerows.extension.mbse.basement.uca.jdbc.AoConnection;
 import io.zerows.extension.mbse.basement.uca.metadata.AoSentence;
-import io.modello.specification.atom.HAtom;
+import io.zerows.specification.modeling.HAtom;
 
 /**
  * 绑定接口

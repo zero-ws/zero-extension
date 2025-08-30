@@ -1,13 +1,13 @@
 package io.zerows.extension.mbse.ui.uca.qbe;
 
-import io.horizon.eon.VString;
-import io.horizon.specification.action.HQR;
-import io.horizon.uca.cache.Cc;
+import io.zerows.agreed.constant.VString;
+import io.zerows.specification.vital.HQR;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.unity.Ux;
 import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiView;
 import io.zerows.extension.mbse.ui.eon.UiConstant;

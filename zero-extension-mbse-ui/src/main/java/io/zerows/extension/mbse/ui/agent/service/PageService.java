@@ -2,16 +2,16 @@ package io.zerows.extension.mbse.ui.agent.service;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
-import io.zerows.core.metadata.uca.environment.DevEnv;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiLayoutDao;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiPageDao;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiPage;
 import io.zerows.extension.mbse.ui.eon.UiConstant;
+import io.zerows.module.metadata.uca.environment.DevEnv;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
@@ -31,7 +31,7 @@ public class PageService implements PageStub {
                 .fetchByIdAsync(layout)
                 .compose(Ux::futureJ)
                 /*
-                 * Configuration converted to Json
+                 * Configuration converted to InJson
                  */
                 .compose(Fn.ofJObject(KName.Ui.CONFIG));
         if (DevEnv.cacheUi()) {
@@ -112,7 +112,7 @@ public class PageService implements PageStub {
                     KName.Ui.GRID
                 ).apply(pageJson);
                 /*
-                 * Configuration converted to Json
+                 * Configuration converted to InJson
                  */
                 //.compose(Ke.mount(KName.Ui.CONTAINER_CONFIG))
                 //.compose(Ke.mount(KName.Ui.ASSIST))

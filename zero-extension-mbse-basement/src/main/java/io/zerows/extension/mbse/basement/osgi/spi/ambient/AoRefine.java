@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.osgi.spi.ambient;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 
 /*

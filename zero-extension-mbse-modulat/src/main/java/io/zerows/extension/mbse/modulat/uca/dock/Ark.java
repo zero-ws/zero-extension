@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.modulat.uca.dock;
 
-import io.horizon.uca.cache.Cc;
-import io.modello.eon.em.EmModel;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.agreed.constant.em.modeling.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.shareddata.ClusterSerializable;
 

@@ -1,17 +1,17 @@
 package io.zerows.extension.mbse.action.atom;
 
-import io.horizon.atom.datamation.KDictConfig;
-import io.horizon.atom.datamation.KMap;
-import io.horizon.eon.em.Environment;
-import io.horizon.eon.em.web.EmTraffic;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
-import io.modello.atom.app.KIntegration;
-import io.modello.atom.normalize.KIdentity;
-import io.modello.specification.atom.HRule;
+import io.zerows.common.datamation.KDictConfig;
+import io.zerows.common.datamation.KMap;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.agreed.constant.em.app.EmTraffic;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.common.app.KIntegration;
+import io.zerows.common.normalize.KIdentity;
+import io.zerows.specification.modeling.HRule;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.web.model.zdk.Commercial;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IService;
@@ -167,7 +167,7 @@ public abstract class JtCommercial implements Commercial {
         return this.service.getIdentifier();
     }
 
-    // ---------- Basic Json
+    // ---------- Basic InJson
     @Override
     public boolean equals(final Object o) {
         if (this == o) {

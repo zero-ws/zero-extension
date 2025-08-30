@@ -487,7 +487,7 @@ public class IApiRecord extends UpdatableRecordImpl<IApiRecord> implements Vertx
 
     /**
      * Getter for <code>ZDB.I_API.WORKER_JS</code>. 「workerJs」- JS
-     * 专用，JavaScript路径：runtime/workers/&lt;app&gt;/下的执行器
+     * 专用，JavaScript路径：running/workers/&lt;app&gt;/下的执行器
      */
     @Override
     public String getWorkerJs() {
@@ -496,7 +496,7 @@ public class IApiRecord extends UpdatableRecordImpl<IApiRecord> implements Vertx
 
     /**
      * Setter for <code>ZDB.I_API.WORKER_JS</code>. 「workerJs」- JS
-     * 专用，JavaScript路径：runtime/workers/&lt;app&gt;/下的执行器
+     * 专用，JavaScript路径：running/workers/&lt;app&gt;/下的执行器
      */
     @Override
     public IApiRecord setWorkerJs(String value) {

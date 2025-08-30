@@ -5,7 +5,7 @@ import io.zerows.extension.mbse.basement.eon.AoTable;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.util.Ao;
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.plugins.office.excel.ExcelClient;
 import io.zerows.plugins.office.excel.ExcelInfix;
 import io.zerows.plugins.office.excel.atom.ExRecord;

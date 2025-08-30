@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.query;
 
-import io.horizon.uca.qr.Criteria;
-import io.horizon.uca.qr.Sorter;
-import io.modello.eon.em.EmModel;
-import io.vertx.up.fn.Fn;
+import io.zerows.core.uca.qr.Criteria;
+import io.zerows.core.uca.qr.Sorter;
+import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
 import io.zerows.extension.mbse.basement.exception._501IngestImplementException;
 import io.zerows.extension.mbse.basement.uca.metadata.AoSentence;

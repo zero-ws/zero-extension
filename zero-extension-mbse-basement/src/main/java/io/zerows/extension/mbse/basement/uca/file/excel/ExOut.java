@@ -2,14 +2,14 @@ package io.zerows.extension.mbse.basement.uca.file.excel;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
+import io.zerows.core.constant.KName;
 import io.zerows.plugins.office.excel.atom.ExRecord;
 
 import java.util.Objects;
 import java.util.Set;
 
 /*
- * 将 ExTable 转换成 Json
+ * 将 ExTable 转换成 InJson
  */
 class ExOut {
 

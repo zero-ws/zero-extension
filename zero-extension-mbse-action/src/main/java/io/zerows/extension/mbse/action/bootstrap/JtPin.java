@@ -1,11 +1,11 @@
 package io.zerows.extension.mbse.action.bootstrap;
 
-import io.macrocosm.specification.app.HAmbient;
-import io.macrocosm.specification.app.HRegistry;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.zerows.extension.mbse.action.atom.JtConfig;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.specification.access.app.HAmbient;
+import io.zerows.specification.configuration.boot.HRegistry;
 
 import java.util.concurrent.ConcurrentMap;
 

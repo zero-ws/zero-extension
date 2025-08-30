@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.workflow.uca.transition;
 
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.workflow.atom.runtime.WTransition;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTicket;
 import io.zerows.extension.runtime.workflow.domain.tables.pojos.WTodo;

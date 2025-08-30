@@ -4,10 +4,10 @@ import io.mature.extension.scaffold.stdn.AbstractHMore;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.domain.atom.commune.dynamic.Apt;
 import io.zerows.core.web.mbse.atom.runner.ActIn;
 import io.zerows.core.web.mbse.atom.runner.ActOut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.module.domain.atom.commune.dynamic.Apt;
 
 /**
  * ## 「Channel」批量更新通道

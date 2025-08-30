@@ -1,13 +1,13 @@
 package io.zerows.extension.commerce.finance.atom;
 
+import io.zerows.core.exception.web._501NotImplementException;
+import io.vertx.core.json.JsonObject;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FTransOf;
-import io.horizon.exception.web._501NotImplementException;
-import io.horizon.specification.typed.TJson;
-import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.specification.atomic.HJson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.util.Objects;
  *
  * @author lang : 2024-01-28
  */
-public class TranData implements Serializable, TJson {
+public class TranData implements Serializable, HJson {
 
     private final List<FTransOf> transOf = new ArrayList<>();
     private final List<FTransItem> items = new ArrayList<>();

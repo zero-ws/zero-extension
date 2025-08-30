@@ -1,12 +1,12 @@
 package io.mature.extension.refine;
 
 import io.mature.extension.cv.OxCv;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.atom.HRule;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.specification.modeling.HRule;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 
 import java.util.HashSet;

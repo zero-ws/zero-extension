@@ -2,8 +2,8 @@ package io.zerows.extension.mbse.basement.atom.config;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.zerows.jackson.databind.ClassDeserializer;
-import io.zerows.jackson.databind.ClassSerializer;
+import io.zerows.extend.jackson.databind.ClassDeserializer;
+import io.zerows.extend.jackson.databind.ClassSerializer;
 
 /*
  * Configuration for different implementation here.
@@ -41,21 +41,21 @@ public class AoConfig {
     private transient String namespace;
     /*
      * 默认Excel定义目录
-     * runtime/excel/
+     * running/excel/
      */
     private transient String defineExcel;
     /*
      * 默认Json定义目录
-     * runtime/json/
+     * running/json/
      */
     private transient String defineJson;
     /*
      * 是否带有修正器，修整器路径（比对时使用）
-     * runtime/adjuster/config.json
+     * running/adjuster/config.json
      */
     private transient String configAdjuster;
     /*
-     * runtime/adjuster/modeling
+     * running/adjuster/modeling
      */
     private transient String configModeling;
     private transient Boolean sqlDebug;

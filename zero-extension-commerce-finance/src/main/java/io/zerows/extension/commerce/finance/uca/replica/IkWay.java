@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
-import io.horizon.annotations.Memory;
-import io.horizon.exception.web._501NotImplementException;
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
+import io.zerows.agreed.annotations.Memory;
+import io.zerows.core.exception.web._501NotImplementException;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
 import io.zerows.extension.commerce.finance.eon.FmConstant;
 

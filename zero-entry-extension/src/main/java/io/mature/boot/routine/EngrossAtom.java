@@ -2,8 +2,8 @@ package io.mature.boot.routine;
 
 import io.mature.boot.argument.ArgAtom;
 import io.mature.exploit.atom.QModeller;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
 
 /**
@@ -29,9 +29,9 @@ public class EngrossAtom {
 
         final String modDir;
         if (Ut.isNil(path)) {
-            modDir = "app@runtime/@atom/" + module;
+            modDir = "app@running/@atom/" + module;
         } else {
-            modDir = path + "/app@runtime/@atom/" + module;
+            modDir = path + "/app@running/@atom/" + module;
         }
         final QModeller modeller = QModeller.of(modDir, modDir);
         modeller.preprocess(() -> {

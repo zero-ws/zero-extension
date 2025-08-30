@@ -2,10 +2,10 @@ package io.zerows.extension.runtime.workflow.atom.runtime;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.horizon.eon.VString;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.json.JsonObject;
-import io.zerows.jackson.databind.JsonObjectDeserializer;
-import io.zerows.jackson.databind.JsonObjectSerializer;
+import io.zerows.extend.jackson.databind.JsonObjectDeserializer;
+import io.zerows.extend.jackson.databind.JsonObjectSerializer;
 
 import java.io.Serializable;
 import java.util.Objects;

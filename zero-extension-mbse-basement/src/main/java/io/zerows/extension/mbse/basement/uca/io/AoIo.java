@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.io;
 
-import io.modello.specification.HRecord;
-import io.zerows.extension.mbse.basement.eon.em.EventType;
 import io.zerows.extension.mbse.basement.atom.element.DataRow;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
+import io.zerows.extension.mbse.basement.eon.em.EventType;
+import io.zerows.specification.modeling.HRecord;
 
 import java.util.List;
 

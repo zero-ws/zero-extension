@@ -1,17 +1,17 @@
 package io.zerows.extension.mbse.ui.osgi.spi;
 
-import io.horizon.specification.action.HQR;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.io.zdk.qbe.HQBE;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiViewDao;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiView;
 import io.zerows.extension.mbse.ui.uca.qbe.QBECache;
+import io.zerows.module.domain.atom.commune.XHeader;
+import io.zerows.specification.vital.HQR;
 
 import java.util.Objects;
 

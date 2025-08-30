@@ -1,11 +1,11 @@
 package io.zerows.extension.runtime.ambient.uca.dict;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.em.EmDict;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.em.EmDict;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;

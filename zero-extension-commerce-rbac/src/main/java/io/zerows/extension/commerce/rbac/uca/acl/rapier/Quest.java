@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapier;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.web.model.commune.Envelop;

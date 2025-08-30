@@ -8,9 +8,9 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
 import io.vertx.ext.auth.authorization.Authorization;
 import io.vertx.ext.auth.authorization.AuthorizationProvider;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
-import io.zerows.core.security.atom.Aegis;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
+import io.zerows.module.security.atom.Aegis;
 
 import java.lang.reflect.Method;
 import java.util.Set;

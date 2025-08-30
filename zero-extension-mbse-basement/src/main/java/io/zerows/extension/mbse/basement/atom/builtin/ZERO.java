@@ -1,11 +1,11 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
 
-import io.horizon.eon.VValue;
-import io.modello.eon.em.EmKey;
-import io.modello.eon.em.EmModel;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.agreed.constant.em.modeling.EmKey;
+import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.element.DataKey;

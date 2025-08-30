@@ -3,11 +3,11 @@ package io.zerows.extension.runtime.ambient.agent.api;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.annotations.Address;
-import io.vertx.up.annotations.Queue;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.annotations.Address;
+import io.zerows.core.annotations.Queue;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.agent.service.ActivityStub;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XActivityDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
@@ -60,7 +60,7 @@ public class HistoryActor {
                     final JsonObject data = Ux.toJson(activity);
                     /*
                      * recordOld -> recordNew
-                     * Data that should be deserialized to Json Object
+                     * Data that should be deserialized to InJson Object
                      */
                     Ut.valueToJObject(data,
                         KName.RECORD_NEW,

@@ -1,17 +1,17 @@
 package io.zerows.extension.runtime.skeleton.boot.lighter;
 
-import io.horizon.uca.boot.KEnvironment;
-import io.macrocosm.specification.app.HPre;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.database.jooq.JooqInfix;
+import io.zerows.core.running.boot.KEnvironment;
 import io.zerows.core.web.cache.shared.MapInfix;
 import io.zerows.plugins.office.excel.ExcelInfix;
+import io.zerows.specification.configuration.boot.HMature;
 
 /**
  * @author lang : 2023-06-10
  */
-public class ZeroPre implements HPre<Vertx> {
+public class ZeroPre implements HMature.HPre<Vertx> {
     /**
      * 「Vertx启动后」（同步）扩展流程一
      * <p>
@@ -43,7 +43,7 @@ public class ZeroPre implements HPre<Vertx> {
 
         // 环境变量准备执行
         KEnvironment.initialize();
-        
+
         return Boolean.TRUE;
     }
 }

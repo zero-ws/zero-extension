@@ -1,13 +1,13 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
-import io.modello.atom.reference.RReference;
-import io.modello.eon.em.EmAttribute;
-import io.modello.specification.action.HDao;
-import io.modello.specification.atom.HAtom;
-import io.modello.specification.atom.HAttribute;
-import io.vertx.up.util.Ut;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.common.reference.RReference;
+import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.specification.modeling.operation.HDao;
+import io.zerows.specification.modeling.HAtom;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.shape.HAtomReference;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MAttribute;

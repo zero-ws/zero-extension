@@ -1,14 +1,14 @@
 package io.mature.extension.uca.console;
 
-import io.horizon.eon.VPath;
-import io.horizon.eon.VString;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
+import io.zerows.agreed.constant.VPath;
+import io.zerows.agreed.constant.VString;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
 import io.mature.extension.scaffold.console.AbstractInstruction;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.uca.file.AoFile;
@@ -23,7 +23,7 @@ import static io.mature.extension.refine.Ox.LOG;
 
 /**
  * （专用建模工具）
- * Excel 建模文件转换成 Json 的建模文件
+ * Excel 建模文件转换成 InJson 的建模文件
  *
  * @author <a href="http://www.origin-x.cn">Lang</a>
  */

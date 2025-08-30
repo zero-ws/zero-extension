@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.jdbc;
 
-import io.modello.atom.app.KDatabase;
+import io.zerows.common.app.KDatabase;
 import org.jooq.DSLContext;
 
 import java.sql.Connection;

@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.uca.jooq.internal;
 
 import io.zerows.extension.mbse.basement.exception._417ConditionWhereException;
 import io.zerows.extension.mbse.basement.atom.element.DataMatrix;
-import io.vertx.up.fn.Fn;
+import io.zerows.core.fn.Fn;
 import org.jooq.Condition;
 import org.jooq.Field;
 import org.jooq.impl.DSL;

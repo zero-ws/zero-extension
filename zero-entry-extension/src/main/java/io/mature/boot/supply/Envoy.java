@@ -1,10 +1,10 @@
 package io.mature.boot.supply;
 
-import io.horizon.atom.datamation.KDictConfig;
-import io.horizon.atom.datamation.KMap;
+import io.zerows.common.datamation.KDictConfig;
+import io.zerows.common.datamation.KMap;
 import io.mature.stellar.owner.OkA;
 import io.mature.stellar.vendor.AbstractPartyB;
-import io.modello.atom.app.KIntegration;
+import io.zerows.common.app.KIntegration;
 import io.vertx.boot.supply.Electy;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonObject;

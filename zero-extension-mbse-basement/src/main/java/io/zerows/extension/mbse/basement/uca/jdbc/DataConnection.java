@@ -1,13 +1,13 @@
 package io.zerows.extension.mbse.basement.uca.jdbc;
 
-import io.horizon.eon.VValue;
-import io.horizon.uca.cache.Cc;
-import io.horizon.uca.log.Annal;
-import io.modello.atom.app.KDatabase;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.uca.cache.Cc;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.common.app.KDatabase;
 import io.zerows.extension.mbse.basement.uca.sql.SqlOutput;
 import io.zerows.extension.mbse.basement.exception._500EmptySQLException;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.database.cp.zdk.DataPool;
 import org.jooq.Record;
 import org.jooq.*;
@@ -41,7 +41,7 @@ public class DataConnection implements AoConnection {
         final DSLContext context = this.getDSL();
         final Query query = context.query(sql);
         final int ret = query.execute();
-        return VValue.ZERO <= ret ? ret : io.horizon.eon.VValue.RC_FAILURE;
+        return VValue.ZERO <= ret ? ret : VValue.RC_FAILURE;
     }
 
     @Override

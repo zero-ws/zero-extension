@@ -1,15 +1,15 @@
 package io.zerows.extension.commerce.rbac.uca.ruler;
 
-import io.horizon.eon.VString;
-import io.horizon.eon.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
-import io.zerows.core.security.atom.manage.KPermit;
-import io.zerows.core.security.zdk.manager.AbstractAdmit;
+import io.zerows.agreed.constant.VString;
+import io.zerows.agreed.constant.VValue;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
+import io.zerows.module.security.atom.manage.KPermit;
+import io.zerows.module.security.zdk.manager.AbstractAdmit;
 
 import java.util.Objects;
 

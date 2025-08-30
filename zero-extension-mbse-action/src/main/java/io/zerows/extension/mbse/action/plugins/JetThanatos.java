@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.plugins;
 
-import io.horizon.uca.cache.Cc;
+import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.mbse.action.exception._400RequiredParamException;
 import io.zerows.extension.mbse.action.exception._500DefinitionErrorException;

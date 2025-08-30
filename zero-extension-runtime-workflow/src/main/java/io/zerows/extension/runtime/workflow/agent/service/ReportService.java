@@ -4,8 +4,8 @@ import io.zerows.extension.runtime.skeleton.osgi.spi.business.ExActivity;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 import jakarta.inject.Inject;
 
 /**

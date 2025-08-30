@@ -1,13 +1,14 @@
 package io.mature.stellar;
 
-import io.macrocosm.specification.program.HArk;
-import io.modello.atom.app.KDS;
+import io.zerows.common.app.KGlobal;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.common.app.KDS;
 import io.zerows.core.database.atom.Database;
 
 /**
  * 合同术语中，Party A 代表甲方，Party B 代表乙方，所以此处的 Party 接口代表甲乙双方相关信息。
  * <pre><code>
- *     1. 甲方直接走 {@link io.modello.atom.app.KGlobal} 全局配置用于测试和开发（包括模拟模式）
+ *     1. 甲方直接走 {@link KGlobal} 全局配置用于测试和开发（包括模拟模式）
  *     2. 乙方则考虑从 {@link ArgoStore#stellar()} 中提取所有乙方信息，包括多个乙方等相关信息。
  * </code></pre>
  *
@@ -28,7 +29,7 @@ public interface Party {
     /**
      * 应用配置对象读取方法。
      *
-     * @return {@link io.macrocosm.specification.program.HArk}
+     * @return {@link HArk}
      */
     HArk configArk();
 }

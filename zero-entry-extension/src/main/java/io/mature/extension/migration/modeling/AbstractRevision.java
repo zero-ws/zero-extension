@@ -3,8 +3,8 @@ package io.mature.extension.migration.modeling;
 import io.mature.extension.refine.Ox;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.util.Ao;
 
 import java.util.HashSet;

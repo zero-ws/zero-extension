@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.ui.osgi.spi.ui;
 
 import io.vertx.core.Future;
-import io.zerows.core.domain.atom.typed.UData;
 import io.zerows.extension.mbse.ui.domain.tables.pojos.UiVisitor;
+import io.zerows.module.domain.atom.typed.UData;
 
 /**
  * This interface is for UIVisitor when

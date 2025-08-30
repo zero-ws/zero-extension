@@ -2,7 +2,7 @@ package io.zerows.extension.runtime.integration.uca.updater;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.integration.domain.tables.pojos.IDirectory;
 
 /**

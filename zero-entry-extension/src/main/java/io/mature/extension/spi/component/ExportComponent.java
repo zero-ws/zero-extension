@@ -1,14 +1,14 @@
 package io.mature.extension.spi.component;
 
-import io.horizon.uca.qr.syntax.Ir;
+import io.zerows.core.uca.qr.syntax.Ir;
 import io.mature.extension.refine.Ox;
 import io.mature.extension.scaffold.component.AbstractAdaptor;
 import io.mature.extension.scaffold.plugin.AspectSwitcher;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.runner.ActIn;
 import io.zerows.core.web.mbse.atom.runner.ActOut;
 import io.zerows.core.web.model.commune.Envelop;

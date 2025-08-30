@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.exception;
 
-import io.horizon.exception.WebException;
+import io.zerows.core.exception.WebException;
 
 /**
  * @author <a href="http://www.origin-x.cn">Lang</a>

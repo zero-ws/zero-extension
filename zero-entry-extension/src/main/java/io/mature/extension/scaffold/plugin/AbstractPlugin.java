@@ -1,16 +1,16 @@
 package io.mature.extension.scaffold.plugin;
 
-import io.horizon.atom.datamation.KFabric;
-import io.horizon.atom.datamation.KMapping;
-import io.horizon.eon.em.typed.ChangeFlag;
-import io.horizon.uca.log.Annal;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
-import io.zerows.core.cloud.eon.VDBC;
+import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.common.datamation.KFabric;
+import io.zerows.common.datamation.KMapping;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.extension.mbse.basement.exception._501FabricIssueException;
+import io.zerows.module.cloud.eon.VDBC;
 
 import java.util.Objects;
 

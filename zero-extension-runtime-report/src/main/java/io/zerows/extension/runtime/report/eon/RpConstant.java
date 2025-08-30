@@ -5,7 +5,7 @@ package io.zerows.extension.runtime.report.eon;
  */
 public interface RpConstant {
 
-    String BUNDLE_SYMBOLIC_NAME = "zero-extension-runtime-report";
+    String BUNDLE_SYMBOLIC_NAME = "zero-extension-running-report";
 
     interface SourceTypeField {
         String TABLE = "ds.table";

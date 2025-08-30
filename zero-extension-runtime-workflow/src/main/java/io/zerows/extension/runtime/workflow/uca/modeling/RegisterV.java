@@ -3,7 +3,7 @@ package io.zerows.extension.runtime.workflow.uca.modeling;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.workflow.atom.configuration.MetaInstance;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 
 import static io.zerows.extension.runtime.workflow.util.Wf.LOG;
 

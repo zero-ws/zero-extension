@@ -1,15 +1,15 @@
 package io.zerows.extension.mbse.action.util;
 
-import io.horizon.atom.datamation.KDictConfig;
-import io.macrocosm.specification.app.HApp;
-import io.macrocosm.specification.program.HArk;
-import io.modello.atom.app.KDS;
-import io.modello.atom.app.KIntegration;
-import io.modello.specification.atom.HRule;
+import io.zerows.common.datamation.KDictConfig;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.common.app.KDS;
+import io.zerows.common.app.KIntegration;
+import io.zerows.specification.modeling.HRule;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.fn.Fn;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
 import io.zerows.core.database.atom.Database;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IApi;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IJob;

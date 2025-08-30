@@ -4,7 +4,7 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FBillItemDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 
 /**
  * 对象查询器，根据传入数据信息读取对象信息

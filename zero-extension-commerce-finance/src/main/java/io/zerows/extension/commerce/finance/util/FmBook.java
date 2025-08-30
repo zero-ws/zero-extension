@@ -1,13 +1,13 @@
 package io.zerows.extension.commerce.finance.util;
 
-import io.horizon.eon.VString;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.util.Ut;
-import io.zerows.core.domain.atom.specification.KNaming;
+import io.zerows.agreed.constant.VString;
+import io.zerows.core.constant.KName;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBook;
 import io.zerows.extension.commerce.finance.eon.FmConstant;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.module.domain.atom.specification.KNaming;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

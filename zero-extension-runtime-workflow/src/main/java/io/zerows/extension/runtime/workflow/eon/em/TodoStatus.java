@@ -20,8 +20,8 @@ package io.zerows.extension.runtime.workflow.eon.em;
     - 「EXPIRED」
  *
  * 1. Here are status for todo tasks: The todo task contains following structure
- *    - X_TODO + Data ( Json ) + Form ( UI_FORM )
- *    - X_TODO + Data ( Json ) + Form ( UI_FORM ) + W_INSTANCE
+ *    - X_TODO + Data ( InJson ) + Form ( UI_FORM )
+ *    - X_TODO + Data ( InJson ) + Form ( UI_FORM ) + W_INSTANCE
  * 2. Data Record extracting way:
  *    - Static:  MODEL_COMPONENT -> MODEL_KEY
  *    - Dynamic: MODEL_ID -> MODEL_KEY
@@ -30,7 +30,7 @@ package io.zerows.extension.runtime.workflow.eon.em;
  *    - Method 1:  MODEL_FORM -> ( Code in UI_FORM ), dynamic form
  *    - Method 2:  MODEL_FORM -> ( filename stored ), static form
  *                            --- src/resources/plugin/ui/forms/
- *                            --- The MODEL_FORM stored the filename such as "request.data.form" ( Json Format )
+ *                            --- The MODEL_FORM stored the filename such as "request.data.form" ( InJson Format )
  *                            --- The extension is synced with camunda of form ( XML Format ) but format different
  *    - Method 3: INSTANCE -> W_INSTANCE -> ( formKey in camunda ) to read form
  *                            --- The format is:  camunda-forms:deployment:<MODEL_FORM> here

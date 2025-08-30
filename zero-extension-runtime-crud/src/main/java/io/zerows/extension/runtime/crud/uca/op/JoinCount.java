@@ -1,12 +1,12 @@
 package io.zerows.extension.runtime.crud.uca.op;
 
-import io.horizon.eon.VString;
+import io.zerows.agreed.constant.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.crud.uca.dao.Operate;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
 
 import static io.zerows.extension.runtime.crud.util.Ix.LOG;
 

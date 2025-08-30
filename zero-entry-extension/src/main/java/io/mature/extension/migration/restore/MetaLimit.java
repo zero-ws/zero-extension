@@ -1,14 +1,14 @@
 package io.mature.extension.migration.restore;
 
-import io.horizon.eon.em.Environment;
-import io.macrocosm.specification.app.HApp;
+import io.zerows.agreed.constant.em.Environment;
+import io.zerows.specification.access.app.HApp;
 import io.mature.extension.migration.AbstractStep;
 import io.mature.extension.migration.modeling.Revision;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.eon.KName;
-import io.vertx.up.unity.Ux;
-import io.vertx.up.util.Ut;
+import io.zerows.core.constant.KName;
+import io.zerows.unity.Ux;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MAttributeDao;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MEntityDao;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MFieldDao;

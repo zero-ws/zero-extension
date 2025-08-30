@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.rbac.uca.ruler.element.HAdmitCompiler;
-import io.zerows.core.security.atom.manage.KPermit;
+import io.zerows.module.security.atom.manage.KPermit;
 
 public class HSDimArea extends HSDimNorm {
     @Override

@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.osgi.spi.ambient;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.vertx.up.unity.Ux;
+import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.skeleton.osgi.spi.extension.Init;
 
 import java.util.function.Function;

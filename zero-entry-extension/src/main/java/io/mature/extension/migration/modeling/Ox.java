@@ -1,6 +1,6 @@
 package io.mature.extension.migration.modeling;
 
-import io.vertx.up.util.Ut;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MAttributeDao;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MEntityDao;
 import io.zerows.extension.mbse.basement.domain.tables.daos.MFieldDao;
