@@ -5,7 +5,7 @@ import io.zerows.extension.commerce.finance.domain.tables.daos.FBillItemDao;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBill;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBillItem;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.FBook;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.finance.uca.account.Book;

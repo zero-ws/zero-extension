@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.metadata;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.uca.log.Annal;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

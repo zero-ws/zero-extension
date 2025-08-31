@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.region;
 
-import io.zerows.agreed.constant.em.EmAop;
+import io.zerows.ams.constant.em.EmAop;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

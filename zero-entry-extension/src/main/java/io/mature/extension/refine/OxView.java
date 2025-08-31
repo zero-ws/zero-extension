@@ -1,6 +1,6 @@
 package io.mature.extension.refine;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;
 import io.vertx.core.Future;

@@ -1,12 +1,12 @@
 package io.zerows.extension.mbse.basement.atom.data;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.exception.WebException;
 import io.zerows.core.uca.qr.Criteria;
 import io.zerows.core.uca.qr.Pager;
 import io.zerows.core.uca.qr.Sorter;
 import io.zerows.core.uca.qr.syntax.Ir;
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

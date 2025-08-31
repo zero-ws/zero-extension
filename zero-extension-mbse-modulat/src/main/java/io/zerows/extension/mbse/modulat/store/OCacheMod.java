@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.modulat.store;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.common.app.KDS;
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.util.Ut;

@@ -3,7 +3,7 @@ package io.zerows.extension.commerce.rbac.uca.acl.rapier;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.unity.Ux;
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.em.EmSecure;
 import io.zerows.core.uca.cache.Cc;

@@ -1,7 +1,7 @@
 package io.mature.extension.refine;
 
 import io.mature.extension.cv.OxCv;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
 import io.zerows.specification.modeling.HRule;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

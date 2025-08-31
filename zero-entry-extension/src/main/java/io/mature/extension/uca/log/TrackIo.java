@@ -5,7 +5,7 @@ import io.zerows.core.uca.cache.Cc;
 import io.mature.extension.refine.Ox;
 import io.mature.extension.uca.code.Numeration;
 import io.zerows.common.normalize.KMarkAtom;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
 import io.zerows.specification.modeling.operation.HDao;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

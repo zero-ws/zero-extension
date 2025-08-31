@@ -1,8 +1,8 @@
 package io.zerows.extension.mbse.basement.uca.sql;
 
-import io.zerows.agreed.constant.VValue;
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
-import io.zerows.agreed.constant.em.modeling.EmKey;
+import io.zerows.ams.constant.VValue;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.modeling.EmKey;
 import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Schema;

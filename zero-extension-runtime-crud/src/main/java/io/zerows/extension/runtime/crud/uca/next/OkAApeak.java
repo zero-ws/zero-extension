@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.crud.uca.next;
 
 import io.zerows.common.program.Kv;
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

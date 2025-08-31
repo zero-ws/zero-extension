@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.jdbc;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.common.app.KDatabase;

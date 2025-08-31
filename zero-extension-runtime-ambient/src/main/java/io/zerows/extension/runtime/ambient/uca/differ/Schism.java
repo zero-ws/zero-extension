@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.ambient.uca.differ;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.specification.access.app.HArk;
 import io.zerows.specification.modeling.HAtom;

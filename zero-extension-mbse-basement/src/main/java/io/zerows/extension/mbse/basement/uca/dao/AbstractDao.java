@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.dao;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.uca.qr.Criteria;
 import io.vertx.core.Future;

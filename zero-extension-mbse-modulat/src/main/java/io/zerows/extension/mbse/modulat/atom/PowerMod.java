@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.modulat.atom;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HMod;
 import io.vertx.core.json.JsonObject;

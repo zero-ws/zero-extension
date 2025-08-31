@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.action.uca.micro;
 
 import io.zerows.common.program.KRef;
-import io.zerows.agreed.constant.em.app.EmTraffic;
+import io.zerows.ams.constant.em.app.EmTraffic;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.zerows.core.fn.Fn;

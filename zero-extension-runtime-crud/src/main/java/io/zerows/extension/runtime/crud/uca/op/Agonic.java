@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.uca.op;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.core.exception.web._501NotSupportException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

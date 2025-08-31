@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.uca.desk;
 
-import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.ams.constant.em.app.HttpStatusCode;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

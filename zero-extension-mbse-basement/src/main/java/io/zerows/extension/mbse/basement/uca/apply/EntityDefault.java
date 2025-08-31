@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.apply;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.basement.eon.em.EntityType;
 import io.zerows.core.constant.KName;

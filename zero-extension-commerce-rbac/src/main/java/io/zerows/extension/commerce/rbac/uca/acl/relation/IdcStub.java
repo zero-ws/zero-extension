@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.exception.web._501NotSupportException;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;

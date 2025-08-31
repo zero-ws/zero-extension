@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.crud.uca.desk;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.exception.WebException;
 import io.zerows.core.exception.web._500InternalServerException;
 import io.zerows.core.fn.Fn;

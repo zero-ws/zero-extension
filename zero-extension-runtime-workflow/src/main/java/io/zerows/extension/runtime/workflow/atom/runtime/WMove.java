@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.atom.runtime;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.uca.aop.AspectRobin;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

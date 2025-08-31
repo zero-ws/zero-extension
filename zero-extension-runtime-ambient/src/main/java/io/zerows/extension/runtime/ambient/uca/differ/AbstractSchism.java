@@ -3,7 +3,7 @@ package io.zerows.extension.runtime.ambient.uca.differ;
 import io.zerows.common.program.KRef;
 import io.zerows.core.exception.web._501NotSupportException;
 import io.zerows.common.normalize.KMarkAtom;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
 import io.zerows.specification.modeling.HAtom;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

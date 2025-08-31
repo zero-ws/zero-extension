@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.report.refine;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.util.Ut;
 

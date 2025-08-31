@@ -1,7 +1,7 @@
 package io.mature.extension.uca.console;
 
-import io.zerows.agreed.constant.VPath;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VPath;
+import io.zerows.ams.constant.VString;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;
 import io.mature.extension.scaffold.console.AbstractInstruction;

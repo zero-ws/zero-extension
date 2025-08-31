@@ -1,7 +1,7 @@
 package io.mature.extension.scaffold.plugin;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.common.datamation.KFabric;
 import io.zerows.common.datamation.KMapping;
 import io.zerows.core.constant.KName;

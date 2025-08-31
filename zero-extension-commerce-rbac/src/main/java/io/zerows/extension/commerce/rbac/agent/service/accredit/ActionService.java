@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.agent.service.accredit;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.json.JsonArray;

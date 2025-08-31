@@ -3,7 +3,7 @@ package io.mature.stellar.vendor;
 import io.zerows.common.datamation.KDictConfig;
 import io.zerows.common.datamation.KFabric;
 import io.zerows.common.datamation.KMap;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.mature.stellar.Party;
 import io.mature.stellar.owner.OkA;
 import io.zerows.common.app.KIntegration;

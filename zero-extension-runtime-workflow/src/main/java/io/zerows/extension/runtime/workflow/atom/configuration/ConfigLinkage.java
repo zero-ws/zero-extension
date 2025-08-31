@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.atom.configuration;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.workflow.util.Wf;

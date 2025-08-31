@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.action.plugins;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.constant.configure.YmlCore;
 import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;

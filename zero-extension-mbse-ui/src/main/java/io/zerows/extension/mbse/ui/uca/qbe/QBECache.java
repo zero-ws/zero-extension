@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.ui.uca.qbe;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.specification.vital.HQR;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;

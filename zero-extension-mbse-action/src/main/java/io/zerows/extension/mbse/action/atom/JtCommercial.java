@@ -2,8 +2,8 @@ package io.zerows.extension.mbse.action.atom;
 
 import io.zerows.common.datamation.KDictConfig;
 import io.zerows.common.datamation.KMap;
-import io.zerows.agreed.constant.em.Environment;
-import io.zerows.agreed.constant.em.app.EmTraffic;
+import io.zerows.ams.constant.em.Environment;
+import io.zerows.ams.constant.em.app.EmTraffic;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;
 import io.zerows.common.app.KIntegration;

@@ -1,6 +1,6 @@
 package io.mature.extension.refine;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.mature.extension.uca.ui.FieldReport;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

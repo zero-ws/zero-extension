@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.atom.builtin;
 
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.specification.access.app.HArk;
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.specification.modeling.HAttribute;
 import io.zerows.specification.modeling.HReference;
 import io.zerows.specification.modeling.HRule;

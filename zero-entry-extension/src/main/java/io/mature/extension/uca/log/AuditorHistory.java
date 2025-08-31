@@ -1,6 +1,6 @@
 package io.mature.extension.uca.log;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.core.uca.cache.Cc;
 import io.mature.extension.refine.Ox;
 import io.vertx.core.Future;

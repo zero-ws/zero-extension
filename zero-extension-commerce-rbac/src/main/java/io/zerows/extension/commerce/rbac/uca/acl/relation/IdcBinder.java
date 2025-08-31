@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

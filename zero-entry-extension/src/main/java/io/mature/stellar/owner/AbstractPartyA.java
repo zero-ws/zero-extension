@@ -8,7 +8,7 @@ import io.zerows.core.util.Ut;
 import io.zerows.common.app.KDS;
 import io.zerows.common.app.KGlobal;
 import io.zerows.common.app.KIntegration;
-import io.zerows.agreed.constant.em.Environment;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.exception.boot.AmbientConnectException;
 import io.zerows.core.running.boot.KPivot;

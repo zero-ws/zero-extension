@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.util;
 
-import io.zerows.agreed.constant.em.app.EmTraffic;
+import io.zerows.ams.constant.em.app.EmTraffic;
 import io.vertx.core.AbstractVerticle;
 import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;

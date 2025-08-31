@@ -1,8 +1,8 @@
 package io.mature.extension.uca.log;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.core.uca.compare.Vs;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
 import io.zerows.specification.modeling.HAttribute;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.uca.input;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.exception.WebException;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

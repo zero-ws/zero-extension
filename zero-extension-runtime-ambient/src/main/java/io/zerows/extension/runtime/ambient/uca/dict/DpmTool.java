@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.ambient.uca.dict;
 
-import io.zerows.agreed.constant.VString;
-import io.zerows.agreed.constant.em.EmDict;
+import io.zerows.ams.constant.VString;
+import io.zerows.ams.constant.em.EmDict;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;

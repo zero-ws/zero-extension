@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.atom.element;
 
 import io.zerows.core.uca.cache.Cc;
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;

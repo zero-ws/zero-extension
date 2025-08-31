@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.agreed.annotations.Memory;
+import io.zerows.ams.annotations.Memory;
 import io.zerows.core.exception.web._501NotImplementException;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
 import io.zerows.extension.commerce.finance.eon.em.EmPay;

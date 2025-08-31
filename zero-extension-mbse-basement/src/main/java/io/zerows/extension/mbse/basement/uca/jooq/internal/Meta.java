@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.jooq.internal;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.uca.log.Annal;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

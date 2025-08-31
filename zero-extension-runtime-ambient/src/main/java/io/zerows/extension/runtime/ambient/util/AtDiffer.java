@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.ambient.util;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.core.uca.compare.Vs;
 import io.zerows.common.normalize.KMarkAtom;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
 import io.zerows.specification.modeling.HAtom;
 import io.zerows.specification.modeling.HAttribute;
 import io.zerows.specification.modeling.metadata.HMetaField;

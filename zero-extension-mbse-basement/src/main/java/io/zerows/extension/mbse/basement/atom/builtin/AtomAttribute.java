@@ -1,11 +1,11 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.common.normalize.KAttribute;
 import io.zerows.common.normalize.KMarkAttribute;
 import io.zerows.common.reference.RRule;
-import io.zerows.agreed.constant.em.modeling.EmAttribute;
-import io.zerows.agreed.constant.em.modeling.EmValue;
+import io.zerows.ams.constant.em.modeling.EmAttribute;
+import io.zerows.ams.constant.em.modeling.EmValue;
 import io.zerows.specification.modeling.HAttribute;
 import io.zerows.specification.modeling.metadata.HMetaField;
 import io.vertx.core.json.JsonArray;

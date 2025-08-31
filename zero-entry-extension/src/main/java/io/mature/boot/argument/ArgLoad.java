@@ -1,6 +1,6 @@
 package io.mature.boot.argument;
 
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
 
 import java.util.List;

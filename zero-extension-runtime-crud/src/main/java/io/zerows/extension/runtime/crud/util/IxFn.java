@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.crud.util;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.exception.WebException;
 import io.zerows.core.uca.aop.Aspect;
 import io.vertx.core.Future;

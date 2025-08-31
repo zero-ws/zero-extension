@@ -1,8 +1,8 @@
 package io.zerows.extension.commerce.rbac.agent.service.business;
 
 import io.zerows.common.program.KRef;
-import io.zerows.agreed.constant.VString;
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.VString;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

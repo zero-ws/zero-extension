@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.apply;
 
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
 

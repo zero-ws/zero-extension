@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.exception;
 
-import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.ams.constant.em.app.HttpStatusCode;
 import io.zerows.core.exception.WebException;
 import io.zerows.extension.commerce.rbac.uca.logged.ProfileType;
 

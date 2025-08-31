@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.crud.uca.dao;
 
 import io.zerows.core.uca.cache.Cc;
-import io.zerows.agreed.annotations.Memory;
+import io.zerows.ams.annotations.Memory;
 
 
 @SuppressWarnings("all")

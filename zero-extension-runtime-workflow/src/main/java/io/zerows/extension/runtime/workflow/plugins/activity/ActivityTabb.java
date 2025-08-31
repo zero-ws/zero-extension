@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.plugins.activity;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Valve;
 import io.zerows.core.uca.aop.After;
 import io.zerows.core.uca.aop.Around;

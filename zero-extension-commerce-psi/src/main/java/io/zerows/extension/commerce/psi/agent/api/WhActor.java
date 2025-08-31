@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.psi.agent.api;
 
-import io.zerows.agreed.constant.em.modeling.EmValue;
+import io.zerows.ams.constant.em.modeling.EmValue;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.annotations.Address;

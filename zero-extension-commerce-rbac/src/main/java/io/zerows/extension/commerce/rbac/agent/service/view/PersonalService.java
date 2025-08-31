@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.agent.service.view;
 
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;

@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.uca.jooq;
 
-import io.zerows.agreed.constant.VString;
-import io.zerows.agreed.constant.VValue;
+import io.zerows.ams.constant.VString;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.uca.qr.Criteria;
 import io.zerows.core.uca.qr.syntax.Ir;

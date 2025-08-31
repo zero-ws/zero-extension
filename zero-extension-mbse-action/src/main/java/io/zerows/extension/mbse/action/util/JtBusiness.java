@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.action.util;
 
 import io.zerows.common.datamation.KDictConfig;
 import io.zerows.common.datamation.KMap;
-import io.zerows.agreed.constant.em.EmAop;
+import io.zerows.ams.constant.em.EmAop;
 import io.zerows.core.uca.cache.Cc;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;

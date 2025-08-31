@@ -1,6 +1,6 @@
 package io.mature.extension.uca.graphic;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.zerows.core.uca.cache.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;

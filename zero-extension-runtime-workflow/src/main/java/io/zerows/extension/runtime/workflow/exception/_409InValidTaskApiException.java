@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.workflow.exception;
 
 import io.zerows.extension.runtime.workflow.eon.em.PassWay;
-import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.ams.constant.em.app.HttpStatusCode;
 import io.zerows.core.exception.WebException;
 
 /**

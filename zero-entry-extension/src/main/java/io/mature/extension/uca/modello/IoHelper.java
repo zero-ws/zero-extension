@@ -1,6 +1,6 @@
 package io.mature.extension.uca.modello;
 
-import io.zerows.agreed.constant.em.modeling.EmValue;
+import io.zerows.ams.constant.em.modeling.EmValue;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;

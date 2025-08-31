@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.exception;
 
-import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.ams.constant.em.app.HttpStatusCode;
 import io.zerows.core.exception.WebException;
 
 public class _500DefinitionErrorException extends WebException {

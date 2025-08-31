@@ -2,7 +2,7 @@ package io.zerows.extension.runtime.ambient.osgi.spi.component;
 
 import io.zerows.common.datamation.KDictSource;
 import io.zerows.common.datamation.KDictUse;
-import io.zerows.agreed.constant.em.EmDict;
+import io.zerows.ams.constant.em.EmDict;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

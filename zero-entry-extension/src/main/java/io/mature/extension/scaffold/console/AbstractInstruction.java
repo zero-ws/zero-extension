@@ -1,6 +1,6 @@
 package io.mature.extension.scaffold.console;
 
-import io.zerows.agreed.constant.em.Environment;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.exception.internal.EmptyIoException;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;

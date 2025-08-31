@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.unity.Ux;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.util.Ut;

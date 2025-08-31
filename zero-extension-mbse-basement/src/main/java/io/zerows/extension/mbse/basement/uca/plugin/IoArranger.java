@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.basement.uca.plugin;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.agreed.fn.TiConsumer;
+import io.zerows.ams.fn.TiConsumer;
 import io.zerows.common.program.Kv;
 import io.zerows.core.constant.KName;
 import io.zerows.core.util.Ut;

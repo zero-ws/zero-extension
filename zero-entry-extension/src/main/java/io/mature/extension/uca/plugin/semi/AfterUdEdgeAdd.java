@@ -1,6 +1,6 @@
 package io.mature.extension.uca.plugin.semi;
 
-import io.zerows.agreed.constant.em.typed.ChangeFlag;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 import io.mature.extension.refine.Ox;
 import io.mature.extension.scaffold.plugin.AbstractAfter;
 import io.mature.extension.uca.graphic.Pixel;

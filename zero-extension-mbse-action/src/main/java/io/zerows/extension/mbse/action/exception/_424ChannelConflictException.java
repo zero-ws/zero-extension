@@ -1,7 +1,7 @@
 package io.zerows.extension.mbse.action.exception;
 
-import io.zerows.agreed.constant.em.app.EmTraffic;
-import io.zerows.agreed.constant.em.app.HttpStatusCode;
+import io.zerows.ams.constant.em.app.EmTraffic;
+import io.zerows.ams.constant.em.app.HttpStatusCode;
 import io.zerows.core.exception.WebException;
 
 /*

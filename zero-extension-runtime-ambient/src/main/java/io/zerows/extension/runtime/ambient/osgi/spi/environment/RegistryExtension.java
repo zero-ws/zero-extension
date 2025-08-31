@@ -1,7 +1,7 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.environment;
 
 import io.zerows.core.exception.web._501NotSupportException;
-import io.zerows.agreed.fn.HFn;
+import io.zerows.ams.fn.HFn;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.zerows.unity.Ux;

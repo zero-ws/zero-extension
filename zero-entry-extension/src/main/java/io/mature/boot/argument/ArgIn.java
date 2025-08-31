@@ -1,8 +1,8 @@
 package io.mature.boot.argument;
 
 import io.zerows.core.util.Ut;
-import io.zerows.agreed.constant.VValue;
-import io.zerows.agreed.constant.em.Environment;
+import io.zerows.ams.constant.VValue;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.running.HMacrocosm;
 
 import java.util.List;

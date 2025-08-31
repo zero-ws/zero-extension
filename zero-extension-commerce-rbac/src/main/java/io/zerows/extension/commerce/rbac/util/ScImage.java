@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.util;
 
-import io.zerows.agreed.constant.VPath;
+import io.zerows.ams.constant.VPath;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.zerows.core.fn.Fn;

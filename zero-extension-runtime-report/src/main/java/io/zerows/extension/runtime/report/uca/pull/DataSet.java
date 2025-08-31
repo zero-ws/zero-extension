@@ -3,7 +3,7 @@ package io.zerows.extension.runtime.report.uca.pull;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
 import io.zerows.core.exception.web._501NotSupportException;
 import io.zerows.core.uca.cache.Cc;

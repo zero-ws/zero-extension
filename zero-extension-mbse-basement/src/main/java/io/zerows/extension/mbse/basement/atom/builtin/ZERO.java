@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
 
-import io.zerows.agreed.constant.VValue;
-import io.zerows.agreed.constant.em.modeling.EmKey;
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.VValue;
+import io.zerows.ams.constant.em.modeling.EmKey;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.basement.atom.Model;

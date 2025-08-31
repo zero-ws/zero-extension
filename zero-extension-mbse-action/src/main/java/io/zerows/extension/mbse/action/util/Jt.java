@@ -2,8 +2,8 @@ package io.zerows.extension.mbse.action.util;
 
 import io.zerows.common.datamation.KDictConfig;
 import io.zerows.common.datamation.KMap;
-import io.zerows.agreed.constant.VString;
-import io.zerows.agreed.constant.em.app.EmTraffic;
+import io.zerows.ams.constant.VString;
+import io.zerows.ams.constant.em.app.EmTraffic;
 import io.zerows.core.uca.log.Log;
 import io.zerows.core.uca.log.LogModule;
 import io.zerows.specification.access.app.HArk;

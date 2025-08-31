@@ -1,8 +1,8 @@
 package io.mature.boot.supply;
 
-import io.zerows.agreed.constant.VPath;
-import io.zerows.agreed.constant.VString;
-import io.zerows.agreed.constant.spec.VWeb;
+import io.zerows.ams.constant.VPath;
+import io.zerows.ams.constant.VString;
+import io.zerows.ams.constant.spec.VWeb;
 import io.zerows.common.app.KIntegration;
 
 import java.util.Objects;

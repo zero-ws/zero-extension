@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.uca.id;
 
-import io.zerows.agreed.constant.em.modeling.EmKey;
+import io.zerows.ams.constant.em.modeling.EmKey;
 import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.extension.mbse.basement.atom.Schema;

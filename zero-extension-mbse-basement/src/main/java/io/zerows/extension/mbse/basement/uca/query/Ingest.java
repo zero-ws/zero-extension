@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.uca.query;
 
 import io.zerows.core.uca.qr.Criteria;
 import io.zerows.core.uca.qr.Sorter;
-import io.zerows.agreed.constant.em.modeling.EmModel;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.element.DataTpl;
 import io.zerows.extension.mbse.basement.exception._501IngestImplementException;

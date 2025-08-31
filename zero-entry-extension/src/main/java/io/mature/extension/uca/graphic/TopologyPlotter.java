@@ -1,7 +1,7 @@
 package io.mature.extension.uca.graphic;
 
 import io.zerows.common.program.KRef;
-import io.zerows.agreed.constant.VString;
+import io.zerows.ams.constant.VString;
 import io.zerows.specification.access.app.HApp;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
