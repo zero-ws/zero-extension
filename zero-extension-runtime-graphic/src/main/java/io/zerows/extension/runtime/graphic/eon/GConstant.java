@@ -5,5 +5,5 @@ package io.zerows.extension.runtime.graphic.eon;
  */
 public interface GConstant {
 
-    String BUNDLE_SYMBOLIC_NAME = "zero-extension-running-graphic";
+    String BUNDLE_SYMBOLIC_NAME = "zero-extension-runtime-graphic";
 }
