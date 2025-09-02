@@ -1,10 +1,7 @@
 package io.zerows.extension.commerce.finance.agent.api;
 
-import io.zerows.extension.commerce.finance.domain.tables.daos.FBillDao;
-import io.zerows.extension.commerce.finance.domain.tables.daos.FBillItemDao;
-import io.zerows.extension.commerce.finance.domain.tables.daos.FTransDao;
-import io.zerows.extension.commerce.finance.domain.tables.daos.FTransItemDao;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FBill;
+import io.zerows.extension.commerce.finance.domain.tables.daos.*;
+import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
 import io.zerows.extension.commerce.finance.agent.service.BookStub;
 import io.zerows.extension.commerce.finance.agent.service.FetchStub;
 import io.zerows.extension.commerce.finance.agent.service.end.SettleRStub;
@@ -12,9 +9,6 @@ import io.zerows.extension.commerce.finance.agent.service.end.TransStub;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FSettlement;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FTrans;
-import io.zerows.extension.commerce.finance.domain.tables.pojos.FTransItem;
 import io.zerows.extension.commerce.finance.eon.Addr;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
@@ -67,7 +61,14 @@ public class FetchActor {
              * 旧版本多查询了一步，但实际这个步骤查询下来没有任何用
              * 根据结算单查询 交易明细 信息
              */
-            .compose(nil -> data.response(false));
+            .compose(nil -> data.response(false))
+            /*
+            * 查询预授权信息
+            */
+            .compose(dataSouse-> Ux.Jooq.on(FPreAuthorizeDao.class).<FPreAuthorize>fetchAsync("orderId",orderId).compose(item->{
+               dataSouse.put("preAuthorize", item.isEmpty() ?new JsonArray(): Ux.toJson(item));
+               return Ux.future(dataSouse);
+            }));
     }
 
 
