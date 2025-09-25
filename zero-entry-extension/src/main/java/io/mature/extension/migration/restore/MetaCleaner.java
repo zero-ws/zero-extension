@@ -1,14 +1,14 @@
 package io.mature.extension.migration.restore;
 
-import io.zerows.ams.constant.em.Environment;
 import io.mature.extension.migration.tookit.AbstractStatic;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
-import io.zerows.core.util.Ut;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.database.cp.zdk.DataPool;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
+import io.zerows.unity.Ux;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -32,7 +32,7 @@ public class MetaCleaner extends AbstractStatic {
          * 读取当前 DataPool
          */
         final DataPool pool = DataPool.create();
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             /*
              * 获取连接
              */

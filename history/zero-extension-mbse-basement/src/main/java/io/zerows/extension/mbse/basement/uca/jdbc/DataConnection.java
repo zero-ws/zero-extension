@@ -52,7 +52,7 @@ public class DataConnection implements AoConnection {
     @Override
     public Connection getConnection() {
         final DataSource dataSource = this.dbPool.getDataSource();
-        return Fn.failOr(dataSource::getConnection, dataSource);
+        return Fn.jvmOr(dataSource::getConnection, dataSource);
     }
 
     @Override

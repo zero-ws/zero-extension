@@ -3,7 +3,6 @@ package io.zerows.extension.runtime.crud.bootstrap;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KColumn;
 import io.zerows.core.web.mbse.atom.specification.KModule;
@@ -85,16 +84,26 @@ class IxInitializer {
         /* Auditor Processing */
         final KField field = Objects.isNull(module.getField()) ? new KField() : module.getField();
         // key -> key
-        Fn.runAt(Objects.isNull(field.getKey()), () -> field.setKey(KName.KEY));
+        if (Objects.isNull(field.getKey())) {
+            field.setKey(KName.KEY);
+        }
         // created
         final JsonObject created = Ut.valueJObject(field.getCreated());
-        Fn.runAt(!created.containsKey(KName.AT), () -> created.put(KName.AT, KName.CREATED_AT));
-        Fn.runAt(!created.containsKey(KName.BY), () -> created.put(KName.BY, KName.CREATED_BY));
+        if (!created.containsKey(KName.AT)) {
+            created.put(KName.AT, KName.CREATED_AT);
+        }
+        if (!created.containsKey(KName.BY)) {
+            created.put(KName.BY, KName.CREATED_BY);
+        }
         field.setCreated(created);
         // updated
         final JsonObject updated = Ut.valueJObject(field.getUpdated());
-        Fn.runAt(!updated.containsKey(KName.AT), () -> updated.put(KName.AT, KName.UPDATED_AT));
-        Fn.runAt(!updated.containsKey(KName.BY), () -> updated.put(KName.BY, KName.UPDATED_BY));
+        if (!updated.containsKey(KName.AT)) {
+            updated.put(KName.AT, KName.UPDATED_AT);
+        }
+        if (!updated.containsKey(KName.BY)) {
+            updated.put(KName.BY, KName.UPDATED_BY);
+        }
         field.setUpdated(updated);
 
 
@@ -131,20 +140,25 @@ class IxInitializer {
         /* Header Processing */
         final JsonObject header = Ut.valueJObject(module.getHeader());
         /* sigma -> X-Sigma */
-        Fn.runAt(!header.containsKey(KName.SIGMA),
-            () -> header.put(KName.SIGMA, KWeb.HEADER.X_SIGMA));
+        if (!header.containsKey(KName.SIGMA)) {
+            header.put(KName.SIGMA, KWeb.HEADER.X_SIGMA);
+        }
         /* language -> X-Lang */
-        Fn.runAt(!header.containsKey(KName.LANGUAGE),
-            () -> header.put(KName.LANGUAGE, KWeb.HEADER.X_LANG));
+        if (!header.containsKey(KName.LANGUAGE)) {
+            header.put(KName.LANGUAGE, KWeb.HEADER.X_LANG);
+        }
         /* app-id -> X-App-Id */
-        Fn.runAt(!header.containsKey(KName.APP_ID),
-            () -> header.put(KName.APP_ID, KWeb.HEADER.X_APP_ID));
+        if (!header.containsKey(KName.APP_ID)) {
+            header.put(KName.APP_ID, KWeb.HEADER.X_APP_ID);
+        }
         /* app-key -> X-App-Key */
-        Fn.runAt(!header.containsKey(KName.APP_KEY),
-            () -> header.put(KName.APP_KEY, KWeb.HEADER.X_APP_KEY));
+        if (!header.containsKey(KName.APP_KEY)) {
+            header.put(KName.APP_KEY, KWeb.HEADER.X_APP_KEY);
+        }
         /* tenantId -> X-Tenant-Id */
-        Fn.runAt(!header.containsKey(KName.TENANT_ID),
-            () -> header.put(KName.TENANT_ID, KWeb.HEADER.X_TENANT_ID));
+        if (!header.containsKey(KName.TENANT_ID)) {
+            header.put(KName.TENANT_ID, KWeb.HEADER.X_TENANT_ID);
+        }
 
 
         // module -> header

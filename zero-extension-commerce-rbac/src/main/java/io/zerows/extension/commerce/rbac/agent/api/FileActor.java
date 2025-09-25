@@ -9,7 +9,6 @@ import io.zerows.core.annotations.Queue;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
 import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.commerce.rbac.eon.Addr;
@@ -17,6 +16,7 @@ import io.zerows.extension.commerce.rbac.uca.acl.relation.IdcStub;
 import io.zerows.plugins.office.excel.ExcelClient;
 import io.zerows.plugins.office.excel.atom.ExRecord;
 import io.zerows.plugins.office.excel.atom.ExTable;
+import io.zerows.unity.Ux;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,7 +43,7 @@ public class FileActor {
         if (!file.exists()) {
             return Ux.future(Envelop.success(Boolean.FALSE));
         }
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             final JsonObject headers = request.headersX().copy();
             /*
              * Read file to inputStream

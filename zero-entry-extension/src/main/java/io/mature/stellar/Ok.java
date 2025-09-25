@@ -5,7 +5,6 @@ import io.mature.stellar.owner.MockitoA;
 import io.mature.stellar.owner.OkA;
 import io.mature.stellar.owner.ProductionA;
 import io.mature.stellar.vendor.OkB;
-import io.r2mo.typed.cc.Cc;
 import io.vertx.boot.supply.Electy;
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
@@ -34,8 +33,6 @@ import java.util.function.Supplier;
 @Up
 public class Ok {
 
-    private static final Cc<Environment, Future<OkA>> CC_A = Cc.openA();
-
     public static Future<KFabric> fabric(final DataAtom atom, final String nameB) {
         if (Objects.isNull(atom)) {
             return Ut.Bnd.failOut(_417DataAtomNullException.class, Ok.class);
@@ -55,9 +52,9 @@ public class Ok {
 
     public static Future<OkA> of(final Vertx vertx, final Environment environment) {
         return switch (environment) {
-            case Mockito -> CC_A.pick(() -> of(vertx, MockitoA::new), Environment.Mockito);
-            case Production -> CC_A.pick(() -> of(vertx, ProductionA::new), Environment.Production);
-            case Development -> CC_A.pick(() -> of(vertx, DevelopmentA::new), Environment.Development);
+            case Mockito -> of(vertx, MockitoA::new);
+            case Production -> of(vertx, ProductionA::new);
+            case Development -> of(vertx, DevelopmentA::new);
         };
     }
 

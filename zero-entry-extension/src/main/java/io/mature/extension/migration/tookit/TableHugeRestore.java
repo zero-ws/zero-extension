@@ -1,12 +1,12 @@
 package io.mature.extension.migration.tookit;
 
-import io.zerows.ams.constant.em.Environment;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
-import io.zerows.core.util.Ut;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.database.atom.Database;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.util.Ut;
+import io.zerows.unity.Ux;
 
 import java.io.File;
 import java.io.OutputStream;
@@ -46,7 +46,7 @@ public class TableHugeRestore extends AbstractStatic {
             .append(" -p").append(database.getSmartPassword())
             .append(" --default-character-set=utf8 ")
             .append(" ").append(database.getInstance());
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             final File fileObj = Ut.ioFile(file);
             final BasicFileAttributes fileAttributes = Files.readAttributes(fileObj.toPath(), BasicFileAttributes.class);
             if (fileObj.exists() && fileAttributes.isRegularFile()) {

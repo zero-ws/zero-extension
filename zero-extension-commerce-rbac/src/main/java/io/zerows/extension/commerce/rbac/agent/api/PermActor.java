@@ -4,11 +4,9 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.unity.Ux;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.agent.service.business.PermStub;
 import io.zerows.extension.commerce.rbac.agent.service.business.RightsStub;
@@ -16,6 +14,7 @@ import io.zerows.extension.commerce.rbac.domain.tables.daos.RRolePermDao;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SPermSet;
 import io.zerows.extension.commerce.rbac.eon.Addr;
 import io.zerows.module.domain.atom.commune.XHeader;
+import io.zerows.unity.Ux;
 import jakarta.inject.Inject;
 
 import java.time.LocalDateTime;
@@ -121,9 +120,9 @@ public class PermActor {
 
     @Address(Addr.Authority.PERMISSION_BY_ROLE)
     public Future<JsonArray> fetchAsync(final String roleId) {
-        return Fn.runOr(Ux.futureA(), () -> Ux.Jooq.on(RRolePermDao.class)
+        return Ux.Jooq.on(RRolePermDao.class)
             .fetchAsync(KName.Rbac.ROLE_ID, roleId)
-            .compose(Ux::futureA), roleId);
+            .compose(Ux::futureA);
     }
 
     @Address(Addr.Authority.PERMISSION_SAVE)

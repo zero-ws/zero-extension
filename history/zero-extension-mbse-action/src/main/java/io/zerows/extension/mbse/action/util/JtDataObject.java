@@ -1,22 +1,21 @@
 package io.zerows.extension.mbse.action.util;
 
-import io.zerows.common.datamation.KDictConfig;
-import io.zerows.specification.access.app.HApp;
-import io.zerows.specification.access.app.HArk;
+import io.vertx.core.json.JsonObject;
 import io.zerows.common.app.KDS;
 import io.zerows.common.app.KIntegration;
-import io.zerows.specification.modeling.HRule;
-import io.vertx.core.json.JsonObject;
+import io.zerows.common.datamation.KDictConfig;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
-import io.zerows.core.util.Ut;
 import io.zerows.core.database.atom.Database;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IApi;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IJob;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IService;
 import io.zerows.extension.mbse.action.eon.JtConstant;
 import io.zerows.extension.mbse.action.eon.em.WorkerType;
 import io.zerows.extension.runtime.skeleton.refine.Ke;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HRule;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -119,13 +118,17 @@ class JtDataObject {
          * workerClass
          * workerJs
          */
-        Fn.runAt(Ut.isNil(api.getWorkerClass()),
-            () -> api.setWorkerClass(JtConstant.COMPONENT_DEFAULT_WORKER.getName()));
-        Fn.runAt(Ut.isNil(api.getWorkerAddress()),
-            () -> api.setWorkerAddress(JtConstant.EVENT_ADDRESS));
-        Fn.runAt(Ut.isNil(api.getWorkerConsumer()),
-            () -> api.setWorkerConsumer(JtConstant.COMPONENT_DEFAULT_CONSUMER.getName()));
-        Fn.runAt(Ut.isNil(api.getWorkerType()),
-            () -> api.setWorkerType(WorkerType.STD.name()));
+        if (Ut.isNil(api.getWorkerClass())) {
+            api.setWorkerClass(JtConstant.COMPONENT_DEFAULT_WORKER.getName());
+        }
+        if (Ut.isNil(api.getWorkerAddress())) {
+            api.setWorkerAddress(JtConstant.EVENT_ADDRESS);
+        }
+        if (Ut.isNil(api.getWorkerConsumer())) {
+            api.setWorkerConsumer(JtConstant.COMPONENT_DEFAULT_CONSUMER.getName());
+        }
+        if (Ut.isNil(api.getWorkerType())) {
+            api.setWorkerType(WorkerType.STD.name());
+        }
     }
 }

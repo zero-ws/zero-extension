@@ -2,14 +2,13 @@ package io.zerows.extension.runtime.crud.uca.input.view;
 
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.unity.Ux;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.web.mbse.atom.specification.KColumn;
 import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
 import io.zerows.extension.runtime.crud.uca.input.Pre;
 import io.zerows.module.domain.atom.commune.Vis;
+import io.zerows.unity.Ux;
 
 import java.util.Objects;
 
@@ -43,8 +42,9 @@ class ApeakPre implements Pre {
     }
 
     protected void viewProc(final JsonObject data, final KColumn column) {
-        Fn.runAt(Objects.isNull(data.getValue(KName.VIEW)), () ->
+        if (Objects.isNull(data.getValue(KName.VIEW))) {
             // Vis: Fix bug of default view
-            data.put(KName.VIEW, Vis.smart(column.getView())));
+            data.put(KName.VIEW, Vis.smart(column.getView()));
+        }
     }
 }

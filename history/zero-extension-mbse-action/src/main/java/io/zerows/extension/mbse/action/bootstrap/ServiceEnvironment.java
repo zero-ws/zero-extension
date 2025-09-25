@@ -1,19 +1,16 @@
 package io.zerows.extension.mbse.action.bootstrap;
 
-import io.zerows.core.exception.boot.AmbientConnectException;
-import io.zerows.core.uca.log.Annal;
-import io.zerows.specification.access.app.HApp;
-import io.zerows.specification.access.app.HArk;
-import io.zerows.common.app.KDS;
 import io.vertx.codegen.annotations.Fluent;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
+import io.zerows.common.app.KDS;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
-import io.zerows.core.util.Ut;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.database.cp.zdk.DataPool;
+import io.zerows.core.exception.boot.AmbientConnectException;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.uca.log.Annal;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.action.atom.JtJob;
 import io.zerows.extension.mbse.action.atom.JtUri;
 import io.zerows.extension.mbse.action.domain.tables.daos.IApiDao;
@@ -22,6 +19,9 @@ import io.zerows.extension.mbse.action.domain.tables.daos.IServiceDao;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IApi;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IJob;
 import io.zerows.extension.mbse.action.domain.tables.pojos.IService;
+import io.zerows.specification.access.app.HApp;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.unity.Ux;
 
 import java.sql.Connection;
 import java.util.*;
@@ -161,7 +161,10 @@ public class ServiceEnvironment {
     }
 
     public Connection getConnection() {
-        return Fn.failOr(() -> this.pool.getDataSource().getConnection(), this.pool);
+        if (Objects.isNull(this.pool)) {
+            return null;
+        }
+        return Fn.jvmOr(() -> this.pool.getDataSource().getConnection());
     }
 
     public DataPool getPool() {

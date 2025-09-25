@@ -1,12 +1,12 @@
 package io.zerows.extension.commerce.rbac.util;
 
-import io.zerows.ams.constant.VPath;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
+import io.zerows.ams.constant.VPath;
 import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.rbac.atom.ScConfig;
 import io.zerows.extension.commerce.rbac.bootstrap.ScPin;
+import io.zerows.unity.Ux;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -39,7 +39,7 @@ class ScImage {
         }
         drawText(graphics, code);
         // To InputStream
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             final ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(image, VPath.SUFFIX.IMG_PNG, baos);
             return Buffer.buffer(baos.toByteArray());

@@ -1,13 +1,13 @@
 package io.mature.extension.migration.backup;
 
-import io.zerows.ams.constant.em.Environment;
 import io.mature.extension.migration.AbstractStep;
 import io.mature.extension.refine.Ox;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
+import io.zerows.unity.Ux;
 
 import java.io.File;
 import java.util.Objects;
@@ -20,7 +20,7 @@ public class EnvPath extends AbstractStep {
 
     @Override
     public Future<JsonObject> procAsync(final JsonObject config) {
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             this.banner("001.2 初始化目录");
             Ox.LOG.Shell.info(this.getClass(), "输出目录参数：output = {0}", config.getString("output"));
             final String folder = this.ioRoot(config);

@@ -1,11 +1,11 @@
 package io.mature.extension.migration.tookit;
 
-import io.zerows.ams.constant.em.Environment;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.em.Environment;
+import io.zerows.core.database.atom.Database;
 import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
-import io.zerows.core.database.atom.Database;
 
 import static io.mature.extension.refine.Ox.LOG;
 
@@ -53,7 +53,7 @@ public class TableHugeBackup extends AbstractStatic {
             .append(" --result-file=").append(file)
             .append(" --skip-comments")
             .append(" --default-character-set=utf8 ");
-        return Fn.failOr(() -> {
+        return Fn.jvmOr(() -> {
             LOG.Shell.info(this.getClass(), "执行命令：{0}", cmd.toString());
             final Process process = Runtime.getRuntime().exec(cmd.toString());
             return process.waitFor() == 0;

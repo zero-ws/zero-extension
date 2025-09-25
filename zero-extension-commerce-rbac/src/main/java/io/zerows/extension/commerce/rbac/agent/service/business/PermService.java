@@ -1,15 +1,14 @@
 package io.zerows.extension.commerce.rbac.agent.service.business;
 
-import io.zerows.ams.constant.VString;
-import io.zerows.core.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
-import io.zerows.core.util.Ut;
 import io.zerows.core.database.jooq.operation.UxJooq;
+import io.zerows.core.fn.Fn;
+import io.zerows.core.uca.qr.syntax.Ir;
+import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.agent.service.accredit.ActionStub;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.RRolePermDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SActionDao;
@@ -20,6 +19,7 @@ import io.zerows.extension.commerce.rbac.domain.tables.pojos.SAction;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SPermSet;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SPermission;
 import io.zerows.extension.commerce.rbac.uca.logged.ScRole;
+import io.zerows.unity.Ux;
 import jakarta.inject.Inject;
 
 import java.time.LocalDateTime;
@@ -88,34 +88,32 @@ public class PermService implements PermStub {
 
     @Override
     public Future<JsonArray> syncAsync(final JsonArray permissions, final String roleId) {
-        return Fn.runOr(Ux.futureA(), () -> {
-            final JsonObject condition = new JsonObject();
-            condition.put(KName.Rbac.ROLE_ID, roleId);
+        final JsonObject condition = new JsonObject();
+        condition.put(KName.Rbac.ROLE_ID, roleId);
+        /*
+         * Delete all the relations that belong to roleId
+         * that the user provided here
+         * */
+        final UxJooq dao = Ux.Jooq.on(RRolePermDao.class);
+        return dao.deleteByAsync(condition).compose(processed -> {
             /*
-             * Delete all the relations that belong to roleId
-             * that the user provided here
-             * */
-            final UxJooq dao = Ux.Jooq.on(RRolePermDao.class);
-            return dao.deleteByAsync(condition).compose(processed -> {
-                /*
-                 * Build new relations that belong to the role
-                 */
-                final List<RRolePerm> relations = new ArrayList<>();
-                Ut.itJArray(permissions, String.class, (permissionId, index) -> {
-                    final RRolePerm item = new RRolePerm();
-                    item.setRoleId(roleId);
-                    item.setPermId(permissionId);
-                    relations.add(item);
-                });
-                return dao.insertAsync(relations).compose(inserted -> {
-                    /*
-                     * Refresh cache pool with Sc interface directly
-                     */
-                    final ScRole role = ScRole.login(roleId);
-                    return role.refresh(permissions).compose(nil -> Ux.future(inserted));
-                }).compose(Ux::futureA);
+             * Build new relations that belong to the role
+             */
+            final List<RRolePerm> relations = new ArrayList<>();
+            Ut.itJArray(permissions, String.class, (permissionId, index) -> {
+                final RRolePerm item = new RRolePerm();
+                item.setRoleId(roleId);
+                item.setPermId(permissionId);
+                relations.add(item);
             });
-        }, roleId);
+            return dao.insertAsync(relations).compose(inserted -> {
+                /*
+                 * Refresh cache pool with Sc interface directly
+                 */
+                final ScRole role = ScRole.login(roleId);
+                return role.refresh(permissions).compose(nil -> Ux.future(inserted));
+            }).compose(Ux::futureA);
+        });
     }
 
     @Override
