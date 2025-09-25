@@ -38,6 +38,10 @@ public class ProfileProvider implements AuthorizationProvider {
     }
 
     @Override
+    public Future<Void> getAuthorizations(final User user) {
+        return null;
+    }
+
     @SuppressWarnings("all")
     public void getAuthorizations(final User user, final Handler<AsyncResult<Void>> handler) {
         final Method method = this.aegis.getAuthorizer().getAuthorization();
@@ -51,7 +55,7 @@ public class ProfileProvider implements AuthorizationProvider {
                     final ConcurrentMap<String, Set<String>> profiles = new ConcurrentHashMap<>();
                     Ut.<JsonArray>itJObject(res.result(), (values, field) -> profiles.put(field, Ut.toSet(values)));
                     final Authorization required = ProfileAuthorization.create(profiles);
-                    user.authorizations().add(this.getId(), required);
+                    user.authorizations().put(this.getId(), required);
                     handler.handle(Future.succeededFuture());
                 } else {
                     final Throwable ex = res.cause();

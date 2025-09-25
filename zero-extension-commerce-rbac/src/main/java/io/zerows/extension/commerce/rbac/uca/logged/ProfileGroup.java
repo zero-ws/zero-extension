@@ -1,11 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.logged;
 
-import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
-import io.zerows.core.fn.Fn;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -88,14 +86,15 @@ public class ProfileGroup implements Serializable {
             .map(ProfileRole::new)
             .map(ProfileRole::initAsync)
             .forEach(futures::add);
-        return CompositeFuture.join(futures)
-            /* Composite Result */
-            .compose(Fn::<ProfileRole>combineT)
-            .compose(profiles -> {
-                /* Bind each fetchProfile to group Id */
-                profiles.forEach(profile -> profile.setGroup(this));
-                return Future.succeededFuture(profiles);
-            });
+        return null;
+        //        return Future.join(futures)
+        //            /* Composite Result */
+        //            .compose(Fn::<ProfileRole>combineT)
+        //            .compose(profiles -> {
+        //                /* Bind each fetchProfile to group Id */
+        //                profiles.forEach(profile -> profile.setGroup(this));
+        //                return Future.succeededFuture(profiles);
+        //            });
     }
 
     private List<ProfileRole> fetchProfiles() {

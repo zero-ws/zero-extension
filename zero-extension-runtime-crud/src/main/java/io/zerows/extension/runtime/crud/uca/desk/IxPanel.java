@@ -1,13 +1,12 @@
 package io.zerows.extension.runtime.crud.uca.desk;
 
-import io.zerows.ams.constant.VValue;
-import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.unity.Ux;
+import io.zerows.ams.constant.VValue;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.crud.util.Ix;
+import io.zerows.unity.Ux;
 
 import java.util.List;
 import java.util.Objects;
@@ -202,7 +201,7 @@ public class IxPanel {
                 })
             );
         } else {
-            return CompositeFuture.join(activeFn.apply(input), standFn.apply(input)).compose(composite -> {
+            return Future.join(activeFn.apply(input), standFn.apply(input)).compose(composite -> {
                 final List result = composite.list();
                 final A firstR = (A) result.get(VValue.IDX);
                 final S secondR = (S) result.get(VValue.ONE);

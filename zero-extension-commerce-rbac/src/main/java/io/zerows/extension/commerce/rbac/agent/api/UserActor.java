@@ -6,13 +6,13 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.Session;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
-import io.zerows.unity.Ux;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.commerce.rbac.agent.service.business.UserStub;
 import io.zerows.extension.commerce.rbac.agent.service.login.LoginStub;
 import io.zerows.extension.commerce.rbac.eon.Addr;
 import io.zerows.extension.commerce.rbac.uca.acl.relation.Junc;
 import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Trash;
+import io.zerows.unity.Ux;
 import jakarta.inject.Inject;
 
 import java.util.Objects;
@@ -56,7 +56,7 @@ public class UserActor {
              * 4. Permission Pool / Auth Pool Clean
              */
             final RoutingContext context = envelop.context();
-            context.clearUser();
+            // context.clearUser();
 
             final Session session = context.session();
             if (Objects.nonNull(session) && !session.isDestroyed()) {

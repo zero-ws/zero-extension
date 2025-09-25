@@ -1,11 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.logged;
 
-import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.User;
-import io.zerows.unity.Ux;
 import io.zerows.common.program.KRef;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
@@ -15,9 +13,8 @@ import io.zerows.core.uca.log.Annal;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
-import io.zerows.extension.commerce.rbac.uca.authorization.Align;
-import io.zerows.extension.commerce.rbac.uca.authorization.ScDetent;
 import io.zerows.module.metadata.uca.environment.DevEnv;
+import io.zerows.unity.Ux;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,11 +57,12 @@ public class ScUser {
             .map(ProfileRole::new)
             .map(ProfileRole::initAsync)
             .forEach(futures::add);
-        return CompositeFuture.join(futures)
-            /* Composite Result */
-            .compose(Fn::<ProfileRole>combineT)
-            /* User Process */
-            .compose(ScDetent.user(profile)::procAsync);
+        return null;
+        //        return Future.join(futures)
+        //            /* Composite Result */
+        //            .compose(Fn::<ProfileRole>combineT)
+        //            /* User Process */
+        //            .compose(ScDetent.user(profile)::procAsync);
     }
 
     @SuppressWarnings("all")
@@ -78,30 +76,32 @@ public class ScUser {
             .forEach(futures::add);
         final KRef parentHod = new KRef();
         final KRef childHod = new KRef();
-        return CompositeFuture.join(futures).compose(Fn::<ProfileGroup>combineT).compose(profiles -> Ux.future(profiles)
-            /* Group Direct Mode */
-            .compose(Align::flat)
-            .compose(ScDetent.group(profile)::procAsync)
-            .compose(nil -> Ux.future(profiles))
-
-            /* Group Parent Mode */
-            .compose(Align::parent)
-            .compose(parentHod::future)
-            /** Parent Only */
-            .compose(parents -> ScDetent.parent(profile, profiles).procAsync(parents))
-            /** Parent and Current */
-            .compose(nil -> ScDetent.inherit(profile, profiles).procAsync(parentHod.get()))
-            .compose(nil -> Ux.future(profiles))
-
-            /* Group Child Mode */
-            .compose(Align::children)
-            .compose(childHod::future)
-            /** Child Only */
-            .compose(children -> ScDetent.children(profile, profiles).procAsync(children))
-            /** Child and Current */
-            .compose(nil -> ScDetent.extend(profile, profiles).procAsync(childHod.get()))
-            .compose(nil -> Ux.future(profiles))
-        ).compose(nil -> Ux.future(profile));
+        return null;
+        //
+        //        return Future.join(futures).compose(Fn::<ProfileGroup>combineT).compose(profiles -> Ux.future(profiles)
+        //            /* Group Direct Mode */
+        //            .compose(Align::flat)
+        //            .compose(ScDetent.group(profile)::procAsync)
+        //            .compose(nil -> Ux.future(profiles))
+        //
+        //            /* Group Parent Mode */
+        //            .compose(Align::parent)
+        //            .compose(parentHod::future)
+        //            /** Parent Only */
+        //            .compose(parents -> ScDetent.parent(profile, profiles).procAsync(parents))
+        //            /** Parent and Current */
+        //            .compose(nil -> ScDetent.inherit(profile, profiles).procAsync(parentHod.get()))
+        //            .compose(nil -> Ux.future(profiles))
+        //
+        //            /* Group Child Mode */
+        //            .compose(Align::children)
+        //            .compose(childHod::future)
+        //            /** Child Only */
+        //            .compose(children -> ScDetent.children(profile, profiles).procAsync(children))
+        //            /** Child and Current */
+        //            .compose(nil -> ScDetent.extend(profile, profiles).procAsync(childHod.get()))
+        //            .compose(nil -> Ux.future(profiles))
+        //        ).compose(nil -> Ux.future(profile));
     }
 
     // ------------------------- Initialized Method ------------------------

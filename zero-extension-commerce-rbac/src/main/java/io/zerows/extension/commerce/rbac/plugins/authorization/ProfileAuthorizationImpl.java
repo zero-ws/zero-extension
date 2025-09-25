@@ -38,13 +38,13 @@ public class ProfileAuthorizationImpl implements ProfileAuthorization {
         final User user = context.user();
         if (user != null) {
             final Authorization resolved = ProfileAuthorization.create(this.permissionMap);
-            for (final String providerId : user.authorizations().getProviderIds()) {
-                for (final Authorization authorization : user.authorizations().get(providerId)) {
-                    if (authorization.verify(resolved)) {
-                        return true;
-                    }
-                }
-            }
+            //            for (final String providerId : user.authorizations().getProviderIds()) {
+            //                for (final Authorization authorization : user.authorizations().get(providerId)) {
+            //                    if (authorization.verify(resolved)) {
+            //                        return true;
+            //                    }
+            //                }
+            //            }
         }
         return false;
     }

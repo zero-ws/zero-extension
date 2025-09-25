@@ -88,7 +88,7 @@ public class JetCastor {
                  * Logging information of current worker here
                  */
                 this.monitor.workerDeploying(options.getInstances(), name);
-                this.vertx.deployVerticle(name, options, handler -> {
+                this.vertx.deployVerticle(name, options).onComplete(handler -> {
                     if (handler.succeeded()) {
                         this.monitor.workerDeployed(options.getInstances(), name);
                         // LOG

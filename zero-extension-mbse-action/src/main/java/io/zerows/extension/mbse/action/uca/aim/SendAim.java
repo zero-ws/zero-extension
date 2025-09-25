@@ -55,7 +55,7 @@ public class SendAim implements JtAim {
 
                     final NodeNetwork network = OCacheNode.of().network();
                     final DeliveryOptions deliveryOptions = network.get().optionDelivery();
-                    event.<Envelop>request(address, normalized, deliveryOptions, handler -> {
+                    event.<Envelop>request(address, normalized, deliveryOptions).onComplete(handler -> {
                         if (handler.succeeded()) {
                             /*
                              * 「Success」
