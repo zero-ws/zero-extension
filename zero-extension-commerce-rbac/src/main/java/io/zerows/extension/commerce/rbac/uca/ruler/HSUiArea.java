@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.unity.Ux;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.util.Ut;
 import io.zerows.module.security.atom.manage.KCatena;
 import io.zerows.module.security.atom.manage.KPermit;
@@ -65,9 +65,9 @@ public class HSUiArea extends HSUiNorm {
                 .compose(semi::uiConfigure).compose(semi::uiCompile)
                 .compose(item -> Ux.future(HValve.output(item))));
         });
-        return Fn.combineM(futureMap)
+        return Fx.combineM(futureMap)
             /* children = {} */
-            .compose(normalized -> Fn.ifJObject(KName.CHILDREN, Ut.toJObject(normalized)));
+            .compose(normalized -> Fx.ifJObject(KName.CHILDREN, Ut.toJObject(normalized)));
     }
 
     private JsonObject valueChild(final String code, final JsonObject requestJ) {

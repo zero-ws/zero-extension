@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XTabularDao;
 
@@ -24,6 +24,6 @@ public class AideApp extends AbstractAide {
     public Future<JsonObject> fetch(final String field, final String type, final String code) {
         return Ux.Jooq.on(XTabularDao.class)
             .fetchOneAsync(this.condApp(field, type, code))
-            .compose(Ux::futureJ).compose(Fn.ofJObject(KName.METADATA));
+            .compose(Ux::futureJ).compose(Fx.ofJObject(KName.METADATA));
     }
 }

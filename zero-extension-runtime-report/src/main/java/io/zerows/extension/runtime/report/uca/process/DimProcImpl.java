@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.atom.RDimension;
 import io.zerows.extension.runtime.report.domain.tables.daos.KpDataSetDao;
@@ -58,7 +58,7 @@ class DimProcImpl extends AbstractDimProc {
                     futureList.add(this.dimAsync(params, source, dimension));
                 }
             });
-            return Fn.combineT(futureList);
+            return Fx.combineT(futureList);
         });
     }
 
@@ -91,11 +91,11 @@ class DimProcImpl extends AbstractDimProc {
                             resultMap.put(dataSetItem.getKey(), result);
                         });
                     }
-                    return Fn.combineM(resultMap);
+                    return Fx.combineM(resultMap);
 
                 });
             } else {
-                return Fn.combineM(resultMap);
+                return Fx.combineM(resultMap);
             }
         });
     }

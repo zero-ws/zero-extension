@@ -21,7 +21,7 @@ public interface Prerequisite {
      */
     static Prerequisite generate(final Class<?> clazz) {
         return CC_PREREQUISITE.pick(() -> Ut.instance(clazz), clazz.getName());
-        // return Fn.po?l(Pool.PREREQUISITE_POOL, clazz.getName(), () -> Ut.instance(clazz));
+        // return Fx.po?l(Pool.PREREQUISITE_POOL, clazz.getName(), () -> Ut.instance(clazz));
     }
 
     /*

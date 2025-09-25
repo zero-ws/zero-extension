@@ -1,6 +1,7 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.feature;
 
 import io.zerows.ams.constant.em.typed.ChangeFlag;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
@@ -8,7 +9,6 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.runtime.ambient.util.At;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.database.jooq.operation.UxJooq;
@@ -117,7 +117,7 @@ public class ExAttachment implements Attachment {
         });
         final List<XAttachment> attachments = Ux.fromJson(attachmentJ, XAttachment.class);
         return Ux.Jooq.on(XAttachmentDao.class).updateAsyncJ(attachments)
-            .compose(Fn.ofJArray(KName.METADATA));
+            .compose(Fx.ofJArray(KName.METADATA));
     }
 
     @Override
@@ -207,7 +207,7 @@ public class ExAttachment implements Attachment {
                 }
             });
             return Ux.future(files);
-        })).compose(Fn.ofJArray(KName.METADATA)).compose(attachments -> {
+        })).compose(Fx.ofJArray(KName.METADATA)).compose(attachments -> {
             Ut.itJArray(attachments).forEach(file -> file.put(KName.DIRECTORY, Boolean.FALSE));
             return Ux.future(attachments);
         });

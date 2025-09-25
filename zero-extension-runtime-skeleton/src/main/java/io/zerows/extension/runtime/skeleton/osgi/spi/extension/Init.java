@@ -24,7 +24,7 @@ public interface Init {
      */
     static Init generate(final Class<?> clazz) {
         return CC_INIT.pick(() -> Ut.instance(clazz), clazz.getName()); //
-        // Fn.po?l(Pool.INIT_POOL, clazz.getName(), () -> Ut.instance(clazz));
+        // Fx.po?l(Pool.INIT_POOL, clazz.getName(), () -> Ut.instance(clazz));
     }
 
     /*

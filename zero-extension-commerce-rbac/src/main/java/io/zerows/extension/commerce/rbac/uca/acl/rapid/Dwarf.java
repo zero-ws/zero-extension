@@ -1,7 +1,7 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapid;
 
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.eon.em.RegionType;
 import io.zerows.extension.commerce.rbac.exception._500DwarfInstanceNullException;
@@ -18,15 +18,15 @@ public interface Dwarf {
             return Pool.CC_DWARF.pick(DwarfRecord::new, type);
         } else if (RegionType.PAGINATION == type) {
             return Pool.CC_DWARF.pick(DwarfPagination::new, type);
-            //return Fn.po?l(Pool.DWARF_POOL, type, PaginationDwarf::new);
+            //return Fx.po?l(Pool.DWARF_POOL, type, PaginationDwarf::new);
         } else if (RegionType.ARRAY == type) {
             return Pool.CC_DWARF.pick(DwarfArray::new, type);
-            //return Fn.po?l(Pool.DWARF_POOL, type, ArrayDwarf::new);
+            //return Fx.po?l(Pool.DWARF_POOL, type, ArrayDwarf::new);
         } else {
             /*
              * Exception for unsupported type of Dwarf
              */
-            Fn.out(true, _500DwarfInstanceNullException.class, Dwarf.class, type);
+            Fx.out(true, _500DwarfInstanceNullException.class, Dwarf.class, type);
             return null;
         }
     }

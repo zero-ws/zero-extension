@@ -7,7 +7,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.database.jooq.operation.UxJooq;
@@ -99,7 +99,7 @@ public class RightsService implements RightsStub {
              */
             combined.add(jooq.insertAsync(compared.get(ChangeFlag.ADD)));
             combined.add(jooq.updateAsync(compared.get(ChangeFlag.UPDATE)));
-            return Fn.compressL(combined).compose(processed ->
+            return Fx.compressL(combined).compose(processed ->
                 /*
                  * Codes here for future usage
                  */
@@ -137,7 +137,7 @@ public class RightsService implements RightsStub {
             final List<SPermission> deleted = map.get(ChangeFlag.DELETE);
             futures.add(this.deletePerm(permSet, deleted));
 
-            return Fn.compressL(futures);
+            return Fx.compressL(futures);
         }).compose(Ux::futureA);
     }
 

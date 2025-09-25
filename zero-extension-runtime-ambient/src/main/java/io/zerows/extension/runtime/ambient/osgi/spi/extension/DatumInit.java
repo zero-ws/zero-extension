@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.unity.Ux;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.bootstrap.AtConfig;
@@ -58,7 +58,7 @@ public class DatumInit implements Init {
             .map(file -> dataFolder + file)
             .map(this::doLoading)
             .collect(Collectors.toList());
-        return Fn.combineA(futures)
+        return Fx.combineA(futures)
             /* Stored each result */
             .compose(results -> UObject.create().append(KName.RESULT, results)
                 .toFuture())

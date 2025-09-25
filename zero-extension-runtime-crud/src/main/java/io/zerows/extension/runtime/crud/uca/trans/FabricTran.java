@@ -4,13 +4,13 @@ import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.common.datamation.KDictConfig;
 import io.zerows.common.datamation.KDictSource;
 import io.zerows.common.datamation.KDictUse;
 import io.zerows.common.datamation.KFabric;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.web.mbse.atom.specification.KModule;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.runtime.crud.uca.desk.IxMod;
@@ -38,7 +38,7 @@ class FabricTran implements Tran {
     @Override
     public Future<JsonObject> inJAsync(final JsonObject data, final IxMod in) {
         if (in.canTransform()) {
-            return this.fabric(in).compose(Fn.ifNil(() -> data, fabric ->
+            return this.fabric(in).compose(Fx.ifNil(() -> data, fabric ->
                 this.isFrom ? fabric.inFrom(data) : fabric.inTo(data)));
         } else {
             return Ux.future(data);
@@ -48,7 +48,7 @@ class FabricTran implements Tran {
     @Override
     public Future<JsonArray> inAAsync(final JsonArray data, final IxMod in) {
         if (in.canTransform()) {
-            return this.fabric(in).compose(Fn.ifNil(() -> data, fabric ->
+            return this.fabric(in).compose(Fx.ifNil(() -> data, fabric ->
                 this.isFrom ? fabric.inFrom(data) : fabric.inTo(data)));
         } else {
             return Ux.future(data);

@@ -1,10 +1,10 @@
 package io.mature.extension.migration.tookit;
 
+import io.r2mo.function.Fn;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.database.atom.Database;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 
 import static io.mature.extension.refine.Ox.LOG;

@@ -3,7 +3,7 @@ package io.mature.stellar.owner;
 import io.mature.stellar.ArgoStore;
 import io.mature.stellar.vendor.OkB;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.util.Ut;
 import io.zerows.common.app.KDS;
 import io.zerows.common.app.KGlobal;
@@ -51,7 +51,7 @@ public abstract class AbstractPartyA implements OkA {
         {
             // 检查环境是否启动完成
             final HAmbient ambient = KPivot.running();
-            Fn.outBoot(Objects.isNull(ambient), AmbientConnectException.class, this.getClass());
+            Fx.outBoot(Objects.isNull(ambient), AmbientConnectException.class, this.getClass());
             // 启动完成则可以直接提取应用信息
             final String appId = globalRef.appId();
             final String sigma = globalRef.sigma();
@@ -60,7 +60,7 @@ public abstract class AbstractPartyA implements OkA {
             } else {
                 this.ark = Ke.ark(appId);
             }
-            Fn.outBoot(Objects.isNull(this.ark), AmbientConnectException.class, this.getClass());
+            Fx.outBoot(Objects.isNull(this.ark), AmbientConnectException.class, this.getClass());
             final HApp app = this.ark.app();
             LOG.Ok.info(this.getClass(), "HAmbient Environment has been initialized! = {0}", app.name());
         }

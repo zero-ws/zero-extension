@@ -8,7 +8,7 @@ import io.zerows.unity.Ux;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
 import io.zerows.core.exception.web._501NotSupportException;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.agent.service.login.AuthStub;
 import io.zerows.extension.commerce.rbac.agent.service.login.pre.ImageStub;
@@ -61,7 +61,7 @@ public class LoginActor {
 
     @Address(Addr.Auth.CAPTCHA_IMAGE_VERIFY)
     public Future<Boolean> imageVerity(final JsonObject request, final XHeader header) {
-        Fn.out(Objects.isNull(header.session()), _501NotSupportException.class, this.getClass());
+        Fx.out(Objects.isNull(header.session()), _501NotSupportException.class, this.getClass());
         final String imageCode = Ut.valueString(request, AuthKey.CAPTCHA_IMAGE);
         return this.imageStub.verify(header.session(), imageCode).compose(verified -> {
             final Boolean support = CONFIG.getSupportCaptcha();
@@ -78,7 +78,7 @@ public class LoginActor {
      */
     @Address(Addr.Auth.CAPTCHA_IMAGE)
     public Future<Buffer> generateImage(final XHeader header) {
-        Fn.out(Objects.isNull(header.session()), _501NotSupportException.class, this.getClass());
+        Fx.out(Objects.isNull(header.session()), _501NotSupportException.class, this.getClass());
         return this.imageStub.generate(header.session());
     }
 }

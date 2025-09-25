@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.agent.api;
 
+import io.r2mo.function.Fn;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -8,7 +9,6 @@ import io.zerows.core.annotations.Infusion;
 import io.zerows.core.annotations.Queue;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
 import io.zerows.extension.commerce.rbac.eon.Addr;

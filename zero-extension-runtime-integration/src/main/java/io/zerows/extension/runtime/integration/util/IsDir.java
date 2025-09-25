@@ -6,7 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.database.jooq.operation.UxJooq;
@@ -83,7 +83,7 @@ class IsDir {
     }
 
     static Future<JsonObject> output(final JsonObject response) {
-        return Fn.ofJObject(
+        return Fx.ofJObject(
             KName.METADATA,
             KName.VISIT_GROUP,
             KName.VISIT_ROLE,
@@ -96,7 +96,7 @@ class IsDir {
     }
 
     static Future<JsonArray> output(final JsonArray response) {
-        return Fn.ofJArray(
+        return Fx.ofJArray(
             KName.METADATA,
             KName.VISIT_GROUP,
             KName.VISIT_ROLE,

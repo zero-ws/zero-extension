@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.agent.api;
 
+import io.zerows.core.fn.Fx;
 import io.zerows.core.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpMethod;
@@ -8,7 +9,6 @@ import io.vertx.core.json.JsonObject;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.commune.Envelop;
@@ -71,7 +71,7 @@ public class ViewMyActor {
                 return this.personalStub.byUser(action.getResourceId(), userId,
                         data.getString(KName.POSITION))
                     .compose(Ux::futureA)
-                    .compose(Fn.ofJArray(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, KName.Rbac.ROWS));
+                    .compose(Fx.ofJArray(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, KName.Rbac.ROWS));
             }
         });
     }
@@ -113,7 +113,7 @@ public class ViewMyActor {
     public Future<JsonObject> pViewById(final String key) {
         return this.personalStub.byId(key)
             .compose(Ux::futureJ)
-            .compose(Fn.ofJObject(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, "rows"));
+            .compose(Fx.ofJObject(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, "rows"));
     }
 
     @Address(Addr.View.VIEW_P_UPDATE)
@@ -127,7 +127,7 @@ public class ViewMyActor {
         data.put(KName.USER, userId);
         return this.personalStub.update(key, data)
             .compose(Ux::futureJ)
-            .compose(Fn.ofJObject(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, "rows"));
+            .compose(Fx.ofJObject(Ir.KEY_CRITERIA, Ir.KEY_PROJECTION, "rows"));
     }
 
 

@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.plugins.authorization;
 
+import io.r2mo.function.Fn;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
@@ -8,7 +9,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.authorization.Authorization;
 import io.vertx.ext.web.RoutingContext;
 import io.zerows.core.exception.web._403ForbiddenException;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.module.security.atom.Aegis;
 import io.zerows.plugins.common.security.authorization.AuthorizationResource;

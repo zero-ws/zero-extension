@@ -3,10 +3,10 @@ package io.zerows.extension.runtime.ambient.agent.service.application;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XSourceDao;
@@ -80,7 +80,7 @@ public class AppService implements AppStub {
             /* Get Result */
             .compose(Ux::futureJ)
             /* JDBC */
-            .compose(Fn.ofJObject("jdbcConfig"));
+            .compose(Fx.ofJObject("jdbcConfig"));
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AppService implements AppStub {
         return this.updateLogo(appId, data)
             .compose(updated -> Ux.Jooq.on(XAppDao.class).updateJAsync(appId, updated)
                 /* Image field: logo */
-                .compose(Fn.ofJObject(KName.App.LOGO)));
+                .compose(Fx.ofJObject(KName.App.LOGO)));
     }
 
     private Future<JsonObject> updateLogo(final String appId, final JsonObject data) {

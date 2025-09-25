@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.finance.agent.api;
 
+import io.zerows.core.fn.Fx;
 import io.zerows.extension.commerce.finance.domain.tables.daos.*;
 import io.zerows.extension.commerce.finance.domain.tables.pojos.*;
 import io.zerows.extension.commerce.finance.agent.service.BookStub;
@@ -13,7 +14,6 @@ import io.zerows.extension.commerce.finance.eon.Addr;
 import io.zerows.core.annotations.Address;
 import io.zerows.core.annotations.Queue;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.finance.atom.BillData;
@@ -164,6 +164,6 @@ public class FetchActor {
     @Address(Addr.BillItem.FETCH_BOOK_BY_KEY)
     public Future<JsonObject> fetchBook(final String bookId) {
         // Null Prevent
-        return Fn.ofJObject(this.bookStub::fetchByKey).apply(bookId);
+        return Fx.ofJObject(this.bookStub::fetchByKey).apply(bookId);
     }
 }

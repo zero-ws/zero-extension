@@ -3,10 +3,10 @@ package io.zerows.extension.commerce.rbac.uca.acl.relation;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.common.program.KRef;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.OUserDao;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SUserDao;
@@ -62,7 +62,7 @@ class IdcService extends AbstractIdc {
 
     @SuppressWarnings("all")
     private Future<JsonArray> connect(final List<SUser> users, final JsonArray inputData) {
-        return Fn.passion(inputData,
+        return Fx.passion(inputData,
             // roles = R1, R2, R3
             inputA -> IdcBinder.role(this.sigma).bindAsync(users, inputA),
             // groups = G1, G2, G3

@@ -1,12 +1,12 @@
 package io.mature.extension.migration.restore;
 
 import io.mature.extension.migration.tookit.AbstractStatic;
+import io.r2mo.function.Fn;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.database.atom.Database;
 import io.zerows.core.database.cp.zdk.DataPool;
-import io.zerows.core.fn.Fn;
 import io.zerows.core.util.Ut;
 import io.zerows.unity.Ux;
 

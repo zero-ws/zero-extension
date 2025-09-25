@@ -2,7 +2,7 @@ package io.zerows.extension.mbse.basement.uca.jooq;
 
 import io.zerows.ams.constant.VValue;
 import io.zerows.core.exception.WebException;
-import io.zerows.ams.fn.Actuator;
+io.r2mo.function.Actuator;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.fn.Fn;
 import io.zerows.extension.mbse.basement.atom.data.DataEvent;

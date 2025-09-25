@@ -3,13 +3,13 @@ package io.mature.extension.migration.restore;
 import io.zerows.ams.constant.VString;
 import io.zerows.ams.constant.VValue;
 import io.zerows.ams.constant.em.Environment;
+import io.zerows.core.fn.Fx;
 import io.zerows.specification.access.app.HApp;
 import io.mature.extension.migration.AbstractStep;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XNumberDao;
@@ -46,7 +46,7 @@ public class AdjustNumber extends AbstractStep {
             .filter(item -> Objects.nonNull(item.getValue(ADJUST)))
             .filter(item -> VValue.RANGE < item.getInteger(ADJUST))
             .map(this::saveNumber).forEach(futures::add);
-        return Fn.combineA(futures).compose(processed -> {
+        return Fx.combineA(futures).compose(processed -> {
             LOG.Shell.info(this.getClass(), "修正序号完成！");
             return Ux.future(config);
         });

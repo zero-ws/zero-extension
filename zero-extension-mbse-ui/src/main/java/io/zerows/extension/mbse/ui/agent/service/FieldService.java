@@ -1,11 +1,11 @@
 package io.zerows.extension.mbse.ui.agent.service;
 
+import io.zerows.core.fn.Fx;
 import io.zerows.core.uca.log.Annal;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.ui.domain.tables.daos.UiFieldDao;
@@ -64,7 +64,7 @@ public class FieldService implements FieldStub {
                 .insertAsync(fields)
                 .compose(Ux::futureA)
                 // 3. mountOut
-                .compose(Fn.ofJArray(
+                .compose(Fx.ofJArray(
                     OPTION_JSX,
                     OPTION_CONFIG,
                     OPTION_ITEM,

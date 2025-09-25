@@ -9,7 +9,7 @@ import io.vertx.core.json.JsonObject;
 import io.zerows.extension.commerce.finance.uca.enter.Maker;
 import io.zerows.extension.commerce.finance.uca.replica.IkWay;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 
@@ -75,7 +75,7 @@ class Step02BillItem implements Trade<FSettlement, FBillItem> {
             final JsonArray dataArray = grouped.get(key);
             futures.add(this.buildItems(dataArray, settlement));
         });
-        return Fn.combineT(futures).compose(combined -> {
+        return Fx.combineT(futures).compose(combined -> {
             final List<FBillItem> items = new ArrayList<>();
             combined.forEach(items::addAll);
             return Ux.future(items);

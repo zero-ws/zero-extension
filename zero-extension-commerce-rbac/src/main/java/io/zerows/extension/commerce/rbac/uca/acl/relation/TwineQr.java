@@ -1,11 +1,11 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
+import io.zerows.core.fn.Fx;
 import io.zerows.core.uca.qr.syntax.Ir;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KQr;
@@ -58,7 +58,7 @@ class TwineQr {
                     loop.put(field, normalize((JsonObject) fieldV));
                 }
             }
-            return Fn.combineM(loop).compose(mapped -> {
+            return Fx.combineM(loop).compose(mapped -> {
                 mapped.forEach(resultJ::put);
                 return Ux.future(resultJ);
             });

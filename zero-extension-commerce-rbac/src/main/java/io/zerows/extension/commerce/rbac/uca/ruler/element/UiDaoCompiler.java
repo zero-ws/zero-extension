@@ -4,7 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.model.store.module.OCacheDao;
@@ -29,7 +29,7 @@ public class UiDaoCompiler implements HAdmitCompiler {
         final Class<?> daoCls = OCacheDao.findDao(daoStr); // Ut.clazz(daoStr, null);
 
         // Error-80226, uiConfig中没有配置dao节点
-        Fn.out(Objects.isNull(daoCls), _404AdmitDaoNullException.class, this.getClass(), daoStr);
+        Fx.out(Objects.isNull(daoCls), _404AdmitDaoNullException.class, this.getClass(), daoStr);
         return Ux.Jooq.on(daoCls).fetchJAsync(qr);
     }
 }

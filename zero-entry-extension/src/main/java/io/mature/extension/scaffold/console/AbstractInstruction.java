@@ -2,6 +2,7 @@ package io.mature.extension.scaffold.console;
 
 import io.zerows.ams.constant.em.Environment;
 import io.zerows.core.exception.internal.EmptyIoException;
+import io.zerows.core.fn.Fx;
 import io.zerows.specification.access.app.HApp;
 import io.zerows.specification.access.app.HArk;
 import io.mature.extension.error._501EnvironmentException;
@@ -12,7 +13,6 @@ import io.mature.stellar.vendor.OkB;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XCategoryDao;
@@ -117,7 +117,7 @@ public abstract class AbstractInstruction extends AbstractCommander {
             condition.mergeIn(attachedJson, true);
             return this.identifiers(condition)
                 /* identifiers 中处理每一个 */
-                .compose(identifiers -> Fn.combineT(new ArrayList<>(identifiers), consumer));
+                .compose(identifiers -> Fx.combineT(new ArrayList<>(identifiers), consumer));
         });
     }
 

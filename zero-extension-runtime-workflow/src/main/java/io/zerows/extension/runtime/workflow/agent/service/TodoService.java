@@ -5,7 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.skeleton.osgi.spi.feature.Todo;
@@ -90,7 +90,7 @@ public class TodoService implements TodoStub {
         return Ux.Jooq.on(WTodoDao.class)
             .<WTodo>fetchInAsync(KName.KEY, Ut.toJArray(keys))
             .compose(Ux::futureA)
-            .compose(Fn.ofJArray((todoArray) -> {
+            .compose(Fx.ofJArray((todoArray) -> {
                 /*
                  * Update status of WTodo
                  */
@@ -114,7 +114,7 @@ public class TodoService implements TodoStub {
         return Ux.Jooq.on(WTodoDao.class)
             .<WTodo>fetchByIdAsync(key)
             .compose(Ux::futureJ)
-            .compose(Fn.ofJObject((todoJson) -> {
+            .compose(Fx.ofJObject((todoJson) -> {
                 /*
                  * Update status of WTodo
                  */
@@ -168,14 +168,14 @@ public class TodoService implements TodoStub {
         return Ux.Jooq.on(WTodoDao.class)
             .<WTodo>fetchByIdAsync(key)
             .compose(Ux::futureJ)
-            .compose(Fn.ofJObject((todo) -> Ux.channel(Todo.class, () -> todo, channel -> {
+            .compose(Fx.ofJObject((todo) -> Ux.channel(Todo.class, () -> todo, channel -> {
                 LOG.Init.info(this.getClass(), WfMsg.CHANNEL_TODO, channel.getClass().getName());
                 /*
                  * X_TODO channel and data merged.
                  */
                 final JsonObject params = Ut.elementSubset(todo,
                     KName.MODEL_ID, KName.MODEL_CATEGORY, KName.MODEL_KEY, KName.SIGMA);
-                return channel.fetchAsync(key, params).compose(Fn.ofMerge(todo));
+                return channel.fetchAsync(key, params).compose(Fx.ofMerge(todo));
             })));
     }
 }

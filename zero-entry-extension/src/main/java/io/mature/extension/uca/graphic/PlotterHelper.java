@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
-import io.zerows.core.fn.Fn;
+import io.zerows.core.fn.Fx;
 import io.zerows.unity.Ux;
 import io.zerows.plugins.store.neo4j.Neo4jClient;
 import io.zerows.plugins.store.neo4j.Neo4jInfix;
@@ -58,6 +58,6 @@ class PlotterHelper {
             futures.add(consumer.apply(pushNodes.copy()));
             pushNodes.clear();
         }
-        return Fn.compressA(futures);
+        return Fx.compressA(futures);
     }
 }
