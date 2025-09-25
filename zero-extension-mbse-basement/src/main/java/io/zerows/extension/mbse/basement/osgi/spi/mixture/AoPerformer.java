@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.osgi.spi.mixture;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
-import io.zerows.extension.mbse.basement.atom.Model;
 import io.zerows.core.web.mbse.uca.mixture.HPerformer;
+import io.zerows.extension.mbse.basement.atom.Model;
 
 import java.util.Set;
 

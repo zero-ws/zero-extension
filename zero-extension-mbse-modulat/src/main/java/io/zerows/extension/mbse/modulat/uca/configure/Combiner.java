@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.modulat.uca.configure;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;

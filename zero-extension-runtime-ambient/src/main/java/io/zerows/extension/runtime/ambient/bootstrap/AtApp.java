@@ -1,14 +1,14 @@
 package io.zerows.extension.runtime.ambient.bootstrap;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.core.constant.KName;
-import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.core.database.jooq.operation.UxJooq;
+import io.zerows.core.fn.Fn;
 import io.zerows.extension.runtime.ambient.domain.tables.daos.XAppDao;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
 import io.zerows.extension.runtime.ambient.exception._500AmbientErrorException;
 import io.zerows.extension.runtime.ambient.exception._500ApplicationInitException;
+import io.zerows.unity.Ux;
 import org.jooq.DSLContext;
 
 @SuppressWarnings("all")

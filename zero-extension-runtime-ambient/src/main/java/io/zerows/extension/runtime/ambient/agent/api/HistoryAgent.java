@@ -18,7 +18,7 @@ import jakarta.ws.rs.PathParam;
  * This is interface to query history of each records from zero framework.
  * It's for `X_ACTIVITY` and `X_ACTIVITY_CHANGE` table that enabled following features.
  *
- * 1. Trash to store all the records that have been deleted from our system.
+ * 1. Trash to get all the records that have been deleted from our system.
  * 2. Query all records' histories that have been removed.
  */
 @EndPoint

@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapid;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.extension.commerce.rbac.eon.em.RegionType;
 
 interface Pool {

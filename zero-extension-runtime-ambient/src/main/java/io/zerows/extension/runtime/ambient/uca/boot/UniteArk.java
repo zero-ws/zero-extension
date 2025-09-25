@@ -1,8 +1,8 @@
 package io.zerows.extension.runtime.ambient.uca.boot;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.specification.access.app.HArk;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XApp;
+import io.zerows.specification.access.app.HArk;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

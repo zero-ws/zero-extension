@@ -1,12 +1,11 @@
 package io.zerows.extension.commerce.rbac.uca.acl.rapier;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.unity.Ux;
 import io.zerows.ams.constant.VValue;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.em.EmSecure;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.commerce.rbac.atom.acl.AclData;
 import io.zerows.extension.commerce.rbac.domain.tables.daos.SVisitantDao;
@@ -18,6 +17,7 @@ import io.zerows.extension.commerce.rbac.uca.acl.rapid.DmxQr;
 import io.zerows.extension.commerce.rbac.uca.acl.rapid.DmxRow;
 import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Confine;
 import io.zerows.module.security.zdk.authority.Acl;
+import io.zerows.unity.Ux;
 
 import java.util.Objects;
 

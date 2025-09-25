@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.acl.relation;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonArray;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SUser;
 import io.zerows.extension.runtime.skeleton.secure.Tie;

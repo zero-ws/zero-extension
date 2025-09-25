@@ -1,14 +1,14 @@
 package io.zerows.extension.mbse.modulat.atom;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.specification.access.app.HMod;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
-import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.modulat.store.OCacheMod;
 import io.zerows.extension.runtime.skeleton.osgi.spi.modeler.Modulat;
+import io.zerows.specification.access.app.HMod;
+import io.zerows.unity.Ux;
 
 import java.util.Objects;
 
@@ -31,9 +31,9 @@ public class PowerApp {
         this.modReference = OCacheMod.of(appId);
     }
 
-    public static Future<PowerApp> getOrCreate(final String appId,boolean open) {
+    public static Future<PowerApp> getOrCreate(final String appId, final boolean open) {
         Objects.requireNonNull(appId);
-        return CC_APP.pick(() -> Ux.channel(Modulat.class, JsonObject::new, modulat -> modulat.extension(appId,open)).compose(storedJ -> {
+        return CC_APP.pick(() -> Ux.channel(Modulat.class, JsonObject::new, modulat -> modulat.extension(appId, open)).compose(storedJ -> {
             final String configApp = Ut.valueString(storedJ, KName.KEY);
             if (appId.equals(configApp)) {
                 // 抓取应用相关的 HMod 缓存
@@ -55,9 +55,9 @@ public class PowerApp {
         }), appId);
     }
 
-    public static Future<PowerApp> getLatest(final String appId,boolean open) {
+    public static Future<PowerApp> getLatest(final String appId, final boolean open) {
         CC_APP.remove(appId);
-        return getOrCreate(appId,open);
+        return getOrCreate(appId, open);
     }
 
     public PowerApp add(final HMod mod) {

@@ -1,5 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.logged;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -8,7 +9,6 @@ import io.zerows.common.program.KRef;
 import io.zerows.core.constant.KName;
 import io.zerows.core.constant.KWeb;
 import io.zerows.core.fn.Fn;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
@@ -166,7 +166,7 @@ public class ScUser {
     }
 
     public static ScUser login(final String habitus) {
-        return CC_USER.store(habitus);
+        return CC_USER.get(habitus);
     }
 
     public static ScUser login(final User user) {
@@ -176,7 +176,7 @@ public class ScUser {
     }
 
     public static Future<Boolean> logout(final String habitus) {
-        final ScUser user = CC_USER.store(habitus);
+        final ScUser user = CC_USER.get(habitus);
         Objects.requireNonNull(user);
         return user.logout();
     }
@@ -265,7 +265,7 @@ public class ScUser {
          * Remove reference pool first
          */
         // USERS.remove(this.habitus);
-        CC_USER.store().remove(this.habitus);
+        CC_USER.get().remove(this.habitus);
         return this.rapid.clear(this.habitus)
             .compose(nil -> Ux.future(Boolean.TRUE));
     }

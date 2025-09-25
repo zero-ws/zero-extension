@@ -57,7 +57,7 @@ public class BehaviourStandard implements Behaviour {
     /*
      * BehaviourStandard contains only one definition for moving here
      * This move map will be bind after the component has been created, in future usage this instance
-     * will be passed into `WTransition` to store, instead of the old version,
+     * will be passed into `WTransition` to get, instead of the old version,
      * WTransition will wrap the `WMove/WRule` etc and abay following rules:
      * 1) WMove won't be exposed to any component out of WTransition
      * 2) WRule could be exposed to all the component for selection the path

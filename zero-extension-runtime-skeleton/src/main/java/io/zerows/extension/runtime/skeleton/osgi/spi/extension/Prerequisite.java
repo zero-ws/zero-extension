@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.skeleton.osgi.spi.extension;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.util.Ut;

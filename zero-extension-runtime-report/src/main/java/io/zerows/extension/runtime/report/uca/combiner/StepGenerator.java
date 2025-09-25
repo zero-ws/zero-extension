@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.report.uca.combiner;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.atom.RGeneration;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpReportInstance;

@@ -19,7 +19,7 @@ import jakarta.ws.rs.core.MediaType;
  */
 @EndPoint
 public class PullAgent {
-    @Path("/doc/store/{fileKey}")
+    @Path("/doc/get/{fileKey}")
     @GET
     @Address(Addr.DOC_DOWNLOAD)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)

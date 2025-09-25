@@ -1,17 +1,8 @@
 package io.zerows.extension.mbse.modulat.uca.dock;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.ams.constant.em.modeling.EmModel;
 import io.vertx.core.Future;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.ClusterSerializable;
-import io.zerows.core.constant.KName;
-import io.zerows.unity.Ux;
-import io.zerows.extension.mbse.modulat.domain.tables.daos.BBagDao;
-import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;
-
-import static io.zerows.extension.mbse.modulat.util.Bk.LOG;
+import io.zerows.ams.constant.em.modeling.EmModel;
 
 class ArkBag extends AbstractArk {
     /*
@@ -20,19 +11,21 @@ class ArkBag extends AbstractArk {
      *
      * 这种场景下会为所有的 modules 构造 ( Bag = App ) 的基础入口配置，而页面模型则会直接在
      */
-    private static final Cc<String, Future<JsonArray>> ASYNC_BAG_DATA = Cc.openA();
+    // private static final Cc<String, JsonArray> ASYNC_BAG_DATA = Cc.open();
 
     @Override
     public Future<ClusterSerializable> modularize(final String appId,
                                                   final boolean open,
                                                   final EmModel.By by) {
-        return ASYNC_BAG_DATA.pick(() -> {
-            final JsonObject condition = this.buildQr(appId, by);
-            condition.put(KName.ENTRY, Boolean.TRUE);
-            LOG.Spi.info(this.getClass(), "Modulat condition = {0}", condition.encode());
-            return Ux.Jooq.on(BBagDao.class).<BBag>fetchAsync(condition)
-                // JsonArray -> ClusterSerializable
-                .compose(Ux::futureA);
-        }, appId).compose(Ux::future);
+        // R2MO 有问题
+        //        return ASYNC_BAG_DATA.pick(() -> {
+        //            final JsonObject condition = this.buildQr(appId, by);
+        //            condition.put(KName.ENTRY, Boolean.TRUE);
+        //            LOG.Spi.info(this.getClass(), "Modulat condition = {0}", condition.encode());
+        //            return Ux.Jooq.on(BBagDao.class).<BBag>fetchAsync(condition)
+        //                // JsonArray -> ClusterSerializable
+        //                .compose(Ux::futureA);
+        //        }, appId).compose(Ux::future);
+        return null;
     }
 }

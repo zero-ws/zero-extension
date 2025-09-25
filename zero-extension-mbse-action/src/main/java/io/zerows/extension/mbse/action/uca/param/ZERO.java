@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.uca.param;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.extension.mbse.action.eon.em.ParamMode;
 import io.zerows.extension.mbse.action.osgi.spi.jet.JtIngest;
 

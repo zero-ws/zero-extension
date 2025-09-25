@@ -220,7 +220,7 @@ public class ExPath implements ExIo {
                 renameMap = Is.trashOut(storeSet);
             } else {
                 /*
-                 *  .Trash initialize to create new folder under store root path
+                 *  .Trash initialize to create new folder under get root path
                  * This code is critical for successfully creating
                  */
                 fs.initTrash();

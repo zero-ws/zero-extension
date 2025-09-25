@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.action.plugins;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.extension.mbse.action.uca.aim.JtAim;
 
 import java.util.HashSet;

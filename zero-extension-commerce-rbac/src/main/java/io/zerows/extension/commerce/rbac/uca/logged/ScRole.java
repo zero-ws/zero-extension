@@ -1,9 +1,8 @@
 package io.zerows.extension.commerce.rbac.uca.logged;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
-import io.zerows.unity.Ux;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.uca.log.Annal;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
@@ -12,6 +11,7 @@ import io.zerows.extension.commerce.rbac.domain.tables.pojos.RRolePerm;
 import io.zerows.extension.commerce.rbac.eon.AuthKey;
 import io.zerows.extension.commerce.rbac.eon.ScConstant;
 import io.zerows.module.metadata.uca.environment.DevEnv;
+import io.zerows.unity.Ux;
 
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +54,7 @@ public class ScRole {
 
     // ------------------------- Initialized Method ------------------------
     public Future<JsonArray> clear() {
-        CC_ROLE.store().remove(this.roleId);
+        CC_ROLE.get().remove(this.roleId);
         // ROLES.remove(this.roleId);
         return this.cache.clear(this.roleId);
     }

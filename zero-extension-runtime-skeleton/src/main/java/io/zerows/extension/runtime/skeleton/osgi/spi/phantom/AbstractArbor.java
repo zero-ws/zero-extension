@@ -28,7 +28,7 @@ public abstract class AbstractArbor implements Arbor {
      */
     protected Future<JsonArray> combineArbor(final JsonObject category, final JsonArray children, final JsonObject configuration) {
         /*
-         * Extract data to calculate the default `store`
+         * Extract data to calculate the default `get`
          * The input JsonArray should be as following
          * - arg0, JsonArray of data
          * - arg1, JsonObject of configuration
@@ -72,7 +72,7 @@ public abstract class AbstractArbor implements Arbor {
     }
 
 
-    // ----------------------- Private Method for store path analyzing / building
+    // ----------------------- Private Method for get path analyzing / building
     /*
      * Complex Method for `storePath` and `storeParent` processing.
      */

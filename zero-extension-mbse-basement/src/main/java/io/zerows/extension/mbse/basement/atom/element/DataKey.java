@@ -1,6 +1,6 @@
 package io.zerows.extension.mbse.basement.atom.element;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.zerows.ams.constant.em.modeling.EmKey;
 
 import java.io.Serializable;

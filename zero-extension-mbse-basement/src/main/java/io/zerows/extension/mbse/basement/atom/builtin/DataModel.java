@@ -1,13 +1,9 @@
 package io.zerows.extension.mbse.basement.atom.builtin;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.specification.access.app.HArk;
-import io.zerows.ams.constant.em.modeling.EmModel;
-import io.zerows.specification.modeling.HAttribute;
-import io.zerows.specification.modeling.HReference;
-import io.zerows.specification.modeling.HRule;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.core.constant.KName;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.shape.AbstractHModel;
@@ -19,6 +15,10 @@ import io.zerows.extension.mbse.basement.domain.tables.pojos.MField;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MJoin;
 import io.zerows.extension.mbse.basement.domain.tables.pojos.MModel;
 import io.zerows.extension.mbse.basement.uca.apply.AoDefault;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HAttribute;
+import io.zerows.specification.modeling.HReference;
+import io.zerows.specification.modeling.HRule;
 
 import java.util.HashSet;
 import java.util.Objects;

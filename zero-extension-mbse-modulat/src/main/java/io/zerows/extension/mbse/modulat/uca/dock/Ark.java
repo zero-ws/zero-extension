@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.modulat.uca.dock;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.ams.constant.em.modeling.EmModel;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.shareddata.ClusterSerializable;
+import io.zerows.ams.constant.em.modeling.EmModel;
 
 /*
  * Connect to HArk part for configuration in each application

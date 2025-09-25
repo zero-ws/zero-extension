@@ -1,17 +1,16 @@
 package io.zerows.extension.mbse.modulat.uca.dock;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.ams.constant.em.modeling.EmModel;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.ClusterSerializable;
+import io.zerows.ams.constant.em.modeling.EmModel;
 import io.zerows.core.constant.KName;
 import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.mbse.modulat.domain.tables.daos.BBagDao;
 import io.zerows.extension.mbse.modulat.domain.tables.pojos.BBag;
+import io.zerows.unity.Ux;
 
 import java.util.List;
 import java.util.Set;
@@ -26,7 +25,7 @@ class ArkConfigure extends AbstractArk {
      * 该方法会提取应用存储专用的配置信息，该配置信息会被存储到 B_BLOCK 表中，开发中心可修订
      * 配置程序，如：
      * {
-     *     "store": "mXXX"
+     *     "get": "mXXX"
      * }
      * 格式，最终使用时用
      * mXXX = configuration
@@ -34,7 +33,7 @@ class ArkConfigure extends AbstractArk {
      *
      * 输入的格式
      */
-    private static final Cc<String, Future<JsonObject>> ASYNC_BAG_ADMIN = Cc.openA();
+    // private static final Cc<String, Future<JsonObject>> ASYNC_BAG_ADMIN = Cc.openA();
 
     @Override
     public Future<ClusterSerializable> modularize(final String appId,
@@ -45,9 +44,11 @@ class ArkConfigure extends AbstractArk {
             return this.modularizeInternal(appId, true, by).compose(Ux::future);
         }
         // open = false，启用缓存
-        return ASYNC_BAG_ADMIN.pick(
-                () -> this.modularizeInternal(appId, false, by), appId)
-            .compose(Ux::future);
+        return null;
+
+        //        return ASYNC_BAG_ADMIN.pick(
+        //                () -> this.modularizeInternal(appId, false, by), appId)
+        //            .compose(Ux::future);
     }
 
     private Future<JsonObject> modularizeInternal(final String appId,

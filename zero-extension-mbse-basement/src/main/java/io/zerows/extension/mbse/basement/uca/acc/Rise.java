@@ -1,10 +1,10 @@
 package io.zerows.extension.mbse.basement.uca.acc;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.database.atom.Database;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
 import io.zerows.module.domain.atom.commune.dynamic.Apt;
 

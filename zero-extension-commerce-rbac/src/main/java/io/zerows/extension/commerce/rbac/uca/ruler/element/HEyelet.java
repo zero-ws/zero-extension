@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.rbac.uca.ruler.element;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.shareddata.ClusterSerializable;
 import io.zerows.extension.commerce.rbac.domain.tables.pojos.SPacket;

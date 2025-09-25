@@ -2,7 +2,7 @@ package io.zerows.extension.commerce.rbac.atom;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.mbse.atom.specification.KQr;

@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.report.uca.pull;
 
-import io.zerows.common.program.Kv;
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.common.program.Kv;
 import io.zerows.core.constant.KName;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.domain.tables.pojos.KpFeature;

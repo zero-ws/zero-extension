@@ -1,13 +1,13 @@
 package io.zerows.extension.runtime.workflow.atom.configuration;
 
-import io.zerows.ams.constant.VString;
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonObject;
-import io.zerows.extension.runtime.workflow.util.Wf;
-import io.zerows.extension.runtime.workflow.uca.modeling.Respect;
-import io.zerows.extension.runtime.workflow.uca.modeling.RespectLink;
+import io.zerows.ams.constant.VString;
 import io.zerows.core.constant.KName;
 import io.zerows.core.util.Ut;
+import io.zerows.extension.runtime.workflow.uca.modeling.Respect;
+import io.zerows.extension.runtime.workflow.uca.modeling.RespectLink;
+import io.zerows.extension.runtime.workflow.util.Wf;
 
 import java.io.Serializable;
 import java.util.Objects;

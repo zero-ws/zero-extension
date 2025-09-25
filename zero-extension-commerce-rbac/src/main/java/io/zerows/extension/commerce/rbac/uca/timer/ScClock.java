@@ -1,9 +1,9 @@
 package io.zerows.extension.commerce.rbac.uca.timer;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.exception.WebException;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.util.Ut;
 import io.zerows.core.web.cache.Rapid;
 import io.zerows.extension.commerce.rbac.atom.ScToken;

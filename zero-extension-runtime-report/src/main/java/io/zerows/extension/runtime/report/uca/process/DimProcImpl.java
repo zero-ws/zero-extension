@@ -1,12 +1,11 @@
 package io.zerows.extension.runtime.report.uca.process;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
 import io.zerows.core.fn.Fn;
-import io.zerows.unity.Ux;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.report.atom.RDimension;
 import io.zerows.extension.runtime.report.domain.tables.daos.KpDataSetDao;
@@ -17,6 +16,7 @@ import io.zerows.extension.runtime.report.eon.em.EmReport;
 import io.zerows.extension.runtime.report.exception._400ReportDimTypeException;
 import io.zerows.extension.runtime.report.uca.feature.RQueryComponent;
 import io.zerows.extension.runtime.report.uca.pull.DataSet;
+import io.zerows.unity.Ux;
 import org.osgi.framework.Bundle;
 
 import java.util.ArrayList;
@@ -67,34 +67,34 @@ class DimProcImpl extends AbstractDimProc {
         final Set<String> dataSet = dimensions.stream().map(KpDimension::getDataSetId).collect(Collectors.toSet());
         return Ux.Jooq.on(KpDataSetDao.class).<KpDataSet, String>fetchInAsync(KName.KEY, dataSet).compose(dataSets -> {
             final ConcurrentMap<String, Future<JsonArray>> resultMap = new ConcurrentHashMap<>();
-            if(dataSets.size() > 0){
-                KpDataSet kpDataSet = dataSets.get(0);
+            if (dataSets.size() > 0) {
+                final KpDataSet kpDataSet = dataSets.get(0);
                 final JsonObject sourceJ = Ut.toJObject(kpDataSet.getDataSource());
                 final DataSet executor = DataSet.of(sourceJ);
                 final JsonObject queryDef = Ut.toJObject(kpDataSet.getDataQuery());
-               return executor.loadAsync(params, queryDef).compose(dataSouce->{
-                   if(kpDataSet.getDataComponent()!=null){
-                       String dataComponent =kpDataSet.getDataComponent();
-                       RQueryComponent queryComponent = CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
-                       final JsonObject parameters = new JsonObject();
-                       parameters.put(KName.INPUT, params);
-                       Future<JsonArray> compose = queryComponent.dataAsync(dataSouce, parameters).compose(result -> {
-                           if (Objects.isNull(result)) {
-                               return Ut.future(dataSouce);
-                           }
-                           return Ut.future(result);
-                       });
-                       resultMap.put(kpDataSet.getKey(), compose);
-                   }else {
-                       dataSets.forEach(dataSetItem -> {
-                           final Future<JsonArray> result = DataSet.Tool.outputArray(params, dataSetItem);
-                           resultMap.put(dataSetItem.getKey(), result);
-                       });
-                   }
-                   return Fn.combineM(resultMap);
+                return executor.loadAsync(params, queryDef).compose(dataSouce -> {
+                    if (kpDataSet.getDataComponent() != null) {
+                        final String dataComponent = kpDataSet.getDataComponent();
+                        final RQueryComponent queryComponent = CC_OUT.pick(() -> Ut.instance(dataComponent), dataComponent);
+                        final JsonObject parameters = new JsonObject();
+                        parameters.put(KName.INPUT, params);
+                        final Future<JsonArray> compose = queryComponent.dataAsync(dataSouce, parameters).compose(result -> {
+                            if (Objects.isNull(result)) {
+                                return Ut.future(dataSouce);
+                            }
+                            return Ut.future(result);
+                        });
+                        resultMap.put(kpDataSet.getKey(), compose);
+                    } else {
+                        dataSets.forEach(dataSetItem -> {
+                            final Future<JsonArray> result = DataSet.Tool.outputArray(params, dataSetItem);
+                            resultMap.put(dataSetItem.getKey(), result);
+                        });
+                    }
+                    return Fn.combineM(resultMap);
 
-               });
-            }else {
+                });
+            } else {
                 return Fn.combineM(resultMap);
             }
         });

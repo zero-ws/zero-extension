@@ -1,9 +1,9 @@
 package io.zerows.extension.runtime.ambient.uca.darkly;
 
-import io.zerows.core.exception.web._501NotSupportException;
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.core.exception.web._501NotSupportException;
 import io.zerows.core.util.Ut;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivityRule;
 import io.zerows.extension.runtime.ambient.eon.em.TubeType;

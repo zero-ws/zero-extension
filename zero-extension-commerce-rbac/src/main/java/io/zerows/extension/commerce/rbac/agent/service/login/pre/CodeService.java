@@ -21,7 +21,7 @@ public class CodeService implements CodeStub {
 
         // Whether existing state
         final JsonObject response = new JsonObject();
-        // Enable SharedClient to store authCode
+        // Enable SharedClient to get authCode
         return this.cache.put(clientId, authCode).compose(item -> UObject.create(response)
             .append(AuthKey.AUTH_CODE, item)
             .toFuture());

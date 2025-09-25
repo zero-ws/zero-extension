@@ -1,15 +1,15 @@
 package io.zerows.extension.mbse.basement.uca.jooq;
 
+import io.r2mo.typed.cc.Cc;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import io.zerows.ams.constant.VString;
 import io.zerows.ams.constant.VValue;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.core.uca.qr.Criteria;
 import io.zerows.core.uca.qr.syntax.Ir;
 import io.zerows.core.uca.qr.syntax.IrItem;
-import io.zerows.specification.modeling.HReference;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 import io.zerows.extension.mbse.basement.atom.builtin.DataAtom;
+import io.zerows.specification.modeling.HReference;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -102,8 +102,8 @@ class JQPre {
         /*
          * Replace qrItem
          */
-        ccRemoved.store().forEach((levelKey, removedMap) -> {
-            final ConcurrentMap<String, IrItem> replacedMap = ccReplaced.store(levelKey);
+        ccRemoved.get().forEach((levelKey, removedMap) -> {
+            final ConcurrentMap<String, IrItem> replacedMap = ccReplaced.get(levelKey);
             final JsonObject jsonRef = referenceData.get(levelKey);
             if (Objects.nonNull(replacedMap) && Objects.nonNull(removedMap)) {
                 /*

@@ -1,6 +1,6 @@
 package io.zerows.extension.runtime.workflow.uca.transition;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonObject;
 import io.zerows.core.constant.KName;
 import io.zerows.core.util.Ut;

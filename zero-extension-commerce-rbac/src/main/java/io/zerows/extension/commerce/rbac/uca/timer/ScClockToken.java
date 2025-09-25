@@ -143,7 +143,7 @@ class ScClockToken extends AbstractClock<ScToken> {
             );
             // refreshToken = relatedKeys
             keySet.forEach(related -> POINTER.put(scToken.refreshToken(), related));
-            this.logger().info("The refresh token `{}` will store {} relations.",
+            this.logger().info("The refresh token `{}` will get {} relations.",
                 scToken.refreshToken(), keySet.size());
             return Ux.future(scToken);
         });

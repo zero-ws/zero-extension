@@ -1,9 +1,9 @@
 package io.zerows.extension.mbse.basement.uca.sql;
 
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.common.app.KDatabase;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.common.app.KDatabase;
 import io.zerows.core.util.Ut;
 
 import java.util.concurrent.ConcurrentHashMap;

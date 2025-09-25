@@ -1,9 +1,8 @@
 package io.zerows.extension.commerce.rbac.uca.authorization;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import io.zerows.unity.Ux;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcCritical;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcHorizon;
 import io.zerows.extension.commerce.rbac.uca.authorization.child.GcOverlook;
@@ -22,6 +21,7 @@ import io.zerows.extension.commerce.rbac.uca.authorization.parent.GpHorizon;
 import io.zerows.extension.commerce.rbac.uca.authorization.parent.GpOverlook;
 import io.zerows.extension.commerce.rbac.uca.logged.ProfileGroup;
 import io.zerows.extension.commerce.rbac.uca.logged.ProfileRole;
+import io.zerows.unity.Ux;
 
 import java.util.List;
 

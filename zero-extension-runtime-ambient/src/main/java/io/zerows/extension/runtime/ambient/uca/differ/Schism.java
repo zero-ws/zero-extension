@@ -1,12 +1,12 @@
 package io.zerows.extension.runtime.ambient.uca.differ;
 
-import io.zerows.ams.constant.VString;
-import io.zerows.core.uca.cache.Cc;
-import io.zerows.specification.access.app.HArk;
-import io.zerows.specification.modeling.HAtom;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.VString;
 import io.zerows.extension.runtime.ambient.domain.tables.pojos.XActivity;
+import io.zerows.specification.access.app.HArk;
+import io.zerows.specification.modeling.HAtom;
 
 import java.util.function.Supplier;
 

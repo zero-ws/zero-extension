@@ -1,6 +1,6 @@
 package io.zerows.extension.commerce.finance.uca.replica;
 
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.json.JsonObject;
 import io.zerows.ams.annotations.Memory;
 import io.zerows.core.exception.web._501NotImplementException;

@@ -1,10 +1,10 @@
 package io.mature.extension.uca.elasticsearch;
 
-import io.zerows.ams.constant.em.typed.ChangeFlag;
-import io.zerows.core.uca.cache.Cc;
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.zerows.ams.constant.em.typed.ChangeFlag;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;

@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentMap;
 public class DataService implements DataStub {
     @Override
     public Boolean cleanDataAtom(final String key) {
-        final ConcurrentMap<String, Model> cdModel = AoCache.CC_MODEL.store();
+        final ConcurrentMap<String, Model> cdModel = AoCache.CC_MODEL.get();
         cdModel.remove(key);
         // AoCache.POOL_ATOM.remove(key);
         return Boolean.TRUE;

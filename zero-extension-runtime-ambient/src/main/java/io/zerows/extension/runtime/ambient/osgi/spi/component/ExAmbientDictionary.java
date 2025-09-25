@@ -1,17 +1,17 @@
 package io.zerows.extension.runtime.ambient.osgi.spi.component;
 
+import io.r2mo.typed.cc.Cc;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
 import io.vertx.core.json.JsonArray;
-import io.zerows.unity.Ux;
 import io.zerows.ams.constant.em.EmDict;
 import io.zerows.common.datamation.KDictSource;
 import io.zerows.core.fn.Fn;
-import io.zerows.core.uca.cache.Cc;
 import io.zerows.extension.runtime.ambient.agent.service.DatumService;
 import io.zerows.extension.runtime.ambient.agent.service.DatumStub;
 import io.zerows.extension.runtime.ambient.uca.dict.Dpm;
 import io.zerows.module.cloud.zdk.spi.Dictionary;
+import io.zerows.unity.Ux;
 
 import java.util.ArrayList;
 import java.util.List;

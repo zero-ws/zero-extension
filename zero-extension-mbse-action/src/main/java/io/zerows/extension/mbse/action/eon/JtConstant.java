@@ -15,7 +15,7 @@ public interface JtConstant {
     Class<?> COMPONENT_DEFAULT_WORKER = JtMinos.class;
     Class<?> COMPONENT_DEFAULT_CONSUMER = JtAiakos.class;
     /*
-     * store component extract key
+     * get component extract key
      */
     String COMPONENT_INGEST_KEY = "zero.jet.param.ingest";
 
